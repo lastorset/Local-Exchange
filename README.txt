@@ -56,7 +56,7 @@ Ok, onward and upward.
 
 3) Create a new database in MySQL and create at least one user account with full access to it.  You can call the database and user whatever you want, but you'll need to enter that information into the text configuration file "includes/inc.config.php".  
 
-4) Edit includes/inc.config.php.  This file contains lots of optional settings.  The domain name and database login settings are *required*.  You'll also want to set the email address values.
+4) Make a copy of includes/inc.config.php.default and call it includes/inc.config.php.  Then edit the copy.  This file contains lots of optional settings.  The domain name and database login settings are *required*.  You'll also want to set the email address values, SERVER_DOMAIN and SERVER_PATH_URL.
 
 5) Open a web browser.  Go to http://your-domain-name/your-path-if-any/create_db.php.  This will create the database tables and insert initial data.
 
