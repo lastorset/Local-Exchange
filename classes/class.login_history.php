@@ -104,7 +104,7 @@ class cLoginHistory {
 	function CurrentTimestamp () { // TODO: Move to a new class (maybe "class.time_date.php")...
 											 // Also probably shouldn't depend on the default string format.
 		$date = getdate();
-		$now = $date["year"] . str_pad($date["mon"],2,"0","STR_PAD_LEFT") . str_pad($date["mday"],2,"0","STR_PAD_LEFT") . str_pad($date["hours"],2,"0","STR_PAD_LEFT") . str_pad($date["minutes"],2,"0","STR_PAD_LEFT") . str_pad($date["seconds"],2,"0","STR_PAD_LEFT");
+		$now = $date["year"] . str_pad($date["mon"],2,"0",STR_PAD_LEFT) . str_pad($date["mday"],2,"0",STR_PAD_LEFT) . str_pad($date["hours"],2,"0",STR_PAD_LEFT) . str_pad($date["minutes"],2,"0",STR_PAD_LEFT) . str_pad($date["seconds"],2,"0",STR_PAD_LEFT);
 		return $now;		
 	}
 	
