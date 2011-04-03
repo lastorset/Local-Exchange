@@ -90,9 +90,9 @@ $global = ""; 	// $global lets other includes know that
 					// inc.global.php has been included
 
 // Include language file, remove comment slashes to include ONE language of your choice 
-include_once("lang/inc.NL_lang.php");
+//include_once("lang/inc.NL_lang.php");
 //include_once("lang/inc.UK_lang.php");
-//include_once("lang/inc.US_lang.php");
+include_once("lang/inc.US_lang.php");
 //include_once("lang/inc.UK_LDN_lang.php");
 
 include_once("inc.config.php");
