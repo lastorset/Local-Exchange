@@ -1,0 +1,139 @@
+body {
+	font-family: Verdana, Georgia, Times, serif;
+	font-size: 14px;
+	background-color: #FFFFFF;
+	padding: 0px;
+	margin-top: .5%;
+	margin-right: 3%;
+	margin-bottom: 0px;
+	margin-left: 3%;
+	background-image: url(/lex/images/bg_01.jpg);
+
+}
+
+table {  color: #909090}
+a:active {  color: #909090}
+a:hover {  color: #6C81C6}
+a:link {
+	color: #21ADD; /* changed from #909090 to #21ADD by ejkv */
+	font-weight: normal; /* changed bold to normal by ejkv */
+}
+a:visited {  color: #6C81C6}
+
+body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrollbar-3dlight-color: #6C81C6; scrollbar-darkshadow-color: #6C81C6; scrollbar-track-color: #6C81C6; scrollbar-arrow-color}
+
+#mainTable {
+	width: 85%; /* changed from 800px to 85% by ejkv */
+	color: #FBE697;
+	border: ridge;
+	background: #FBFBFB;
+
+			/*/*line-height: 1.5em; /* */
+}
+
+#maincontent {
+ 	width: 650px; /* changed from 600px to 650px by ejkv */	
+	border-left: 1px solid #6C81C6;
+	border-right: 1px solid #6C81C6;
+ 	font-size: 13px;
+	color: #000033;
+	padding: 25px;
+ }
+ 
+ #sidebar {
+ 	width: 105px;
+ 	font-size: 80%;
+ 	font-family: sans;
+	vertical-align: top;
+ 	background-color: #E2E4EF;
+ }
+ 
+ #header {
+ 	background-color: #6C81C6;
+ 	color: #FFFFFF;
+ 	background-image: url(url());
+ }
+ 
+ #footer {
+ 	background-color: #6C81C6;
+ 	color: #CCCCCC;
+	font-size: 10px;
+ 	background-image:  url(url());
+	}
+
+#footer a:link, #footer a:visited {
+ 	color: #CCCCCC;
+ }
+ 
+ td, p, ul {
+ 	font-family: Verdana, Georgia, Times, serif;
+ 	font-size: 13px;
+ }
+ 
+ h1:first-child {margin-top: 0;}/*starts first h1 in TD flush top*/
+ h2:first-child {margin-top: 0;}/*starts first h2 in TD flush top*/
+ h3:first-child {margin-top: 0;}/*starts first h3 in TD flush top*/
+ 
+ h1 { font-size: 160%; }
+ h2 { font-size: 140%; }
+ h3 { font-size: 75%; }
+ 
+ #contenttable {
+ 	font-size: 13px;
+ 	text-align: left;
+ 	width: 100%;
+ 	border: 0;
+ }
+ 
+ #tableheader {
+ 	background-color: #d8dbea;
+ }
+ 
+ #tablerow {
+ 	background-color: white;
+ }
+ 
+ #tablealtrow {
+ 	background-color: #e4e9ea;
+ }
+ 
+ #sidebar a {
+ 	/*/*/padding: 3px;
+ 	display: block;
+ 	border: 2px solid #CCC;
+ 	text-decoration: none;
+ 	line-height: 1em;
+ 	width: 100px;
+ }
+ 
+ #sidebar a:link, #sidebar a:visited {
+ 	color: #666;
+ }
+ 
+ #sidebar a:hover, #sidebar a:active {
+ 	color: #FFFFFF;
+ 	background-color: #6C81C6;
+ 	border: 2px solid #000;
+ }
+ 
+ #sidebar ul {
+ 	/*/*/padding-left: 3px;
+ 	margin-left: 3px;
+ 	list-style-type: none; /* */
+ }
+ 
+ #sidebar li {
+ 	/*/*/margin: 0px 0px 6px 0px; /* */
+ }
+ 
+ #current a {
+ 	color: #FFFFFF !important;
+ 	/*/*/background-color: #999999!important;
+ 	border: 2px solid #999 !important; /* */
+ }
+
+.image-right {
+	float: right;
+	padding: 10px;
+
+}

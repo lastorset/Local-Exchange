@@ -1,0 +1,396 @@
+/* Local Exchange version 1.01 release notes */
+
+/* 02-02-2010 - changes by Chris Macdonald <chris@cdmweb.co.uk> and Rob Follett <robfol@gmail.com> */
+
+
+*****************************************************
+/* New 1.01 Functionality */
+
+/* ADDITIONAL TWEEKS/CHANGES/BUG FIXES */
+
+[FIX] Moved 'account expiration' settings out of MySQL back into the config file; this resolves a problem re site-sent emails not picking up the defined value of certain variables related to account expirations 
+
+*****************************************************
+/* FILES Changed */
+	
+	*includes/inc.config.php:
+		(): added account expiration settings
+	
+	*includes/inc.global.php:
+		(): Updated version number
+	*create_db.php
+	  (): 'account expiration' fields removed from MySQL	
+
+************************************************
+
+/* Local Exchange UK version 1.0 release notes */
+
+/* 22-06-2009 - changes by Chris Macdonald <chris@cdmweb.co.uk> and Rob Follett <robfol@gmail.com> */
+
+(Original release notes for 0.4.0 included beneath all this)
+
+*****************************************************
+/* New 1.0 Functionality */
+
+/* NEW FEATURES */
+
+[ADDED] Ability to assign permissions to info pages (Guest, Member, Committee, and Admin)
+[ADDED] Ability to impose account restrictions on 'leechers' who take without giving
+[ADDED] Ability to take and refund 'One-Off Service Charges' independent of 'Take Monthly Fee'
+[ADDED] Ability for members to share a percentage of their income with another member account
+[ADDED] 'Printer Friendly View' (all pages, uses its own customisable style sheet, print.css)
+[ADDED] Ability to backup MySQL database
+[ADDED] Moved some settings from the config file to the mysql where they can be edited via the admin panel
+
+/* ADDITIONAL TWEEKS/CHANGES/BUG FIXES */
+
+[ADDED] Ability, when Unlock/Reset Account Password, to choose between sending member a 'password reset' or 'welcome' email
+[ADDED] Option to display member balance in members' list (this is always visible to admins, option applies to what users see)
+[CHANGE] Override Balance feature now only available to Admins, not Committee members
+[CHANGE] Guests can no longer view link to offers/wants (which previously contained sensitive members-only info)
+[ADDED] Number of 'active member accounts' now displayed at footer of Member's List
+[CHANGE] Unlock Account/Reset Password in admin menu now admin-only function (not committee)
+[CHANGE] Site logo now links to homepage
+[ADDED] Checks for presence of 'upgrade.php' on server and prompts for it's removal before proceeding
+
+*****************************************************
+/* FILES Changed */
+	
+	*includes/inc.config.php:
+		(): added settings re Account Restrictions
+		(): made site logo link to homepage
+		(): added option to display member balance in member list
+		(): added version number to footer
+		(): commented out lots of settings now moved to mysql
+		
+	*member_photo_upload.php:
+		(): added code to allow admin to upload/replace photos on members' behalf
+		
+	*trades_pending.php:
+		(): added code to disallow restricted member from paying an invoice
+		
+	*member_unlock.php:
+		(): Changed permissions level to Admins rather than Committee
+		(): Added option to send either a 'password reset' or 'welcome' email to members
+		
+	*member_directory.php:
+		(): added code to display number of active member accounts
+		(): added code to display current member balance
+		
+	*classes/class.listing.php:
+		cListingGroup::DisplayListingGroup(): guests can no longer view link to offer/want, instead the link is displayed in plain blue (apologies if you have a blue website). This is because the url contains sensitive members-only info.
+		
+	*classes/class.trade.php:
+		cTrade::MakeTrade(): added code to check if member's account is restricted
+		
+	*trade.php:
+		(): added code to display notice to user that their account has been restricted	
+		(): added code to process income ties
+		
+	*member_login:
+		(): added code to display notice to user upon logging in that their account has been restricted
+		
+	*edit_balance.php:
+		(): changed page permissions to admins only
+	
+	*balance_to_edit.php:
+		(): changed page permissions to admins only
+	
+	*admin_menu.php:
+		(): changed Override Balance link to only display to admins
+		(): added link to Edit Info Page Permissions
+		(): added link to Manage Account Restrictions
+		(): Unlock Account/Reset Password only shows to admins now
+		(): Added links to new features
+		(): Removed link to 'Spreadsheet Backup' (it doesn't work)
+		
+	*pages.php:
+		(): added code to handle page Permissions
+	
+	*member_profile.php
+		(): added link to 'Income Shares'
+	
+	*trades_pending.php:
+		doTrade(): added code to handle income shares
+		
+	*classes/class.member.php:
+		cMember::AccountIsRestricted(): new function added to check if account has been 'locked'
+		cMember::LoadMember(): added code to store 'restriction' status
+		(): added class cIncomeTies();
+	
+	*classes/class.page.php:
+		cPage::MakePageFooter(): added link to 'printer friendly view' & code to display printer friendly view
+	
+	*pages.php():
+		(): added code to handle printer friendly view
+		(): made 'Edit' link smaller (cosmetic)
+		
+	*info/credits.php():
+		(): now displays 'UK' and version number dynamically from globals file
+	
+	*includes/global.php():
+		(): added call to include 'class.settings'
+		(): updated version number to 1.0
+		
+*****************************************************
+/* FILES Added */
+
+	*info_permissions.php
+	
+	*manage_restrictions.php
+	
+	*service_charge.php
+	
+	*refund_service_charge.php
+	
+	*photo_to_edit.php
+	
+	*income_ties.php
+	
+	*mysql_backup.php
+	
+	*settings.php
+	
+	*classes/class.settings.php
+	
+	*images/print.gif
+	
+	*print.css
+
+*****************************************************
+/* MySQL Changes/Additions */
+
+	*alter table cdm_pages - added 'permission' column
+	
+	*alter table member - added 'restriction' column
+	
+	*alter table member - change 'admin_note' column type to 'text'
+	
+	*create table 'income_ties'
+	
+	*create table 'settings'
+
+
+	
+*****************************************************
+/* Local Exchange version 0.4.0 release notes */
+
+/* 13-01-2009 - changes by Chris Macdonald <chris@cdmweb.co.uk>, Rob Follett <robfol@gmail.com> */
+
+(Original release notes for 0.3.2 included beneath all this)
+
+*****************************************************
+/* New 0.4.0 Functionality */
+
+[BUG-FIX] 'Take Monthly Fee' and 'Refund Monthly Fee' now function properly
+[BUG-FIX] Resolved htmlspecialchars() issue when creating/editing a 'Joint' member
+[BUG-FIX] 'Edit member' now properly saves changes to join date and dob
+
+[ADDED] Ability to add/edit static pages from the admin (uses MySQL) 
+[ADDED] Extra layer of security to screen data going to MySQL - admin can also define a 'Safe List' of HTML Tags
+[ADDED] New options re handling of out-of-balance situations (this no longer has to result in a 'fatal' error); also added option for admin to be emailed when out-of-balance occurs
+[ADDED]	Image Upload for members (based on existing CVS script and uses existing upload-handling class that is used for newsletters) 
+[ADDED]	Age, Sex and About Me fields for Member profiles 
+[ADDED] Search function and sort options for member directory
+[ADDED] Members now have choice of confirming payments sent to them. 
+[ADDED] Added ability to Invoice members. 
+[ADDED] Provision for admin to 'override' member account balance via admin  
+[ADDED] Search by Keyword on Offers/Wants
+[ADDED] Pending transactions (payments awaiting confirmation/invoices awaiting payment) can now be viewed from the Exchanges page.  
+[ADDED] Have tried simplifying the 'pick member' dropdown by linking it with a textbox - still very much a work in progress
+[ADDED] Display PostCode next to Listings in Offers/Wants search results
+[ADDED] Option to display Rate on Listings results
+[ADDED] Database Balance now appears at top of admin panel, for reference only 
+
+[CHANGE] Inactive members no longer display in Members List
+[CHANGE] Got rid of the link to non-existant 'monthly_fee_list.php' in admin
+[CHANGE] Some of the default variables in config file
+[CHANGE] PDF's/Newsletters now open in a new browser window
+[CHANGE] Updated info/credits.php
+
+
+*****************************************************
+/* FILES Changed */
+
+
+		*member_directory.php: 
+			(): added 'Search Members' functionality
+			(): added buildCondition() function
+			(): rf added condition to prevent inactive members being displayed
+		
+		*listings.php
+			(): added 'Keyword' form field
+			(process_data): added 'keyword' value to GET request
+			
+		*member_edit.php
+			(process_data): 'join date' and 'dob' no longer passed incorrectly as Arrays to htmlspecialchars() but instead are passed to htmlspecialchars() a bit later on when broken down into Strings
+			(): changed form labels 'Admin Level 1/2' etc to 'Admin' and 'Committee'
+			(): added option for user to confirm any payments sent to him/her
+			(): added social-networking bits to member profile (age, sex etc)
+			(): further edits throughout which handle the 'payment confirmation' preferences and social networking variables
+			
+		*take_monthly_fee.php
+			(): fixed bugs relating to SQL syntax and timestamp formatting
+			(already_fee_takenp): fixed SQL string syntax problem
+		
+		*refund_monthly_fee.php
+			(select_time): fixed bug relating to SQL syntax problem
+			(transfer_fee): fixed SQL syntax bugs and timestamp formatting problems
+			
+		*admin_menu.php: 
+			(): Added 'current balance' display; Added links to new admin functions (described elsewhere); Removed link to missing 'list_member_fees.php'
+
+		*listings_found.php
+			(): added code to filter listings results by Keyword if specified
+
+		*exchange_menu.php
+			(): added link to trades_pending.php - this file now also calls the trade class to display the number of pending trades in brackets next to the link
+			
+		*member_create.php
+			(): changed form labels 'Admin Level 1/2' etc to 'Admin' and 'Committee'
+			
+		*member_profile.php
+			(): added a handy link so members can view their profile as others see it
+			(): added link to upload/change photo
+			
+		*trade.php
+			(): added lots of additional code to accomodate new Invoicing system and the fact that members now have the option to Confirm any payments sent to them. This form can now be used to send either a payment OR an invoice and I have reworked the code which processes the payment to check whether or not the recipient has elected to Confirm Payments and, if so, store the transaction as 'pending' accordingly. If the user is making a straight payment to a member that HASN'T elected to Confirm Payments then the code will function the same as before - i.e. the recipient gets paid immediately. 
+			
+		*includes/inc.config.php: 
+			(): added options to turn on/off all new features as described
+			(): changed 'Hours' to 'LETS Units'
+			(): changed 'Directory' to 'Members List'
+			(): added preferences for displaying PostCode alongside offers/wants listings
+			(): added option to prevent display of inactive members in Members List
+			(): added option to UP-scale member images smaller than the standard width specified (set this to FALSE by default as upscaling often results in unsightly pixelation)
+			(): added option to strip any JavaScript found in incoming data
+			(): added option to set Permission level for submitting all HTML Tags to the MySQL
+			(): ... added option to define a 'Safe List' for HTML Tags that all other users are allowed to submit
+			(): added option to define how out-of-balance situation should be handled
+			(): added option for admin to receive an email when out-of-balance situation occurs
+			(): added provision to allow this file to be included directly from the upgrade script (the upgrade needs access to the MySQL credentials in order to run)
+			
+		*includes/session_handler.php: 
+			(): added some wrapper functions to accomodate newer/older versions of PHP (some of the original functions were either deprecated or incompatible with anything older than v4.2.3 - probably not a huge problem in most cases but these changes shouldn't break anything)
+
+		*classes/class.listing.php
+			(cListingGroup::DisplayListingGroup): some slight changes to the way Offers/Wants are displayed, including way member name and ID displayed
+			(cListingGroup::DisplayListingGroup): added display postcode alongside listings
+			(cListingGroup::DisplayListingGroup): Added Rate to listings results and tweeked listings results display
+			
+		*classes/class.member.php
+			(cMember::SaveNewMember): adjusted MySQL query to store the member's 'confirm_payments' preference
+			(cMember::LoadMember): adjusted MySQL query to request member's 'confirm_payments' preference
+			(cMember::DisplayMemberImg): added this function to get and display member images
+			(cMember::DisplayMember): adjusted to accomodate display of member image
+		
+		*classes/class.person.php
+			(cPerson::cPerson): added code to retrieve the new data in the db related to social networking
+			(cPerson::SavePerson): altered sql query to store social networking data
+			(cPerson::LoadPerson): altered sql query to retrieve social networking data
+														 added code to store the retrieved social networking vars in $this-> variables 
+			
+		*classes/class.trade.php: 
+			(): added class cTradesPending to deal with pending trades (the need for which has arisen out of adding in invoicing and payment confirmation functionality)
+			(cTrade::MakeTrade): added additional option for handling out-of-balance silently - also code to email admin when out-of-balance occurs
+		
+		*classes/class.uploads.php
+			(cUpload::cUpload): added explicit definition for $filename property - not sure whether this being there or not has any impact on functionality
+			(cUpload::DisplayURL): RF added target=_blank to anchor tag
+		
+		*classes/class.database.php:
+			(cDatabase::EscTxt): added call to new HTML screening function
+			(cDatabase::ScreenHTML): new HTML screening function
+			(cDatabase::ProcessHTMLTag): new function to screen individual HTML tags passed from cDatabase::ScreenHTML
+		
+		*member_contact_create.php:
+			(process_data): fixed htmlspecialchars() issue
+		
+		*member_contact_edit.php:
+			(process_data): fixed htmlspecialchars() issue
+				
+		*info/credits.php
+			(): changes to the copy made by RF			
+		
+		*includes/inc.global.php:
+			(): redefined LOCALX_VERSION to 0.4.0
+	
+		
+*****************************************************
+/* FILES Added */
+
+		*pages.php: displays information pages that have been created via the admin interface
+		
+		*create_info.php: enables admin to create an information page to be stored in sql
+		
+		*edit_info.php: presents admin with a list of pages that can be edited - we must then pick one to edit
+		
+		*do_info_edit.php: displays the form for admin to edit the info page just selected in edit_info.php
+		
+		*delete_info.php: enables admin to delete an information page from the sql
+		
+		*info_url.php: displays a list of info pages in the sql along with their corresponding URL's (to aid the process of 'hard-coding' these links into the menu)
+		
+		*classes/class.info.php: the class for handling info pages
+
+		*trades_pending.php: enables user to view/manage pending transactions (i.e. incoming payments/invoices)
+		
+		*member_photo_upload.php: enables user to upload/replace a photo of him/her
+		
+		*balance_to_edit.php & edit_balance.php: allows admin to manually override a member's balance
+		
+		*includes/autocomplete.js: a third-party javascript which handles the new and 'improved' dropdown members box (on Record An Exchange form)
+
+
+*****************************************************
+/* MySQL Changes/Additions */
+
+		*person: 
+			adjusted 'phone1_area' and 'phone2_area' to be 5 chars in length
+			added 'about_me', 'age', and 'sex' columns
+			
+		*member: 
+			added 'confirm_payments' column		
+		
+		*ADDED table 'cdm_pages' (to store Info Pages created via admin)
+		
+		*ADDED table 'trades_pending' (to store Payments that need confirmation, and Invoices that need paying)
+
+*****************************************************
+	
+-------------
+
+Below are the original release notes for 0.3.2... 
+
+PLEASE NOTE THAT UPGRADE INSTRUCTIONS BELOW NO LONGER APPLY TO ver 0.4.0 or version 1.0 UK - to upgrade from ver 0.3.2 to ver 0.4.0 please use the UPGRADE package (localexchange-upgrade-0.4.0.zip) instead of this package (localx-UK-1.0.zip), and to upgrade from ver 0.4.0 to ver 1.0 UK please use the UPGRADE package (localx-UK-upgrade-0.4-to-1.0.zip). All these files are available via LETSlinkUK and http://cxss.info
+
+-------------
+
+In addition to a number of bugfixes, several major features have been added in version 0.3.2.  Grab yourself a cup of coffee and read on...
+
+Members can now opt to receive automatic email updates containing new offered and wanted listings.  In order to take advantage of this feature, you will need to turn it on in inc.config.php.
+
+The ability to send an email to all member accounts has been added to the administration menu.
+
+There is a new optional feature to automatically expire listings for inactive members. This is an attempt to deal with the age-old local currency problem of new members joining and then not keeping their listings up to date or using the system in any way.  It is designed so that if a member doesn't record a trade OR update a listing in a given period of time (default is six months), their listings will be set to expire and they will receive an email to that effect (as will the admin).  This feature can be turned on (and default settings configured) in inc.config.php.
+
+If you are interesting in becoming involved in development for Local Exchange, email calvinpriest@yahoo.com.  Our CVS has just been turned on at local-exchange, and we are ready to boogie.
+
+Here's a partial list of other changes:
+- Bug fix: There is a rather major bug (in the view of many) in PHP 4.4.  It has resulted in many PHP applications breaking (including this one because of it's use of PEAR libraries) when servers are upgraded to 4.4.  A workaround has been implemented in Local Exchange.
+- Made password requirements less stringent and now generate "pronouncable passwords".
+- Trade statistics now show when viewing a listing, so members can easily identify active traders.
+- The ability to upload newsletters in document formats such as PDF has been added.  The newsletters can be viewed from a link on the bottom of the News & Events page.
+- A maintenance mode has been added for system administration purposes.  You can turn it on by setting DOWN_FOR_MAINTENANCE to true.
+- A method for upgrading the system by script has been added.  See UPGRADE.txt for the upgrade process.
+- A report has been added to the administration page to view members who have never logged in. 
+- Bug fix: The ADMIN account can no longer record trades.
+- Bug fix: The option to create new Non-Member Admin Accounts has been turned off, both because it was unnecessary and confusing.
+- Bug fix for unlocking accounts
+- Bug fix: Fixed directory so duplicate phones and emails not displayed for joint members.
+- Bug fix: Now use wordwrap for email messages.
+- Bug fix: Timeframe selection for trades doesn't restrict things past the higher date.
+- Bug fix: Fixed issue with long feedback text being truncated.
+- Bug fix: Turned off autocomplete in the listing description field.  This was confusing to some.
+- Bug fix: Made null dates blank in listing create/edit pages.
+- inc.config.php has been overhauled to make it easier to read and to setup a new site.
