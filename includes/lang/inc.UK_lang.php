@@ -6,6 +6,7 @@
 /* UK language file. Create your own language file using this file as an example. */
 /* Replace English text between quotes */
 
+$lng_local_currency = "talents";
 define ("ADDRESS_LINE_1", "Street address");
 define ("ADDRESS_LINE_2", "Neighbourhood");
 define ("ADDRESS_LINE_3", "Borough");
