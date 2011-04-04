@@ -64,7 +64,7 @@ Ok, onward and upward.
 
 7) Also for security reasons, you should delete the create_db.php file at this point, or change the file permissions so that it can't be run by the web user account. 
 
-8) In order to use file uploading features (such as uploading a Newsletter), you will need to set the permissions on the "uploads" directory such that the web user account (often www-data) has access to write to it.
+8) In order to use file uploading features (such as uploading a Newsletter), you will need to create an "uploads" directory and set the permissions such that the web user account (often www-data) has access to write to it.
 
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.
