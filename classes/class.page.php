@@ -45,8 +45,20 @@ class cPage {
 			$title = " - ". $this->page_title;
 		else
 			$title = "";
+
+		$c = get_defined_constants();
 		
-		$output = '<HTML><HEAD><link rel="stylesheet" href="http://'. HTTP_BASE .'/'. SITE_STYLESHEET .'" type="text/css"></link><META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1"><meta name="description" content="'.$this->page_title.'"><meta NAME="keywords" content="'. $this->keywords .'"><TITLE>'. PAGE_TITLE_HEADER . $title .'</TITLE></HEAD><BODY>';
+		$output = <<<HTML
+<HTML>
+	<HEAD>
+		<link rel="stylesheet" href="http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}" type="text/css"></link>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+		<meta name="description" content="{$this->page_title}">
+		<meta NAME="keywords" content="{$this->keywords}">
+		<TITLE>{$c['PAGE_TITLE_HEADER']}$title</TITLE>
+	</HEAD>
+	<BODY>
+HTML;
 		
 		//$output .= "<HTML><BODY>";
 		//$output .= $this->page_header.$cUser->UserLoginLogout()."</h1></td></tr>";
