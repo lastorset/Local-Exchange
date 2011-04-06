@@ -121,6 +121,9 @@ define ("PAGE_TITLE_HEADER", SITE_LONG_TITLE);
 // What keywords should be included in all pages?
 define ("SITE_KEYWORDS", $lng_sitekeywords. SITE_LONG_TITLE .",php");
 
+// Shortcut icon
+define ("FAVICON", "localx_logo.png");
+
 // Logo Graphic for Header
 define ("HEADER_LOGO", "localx_logo.png"); // changed by ejkv
 
