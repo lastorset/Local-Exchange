@@ -52,16 +52,14 @@ class cPage {
 <HTML>
 	<HEAD>
 		<link rel="stylesheet" href="http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}" type="text/css"></link>
-		<META HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1">
+		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
 		<meta name="description" content="{$this->page_title}">
-		<meta NAME="keywords" content="{$this->keywords}">
-		<TITLE>{$c['PAGE_TITLE_HEADER']}$title</TITLE>
+		<meta name="keywords" content="{$this->keywords}">
+		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
 	</HEAD>
 	<BODY>
 HTML;
 		
-		//$output .= "<HTML><BODY>";
-		//$output .= $this->page_header.$cUser->UserLoginLogout()."</h1></td></tr>";
 		$output .= $this->page_header ;
 	
 		return $output;
