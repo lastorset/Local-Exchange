@@ -38,7 +38,7 @@ To install a new site:
 
 a) Using The Pear Installer
 If Pear is installed on your web server and you have admin access (see pear.php.net for more info) you can simply copy and paste the following command into a shell and then proceed to step 3: 
-"pear install -f File_PDF HTML_Common HTML_QuickForm HTML_Table HTTP HTTP_Download HTTP_Header Mail_Mime OLE Spreadsheet_Excel_Writer Text_Password".  
+"pear install -f File_PDF HTML_Common HTML_QuickForm HTML_Table HTTP HTTP_Download HTTP_Header Image_Transform Mail_Mime OLE Spreadsheet_Excel_Writer Text_Password".  
 
 If you do not have admin access, your website administrator may be willing to run the above command for you. A simple call or email to your web host tech support should confirm one way or the other.
 
@@ -65,6 +65,8 @@ Ok, onward and upward.
 7) Also for security reasons, you should delete the create_db.php file at this point, or change the file permissions so that it can't be run by the web user account. 
 
 8) In order to use file uploading features (such as uploading a Newsletter), you will need to create an "uploads" directory and set the permissions such that the web user account (often www-data) has access to write to it.
+
+9) In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
 
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.
