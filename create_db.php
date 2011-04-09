@@ -225,7 +225,7 @@ $cDB->Query("INSERT INTO `settings` VALUES ('27', 'MONTHLY_FEE', '$lng_monthly_f
 
 $cDB->Query("INSERT INTO `settings` VALUES ('28', 'EMAIL_LISTING_UPDATES', '$lng_send_listing_updates_email', 'bool', '', '', 'FALSE', '', '$lng_listing_updates_comment', '1')") or die("Error - Could not insert row into settings table.");
 
-$cDB->Query("INSERT INTO `settings` VALUES ('29', 'DEFAULT_UPDATE_INTERVAL', '$lng_listing_update_interval', 'multiple', '', 'NEVER,WEEKLY,MONTHLY', 'NEVER', '', '$lng_listing_update_interval_comment', '1')") or die("Error - Could not insert row into settings table.");
+$cDB->Query("INSERT INTO `settings` VALUES ('29', 'DEFAULT_UPDATE_INTERVAL', '$lng_listing_update_interval', 'multiple', '', 'NEVER,DAILY,WEEKLY,MONTHLY', 'NEVER', '', '$lng_listing_update_interval_comment', '1')") or die("Error - Could not insert row into settings table.");
 
 $cDB->Query("INSERT INTO `settings` VALUES ('34', 'ALLOW_INCOME_SHARES', '$lng_allow_income_sharing', 'bool', '', null, 'TRUE', '99999', '$lng_allow_income_sharing_comment', '2')") or die("Error - Could not insert row into settings table.");
 
