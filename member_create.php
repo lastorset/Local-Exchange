@@ -31,7 +31,7 @@ $form->addElement("text", "mid_name", $lng_middle_name, array("size" => 10, "max
 $form->addElement("text", "last_name", $lng_last_name, array("size" => 20, "maxlength" => 30));
 $form->addElement("static", null, null, null); 
 
-$options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); 
+$options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>$today["year"]-120);
 $form->addElement("date", "dob", $lng_date_of_birth, $options);
 $form->addElement("text", "mother_mn", $lng_mothers_maiden_name, array("size" => 20, "maxlength" => 30)); 
 $form->addElement("static", null, null, null);
