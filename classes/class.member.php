@@ -248,9 +248,13 @@ class cMember
 			$page = "<DIV Class='AccessDenied'>".$lng_access_denied_no_permission.".<BR><BR>".$lng_would_like_access_level_increased." <a href='mailto:".EMAIL_ADMIN."'>".$lng_eml_admin."</a>  ".$lng_and_ask.".</DIV>";
 			$p->DisplayPage($page);
 			exit;
-
 		}
+	}
 
+	/** Returns true if this member is logged in and has at least level $level, otherwise false.
+	*/
+	function HasLevel($level) {
+		return $this->IsLoggedOn() && $this->member_role >= $level;
 	}
 	
 	function AccountIsRestricted() {

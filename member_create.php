@@ -1,11 +1,12 @@
 <?php
 
 include_once("includes/inc.global.php");
+include("includes/inc.forms.php");
 
-$cUser->MustBeLevel(1);
+if (!SELF_REGISTRATION)
+	$cUser->MustBeLevel(1);
 $p->site_section = 0;
 
-include("includes/inc.forms.php");
 
 //
 // First, we define the form
@@ -15,15 +16,24 @@ $form->addElement("html", "<TR></TR>");
 
 $form->addElement("text", "member_id", $lng_member_id, array("size" => 10, "maxlength" => 15));
 $form->addElement("text", "password", $lng_pwd, array("size" => 10, "maxlength" => 15));
-$form->addElement("select", "member_role", $lng_member_role, array("0"=>$lng_member, "1"=>$lng_committee, "2"=>$lng_admin));
+
+if ($cUser->HasLevel(1))
+	$form->addElement("select", "member_role", $lng_member_role, array("0"=>$lng_member, "1"=>$lng_committee, "2"=>$lng_admin));
+
 $acct_types = array("S"=>$lng_single, "J"=>$lng_joint, "H"=>$lng_household, "O"=>$lng_organisation, "B"=>$lng_business, "F"=>$lng_fund);
 $form->addElement("select", "account_type", $lng_account_type, $acct_types);
-$form->addElement("static", null, $lng_admin_note, null);
-$form->addElement("textarea", "admin_note", null, array("cols"=>45, "rows"=>2, "wrap"=>"soft", "maxlength" => 100));
+if ($cUser->IsLoggedOn()) // Administrative note not for self-registration
+{
+	$form->addElement("static", null, $lng_admin_note, null);
+	$form->addElement("textarea", "admin_note", null, array("cols"=>45, "rows"=>2, "wrap"=>"soft", "maxlength" => 100));
+}
 
 $today = getdate();
-$options = array("language"=> $lng_language, "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=>$today["year"]);
-$form->addElement("date", "join_date",	$lng_join_date, $options);	
+if ($cUser->HasLevel(1))
+{
+	$options = array("language"=> $lng_language, "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=>$today["year"]);
+	$form->addElement("date", "join_date",	$lng_join_date, $options);
+}
 $form->addElement("static", null, null, null);	
 
 $form->addElement("text", "first_name", $lng_first_name, array("size" => 15, "maxlength" => 20));
@@ -41,7 +51,12 @@ $form->addElement("text", "phone2", $lng_secondary_phone, array("size" => 20));
 $form->addElement("text", "fax", $lng_fax_number, array("size" => 20));
 $form->addElement("static", null, null, null);
 $frequency = array("0"=>$lng_never, "1"=>$lng_daily, "7"=>$lng_weekly, "30"=>$lng_monthly);
-$form->addElement("select", "email_updates", $lng_how_frequently_updates, $frequency);
+
+if ($cUser->IsLoggedOn()) // Registering other people gives a 3rd-person question
+	$form->addElement("select", "email_updates", $lng_how_frequently_updates, $frequency);
+else // Users registering themselves get a 2nd-person question
+	$form->addElement("select", "email_updates", $lng_how_frequently_updates_you, $frequency);
+
 $form->addElement("static", null, null, null);
 $form->addElement("text", "address_street1", ADDRESS_LINE_1, array("size" => 25, "maxlength" => 50));
 $form->addElement("text", "address_street2", ADDRESS_LINE_2, array("size" => 25, "maxlength" => 50));
@@ -82,9 +97,11 @@ $form->addRule('password', $lng_pwd_must_contain_nmbr, 'verify_good_password');
 $form->registerRule('verify_no_apostraphes_or_backslashes','function','verify_no_apostraphes_or_backslashes');
 $form->addRule("password", $lng_no_apps_or_backslhs_in_pwd, "verify_no_apostraphes_or_backslashes");
 $form->registerRule('verify_role_allowed','function','verify_role_allowed');
-$form->addRule('member_role',$lng_cannot_assign_higher_level,'verify_role_allowed');
+if ($cUser->HasLevel(1))
+	$form->addRule('member_role',$lng_cannot_assign_higher_level,'verify_role_allowed');
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');
-$form->addRule('join_date', $lng_join_date_not_future, 'verify_not_future_date');
+if ($cUser->HasLevel(1))
+	$form->addRule('join_date', $lng_join_date_not_future, 'verify_not_future_date');
 $form->addRule('dob', $lng_birthday_not_in_future, 'verify_not_future_date');
 $form->registerRule('verify_reasonable_dob','function','verify_reasonable_dob');
 $form->addRule('dob', $lng_little_young_dont_you_think, 'verify_reasonable_dob');

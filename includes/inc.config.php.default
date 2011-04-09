@@ -104,6 +104,9 @@ define("SEARCHABLE_MEMBERS_LIST",true);
 
 // END 01-12-08 changes by chris
 
+// Allow anonymous users to register?
+define("SELF_REGISTRATION", false);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 
