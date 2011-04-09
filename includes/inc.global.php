@@ -80,8 +80,7 @@ define ("DATABASE_STATES", "states");  // added by ejkv
 // inc.config.php, and would be removed but for a bunch of
 // references to the following two, now bogus, values...
 
-// TODO: Clean up all references and remove the two lines below
-define ("SITE_SECTION_DEFAULT",-1);		
+// TODO: Clean up all references and remove the line below
 define ("SITE_SECTION_OFFER_LIST",0); 
 /*********************************************************/
 
