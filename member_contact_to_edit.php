@@ -1,6 +1,6 @@
 <?php
 include_once("includes/inc.global.php");
-$p->site_section = SITE_SECTION_OFFER_LIST;
+$p->site_section = 0;
 $cUser->MustBeLevel(1);
 
 include("includes/inc.forms.php");

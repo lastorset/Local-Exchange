@@ -75,16 +75,6 @@ define ("DATABASE_UPLOADS", "uploads");
 define ("DATABASE_SESSION", "session");
 define ("DATABASE_STATES", "states");  // added by ejkv
 
-/*********************************************************/
-// This section is deprecated.  It has been relocated to 
-// inc.config.php, and would be removed but for a bunch of
-// references to the following two, now bogus, values...
-
-// TODO: Clean up all references and remove the line below
-define ("SITE_SECTION_OFFER_LIST",0); 
-/*********************************************************/
-
-
 $global = ""; 	// $global lets other includes know that 
 					// inc.global.php has been included
 
