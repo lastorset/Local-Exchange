@@ -145,7 +145,17 @@ function process_data ($values) {
 	$values['primary_member'] = "Y";
 	$values['directory_list'] = "Y";
 
-	$date = $values['join_date'];
+	if (!$values['member_role'])
+		$values['member_role'] = 0;
+
+	if ($values['join_date'])
+	{
+		$date = $values['join_date'];
+	}
+	else
+	{
+		$date = array('Y' => $today['year'], 'F' => $today['mon'], 'd' => $today['mday']);
+	}
 	$values['join_date'] = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
 	$date = $values['dob'];
 	$values['dob'] = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
