@@ -32,7 +32,11 @@ class cDatabase
 			$this->Connect();
 
 		$ret = mysql_query($thequery);
-//		       or die ("Query failed: ".mysql_errno() . ": " . mysql_error()); // TODO: fix error messages
+		if (!$ret)
+		{
+			error_log("MySQL error ". mysql_errno() .": ". mysql_error());
+			error_log("MySQL query was: ". $thequery);
+		}
 		return $ret;
 	}
 
