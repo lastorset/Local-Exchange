@@ -243,6 +243,9 @@ define ("PASSWORD_RESET_MESSAGE", $lng_your_password_for." ". SITE_LONG_TITLE ."
 define ("NEW_MEMBER_SUBJECT", $lng_welcome_to." ". SITE_LONG_TITLE);
 define ("NEW_MEMBER_MESSAGE", $lng_hello_and_welcome_to." ". SITE_LONG_TITLE ." ".$lng_community."\n\n".$lng_a_member_account_has_been_created.":\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/member_login.php\n\n".$lng_please_login_and_create_listings."\n\n".$lng_thank_you_for_joining_us);
 
+// Minimum password length
+define ("PASSWORD_MIN_LENGTH", 7);
+
 /********************************************************************/
 /************************* ADVANCED SETTINGS ************************/
 // Normally, the defaults for the settings that follow don't need

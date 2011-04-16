@@ -65,7 +65,7 @@ $form->addElement('submit', 'btnSubmit', $lng_create_member);
 // Define form rules
 //
 $form->addRule('member_id', $lng_enter_member_id, 'required');
-$form->addRule('password', $lng_pwd_not_long_enough, 'minlength', 7);
+$form->addRule('password', $lng_pwd_not_long_enough, 'minlength', PASSWORD_MIN_LENGTH);
 $form->addRule('first_name', $lng_enter_first_name, 'required');
 $form->addRule('last_name', $lng_enter_last_name, 'required');
 $form->addRule('address_city', $lng_enter_a." ". ADDRESS_LINE_3, 'required');
