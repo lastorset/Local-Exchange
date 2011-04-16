@@ -38,12 +38,14 @@ To install a new site:
 
 a) Using The Pear Installer
 If Pear is installed on your web server and you have admin access (see pear.php.net for more info) you can simply copy and paste the following command into a shell and then proceed to step 3: 
-"pear install -f File_PDF HTML_Common HTML_QuickForm HTML_Table HTTP HTTP_Download HTTP_Header Image_Transform Mail_Mime OLE Spreadsheet_Excel_Writer Text_Password".  
+"pear install -f File_PDF HTML_Common HTML_QuickForm HTML_Table HTTP HTTP_Download HTTP_Header Image_Transform Mail_Mime OLE Spreadsheet_Excel_Writer Text_Password".
 
-If you do not have admin access, your website administrator may be willing to run the above command for you. A simple call or email to your web host tech support should confirm one way or the other.
+If you wish to enable open registration, you also need to run "pear install Services_ReCaptcha". If you get an error about "preferred state 'stable'", you need to run "pear config-set preferred_state beta" to enable beta packages. After installation, enter "pear config-set preferred_state stable" to set it back the way it was.
+
+If you do not have admin access, your website administrator may be willing to run the above commands for you. A simple call or email to your web host tech support should confirm one way or the other.
 
 b) Download Pear Package from Sourceforge
-Since many inexpensive web hosting services will be unwilling to install anything for you, or give you access to do so, we have provided the complete set of required Pear libraries as a package on Soureforge that you can download.  Go to http://sourceforge.net/project/showfiles.php?group_id=136704 and download the pear-libraries package.  Uncompress the package.  The simplest option at this point is to ftp the contents of the "pear" folder (but not the "pear" folder itself) directly into the same folder you have uploaded the Local Exchange files.  This is messy and there may be security risks associated with it, but it will get the job done.  If you have done this, you can now proceed to step 3.
+Since many inexpensive web hosting services will be unwilling to install anything for you, or give you access to do so, we have provided the complete set of required Pear libraries as a package on Soureforge that you can download.  (The exception is Services_ReCaptcha, which is needed if you wish to allow public signup to your service. See step 2a above.)  Go to http://sourceforge.net/project/showfiles.php?group_id=136704 and download the pear-libraries package.  Uncompress the package.  The simplest option at this point is to ftp the contents of the "pear" folder (but not the "pear" folder itself) directly into the same folder you have uploaded the Local Exchange files.  This is messy and there may be security risks associated with it, but it will get the job done.  If you have done this, you can now proceed to step 3.
 
 The better option is to upload to a different location on the server that is not accessible by HTTP (but is accessible by FTP).  Often the default directory you are put into after a successful FTP connection will be such a location.  If so, you can upload the pear files (including the "pear" folder itself) here.  The final step is to edit the text configuration file "includes/inc.config.php" and set the PEAR_PATH value.  This value needs to be set to the full path of the new "pear" folder on the server.  You can find the path structure on your server by creating a file called info.php with the following contents:
 <?php
