@@ -195,9 +195,11 @@ function process_data ($values) {
 	if($created) {
 		$list .= $lng_member_created.". ".$lng_click." <A HREF=member_create.php>".$lng_here."</A> ". $lng_create_another_member_acc.".<P>".$lng_if_want_add_joint_member." <A HREF=member_contact_create.php?mode=admin&member_id=". $values["member_id"] .">".$lng_here."</A>.<P>";
 		if($values['email'] == "") {
-			$list .= $lng_member_no_email_address." ('". $values["member_id"]. "') ".$lng_and_pwd." ('". $values["password"] ."').";	
+			$msg_no_email = $lng_member_no_email_address." ('". $values["member_id"]. "') ".$lng_and_pwd." ('". $values["password"] ."').";
+			$list .= $msg_no_email;
+			mail(EMAIL_ADMIN, $lng_member_created .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM);
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n".$lng_member_id.": ". $values['member_id'] ."\n". $lng_pwd.": ". $values['password'], "From:".EMAIL_FROM); // added "From:" - by ejkv
+			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n".$lng_member_id.": ". $values['member_id'] ."\n". $lng_pwd.": ". $values['password'], "From:". EMAIL_FROM . (NEW_MEMBER_EMAIL_ADMIN ? "\r\nCc: ". EMAIL_ADMIN : "")); // added "From:" - by ejkv
 			if($mailed)
 				$list .= $lng_email_has_been_send_to." '". $values["email"] ."' ".$lng_containing_userid_and_pwd.".";
 			else
