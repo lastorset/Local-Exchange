@@ -108,8 +108,7 @@ define("SEARCHABLE_MEMBERS_LIST",true);
 /******************** SITE CUSTOMIZATION **********************/
 
 // email addresses & phone number to be listed in the site
-define ("EMAIL_FEATURE_REQUEST",""); // (is this actually used anywhere???)
-define ("EMAIL_ADMIN","info@LETSdomain.nl"); // email address Sanne / Marjan
+define ("EMAIL_ADMIN","info@LETSdomain.nl");
 
 define ("PHONE_ADMIN","Phone number"); // an email address may be substituted...
 
