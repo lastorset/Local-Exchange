@@ -3,10 +3,17 @@
 include_once("includes/inc.global.php");
 include("includes/inc.forms.php");
 
+// The rest of the form logic serves different results depending on whether the user is an admin or not.
 if (!SELF_REGISTRATION)
 	$cUser->MustBeLevel(1);
-$p->site_section = 0;
+else
+{
+	require_once('Services/ReCaptcha.php');
 
+	$recaptcha = new Services_ReCaptcha(RECAPTCHA_PUBKEY, RECAPTCHA_PRIVKEY);
+	$recaptcha->setOption('theme', 'white');
+}
+$p->site_section = 0;
 
 //
 // First, we define the form
@@ -73,7 +80,10 @@ $state_list[0]="---"; // added by ejkv
 $form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
 $form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
 $form->addElement("text", "address_country", $lng_country, array("size" => 25, "maxlength" => 50));
+
 $form->addElement("static", null, null, null);
+if (!$cUser->HasLevel(1))
+	$form->addElement("static", null, $recaptcha, null);
 $form->addElement('submit', 'btnSubmit', $lng_create_member);
 
 //
@@ -116,7 +126,7 @@ $form->addRule('fax', $lng_phone_not_valid, 'verify_phone_format');
 //
 // Check if we are processing a submission or just displaying the form
 //
-if ($form->validate()) { // Form is validated so processes the data
+if ($form->validate() && ($cUser->HasLevel(1) || $recaptcha->validate())) { // Form is validated so processes the data
    $form->freeze();
  	$form->process("process_data", false);
 } else {
