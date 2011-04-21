@@ -1,11 +1,19 @@
 <?php
 
 include_once("includes/inc.global.php");
-
-$cUser->MustBeLevel(1);
-$p->site_section = 0;
-
 include("includes/inc.forms.php");
+
+// The rest of the form logic serves different results depending on whether the user is an admin or not.
+if (!SELF_REGISTRATION)
+	$cUser->MustBeLevel(1);
+else
+{
+	require_once('Services/ReCaptcha.php');
+
+	$recaptcha = new Services_ReCaptcha(RECAPTCHA_PUBKEY, RECAPTCHA_PRIVKEY);
+	$recaptcha->setOption('theme', 'white');
+}
+$p->site_section = 0;
 
 //
 // First, we define the form
@@ -15,15 +23,24 @@ $form->addElement("html", "<TR></TR>");
 
 $form->addElement("text", "member_id", $lng_member_id, array("size" => 10, "maxlength" => 15));
 $form->addElement("text", "password", $lng_pwd, array("size" => 10, "maxlength" => 15));
-$form->addElement("select", "member_role", $lng_member_role, array("0"=>$lng_member, "1"=>$lng_committee, "2"=>$lng_admin));
+
+if ($cUser->HasLevel(1))
+	$form->addElement("select", "member_role", $lng_member_role, array("0"=>$lng_member, "1"=>$lng_committee, "2"=>$lng_admin));
+
 $acct_types = array("S"=>$lng_single, "J"=>$lng_joint, "H"=>$lng_household, "O"=>$lng_organisation, "B"=>$lng_business, "F"=>$lng_fund);
 $form->addElement("select", "account_type", $lng_account_type, $acct_types);
-$form->addElement("static", null, $lng_admin_note, null);
-$form->addElement("textarea", "admin_note", null, array("cols"=>45, "rows"=>2, "wrap"=>"soft", "maxlength" => 100));
+if ($cUser->IsLoggedOn()) // Administrative note not for self-registration
+{
+	$form->addElement("static", null, $lng_admin_note, null);
+	$form->addElement("textarea", "admin_note", null, array("cols"=>45, "rows"=>2, "wrap"=>"soft", "maxlength" => 100));
+}
 
 $today = getdate();
-$options = array("language"=> $lng_language, "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=>$today["year"]);
-$form->addElement("date", "join_date",	$lng_join_date, $options);	
+if ($cUser->HasLevel(1))
+{
+	$options = array("language"=> $lng_language, "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=>$today["year"]);
+	$form->addElement("date", "join_date",	$lng_join_date, $options);
+}
 $form->addElement("static", null, null, null);	
 
 $form->addElement("text", "first_name", $lng_first_name, array("size" => 15, "maxlength" => 20));
@@ -41,7 +58,12 @@ $form->addElement("text", "phone2", $lng_secondary_phone, array("size" => 20));
 $form->addElement("text", "fax", $lng_fax_number, array("size" => 20));
 $form->addElement("static", null, null, null);
 $frequency = array("0"=>$lng_never, "1"=>$lng_daily, "7"=>$lng_weekly, "30"=>$lng_monthly);
-$form->addElement("select", "email_updates", $lng_how_frequently_updates, $frequency);
+
+if ($cUser->IsLoggedOn()) // Registering other people gives a 3rd-person question
+	$form->addElement("select", "email_updates", $lng_how_frequently_updates, $frequency);
+else // Users registering themselves get a 2nd-person question
+	$form->addElement("select", "email_updates", $lng_how_frequently_updates_you, $frequency);
+
 $form->addElement("static", null, null, null);
 $form->addElement("text", "address_street1", ADDRESS_LINE_1, array("size" => 25, "maxlength" => 50));
 $form->addElement("text", "address_street2", ADDRESS_LINE_2, array("size" => 25, "maxlength" => 50));
@@ -58,7 +80,10 @@ $state_list[0]="---"; // added by ejkv
 $form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
 $form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
 $form->addElement("text", "address_country", $lng_country, array("size" => 25, "maxlength" => 50));
+
 $form->addElement("static", null, null, null);
+if (!$cUser->HasLevel(1))
+	$form->addElement("static", null, $recaptcha, null);
 $form->addElement('submit', 'btnSubmit', $lng_create_member);
 
 //
@@ -82,9 +107,11 @@ $form->addRule('password', $lng_pwd_must_contain_nmbr, 'verify_good_password');
 $form->registerRule('verify_no_apostraphes_or_backslashes','function','verify_no_apostraphes_or_backslashes');
 $form->addRule("password", $lng_no_apps_or_backslhs_in_pwd, "verify_no_apostraphes_or_backslashes");
 $form->registerRule('verify_role_allowed','function','verify_role_allowed');
-$form->addRule('member_role',$lng_cannot_assign_higher_level,'verify_role_allowed');
+if ($cUser->HasLevel(1))
+	$form->addRule('member_role',$lng_cannot_assign_higher_level,'verify_role_allowed');
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');
-$form->addRule('join_date', $lng_join_date_not_future, 'verify_not_future_date');
+if ($cUser->HasLevel(1))
+	$form->addRule('join_date', $lng_join_date_not_future, 'verify_not_future_date');
 $form->addRule('dob', $lng_birthday_not_in_future, 'verify_not_future_date');
 $form->registerRule('verify_reasonable_dob','function','verify_reasonable_dob');
 $form->addRule('dob', $lng_little_young_dont_you_think, 'verify_reasonable_dob');
@@ -99,7 +126,7 @@ $form->addRule('fax', $lng_phone_not_valid, 'verify_phone_format');
 //
 // Check if we are processing a submission or just displaying the form
 //
-if ($form->validate()) { // Form is validated so processes the data
+if ($form->validate() && ($cUser->HasLevel(1) || $recaptcha->validate())) { // Form is validated so processes the data
    $form->freeze();
  	$form->process("process_data", false);
 } else {
@@ -128,7 +155,17 @@ function process_data ($values) {
 	$values['primary_member'] = "Y";
 	$values['directory_list'] = "Y";
 
-	$date = $values['join_date'];
+	if (!$values['member_role'])
+		$values['member_role'] = 0;
+
+	if ($values['join_date'])
+	{
+		$date = $values['join_date'];
+	}
+	else
+	{
+		$date = array('Y' => $today['year'], 'F' => $today['mon'], 'd' => $today['mday']);
+	}
 	$values['join_date'] = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
 	$date = $values['dob'];
 	$values['dob'] = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
@@ -158,9 +195,11 @@ function process_data ($values) {
 	if($created) {
 		$list .= $lng_member_created.". ".$lng_click." <A HREF=member_create.php>".$lng_here."</A> ". $lng_create_another_member_acc.".<P>".$lng_if_want_add_joint_member." <A HREF=member_contact_create.php?mode=admin&member_id=". $values["member_id"] .">".$lng_here."</A>.<P>";
 		if($values['email'] == "") {
-			$list .= $lng_member_no_email_address." ('". $values["member_id"]. "') ".$lng_and_pwd." ('". $values["password"] ."').";	
+			$msg_no_email = $lng_member_no_email_address." ('". $values["member_id"]. "') ".$lng_and_pwd." ('". $values["password"] ."').";
+			$list .= $msg_no_email;
+			mail(EMAIL_ADMIN, $lng_member_created .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM);
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n".$lng_member_id.": ". $values['member_id'] ."\n". $lng_pwd.": ". $values['password'], "From:".EMAIL_FROM); // added "From:" - by ejkv
+			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n".$lng_member_id.": ". $values['member_id'] ."\n". $lng_pwd.": ". $values['password'], "From:". EMAIL_FROM . (NEW_MEMBER_EMAIL_ADMIN ? "\r\nCc: ". EMAIL_ADMIN : "")); // added "From:" - by ejkv
 			if($mailed)
 				$list .= $lng_email_has_been_send_to." '". $values["email"] ."' ".$lng_containing_userid_and_pwd.".";
 			else
