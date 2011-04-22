@@ -18,7 +18,7 @@ $p->page_title = $lng_edit." '". $pg["title"] ."'";
 
 $form->addElement("hidden","id",$_REQUEST["id"]);
 $form->addElement("text", "title", $lng_title, array("size" => 35, "maxlength" => 100));
-$form->addElement("textarea", "description", $lng_content, array("cols"=>65, "rows"=>5, "wrap"=>"soft"));
+$form->addElement("textarea", "description", $lng_content, array("cols"=>65, "rows"=>20, "wrap"=>"soft"));
 
 $form->addElement("submit", "btnSubmit", $lng_submit);
 

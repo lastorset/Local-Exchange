@@ -15,7 +15,7 @@ $p->page_title = $lng_create_new_info_page;
 //
 
 $form->addElement("text", "title", $lng_title, array("size" => 35, "maxlength" => 100));
-$form->addElement("textarea", "description", $lng_content, array("cols"=>55, "rows"=>5, "wrap"=>"soft")); // changed cols from 65 into 55 by ejkv
+$form->addElement("textarea", "description", $lng_content, array("cols"=>55, "rows"=>20, "wrap"=>"soft")); // changed cols from 65 into 55 by ejkv
 
 $form->addElement("submit", "btnSubmit", $lng_submit);
 
