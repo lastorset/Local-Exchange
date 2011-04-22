@@ -132,7 +132,17 @@ if ($form->validate() && ($cUser->HasLevel(1) || $recaptcha->validate())) { // F
 } else {
 	$today = getdate();
 	$current_date = array("Y"=>$today["year"], "F"=>$today["mon"], "d"=>$today["mday"]);
-	$defaults = array("password"=>$cUser->GeneratePassword(), "dob"=>$current_date, "join_date"=>$current_date, "account_type"=>"S", "member_role"=>"0", "email_updates"=>DEFAULT_UPDATE_INTERVAL, "address_state_code"=>DEFAULT_STATE, "address_country"=>DEFAULT_COUNTRY);
+	switch (DEFAULT_UPDATE_INTERVAL) {
+	case "NEVER":
+		$defaultUpdateInterval = 0; break;
+	case "DAILY":
+		$defaultUpdateInterval = 1; break;
+	case "WEEKLY":
+		$defaultUpdateInterval = 7; break;
+	case "MONTHLY":
+		$defaultUpdateInterval = 30; break;
+	}
+	$defaults = array("password"=>$cUser->GeneratePassword(), "dob"=>$current_date, "join_date"=>$current_date, "account_type"=>"S", "member_role"=>"0", "email_updates"=>$defaultUpdateInterval, "address_state_code"=>DEFAULT_STATE, "address_country"=>DEFAULT_COUNTRY);
 	$form->setDefaults($defaults);
    $p->DisplayPage($form->toHtml());  // just display the form
 }
