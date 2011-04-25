@@ -946,6 +946,36 @@ class cIncomeTies extends cMember {
 	
 }
 
+class cAllowanceLender extends cMember {
+	static function UpdateAllowance($newAmount)
+	{
+		global $cDB;
+		// TODO If the old and new amounts are equal, return.
+		try {
+			// TODO Test that the transaction fails and rolls back correctly
+			$cDB->BeginTransaction();
+			$balances = new cBalancesTotal;
+			if(!$balances->Balanced())
+				throw new Exception("Database was not balanced! (". __FUNCTION__ .", ". __FILE__ .":". __LINE__ .")");
+
+			// Create or delete special lending user if needed
+
+			// Make all the trades
+
+			/* If all goes well:
+				$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
+			*/
+		}
+		catch (Exception $e) {
+			$cDB->Rollback();
+			error_log($e->getMessage());
+			return false;
+		}
+		$cDB->Commit();
+		return true;
+	}
+}
+
 $cUser = new cMember();
 $cUser->RegisterWebUser();
 

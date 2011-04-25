@@ -184,7 +184,7 @@ $cDB->Query("CREATE TABLE `settings` (
   `descrip` text,
   `section` int(1) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35") or die("Error creating settings table.  Does the web user account have add table permission?");
+) ENGINE=InnoDB AUTO_INCREMENT=35") or die("Error creating settings table.  Does the web user account have add table permission?");
 
 // Populate the settings table...
 $cDB->Query("INSERT INTO `settings` VALUES ('8', 'LEECH_EMAIL_URUNLOCKED', '$lng_account_restriction_lifted_email', 'longtext', '', '', '$lng_restrictions_on_account_lifted', '', '$lng_define_email_restrictions_lifted', '3')") or die("Error - Could not insert row into settings table.");

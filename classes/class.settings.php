@@ -115,8 +115,11 @@ class cSettings {
 		}
 		
 		foreach ($sql_data as $setting => $value) {
-			
-			$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
+			// Special treatment for certain settings
+			if ($setting == "GENERAL_ALLOWANCE")
+				$result = cAllowanceLender::UpdateAllowance($setting);
+			else
+				$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
 			
 			if (!$result)
 				return "<font color=red>".$lng_update_failed."</font>".mysql_error();
