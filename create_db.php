@@ -233,6 +233,8 @@ $cDB->Query("INSERT INTO `settings` VALUES ('35', 'LEECH_NOTICE', '$lng_message_
 
 $cDB->Query("INSERT INTO `settings` VALUES ('36', 'SHOW_GLOBAL_FEES', '$lng_show_fees_and_charges_in_global_exchange_view', 'bool', '', null, 'FALSE', '', '$lng_show_fees_and_charges_comment', '7')") or die("Error - Could not insert row into settings table.");
 
+// TODO i18n
+$cDB->Query("INSERT INTO `settings` VALUES ('37', 'GENERAL_ALLOWANCE', 'General Member Allowance', 'int', '0', null, '0', null, 'Give every member this much money freely from a special lender. Useful to reduce psychological barriers to going into debt.', 2)") or die("Error - Could not insert row into settings table.");
 
 /* END upgrade to 1.01 */
 
