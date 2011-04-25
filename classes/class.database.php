@@ -40,6 +40,21 @@ class cDatabase
 		return $ret;
 	}
 
+	function BeginTransaction()
+	{
+		return $this->Query("START TRANSACTION");
+	}
+
+	function Rollback()
+	{
+		return $this->Query("ROLLBACK");
+	}
+
+	function Commit()
+	{
+		return $this->Query("COMMIT");
+	}
+
 	function NumRows($thequery)
 	{
 		if (!$this->isConnected)
