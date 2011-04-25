@@ -105,18 +105,18 @@ class cSettings {
 		
 		$this->retrieve();
 		
-		$stngs = $this->theSettings;
+		$settings = $this->theSettings;
 		
 		$sql_data = array();
 		
-		foreach($stngs as $s => $ss) {
+		foreach($settings as $setting) {
 			
-				$sql_data[''.$ss->name.''] = ''.$_REQUEST["".$ss->name.""].'';
+			$sql_data[''.$setting->name.''] = ''.$_REQUEST["".$setting->name.""].'';
 		}
 		
-		foreach ($sql_data as $column => $value) {
+		foreach ($sql_data as $setting => $value) {
 			
-			$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($column)."");
+			$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
 			
 			if (!$result)
 				return "<font color=red>".$lng_update_failed."</font>".mysql_error();
