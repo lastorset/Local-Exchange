@@ -42,7 +42,7 @@ class cTrade {
 		return $content;
 	}
 
-	function SaveTrade() {  // This function should never be called directly
+	private function SaveTrade() {
 		global $cDB, $cErr;
 		
 		$insert = $cDB->Query("INSERT INTO ". DATABASE_TRADES ." (trade_date, status, member_id_from, member_id_to, amount, category, description, type) VALUES (now(), ". $cDB->EscTxt($this->status) .", ". $cDB->EscTxt($this->member_from->member_id) .", ". $cDB->EscTxt($this->member_to->member_id) .", ". $cDB->EscTxt($this->amount) .", ". $cDB->EscTxt($this->category->id) .", ". $cDB->EscTxt($this->description) .", ". $cDB->EscTxt($this->type) .");");
