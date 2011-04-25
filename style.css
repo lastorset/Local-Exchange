@@ -49,14 +49,12 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
  #header {
  	background-color: #6C81C6;
  	color: #FFFFFF;
- 	background-image: url(url());
  }
  
  #footer {
  	background-color: #6C81C6;
  	color: #CCCCCC;
 	font-size: 10px;
- 	background-image:  url(url());
 	}
 
 #footer a:link, #footer a:visited {
