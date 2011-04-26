@@ -147,8 +147,6 @@ class cTrade {
 		}	
 
 		// NOTE: Need table type InnoDB to do the following transaction-style statements.		
-		$cDB->Query("SET AUTOCOMMIT=0");
-		
 		$cDB->Query("BEGIN");
 		
 		if($this->SaveTrade()) {
@@ -171,15 +169,12 @@ class cTrade {
 
 			if($success1 and $success2 and $success3 and $success4) {
 				$cDB->Query('COMMIT');
-				$cDB->Query("SET AUTOCOMMIT=1"); // Probably isn't necessary...
 				return true;
 			} else {
 				$cDB->Query('ROLLBACK');
-				$cDB->Query("SET AUTOCOMMIT=1"); // Probably isn't necessary...
 				return false;
 			}
 		} else {
-			$cDB->Query("SET AUTOCOMMIT=1"); // Probably isn't necessary...
 			return false;
 		}			
 	}
