@@ -38,9 +38,14 @@ class cDatabase
 				return TRUE;
 		}
 		else if (strpos(trim($thequery), "COMMIT") === 0)
+		{
 			if(--$this->tx_count > 0)
 				// There is another enclosing transaction, so don't COMMIT, just decrement.
 				return TRUE;
+		}
+		else if (strpos(trim($thequery), "ROLLBACK") === 0)
+			// All transactions aborted
+			$this->tx_count = 0;
 
 		if (!$this->isConnected)
 			$this->Connect();
