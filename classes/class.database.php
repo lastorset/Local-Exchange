@@ -29,23 +29,8 @@ class cDatabase
 
 	function Query($thequery)
 	{
-		// Intercept transaction-control statements to support nesting
-		if (strpos(trim($thequery), "BEGIN") === 0
-			|| strpos(trim($thequery), "START TRANSACTION") === 0)
-		{
-			if($this->tx_count++ > 0)
-				// We are inside a transaction, so don't START, just increment.
-				return TRUE;
-		}
-		else if (strpos(trim($thequery), "COMMIT") === 0)
-		{
-			if(--$this->tx_count > 0)
-				// There is another enclosing transaction, so don't COMMIT, just decrement.
-				return TRUE;
-		}
-		else if (strpos(trim($thequery), "ROLLBACK") === 0)
-			// All transactions aborted
-			$this->tx_count = 0;
+		if ($this->HandleNestedTransaction($thequery))
+			return true;
 
 		if (!$this->isConnected)
 			$this->Connect();
@@ -57,6 +42,32 @@ class cDatabase
 			error_log("MySQL query was: ". $thequery);
 		}
 		return $ret;
+	}
+
+	// Intercept transaction-control statements to support nesting
+
+	// Returns true if the query is handled by this method and should be blocked from execution,
+	// or false if nothing happened and it should execute normally.
+	// Even if the statement is blocked it is appropriate for Query to indicate success on return.
+	private function HandleNestedTransaction($thequery)
+	{
+		if (strpos(trim($thequery), "BEGIN") === 0
+			|| strpos(trim($thequery), "START TRANSACTION") === 0)
+		{
+			if($this->tx_count++ > 0)
+				// We are inside a transaction, so don't START, just increment.
+				return true;
+		}
+		else if (strpos(trim($thequery), "COMMIT") === 0)
+		{
+			if(--$this->tx_count > 0)
+				// There is another enclosing transaction, so don't COMMIT, just decrement.
+				return true;
+		}
+		else if (strpos(trim($thequery), "ROLLBACK") === 0)
+			// All transactions aborted
+			$this->tx_count = 0;
+		return false;
 	}
 
 	function BeginTransaction()
