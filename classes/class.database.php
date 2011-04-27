@@ -33,12 +33,12 @@ class cDatabase
 		if (strpos(trim($thequery), "BEGIN") === 0
 			|| strpos(trim($thequery), "START TRANSACTION") === 0)
 		{
-			if($tx_count++ > 0)
+			if($this->tx_count++ > 0)
 				// We are inside a transaction, so don't START, just increment.
 				return TRUE;
 		}
 		else if (strpos(trim($thequery), "COMMIT") === 0)
-			if(--$tx_count > 0)
+			if(--$this->tx_count > 0)
 				// There is another enclosing transaction, so don't COMMIT, just decrement.
 				return TRUE;
 
