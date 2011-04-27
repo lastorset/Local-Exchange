@@ -8,7 +8,7 @@ class cDatabase
 {
 	var $isConnected;
 	var $db_link;
-	var $tx_count;
+	var $tx_count = 0;
 
 	function Database()
 	{
