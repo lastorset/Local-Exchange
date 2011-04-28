@@ -953,7 +953,7 @@ class cAllowanceLender extends cMember {
 		// TODO If the old and new amounts are equal, return.
 		try {
 			// TODO Test that the transaction fails and rolls back correctly
-			$cDB->Query("BEGIN");
+			$cDB->BeginTransaction();
 			$balances = new cBalancesTotal;
 			if(!$balances->Balanced())
 				throw new Exception("Database was not balanced! (". __FUNCTION__ .", ". __FILE__ .":". __LINE__ .")");
