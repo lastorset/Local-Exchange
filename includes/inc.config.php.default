@@ -115,6 +115,11 @@ define("RECAPTCHA_PRIVKEY", "private key goes here");
 // Send administrator a copy of the welcome e-mail?
 define("NEW_MEMBER_EMAIL_ADMIN", true);
 
+// Allow admin to give users a general allowance?
+// This results in the creation of a special account to "lend" users the
+// money. A central bank of sorts.
+define("ENABLE_GENERAL_ALLOWANCE", true);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 
@@ -302,6 +307,8 @@ $CONTENT_TABLE = array("id"=>"contenttable", "cellspacing"=>"0", "cellpadding"=>
 $SYSTEM_EVENTS = array (
 	ACCOUT_EXPIRATION => 1440);  // Expire accounts once a day (every 1440 minutes)
 
+// Name of the special account for the general allowance lender.
+define ("ALLOWANCE_LENDER_ACCOUNT", "LENDER");
 
 /**********************************************************/
 //	Everything below this line simply sets up the config.
