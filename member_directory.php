@@ -155,7 +155,8 @@ if($member_list->members) {
 		// RF next condition is a hack to disable display of inactive members
 		if($member->status != "I" || SHOW_INACTIVE_MEMBERS==true)  { // force display of inactive members off, unless specified otherwise in config file
 		
-			if($member->account_type != "F") {  // Don't display fund accounts
+			if($member->account_type != "F"        // Don't display fund accounts
+				|| $member->account_type != "O") { // Don't display system accounts
 				
 				if($i % 2)
 					$bgcolor = "#e4e9ea";

@@ -60,8 +60,10 @@ class cDirectory {
 	
 	function PrintMembers() {	
 		foreach($this->member_list->members as $member) {
-			if ($member->account_type == "F")
-				continue;	// Skip fund accounts
+			if ($member->account_type == "F"    // Skip fund accounts
+				|| $member->account_type == "O" // Skip system accounts
+				)
+				continue;
 		
 			$this->PrintLine("");
 			$this->PrintTitle($member->PrimaryName());

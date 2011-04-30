@@ -18,7 +18,8 @@
 	$allmembers->LoadMemberGroup();
 	
 	foreach($allmembers->members as $member) {
-		if($member->account_type == "F")  // Skip fund accounts
+		if($member->account_type == "F"      // Skip fund accounts
+			|| $member->account_type == "O") // Skip system accounts
 			continue;
 			
 		$history = new cLoginHistory;
