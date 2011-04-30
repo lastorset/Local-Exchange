@@ -947,32 +947,83 @@ class cIncomeTies extends cMember {
 }
 
 class cAllowanceLender extends cMember {
-	static function UpdateAllowance($newAmount)
-	{
-		global $cDB;
-		// TODO If the old and new amounts are equal, return.
+	function Create() {
+		$admin = new cMember();
+		if (!$admin->LoadMember("ADMIN"))
+			throw new Exception("Account 'ADMIN' not found");
+
+		$this->member_id = ALLOWANCE_LENDER_ACCOUNT;
+		$this->password = $admin->password;
+		$this->member_role = 0;
+		$this->status = A;
+		$this->admin_note = "General allowance lender";
+		$this->join_date = date("Y-m-d");
+		$this->account_type = "O";
+		$this->email_updates = 0;
+		$this->balance = 0;	
+
+		$this->SaveNewMember();
+
+		cCategory::CreateSystemCategory();
+	}
+
+	static function UpdateAllowance($new_amount) {
+		global $cDB, $site_settings;
+
+		// Input validation
+		if (GENERAL_ALLOWANCE == $new_amount)
+			return;
+
+		if (!is_numeric($new_amount))
+			throw new InvalidArgumentException("New amount must be a number.");
+
+		// Check that database is balanced before we begin.
+		$balances = new cBalancesTotal;
+		if(!$balances->Balanced())
+			throw new Exception("Database was out of balance!");
+
 		try {
+			set_error_handler("exception_error_handler"); // so that we rollback correctly
 			// TODO Test that the transaction fails and rolls back correctly
 			$cDB->BeginTransaction();
-			$balances = new cBalancesTotal;
-			if(!$balances->Balanced())
-				throw new Exception("Database was not balanced! (". __FUNCTION__ .", ". __FILE__ .":". __LINE__ .")");
 
-			// Create or delete special lending user if needed
+			// Create special lending user if it doesn't exist
+			if (!$this->LoadMember(ALLOWANCE_LENDER_ACCOUNT))
+			{
+				$this->Create();
+			}
 
 			// Make all the trades
+			$diff = $new_amount - GENERAL_ALLOWANCE;
+			$members = new cMemberGroup();
+			$members = LoadMemberGroup(false, true);
+			
+			foreach ($members as $member)
+			{
+				if ($member->account_type == "F"    // Skip fund accounts
+					|| $member->account_type == "O" // Skip system accounts
+					)
+					continue;
+				
+				$trade = new cTrade($this, $member, $diff, 0, /* TODO i18n */ "General allowance");
+				
+				$status = $trade->MakeTrade();
 
-			/* If all goes well:
-				$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
-			*/
+				/* debug */ echo "<li>Gave {$member->member_id} $diff evnedaler.";
+			}
+
+			$result = $cDB->Query("update settings set current_value=".$new_amount." where name='GENERAL_ALLOWANCE'");
+
 		}
 		catch (Exception $e) {
 			$cDB->Rollback();
-			error_log($e->getMessage());
-			return false;
+			/* debug */ echo "Rolled back.";
+			error_log(__FUNCTION__ .": ". $e->getMessage());
+			restore_error_handler();
+			throw $e;
 		}
 		$cDB->Commit();
-		return true;
+		/* debug */ echo "Committed.";
 	}
 }
 
