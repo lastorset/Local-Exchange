@@ -54,6 +54,21 @@ class cCategory
 		
 		return $update;
 	}
+
+	// Creates the "System transaction" category. Used when distributing general allowances for the first time.
+	static function CreateSystemCategory() {
+		global $cDB;
+		if (new cCategory()->LoadCategory(0))
+			return true; // System category already created
+
+		$insert = $cDB->Query("INSERT INTO ". DATABASE_CATEGORIES ."(id, description) VALUES (0, 'System transaction')" /* TODO i18n */);
+
+		if(mysql_affected_rows() == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	function LoadCategory($id) {
 		global $cDB, $cErr, $lng_error_access_category_code, $lng_please_try_again_later;
@@ -119,6 +134,8 @@ class cCategoryList {
 		$i = 0;
 		while($row = mysql_fetch_array($query))
 		{
+			if ($row[0] == 0) // Don't list system transactions
+				continue;
 			$this->category[$i] = new cCategory;
 			$this->category[$i]->LoadCategory($row[0]);
 			$i += 1;
