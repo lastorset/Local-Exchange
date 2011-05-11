@@ -733,6 +733,7 @@ $lng_pwd_or_member_id_incorrect = "Wachtwoord of lidnummer is fout. Probeer het 
 $lng_to_have_pwd_reset = "om je wachtwoord te resetten"; //"to have your password reset";
 $lng_error_updating_pwd = "Het wachtwoord kan niet worden ge-reset."; //"There was an error updating the password.";
 $lng_if_you_dont_have_account = "Als je geen account of lidnummer hebt, neem contact met ons op om lid te worden."; //"If you don't have an account, please contact us to join.";
+$lng_if_you_dont_have_account_please_register = "If you don't have an account, you may <a href=/member_create.php>sign up online</a>.";
 $lng_logout = "Log uit"; //"Logout";
 $lng_access_denied_no_permission = "Kan de gevraagde actie niet uitvoeren omdat je niet voldoende rechten hebt"; //"I'm sorry, but the action attempted was unable to be processed because you don't have permissions";
 $lng_would_like_access_level_increased = "Als je je rechten wilt (laten) wijzigen,"; //"If you would like your access level increased, please";
