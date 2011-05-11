@@ -48,9 +48,11 @@ $form->addElement("text", "mid_name", $lng_middle_name, array("size" => 10, "max
 $form->addElement("text", "last_name", $lng_last_name, array("size" => 20, "maxlength" => 30));
 $form->addElement("static", null, null, null); 
 
+$form->addElement("static", null, $lng_fields_help_password_recovery, null);
 $options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>$today["year"]-120);
 $form->addElement("date", "dob", $lng_date_of_birth, $options);
 $form->addElement("text", "mother_mn", $lng_mothers_maiden_name, array("size" => 20, "maxlength" => 30)); 
+
 $form->addElement("static", null, null, null);
 $form->addElement("text", "email", $lng_email_address, array("size" => 25, "maxlength" => 40));
 $form->addElement("text", "phone1", $lng_primary_phone, array("size" => 20));

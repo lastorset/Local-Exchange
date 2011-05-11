@@ -379,6 +379,7 @@ $lng_choose_member_to_add_contact = "Kies lid om contact toe te voegen"; //"Choo
 $lng_first_name = "Voornaam"; //"First Name";
 $lng_middle_name = "Tussenvoegsel"; //"Middle Name";
 $lng_last_name = "Achternaam"; //"Last Name";
+$lng_fields_help_password_recovery = "The next two fields may help us recover your password if you forget it.";
 $lng_date_of_birth = "Geboortedatum"; //"Date of Birth";
 $lng_mothers_maiden_name = "Moeders eigen achternaam"; //"Mother's Maiden Name";
 $lng_list_persons_contact_info_to_dir = "Contactinformatie van dit lid in de lijst tonen?"; //"List this Person's Contact Information in the Directory?";

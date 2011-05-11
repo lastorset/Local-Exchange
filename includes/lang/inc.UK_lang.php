@@ -379,6 +379,7 @@ $lng_choose_member_to_add_contact = "Choose Member to Add Contact to";
 $lng_first_name = "First Name";
 $lng_middle_name = "Middle Name";
 $lng_last_name = "Last Name";
+$lng_fields_help_password_recovery = "The next two fields may help us recover your password if you forget it.";
 $lng_date_of_birth = "Date of Birth";
 $lng_mothers_maiden_name = "Mother's Maiden Name";
 $lng_list_persons_contact_info_to_dir = "List this Person's Contact Information in the Directory?";
