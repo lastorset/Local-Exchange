@@ -30,6 +30,7 @@ class cTrade {
 			$this->member_to = $member_to;
 			$this->type = $type;
 			$this->category = new cCategory();
+			throw new Exception("Loading category, we're about to crash!");
 			$this->category->LoadCategory($category);
 		}
 	}

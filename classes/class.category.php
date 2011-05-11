@@ -58,10 +58,11 @@ class cCategory
 	// Creates the "System transaction" category. Used when distributing general allowances for the first time.
 	static function CreateSystemCategory() {
 		global $cDB;
-		if (new cCategory()->LoadCategory(0))
+		$category = new cCategory();
+		if ($category->LoadCategory(0, false))
 			return true; // System category already created
 
-		$insert = $cDB->Query("INSERT INTO ". DATABASE_CATEGORIES ."(id, description) VALUES (0, 'System transaction')" /* TODO i18n */);
+		$insert = $cDB->Query("INSERT INTO ". DATABASE_CATEGORIES ."(category_id, description) VALUES (0, 'System transaction')" /* TODO i18n */);
 
 		if(mysql_affected_rows() == 1) {
 			return true;
@@ -70,7 +71,7 @@ class cCategory
 		}
 	}
 	
-	function LoadCategory($id) {
+	function LoadCategory($id, $redirect=true) {
 		global $cDB, $cErr, $lng_error_access_category_code, $lng_please_try_again_later;
 	
 		// select description for this code
@@ -80,9 +81,13 @@ class cCategory
 			$this->id = $id;
 			$this->parent = $row[0];
 			$this->description = $row[1];
+			return true;
 		} else {
-			$cErr->Error($lng_error_access_category_code." '".$id."'.  ".$lng_please_try_again_later.".");
-			include("redirect.php");
+			if ($redirect) {
+				$cErr->Error($lng_error_access_category_code." '".$id."'.  ".$lng_please_try_again_later.".");
+				include("redirect.php");
+			}
+			return false;
 		}			
 	}
 

@@ -948,6 +948,7 @@ class cIncomeTies extends cMember {
 
 class cAllowanceLender extends cMember {
 	function Create() {
+		echo "Creating allowance lender...";
 		$admin = new cMember();
 		if (!$admin->LoadMember("ADMIN"))
 			throw new Exception("Account 'ADMIN' not found");
@@ -964,18 +965,19 @@ class cAllowanceLender extends cMember {
 
 		$this->SaveNewMember();
 
-		cCategory::CreateSystemCategory();
+		if (!cCategory::CreateSystemCategory())
+			throw new Exception("Could not create system category.");
 	}
 
 	static function UpdateAllowance($new_amount) {
 		global $cDB, $site_settings;
 
 		// Input validation
-		if (GENERAL_ALLOWANCE == $new_amount)
-			return;
-
 		if (!is_numeric($new_amount))
 			throw new InvalidArgumentException("New amount must be a number.");
+
+		if (GENERAL_ALLOWANCE == $new_amount)
+			return;
 
 		// Check that database is balanced before we begin.
 		$balances = new cBalancesTotal;
@@ -983,20 +985,20 @@ class cAllowanceLender extends cMember {
 			throw new Exception("Database was out of balance!");
 
 		try {
-			set_error_handler("exception_error_handler"); // so that we rollback correctly
 			// TODO Test that the transaction fails and rolls back correctly
 			$cDB->BeginTransaction();
 
+			$lender = new cAllowanceLender();
 			// Create special lending user if it doesn't exist
-			if (!$this->LoadMember(ALLOWANCE_LENDER_ACCOUNT))
+			if (!$lender->LoadMember(ALLOWANCE_LENDER_ACCOUNT, false))
 			{
-				$this->Create();
+				$lender->Create();
 			}
 
 			// Make all the trades
 			$diff = $new_amount - GENERAL_ALLOWANCE;
 			$members = new cMemberGroup();
-			$members = LoadMemberGroup(false, true);
+			$members->LoadMemberGroup(false, true);
 			
 			foreach ($members as $member)
 			{
@@ -1005,9 +1007,10 @@ class cAllowanceLender extends cMember {
 					)
 					continue;
 				
-				$trade = new cTrade($this, $member, $diff, 0, /* TODO i18n */ "General allowance");
+				$trade = new cTrade($lender, $member, $diff, 0, /* TODO i18n */ "General allowance");
 				
-				$status = $trade->MakeTrade();
+				if (!$trade->MakeTrade())
+					throw new Exception("Could not give money to member ". $member->member_id);
 
 				/* debug */ echo "<li>Gave {$member->member_id} $diff evnedaler.";
 			}
@@ -1019,7 +1022,6 @@ class cAllowanceLender extends cMember {
 			$cDB->Rollback();
 			/* debug */ echo "Rolled back.";
 			error_log(__FUNCTION__ .": ". $e->getMessage());
-			restore_error_handler();
 			throw $e;
 		}
 		$cDB->Commit();

@@ -117,6 +117,8 @@ class cSettings {
 		foreach ($sql_data as $setting => $value) {
 			// Special treatment for certain settings
 			if ($setting == "GENERAL_ALLOWANCE")
+				// TODO: With all the potential error conditions, maybe this doesn't really belong in the settings,
+				// but rather in a separate admin screen. The amount could be stored in a new section 0 for hidden settings.
 				$result = cAllowanceLender::UpdateAllowance($setting);
 			else
 				$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
