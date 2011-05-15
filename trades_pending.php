@@ -17,8 +17,11 @@ $p->site_section = EXCHANGES;
 $p->page_title = $lng_exchanges_pending;
 
 $cUser->MustBeLoggedOn();
+$member = new cMember;
+$member = $cUser;
+$member_logged_in = $member->member_id;
 
-$pending = new cTradesPending($_SESSION["user_login"]);
+$pending = new cTradesPending($member_logged_in);
 
 $list = "<em>".$lng_only_transactions_pending_from_one_member." ".$lng_to_view_complete_history_click." <a href=trade_history.php?mode=self>".$lng_here."</a>.</em><p><A HREF=trades_pending.php><FONT SIZE=2>".$lng_summary."</FONT></A> | <A HREF=trades_pending.php?action=incoming><FONT SIZE=2>".$lng_payments_to_confirm." (".$pending->numToConfirm.")</FONT></A>";
 
@@ -118,7 +121,7 @@ function doTrade($t) {
 	$member_to = new cMember;
 	
 	if ($t["typ"]=='T')
-		$member_to->LoadMember($_SESSION["user_login"]);
+		$member_to->LoadMember($member_logged_in);
 	else
 		$member_to->LoadMember($t["member_id_from"]);
 		
@@ -127,7 +130,7 @@ function doTrade($t) {
 	if ($t["typ"]=='T')
 		$member->LoadMember($t["member_id_from"]);
 	else
-		$member->LoadMember($_SESSION["user_login"]);
+		$member->LoadMember($member_logged_in);
 		
 	$trade = new cTrade($member, $member_to, htmlspecialchars($t['amount']), htmlspecialchars($t['category']), 		htmlspecialchars($t['description']), 
 		"T");
@@ -171,7 +174,7 @@ switch($_REQUEST["action"]) {
 			$row = mysql_fetch_array($result);
 			
 			// Do we have permission to act on this trade?
-			if ($row["member_id_from"]!=$_SESSION["user_login"]) {
+			if ($row["member_id_from"]!=$member_logged_in) {
 				
 				$list .= "<em>".$lng_trade_not_exist_or_no_permission."</em>";
 				
@@ -214,7 +217,7 @@ switch($_REQUEST["action"]) {
 			$row = mysql_fetch_array($result);
 			
 			// Do we have permission to act on this trade?
-			if ($row["member_id_from"]!=$_SESSION["user_login"]) {
+			if ($row["member_id_from"]!=$member_logged_in) {
 				
 				$list .= "<em>".$lng_trade_not_exist_or_no_permission."</em>";
 				
@@ -257,7 +260,7 @@ switch($_REQUEST["action"]) {
 			$row = mysql_fetch_array($result);
 			
 			// Do we have permission to act on this trade?
-			if ($row["member_id_to"]!=$_SESSION["user_login"]) {
+			if ($row["member_id_to"]!=$member_logged_in) {
 				
 				$list .= "<em>".$lng_trade_not_exist_or_no_permission."</em>";
 				
@@ -271,13 +274,12 @@ switch($_REQUEST["action"]) {
 				break;
 			}
 			
-			if ($row["typ"]=='T' && $row["member_id_to"]==$_SESSION["user_login"]) { // We want to reject the payment!
+			if ($row["typ"]=='T' && $row["member_id_to"]==$member_logged_in) { // We want to reject the payment!
 				
 				$q = "UPDATE trades_pending set member_to_decision=3 where id=".$cDB->EscTxt($row["id"])."";
 			}
 	
-			else if ($row["typ"]=='I' && $row["member_id_to"]==$_SESSION["user_login"]) { // We don't want to pay this invoice!
-				
+			else if ($row["typ"]=='I' && $row["member_id_to"]==$member_logged_in) { // We don't want to pay this invoice!
 				$q = "UPDATE trades_pending set member_to_decision=3 where id=".$cDB->EscTxt($row["id"])."";
 			}
 			
@@ -302,7 +304,7 @@ switch($_REQUEST["action"]) {
 			$row = mysql_fetch_array($result);
 			
 			// Do we have permission to act on this trade?
-			if ($row["member_id_from"]!=$_SESSION["user_login"] && $row["member_id_to"]!=$_SESSION["user_login"]) {
+			if ($row["member_id_from"]!=$member_logged_in && $row["member_id_to"]!=$member_logged_in) {
 				
 				$list .= "<em>".$lng_trade_not_exist_or_no_permission."</em>";
 				
@@ -316,20 +318,16 @@ switch($_REQUEST["action"]) {
 				break;
 			}
 			
-			if ($row["typ"]=='T' && $row["member_id_from"]==$_SESSION["user_login"]) { // Our sent payment has finally been confirmed!
-				
+			if ($row["typ"]=='T' && $row["member_id_from"]==$member_logged_in) { // Our sent payment has finally been confirmed!
 				$q = "UPDATE trades_pending set member_from_decision=2 where id=".$cDB->EscTxt($row["id"])."";
 			}
-			else if ($row["typ"]=='T' && $row["member_id_to"]==$_SESSION["user_login"]) { // We have confirmed receipt of a payment!
-				
+			else if ($row["typ"]=='T' && $row["member_id_to"]==$member_logged_in) { // We have confirmed receipt of a payment!
 				$q = "UPDATE trades_pending set member_to_decision=2 where id=".$cDB->EscTxt($row["id"])."";
 			}
-			else if ($row["typ"]=='I' && $row["member_id_from"]==$_SESSION["user_login"]) { // Our invoice has finally been paid!
-				
+			else if ($row["typ"]=='I' && $row["member_id_from"]==$member_logged_in) { // Our invoice has finally been paid!
 				$q = "UPDATE trades_pending set member_from_decision=2 where id=".$cDB->EscTxt($row["id"])."";
 			}		
-			else if ($row["typ"]=='I' && $row["member_id_to"]==$_SESSION["user_login"]) { // We have now paid this invoice!
-				
+			else if ($row["typ"]=='I' && $row["member_id_to"]==$member_logged_in) { // We have now paid this invoice!
 				$q = "UPDATE trades_pending set member_to_decision=2 where id=".$cDB->EscTxt($row["id"])."";
 			}
 			
@@ -364,7 +362,7 @@ switch($_REQUEST["action"]) {
 				if ($row["typ"]=='T') { // Payment - we are confirming receipt of incoming
 					
 					// Check we are the intended recipient
-					if ($row["member_id_to"]!=$_SESSION["user_login"])
+					if ($row["member_id_to"]!=$member_logged_in)
 						
 						$list .= "<em>".$lng_no_permission_to_confirm_trade."</em>";
 					else { // Action the trade
@@ -382,7 +380,7 @@ switch($_REQUEST["action"]) {
 				else if ($row["typ"]=='I') { // Invoice - we are sending a payment
 				
 						// Check we are the intended recipient of the invoice
-					if ($row["member_id_to"]!=$_SESSION["user_login"])
+					if ($row["member_id_to"]!=$member_logged_in)
 						
 						$list .= "<em>".$lng_no_permission_to_confirm_trade."</em>";
 					else { // Action the trade
@@ -396,7 +394,7 @@ switch($_REQUEST["action"]) {
 							if (!doTrade($row)) {
 								
 								$member = new cMember;
-								$member->LoadMember($_SESSION["user_login"]);
+								$member->LoadMember($member_logged_in);
 								if ($member->restriction==1) {
 									$list .= LEECH_NOTICE;
 								}
@@ -427,7 +425,7 @@ switch($_REQUEST["action"]) {
 		$cDB->Query("INSERT INTO trades_pending (trade_date, member_id_from, member_id_to, amount, category, description, typ) VALUES (now(), ". 	$cDB->EscTxt($member->member_id) .", ". $cDB->EscTxt($member_to_id) .", ". $cDB->EscTxt($values["units"]) .", ". $cDB->EscTxt($values["category"]) .", ". 	$cDB->EscTxt($values["description"]) .", \"T\");");
 		*/
 		
-		$q = "SELECT * FROM trades_pending where member_id_to=".$cDB->EscTxt($_SESSION["user_login"])." and typ='T' and member_to_decision = 1";
+		$q = "SELECT * FROM trades_pending where member_id_to=".$cDB->EscTxt($member_logged_in)." and typ='T' and member_to_decision = 1";
 	
 		$result = $cDB->Query($q);
 	
@@ -452,7 +450,7 @@ switch($_REQUEST["action"]) {
 	
 		$list .= "<b>".$lng_invoices_need_paying."..</b><p>";
 		
-		$q = "SELECT * FROM trades_pending where member_id_to=".$cDB->EscTxt($_SESSION["user_login"])." and typ='I' and member_to_decision = 1";
+		$q = "SELECT * FROM trades_pending where member_id_to=".$cDB->EscTxt($member_logged_in)." and typ='I' and member_to_decision = 1";
 	
 		$result = $cDB->Query($q);
 	
@@ -483,7 +481,7 @@ switch($_REQUEST["action"]) {
 		$cDB->Query("INSERT INTO trades_pending (trade_date, member_id_from, member_id_to, amount, category, description, typ) VALUES (now(), ". 	$cDB->EscTxt($member->member_id) .", ". $cDB->EscTxt($member_to_id) .", ". $cDB->EscTxt($values["units"]) .", ". $cDB->EscTxt($values["category"]) .", ". 	$cDB->EscTxt($values["description"]) .", \"T\");");
 		*/
 		
-		$q = "SELECT * FROM trades_pending where member_id_from=".$cDB->EscTxt($_SESSION["user_login"])." and typ='T' and member_from_decision = 1";
+		$q = "SELECT * FROM trades_pending where member_id_from=".$cDB->EscTxt($member_logged_in)." and typ='T' and member_from_decision = 1";
 	
 		$result = $cDB->Query($q);
 	
@@ -514,7 +512,7 @@ switch($_REQUEST["action"]) {
 		$cDB->Query("INSERT INTO trades_pending (trade_date, member_id_from, member_id_to, amount, category, description, typ) VALUES (now(), ". 	$cDB->EscTxt($member->member_id) .", ". $cDB->EscTxt($member_to_id) .", ". $cDB->EscTxt($values["units"]) .", ". $cDB->EscTxt($values["category"]) .", ". 	$cDB->EscTxt($values["description"]) .", \"T\");");
 		*/
 		
-		$q = "SELECT * FROM trades_pending where member_id_from=".$cDB->EscTxt($_SESSION["user_login"])." and typ='I' and member_from_decision = 1";
+		$q = "SELECT * FROM trades_pending where member_id_from=".$cDB->EscTxt($member_logged_in)." and typ='I' and member_from_decision = 1";
 	
 		$result = $cDB->Query($q);
 	
