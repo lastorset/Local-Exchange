@@ -17,7 +17,6 @@ $p->site_section = EXCHANGES;
 $p->page_title = $lng_exchanges_pending;
 
 $cUser->MustBeLoggedOn();
-$member = new cMember;
 $member = $cUser;
 $member_logged_in = $member->member_id;
 
