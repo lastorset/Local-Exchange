@@ -105,12 +105,7 @@ define("SEARCHABLE_MEMBERS_LIST",true);
 // END 01-12-08 changes by chris
 
 // Allow anonymous users to register?
-// If this is switched on, you need an API key for ReCaptcha.
-// See https://www.google.com/recaptcha/admin/create and enter the keys
-// in RECAPTCHA_PUBKEY and RECAPTCHA_PRIVKEY below.
 define("SELF_REGISTRATION", false);
-define("RECAPTCHA_PUBKEY", "public key goes here");
-define("RECAPTCHA_PRIVKEY", "private key goes here");
 
 // Send administrator a copy of the welcome e-mail?
 define("NEW_MEMBER_EMAIL_ADMIN", true);
