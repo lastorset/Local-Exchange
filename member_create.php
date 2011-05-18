@@ -4,7 +4,7 @@ include_once("includes/inc.global.php");
 include("includes/inc.forms.php");
 
 // The rest of the form logic serves different results depending on whether the user is an admin or not.
-if (!SELF_REGISTRATION)
+if (SELF_REGISTRATION !== true)
 	$cUser->MustBeLevel(1);
 $p->site_section = 0;
 
