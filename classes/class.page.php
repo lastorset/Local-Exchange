@@ -53,7 +53,7 @@ class cPage {
 	<HEAD>
 		<link rel="stylesheet" href="http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}" type="text/css"></link>
 		<link rel="shortcut icon" href="http://{$c['IMAGES_PATH']}{$c['FAVICON']}" />
-		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<meta name="description" content="{$this->page_title}">
 		<meta name="keywords" content="{$this->keywords}">
 		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
