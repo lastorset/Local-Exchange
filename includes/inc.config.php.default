@@ -49,6 +49,10 @@ define ("SITE_LONG_TITLE", "LETSlongname");
 // What is the short, friendly, name of the site?
 define ("SITE_SHORT_TITLE", "LETSname");
 
+// Home page title and taglines
+define ("SITE_HOME_TITLE", "Local Exchange");
+define ("SITE_HOME_TAGLINE", "A Mutual Credit Time Dollars System");
+
 /**********************************************************/
 /***************** FOR MAINTENANCE ************************/
 
@@ -134,9 +138,6 @@ define ("HEADER_LOGO", "localx_logo.png"); // changed by ejkv
 
 // Title Graphic for Header
 define ("HEADER_TITLE", "localx_title.png");
-
-// Logo for Home Page
-define ("HOME_LOGO", "localx_black.png");
 
 // Picture appearing left of logo on Home Page
 define ("HOME_PIC", "localx_home.png");

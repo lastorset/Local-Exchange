@@ -133,3 +133,32 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
 	padding: 10px;
 
 }
+
+.homepage .logoheader {
+	display: table-row;
+	font-family: serif;
+}
+
+.homepage .logoheader > * {
+	display: table-cell;
+}
+
+.homepage .logoheader img {
+	padding-right: 7px;
+}
+
+.homepage .logoheader div {
+	vertical-align: middle;
+}
+
+.homepage .logoheader h1 {
+	margin-bottom: 5px;
+	text-shadow: 4px 4px 6px silver;
+	font-weight: 700;
+	font-size: 25px;
+}
+
+.homepage .logoheader .tagline {
+	color: #897413;
+	font-weight: bold;
+}
