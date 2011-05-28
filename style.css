@@ -50,6 +50,20 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
  	background-color: #6C81C6;
  	color: #FFFFFF;
  }
+
+ #header h1, #header div {
+	color: #d7dbeb;
+	text-align: right;
+	font-family: serif;
+	font-weight: bold;
+	text-shadow: 2px 2px 0px #122;
+ }
+
+ #header h1 {
+	margin-bottom: 0;
+	font-size: 25px;
+	text-shadow: 2px 2px 2px #122;
+ }
  
  #footer {
  	background-color: #6C81C6;

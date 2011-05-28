@@ -52,6 +52,8 @@ define ("SITE_SHORT_TITLE", "LETSname");
 // Home page title and taglines
 define ("SITE_HOME_TITLE", "Local Exchange");
 define ("SITE_HOME_TAGLINE", "A Mutual Credit Time Dollars System");
+define ("SITE_TOP_TITLE", "Local Exchange");
+define ("SITE_TOP_TAGLINE", "your talents • your energy • your community");
 
 /**********************************************************/
 /***************** FOR MAINTENANCE ************************/
@@ -136,14 +138,11 @@ define ("FAVICON", "localx_logo.png");
 // Logo Graphic for Header
 define ("HEADER_LOGO", "localx_logo.png"); // changed by ejkv
 
-// Title Graphic for Header
-define ("HEADER_TITLE", "localx_title.png");
-
 // Picture appearing left of logo on Home Page
 define ("HOME_PIC", "localx_home.png");
 
 // What content should be in the site header and footer?
-define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1 align=right><img src=\"http://".HTTP_BASE."/images/". HEADER_TITLE ."\"></h1></td></tr>");
+define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1>". SITE_TOP_TITLE ."</h1><div>". SITE_TOP_TAGLINE ."</div></td></tr>");
 
 define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">".$lng_licenced_under." <a href=\"http://www.gnu.org/copyleft/gpl.html\">".$lng_gpl."</a> &#8226; ".$lng_local_exchange_uk_ver." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">".$lng_credits."</a></td></tr></table><br>");
 
