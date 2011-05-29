@@ -8,9 +8,9 @@ $cUser->MustBeLevel(2); // Wouldn't make sense to allow anyone below the top Adm
 
 $p->site_section = EVENTS;
 
-$p->page_title = $lng_edit_info_page_permissions;
+$p->page_title = _("Edit Information Page Permissions");
 
-$output = $lng_permission_level_message;
+$output = _("*The Permissions level denotes the MINIMUM level a user must be to view the page. So, a page set with 'Committee' permissions would be visible to Committee AND Admin users, but not to those below Committee level (i.e. Members and Guests). Setting the permissions to 'Guests' effectively removes the permissions from that page and renders it visible to anyone and everyone.");
 
 $pgs = cInfo::LoadPages();
 
@@ -23,7 +23,7 @@ if ($_REQUEST["process"]==true) {
 		$cDB->Query($q);
 	}
 	
-	$output = $lng_info_page_permissions_updated;
+	$output = _("Info page permissions updated successfully.");
 	
 	$p->DisplayPage($output);
 
@@ -42,16 +42,15 @@ if ($pgs) {
 	}
 	
 	$output .= "</table><p>";
-	$output .= "<input type=submit value=".$lng_update_permissions."></form>";
+	$output .= "<input type=submit value="._("Update Permissions")."></form>";
 }
 else
-	$output .= $lng_no_info_pages;
+	$output .= _("No info pages found!");
 	
 $p->DisplayPage($output);
 
 function doPermissionsSelect($p) {
-	global $lng_guests, $lng_members, $lng_committee, $lng_admin;
-	$pTexts = Array($lng_guests,$lng_members,$lng_committee,$lng_admin);
+	$pTexts = Array(_("Guests"),_("Members"),_("Committee"),_("Admin"));
 		
 	$tmp = "<select name=p".$p["id"].">";
 	
@@ -72,11 +71,10 @@ function doPermissionsSelect($p) {
 }
 
 function permission2text($p) {
-	global $lng_guests, $lng_members, $lng_committee, $lng_admin;
 	if (!$p)
 		$p = 0;
 		
-	$pTexts = Array($lng_guests,$lng_members,$lng_committe,$lng_admin);
+	$pTexts = Array(_("Guests"),_("Members"),_("committe" /* orphaned string */),_("Admin"));
 	
 	return $pTexts[$p];
 }

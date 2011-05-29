@@ -8,9 +8,9 @@ $cUser->MustBeLevel(2);
 
 $p->site_section = EVENTS;
 
-$p->page_title = $lng_manage_account_restrictions;
+$p->page_title = _("Manage Account Restrictions");
 
-$output = $lng_restrictions_can_be_placed.".<p>";
+$output = _("Restrictions can be placed on accounts if you feel they are over-using the services of others and not offering enough back in return").".<p>";
 
 $query = $cDB->Query("SELECT * FROM ". DATABASE_MEMBERS .",". DATABASE_PERSONS." WHERE ". DATABASE_MEMBERS .".member_id=". DATABASE_PERSONS.".member_id". $exclusions. " AND primary_member='Y' ORDER BY first_name, last_name;");
 
@@ -52,7 +52,7 @@ if ($_REQUEST["process"]) {
 		
 		if (!$_REQUEST["ok"]) {
 				
-				$output .= $lng_error_no_member_id;
+				$output .= _("Error: No member ID specified.");
 				
 				break;
 			}
@@ -63,11 +63,11 @@ if ($_REQUEST["process"]) {
 			$query = $cDB->Query("UPDATE ". DATABASE_MEMBERS ." set restriction=1 WHERE member_id=".$cDB->EscTxt($_REQUEST["ok"])."");
 			
 			if (!$query)
-				$output .= $lng_error_could_not_impose_restrictions.".<p>".$lng_mysql_said.": ".mysql_error();
+				$output .= _("Error: could not impose restrictions on this account").".<p>"._("MySQL Said").": ".mysql_error();
 			else {
-				$output .= $lng_restrictions_imposed." '".$_REQUEST["ok"]."'";
+				$output .= _("Restrictions have been imposed on member id")." '".$_REQUEST["ok"]."'";
 				
-				$mailed = mail($member->person[0]->email, $lng_acces_restricted_on." ".SITE_LONG_TITLE."", LEECH_EMAIL_URLOCKED , "From:".EMAIL_FROM); // added "From:" - by ejkv
+				$mailed = mail($member->person[0]->email, _("Access Restricted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URLOCKED , "From:".EMAIL_FROM); // added "From:" - by ejkv
 			
 			}
 			
@@ -77,7 +77,7 @@ if ($_REQUEST["process"]) {
 			
 			if (!$_REQUEST["restricted"]) {
 				
-				$output .= $lng_error_no_member_id;
+				$output .= _("Error: No member ID specified.");
 				
 				break;
 			}
@@ -88,11 +88,11 @@ if ($_REQUEST["process"]) {
 			$query = $cDB->Query("UPDATE ". DATABASE_MEMBERS ." set restriction=0 WHERE member_id=".$cDB->EscTxt($_REQUEST["restricted"])."");
 			
 			if (!$query)
-				$output .= $lng_error_could_not_lift_restrictions.".<p>".$lng_mysql_said.": ".mysql_error();
+				$output .= _("Error: could not lift restrictions on this account").".<p>"._("MySQL Said").": ".mysql_error();
 			else {
-				$output .= $lng_restrictions_lifted." '".$_REQUEST["restricted"]."'";
+				$output .= _("Restrictions have been lifted on member id")." '".$_REQUEST["restricted"]."'";
 				
-				$mailed = mail($member->person[0]->email, $lng_account_restrictions_lifted_on." ".SITE_LONG_TITLE."", LEECH_EMAIL_URUNLOCKED , "From:".EMAIL_FROM); // Added "From:" - by ejkv
+				$mailed = mail($member->person[0]->email, _("Account Restrictions lifted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URUNLOCKED , "From:".EMAIL_FROM); // Added "From:" - by ejkv
 			}
 			
 		break;
@@ -104,7 +104,7 @@ if ($_REQUEST["process"]) {
 
 $output .= "<form method=POST><input type=hidden name=process value='actionOnMember'>";
 
-$output .= "<font color=green>".$lng_non_restricted."</font> ".$lng_members."<br>";
+$output .= "<font color=green>"._("Non-Restricted")."</font> "._("Members")."<br>";
 $output .= "<select name=ok>";
 
 foreach($okM as $key => $m) {
@@ -113,9 +113,9 @@ foreach($okM as $key => $m) {
 }
 
 $output .= "</select>";
-$output .= "<input name='doRestrict' type=submit value=".$lng_impose_restriction.">";
+$output .= "<input name='doRestrict' type=submit value="._("Impose Restriction").">";
 
-$output .= "<p><font color=red>".$lng_restricted."</font> ".$lng_members."<br>";
+$output .= "<p><font color=red>"._("Restricted")."</font> "._("Members")."<br>";
 $output .= "<select name=restricted>";
 
 foreach($restrictedM as $key => $m) {
@@ -124,7 +124,7 @@ foreach($restrictedM as $key => $m) {
 }
 
 $output .= "</select>";
-$output .= "<input name='liftRestrict' type=submit value=".$lng_lift_restrictions.">";
+$output .= "<input name='liftRestrict' type=submit value="._("Lift Restriction").">";
 
 
 $output .= "</form>";

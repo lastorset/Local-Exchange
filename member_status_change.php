@@ -8,9 +8,9 @@ $p->site_section = ADMINISTRATION;
 $member = new cMember;
 $member->LoadMember($_REQUEST["member_id"]);
 if($member->status == 'A')
-	$p->page_title = $lng_inactivate." ";
+	$p->page_title = _("Inactivate")." ";
 else
-	$p->page_title = $lng_reactivate." ";
+	$p->page_title = _("Re-activate")." ";
 	
 $p->page_title .= $member->PrimaryName() ." (". $member->member_id .")";
 
@@ -20,13 +20,13 @@ include_once("classes/class.news.php");
 $form->addElement("hidden", "member_id", $_REQUEST["member_id"]);
 
 if($member->status == 'A') {
-	$form->addElement("static", null, $lng_sure_to_inactivate_member, null);
+	$form->addElement("static", null, _("Are you sure you want to inactivate this member?  They will no longer be able to use this website, and all their listings will be inactivated as well."), null);
 	$form->addElement("static", null, null, null);
-	$form->addElement('submit', 'btnSubmit', $lng_inactivate);
+	$form->addElement('submit', 'btnSubmit', _("Inactivate"));
 } else {
-	$form->addElement("static", null, $lng_sure_to_reactivate_member, null);
+	$form->addElement("static", null, _("Are you sure you want to re-activate this member?  Their listings will need to be reactivated individually or new ones created."), null);
 	$form->addElement("static", null, null, null);
-	$form->addElement('submit', 'btnSubmit', $lng_reactivate);
+	$form->addElement('submit', 'btnSubmit', _("Re-activate"));
 }
 
 if ($form->validate()) { // Form is validated so processes the data
@@ -37,7 +37,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member, $lng_changes_member_status_saved, $lng_error_saving_member_status, $lng_try_again_later;
+	global $p, $member;
 	
 	if($member->status == 'A') {
 		$success = $member->DeactivateMember();
@@ -56,9 +56,9 @@ function process_data ($values) {
 	}
 
 	if($success)
-		$output = $lng_changes_member_status_saved;
+		$output = _("Changes to member status saved.");
 	else
-		$output = $lng_error_saving_member_status." ".$lng_try_again_later;	
+		$output = _("There was an error changing the member's status.")." "._("Please try again later.");	
 			
 	$p->DisplayPage($output);
 }

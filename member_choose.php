@@ -3,7 +3,7 @@ include_once("includes/inc.global.php");
 $cUser->MustBeLevel(1);
 
 $p->site_section = ADMINISTRATION;
-$p->page_title = $lng_for_which_member;
+$p->page_title = _("For which member?");
 
 include("includes/inc.forms.php");
 
@@ -23,9 +23,9 @@ if(isset($_REQUEST["inactive"]))
 else
 	$ids->LoadMemberGroup();
 	
-$form->addElement("select", "member_id", $lng_member, $ids->MakeIDArray());
+$form->addElement("select", "member_id", _("Member"), $ids->MakeIDArray());
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();

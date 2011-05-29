@@ -7,10 +7,10 @@ $p->site_section = LISTINGS;
 $title = $cDB->UnEscTxt($_REQUEST['title']);
 
 if ($_REQUEST["type"]==Offer) // added to translate Offerd and Wanted in page title - by ejkv
-    $listing_name=$lng_offered;
+    $listing_name=_("Offered");
 else
-    $listing_name=$lng_wanted;
-$p->page_title = $lng_edit." ". $listing_name .': '.$title; // $_REQUEST['type'] replaced by $listing_name - by ejkv
+    $listing_name=_("Wanted");
+$p->page_title = _("Edit")." ". $listing_name .': '.$title; // $_REQUEST['type'] replaced by $listing_name - by ejkv
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -28,35 +28,35 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for ano
 	$form->addElement("hidden","mode","self");
 }
 
-$form->addRule('title',$lng_enter_title,'required');
+$form->addRule('title',_("Enter a title"),'required');
 $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');
 //$form->addRule('title','You already have a listing with this title','verify_not_duplicate');
 $category_list = new cCategoryList();
-$form->addElement('select', 'category', $lng_category, $category_list->MakeCategoryArray());
+$form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
 
 if(USE_RATES)
-	$form->addElement('text', 'rate', $lng_rate, array('size' => 15, 'maxlength' => 30));
+	$form->addElement('text', 'rate', _("Rate"), array('size' => 15, 'maxlength' => 30));
 else
 	$form->addElement('hidden', 'rate');
 
 $form->addElement('hidden', 'title', $title);
 $form->addElement('hidden','type',$_REQUEST['type']);
-$form->addElement('static', null, $lng_description, null);
+$form->addElement('static', null, _("Description"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>45, 'rows'=>5, 'wrap'=>'soft'));
 $form->addElement('html', '<TR><TD></TD><TD><BR></TD></TR>');
-$form->addElement('advcheckbox', 'set_expire_date', $lng_should_automatically_expire);
+$form->addElement('advcheckbox', 'set_expire_date', _("Should this listing be set to automatically expire?"));
 $today = getdate();
 $options = array('language'=> 'en', 'format' => 'dFY', 'minYear' => $today['year'],'maxYear' =>$today['year']+5, 'addEmptyOption'=>'Y', 'emptyOptionValue'=>'0');
-$form->addElement('date','expire_date', $lng_expires, $options);
+$form->addElement('date','expire_date', _("Expires"), $options);
 $form->registerRule('verify_future_date','function','verify_future_date');
-$form->addRule('expire_date',$lng_expiration_future_date,'verify_future_date');
+$form->addRule('expire_date',_("Expiration must be for a future date"),'verify_future_date');
 $form->registerRule('verify_valid_date','function','verify_valid_date');
-$form->addRule('expire_date',$lng_date_invalid,'verify_valid_date');
-$form->addElement('advcheckbox', 'set_reactivate_date', $lng_should_listing_temp_inactive);
-$form->addElement('date','reactivate_date', $lng_reactivates, $options);
-$form->addRule('reactivate_date',$lng_must_be_future_date,'verify_future_date');
-$form->addRule('reactivate_date',$lng_date_invalid,'verify_valid_date');
-$form->addElement('submit', 'btnSubmit', $lng_update);
+$form->addRule('expire_date',_("Date is invalid"),'verify_valid_date');
+$form->addElement('advcheckbox', 'set_reactivate_date', _("Should this listing be made temporarily inactive?"));
+$form->addElement('date','reactivate_date', _("Reactivates"), $options);
+$form->addRule('reactivate_date',_("Must be a future date"),'verify_future_date');
+$form->addRule('reactivate_date',_("Date is invalid"),'verify_valid_date');
+$form->addElement('submit', 'btnSubmit', _("Update"));
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -92,7 +92,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr, $cDB, $title, $lng_listings_chages_saved_want_to, $lng_lc_edit, $lng_another_listing, $lng_error_saving_listing, $lng_try_again_later;
+	global $p, $cUser,$cErr, $cDB, $title;
 	$list = "";
 	
 	$listing = new cListing();
@@ -137,9 +137,9 @@ function process_data ($values) {
 	$created = $listing->SaveListing();
 
 	if($created) {
-		$list .= $lng_listings_chages_saved_want_to.' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $_REQUEST["member_id"] .'&type='. $_REQUEST["type"] .'">'.$lng_lc_edit.'</A> '.$lng_another_listing;	
+		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $_REQUEST["member_id"] .'&type='. $_REQUEST["type"] .'">'._("edit").'</A> '._("another listing?");	
 	} else {
-		$cErr->Error($lng_error_saving_listing." ".$lng_try_again_later);
+		$cErr->Error(_("There was an error saving the listing.")." "._("Please try again later."));
 	}
     $p->DisplayPage($list);
 }

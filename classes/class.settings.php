@@ -101,7 +101,7 @@ class cSettings {
 	// Save new settings
 	function update() {
 		
-		global $cDB, $lng_update_failed, $lng_settings_updated;
+		global $cDB;
 		
 		$this->retrieve();
 		
@@ -119,12 +119,12 @@ class cSettings {
 			$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
 			
 			if (!$result)
-				return "<font color=red>".$lng_update_failed."</font>".mysql_error();
+				return "<font color=red>"._("Update failed!")."</font>".mysql_error();
 		}
 		
 		$this->getCurrent(); // Refresh settings in current memory with new updated settings
 		
-		return "<font color=green>".$lng_settings_updated."</font>";
+		return "<font color=green>"._("Settings updated successfully.")."</font>";
 	}
 }
 

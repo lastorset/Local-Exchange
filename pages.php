@@ -7,10 +7,10 @@ if ($_GET["destroySess"]==1) {
 	
 	if ($_GET["confirm"]==1) {
 		session_destroy();
-		echo $lng_session_destroyed.". <a href=index.php>".$lng_continue."</a>";
+		echo _("Session Destroyed").". <a href=index.php>"._("Continue")."</a>";
 	}
 	else {
-		echo $lng_really_destroy_session." <a href=pages.php?destroySess=1&confirm=1>".$lng_yes."</a> | <a href=javascript:history.back(1)>".$lng_no." ".$lng_go_back."</a>";
+		echo _("Really Destroy Session?")." <a href=pages.php?destroySess=1&confirm=1>"._("Yes")."</a> | <a href=javascript:history.back(1)>"._("No")." "._("(go back)")."</a>";
 	}
 	
 	exit;
@@ -37,7 +37,7 @@ else {
 }
 	
 if (!$pg) {
-	$p->page_title = $lng_oops_requested_non_existant_page;
+	$p->page_title = _("Oops, you have requested a non-existant page.");
 	print $p->MakePageTitle();
 
 }

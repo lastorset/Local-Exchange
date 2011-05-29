@@ -1,7 +1,7 @@
 <?php
 include_once("includes/inc.global.php");
 $p->site_section = ADMINISTRATION;
-$p->page_title = $lng_site_settings;
+$p->page_title = _("Site Settings");
 
 $cUser->MustBeLevel(3); // changed level 2 to level 3 - by ejkv
 
@@ -27,7 +27,7 @@ $output .= "<table width=100%>";
 // Sort settings into sections
 
 $sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array());
-$section_names = array(1 => $lng_general_settings, 2 => $lng_site_features, 7 => $lng_display_options, 3 => $lng_account_restrictions, 4=>$lng_social_networking,6=>$lng_admin_settings);
+$section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"));
 
 foreach($site_settings->theSettings as $key) {
 	
@@ -39,7 +39,7 @@ foreach($site_settings->theSettings as $key) {
 
 $aSectionDone = false;
 
-$output .= $lng_following_are_admin_settings;
+$output .= _("<a name='top'></a><font color=red>PLEASE NOTE: The following are <em>General</em> Settings intended for use by the LETS Administrator. <p>More <em>Advanced</em> configuration settings for the Webmaster are located in the file 'includes/inc.config.php'.</font><p>");
 
 $output .= "<p>";
 
@@ -60,7 +60,7 @@ foreach($sections as $a => $b) {
 	$output .= "</table>";
 	
 	if ($aSectionDone==true)
-		$output .= "<a href=#top>".$lng_back_to_top."</a><hr>";
+		$output .= "<a href=#top>"._("Back to top")."</a><hr>";
 	else
 		$aSectionDone = true;
 		
@@ -90,9 +90,9 @@ foreach($sections as $a => $b) {
 				else
 					$selectedF = 'selected';
 				 
-				$output .= "<option value='TRUE' $selectedT>".$lng_yes."</option>";
+				$output .= "<option value='TRUE' $selectedT>"._("Yes")."</option>";
 			
-				$output .= "<option value='FALSE' $selectedF>".$lng_no."</option>";
+				$output .= "<option value='FALSE' $selectedF>"._("No")."</option>";
 			
 				$output .= "</select>";
 				
@@ -165,6 +165,6 @@ foreach($sections as $a => $b) {
 	}
 }
 
-$output .= "</table><p><input type=submit value=".$lng_save_settings."></form>";
+$output .= "</table><p><input type=submit value="._("Save Settings")."></form>";
 
 $p->DisplayPage($output);

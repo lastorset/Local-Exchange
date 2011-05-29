@@ -4,7 +4,7 @@ include("classes/class.news.php");
 include("classes/class.uploads.php");
 
 $p->site_section = EVENTS;
-$p->page_title = $lng_news_and_events;
+$p->page_title = _("News and Events");
 
 $output = "<P><BR>";
 
@@ -14,12 +14,12 @@ $newstext = $news->DisplayNewsGroup();
 if($newstext != "")
 	$output .= $newstext;
 else
-	$output .= $lng_no_news_items.".<P>";
+	$output .= _("There are no current news items").".<P>";
 
 $newsletters = new cUploadGroup("N");
 
 if($newsletters->LoadUploadGroup()) {
-	$output .= "<I>".$lng_to_read_latest." ". SITE_SHORT_TITLE . " ".$lng_newsletter_go." <A HREF=newsletters.php>".$lng_here."</A>.</I>";
+	$output .= "<I>"._("To read the latest")." ". SITE_SHORT_TITLE . " "._("newsletter, go")." <A HREF=newsletters.php>"._("here")."</A>.</I>";
 }
 
 $p->DisplayPage($output);

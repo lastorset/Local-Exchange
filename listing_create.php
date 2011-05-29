@@ -5,11 +5,11 @@ $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 
 if ($_REQUEST["type"]==Offer)
-    $listing_name=$lng_offered;
+    $listing_name=_("Offered");
 else
-    $listing_name=$lng_wanted;
+    $listing_name=_("Wanted");
     
-$p->page_title = $lng_create." ". $listing_name ." ".$lng_listing;
+$p->page_title = _("Create")." ". $listing_name ." "._("Listing");
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -32,7 +32,7 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for ano
 	} else {
 		$ids = new cMemberGroup;
 		$ids->LoadMemberGroup();
-		$form->addElement("select", "member_id", $lng_for_which_member, $ids->MakeIDArray());
+		$form->addElement("select", "member_id", _("For which member?"), $ids->MakeIDArray());
 	}
 } else {  // Member is creating offer for his/her self
 	$cUser->MustBeLoggedOn();
@@ -42,35 +42,35 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for ano
 
 $form->addElement('hidden','type',$_REQUEST['type']);
 $title_list = new cTitleList($listing_name);
-$form->addElement('text', 'title', $lng_title, array('size' => 30, 'maxlength' => 60));
-$form->addRule('title',$lng_enter_title,'required');
+$form->addElement('text', 'title', _("Title"), array('size' => 30, 'maxlength' => 60));
+$form->addRule('title',_("Enter a title"),'required');
 $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');
-$form->addRule('title',$lng_allready_listing_this_title,'verify_not_duplicate');
+$form->addRule('title',_("You already have a listing with this title"),'verify_not_duplicate');
 $category_list = new cCategoryList();
-$form->addElement('select', 'category', $lng_category, $category_list->MakeCategoryArray());
+$form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
 
 if(USE_RATES)
-	$form->addElement('text', 'rate', $lng_rate, array('size' => 15, 'maxlength' => 30));
+	$form->addElement('text', 'rate', _("Rate"), array('size' => 15, 'maxlength' => 30));
 else
 	$form->addElement('hidden', 'rate');
 
-$form->addElement('static', null, $lng_description, null);
+$form->addElement('static', null, _("Description"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>45, 'rows'=>5, 'wrap'=>'soft'));
 $form->addElement('html', '<TR><TD></TD><TD><BR></TD></TR>');
-$form->addElement('advcheckbox', 'set_expire_date', $lng_should_automatically_expire);
+$form->addElement('advcheckbox', 'set_expire_date', _("Should this listing be set to automatically expire?"));
 $today = getdate();
-$options = array('language'=> $lng_language, 'format' => 'dFY', 'minYear' => $today['year'],'maxYear' => $today['year']+5, 'addEmptyOption'=>'Y', 'emptyOptionValue'=>'0');
-$form->addElement('date','expire_date', $lng_expires, $options);
+$options = array('language'=> _("en"), 'format' => 'dFY', 'minYear' => $today['year'],'maxYear' => $today['year']+5, 'addEmptyOption'=>'Y', 'emptyOptionValue'=>'0');
+$form->addElement('date','expire_date', _("Expires"), $options);
 $form->registerRule('verify_temporary','function','verify_temporary');
 //$form->addRule('expire_date','Temporary listing box must be checked for expiration','verify_temporary');
 $form->registerRule('verify_future_date','function','verify_future_date');
-$form->addRule('expire_date',$lng_expiration_future_date,'verify_future_date');
+$form->addRule('expire_date',_("Expiration must be for a future date"),'verify_future_date');
 $form->registerRule('verify_valid_date','function','verify_valid_date');
-$form->addRule('expire_date',$lng_date_invalid,'verify_valid_date');
+$form->addRule('expire_date',_("Date is invalid"),'verify_valid_date');
 $form->registerRule('verify_category','function','verify_category');
-$form->addRule('category', $lng_choose_category, 'verify_category');
+$form->addRule('category', _("Choose Category"), 'verify_category');
 
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -86,7 +86,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser, $cErr, $lng_listing_created_create, $lng_another, $lng_error_saving_listing, $lng_try_again_later;
+	global $p, $cUser, $cErr;
 	
 	$member = new cMember;
 	
@@ -118,9 +118,9 @@ function process_data ($values) {
 	$created = $listing->SaveNewListing();
 
 	if($created) {
-		$list .= $lng_listing_created_create." <A HREF=listing_create.php?type=".$_REQUEST["type"]."&mode=".$_REQUEST["mode"]."&member_id=".$member->member_id.">".$lng_another."</A>?";	
+		$list .= _("Listing created. Create")." <A HREF=listing_create.php?type=".$_REQUEST["type"]."&mode=".$_REQUEST["mode"]."&member_id=".$member->member_id.">"._("another")."</A>?";	
 	} else {
-		$cErr->Error($lng_error_saving_listing." ".$lng_try_again_later);
+		$cErr->Error(_("There was an error saving the listing.")." "._("Please try again later."));
 	}
    $p->DisplayPage($list);
 }

@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = LISTINGS;
-$p->page_title = $lng_create_new_listing_state;
+$p->page_title = _("create_new_listing_state" /* orphaned string */);
 
 include("includes/inc.forms.php");
 include_once("classes/class.state_address.php");
@@ -13,15 +13,15 @@ include_once("classes/class.state_address.php");
 //
 $cUser->MustBeLevel(2);
 
-$form->addElement("text", "state", $lng_state_description, array("size" => 30, "maxlength" => 30));
+$form->addElement("text", "state", _("state_description" /* orphaned string */), array("size" => 30, "maxlength" => 30));
 $form->addElement("static", null, null, null);
 
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 //
 // Define form rules
 //
-$form->addRule('state', $lng_enter_state_description, 'required');
+$form->addRule('state', _("enter_state_description" /* orphaned string */), 'required');
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -34,14 +34,14 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $lng_state_created, $lng_could_not_save_state, $lng_try_again_later;
+	global $p, $cErr;
 
 	$state = new cState($values["state"]);
 	
 	if ($state->SaveNewstate()) {
-		$output = $lng_state_created;
+		$output = _("state_created" /* orphaned string */);
 	} else {
-		$output = $lng_could_not_save_state." ".$lng_try_again_later;
+		$output = _("could_not_save_state" /* orphaned string */)." "._("Please try again later.");
 	}
 	
 	$p->DisplayPage($output);

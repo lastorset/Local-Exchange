@@ -5,10 +5,10 @@ include("classes/class.uploads.php");
 $cUser->MustBeLevel(1);
 
 $p->site_section = EVENTS;
-$p->page_title = $lng_upload_newsletter;
+$p->page_title = _("Upload a Newsletter");
 
 $upload = new cUploadForm;
-$output = $upload->DisplayUploadForm("newsletter_save.php", array($lng_description));
+$output = $upload->DisplayUploadForm("newsletter_save.php", array(_("Description")));
 
 $p->DisplayPage($output);
 ?>

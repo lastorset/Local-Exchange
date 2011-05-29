@@ -4,7 +4,7 @@ include_once("includes/inc.global.php");
 
 $cUser->MustBeLevel(2);
 $p->site_section = EXCHANGES;
-$p->page_title = $lng_reverse_exchange;
+$p->page_title = _("Reverse an Exchange");
 
 include("classes/class.trade.php");
 include("includes/inc.forms.php");
@@ -14,11 +14,11 @@ include("includes/inc.forms.php");
 //
 $trades = new cTradeGroup;
 $trades->LoadTradeGroup();
-$form->addElement("select", "trade_id", $lng_choose_exchange_to_reverse, $trades->MakeTradeArray());
+$form->addElement("select", "trade_id", _("Choose the exchange to reverse"), $trades->MakeTradeArray());
 $form->addElement("html", "<TR></TR>");
-$form->addElement('static', null, $lng_enter_brief_explanation, null);
+$form->addElement('static', null, _("Enter a brief explanation. Information about the original exchange will be automatically included"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>50, 'rows'=>2, 'wrap'=>'soft', 'maxlength' => 75));
-$form->addElement('submit', 'btnSubmit', $lng_reverse);
+$form->addElement('submit', 'btnSubmit', _("Reverse"));
 
 //
 // Define form rules
@@ -37,16 +37,16 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $lng_trade_reversed, $lng_error_reversing_trade;
+	global $p, $cErr;
 
 	$old_trade = new cTrade;
 	$old_trade->LoadTrade($values["trade_id"]);
 	$success = $old_trade->ReverseTrade($values["description"]);	
 	
 	if($success)
-		$list = $lng_trade_reversed;
+		$list = _("Trade has been reversed.");
 	else
-		$list = "<i>".$lng_error_reversing_trade."!<i>";
+		$list = "<i>"._("There was an error reversing the trade")."!<i>";
 	
    $p->DisplayPage($list);
 }

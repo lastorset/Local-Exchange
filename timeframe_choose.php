@@ -2,7 +2,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = EXCHANGES;
-$p->page_title = $lng_choose_time_period;
+$p->page_title = _("Choose time period");
 
 $cUser->MustBeLoggedOn();
 
@@ -12,11 +12,11 @@ $form->addElement("hidden", "action", $_REQUEST["action"]);
 $form->addElement("hidden", "mode", $_REQUEST["mode"]); // added by ejkv
 $form->addElement("hidden", "member_id", $_REQUEST["member_id"]); // added by ejkv
 $today = getdate();
-$options = array('language'=> $lng_language, 'format' => 'dFY', 'minYear' => $today['year']-3,'maxYear' => $today['year']);
-$form->addElement("date", "from", $lng_from_when, $options);
-$form->addElement("date", "to", $lng_to_when, $options);
+$options = array('language'=> _("en"), 'format' => 'dFY', 'minYear' => $today['year']-3,'maxYear' => $today['year']);
+$form->addElement("date", "from", _("From when?"), $options);
+$form->addElement("date", "to", _("To when?"), $options);
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();

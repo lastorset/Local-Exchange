@@ -3,7 +3,7 @@ include_once("includes/inc.global.php");
 
 $cUser->MustBeLoggedOn();
 $p->site_section = PROFILE;
-$p->page_title = $lng_inactivate_listing_holiday;
+$p->page_title = _("Inactivate Listings While on Holiday");
 
 include("classes/class.directory.php");
 include("includes/inc.forms.php");
@@ -13,30 +13,30 @@ if($_REQUEST["mode"] == "admin") {
 	$form->addElement("hidden","mode","admin");
 	$member = new cMember();
 	$member->LoadMember($_REQUEST["member_id"]);
-	$text = $lng_this_feature_will_inactivate_members_listings." ";
-	$pronoun = $lng_they;
+	$text = _("This feature will temporarily inactivate all of the member's offered and wanted listings while they are gone.")." ";
+	$pronoun = _("they");
 } else {
 	$cUser->MustBeLoggedOn();
 	$member = $cUser;
 	$form->addElement("hidden","mode","self");
-	$text = $lng_this_feature_will_inactivate_your_listings." ";
-	$pronoun = $lng_you;
+	$text = _("This feature will temporarily inactivate all of your offered and wanted listings while you are gone.")." ";
+	$pronoun = _("you");
 }
 
-$text .= $lng_they_will_not_appear_during_set_time;
+$text .= _("They will not appear in the directory during that time.  When the date you specify below arrives the listings will automatically reactivate.");
 $form->addElement("static", null, $text, null);
 $form->addElement("hidden","member_id", $member->member_id);
 $form->addElement("static", null, null, null);
 $today = getdate();
-$options = array('language'=> $lng_language, 'format' => 'dFY', 'minYear' => $today['year'],'maxYear' => $today['year']+5);
-$form->addElement("date", "return_date", $lng_when_will." ".$pronoun." ".$lng_return, $options);
+$options = array('language'=> _("en"), 'format' => 'dFY', 'minYear' => $today['year'],'maxYear' => $today['year']+5);
+$form->addElement("date", "return_date", _("When will")." ".$pronoun." "._("return?"), $options);
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_inactivate);
+$form->addElement("submit", "btnSubmit", _("Inactivate"));
 
 $form->registerRule('verify_future_date','function','verify_future_date');
-$form->addRule('return_date',$lng_must_be_future_date,'verify_future_date');
+$form->addRule('return_date',_("Must be a future date"),'verify_future_date');
 $form->registerRule('verify_valid_date','function','verify_valid_date');
-$form->addRule('return_date',$lng_date_invalid,'verify_valid_date');
+$form->addRule('return_date',_("Date is invalid"),'verify_valid_date');
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -46,7 +46,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member, $lng_listings_inactivated;
+	global $p, $member;
 	
 	$date = $values['return_date'];
 	$return_date = new cDateTime($date['Y'] . '/' . $date['F'] . '/' . $date['d']);
@@ -59,7 +59,7 @@ function process_data ($values) {
 	$listings->LoadListingGroup(null,"%",$member->member_id);
 	$listings->InactivateAll($return_date);
 	
-	$output = $lng_listings_inactivated;
+	$output = _("Listings successfully inactivated.");
 	
 	$p->DisplayPage($output);
 }

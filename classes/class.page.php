@@ -16,7 +16,7 @@ class cPage {
 	var $top_buttons;			// An array of cMenuItem objects    TODO: Implement top buttons...
 
 	function cPage() {
-		global $cUser, $SIDEBAR, $lng_administration;
+		global $cUser, $SIDEBAR;
 		
 		$this->keywords = SITE_KEYWORDS;
 		$this->page_header = PAGE_HEADER_CONTENT;
@@ -27,7 +27,7 @@ class cPage {
 		}
 		
 		if ($cUser->member_role > 0)
-			$this->AddSidebarButton($lng_administration, "admin_menu.php");	
+			$this->AddSidebarButton(_("Administration"), "admin_menu.php");	
 	}		
 									
 	function AddSidebarButton ($button_text, $url) {
@@ -97,11 +97,11 @@ HTML;
 									
 	function MakePageFooter() {
 		
-		global $cUser, $lng_printer_friendly_view;
+		global $cUser;
 		
 		if ($cUser->IsLoggedOn()) {
 		$tmp .= "</td></tr><tr><td id=\"footer\" colspan=2><p align=center>
-			<a href=".$_SERVER["PHP_SELF"]."?printer_view=1&".$_SERVER["QUERY_STRING"]." target=_blank><img src=http://".IMAGES_PATH ."print.gif border=0><br><font size=1>".$lng_printer_friendly_view."</font></a>";
+			<a href=".$_SERVER["PHP_SELF"]."?printer_view=1&".$_SERVER["QUERY_STRING"]." target=_blank><img src=http://".IMAGES_PATH ."print.gif border=0><br><font size=1>"._("Printer Friendly View")."</font></a>";
 		}
 		
 		$tmp .= "</TD></TR>". $this->page_footer ."";
@@ -112,9 +112,9 @@ HTML;
 	}	
 			
 	function DisplayPage($content = "") {
-		global $cErr, $cUser, $lng_displaypage_with_no_content;
+		global $cErr, $cUser;
 		if ($content=="")
-			$cErr->Error($lng_displaypage_with_no_content,ERROR_SEVERITY_HIGH,__FILE__,__LINE__);
+			$cErr->Error(_("DisplayPage() was called with no content included!  Was a blank page intended?"),ERROR_SEVERITY_HIGH,__FILE__,__LINE__);
 		
 		if ($_REQUEST["printer_view"]!=1 || !$cUser->IsLoggedOn()) { 
 			print $this->MakePageHeader();

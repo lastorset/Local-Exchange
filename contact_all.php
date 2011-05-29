@@ -1,7 +1,7 @@
 <?php
 include_once("includes/inc.global.php");
 $p->site_section = SECTION_EMAIL;
-$p->page_title = $lng_email_all_members;
+$p->page_title = _("Email all Members");
 
 $cUser->MustBeLevel(2);
 
@@ -10,21 +10,21 @@ include("includes/inc.forms.php");
 //
 // First, we define the form
 //
-$form->addElement("static", null, $lng_this_email_goes_to_all_members." ".SITE_LONG_TITLE.".", null);
+$form->addElement("static", null, _("This email will go out to <i>ALL</i> members of")." ".SITE_LONG_TITLE.".", null);
 $form->addElement("static", null, null, null);
 $form->addElement("text", "subject", "Subject", array("size" => 30, "maxlength" => 50));
 $form->addElement("static", null, null, null);
-$form->addElement("textarea", "message", $lng_your_message, array("cols"=>65, "rows"=>10, "wrap"=>"soft"));
+$form->addElement("textarea", "message", _("Your Message"), array("cols"=>65, "rows"=>10, "wrap"=>"soft"));
 $form->addElement("static", null, null, null);
 
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_send);
+$form->addElement("submit", "btnSubmit", _("Send"));
 
 //
 // Define form rules
 //
-$form->addRule("subject", $lng_enter_subject, "required");
-$form->addRule("message", $lng_enter_message, "required");
+$form->addRule("subject", _("Enter a subject"), "required");
+$form->addRule("message", _("Enter your message"), "required");
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -37,7 +37,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $heard_from, $lng_message_send_to_all_members, $lng_errors_sending_mail_to_colon; // removed $lng_from_colon - by ejkv
+	global $p, $heard_from;
 	
 	$output = "";
 	$errors = "";
@@ -49,7 +49,7 @@ function process_data ($values) {
 			$errors .= ", ";
 		
 		if($member->person[0]->email != "")
-			$mailed = mail($member->person[0]->email, $values["subject"], wordwrap($values["message"], 64) , "From:". EMAIL_ADMIN); // replaced $lng_from_colon by "From:" - by ejkv
+			$mailed = mail($member->person[0]->email, $values["subject"], wordwrap($values["message"], 64) , "From:". EMAIL_ADMIN);
 		else
 			$mailed = true;
 		
@@ -57,9 +57,9 @@ function process_data ($values) {
 			$errors .= $member->person[0]->email;
 	}
 	if($errors == "")
-		$output .= $lng_message_send_to_all_members;
+		$output .= _("Your message has been sent to all members.");
 	else
-		$output .= $lng_errors_sending_mail_to.":<BR>". $errors;	
+		$output .= _("There were errors sending the email to the following email addresses").":<BR>". $errors;	
 		
 	$p->DisplayPage($output);
 }

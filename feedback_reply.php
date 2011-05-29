@@ -6,7 +6,7 @@ $member_about = new cMember;
 $member_about->LoadMember($_REQUEST["about"]);
 
 $p->site_section = SECTION_FEEDBACK;
-$p->page_title = $lng_follow_up_feedback;
+$p->page_title = _("Follow Up on Feedback");
 
 include("classes/class.feedback.php");
 include("includes/inc.forms.php");
@@ -33,21 +33,21 @@ if($_REQUEST["mode"] == "admin") {
 	$member = $cUser;
 }
 
-$form->addElement('static', null, "<B><I>".$lng_prior_comments."</I></B>", null);
+$form->addElement('static', null, "<B><I>"._("Prior Comments")."</I></B>", null);
 $form->addElement('static', null, $feedback_history, null);
 $form->addElement("hidden", "about", $member_about->member_id);
 $form->addElement("hidden", "author", $_REQUEST["author"]);
 $form->addElement("hidden", "mode", $_REQUEST["mode"]);
 $form->addElement("hidden", "feedback_id", $_REQUEST["feedback_id"]);
-$form->addElement('static', null, $lng_comments, null);
+$form->addElement('static', null, _("Comments"), null);
 $form->addElement('textarea', 'comments', null, array('cols'=>60, 'rows'=>5, 'wrap'=>'soft', 'maxlength' => 255));
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 //
 // Define form rules
 //
-$form->addRule('rating', $lng_choose_rating, 'verify_selection');
-$form->addRule('comments', $lng_comments_to_long, 'verify_max255');
+$form->addRule('rating', _("Choose a rating"), 'verify_selection');
+$form->addRule('comments', _("Comments cannot be longer than 255 characters"), 'verify_max255');
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -60,7 +60,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member_about, $member, $cErr, $cUser, $feedback, $lng_members_do_not_match_trade, $lng_feedback_recorded, $lng_problem_recording_feedback;
+	global $p, $member_about, $member, $cErr, $cUser, $feedback;
 	
 	$trade = new cTrade();
 	$trade->LoadTrade($feedback->trade_id);
@@ -69,7 +69,7 @@ function process_data ($values) {
 	if ($trade->member_from->member_id == $member->member_id and $trade->member_to->member_id == $member_about->member_id) {
 	} elseif ($trade->member_to->member_id == $member->member_id and $trade->member_from->member_id == $member_about->member_id) {
 	} else {
-		$cErr->Error($lng_members_do_not_match_trade); // Theoretically, must be a hacker
+		$cErr->Error(_("Members do not match the trade selected.")); // Theoretically, must be a hacker
 		include("redirect.php");
 	}
 	
@@ -83,9 +83,9 @@ function process_data ($values) {
 			$log_entry = new cLogEntry (FEEDBACK, FEEDBACK_BY_ADMIN, $feedback->feedback_id);
 			$log_entry->SaveLogEntry();	
 		}
-		$output = $lng_feedback_recorded;
+		$output = _("Your feedback has been recorded.");
 	} else {
-		$output = $lng_problem_recording_feedback;
+		$output = _("There was an error recording your feedback.");
 	}
 	
 	$p->DisplayPage($output);

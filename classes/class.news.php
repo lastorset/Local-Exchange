@@ -17,7 +17,7 @@ class cNews {
 	}
 	
 	function SaveNewNews () {
-		global $cDB, $cErr, $lng_could_not_save_news_item;
+		global $cDB, $cErr;
 		
 		$insert = $cDB->Query("INSERT INTO ". DATABASE_NEWS ." (title, description, expire_date, sequence) VALUES (".$cDB->EscTxt($this->title) .", ". $cDB->EscTxt($this->description) .", '". $this->expire_date->MySQLDate() ."', ". $this->sequence .");");
 
@@ -25,7 +25,7 @@ class cNews {
 			$this->news_id = mysql_insert_id();		
 			return true;
 		} else {
-			$cErr->Error($lng_could_not_save_news_item);
+			$cErr->Error(_("Could not save news item."));
 			return false;
 		}		
 	}
@@ -39,7 +39,7 @@ class cNews {
 	}
 	
 	function LoadNews ($news_id) {
-		global $cDB, $cErr, $lng_error_access_news_table, $lng_try_again_later;
+		global $cDB, $cErr;
 		
 //		$this->ExpireNews();
 				
@@ -53,7 +53,7 @@ class cNews {
 			$this->sequence = $row[3];
 			return true;
 		} else {
-			$cErr->Error($lng_error_access_news_table." ".$lng_try_again_later);
+			$cErr->Error(_("There was an error accessing the news table.  Please try again later.")." "._("Please try again later."));
 			include("redirect.php");
 		}
 		
@@ -113,10 +113,9 @@ class cNewsGroup {
 		return $list;
 	}
 
-	function MakeNewsSeqArray($current_seq=null) { // TODO: OK, this is just ugly...
-	    global $lng_at_top_of_list, $lng_after;	   // Should use 1,2,3,4... and reorder
+	function MakeNewsSeqArray($current_seq=null) { // TODO: OK, this is just ugly...	   // Should use 1,2,3,4... and reorder
 		$prior_seq = 0;			              	   // all each time.
-		$prior_title = $lng_at_top_of_list;
+		$prior_title = _("At top of list");
 		$lead_txt = "";
 		$follow_txt = "";
 		
@@ -138,7 +137,7 @@ class cNewsGroup {
 			$prior_seq = $news->sequence;
 			$saved_title = $prior_title;
 			$prior_title = $news->title;
-			$lead_txt = $lng_after." '";
+			$lead_txt = _("After")." '";
 			$follow_txt = "'";
 		}
 		

@@ -60,7 +60,7 @@ class cTrade {
 	}
 	
 	function LoadTrade($trade_id) {
-		global $cDB, $cErr, $lng_error_access_trade_table, $lng_try_again_later;
+		global $cDB, $cErr;
 		
 		$query = $cDB->Query("SELECT date_format(trade_date,'%Y-%m-%d'), status, member_id_from, member_id_to, amount, description, type, category FROM ".DATABASE_TRADES." WHERE trade_id=". $cDB->EscTxt($trade_id) .";");
 		
@@ -91,14 +91,14 @@ class cTrade {
 			}
 			
 		} else {
-			$cErr->Error($lng_error_access_trade_table." ".$lng_try_again_later);
+			$cErr->Error(_("There was an error accessing the trades table.")." "._("Please try again later."));
 			include("redirect.php");
 		}				
 	}
 
 	// It is very important that this function prevent the database from going out balance.
 	function MakeTrade($reversed_trade_id=null) { 
-		global $cDB, $cErr, $lng_dbase_out_of_balance, $lng_hi_admin, $lng_Message_dbase_out_of_balance, $lng_dbase_out_of_bal_pls_contct_admin;
+		global $cDB, $cErr;
 		
 		if ($this->amount <= 0 and $this->type != TRADE_REVERSAL) // Amount should be positive unless
 			return false;									 // this is a reversal of a previous trade.
@@ -125,13 +125,13 @@ class cTrade {
 		if(!$balances->Balanced()) {
 			
 			if (OOB_EMAIL_ADMIN==true) // Admin wishes to receive an email notifying him/her when db is found to be out-of-balance
-				$mailed = mail(EMAIL_ADMIN, $lng_dbase_out_of_balance." ".SITE_LONG_TITLE."!", $lng_hi_admin.",\n\n".$lng_Message_dbase_out_of_balance."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."", "From:".EMAIL_FROM); // added "FRom:". - by ejkv
+				$mailed = mail(EMAIL_ADMIN, _("Database out of balance on")." ".SITE_LONG_TITLE."!", _("Hi admin").",\n\n"._("We thought you should know that whilst processing a trade the system detected that your trade database is out of balance! Obviously something has gone wrong somewhere along the line and we suggest you investigate the cause of this ASAP.")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."", "From:".EMAIL_FROM); // added "FRom:". - by ejkv
 			
 			switch(OOB_ACTION) { // How should we handle the out-of-balance event?
 				
 				case("FATAL"): // FATAL: The original method for dealing which is to abort the transaction
 					
-					$cErr->Error($lng_dbase_out_of_bal_pls_contct_admin." ". PHONE_ADMIN .".", ERROR_SEVERITY_HIGH);  
+					$cErr->Error(_("The trade database is out of balance!  Please contact your administrator at")." ". PHONE_ADMIN .".", ERROR_SEVERITY_HIGH);  
 
 					include("redirect.php");
 					exit;  // Probably unnecessary...
@@ -185,7 +185,7 @@ class cTrade {
 	}
 	
 	function ReverseTrade($description) { 	// This method allows administrators to reverse
-		global $cUser, $lng_reversal_of_exchange, $lng_from_lc, $lng_by_admin;	// trades that were made in error.
+		global $cUser;	// trades that were made in error.
 		
 		if($this->status == "R")
 			return false;		// Can't reverse the same trade twice
@@ -196,7 +196,7 @@ class cTrade {
 		$new_trade->member_to = $this->member_to;
 		$new_trade->amount = -$this->amount;
 		$new_trade->category = $this->category;
-		$new_trade->description = "[".$lng_reversal_of_exchange." #". $this->trade_id." ".$lng_from_lc." ". $this->trade_date." ".$lng_by_admin." '". $cUser->member_id ."'] ". $description;
+		$new_trade->description = "["._("Reversal of exchange")." #". $this->trade_id." "._("from")." ". $this->trade_date." "._("by admin")." '". $cUser->member_id ."'] ". $description;
 		$new_trade->type = "R";
 		return $new_trade->MakeTrade($this->trade_id);
 	}
@@ -253,9 +253,9 @@ class cTradeGroup {
 	}
 	
 	function DisplayTradeGroup() {
-		global $cDB, $cUser, $lng_date, $lng_from, $lng_to, $lng_category, $lng_description;
+		global $cDB, $cUser;
 		
-		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>".$lng_date."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_from."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_to."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". UNITS ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;".$lng_category."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;".$lng_description."</B></FONT></TD></TR>"; // added catgory by ejkv
+		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". UNITS ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
 		
 		if(!$this->trade)
 			return $output. "</TABLE>";   // No trades yet, presumably
@@ -297,12 +297,11 @@ class cTradeGroup {
 	}
 	
 	function MakeTradeArray() {
-		global $lng_from, $lng_to, $lng_on;
 		$trades = "";
 		if($this->trade) {
 			foreach($this->trade as $trade) {
 				if($trade->type != "R" and $trade->status != "R") {
-					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". UNITS . " ".$lng_from." ". $trade->member_from->member_id ." ".$lng_to." ". $trade->member_to->member_id ." ".$lng_on." ". $trade->trade_date;
+					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". UNITS . " "._("From")." ". $trade->member_from->member_id ." "._("To")." ". $trade->member_to->member_id ." "._("On")." ". $trade->trade_date;
 				}
 			}
 		}

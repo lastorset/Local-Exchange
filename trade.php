@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = EXCHANGES;
-$p->page_title = $lng_record_exchange;
+$p->page_title = _("Record an Exchange");
 
 include("classes/class.trade.php");
 include("includes/inc.forms.validation.php");
@@ -14,7 +14,7 @@ include("includes/inc.forms.validation.php");
 $member = new cMember;
 
 /* if($cUser->member_id == "ADMIN") {
-	$p->DisplayPage($lng_sorry_no_exchanges_for_admin_account." <a href=admin_menu.php>".$lng_admin_menu."</a>.");	
+	$p->DisplayPage(_("I'm sorry, you cannot record exchanges while logged in as the ADMIN account.  This is a special account for administration purposes only.<p>To create member accounts go to the")." <a href=admin_menu.php>"._("Administration Menu")."</a>.");	
 	exit;
 } */ // changed by ejkv (admin with member_role = 9 should have all rights)
 
@@ -32,7 +32,7 @@ $form->addElement('hidden', 'mode', $_REQUEST["mode"]);
 $form->addElement("html", "<TR></TR>");  // TODO: Move this to the header
 
 if (MEMBERS_CAN_INVOICE==true) // Invoicing turned on in config, so let member choose
-	$form->addElement("select", "typ", $lng_transaction_type, array($lng_transfer,$lng_invoice));
+	$form->addElement("select", "typ", _("Transaction Type"), array(_("Transfer"),_("Invoice")));
 else // Invoicing turned off, this form now only functions to transfer money
 	$form->addElement('hidden', 'typ', 0);	
 	
@@ -40,39 +40,39 @@ $name_list = new cMemberGroup;
 $name_list->LoadMemberGroup();
 
 if (JS_MEMBER_SELECT==true)
-	$form->addElement("html","<tr><td>".$lng_to_member." ".$name_list->DoNamePicker()."</td></tr>");
+	$form->addElement("html","<tr><td>"._("To Member")." ".$name_list->DoNamePicker()."</td></tr>");
 else
-	$form->addElement("select", "member_to", $lng_transfer_to_member, $name_list->MakeNameArray());
+	$form->addElement("select", "member_to", _("Transfer to Member"), $name_list->MakeNameArray());
 
 $category_list = new cCategoryList();
-$form->addElement('select', 'category', $lng_category, $category_list->MakeCategoryArray());
-$form->addElement("text", "units", $lng_nmbr_of. UNITS ."", array('size' => 5, 'maxlength' => 10));
+$form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
+$form->addElement("text", "units", _("# of "). UNITS ."", array('size' => 5, 'maxlength' => 10));
 if(UNITS == "Hours") {
-	$form->addElement("text","minutes",$lng_nmbr_of_minutes,array('size'=>2,'maxlength'=>2));
+	$form->addElement("text","minutes",_("# of Minutes"),array('size'=>2,'maxlength'=>2));
 }
-$form->addElement('static', null, $lng_enter_description_of_exchange, null);
+$form->addElement('static', null, _("Enter a Brief Description of the Exchange"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>50, 'rows'=>4, 'wrap'=>'soft'));
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 //
 // Define form rules
 //
 //$form->addRule('description', 'Enter a description', 'required');
 $form->registerRule('verify_not_self','function','verify_not_self');
-$form->addRule('member_to', $lng_cannot_transfer_to_self, 'verify_not_self');
+$form->addRule('member_to', _("You cannot transfer to yourself"), 'verify_not_self');
 $form->registerRule('verify_selection','function','verify_selection');
-$form->addRule('category', $lng_choose_category, 'verify_selection');
-$form->addRule('member_to', $lng_choose_member, 'verify_selection');
-$form->addRule('description', $lng_description_too_long, 'verify_max255');
+$form->addRule('category', _("Choose Category"), 'verify_selection');
+$form->addRule('member_to', _("Choose Member"), 'verify_selection');
+$form->addRule('description', _("Description too long - maximum length is 255 characters"), 'verify_max255');
 
 if(UNITS == "Hours") {
 	$form->registerRule('verify_whole_hours','function','verify_whole_hours');
-	$form->addRule('units', $lng_hours_entered_must_be_whole, 'verify_whole_hours');
+	$form->addRule('units', _("Hours entered must be a positive, whole number"), 'verify_whole_hours');
 	$form->registerRule('verify_even_minutes','function','verify_even_minutes');
-	$form->addRule('minutes', $lng_enter_three_minute_increments, 'verify_even_minutes');
+	$form->addRule('minutes', _("Enter 15, 30, or 45 (or other numbers in 3 minute increments)"), 'verify_even_minutes');
 } else {
 	$form->registerRule('verify_valid_units','function','verify_valid_units');
-	$form->addRule('units', $lng_enter_positive_number_two_dec, 'verify_valid_units');
+	$form->addRule('units', _("Enter a positive number with no more than two decimal points"), 'verify_valid_units');
 }
 
 
@@ -87,7 +87,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member, $cErr, $cUser, $lng_nu_units_to_exchange, $lng_trade_failed, $lng_payment_received_on, $lng_hi_cap, $lng_let_know_received_payment_from, $lng_member_id, $lng_notified_you_wish_transfer, $lng_to_him_her, $lng_member_opted_to_confirm, $lng_would_you_like_to, $lng_record_another, $lng_exchange, $lng_invoice_facility_disabled, $lng_invoice_received_on, $lng_let_know_invoice_from, $lng_log_in_to_pay_reject_invoice, $lng_has_been_send_invoice_for, $lng_will_informed_when_member_pays, $lng_you_have, $lng_transferred_to, $lng_or_would_you_like_to_leave, $lng_feedback, $lng_for_this_member, $lng_donation_from,$lng_try_again_later; // added $lng_member_id, and changed $lng_you_have_transferred into $lng_you_have, and "to " into $lng_transferred_to - by ejkv
+	global $p, $member, $cErr, $cUser; // added _("Member ID"), and changed _("You have transferred") into _("you_have" /* orphaned string */), and "to " into _("transferred_to" /* orphaned string */) - by ejkv
 	$list = "";
 	
 	if(UNITS == "Hours") {
@@ -96,7 +96,7 @@ function process_data ($values) {
 	}
 	
 	if(!($values['units'] > 0)) {
-		$cErr->Error($lng_nu_units_to_exchange);
+		$cErr->Error(_("No units were entered to exchange!"));
 		include("redirect.php");
 	}
 	
@@ -131,27 +131,27 @@ function process_data ($values) {
 				}
 				else if ($cDB->Query("INSERT INTO trades_pending (trade_date, member_id_from, member_id_to, amount, category, description, typ) VALUES (now(), ". 	$cDB->EscTxt($member->member_id) .", ". $cDB->EscTxt($member_to_id) .", ". $cDB->EscTxt($values["units"]) .", ". $cDB->EscTxt($values["category"]) .", ". 	$cDB->EscTxt($values["description"]) .", \"T\");")) {
 					
-					$mailed = mail($member_to->person[0]->email, $lng_payment_received_on." ".SITE_LONG_TITLE."", $lng_hi_cap." ".$member_to_id.",\n\n".$lng_let_know_received_payment_from." ".$member->member_id."\n\n".$lng_elected_to_confirm_payment."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=incoming", "From:".EMAIL_FROM); // added "FROM:". - by ejkv
+					$mailed = mail($member_to->person[0]->email, _("Payment Received on")." ".SITE_LONG_TITLE."", _("Hi")." ".$member_to_id.",\n\n"._("Just letting you know that you have received a new payment from")." ".$member->member_id."\n\n"._("As you have elected to confirm all payments made to you, please log into your account now and confirm or reject this payment using the following URL...")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=incoming", "From:".EMAIL_FROM); // added "FROM:". - by ejkv
 			
-					$list .= $lng_member_id." ".$member_to_id." ".$lng_notified_you_wish_transfer." ". $values['units'] ." ". strtolower(UNITS) ." ".$lng_to_him_her.".<p>".$lng_member_opted_to_confirm.".<p>". // added $lng_member_id by ejkv
-							$lng_would_you_like_to." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">".$lng_record_another."</A> ".$lng_exchange."?";
+					$list .= _("Member ID")." ".$member_to_id." "._("has been notified that you wish to transfer")." ". $values['units'] ." ". strtolower(UNITS) ." "._("to him/her").".<p>"._("This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member").".<p>".
+							_("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?";
 				}
 				else
-					$list .= $lng_trade_failed." ".$lng_try_again_later;	
+					$list .= _("Trade failed!")." "._("Please try again later.");	
 			}
 			else if ($_REQUEST["typ"]==1) {
 				
 				if (MEMBERS_CAN_INVOICE!=true) // Invoicing is turned off, user has no right to be here!
-					$list .= $lng_invoice_facility_disabled;	
+					$list .= _("Sorry, the Invoicing facility has been disabled by the site administrator.");	
 				else if ($cDB->Query("INSERT INTO trades_pending (trade_date, member_id_from, member_id_to, amount, category, description, typ) VALUES (now(), ". 	$cDB->EscTxt($member->member_id) .", ". $cDB->EscTxt($member_to_id) .", ". $cDB->EscTxt($values["units"]) .", ". $cDB->EscTxt($values["category"]) .", ". 	$cDB->EscTxt($values["description"]) .", \"I\");")) {
 					
-					$mailed = mail($member_to->person[0]->email, $lng_invoice_received_on." ".SITE_LONG_TITLE."", $lng_hi_cap." ".$member_to_id.",\n\n".$lng_let_know_invoice_from." ".$member->member_id."\n\n".$lng_log_in_to_pay_reject_invoice."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=outgoing", "From:".EMAIL_FROM); // added "From:". - by ejkv
+					$mailed = mail($member_to->person[0]->email, _("Invoice Received on")." ".SITE_LONG_TITLE."", _("Hi")." ".$member_to_id.",\n\n"._("Just letting you know that you have received a new Invoice from")." ".$member->member_id."\n\n"._("Please log into your account now to pay or reject this invoice using the following URL...")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=outgoing", "From:".EMAIL_FROM); // added "From:". - by ejkv
 			
-					$list .= $member_to_id." ".$lng_has_been_send_invoice_for." ". $values['units'] ." ". strtolower(UNITS) .".<p> ".$lng_will_informed_when_member_pays.".<p>".
-						$lng_would_you_like_to." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">".$lng_record_another."</A> ".$lng_exchange."?";
+					$list .= $member_to_id." "._("has been sent an invoice for")." ". $values['units'] ." ". strtolower(UNITS) .".<p> "._("You will be informed when the member pays this invoice and will be invited to leave Feedback for this member").".<p>".
+						_("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?";
 			}
 			else
-					$list .= $lng_trade_failed." ".$lng_try_again_later;	
+					$list .= _("Trade failed!")." "._("Please try again later.");	
 			}
 			
 		}
@@ -163,13 +163,13 @@ function process_data ($values) {
 		$status = $trade->MakeTrade();
 		
 		if(!$status) {
-			$list .= $lng_trade_failed." ".$lng_try_again_later;
+			$list .= _("Trade failed!")." "._("Please try again later.");
 
 			if ($member->restriction==1)
 				$list .= LEECH_NOTICE;
 		}
 		else
-			$list .= $lng_you_have." ". $values['units'] ." ". strtolower(UNITS) .$lng_transferred_to. $member_to_id .".  ".$lng_would_you_like_to." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">".$lng_record_another."</A> ".$lng_exchange."?<P>".$lng_or_would_you_like_to_leave." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">".$lng_feedback."</A> ".$lng_for_this_member."?"; // changed $lng_you_have_transferred into $lng_you_have and "to " into $lng_transferred_to - by ejkv
+			$list .= _("you_have" /* orphaned string */)." ". $values['units'] ." ". strtolower(UNITS) ._("transferred_to" /* orphaned string */). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?"; // changed _("You have transferred") into _("you_have" /* orphaned string */) and "to " into _("transferred_to" /* orphaned string */) - by ejkv
 		
 		// Has the recipient got an income tie set-up? If so, we need to transfer a percentage of this elsewhere...
 		
@@ -185,7 +185,7 @@ function process_data ($values) {
 				$charity_to = new cMember;
 				$charity_to->LoadMember($recipTie->tie_id);
 	
-				$trade2 = new cTrade($member_to, $charity_to, htmlspecialchars($theAmount), htmlspecialchars(12), htmlspecialchars($lng_donation_from." ".$member_to_id.""), 'T');
+				$trade2 = new cTrade($member_to, $charity_to, htmlspecialchars($theAmount), htmlspecialchars(12), htmlspecialchars(_("Donation from")." ".$member_to_id.""), 'T');
 		
 				$status = $trade2->MakeTrade();
 			}

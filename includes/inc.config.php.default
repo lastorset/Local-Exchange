@@ -57,7 +57,7 @@ define ("SITE_SHORT_TITLE", "LETSname");
 // and customize the message, if you like
 
 define ("DOWN_FOR_MAINTENANCE", false);
-define ("MAINTENANCE_MESSAGE", SITE_LONG_TITLE ." ".$lng_currently_down_for_maintenance.$lng_try_again_later);
+define ("MAINTENANCE_MESSAGE", SITE_LONG_TITLE ." "._("is currently down for maintenance.")._("Please try again later."));
 
 
 /***************************************************************************************************/
@@ -85,10 +85,10 @@ define("DEFAULT_PHOTO","images/localx_logo.png"); // default photo, or picture -
 define("UPSCALE_SMALL_MEMBER_PHOTO",false);
 
 // The options available in the 'How old is you?' dropdown (trying to be as innocuous as possible here with the defaults (e.g. 40's)- but feel free to provide more specific options)
-$agesArr = array('---',$lng_under18,$lng_age18_30,$lng_age30s,$lng_age40s,$lng_age50s,$lng_age60s,$lng_age70s,$lng_over80,$lng_na,);
+$agesArr = array('---',_("Under 18"),_("18-30"),_("30's"),_("40's"),_("50's"),_("60's"),_("70's"),_("Over 80"),_("n/a"),);
 
 // The options available in the 'What Sex are you?' dropdown. At the time of writing (01-12-2008) the defaults should be fine
-$sexArr = array('---', $lng_male, $lng_female, $lng_na,);
+$sexArr = array('---', _("Male"), _("Female"), _("n/a"),);
 
 // Enable JavaScript bits on the Dropdown Member Select Box?
 // This applies to the Transfer form; the idea is that it makes it simpler to find the member we're after if the dropdown list is lengthy
@@ -124,7 +124,7 @@ define ("PHONE_ADMIN","Phone number"); // an email address may be substituted...
 define ("PAGE_TITLE_HEADER", SITE_LONG_TITLE);
 
 // What keywords should be included in all pages?
-define ("SITE_KEYWORDS", $lng_sitekeywords. SITE_LONG_TITLE .",php");
+define ("SITE_KEYWORDS", _("local currency,lets,exchange,"). SITE_LONG_TITLE .",php");
 
 // Shortcut icon
 define ("FAVICON", "localx_logo.png");
@@ -144,24 +144,24 @@ define ("HOME_PIC", "localx_home.png");
 // What content should be in the site header and footer?
 define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1 align=right><img src=\"http://".HTTP_BASE."/images/". HEADER_TITLE ."\"></h1></td></tr>");
 
-define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">".$lng_licenced_under." <a href=\"http://www.gnu.org/copyleft/gpl.html\">".$lng_gpl."</a> &#8226; ".$lng_local_exchange_uk_ver." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">".$lng_credits."</a></td></tr></table><br>");
+define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">"._("Licensed under the")." <a href=\"http://www.gnu.org/copyleft/gpl.html\">"._("GPL")."</a> &#8226; "._("Local Exchange UK Ver.")." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">"._("Credits")."</a></td></tr></table><br>");
 
 /**********************************************************/
 /**************** DEFINE SIDEBAR MENU *********************/
 
 $SIDEBAR = array (
-	array($lng_home,"index.php"),
-	array($lng_learn_more,"info/more.php"), // old style info pages
+	array(_("Home"),"index.php"),
+	array(_("Learn More"),"info/more.php"), // old style info pages
 // [CDM] uncomment line below to activate new style info pages 	
 //  array("Information","pages.php?id=1"),
-	array($lng_news_and_events,"news.php"),
-	array($lng_offered,"listings.php?type=Offer"),
-	array($lng_wanted,"listings.php?type=Want"),
-	array($lng_update_listings,"listings_menu.php"),
-	array($lng_exchanges,"exchange_menu.php"),
-	array($lng_members_list,"member_directory.php"),
-	array($lng_member_profile,"member_profile.php"),
-	array($lng_contact_us,"contact.php"));
+	array(_("News and Events"),"news.php"),
+	array(_("Offered"),"listings.php?type=Offer"),
+	array(_("Wanted"),"listings.php?type=Want"),
+	array(_("Update Listings"),"listings_menu.php"),
+	array(_("Exchanges"),"exchange_menu.php"),
+	array(_("Members List"),"member_directory.php"),
+	array(_("Member Profile"),"member_profile.php"),
+	array(_("Contact Us"),"contact.php"));
 	
 /**********************************************************/
 /**************** DEFINE SITE SECTIONS ********************/
@@ -190,7 +190,7 @@ $SECTIONS = array (
 /**********************************************************/
 /******************* GENERAL SETTINGS *********************/
 
-define ("UNITS", $lng_local_currency);  // This setting affects functionality, not just text displayed, so if you want to use hours/minutes this needs to read "Hours" exactly.  All other unit descriptions are ok, but receive no special treatment (i.e. there is no handling of "minutes"). - changed by ejkv
+define ("UNITS", _("talents"));  // This setting affects functionality, not just text displayed, so if you want to use hours/minutes this needs to read "Hours" exactly.  All other unit descriptions are ok, but receive no special treatment (i.e. there is no handling of "minutes"). - changed by ejkv
 
 /**************** Monthly fee related settings ********************/
 
@@ -202,7 +202,7 @@ $monthly_fee_exempt_list = array("ADMIN", SYSTEM_ACCOUNT_ID, "extra_admin"); // 
 define ("MAX_FILE_UPLOAD","1000000"); // Maximum file size, in bytes, allowed for uploads to the server - changed from 5000000 into 1000000 by ejkv
 									 
 // The following text will appear at the beggining of the email update messages
-define ("LISTING_UPDATES_MESSAGE", "<h1>".SITE_LONG_TITLE."</h1>".$lng_list_update_message_01." <a href=http://".HTTP_BASE."/member_edit.php?mode=self>".$lng_member_profile."</a> ".$lng_list_update_message_02);
+define ("LISTING_UPDATES_MESSAGE", "<h1>".SITE_LONG_TITLE."</h1>"._("The following listings are new or updated.<p>If you would prefer not to receive automatic email updates, or if you would like to change their frequency, you can do so at the")." <a href=http://".HTTP_BASE."/member_edit.php?mode=self>"._("Member Profile")."</a> "._("area of our website."));
 
 
 // Should inactive accounts have their listings automatically expired?
@@ -228,7 +228,7 @@ define ("DELETE_EXPIRED_AFTER","90");
 
 // The following message is the one that will be emailed to the person 
 // whose listings have been expired (a delicate matter).
-define ("EXPIRED_LISTINGS_MESSAGE", $lng_hello.",\n\n".$lng_expire_listings_message_01." ".SITE_SHORT_TITLE." " .$lng_expire_listings_message_02." ". EXPIRATION_WINDOW ." ".$lng_expire_listings_message_03.".\n\n".$lng_expire_listings_message_04." ".SITE_LONG_TITLE." ".$lng_expire_listings_message_05." ".MAX_DAYS_INACTIVE." ".$lng_expire_listings_message_06.".\n\n".$lng_expire_listings_message_07." ".PHONE_ADMIN.".\n\n".$lng_expire_listings_message_08." ". EXPIRATION_WINDOW ." ".$lng_expire_listings_message_09." ". DELETE_EXPIRED_AFTER ." ".$lng_expire_listings_message_10."\n\n\n".$lng_instructions_to_reactivate_listings.":\n1) ".$lng_login_to_the_website."\n2) ".$lng_go_to_update_listings."\n3) ".$lng_select_listings."\n4) ".$lng_select_listing_to_edit."\n5) ".$lng_uncheck_box."\n6) ".$lng_press_update_button."\n7) ".$lng_repeat_for_all_listings."\n");
+define ("EXPIRED_LISTINGS_MESSAGE", _("Hello").",\n\n"._("Due to inactivity, your")." ".SITE_SHORT_TITLE." " ._("listings have been set to automatically expire")." ". EXPIRATION_WINDOW ." "._("days from now").".\n\n"._("In order to keep the")." ".SITE_LONG_TITLE." "._("system up to date and working smoothly for all members, we have developed an automatic system to expire listings for members who haven't recorded exchanges or updated their listings during a period of")." ".MAX_DAYS_INACTIVE." "._("days. We want the directory to be up to date, so that members do not encounter listings that are out of date or expired. This works to everyone's advantage").".\n\n"._("We apologize for any inconvenience this may cause you and thank you for your participation. If you have any questions or comments, or are unsure how to best use the system, please reply to this email message or call us at")." ".PHONE_ADMIN.".\n\n"._("You have")." ". EXPIRATION_WINDOW ." "._("days to login to the system and reactivate listings that you would still like to have in the directory.  If you do not reactivate them during that timeframe, your listings will no longer appear in the directory, but will still be stored in the system for another")." ". DELETE_EXPIRED_AFTER ." "._("days, during which time you can still edit and reactivate them.")."\n\n\n"._("Instructions to reactivate listings").":\n1) "._("Login to the website")."\n2) "._("Go to Update Listings")."\n3) "._("Select Edit Offered (or Wanted) Listings")."\n4) "._("Select the listing to edit")."\n5) "._("Uncheck the box next to 'Should this listing be set to automatically expire?'")."\n6) "._("Press the Update button")."\n7) "._("Repeat steps 1-6 for all listings you wish to reactivate")."\n");
 
 // The year your local currency started -- the lowest year shown
 // in the Join Year menu option for accounts.
@@ -243,10 +243,10 @@ define ("DEFAULT_PHONE_AREA", "0xx"); // changed by ejkv
 // Should short date formats display month before day (US convention)?
 define ("MONTH_FIRST", false);		
 
-define ("PASSWORD_RESET_SUBJECT", $lng_your." ". SITE_LONG_TITLE ." ".$lng_account);
-define ("PASSWORD_RESET_MESSAGE", $lng_your_password_for." ". SITE_LONG_TITLE ." ".$lng_has_has_been_reset." ".PHONE_ADMIN.".\n\n".$lng_your_user_id_and_pwrd_are_listed_in_this_email);
-define ("NEW_MEMBER_SUBJECT", $lng_welcome_to." ". SITE_LONG_TITLE);
-define ("NEW_MEMBER_MESSAGE", $lng_hello_and_welcome_to." ". SITE_LONG_TITLE ." ".$lng_community."\n\n".$lng_a_member_account_has_been_created.":\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/member_login.php\n\n".$lng_please_login_and_create_listings."\n\n".$lng_thank_you_for_joining_us);
+define ("PASSWORD_RESET_SUBJECT", _("Your")." ". SITE_LONG_TITLE ." "._("Account"));
+define ("PASSWORD_RESET_MESSAGE", _("Your password for")." ". SITE_LONG_TITLE ." "._("has been reset. If you did not request this reset, it is possible your account has been compromised, and you may want to contact the site administrator at")." ".PHONE_ADMIN.".\n\n"._("Your user id and new password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."));
+define ("NEW_MEMBER_SUBJECT", _("Welcome to ")." ". SITE_LONG_TITLE);
+define ("NEW_MEMBER_MESSAGE", _("Hello, and welcome to the")." ". SITE_LONG_TITLE ." "._("community!")."\n\n"._("A member account has been created for you at").":\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/member_login.php\n\n"._("Please login and create your Offered and Wanted Listings.  Your new user id and password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login.")."\n\n"._("Thank you for joining us."));
 
 // Minimum password length
 define ("PASSWORD_MIN_LENGTH", 7);

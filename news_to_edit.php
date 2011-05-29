@@ -2,7 +2,7 @@
 include_once("includes/inc.global.php");
 $cUser->MustBeLevel(1);
 $p->site_section = EVENTS;
-$p->page_title = $lng_choose_item_to_edit;
+$p->page_title = _("Choose Item to Edit");
 
 include("includes/inc.forms.php");
 include_once("classes/class.news.php");
@@ -10,11 +10,11 @@ include_once("classes/class.news.php");
 $news = new cNewsGroup;
 $news->LoadNewsGroup();
 if($news_array = $news->MakeNewsArray()) {
-	$form->addElement("select", "news_id", $lng_which_news_item, $news_array);
+	$form->addElement("select", "news_id", _("Which News Item?"), $news_array);
 	$form->addElement("static", null, null, null);
-	$form->addElement('submit', 'btnSubmit', $lng_edit);
+	$form->addElement('submit', 'btnSubmit', _("Edit"));
 } else {
-	$form->addElement("static", null, $lng_no_news_items.".", null);
+	$form->addElement("static", null, _("There are no current news items").".", null);
 }
 
 if ($form->validate()) { // Form is validated so processes the data

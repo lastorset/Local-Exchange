@@ -64,12 +64,12 @@ class cPerson
 	}
 
 	function SaveNewPerson() {
-		global $cDB, $cErr, $lng_could_not_save_new_person_same_name;
+		global $cDB, $cErr;
 
 		$duplicate_exists = $cDB->Query("SELECT NULL FROM ".DATABASE_PERSONS." WHERE member_id=". $cDB->EscTxt($this->member_id) ." AND first_name". $cDB->EscTxt2($this->first_name) ." AND last_name". $cDB->EscTxt2($this->last_name) ." AND mother_mn". $cDB->EscTxt2($this->mother_mn) ." AND mid_name". $cDB->EscTxt2($this->mid_name) ." AND dob". $cDB->EscTxt2($this->dob) .";");
 		
 		if($row = mysql_fetch_array($duplicate_exists)) {
-			$cErr->Error($lng_could_not_save_new_person_same_name);
+			$cErr->Error(_("Could not save new person. There is already a person in your account with the same name, date of birth, and mother's maiden name. If you received this error after pressing the Back button, try going back to the menu and starting again."));
 			include("redirect.php");
 		}
 	
@@ -79,20 +79,20 @@ class cPerson
 	}
 			
 	function SavePerson() {
-		global $cDB, $cErr, $lng_could_not_save_changes, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		/*[chris]*/ // Added store personal profile data
 		$update = $cDB->Query("UPDATE ". DATABASE_PERSONS ." SET member_id=". $cDB->EscTxt($this->member_id) .", primary_member=". $cDB->EscTxt($this->primary_member) .", directory_list=". $cDB->EscTxt($this->directory_list) .", first_name=". $cDB->EscTxt($this->first_name) .", last_name=". $cDB->EscTxt($this->last_name) .", mid_name=". $cDB->EscTxt($this->mid_name) .", dob=". $cDB->EscTxt($this->dob) .", mother_mn=". $cDB->EscTxt($this->mother_mn) .", email=". $cDB->EscTxt($this->email) .", phone1_area=". $cDB->EscTxt($this->phone1_area) .", phone1_number=". $cDB->EscTxt($this->phone1_number) .", phone1_ext=". $cDB->EscTxt($this->phone1_ext) .", phone2_area=". $cDB->EscTxt($this->phone2_area) .", phone2_number=". $cDB->EscTxt($this->phone2_number) .", phone2_ext=". $cDB->EscTxt($this->phone2_ext) .", fax_area=". $cDB->EscTxt($this->fax_area) .", fax_number=". $cDB->EscTxt($this->fax_number) .", fax_ext=". $cDB->EscTxt($this->fax_ext) .", address_street1=". $cDB->EscTxt($this->address_street1) .", address_street2=". $cDB->EscTxt($this->address_street2) .", address_city=". $cDB->EscTxt($this->address_city) .", address_state_code=". $cDB->EscTxt($this->address_state_code) .", address_post_code=". $cDB->EscTxt($this->address_post_code) .", address_country=". $cDB->EscTxt($this->address_country).", about_me=". $cDB->EscTxt($this->about_me) .","."age=".  $cDB->EscTxt($this->age) .",". "sex=". $cDB->EscTxt($this->sex) . " WHERE person_id=". $cDB->EscTxt($this->person_id) .";");
 
 		if(!$update)
-			$cErr->Error($lng_could_not_save_changes." '". $this->first_name ." ". $this->mid_name ." ". $this->last_name ."'. ".$lng_please_try_again_later."."); // added mid_name by ejkv	
+			$cErr->Error(_("Could not save changes to")." '". $this->first_name ." ". $this->mid_name ." ". $this->last_name ."'. "._("Please try again later")."."); // added mid_name by ejkv	
 			
 		return $update;
 	}
 
 	function LoadPerson($who)
 	{
-		global $cDB, $cErr, $lng_error_access_person, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		/*[chris]*/ // Added fetch personal profile data
 		$query = $cDB->Query("SELECT member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country, about_me, age, sex FROM ".DATABASE_PERSONS." WHERE person_id=". $cDB->EscTxt($who));
@@ -133,16 +133,16 @@ class cPerson
 		}
 		else 
 		{
-			$cErr->Error($lng_error_access_person." (".$who.").  ".$lng_please_try_again_later.".");
+			$cErr->Error(_("There was an error accessing this person")." (".$who.").  "._("Please try again later").".");
 			include("redirect.php");
 		}		
 	}		
 	
 	function DeletePerson() {
-		global $cDB, $cErr, $lng_cannot_delete_primary_member, $lng_error_deleting_joint_member, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		if($this->primary_member == 'Y') {
-			$cErr->Error($lng_cannot_delete_primary_member."!");	
+			$cErr->Error(_("Cannot delete primary member")."!");	
 			return false;
 		} 
 		
@@ -153,7 +153,7 @@ class cPerson
 		if (mysql_affected_rows() == 1) {
 			return true;
 		} else {
-			$cErr->Error($lng_error_deleting_joint_member, " ".$lng_please_try_again_later."." );
+			$cErr->Error(_("There was an error deleting the joint member."), " "._("Please try again later")."." );
 		}
 		
 	}
@@ -171,7 +171,7 @@ class cPerson
 			
 	function DisplayPhone($type)
 	{
-		global $cErr, $lng_phone_type_not_exist;
+		global $cErr;
 
 		switch ($type)
 		{
@@ -191,7 +191,7 @@ class cPerson
 				$phone_ext = $this->fax_ext;
 				break;								
 			default:
-				$cErr->Error($lng_phone_type_not_exist);
+				$cErr->Error(_("Phone type does not exist."));
 				return "ERROR";
 		}
 /*		

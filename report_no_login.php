@@ -4,14 +4,14 @@
 	include("classes/class.table.php");
 	
 	$p->site_section = ADMINISTRATION;
-	$p->page_title = $lng_members_never_logged_in;
+	$p->page_title = _("Members Who Have Never Logged In");
 	
 	$cUser->MustBeLevel(1);
 	
 	$output = "";
 	
 	$table = new cTable;
-	$table->AddSimpleHeader(array($lng_member, $lng_join_date, $lng_phone_numbers, $lng_emls));
+	$table->AddSimpleHeader(array(_("Member"), _("Join Date"), _("Phone Number(s)"), _("Email(s)")));
 	// $table->SetFieldAlignRight(4);  // row 4 is numeric and should align to the right
 	
 	$allmembers = new cMemberGroup;
@@ -32,7 +32,7 @@
 	$output = $table->DisplayTable();
 	
 	if($output == "")
-		$output = $lng_all_members_logged_in;
+		$output = _("All members in the system have logged in at least once.");
 	
 	$p->DisplayPage($output);
 	

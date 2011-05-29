@@ -1,7 +1,7 @@
 <?php
 include_once("includes/inc.global.php");
 $p->site_section = PROFILE;
-$p->page_title = $lng_delete_joint_member;
+$p->page_title = _("Delete Joint Member");
 
 include("includes/inc.forms.php");
 
@@ -17,9 +17,9 @@ $person = new cPerson;
 $person->LoadPerson($_REQUEST["person_id"]);
 
 $form->addElement("hidden", "person_id", $_REQUEST["person_id"]);
-$form->addElement("static", null, $lng_sure_to_perm_delete." ". $person->Name() ."?", null);
+$form->addElement("static", null, _("Are you sure you want to permanently delete")." ". $person->Name() ."?", null);
 $form->addElement("static",null,null);
-$form->addElement('submit', 'btnSubmit', $lng_delete);
+$form->addElement('submit', 'btnSubmit', _("Delete"));
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -29,12 +29,12 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $person, $lng_joint_member_deleted, $lng_error_deleting_joint_member;
+	global $p, $person;
 	
 	if($person->DeletePerson())
-		$output = $lng_joint_member_deleted;
+		$output = _("Joint member deleted.");
 	else
-		$output = $lng_error_deleting_joint_member;
+		$output = _("There was an error deleting the joint member.");
 		
 	$p->DisplayPage($output);
 }
