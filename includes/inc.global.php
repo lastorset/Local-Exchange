@@ -78,13 +78,19 @@ define ("DATABASE_STATES", "states");  // added by ejkv
 $global = ""; 	// $global lets other includes know that 
 					// inc.global.php has been included
 
-// Include language file, remove comment slashes to include ONE language of your choice 
-//include_once("lang/inc.NL_lang.php");
-//include_once("lang/inc.UK_lang.php");
-include_once("lang/inc.US_lang.php");
-//include_once("lang/inc.UK_LDN_lang.php");
-
 include_once("inc.config.php");
+
+/* Initialize gettext */
+
+$locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+
+// Hardcoded for now. Later some prettier configuration.
+$locale = "nb_NO.utf8";
+
+$ret = setlocale(LC_MESSAGES, $locale);
+
+bindtextdomain("messages", "./includes/lang");
+textdomain("messages");
 
 /* Initial session handling code starts */
 require_once("session_handler.php");
