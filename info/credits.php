@@ -17,9 +17,9 @@ print $p->MakePageTitle();
   on <a href="http://www.cxss.info" target"_blank">www.cxss.info</a></b></p>
 <p> PHP development for the <A HREF="http://sourceforge.net/projects/local-exchange/" target="_blank">Local 
   Exchange</A> system was by Calvin Priest. Original informational content was 
-  by Francis Ayley & Cheryl Niles. Graphics were contributed by Calvin Priest from 
+  by Francis Ayley &amp; Cheryl Niles. Graphics were contributed by Calvin Priest from 
   several other free software projects, the Gnome project in particular. Thanks 
-  to Laurie & Scott Shultis for their generous assistance with the original Fourth 
+  to Laurie &amp; Scott Shultis for their generous assistance with the original Fourth 
   Corner Exchange website.</p>
 
 <p> 
