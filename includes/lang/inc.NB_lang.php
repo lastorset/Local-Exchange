@@ -808,7 +808,7 @@ $lng_credits = "Credits";
 $lng_language = "en";
 $lng_member_search = "Member_search";
 $lng_order_by = "Order by";
-$lng_home_text = "<p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>You may <a href='/member_create.php'>sign up online</a>! Or <a href='/pages.php?id=6'>read more</a> about the system.";
+$lng_home_text = "<p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>Learn how to <a href='/pages.php?id=8'>get started</a>!";
 $lng_arts_and_crafts = "Arts & Crafts";
 $lng_building_services = "Building Services";
 $lng_bussines_and_administration = "Business & Administration";
