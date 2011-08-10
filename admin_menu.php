@@ -26,7 +26,7 @@ if ($cUser->member_role > 1) {
 if ($cUser->member_role > 1) {
 	$list .= "<A HREF=member_choose.php?action=member_status_change&inactive=Y><FONT SIZE=2>"._("Inactivate/Re-activate a Member Account")."</FONT></A><BR>";
 }
-$list .= "<A HREF=member_contact_create.php?mode=admin><FONT SIZE=2>"._("add_joint_member_to_exiting_account" /* orphaned string */)."</FONT></A><BR>";
+$list .= "<A HREF=member_contact_create.php?mode=admin><FONT SIZE=2>"._("Add joint member to existing account")."</FONT></A><BR>";
 $list .= "<A HREF=member_contact_to_edit.php><FONT SIZE=2>"._("Edit/Delete a Joint Member")."</FONT></A><BR>";
 
 if ($cUser->member_role > 1) {
@@ -59,7 +59,7 @@ $list .= "<A HREF=member_choose.php?action=listing_to_edit&get1=type&get1val=Off
 $list .= "<A HREF=member_choose.php?action=listing_delete&get1=type&get1val=Offer><FONT SIZE=2>"._("Delete a Member's Offered Listing")."</FONT></A><P>";
 
 $list .= "<em>"._("Wants")."</em><P>";
-$list .= "<A HREF=listing_create.php?type=Want&mode=admin><FONT SIZE=2>"._("create_new_want_listing_for_member" /* orphaned string */)."</FONT></A><BR>";
+$list .= "<A HREF=listing_create.php?type=Want&mode=admin><FONT SIZE=2>"._("Create a New Want Listing for a Member")."</FONT></A><BR>";
 $list .= "<A HREF=member_choose.php?action=listing_to_edit&get1=type&get1val=Want><FONT SIZE=2>"._("Edit a Member's Wanted Listing")."</FONT></A><BR>";
 $list .= "<A HREF=member_choose.php?action=listing_delete&get1=type&get1val=Want><FONT SIZE=2>"._("Delete a Member's Wanted Listing")."</FONT></A><P>";
 
@@ -68,8 +68,8 @@ $list .= "<A HREF=member_choose.php?action=holiday><FONT SIZE=2>"._("Member Goin
 if ($cUser->member_role > 1) {
 	$list .= "<BR><A HREF=category_create.php><FONT SIZE=2>"._("Create a New Listing Category")."</FONT></A><BR>";
 	$list .= "<A HREF=category_choose.php><FONT SIZE=2>"._("Edit/Delete Listing Category")."</FONT></A>";
-	$list .= "<BR><A HREF=state_create.php><FONT SIZE=2>"._("create_new_listing_state" /* orphaned string */)."</FONT></A><BR>"; // added by ejkv
-	$list .= "<A HREF=state_choose.php><FONT SIZE=2>"._("edit_listing_state" /* orphaned string */)."</FONT></A>"; // added by ejkv
+	$list .= "<BR><A HREF=state_create.php><FONT SIZE=2>"._("Create a New State")."</FONT></A><BR>"; // added by ejkv
+	$list .= "<A HREF=state_choose.php><FONT SIZE=2>"._("Edit State")."</FONT></A>"; // added by ejkv
 }
 $list .= "<P>";
 $list .= "</td><td>";

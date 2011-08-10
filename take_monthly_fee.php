@@ -136,7 +136,7 @@ function transfer_fee($tid)
         $_SESSION["LAST_TID"] = $tid;
     }
 
-    global $cDB, $monthly_fee_exempt_list; // , _("monthly_fee" /* orphaned string */) added by ejkv
+    global $cDB, $monthly_fee_exempt_list;
     $monthly_fee = MONTHLY_FEE;
     $system_account_id = SYSTEM_ACCOUNT_ID;
     $member_table = DATABASE_MEMBERS;
@@ -167,7 +167,7 @@ function transfer_fee($tid)
             $query1 = "insert into $trade_table set trade_date=from_unixtime(".$ts."),   
             	 status='V', member_id_from='".$row->member_id."',
                               member_id_to='$system_account_id', amount=$monthly_fee, category=12,
-                                  description='"._("monthly_fee" /* orphaned string */)."', type='$trade_type'"; // changed 'Monthly fee' into _("monthly_fee" /* orphaned string */) by ejkv
+                                  description='"._("Monthly Fee")."', type='$trade_type'";
    
             $result1 = $cDB->Query($query1);
 	

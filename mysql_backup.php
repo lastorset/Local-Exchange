@@ -215,8 +215,8 @@ $i++;
 	exit;
 }
 
-$output = _("create_mysql_backup" /* orphaned string */); // "Use this tool to backup your MySQL Database.<p>"; - changed by ejkv
-$output .= "<a href=mysql_backup.php?backup=true>"._("create_mysql_backup_now" /* orphaned string */)."</a>"; // "<a href=mysql_backup.php?backup=true>Backup Now</a>"; - changed by ejkv
+$output = _("Use this tool to backup your MySQL Database.<p>"); // "Use this tool to backup your MySQL Database.<p>"; - changed by ejkv
+$output .= "<a href=mysql_backup.php?backup=true>"._("Backup Now")."</a>"; // "<a href=mysql_backup.php?backup=true>Backup Now</a>"; - changed by ejkv
 		
 $p->DisplayPage($output);
 ?>

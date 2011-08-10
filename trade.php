@@ -87,7 +87,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member, $cErr, $cUser; // added _("Member ID"), and changed _("You have transferred") into _("you_have" /* orphaned string */), and "to " into _("transferred_to" /* orphaned string */) - by ejkv
+	global $p, $member, $cErr, $cUser;
 	$list = "";
 	
 	if(UNITS == "Hours") {
@@ -169,7 +169,8 @@ function process_data ($values) {
 				$list .= LEECH_NOTICE;
 		}
 		else
-			$list .= _("you_have" /* orphaned string */)." ". $values['units'] ." ". strtolower(UNITS) ._("transferred_to" /* orphaned string */). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?"; // changed _("You have transferred") into _("you_have" /* orphaned string */) and "to " into _("transferred_to" /* orphaned string */) - by ejkv
+			// FIXME: String is split
+			$list .= _("You have transferred")." ". $values['units'] ." ". strtolower(UNITS) ._(" to "). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?";
 		
 		// Has the recipient got an income tie set-up? If so, we need to transfer a percentage of this elsewhere...
 		

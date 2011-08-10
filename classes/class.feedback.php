@@ -131,9 +131,9 @@ class cFeedback {
 	
 	function Context () {
 		if ($this->context == SELLER)
-			return _("seller" /* orphaned string */); // changed by ejkv
+			return _("Seller"); // changed by ejkv
 		else
-			return _("buyer" /* orphaned string */); // changed by ejkv
+			return _("Buyer"); // changed by ejkv
 	}
 }
 	

@@ -67,7 +67,6 @@ function process_data ($values) {
 
     if(known_email_addressp($_REQUEST["email_to"])) {
 	// added SAFE_MODE check, and removed 5th parameter, if safe mode = ON - by ejkv
-	// replaced message-body by $body, _("from_colon" /* orphaned string */) by "From:" and '. $copy' by ', $cUser->person[0]->email' - by ejkv
 	    if (SAFE_MODE_ON) {
 			$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, "From:". $cUser->person[0]->email);
 		}

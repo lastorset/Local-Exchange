@@ -57,7 +57,7 @@ function process_data ($values) {
 			$listings = new cListingGroup(WANT_LISTING);
 			$listings->LoadListingGroup(null, $values["category"]);
 			foreach($listings->listing as $listing)
-				$output .= _("wanted_cap" /* orphaned string */).": ". $listing->description ." (". $listing->member_id .")<BR>";			
+				$output .= _("WANTED").": ". $listing->description ." (". $listing->member_id .")<BR>";
 		} else {
 			if($category->DeleteCategory())
 				$output = _("The category has been deleted.");

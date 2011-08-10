@@ -27,7 +27,7 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 		<option value='lf' ".$orderBySel["lf"].">"._("Last Name")."</option>
 		<option value='nh' ".$orderBySel["nh"].">"._("Neighbourhood")."</option>
 		<option value='loc' ".$orderBySel["loc"].">"._("Town")."</option>
-		<option value='pc' ".$orderBySel["pc"].">"._("postcode" /* orphaned string */)."</option>
+		<option value='pc' ".$orderBySel["pc"].">"._("Postal code")."</option>
 		<option value='addr2' ".$orderBySel["pc"].">".ADDRESS_LINE_2."</option>
 		</select>";
 	$output .= "<p><input type=submit value="._("Search")."></form>"; 

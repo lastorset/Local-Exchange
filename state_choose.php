@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = LISTINGS;
-$p->page_title = _("choose_state" /* orphaned string */);
+$p->page_title = _("Choose state");
 
 include("includes/inc.forms.php");
 
@@ -16,7 +16,7 @@ $state = new cStateList;
 $state_list = $state->MakeStateArray();
 unset($state_list[0]);
 
-$form->addElement("select", "state", _("which_state" /* orphaned string */), $state_list);
+$form->addElement("select", "state", _("Which state?"), $state_list);
 $form->addElement("static", null, null, null);
 
 $buttons[] = &HTML_QuickForm::createElement('submit', 'btnEdit', _("Edit"));
@@ -51,7 +51,7 @@ function process_data ($values) {
 		$state = new cState;
 		$state->LoadState($values["state"]);
 		if($state->DeleteState())
-			$output = _("state_deleted" /* orphaned string */);
+			$output = _("State deleted");
 	} else {
 		header("location:http://".HTTP_BASE."/state_edit.php?state_id=". $values["state"]);
 		exit;	

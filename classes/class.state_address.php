@@ -33,7 +33,7 @@ class cState
 		$query = $cDB->Query("SELECT description FROM ".DATABASE_STATES." WHERE description=". $cDB->EscTxt($this->description) .";");
 
 		if($row = mysql_fetch_array($query)) {		
-			$cErr->Error(_("state_already_exists" /* orphaned string */).": '".$this->description."'.");
+			$cErr->Error(_("State already exists").": '".$this->description."'.");
 			return false;
 		} else {
 			$insert = $cDB->Query("INSERT INTO ". DATABASE_STATES ."(description) VALUES (". $cDB->EscTxt($this->description) .");");
@@ -53,7 +53,7 @@ class cState
 		$query = $cDB->Query("SELECT description FROM ".DATABASE_STATES." WHERE description=". $cDB->EscTxt($this->description) .";");
 
 		if($row = mysql_fetch_array($query)) {		
-			$cErr->Error(_("state_already_exists" /* orphaned string */).": '".$this->description."'.");
+			$cErr->Error(_("State already exists").": '".$this->description."'.");
 			return false;
 		} else {
 			$update = $cDB->Query("UPDATE ". DATABASE_STATES ." SET description=". $cDB->EscTxt($this->description) ." WHERE state_id=". $cDB->EscTxt($this->id) .";");
@@ -72,7 +72,7 @@ class cState
 			$this->id = $id;
 			$this->description = $row[0];
 		} else {
-			$cErr->Error(_("error_access_state_code" /* orphaned string */)." '".$id."'.  "._("Please try again later").".");
+			$cErr->Error(_("There was an error accessing the state information")." '".$id."'.  "._("Please try again later").".");
 			include("redirect.php");
 		}			
 	}
@@ -81,7 +81,7 @@ class cState
 	function DeleteState() {
 		global $cDB, $cErr;
 
-		$cErr->Error(_("error_delete_state_code" /* orphaned string */)." '".$id."'. FUNCTION NOT USED."); // function not to be used
+		$cErr->Error(_("There was an error deleting state information")." '".$id."'. FUNCTION NOT USED."); // function not to be used
 		return false; // function not to be used
 	
 		$delete = $cDB->Query("DELETE FROM ".DATABASE_STATES." WHERE state_id=". $cDB->EscTxt($this->id));
@@ -90,7 +90,7 @@ class cState
 			unset($this);	
 			return true;
 		} else {
-			$cErr->Error(_("error_delete_state_code" /* orphaned string */)." '".$id."'. "._("Please try again later").".");
+			$cErr->Error(_("There was an error deleting state information")." '".$id."'. "._("Please try again later").".");
 			include("redirect.php");
 		}
 	}
@@ -121,7 +121,7 @@ class cStateList {
 
 		if($i == 0) {
 			if ($redirect) {
-				$cErr->Error(_("error_access_state_record" /* orphaned string */).".  "._("Please try again later").".");
+				$cErr->Error(_("There was an error deleting state information").".  "._("Please try again later").".");
 				include("redirect.php");			
 			} else {
 				return false;

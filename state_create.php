@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = LISTINGS;
-$p->page_title = _("create_new_listing_state" /* orphaned string */);
+$p->page_title = _("Create a New State");
 
 include("includes/inc.forms.php");
 include_once("classes/class.state_address.php");
@@ -13,7 +13,7 @@ include_once("classes/class.state_address.php");
 //
 $cUser->MustBeLevel(2);
 
-$form->addElement("text", "state", _("state_description" /* orphaned string */), array("size" => 30, "maxlength" => 30));
+$form->addElement("text", "state", _("State name"), array("size" => 30, "maxlength" => 30));
 $form->addElement("static", null, null, null);
 
 $form->addElement('submit', 'btnSubmit', _("Submit"));
@@ -21,7 +21,7 @@ $form->addElement('submit', 'btnSubmit', _("Submit"));
 //
 // Define form rules
 //
-$form->addRule('state', _("enter_state_description" /* orphaned string */), 'required');
+$form->addRule('state', _("Enter state name"), 'required');
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -39,9 +39,9 @@ function process_data ($values) {
 	$state = new cState($values["state"]);
 	
 	if ($state->SaveNewstate()) {
-		$output = _("state_created" /* orphaned string */);
+		$output = _("State created");
 	} else {
-		$output = _("could_not_save_state" /* orphaned string */)." "._("Please try again later.");
+		$output = _("Could not save state")." "._("Please try again later.");
 	}
 	
 	$p->DisplayPage($output);

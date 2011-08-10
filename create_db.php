@@ -257,11 +257,11 @@ $cDB->Query("CREATE TABLE " . DATABASE_STATES . "(
 
 // Now populate DATABASE_STATES table with a few initial records
 // State name could be 'Florida', County could be 'Sussex', or Neighbourhood could be 'Centre'
-$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("state1" /* orphaned string */)');") or die("Error - Could not insert row into states table.");
-$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("state2" /* orphaned string */)');") or die("Error - Could not insert row into states table.");
-$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("state3" /* orphaned string */)');") or die("Error - Could not insert row into states table.");
-$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("state4" /* orphaned string */)');") or die("Error - Could not insert row into states table.");
-$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("state5" /* orphaned string */)');") or die("Error - Could not insert row into states table.");
+$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("Sample: Downtown")');") or die("Error - Could not insert row into states table.");
+$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("Sample: North")');") or die("Error - Could not insert row into states table.");
+$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("Sample: East")');") or die("Error - Could not insert row into states table.");
+$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("Sample: South")');") or die("Error - Could not insert row into states table.");
+$cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('_("Sample: West")');") or die("Error - Could not insert row into states table.");
 
 /* END upgrade 1.01 for Multilingual version */
 

@@ -26,7 +26,7 @@ class cCategory
 		$query = $cDB->Query("SELECT description FROM ".DATABASE_CATEGORIES." WHERE description=". $cDB->EscTxt($this->description) .";"); // added to check if category already exists - by ejkv
 
 		if($row = mysql_fetch_array($query)) {		
-			$cErr->Error(_("category_already_exists" /* orphaned string */). ": '".$this->description."'."); // category already exists - by ejkv
+			$cErr->Error(_("Category already exists"). ": '".$this->description."'."); // category already exists - by ejkv
 			return false;
 		} else {
 			$insert = $cDB->Query("INSERT INTO ". DATABASE_CATEGORIES ."(parent_id, description) VALUES (". $cDB->EscTxt($this->parent) .", ". $cDB->EscTxt($this->description) .");");
@@ -41,12 +41,12 @@ class cCategory
 	}
 	
 	function SaveCategory() {
-		global $cDB, $cErr; // added $cErr and _("category_already_exists" /* orphaned string */) - by ejkv
+		global $cDB, $cErr;
 
 		$query = $cDB->Query("SELECT description FROM ".DATABASE_CATEGORIES." WHERE description=". $cDB->EscTxt($this->description) .";"); // added to check if category already exists - by ejkv
 
 		if($row = mysql_fetch_array($query)) {		
-			$cErr->Error(_("category_already_exists" /* orphaned string */). ": '".$this->description."'."); // category already exists - by ejkv
+			$cErr->Error(_("Category already exists"). ": '".$this->description."'."); // category already exists - by ejkv
 			return false;
 		} else {
 			$update = $cDB->Query("UPDATE ". DATABASE_CATEGORIES ." SET parent_id=". $cDB->EscTxt($this->parent) .", description=". $cDB->EscTxt($this->description) ." WHERE category_id=". $cDB->EscTxt($this->id) .";");
@@ -126,7 +126,7 @@ class cCategoryList {
 
 		if($i == 0) {
 			if ($redirect) {
-				$cErr->Error(_("error_acces_category_code" /* orphaned string */).".  "._("Please try again later").".");
+				$cErr->Error(_("There was an error accessing a category record").".  "._("Please try again later").".");
 				include("redirect.php");			
 			} else {
 				return false;
