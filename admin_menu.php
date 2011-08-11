@@ -26,7 +26,7 @@ if ($cUser->member_role > 1) {
 if ($cUser->member_role > 1) {
 	$list .= "<A HREF=member_choose.php?action=member_status_change&inactive=Y><FONT SIZE=2>".$lng_inactivate_reactivate_member_account."</FONT></A><BR>";
 }
-$list .= "<A HREF=member_contact_create.php?mode=admin><FONT SIZE=2>".$lng_add_joint_member_to_exiting_account."</FONT></A><BR>";
+$list .= "<A HREF=member_contact_create.php?mode=admin><FONT SIZE=2>".$lng_add_joint_member_to_existing_account."</FONT></A><BR>";
 $list .= "<A HREF=member_contact_to_edit.php><FONT SIZE=2>".$lng_edit_delete_joint_member."</FONT></A><BR>";
 
 if ($cUser->member_role > 1) {

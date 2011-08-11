@@ -76,7 +76,7 @@ function permission2text($p) {
 	if (!$p)
 		$p = 0;
 		
-	$pTexts = Array($lng_guests,$lng_members,$lng_committe,$lng_admin);
+	$pTexts = Array($lng_guests,$lng_members,$lng_committee,$lng_admin);
 	
 	return $pTexts[$p];
 }

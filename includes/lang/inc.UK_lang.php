@@ -94,7 +94,7 @@ $lng_create_new_offer_listing_for_member = "Create a New Offer Listing for a Mem
 $lng_edit_members_offered_listing = "Edit a Member's Offered Listing";
 $lng_delete_members_offered_listing = "Delete a Member's Offered Listing";
 $lng_wants = "Wants";
-$lng_create_new_want_listing = "Create a New Want Listing for a Member";
+$lng_create_new_want_listing_for_member = "Create a New Want Listing for a Member";
 $lng_edit_members_wanted_lisitng = "Edit a Member's Wanted Listing";
 $lng_delete_members_wanted_lisitng = "Delete a Member's Wanted Listing";
 $lng_miscellaneous = "Miscellaneous";
@@ -128,7 +128,8 @@ $lng_choose_category = "Choose Category";
 $lng_remove_listings_before_delete_category = "This category still has listings in it.  You will need to move these listings to new categories or delete them before you can delete this category.  Note that the listings could be temporarily inactive or expired, in which case they will not show in the offered/wanted lists.";
 $lng_listings_in_this_category = "Listings in this category:";
 $lng_offered_cap = "OFFERED";
-$lng_wanted_cap_colon = "WANTED";
+$lng_wanted_cap_colon = "WANTED:";
+$lng_wanted_cap = "WANTED";
 $lng_category_deleted = "The category has been deleted."; 
 $lng_category_created = "The category has been created.";
 $lng_could_not_save_category = "Could not save the category.";
@@ -639,6 +640,8 @@ $lng_log_in_to_pay_reject_invoice = "Please log into your account now to pay or 
 $lng_has_been_send_invoice_for = "has been sent an invoice for";
 $lng_will_informed_when_member_pays = "You will be informed when the member pays this invoice and will be invited to leave Feedback for this member";
 $lng_you_have_transferred = "You have transferred";
+$lng_you_have = "You have transferred"; // changed by ejkv
+$lng_transferred_to = " to "; // changed by ejkv
 $lng_or_would_you_like_to_leave = "Or would you like to leave";
 $lng_feedback = "feedback";
 $lng_for_this_member = "for this member";
@@ -706,7 +709,6 @@ $lng_awaiting_confirmation_of = "I am awaiting confirmation of";
 $lng_outgoing_payments = "Outgoing Payments";
 $lng_choose_member_view = "Choose Member to View";
 $lng_whose_exchange_history = "Whose Exchange History?";
-$lng_error_access_category_code = "There was an error accessing category code";
 $lng_please_try_again_later = "Please try again later";
 $lng_error_delete_category_code = "There was an error deleting category code";
 $lng_error_access_category_code = "There was an error accessing a category record";
@@ -715,6 +717,8 @@ $lng_error_access_feedback_table = "There was an error accessing the feedback ta
 $lng_type = "Type";
 $lng_context = "Context";
 $lng_comment = "Comment";
+$lng_seller = "Seller"; // added by ejkv
+$lng_buyer = "Buyer"; // added by ejkv
 $lng_error_access_rebuttal_table = "There was an error accessing the rebuttal table";
 $lng_reply = "Reply";
 $lng_follow_up = "Follow Up";
@@ -843,6 +847,7 @@ $lng_show_rate_on_listings = "Show Rate on Listings";
 $lng_display_rate_alongside_in_listings = "Do you want to display the Rate alongside the offers/wants in the main listings?";
 $lng_show_postcode_on_listing = "Show Postcode on Listings";
 $lng_display_postcode_alongside_in_listing = "Do you want to display the PostCode alongside the offers/wants in the main listings?";
+$lng_postcode = "Postcode";
 $lng_postcode_length_in_chars = "Postcode Length (in chars)";
 $lng_posctode_length_comment = "If you have elected to display the postcode on offers/wants listings, how much of the PostCode do you want to show? (the number you enter will be the number of characters displayed, so for eg if you just want to show the first 3 characters of the postcode then put 3.";
 $lng_enable_balance_override = "Enable Balance Override";
@@ -887,12 +892,38 @@ $lng_show_fees_and_charges_in_global_exchange_view = "Show monthly fees and serv
 $lng_show_fees_and_charges_comment = "Do you want to show monthly fees and service charges in the global exchange view? (Note: individual members will still be able to see this in their own personal exchange history).";
 $lng_database_created_message = "Database has been created. Click <A HREF=member_login.php>here</A> to login.";
 
+$lng_create_mysql_backup = "Use this tool to backup your MySQL Database.<p>"; // added by ejkv
+$lng_create_mysql_backup_now = "Backup Now"; // added by ejkv
+$lng_monthly_fee = "Monthly Fee"; // added by ejkv
+$lng_category_already_exists = "The category already exists"; // added by ejkv
 
+/* the following was added for state_address_code for mutilingual purposes - by ejkv
+added texts for new Database table states for state_address_code, with same structure and handling as categories
+added for NL to be used for district or neighbourhood
+could be used in UK for county, and in the USA for state
+ */
+$lng_choose_state = "Choose county ";
+$lng_which_state = "Which county? ";
+$lng_state_deleted = "County deleted";
+$lng_state_already_exists = "Create a new county";
+$lng_edit_listing_state = "Change county";
+$lng_state_description = "County name";
+$lng_enter_state_description = "Enter county name";
+$lng_state_created = "County created";
+$lng_could_not_save_state = "Could not save county";
+$lng_state_description_cannot_be_blank = "County name cannot be blank";
+$lng_state_updated = "County name updated";
+$lng_could_not_save_changes_state = "Could not save county name changes";
+$lng_error_access_state_code = "There was an error accessing county code";
+$lng_error_delete_state_code = "There was an error deleting county code";
+$lng_error_access_state_record = "There was an error accessing a county record";
 
-
-
-
-
-
+// Texts to populate DATABASE_STATES table with a few initial records
+// State name could be 'Florida', County could be 'Sussex', or Neighbourhood could be 'Centre'
+$lng_state1 = "Center";
+$lng_state2 = "North";
+$lng_state3 = "East";
+$lng_state4 = "South";
+$lng_state5 = "West";
 
 ?>

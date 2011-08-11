@@ -108,7 +108,7 @@ class cCategoryList {
 	var $category;	//Will be an array of object class cCategory
 
 	function LoadCategoryList($active_only=false, $type="%", $redirect=false) {	
-		global $cDB, $cErr, $lng_error_acces_category_code, $lng_please_try_again_later;
+		global $cDB, $cErr, $lng_error_access_category_code, $lng_please_try_again_later;
 		
 		if($active_only) {
 			$query = $cDB->Query("SELECT DISTINCT ".DATABASE_CATEGORIES.".category_id, ".DATABASE_CATEGORIES.".description FROM ".DATABASE_CATEGORIES.", ".DATABASE_LISTINGS." WHERE ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id AND status='". ACTIVE ."' AND type LIKE ". $cDB->EscTxt($type) ." ORDER BY ". DATABASE_CATEGORIES .".description;");
