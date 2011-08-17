@@ -22,30 +22,30 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is editing a member's accou
 
 $person = new cPerson;
 $person->LoadPerson($_REQUEST["person_id"]);
-$form->addElement("header", null, $lng_edit_joint_member." " . $person->first_name . " " . $person->mid_name . " " . $person->last_name); // added mid_name by ejkv
+$form->addElement("header", null, _("Edit a Joint Member")." " . $person->first_name . " " . $person->mid_name . " " . $person->last_name); // added mid_name by ejkv
 $form->addElement("html", "<TR></TR>");
 
 $form->addElement("hidden","person_id",$_REQUEST["person_id"]);
-$form->addElement("text", "first_name", $lng_first_name, array("size" => 15, "maxlength" => 20));
-$form->addElement("text", "mid_name", $lng_middle_name, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "last_name", $lng_last_name, array("size" => 20, "maxlength" => 30));
+$form->addElement("text", "first_name", _("First Name"), array("size" => 15, "maxlength" => 20));
+$form->addElement("text", "mid_name", _("Middle Name"), array("size" => 10, "maxlength" => 20));
+$form->addElement("text", "last_name", _("Last Name"), array("size" => 20, "maxlength" => 30));
 $form->addElement("static", null, null, null);
 
 if ($_REQUEST["mode"] == "admin") {
     $cUser->MustBeLevel(1);
 
 	$today = getdate();
-	$options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // - changed "en" by $lng_language by ejkv
-	$form->addElement("date", "dob", $lng_date_of_birth, $options);
-	$form->addElement("text", "mother_mn", $lng_mothers_maiden_name, array("size" => 20, "maxlength" => 30)); 
+	$options = array("language"=> _("en"), "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // - changed "en" by _("en") by ejkv
+	$form->addElement("date", "dob", _("Date of Birth"), $options);
+	$form->addElement("text", "mother_mn", _("Mother's Maiden Name"), array("size" => 20, "maxlength" => 30)); 
 	$form->addElement("static", null, null, null);
 }
 
-$form->addElement("select","directory_list", $lng_list_persons_contact_info_to_dir, array("Y"=>$lng_yes, "N"=>$lng_no));
-$form->addElement("text", "email", $lng_email_address, array("size" => 25, "maxlength" => 40));
-$form->addElement("text", "phone1", $lng_primary_phone, array("size" => 20));
-$form->addElement("text", "phone2", $lng_secondary_phone, array("size" => 20));
-$form->addElement("text", "fax", $lng_fax_number, array("size" => 20));
+$form->addElement("select","directory_list", _("List this Person's Contact Information in the Directory?"), array("Y"=>_("Yes"), "N"=>_("No")));
+$form->addElement("text", "email", _("Email Address"), array("size" => 25, "maxlength" => 40));
+$form->addElement("text", "phone1", _("Primary Phone"), array("size" => 20));
+$form->addElement("text", "phone2", _("Secondary Phone"), array("size" => 20));
+$form->addElement("text", "fax", _("Fax Number"), array("size" => 20));
 $form->addElement("static", null, null, null);
 $form->addElement("text", "address_street1", ADDRESS_LINE_1, array("size" => 25, "maxlength" => 50));
 $form->addElement("text", "address_street2", ADDRESS_LINE_2, array("size" => 25, "maxlength" => 50));
@@ -61,32 +61,32 @@ $state_list[0]="---"; // added by ejkv
 // $form->addElement("text", "address_state_code", STATE_TEXT, array("size" => 25, "maxlength" => 50));
 $form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
 $form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "address_country", $lng_country, array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_country", _("Country"), array("size" => 25, "maxlength" => 50));
 
 // TODO: Add the ability to make this person the primary member on the account
 
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_update);
+$form->addElement('submit', 'btnSubmit', _("Update"));
 
 //
 // Define form rules
 //
-$form->addRule('first_name', $lng_enter_first_name, 'required');
-$form->addRule('last_name', $lng_enter_last_name, 'required');
+$form->addRule('first_name', _("Enter a first name"), 'required');
+$form->addRule('last_name', _("Enter a last name"), 'required');
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');
-$form->addRule('dob', $lng_birthday_not_in_future, 'verify_not_future_date');
+$form->addRule('dob', _("Birth date cannot be in the future"), 'verify_not_future_date');
 $form->registerRule('verify_reasonable_dob','function','verify_reasonable_dob');
-$form->addRule('dob', $lng_little_young_dont_you_think, 'verify_reasonable_dob');
-$form->addRule('address_city',$lng_enter_a." ". ADDRESS_LINE_3, 'required');
-$form->addRule('address_state_code',$lng_enter_a." ". STATE_TEXT, 'required');
-$form->addRule('address_post_code',$lng_enter_a." ".ZIP_TEXT, 'required');
-$form->addRule('address_country', $lng_enter_country, 'required');
+$form->addRule('dob', _("A little young, don't you think?"), 'verify_reasonable_dob');
+$form->addRule('address_city',_("Enter a")." ". ADDRESS_LINE_3, 'required');
+$form->addRule('address_state_code',_("Enter a")." ". STATE_TEXT, 'required');
+$form->addRule('address_post_code',_("Enter a")." ".ZIP_TEXT, 'required');
+$form->addRule('address_country', _("Enter a country"), 'required');
 $form->registerRule('verify_valid_email','function', 'verify_valid_email');
-$form->addRule('email', $lng_not_valid_email, 'verify_valid_email');
+$form->addRule('email', _("Not a valid email address"), 'verify_valid_email');
 $form->registerRule('verify_phone_format','function','verify_phone_format');
-$form->addRule('phone1', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('phone2', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('fax', $lng_phone_not_valid, 'verify_phone_format');
+$form->addRule('phone1', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('phone2', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('fax', _("Phone format invalid"), 'verify_phone_format');
 
 
 //
@@ -119,7 +119,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser, $cErr, $person, $today, $lng_changes_saved, $lng_error_saving_person, $lng_try_again_later ;
+	global $p, $cUser, $cErr, $person, $today ;
 	$list = "";
 
 	$person->first_name = htmlspecialchars($values["first_name"]);
@@ -163,9 +163,9 @@ function process_data ($values) {
 	} 	
 	
 	if($person->SavePerson()) {
-		$list .= $lng_changes_saved;	 
+		$list .= _("Changes saved.");	 
 	} else {
-		$cErr->Error($lng_error_saving_person." ".$lng_try_again_later);
+		$cErr->Error(_("There was an error saving the person.")." "._("Please try again later."));
 	}
    $p->DisplayPage($list);
 }

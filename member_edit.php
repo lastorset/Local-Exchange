@@ -13,7 +13,7 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is editing a member's accou
 	$cUser->MustBeLevel(1);
 	$member = new cMember;
 	$member->LoadMember($_REQUEST["member_id"]);
-	$form->addElement("header", null, $lng_edit_member." " . $member->person[0]->first_name . " " . $member->person[0]->mid_name . " " . $member->person[0]->last_name); // added mid_name by ejkv
+	$form->addElement("header", null, _("Edit Member")." " . $member->person[0]->first_name . " " . $member->person[0]->mid_name . " " . $member->person[0]->last_name); // added mid_name by ejkv
 
 	$form->addElement("html", "<TR></TR>");
 	$form->addElement("hidden","mode","admin");
@@ -21,45 +21,45 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is editing a member's accou
 	if($_REQUEST["member_id"] == "ADMIN") {
 		$form->addElement("hidden","member_role","9");
 	} else {
-		$form->addElement("select", "member_role", $lng_member_role, array("0"=>$lng_member, "1"=>$lng_committee, "2"=>$lng_admin));
+		$form->addElement("select", "member_role", _("Member Role"), array("0"=>_("Member"), "1"=>_("Committee"), "2"=>_("Admin")));
 	}
-	$acct_types = array("S"=>$lng_single, "J"=>$lng_joint, "H"=>$lng_household, "O"=>$lng_organisation, "B"=>$lng_business, "F"=>$lng_fund);
-	$form->addElement("select", "account_type", $lng_account_type, $acct_types);
-	$form->addElement("static", null, $lng_admin_note, null);
+	$acct_types = array("S"=>_("Single"), "J"=>_("Joint"), "H"=>_("Household"), "O"=>_("Organization"), "B"=>_("Business"), "F"=>_("Fund"));
+	$form->addElement("select", "account_type", _("Account Type"), $acct_types);
+	$form->addElement("static", null, _("Administrator Note"), null);
 	$form->addElement("textarea", "admin_note", null, array("cols"=>45, "rows"=>2, "wrap"=>"soft", "maxlength" => 100));
 	$today = getdate();
-	$options = array("language"=> $lng_language, "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=> $today["year"]); // changed "en" by $lng_language by ejkv
-	$form->addElement("date", "join_date",	$lng_join_date, $options);	
-	$options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // changed "en" by $lng_language by ejkv	
-	$form->addElement("date", "dob", $lng_date_of_birth, $options);
-	$form->addElement("text", "mother_mn", $lng_mothers_maiden_name, array("size" => 20, "maxlength" => 30)); 	
+	$options = array("language"=> _("en"), "format" => "dFY", "minYear"=>JOIN_YEAR_MINIMUM, "maxYear"=> $today["year"]); // changed "en" by _("en") by ejkv
+	$form->addElement("date", "join_date",	_("Join Date"), $options);	
+	$options = array("language"=> _("en"), "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // changed "en" by _("en") by ejkv	
+	$form->addElement("date", "dob", _("Date of Birth"), $options);
+	$form->addElement("text", "mother_mn", _("Mother's Maiden Name"), array("size" => 20, "maxlength" => 30)); 	
 	$form->addElement("static", null, null, null);		
-	$update_text = $lng_how_frequently_updates;
-	$update2_text = $lng_should_member_confirm_payments;
+	$update_text = _("How frequently should the member receive email updates?");
+	$update2_text = _("Should the member confirm any payments made to him/her?");
 } else {  // Member is editing own profile
 	$cUser->MustBeLoggedOn();
-	$form->addElement("header", null, $lng_edit_personal_profile);
+	$form->addElement("header", null, _("Edit Personal Profile"));
 	$form->addElement("html", "<TR></TR>");
 	$form->addElement("hidden","member_id", $cUser->member_id);
 	$form->addElement("hidden","mode","self");
-	$update_text = $lng_how_often_email_updates;
-	$update2_text = $lng_wish_to_confirm_payments;
+	$update_text = _("How often would you like to receive email updates?");
+	$update2_text = _("Do you wish to confirm payments that are made to you?");
 }
 
-$form->addElement("text", "first_name", $lng_first_name, array("size" => 15, "maxlength" => 20));
-$form->addElement("text", "mid_name", $lng_middle_name, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "last_name", $lng_last_name, array("size" => 20, "maxlength" => 30));
+$form->addElement("text", "first_name", _("First Name"), array("size" => 15, "maxlength" => 20));
+$form->addElement("text", "mid_name", _("Middle Name"), array("size" => 10, "maxlength" => 20));
+$form->addElement("text", "last_name", _("Last Name"), array("size" => 20, "maxlength" => 30));
 $form->addElement("static", null, null, null); 
 
-$form->addElement("text", "email", $lng_email_address, array("size" => 25, "maxlength" => 40));
-$form->addElement("text", "phone1", $lng_primary_phone, array("size" => 20));
-$form->addElement("text", "phone2", $lng_secondary_phone, array("size" => 20));
-$form->addElement("text", "fax", $lng_fax_number, array("size" => 20));
+$form->addElement("text", "email", _("Email Address"), array("size" => 25, "maxlength" => 40));
+$form->addElement("text", "phone1", _("Primary Phone"), array("size" => 20));
+$form->addElement("text", "phone2", _("Secondary Phone"), array("size" => 20));
+$form->addElement("text", "fax", _("Fax Number"), array("size" => 20));
 $form->addElement("static", null, null, null);
-$frequency = array("0"=>$lng_never, "1"=>$lng_daily, "7"=>$lng_weekly, "30"=>$lng_monthly);
+$frequency = array("0"=>_("Never"), "1"=>_("Daily"), "7"=>_("Weekly"), "30"=>_("Monthly"));
 $form->addElement("select", "email_updates", $update_text, $frequency);
 
-$confirmP = array("0"=>$lng_auto_accept_payments, "1"=>$lng_confirm_payments);
+$confirmP = array("0"=>_("Automatically Accept Payments"), "1"=>_("Confirm Payments"));
 $form->addElement("select", "confirm_payments", $update2_text, $confirmP);
 $form->addElement("static", null, null, null);
 
@@ -77,49 +77,49 @@ $state_list[0]="---"; // added by ejkv
 // $form->addElement("text", "address_state_code", STATE_TEXT, array("size" => 25, "maxlength" => 50));
 $form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
 $form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "address_country", $lng_country, array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_country", _("Country"), array("size" => 25, "maxlength" => 50));
 
 /*[chris] Personal Profile bits */
 
 if (SOC_NETWORK_FIELDS==true) {
 	
 	$form->addElement("static", null, null, null);
-	$form->addElement("select", "age", $lng_age, $agesArr);
-	$form->addElement("select", "sex", $lng_sex, $sexArr);
-	$form->addElement("textarea", "about_me", $lng_about_me, array("cols"=>45, "rows"=>5, "wrap"=>"soft", "maxlength" => 300));
+	$form->addElement("select", "age", _("Age"), $agesArr);
+	$form->addElement("select", "sex", _("Sex"), $sexArr);
+	$form->addElement("textarea", "about_me", _("About Me"), array("cols"=>45, "rows"=>5, "wrap"=>"soft", "maxlength" => 300));
 }
 
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_update);
+$form->addElement('submit', 'btnSubmit', _("Update"));
 
 //
 // Define form rules
 //
-$form->addRule('member_id', $lng_enter_member_id, 'required');
-$form->addRule('password', $lng_pwd_not_long_enough, 'minlength', 7);
-$form->addRule('first_name', $lng_enter_first_name, 'required');
-$form->addRule('last_name', $lng_enter_last_name, 'required');
-$form->addRule('address_city', $lng_enter_a.' ' . ADDRESS_LINE_3, 'required');
-$form->addRule('address_state_code', $lng_enter_a.' ' . STATE_TEXT, 'required');
-$form->addRule('address_post_code', $lng_enter_a.' ' .ZIP_TEXT, 'required');
-$form->addRule('address_country', $lng_enter_country, 'required');
+$form->addRule('member_id', _("Enter your Member ID"), 'required');
+$form->addRule('password', _("Password not long enough"), 'minlength', 7);
+$form->addRule('first_name', _("Enter a first name"), 'required');
+$form->addRule('last_name', _("Enter a last name"), 'required');
+$form->addRule('address_city', _("Enter a").' ' . ADDRESS_LINE_3, 'required');
+$form->addRule('address_state_code', _("Enter a").' ' . STATE_TEXT, 'required');
+$form->addRule('address_post_code', _("Enter a").' ' .ZIP_TEXT, 'required');
+$form->addRule('address_country', _("Enter a country"), 'required');
 
 $form->registerRule('verify_role_allowed','function','verify_role_allowed');
-$form->addRule('member_role',$lng_cannot_assign_higher_level,'verify_role_allowed');
+$form->addRule('member_role',_("You cannot assign a higher level of access than you have"),'verify_role_allowed');
 $form->registerRule('verify_role_allowed1', 'function','verify_role_allowed1');
-$form->addRule('member_role', $lng_cannot_modify_member_role_higher_level, 'verify_role_allowed1');
+$form->addRule('member_role', _("You cannot modify the member role of a higher level account"), 'verify_role_allowed1');
 
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');
-$form->addRule('join_date', $lng_join_date_not_future, 'verify_not_future_date');
-$form->addRule('dob', $lng_birthday_not_in_future, 'verify_not_future_date');
+$form->addRule('join_date', _("Join date cannot be in the future"), 'verify_not_future_date');
+$form->addRule('dob', _("Birth date cannot be in the future"), 'verify_not_future_date');
 $form->registerRule('verify_reasonable_dob','function','verify_reasonable_dob');
-$form->addRule('dob', $lng_little_young_dont_you_think, 'verify_reasonable_dob');
+$form->addRule('dob', _("A little young, don't you think?"), 'verify_reasonable_dob');
 $form->registerRule('verify_valid_email','function', 'verify_valid_email');
-$form->addRule('email', $lng_not_valid_email, 'verify_valid_email');
+$form->addRule('email', _("Not a valid email address"), 'verify_valid_email');
 $form->registerRule('verify_phone_format','function','verify_phone_format');
-$form->addRule('phone1', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('phone2', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('fax', $lng_phone_not_valid, 'verify_phone_format');
+$form->addRule('phone1', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('phone2', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('fax', _("Phone format invalid"), 'verify_phone_format');
 
 
 //
@@ -167,7 +167,7 @@ if ($form->validate()) { // Form is validated so processes the data
 //
 function process_data ($values) {
 	
-	global $p, $cUser,$cErr, $today, $lng_changes_saved, $lng_error_saving_member, $lng_try_again_later;
+	global $p, $cUser,$cErr, $today;
 	$list = "";
 
 	$member = new cMember;
@@ -254,9 +254,9 @@ function process_data ($values) {
 	}
 	
 	if($member->SaveMember()) {
-		$list .= $lng_changes_saved; 
+		$list .= _("Changes saved."); 
 	} else {
-		$cErr->Error($lng_error_saving_member." ".$lng_try_again_later);
+		$cErr->Error(_("There was an error saving the member.")." "._("Please try again later."));
 	}
    $p->DisplayPage($list);
 }

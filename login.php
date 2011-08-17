@@ -29,9 +29,9 @@ if ($action=="login")
 	{
 		if ($user=="")
 		{
-			$cErr->Error($lng_please_enter_user_name_login);
+			$cErr->Error(_("Please enter a user name to log in."));
 		} else {
-			$cErr->Error($lng_please_enter_pwd_login);
+			$cErr->Error(_("Please enter a password to log on with this account.  If you've forgotten your password, you can request a new one."));
 		}
 
 	} else {

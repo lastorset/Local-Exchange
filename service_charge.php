@@ -2,7 +2,7 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = ADMINISTRATION;
-$p->page_title = $lng_service_charge;
+$p->page_title = _("Service Charge");
 
 
 // *** Starts main() ***
@@ -33,15 +33,15 @@ $p->DisplayPage($page);
  * fee has been already taken this month.
  */
 function confirmation($cid)
-{    global $lng_not_setup_for_charge_service_fees, $lng_already_confirmed, $lng_transfer_now, $lng_cancel, $lng_amount, $lng_fee_description, $lng_or, $lng_service_fee;
+{
     if( !defined("TAKE_SERVICE_FEE"))
     {
-        return $lng_not_setup_for_charge_service_fees;
+        return _("This system isn't setup to charge service fees.");
     }
 
     if(isset($_SESSION["LAST_CID"]) && $cid <= $_SESSION["LAST_CID"])
     {
-        return $lng_already_confirmed;
+        return _("Already confirmed.  Start from the administration page for a new transfer.");
     }
     else
     {
@@ -58,15 +58,15 @@ function confirmation($cid)
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
           <table><tr><td>
-          <b>$lng_amount</b></td><td> <input type="text" name="amount" size=4 maxlength=5></tr>
+          <b>_("Amount")</b></td><td> <input type="text" name="amount" size=4 maxlength=5></tr>
           <tr><td> 
-          <b>$lng_fee_description</b></td><td> <textarea name="desc" rows=2 cols=40 maxlength=255>$lng_service_fee</textarea></tr></table>
+          <b>_("Fee Description")</b></td><td> <textarea name="desc" rows=2 cols=40 maxlength=255>_("Service Fee")</textarea></tr></table>
         
-<p><input type="submit" value=$lng_transfer_now />
-        </form><p><strong>$lng_or</strong></p>
+<p><input type="submit" value=_("Transfer now") />
+        </form><p><strong>_("Or")</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=$lng_cancel />
+          <input type="submit" value=_("Cancel") />
         </form>
 ENDHTML;
 
@@ -78,11 +78,11 @@ ENDHTML;
  */
 function transfer_fee($tid)
 {
-    global $cDB, $monthly_fee_exempt_list, $lng_already_transfered, $lng_fee_must_be_numeric, $lng_service_charge, $lng_error_during_transfer, $lng_done; // The monthly fee exempt list will be applied to service charges also
+    global $cDB, $monthly_fee_exempt_list; // The monthly fee exempt list will be applied to service charges also
     // Make sure this transaction has not been done before.
     if(isset($_SESSION["LAST_TID"]) && $tid <= $_SESSION["LAST_TID"])
     {
-        return $lng_already_transfered;
+        return _("Already transfered.  Start from the administration page for a new transfer.");
     }
     else
     {
@@ -94,12 +94,12 @@ function transfer_fee($tid)
     $fee = trim($_REQUEST["amount"]);
     
     if (!is_numeric($fee))
-    	return $lng_fee_must_be_numeric;
+    	return _("The fee entered must be numeric (e.g. '5') and contain no other characters (e.g. '5 units' = bad input!)");
     
     $description = trim($_REQUEST["desc"]);
     
     if (!$description)
-    	$description = $lng_service_charge; // A sensible default if admin hasn't bothered specifying a description
+    	$description = _("Service Charge"); // A sensible default if admin hasn't bothered specifying a description
     
     $system_account_id = SYSTEM_ACCOUNT_ID;
     $member_table = DATABASE_MEMBERS;
@@ -149,7 +149,7 @@ function transfer_fee($tid)
             {
                 $cDB->Query("rollback");
 
-                return $lng_error_during_transfer;
+                return _("An Error occured during the transfer.");
             }
             
         }
@@ -157,7 +157,7 @@ function transfer_fee($tid)
 
     $cDB->Query("COMMIT");
 
-    return $lng_done;
+    return _("Done");
 }
 
 

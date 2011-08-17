@@ -23,7 +23,7 @@ class cUpload {
 	function SaveUpload() {
 		// Copy file uploaded by UploadForm class to uploads directory and
 		// save entry for it in the database
-		global $cDB, $cErr, $lng_upload_filename_exists, $lng_could_not_save_dbaserow_upl_file, $lng_could_not_save_upl_file, $lng_bytes;
+		global $cDB, $cErr;
 		
 		if($this->filename == null)
 			$this->filename = $_FILES['userfile']['name'];
@@ -31,7 +31,7 @@ class cUpload {
 		$query = $cDB->Query("SELECT null from ". DATABASE_UPLOADS ." WHERE filename ='".$_FILES['userfile']['name']."';");
 		
 		if($row = mysql_fetch_array($query)) {
-			$cErr->Error($lng_upload_filename_exists);
+			$cErr->Error(_("A file with this name already exists on the server."));
 			return false;
 		}		
 			
@@ -45,17 +45,17 @@ class cUpload {
 					$this->upload_date = $row[0];					
 				return true;
 			} else {
-				$cErr->Error($lng_could_not_save_dbaserow_upl_file);
+				$cErr->Error(_("Could not save database row for uploaded file."));
 				return false;
 			}				
 		} else {
-			$cErr->Error($lng_could_not_save_upl_file." ".MAX_FILE_UPLOAD." ".$lng_bytes.".");
+			$cErr->Error(_("Could not save uploaded file. This could be because of a permissions problem.  Does the web user have permission to write to the uploads directory?  It could also be that the file is too large.  The current maximum size of file allowed is")." ".MAX_FILE_UPLOAD." "._("bytes").".");
 			return false;
 		}
 	}
 	
 	function LoadUpload ($upload_id) {
-		global $cDB, $cErr, $lng_error_access_uploads_table, $lng_try_again_later;
+		global $cDB, $cErr;
 			
 		$query = $cDB->Query("SELECT upload_date, type, title, filename, note FROM ".DATABASE_UPLOADS." WHERE upload_id=". $upload_id.";");
 		
@@ -68,25 +68,25 @@ class cUpload {
 			$this->note = $cDB->UnEscTxt($row[4]);
 			return true;
 		} else {
-			$cErr->Error($lng_error_access_uploads_table." ".$lng_try_again_later);
+			$cErr->Error(_("There was an error accessing the uploads table.")." "._("Please try again later."));
 			include("redirect.php");
 		}
 		
 	}
 
 	function DeleteUpload () {
-		global $cDB, $cErr, $lng_could_not_del_row_from_dbase, $lng_could_not_del_file, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		if(unlink(UPLOADS_PATH . $this->filename)) {
 			$delete = $cDB->Query("DELETE FROM ". DATABASE_UPLOADS ." WHERE upload_id = ". $this->upload_id .";");
 			if(mysql_affected_rows() == 1) {
 				return true;
 			} else {
-				$cErr->Error($lng_could_not_del_row_from_dbase);
+				$cErr->Error(_("File was deleted but could not delete row from database.  The row will have to removed manually.  Please contact your systems administrator."));
 				include("redirect.php");
 			}			
 		} else {
-			$cErr->Error($lng_could_not_del_file." - ". $this->filename .".  ".$lng_please_try_again_later.".");
+			$cErr->Error(_("Could not delete file")." - ". $this->filename .".  "._("Please try again later").".");
 			include("redirect.php");
 		}
 	}
@@ -131,12 +131,11 @@ class cUploadGroup {
 class cUploadForm {
      
 	function DisplayUploadForm($action, $text_fields=null) {
-	global $lng_select_file_to_upload, $lng_upload;
 	$output = '<form enctype="multipart/form-data" action="'. $action.'" method="POST">';
 	foreach($text_fields as $field)
 		$output .= $field .' <input type="text" name="'. $field .'"><BR>';
 		
-	$output .= '<input type="hidden" name="MAX_FILE_SIZE" value="'.MAX_FILE_UPLOAD.'">'.$lng_select_file_to_upload.' <input name="userfile" type="file"><input type="submit" value='.$lng_upload.'></form>';
+	$output .= '<input type="hidden" name="MAX_FILE_SIZE" value="'.MAX_FILE_UPLOAD.'">'._("Select file to upload").' <input name="userfile" type="file"><input type="submit" value='._("Upload").'></form>';
 	return $output;
 	}
 

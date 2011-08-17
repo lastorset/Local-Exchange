@@ -5,15 +5,15 @@ $p->site_section = 0;
 $cUser->MustBeLevel(2);
 include("includes/inc.forms.php");
 
-$form->addElement("header", null, $lng_choose_member_photo_to_edit);
+$form->addElement("header", null, _("Choose Member whose Photo you wish to Edit"));
 $form->addElement("html", "<TR></TR>");
 
 $ids = new cMemberGroup;
 $ids->LoadMemberGroup(null,true);
 
-$form->addElement("select", "member_id", $lng_member, $ids->MakeIDArray());
+$form->addElement("select", "member_id", _("Member"), $ids->MakeIDArray());
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_upload_replace_photo);
+$form->addElement('submit', 'btnSubmit', _("Upload/Replace Photo"));
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();

@@ -2,7 +2,7 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = SECTION_DIRECTORY;
-$p->page_title = $lng_member_directory;
+$p->page_title = _("Member Directory");
 
 $cUser->MustBeLoggedOn();
 
@@ -12,39 +12,39 @@ $cUser->MustBeLoggedOn();
 if (SEARCHABLE_MEMBERS_LIST==true) {
 	
 	$output = "<form action=member_directory.php method=get>";
-	$output .= $lng_member_id.": <input type=text name=uID size=4 value='".$_REQUEST["uID"]."'>
-		<br>".$lng_name_all_or_part.": <input type=text name=uName value='".$_REQUEST["uName"]."'>
-		<br>".$lng_location_eg." ".DEFAULT_CITY."): <input type=text name=uLoc value='".$_REQUEST["uLoc"]."'>";
+	$output .= _("Member ID").": <input type=text name=uID size=4 value='".$_REQUEST["uID"]."'>
+		<br>"._("Name (all or part)").": <input type=text name=uName value='".$_REQUEST["uName"]."'>
+		<br>"._("Location (e.g.")." ".DEFAULT_CITY."): <input type=text name=uLoc value='".$_REQUEST["uLoc"]."'>";
 	
 	$orderBySel = array();
 	$orderBySel["".$_REQUEST["orderBy"].""]='selected';
 	
 // swapped option value 'idA', 'fl', and 'lf' by ejkv
 // added 'addr2' for address_street2 - by ejkv
-	$output .= "<br>".$lng_order_by.": <select name='orderBy'>
-		<option value='idA' ".$orderBySel["idA"].">".$lng_membership_no."</option>
-		<option value='fl' ".$orderBySel["fl"].">".$lng_first_name."</option>
-		<option value='lf' ".$orderBySel["lf"].">".$lng_last_name."</option>
-		<option value='nh' ".$orderBySel["nh"].">".$lng_neighbourhood."</option>
-		<option value='loc' ".$orderBySel["loc"].">".$lng_town."</option>
-		<option value='pc' ".$orderBySel["pc"].">".$lng_postcode."</option>
+	$output .= "<br>"._("Order by").": <select name='orderBy'>
+		<option value='idA' ".$orderBySel["idA"].">"._("Membership No.")."</option>
+		<option value='fl' ".$orderBySel["fl"].">"._("First Name")."</option>
+		<option value='lf' ".$orderBySel["lf"].">"._("Last Name")."</option>
+		<option value='nh' ".$orderBySel["nh"].">"._("Neighbourhood")."</option>
+		<option value='loc' ".$orderBySel["loc"].">"._("Town")."</option>
+		<option value='pc' ".$orderBySel["pc"].">"._("Postal code")."</option>
 		<option value='addr2' ".$orderBySel["pc"].">".ADDRESS_LINE_2."</option>
 		</select>";
-	$output .= "<p><input type=submit value=".$lng_search."></form>"; 
+	$output .= "<p><input type=submit value="._("Search")."></form>"; 
 }
 
 // added STATE_TEXT column by ejkv
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
   <TR BGCOLOR=\"#d8dbea\">
-    <TD><FONT SIZE=2><B>".$lng_member."</B></FONT></TD>
-    <TD><FONT SIZE=2><B>".$lng_phone."</B></FONT></TD>
+    <TD><FONT SIZE=2><B>"._("Member")."</B></FONT></TD>
+    <TD><FONT SIZE=2><B>"._("Phone")."</B></FONT></TD>
     <TD><FONT SIZE=2><B>" . ADDRESS_LINE_2 . "</B></FONT></TD>
     <TD><FONT SIZE=2><B>" . ADDRESS_LINE_3 . "</B></FONT></TD>
 	<TD><FONT SIZE=2><B>" . STATE_TEXT . "</B></FONT></TD>
     <TD><FONT SIZE=2><B>" . ZIP_TEXT . "</B></FONT></TD>";
 
 if (MEM_LIST_DISPLAY_BALANCE==true || $cUser->member_role >= 1)  {   
-	$output .= "<TD ALIGN=RIGHT><FONT SIZE=2><B>".$lng_balance."</B></FONT></TD>"; // added ALIGN=RIGHT by ejkv
+	$output .= "<TD ALIGN=RIGHT><FONT SIZE=2><B>"._("Balance")."</B></FONT></TD>"; // added ALIGN=RIGHT by ejkv
 
 }
 $output .= "</TR>";
@@ -184,7 +184,7 @@ if($member_list->members) {
 
 // $output .= "</TABLE>";
 // RF display active accounts 
-$output .= "<TR><TD colspan=5><br><br>".$lng_total_of." ".$i." ".$lng_active_accounts.".</TD></TR></TABLE>";
+$output .= "<TR><TD colspan=5><br><br>"._("Total of")." ".$i." "._("active accounts").".</TD></TR></TABLE>";
 
 $p->DisplayPage($output); 
 

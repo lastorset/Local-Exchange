@@ -14,7 +14,7 @@ else
 $p->site_section = SECTION_FEEDBACK;
 $member = new cMember;
 $member->LoadMember($member_id);
-$p->page_title = $lng_feedback_for." ". $member->PrimaryName();
+$p->page_title = _("Feedback for")." ". $member->PrimaryName();
 
 $feedbackgrp = new cFeedbackGroup;
 $feedbackgrp->LoadFeedbackGroup($member_id);
@@ -23,9 +23,9 @@ if (isset($feedbackgrp->feedback)) {
 	$output = $feedbackgrp->DisplayFeedbackTable($cUser->member_id);
 } else  {
 	if($_REQUEST["mode"] == "self")
-		$output = $lng_dont_have_feedback;
+		$output = _("You don't have any feedback yet.");
 	else
-		$output = $lng_member_does_not_have_feedback;
+		$output = _("This member does not have any feedback yet.");
 }
 
 $p->DisplayPage($output);

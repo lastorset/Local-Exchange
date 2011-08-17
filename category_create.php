@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = LISTINGS;
-$p->page_title = $lng_create_new_listing_category;
+$p->page_title = _("Create a New Listing Category");
 
 include("includes/inc.forms.php");
 include_once("classes/class.category.php");
@@ -13,15 +13,15 @@ include_once("classes/class.category.php");
 //
 $cUser->MustBeLevel(2);
 
-$form->addElement("text", "category", $lng_category_description, array("size" => 30, "maxlength" => 30));
+$form->addElement("text", "category", _("Category Description"), array("size" => 30, "maxlength" => 30));
 $form->addElement("static", null, null, null);
 
-$form->addElement('submit', 'btnSubmit', $lng_submit);
+$form->addElement('submit', 'btnSubmit', _("Submit"));
 
 //
 // Define form rules
 //
-$form->addRule('category', $lng_enter_category_description, 'required');
+$form->addRule('category', _("Enter the category description"), 'required');
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -34,14 +34,14 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $lng_category_created, $lng_could_not_save_category, $lng_try_again_later;
+	global $p, $cErr;
 
 	$category = new cCategory($values["category"]);
 	
 	if ($category->SaveNewCategory()) {
-		$output = $lng_category_created;
+		$output = _("The category has been created.");
 	} else {
-		$output = $lng_could_not_save_category." ".$lng_try_again_later;
+		$output = _("Could not save the category.")." "._("Please try again later.");
 	}
 	
 	$p->DisplayPage($output);

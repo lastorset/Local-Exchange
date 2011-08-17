@@ -4,8 +4,8 @@ $p->site_section = 0;
 
 $cUser->Logout();
 
-$list = $lng_yre_logged_out.".<P>";
-$list .= $lng_you_can_login;
+$list = _("You are now logged out").".<P>";
+$list .= _("You can login at any time by clicking on the 'Login' link at the bottom of the left menu.");
 
 $p->DisplayPage($list);
 

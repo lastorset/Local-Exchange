@@ -3,11 +3,11 @@ include_once("includes/inc.global.php");
 $p->site_section = LISTINGS;
 
 if ($_REQUEST["type"]==Offer)
-    $listing_name=$lng_offered;
+    $listing_name=_("Offered");
 else
-    $listing_name=$lng_wanted;
+    $listing_name=_("Wanted");
 
-$p->page_title = $lng_choose_the." ". $listing_name ." ".$lng_listing_to_edit;
+$p->page_title = _("Choose the")." ". $listing_name ." "._("Listing to Edit");
 
 include("classes/class.listing.php");
 
@@ -26,7 +26,7 @@ if($_REQUEST["mode"] == "admin") {
 $list = $listings->DisplayMemberListings($member);
 
 if($list == "")
-	$list = $lng_you_dont_have_any." ". strtolower($listing_name) ." ".$lng_ed_listings.".";
+	$list = _("You don't currently have any")." ". strtolower($listing_name) ." "._(" listings").".";
 
 $p->DisplayPage($list);
 

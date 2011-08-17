@@ -10,7 +10,7 @@ include("includes/inc.forms.php");
 // First, we define the form
 //
 
-$form->addElement("header", null, $lng_add_joint_member);
+$form->addElement("header", null, _("Add Joint Member"));
 $form->addElement("html", "<TR></TR>");
 
 if($_REQUEST["mode"] == "admin") {  // Administrator is adding to a member's account
@@ -21,7 +21,7 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is adding to a member's acc
 	} else {
 		$ids = new cMemberGroup;
 		$ids->LoadMemberGroup();
-		$form->addElement("select", "member_id", $lng_choose_member_to_add_contact, $ids->MakeIDArray());
+		$form->addElement("select", "member_id", _("Choose Member to Add Contact to"), $ids->MakeIDArray());
 	}
 } else {  // Member is adding to own account
 	$cUser->MustBeLoggedOn();
@@ -29,21 +29,21 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is adding to a member's acc
 	$form->addElement("hidden","mode","self");
 }
 
-$form->addElement("text", "first_name", $lng_first_name, array("size" => 15, "maxlength" => 20));
-$form->addElement("text", "mid_name", $lng_middle_name, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "last_name", $lng_last_name, array("size" => 20, "maxlength" => 30));
+$form->addElement("text", "first_name", _("First Name"), array("size" => 15, "maxlength" => 20));
+$form->addElement("text", "mid_name", _("Middle Name"), array("size" => 10, "maxlength" => 20));
+$form->addElement("text", "last_name", _("Last Name"), array("size" => 20, "maxlength" => 30));
 $form->addElement("static", null, null, null); 
 
 $today=getdate();
-$options = array("language"=> $lng_language, "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // changed "en" by $lng_language by ejkv
-$form->addElement("date", "dob", $lng_date_of_birth, $options);
-$form->addElement("text", "mother_mn", $lng_mothers_maiden_name, array("size" => 20, "maxlength" => 30)); 
+$options = array("language"=> _("en"), "format" => "dFY", "maxYear"=>$today["year"], "minYear"=>"1880"); // changed "en" by _("en") by ejkv
+$form->addElement("date", "dob", _("Date of Birth"), $options);
+$form->addElement("text", "mother_mn", _("Mother's Maiden Name"), array("size" => 20, "maxlength" => 30)); 
 $form->addElement("static", null, null, null);
-$form->addElement("select","directory_list", $lng_list_persons_contact_info_to_dir, array("Y"=>$lng_yes, "N"=>$lng_no));
-$form->addElement("text", "email", $lng_email_address, array("size" => 25, "maxlength" => 40));
-$form->addElement("text", "phone1", $lng_primary_phone, array("size" => 20));
-$form->addElement("text", "phone2", $lng_secondary_phone, array("size" => 20));
-$form->addElement("text", "fax", $lng_fax_number, array("size" => 20));
+$form->addElement("select","directory_list", _("List this Person's Contact Information in the Directory?"), array("Y"=>_("Yes"), "N"=>_("No")));
+$form->addElement("text", "email", _("Email Address"), array("size" => 25, "maxlength" => 40));
+$form->addElement("text", "phone1", _("Primary Phone"), array("size" => 20));
+$form->addElement("text", "phone2", _("Secondary Phone"), array("size" => 20));
+$form->addElement("text", "fax", _("Fax Number"), array("size" => 20));
 $form->addElement("static", null, null, null);
 $form->addElement("text", "address_street1", ADDRESS_LINE_1, array("size" => 25, "maxlength" => 50));
 $form->addElement("text", "address_street2", ADDRESS_LINE_2, array("size" => 25, "maxlength" => 50));
@@ -59,31 +59,31 @@ $state_list[0]="---"; // added by ejkv
 // $form->addElement("text", "address_state_code", STATE_TEXT, array("size" => 25, "maxlength" => 50));
 $form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
 $form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
-$form->addElement("text", "address_country", $lng_country, array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_country", _("Country"), array("size" => 25, "maxlength" => 50));
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_create_contact);
+$form->addElement('submit', 'btnSubmit', _("Create Contact"));
 
 //
 // Define form rules
 //
-$form->addRule('password', $lng_pwd_not_long_enough, 'minlength', 7);
-$form->addRule('first_name', $lng_enter_first_name, 'required');
-$form->addRule('last_name', $lng_enter_last_name, 'required');
-$form->addRule('address_city', $lng_enter_a." " . ADDRESS_LINE_3, 'required');
-$form->addRule('address_state_code', $lng_enter_a." " . STATE_TEXT, 'required');
-$form->addRule('address_post_code', $lng_enter_a." ".ZIP_TEXT, 'required');
-$form->addRule('address_country', $lng_enter_country, 'required');
+$form->addRule('password', _("Password not long enough"), 'minlength', 7);
+$form->addRule('first_name', _("Enter a first name"), 'required');
+$form->addRule('last_name', _("Enter a last name"), 'required');
+$form->addRule('address_city', _("Enter a")." " . ADDRESS_LINE_3, 'required');
+$form->addRule('address_state_code', _("Enter a")." " . STATE_TEXT, 'required');
+$form->addRule('address_post_code', _("Enter a")." ".ZIP_TEXT, 'required');
+$form->addRule('address_country', _("Enter a country"), 'required');
 
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');
-$form->addRule('dob', $lng_birthday_not_in_future, 'verify_not_future_date');
+$form->addRule('dob', _("Birth date cannot be in the future"), 'verify_not_future_date');
 $form->registerRule('verify_reasonable_dob','function','verify_reasonable_dob');
-$form->addRule('dob', $lng_little_young_dont_you_think, 'verify_reasonable_dob');
+$form->addRule('dob', _("A little young, don't you think?"), 'verify_reasonable_dob');
 $form->registerRule('verify_valid_email','function', 'verify_valid_email');
-$form->addRule('email', $lng_not_valid_email, 'verify_valid_email');
+$form->addRule('email', _("Not a valid email address"), 'verify_valid_email');
 $form->registerRule('verify_phone_format','function','verify_phone_format');
-$form->addRule('phone1', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('phone2', $lng_phone_not_valid, 'verify_phone_format');
-$form->addRule('fax', $lng_phone_not_valid, 'verify_phone_format');
+$form->addRule('phone1', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('phone2', _("Phone format invalid"), 'verify_phone_format');
+$form->addRule('fax', _("Phone format invalid"), 'verify_phone_format');
 
 
 //
@@ -104,7 +104,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr, $today, $lng_joint_member_created_would_you, $lng_add_another, $lng_error_saving_joint_member, $lng_try_again_later;
+	global $p, $cUser,$cErr, $today;
 	$list = "";
 
 	$values['primary_member'] = "N"; 
@@ -147,9 +147,9 @@ function process_data ($values) {
 	}	
 
 	if($created) {
-		$list .= $lng_joint_member_created_would_you." <A HREF=member_contact_create.php?mode=". $_REQUEST["mode"] ."&member_id=". $values["member_id"] .">".$lng_add_another."</A>?<P>";
+		$list .= _("Joint member created. Would you like to")." <A HREF=member_contact_create.php?mode=". $_REQUEST["mode"] ."&member_id=". $values["member_id"] .">"._("add another")."</A>?<P>";
 	} else {
-		$cErr->Error($lng_error_saving_joint_member." ".$lng_try_again_later);
+		$cErr->Error(_("There was an error saving the joint member.")." "._("Please try again later."));
 	}
    $p->DisplayPage($list);
 }

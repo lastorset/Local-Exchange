@@ -46,16 +46,16 @@ class cDirectory {
 	function DownloadDirectory () {	
 		$this->PrintFirstPage();
 	
-		$this->PrintSectionHeader($lng_member_information,FIRST);
+		$this->PrintSectionHeader(_("Member Information"),FIRST);
 		$this->PrintMembers();
 	
-		$this->PrintSectionHeader($lng_offered_listings);
+		$this->PrintSectionHeader(_("Offered Listings"));
 		$this->PrintListings(OFFER_LISTING);
 		
-		$this->PrintSectionHeader($lng_wanted_listings);
+		$this->PrintSectionHeader(_("Wanted Listings"));
 		$this->PrintListings(WANT_LISTING);
 		
-		$this->pdf->Output($lng_pdf_file_name,true);
+		$this->pdf->Output(_("4thcorner.pdf"),true);
 	}
 	
 	function PrintMembers() {	
@@ -120,7 +120,7 @@ class cDirectory {
 	function PrintFirstPage() {
 		$this->pdf->setFont($this->font,"BI",26);
 		$this->pdf->Write(8,SITE_LONG_TITLE ." - ");
-		$this->pdf->Write(8,$lng_members_directory."\n");
+		$this->pdf->Write(8,_("Members Directory")."\n");
 		$this->pdf->setFont($this->font,"",$this->font_size);
 	}
 	

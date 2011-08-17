@@ -8,15 +8,15 @@ include("includes/inc.forms.php");
 if (OVRIDE_BALANCES!=true) // Provision for overriding member balances has been turned off, return to the admin menu
 	header("location:http://".HTTP_BASE."/admin_menu.php");
 	
-$form->addElement("header", null, $lng_choose_member_balance_to_edit);
+$form->addElement("header", null, _("Choose Member whose Balance you wish to Edit"));
 $form->addElement("html", "<TR></TR>");
 
 $ids = new cMemberGroup;
 $ids->LoadMemberGroup(null,true);
 
-$form->addElement("select", "member_id", $lng_member, $ids->MakeIDArray());
+$form->addElement("select", "member_id", _("Member"), $ids->MakeIDArray());
 $form->addElement("static", null, null, null);
-$form->addElement('submit', 'btnSubmit', $lng_edit_balance);
+$form->addElement('submit', 'btnSubmit', _("Edit Balance"));
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();

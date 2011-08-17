@@ -84,7 +84,7 @@ class cListing
 							
 	function LoadListing($title,$member_id,$type_code)
 	{
-		global $cDB, $cErr, $lng_error_access_the, $lng_listing_for, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		// select all offer data and populate the variables
 		$query = $cDB->Query("SELECT description, category_code, member_id, rate, status, posting_date, expire_date, reactivate_date FROM ".DATABASE_LISTINGS." WHERE title=".$cDB->EscTxt($title)." AND member_id=" . $cDB->EscTxt($member_id) . " AND type=". $cDB->EscTxt($type_code) .";");
@@ -105,7 +105,7 @@ class cListing
 		}
 		else 
 		{
-			$cErr->Error($lng_error_access_the." ".$cDB->EscTxt($title)." ".$lng_listing_for." ".$member_id.".  ".$lng_please_try_again_later.".");
+			$cErr->Error(_("There was an error accessing the")." ".$cDB->EscTxt($title)." "._("listing for")." ".$member_id.".  "._("Please try again later").".");
 			include("redirect.php");
 		}		
 		
@@ -144,12 +144,12 @@ class cListing
 	}
 	
 	function DisplayListing()
-	{   global $lng_description, $lng_rate;
+	{
 		$output = "";
 		if($this->description != "")
-			$output .= "<STRONG>".$lng_description.":</STRONG> ". $this->description ."<BR>";
+			$output .= "<STRONG>"._("Description").":</STRONG> ". $this->description ."<BR>";
 		if($this->rate != "")
-			$output .= "<STRONG>".$lng_rate.":</STRONG> ". $this->rate ."<BR>";		
+			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";		
 		$output .= $this->member->DisplayMember();
 		return $output;
 	}	
@@ -172,7 +172,7 @@ class cListingGroup
 	}
 	
 	function InactivateAll($reactivate_date) {
-		global $cErr, $lng_could_not_inactivate_listing;
+		global $cErr;
 		
 		if (!isset($this->listing))
 			return true;
@@ -185,14 +185,14 @@ class cListingGroup
 				$success = $listing->SaveListing();
 				
 				if(!$success)
-					$cErr->Error($lng_could_not_inactivate_listing.": '".$listing->title."'");
+					$cErr->Error(_("Could not inactivate listing").": '".$listing->title."'");
 			}
 		}
 		return true;
 	}
 	
 	function ExpireAll($expire_date) {
-		global $cErr, $lng_could_not_expire_listing;
+		global $cErr;
 		
 		if (!isset($this->listing))
 			return true;
@@ -202,7 +202,7 @@ class cListingGroup
 			$success = $listing->SaveListing(false);
 				
 			if(!$success)
-				$cErr->Error($lng_could_not_expire_listing.": '".$listing->title."'");
+				$cErr->Error(_("Could not expire listing").": '".$listing->title."'");
 		}
 		return true;
 	}	
@@ -259,7 +259,7 @@ class cListingGroup
 	{
 		/*[chris]*/ // made some changes to way listings displayed, for better or for worse...
 		
-		global $cUser,$cDB, $lng_no_listings_found;
+		global $cUser,$cDB;
 
 		$output = "";
 		$current_cat = "";
@@ -331,7 +331,7 @@ class cListingGroup
 		} 
 		
 		if($output == "")
-			$output = $lng_no_listings_found;
+			$output = _("No listings found.");
 	
 								
 		return $output;		

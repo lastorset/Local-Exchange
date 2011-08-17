@@ -2,7 +2,7 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = ADMINISTRATION;
-$p->page_title = $lng_refund_service_charge;
+$p->page_title = _("Refund Service Charge");
 
 
 // *** Starts main() ***
@@ -30,7 +30,7 @@ $p->DisplayPage($page);
 
 function select_time()
 {
-    global $cDB, $lng_no_service_charges_found, $lng_refund;
+    global $cDB;
     $system_account_id = SYSTEM_ACCOUNT_ID;
     $ts = time();
     $year = strftime("%Y", $ts);
@@ -57,7 +57,7 @@ function select_time()
 
     if (empty($selection_list))
     {
-        return $lng_no_service_charges_found;
+        return _("No service charges found.");
     }
 
     $html = <<<ENDHTML
@@ -67,7 +67,7 @@ function select_time()
             $selection_list
           </select>
 
-          <input type="submit" value=$lng_refund />
+          <input type="submit" value=_("Refund") />
         </form>
 ENDHTML;
 
@@ -80,15 +80,15 @@ ENDHTML;
  * fee has been already taken this month.
  */
 function confirmation($cid, $selected_time)
-{   global $lng_not_setup_for_service_fees, $lng_already_refund, $lng_about_to_refund_service_fee_on, $lng_refund_now, $lng_cancel;
+{
     if( !defined("TAKE_SERVICE_FEE"))
     {
-        return $lng_not_setup_for_service_fees;
+        return _("This system isn't setup to process service fees.");
     }
 
     if($ignore==true && isset($_SESSION["LAST_CID"]) && $cid <= $_SESSION["LAST_CID"])
     {
-        return $lng_already_refund;
+        return _("Action already executed.  Start from the administration page for a new refund.");
     }
     else
     {
@@ -97,19 +97,19 @@ function confirmation($cid, $selected_time)
 
     $ts = time();
     $html = <<<ENDHTML
-        $lng_about_to_refund_service_fee_on
+        _("You are about to refund the service charge taken on")
         <em>$selected_time</em>.
 
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
           <input type="hidden" name="trade_time" value="$selected_time">
-          <input type="submit" value=$lng_refund_now />
+          <input type="submit" value=_("Refund now") />
         </form>
 
         <p><strong>Or</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=$lng_cancel />
+          <input type="submit" value=_("Cancel") />
         </form>
 ENDHTML;
 
@@ -122,12 +122,12 @@ ENDHTML;
  * Does the actual fee transfer from member accounts to the system account.
  */
 function transfer_fee($tid, $trade_time) {
-	global $cDB, $monthly_fee_exempt_list, $lng_already_transfered, $lng_refund_for, $lng_taken_on, $lng_couldnt_transfer, $lng_done;
+	global $cDB, $monthly_fee_exempt_list;
 	
     // Make sure this transaction has not been done before.
     if(isset($_SESSION["LAST_TID"]) && $tid <= $_SESSION["LAST_TID"])
     {
-        return $lng_already_transfered;
+        return _("Already transfered.  Start from the administration page for a new transfer.");
     }
     else
     {
@@ -149,7 +149,7 @@ function transfer_fee($tid, $trade_time) {
     $trade_table = DATABASE_TRADES;
     $trade_type_monthly = TRADE_MONTHLY_FEE;
     $trade_type = TRADE_MONTHLY_FEE_REVERSAL;
-    $desc = $lng_refund_for." ".$row["description"]." ".$lng_taken_on." $trade_time";
+    $desc = _("Refund for")." ".$row["description"]." "._("taken on")." $trade_time";
     
     // Transaction starts.
     $cDB->Query("BEGIN");
@@ -195,14 +195,14 @@ function transfer_fee($tid, $trade_time) {
 	        {
 	            $cDB->Query("rollback");
 	
-	            return $lng_couldnt_transfer;
+	            return _("Couldn't transfer.");
 	        }
       }
     }
 
     $cDB->Query("COMMIT");
 
-    return $lng_done;
+    return _("Done");
 }
 
 

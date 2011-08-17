@@ -52,11 +52,11 @@ class cFeedback {
 	} */
 	
 	function SaveFeedback () {
-		global $cDB, $cErr, $lng_cannot_create_dupl_feedback;
+		global $cDB, $cErr;
 		
 //		$this->VerifyTradeMembers();
 		if($this->FindTradeFeedback($this->trade_id, $this->member_author->member_id)) {
-			$cErr->Error($lng_cannot_create_dupl_feedback);
+			$cErr->Error(_("Cannot create duplicate feedback."));
 			return false;
 		}
 		
@@ -74,7 +74,7 @@ class cFeedback {
 	}
 	
 	function LoadFeedback ($feedback_id) {
-		global $cDB, $cErr, $lng_error_access_feedback_table, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		$query = $cDB->Query("SELECT feedback_date, ".DATABASE_FEEDBACK.".status, member_id_author, member_id_about, ".DATABASE_FEEDBACK.".trade_id, rating, comment, member_id_from, category FROM ".DATABASE_FEEDBACK.",". DATABASE_TRADES ." WHERE ".DATABASE_FEEDBACK.".trade_id=". DATABASE_TRADES .".trade_id AND feedback_id=". $cDB->EscTxt($feedback_id) .";");
 		
@@ -101,7 +101,7 @@ class cFeedback {
 				$this->rebuttals = $rebuttal_group;
 			return true;
 		} else {
-			$cErr->Error($lng_error_access_feedback_table.".  ".$lng_please_try_again_later.".");
+			$cErr->Error(_("There was an error accessing the feedback table").".  "._("Please try again later").".");
 			include("redirect.php");
 		}		
 	}
@@ -121,21 +121,19 @@ class cFeedback {
 	}
 	
 	function RatingText () {
-		global $lng_positive, $lng_negative, $lng_neutral; // added by ejkv
 		if ($this->rating == POSITIVE)
-			return $lng_positive; // changed by ejkv
+			return _("Positive"); // changed by ejkv
 		elseif ($this->rating == NEGATIVE)
-			return $lng_negative; // changed by ejkv
+			return _("Negative"); // changed by ejkv
 		else
-			return $lng_neutral; // changed by ejkv
+			return _("Neutral"); // changed by ejkv
 	}	
 	
 	function Context () {
-		global $lng_seller, $lng_buyer; // added by ejkv
 		if ($this->context == SELLER)
-			return $lng_seller; // changed by ejkv
+			return _("Seller"); // changed by ejkv
 		else
-			return $lng_buyer; // changed by ejkv
+			return _("Buyer"); // changed by ejkv
 	}
 }
 	
@@ -196,9 +194,8 @@ class cFeedbackGroup {
 		return $this->num_positive + $this->num_negative + $this->num_neutral;
 	}
 	
-	function DisplayFeedbackTable($member_viewing) {
-		global $lng_type, $lng_date, $lng_context, $lng_from, $lng_comment; // added $lng_context by ejkv		
-		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>".$lng_type."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_date."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_context."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_from."</B></FONT></TD><TD><FONT SIZE=2><B>".$lng_comment."</B></FONT></TD></TR>";
+	function DisplayFeedbackTable($member_viewing) {		
+		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Type")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("Context")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("Comment")."</B></FONT></TD></TR>";
 		
 		if(!$this->feedback)
 			return $output. "</TABLE>";   // No feedback yet, presumably
@@ -269,7 +266,7 @@ class cFeedbackRebuttal {
 	}
 	
 	function LoadRebuttal ($rebuttal_id) {
-		global $cDB, $cErr, $lng_error_access_rebuttal_table, $lng_please_try_again_later;
+		global $cDB, $cErr;
 		
 		$query = $cDB->Query("SELECT rebuttal_date, feedback_id, member_id, comment FROM ".DATABASE_REBUTTAL." WHERE rebuttal_id=". $cDB->EscTxt($rebuttal_id) .";");
 		
@@ -283,7 +280,7 @@ class cFeedbackRebuttal {
 
 			return true;
 		} else {
-			$cErr->Error($lng_error_access_rebuttal_table.".  ".$lng_please_try_again_later.".");
+			$cErr->Error(_("There was an error accessing the rebuttal table").".  "._("Please try again later").".");
 			include("redirect.php");
 		}		
 	}
@@ -314,13 +311,12 @@ class cFeedbackRebuttalGroup {
 	}
 	
 	function DisplayRebuttalGroup($member_about) {
-		global $lng_reply, $lng_follow_up;
 		$output = "";
 		foreach($this->rebuttals as $rebuttal) {
 			if($member_about == $rebuttal->member_author->member_id)
-				$output .= "<BR><B>".$lng_reply.": </B>";
+				$output .= "<BR><B>"._("Reply").": </B>";
 			else
-				$output .= "<BR><B>".$lng_follow_up.": </B>";
+				$output .= "<BR><B>"._("Follow Up").": </B>";
 				
 			$output .= $rebuttal->comment;
 		}		

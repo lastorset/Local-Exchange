@@ -20,11 +20,11 @@ if($_REQUEST["mode"] == "admin") {
 	$cUser->MustBeLevel(1);
 	$member->LoadMember($_REQUEST["member_id"]);
 	
-	$p->page_title = $lng_upload_photo_for." ".$member->member_id;
+	$p->page_title = _("Upload/Replace photo for")." ".$member->member_id;
 } else {
 	$cUser->MustBeLoggedOn();
 	$member = $cUser;
-	$p->page_title = $lng_upload_photo;
+	$p->page_title = _("Upload a Photo");
 
 }
 
@@ -36,15 +36,15 @@ $mIMG = cMember::DisplayMemberImg($member->member_id);
 if ($mIMG!=false) {
 			
 		$form->addElement("html", $mIMG."<p>");
-		$submitTxt = $lng_replace_image;		
+		$submitTxt = _("Replace Image");		
 }
 else
-	$submitTxt = $lng_upload_image;
+	$submitTxt = _("Upload Image");
 		
 $form->addElement('hidden', 'member_id', $member->member_id);
 $form->addElement('hidden', 'mode', $_REQUEST["mode"]);
 
-$form->addElement('file', 'userfile', $lng_select_file_upload.':', array("MAX_FILE_SIZE"=>MAX_FILE_UPLOAD));
+$form->addElement('file', 'userfile', _("Select file to upload").':', array("MAX_FILE_SIZE"=>MAX_FILE_UPLOAD));
 $form->addElement('submit', 'btnSubmit', $submitTxt);
 
 if ($form->validate()) { // Form is validated so processes the data
@@ -55,12 +55,12 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member,$cDB,$cErr, $lng_size_uploaded_file_null, $lng_file_uploaded, $lng_problem_resizing_file, $lng_problem_uploading_file;
+	global $p, $member,$cDB,$cErr;
 
 	if ($_FILES['userfile']['size']==0) {
 			
-			$cErr->Error($lng_size_uploaded_file_null);
-			$output = $lng_size_uploaded_file_null;
+			$cErr->Error(_("Size of uploaded file is 0 bytes."));
+			$output = _("Size of uploaded file is 0 bytes.");
 			$p->DisplayPage($output);
 			exit;
 	}
@@ -103,11 +103,11 @@ function process_data ($values) {
 		}
 		
 		if($image->save(UPLOADS_PATH . $upload->filename, null, 100))
-			$output = $lng_file_uploaded;
+			$output = _("File uploaded.");
 		else
-			$output = $lng_problem_resizing_file;
+			$output = _("There was a problem resizing the file.");
 	} else {
-		$output = $lng_problem_uploading_file;
+		$output = _("There was a problem uploading the file.");
 	}
 
 	$p->DisplayPage($output);

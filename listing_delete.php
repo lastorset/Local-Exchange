@@ -6,11 +6,11 @@ $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 
 if ($_REQUEST["type"]==Offer)
-    $listing_name=$lng_offered;
+    $listing_name=_("Offered");
 else
-    $listing_name=$lng_wanted;
+    $listing_name=_("Wanted");
 
-$p->page_title = $lng_delete." ". $listing_name .$lng_ed_listings;
+$p->page_title = _("Delete")." ". $listing_name ._(" listings");
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -49,14 +49,14 @@ while (list($key, $title) = each ($titles)) {
 
 if ($listings_exist) {
 	$form->addElement('static', null, null);
-	$form->addElement('submit', 'btnSubmit', $lng_delete);
+	$form->addElement('submit', 'btnSubmit', _("Delete"));
 } else {
 	if($_REQUEST["mode"] == "self")
-		$text = $lng_you_dont." ";
+		$text = _("You don't")." ";
 	else
-		$text = $member->PrimaryName()." ".$lng_doesnt." ";
+		$text = $member->PrimaryName()." "._("doesn't")." ";
 		
-	$message = $text .$lng_currently_have_any." ". strtolower($listing_name) .$lng_ed_listings.".";
+	$message = $text ._("currently have any")." ". strtolower($listing_name) ._(" listings").".";
 }
 
 if ($form->validate()) { // Form is validated so processes the data
@@ -67,7 +67,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $titles, $member, $lng_one_listing_deleted, $lng_listing_deleted, $lng_error_deleting_listing;
+	global $p, $cErr, $titles, $member;
 	$list = "";
 	$deleted = 0;
 	$listing = new cListing;
@@ -80,11 +80,11 @@ function process_data ($values) {
 	}
 	
 	if($deleted == 1) 
-		$list .= $lng_one_listing_deleted.".";
+		$list .= _("1 listing deleted").".";
 	elseif($deleted > 1)
-		$list .= $deleted . " ".$lng_listing_deleted;	
+		$list .= $deleted . " "._("listings deleted");	
 	else
-		$cErr->Error($lng_error_deleting_listing);
+		$cErr->Error(_("There was an error deleting the listings. Did you check any boxes?"));
 		
    $p->DisplayPage($list);
 }

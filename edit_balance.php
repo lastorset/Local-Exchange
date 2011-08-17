@@ -19,11 +19,11 @@ if (OVRIDE_BALANCES!=true) // Provision for overriding member balances has been 
 $member = new cMember;
 $member->LoadMember($_REQUEST["member_id"]);
 	
-$form->addElement("header", null, $lng_edit_member." " . $member->person[0]->first_name . " " . $member->person[0]->mid_name . " " . $member->person[0]->last_name.$lng_s_balance); // added mid_name by ejkv
+$form->addElement("header", null, _("Edit Member")." " . $member->person[0]->first_name . " " . $member->person[0]->mid_name . " " . $member->person[0]->last_name._("'s Balance")); // added mid_name by ejkv
 $form->addElement("hidden","member_id",$_REQUEST["member_id"]);
-$form->addElement("text", "balance1", $lng_value_before_dec_pnt_8_dgt_max, array("size" => 6, "maxlength" => 8));
-$form->addElement("text", "balance2", $lng_value_after_dec_pnt_2_dgt_max, array("size" => 1, "maxlength" => 2));
-$form->addElement('submit', 'btnSubmit', $lng_update_balance);
+$form->addElement("text", "balance1", _("Value (before decimal point, 8 digit max)"), array("size" => 6, "maxlength" => 8));
+$form->addElement("text", "balance2", _("Value (after decimal point, 2 digit max)"), array("size" => 1, "maxlength" => 2));
+$form->addElement('submit', 'btnSubmit', _("Update Balance"));
 
 $balance = explode(".",$member->balance);
 
@@ -53,7 +53,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr, $cDB, $lng_edit_another_members_balance, $lng_edit_another_members_balance, $lng_problem_updating_balance;
+	global $p, $cUser,$cErr, $cDB;
 	
 	$balance = trim($values["balance1"]).".".trim($values["balance2"]);
 	
@@ -62,9 +62,9 @@ function process_data ($values) {
 	$success = $cDB->Query($q);
 	
 	if ($success)
-		$output = $lng_balance_set_to. $balance." <a href=balance_to_edit.php>".$lng_edit_another_members_balance."</a>";
+		$output = _("This member's balance has now been set to"). $balance." <a href=balance_to_edit.php>"._("Edit another member's balance?")."</a>";
 	else
-		$output = $lng_problem_updating_balance;
+		$output = _("There was a problem updated this member's balance.");
 		
 	$p->DisplayPage($output);
 }

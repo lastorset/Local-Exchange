@@ -5,13 +5,13 @@ include("classes/class.uploads.php");
 $cUser->MustBeLevel(1);
 
 $p->site_section = EVENTS;
-$p->page_title = $lng_newsletter_uploaded;
+$p->page_title = _("Newsletter Uploaded");
 
-$upload = new cUpload("N", $_REQUEST[$lng_description]);
+$upload = new cUpload("N", $_REQUEST[_("Description")]);
 if($upload->SaveUpload())
-	$output = $lng_file_uploaded;
+	$output = _("File uploaded.");
 else
-	$output = $lng_problem_uploading_file;
+	$output = _("There was a problem uploading the file.");
 
 $p->DisplayPage($output);
 ?>

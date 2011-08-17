@@ -5,7 +5,7 @@ If SAFE_mode_ON is set true (inc.config.php), in email.php no CC: will be sent, 
 */
 include_once("includes/inc.global.php");
 $p->site_section = SECTION_EMAIL;
-$p->page_title = $lng_email_member;
+$p->page_title = _("Email a Member");
 
 $cUser->MustBeLoggedOn();
 
@@ -19,10 +19,10 @@ $form->addElement("hidden", "email_to", $_REQUEST["email_to"]);
 $form->addElement("hidden", "member_to", $_REQUEST["member_to"]);
 $member_to = new cMember;
 $member_to->LoadMember($_REQUEST["member_to"]);
-$form->addElement("static", null, $lng_to.": <I>". $_REQUEST["email_to"] . " (". $member_to->member_id .")</I>");
-$form->addElement("text", "subject", $lng_subject.": ", array('size' => 35, 'maxlength' => 100));
-if (!SAFE_MODE_ON) $form->addElement("select", "cc", $lng_would_you_receive_copy, array("Y"=>$lng_yes, "N"=>$lng_no)); // - changed by ejkv
-// $form->addElement("select", "cc", $lng_would_you_receive_copy, array("Y"=>$lng_yes, "N"=>$lng_no));
+$form->addElement("static", null, _("To").": <I>". $_REQUEST["email_to"] . " (". $member_to->member_id .")</I>");
+$form->addElement("text", "subject", _("Subject").": ", array('size' => 35, 'maxlength' => 100));
+if (!SAFE_MODE_ON) $form->addElement("select", "cc", _("Would you like to receive a copy?"), array("Y"=>_("Yes"), "N"=>_("No"))); // - changed by ejkv
+// $form->addElement("select", "cc", _("Would you like to receive a copy?"), array("Y"=>_("Yes"), "N"=>_("No")));
 
 /*  The following code should work, and works on my server, but not on Open Access.  Bug?
 $cc[] =& HTML_QuickForm::createElement('radio',null,null,'<FONT SIZE=2>Yes</FONT>','Y');
@@ -31,15 +31,15 @@ $form->addGroup($cc, "cc", 'Would you like to recieve a copy?');
 */
 
 $form->addElement("static", null, null, null);
-$form->addElement("textarea", "message", $lng_your_message, array("cols"=>65, "rows"=>10, "wrap"=>"soft"));
+$form->addElement("textarea", "message", _("Your Message"), array("cols"=>65, "rows"=>10, "wrap"=>"soft"));
 
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_send);
+$form->addElement("submit", "btnSubmit", _("Send"));
 
 //
 // Define form rules
 //
-$form->addRule("message", $lng_enter_message, "required");
+$form->addRule("message", _("Enter your message"), "required");
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -54,7 +54,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser, $lng_problem_sending_mail, $lng_try_again_later, $lng_your_message_send; // added $lng_your_message_send, removed $lng_from_colon by ejkv
+	global $p, $cUser;
 
 	if (SAFE_MODE_ON) { // - added safe mode check by ejkv
 		$body = wordwrap($values["message"], 64); // replaced $copy by $body with message-body - by ejkv
@@ -67,7 +67,6 @@ function process_data ($values) {
 
     if(known_email_addressp($_REQUEST["email_to"])) {
 	// added SAFE_MODE check, and removed 5th parameter, if safe mode = ON - by ejkv
-	// replaced message-body by $body, $lng_from_colon by "From:" and '. $copy' by ', $cUser->person[0]->email' - by ejkv
 	    if (SAFE_MODE_ON) {
 			$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, "From:". $cUser->person[0]->email);
 		}
@@ -80,10 +79,10 @@ function process_data ($values) {
     }
 
 	if($mailed) {
-		$output = $lng_your_message_send;
+		$output = _("Your message has been sent.");
     }
 	else {
-		$output = $lng_problem_sending_mail." ".$lng_try_again_later;	
+		$output = _("There was a problem sending the email.")." "._("Please try again later.");	
     }
 
 	$p->DisplayPage($output);

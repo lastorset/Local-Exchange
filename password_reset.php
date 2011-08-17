@@ -4,19 +4,19 @@ $p->site_section = 0;
 
 include("includes/inc.forms.php");
 
-$form->addElement("header", null, $lng_reset_pwd);
+$form->addElement("header", null, _("Reset Password"));
 $form->addElement("html", "<TR></TR>");
 
-$form->addElement("text", "member_id", $lng_enter_member_id);
-$form->addElement("text", "email", $lng_enter_eml_addr_for_your_acc);
+$form->addElement("text", "member_id", _("Enter your Member ID"));
+$form->addElement("text", "email", _("Enter the Email Address for your Account"));
 
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_reset_pwd);
+$form->addElement("submit", "btnSubmit", _("Reset Password"));
 
 $form->registerRule('verify_email','function','verify_email');
-$form->addRule('email',$lng_address_or_member_id_incorrect,'verify_email');
+$form->addRule('email',_("Address or member id is incorrect"),'verify_email');
 $form->addElement("static", null, null, null);
-$form->addElement("static", 'contact', $lng_if_not_remember_id_or_eml_please." <A HREF=contact.php>".$lng_contact."</A> ".$lng_us.".", null);
+$form->addElement("static", 'contact', _("If you cannot remember your member id or email address, please")." <A HREF=contact.php>"._("contact")."</A> "._("us").".", null);
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -26,7 +26,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $lng_pwd_reset_change_after_login, $lng_new_pwd, $lng_new_pwd_has_been_sent, $lng_eml_new_pwd_failed;
+	global $p;
 	
 	$member = new cMember;
 	$member->LoadMember($values["member_id"]);
@@ -35,12 +35,12 @@ function process_data ($values) {
 	$member->ChangePassword($password); // This will bomb out if the password change fails
 	$member->UnlockAccount();
 	
-	$list = $lng_pwd_reset_change_after_login."<P>";
-	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n".$lng_new_pwd.": ". $password, "From:".EMAIL_FROM); // added "From:" - by ejkv
+	$list = _("Your password has been reset.  You can change the new password after you login by going into the Member Profile section of the web site.")."<P>";
+	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("New Password").": ". $password, "From:".EMAIL_FROM); // added "From:" - by ejkv
 	if($mailed)
-		$list .= $lng_new_pwd_has_been_sent;
+		$list .= _("The new password has been sent to your email address.");
 	else
-		$list .= "<I>".$lng_eml_new_pwd_failed." ". PHONE_ADMIN ."</I>.";	
+		$list .= "<I>"._("However, the attempt to email the new password failed.  This is most likely due to a technical problem.  Contact your administrator at")." ". PHONE_ADMIN ."</I>.";	
 	$p->DisplayPage($list);
 }
 

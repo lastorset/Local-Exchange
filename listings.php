@@ -3,30 +3,30 @@ include_once("includes/inc.global.php");
 $p->site_section = LISTINGS;
 
 if ($_REQUEST["type"]==Offer)
-    $listing_name=$lng_offered;
+    $listing_name=_("Offered");
 else
-    $listing_name=$lng_wanted;
+    $listing_name=_("Wanted");
 
-$p->page_title = $listing_name.$lng_ed_listings;
+$p->page_title = $listing_name._(" listings");
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
 
 $form->addElement("hidden","type", $_REQUEST["type"]);
-$form->addElement("static", null, $lng_select_category_and_timeframe." <A HREF=directory.php>".$lng_here."</A>.", null);
+$form->addElement("static", null, _("Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click")." <A HREF=directory.php>"._("here")."</A>.", null);
 $form->addElement("static", null, null, null);
 $category_list = new cCategoryList();
 $categories = $category_list->MakeCategoryArray(ACTIVE, substr($_REQUEST["type"],0,1));
-$categories[0] = "(".$lng_view_all_categories.")";
-$form->addElement("select", "category", $lng_category." ", $categories);
-$text = $lng_new_updated_in_last." ";
-$form->addElement("select", "timeframe", $lng_time_frame." ", array("0"=>"(".$lng_view_all_listings.")", "3"=>$text .$lng_three_days, "7"=>$text .$lng_week, "14"=>$text .$lng_two_weeks, "30"=>$text .$lng_month, "90"=>$text .$lng_three_months));
+$categories[0] = "("._("View All Categories").")";
+$form->addElement("select", "category", _("Category")." ", $categories);
+$text = _("New/updated in last")." ";
+$form->addElement("select", "timeframe", _("Time Frame")." ", array("0"=>"("._("View All Listings").")", "3"=>$text ._("3 days"), "7"=>$text ._("week"), "14"=>$text ._("2 weeks"), "30"=>$text ._("month"), "90"=>$text ._("3 months")));
 
 if (KEYWORD_SEARCH_DIR==true)
-	$form->addElement("text","keyword",$lng_keyword." ");
+	$form->addElement("text","keyword",_("Keyword")." ");
 
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_continue);
+$form->addElement("submit", "btnSubmit", _("Continue"));
 
 //$form->registerRule('verify_selection','function','verify_selection');
 //$form->addRule('category', 'Choose a category', 'verify_selection');

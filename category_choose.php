@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = LISTINGS;
-$p->page_title = $lng_choose_category;
+$p->page_title = _("Choose Category");
 
 include("includes/inc.forms.php");
 include_once("classes/class.category.php");
@@ -17,11 +17,11 @@ $categories = new cCategoryList;
 $category_list = $categories->MakeCategoryArray();
 unset($category_list[0]);
 
-$form->addElement("select", "category", $lng_which_category, $category_list);
+$form->addElement("select", "category", _("Which Category?"), $category_list);
 $form->addElement("static", null, null, null);
 
-$buttons[] = &HTML_QuickForm::createElement('submit', 'btnEdit', $lng_edit);
-$buttons[] = &HTML_QuickForm::createElement('submit', 'btnDelete', $lng_delete);
+$buttons[] = &HTML_QuickForm::createElement('submit', 'btnEdit', _("Edit"));
+$buttons[] = &HTML_QuickForm::createElement('submit', 'btnDelete', _("Delete"));
 $form->addGroup($buttons, null, null, '&nbsp;');
 
 //
@@ -40,27 +40,27 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $lng_category_deleted;
+	global $p, $cErr;
 	
 	if(isset($values["btnDelete"])) {
 		$category = new cCategory;
 		$category->LoadCategory($values["category"]);
 		if($category->HasListings()) {
-			$output = $lng_remove_listings_before_delete_category."<P>";
+			$output = _("This category still has listings in it.  You will need to move these listings to new categories or delete them before you can delete this category.  Note that the listings could be temporarily inactive or expired, in which case they will not show in the offered/wanted lists.")."<P>";
 
-			$output .= $lng_listings_in_this_category."<BR>";
+			$output .= _("Listings in this category:")."<BR>";
 			$listings = new cListingGroup(OFFER_LISTING);
 			$listings->LoadListingGroup(null, $values["category"]);
 			foreach($listings->listing as $listing)
-				$output .= $lng_offered_cap.": ". $listing->description ." (". $listing->member_id .")<BR>"; 
+				$output .= _("OFFERED").": ". $listing->description ." (". $listing->member_id .")<BR>"; 
 				
 			$listings = new cListingGroup(WANT_LISTING);
 			$listings->LoadListingGroup(null, $values["category"]);
 			foreach($listings->listing as $listing)
-				$output .= $lng_wanted_cap.": ". $listing->description ." (". $listing->member_id .")<BR>";			
+				$output .= _("WANTED").": ". $listing->description ." (". $listing->member_id .")<BR>";
 		} else {
 			if($category->DeleteCategory())
-				$output = $lng_category_deleted;
+				$output = _("The category has been deleted.");
 		}
 	} else {
 		header("location:http://".HTTP_BASE."/category_edit.php?category_id=". $values["category"]);

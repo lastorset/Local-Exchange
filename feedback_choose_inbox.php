@@ -3,7 +3,7 @@
 include_once("includes/inc.global.php");
 
 $p->site_section = FEEDBACK;
-$p->page_title = $lng_leave_feedback;
+$p->page_title = _("Leave Feedback");
 
 include("classes/class.feedback.php");
 
@@ -17,11 +17,11 @@ if($_REQUEST["mode"] == "admin") {
 	$member = $cUser;
 }
 
-$since_date = new cDateTime("-". DAYS_REQUEST_FEEDBACK ." days"); // $since_date = new cDateTime("-". DAYS_REQUEST_FEEDBACK ." ".$lng_days);
+$since_date = new cDateTime("-". DAYS_REQUEST_FEEDBACK ." days"); // $since_date = new cDateTime("-". DAYS_REQUEST_FEEDBACK ." "._("days"));
 $tradegrp = new cTradeGroup($member->member_id, $since_date->MySQLDate()); 
 $tradegrp->LoadTradeGroup();
 
-$output = "<B>".$lng_for_which_exchange."</B><BR>";
+$output = "<B>"._("For which Exchange?")."</B><BR>";
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">";
 
 $i=0;
@@ -98,7 +98,7 @@ foreach($tradegrp->trade as $trade) {
 $output .= "</TABLE>";
 
 if($i == 0)
-	$output .= $lng_no_exchanges_to_leave_feedback;
+	$output .= _("There are no exchanges to leave feedback for.  You have already left feedback for all your recent exchanges.");
 
 $p->DisplayPage($output);
 

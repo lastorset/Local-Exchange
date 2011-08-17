@@ -2,7 +2,7 @@
 include_once("includes/inc.global.php");
 $cUser->MustBeLevel(1);
 $p->site_section = EVENTS;
-$p->page_title = $lng_choose_info_page_delete;
+$p->page_title = _("Choose Info Page to Delete");
 
 include("includes/inc.forms.php");
 include_once("classes/class.info.php");
@@ -13,9 +13,9 @@ if ($_REQUEST["id"] && $_REQUEST["confirm"]==1) {
 		$success = $cDB->Query($q);
 	
 		if ($success)
-				$output = $lng_page_deleted;
+				$output = _("Page deleted.");
 		else
-				$output = $lng_problem_deleting_page;
+				$output = _("There was a problem deleting the page.");
 		
 		$p->DisplayPage($output);
 		
@@ -31,12 +31,12 @@ if ($pgs) {
 		$p_array[$pg["id"]] = stripslashes($pg["title"]);
 	}
 	
-	$form->addElement("select", "id", $lng_which_info_page, $p_array);
+	$form->addElement("select", "id", _("Which Info Page?"), $p_array);
 	$form->addElement("static", null, null, null);
-	$form->addElement('submit', 'btnSubmit', $lng_delete);
+	$form->addElement('submit', 'btnSubmit', _("Delete"));
 }
  else {
-	$form->addElement("static", null, $lng_no_current_info_pages, null);
+	$form->addElement("static", null, _("There are no current Info Pages."), null);
 }
 
 
@@ -48,11 +48,11 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $cUser,$p,$cDB, $lng_really_delete_page_id, $lng_yes, $lng_no, $lng_go_back;
+	global $cUser,$p,$cDB;
 	
 	if ($_REQUEST["confirm"]!=1) {
 		
-		$output .= $lng_really_delete_page_id.$_REQUEST["id"].")? <a href=delete_info.php?id=".$_REQUEST["id"]."&confirm=1>".$lng_yes."</a> | <a href=javascript:history.back(1)>".$lng_no." ".$lng_go_back."</a>";
+		$output .= _("Really Delete this page (ID#").$_REQUEST["id"].")? <a href=delete_info.php?id=".$_REQUEST["id"]."&confirm=1>"._("Yes")."</a> | <a href=javascript:history.back(1)>"._("No")." "._("(go back)")."</a>";
 	}
 	
 	$p->DisplayPage($output);

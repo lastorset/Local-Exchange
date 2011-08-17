@@ -5,10 +5,10 @@ $cUser->MustBeLevel(1);
 
 include("includes/inc.forms.php");
 
-$form->addElement("header", null, $lng_choose_joint_member_to_edit);
+$form->addElement("header", null, _("Choose Joint Member to Edit"));
 $form->addElement("html", "<TR></TR>");
     
-$sel =& $form->addElement("hierselect", "member", $lng_choose_member_and_person);
+$sel =& $form->addElement("hierselect", "member", _("Choose Member and Person"));
 $items = new cMemberGroupMenu;
 $items->LoadMemberIdGroup(); // replaced LoadMemberGroup() by LoadMemberIdGroup() - by ejkv
 $items->MakeMenuArrays();
@@ -16,8 +16,8 @@ $sel->setMainOptions($items->id);
 $sel->setSecOptions($items->name);
 
 $form->addElement("static", null, null, null);
-$buttons[] = &HTML_QuickForm::createElement('submit', 'btnEdit', $lng_edit);
-$buttons[] = &HTML_QuickForm::createElement('submit', 'btnDelete', $lng_delete);
+$buttons[] = &HTML_QuickForm::createElement('submit', 'btnEdit', _("Edit"));
+$buttons[] = &HTML_QuickForm::createElement('submit', 'btnDelete', _("Delete"));
 $form->addGroup($buttons, null, null, '&nbsp;');
 
 

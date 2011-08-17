@@ -1,33 +1,33 @@
 <?php
 include_once("includes/inc.global.php");
 $p->site_section = SECTION_EMAIL;
-$p->page_title = $lng_contact_us;
+$p->page_title = _("Contact Us");
 
 include("includes/inc.forms.php");
 
 //
 // First, we define the form
 //
-$form->addElement("static", null, $lng_for_more_information." ". SITE_LONG_TITLE ." ".$lng_fill_out_info_request." <A HREF=news.php>".$lng_events."</A> ".$lng_next_member_meeting, null);
+$form->addElement("static", null, _("For more information on the")." ". SITE_LONG_TITLE ." "._("or to find out how to become a member, please fill out our information request. Someone will get back to you soon. Please check our")." <A HREF=news.php>"._("Events")."</A> "._("page for our next New Member's Meeting if you would like to join our group!"), null);
 $form->addElement("static", null, null, null);
-$form->addElement("text", "name", $lng_name);
-$form->addElement("text", "email", $lng_email);
-$form->addElement("text", "phone", $lng_phone);
+$form->addElement("text", "name", _("Name"));
+$form->addElement("text", "email", _("Email"));
+$form->addElement("text", "phone", _("Phone"));
 $form->addElement("static", null, null, null);
-$form->addElement("textarea", "message", $lng_your_message, array("cols"=>55, "rows"=>10, "wrap"=>"soft")); // colls changed from 65 to 55 by ejkv
+$form->addElement("textarea", "message", _("Your Message"), array("cols"=>55, "rows"=>10, "wrap"=>"soft")); // colls changed from 65 to 55 by ejkv
 $form->addElement("static", null, null, null);
-$heard_from = array ("0"=>$lng_select_one, "1"=>$lng_newspaper, "2"=>$lng_radio, "3"=>$lng_search_engine, "4"=>$lng_friend, "5"=>$lng_local_business, "6"=>$lng_artical, "7"=>$lng_other);
-$form->addElement("select", "how_heard", $lng_how_did_you_hear_about_us, $heard_from);
+$heard_from = array ("0"=>_("(Select One)"), "1"=>_("Newspaper"), "2"=>_("Radio"), "3"=>_("Search Engine"), "4"=>_("Friend"), "5"=>_("Local Business"), "6"=>_("Article"), "7"=>_("Other"));
+$form->addElement("select", "how_heard", _("How did you hear about us?"), $heard_from);
 
 $form->addElement("static", null, null, null);
-$form->addElement("submit", "btnSubmit", $lng_send);
+$form->addElement("submit", "btnSubmit", _("Send"));
 
 //
 // Define form rules
 //
-$form->addRule("name", $lng_enter_name, "required");
-$form->addRule("email", $lng_enter_email_address, "required");
-$form->addRule("phone", $lng_enter_phone_number, "required");
+$form->addRule("name", _("Enter your name"), "required");
+$form->addRule("email", _("Enter your email address"), "required");
+$form->addRule("phone", _("Enter your phone number"), "required");
 
 
 if ($form->validate()) { // Form is validated so processes the data
@@ -41,14 +41,14 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $heard_from, $lng_contact_form, $lng_from, $lng_phone, $lng_heard_from, $lng_thank_you, $lng_problem_sending_email; // replaced $lng_from_colon, $lng_phone_colon, $lng_heard_from_colon by $lng_from, $lng_phone, $lng_heard_from - by ejkv
+	global $p, $heard_from;
 	
-	$mailed = mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." ".$lng_contact_form, $lng_from.": ". $values["name"]. "\n". $lng_phone.": ". $values["phone"] ."\n". $lng_heard_from.": ". $heard_from[$values["how_heard"]] ."\n\n". wordwrap($values["message"], 64) , "From:". $values["email"]); // replaced $lng_from.":" by "From:" - by ejkv
+	$mailed = mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("Contact Form"), _("From").": ". $values["name"]. "\n". _("Phone").": ". $values["phone"] ."\n". _("Heard From").": ". $heard_from[$values["how_heard"]] ."\n\n". wordwrap($values["message"], 64) , "From:". $values["email"]);
 	
 	if($mailed)
-		$output = $lng_thank_you;
+		$output = _("Thank you.");
 	else
-		$output = $lng_problem_sending_email;	
+		$output = _("There was a problem sending the email.  Are your sure you entered your email address  correctly?");	
 	$p->DisplayPage($output);
 }
 

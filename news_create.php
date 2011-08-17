@@ -5,7 +5,7 @@ include_once("includes/inc.global.php");
 $cUser->MustBeLevel(1);
 
 $p->site_section = EVENTS;
-$p->page_title = $lng_create_news_item;
+$p->page_title = _("Create a News Item");
 
 include("classes/class.news.php");
 include("includes/inc.forms.php");
@@ -14,27 +14,27 @@ include("includes/inc.forms.php");
 // First, we define the form
 //
 
-$form->addElement("text", "title", $lng_title, array("size" => 35, "maxlength" => 100));
+$form->addElement("text", "title", _("Title"), array("size" => 35, "maxlength" => 100));
 $today = getdate();
-$options = array("language"=> $lng_language, "format" => "dFY", "minYear" => $today["year"],"maxYear" => $today["year"]+5); // changed "en" by $lng_language by ejkv
-$form->addElement("date","expire_date", $lng_expires, $options);
+$options = array("language"=> _("en"), "format" => "dFY", "minYear" => $today["year"],"maxYear" => $today["year"]+5); // changed "en" by _("en") by ejkv
+$form->addElement("date","expire_date", _("Expires"), $options);
 $sequence = new cNewsGroup();
 $sequence->LoadNewsGroup();
-$form->addElement("select", "sequence",$lng_sequence, $sequence->MakeNewsSeqArray());
+$form->addElement("select", "sequence",_("Sequence"), $sequence->MakeNewsSeqArray());
 //$form->addElement("static", null, "Description", null);
-$form->addElement("textarea", "description", $lng_description, array("cols"=>65, "rows"=>5, "wrap"=>"soft"));
+$form->addElement("textarea", "description", _("Description"), array("cols"=>65, "rows"=>5, "wrap"=>"soft"));
 
-$form->addElement("submit", "btnSubmit", $lng_submit);
+$form->addElement("submit", "btnSubmit", _("Submit"));
 
 //
 // Set up validation rules for the form
 //
-$form->addRule("title",$lng_enter_title,"required");
-$form->addRule("description",$lng_enter_description,"required");
+$form->addRule("title",_("Enter a title"),"required");
+$form->addRule("description",_("Enter a description"),"required");
 $form->registerRule("verify_future_date","function","verify_future_date");
-$form->addRule("expire_date",$lng_expiration_future_date,"verify_future_date");
+$form->addRule("expire_date",_("Expiration must be for a future date"),"verify_future_date");
 $form->registerRule("verify_valid_date","function","verify_valid_date");
-$form->addRule("expire_date",$lng_date_invalid,"verify_valid_date");
+$form->addRule("expire_date",_("Date is invalid"),"verify_valid_date");
 
 //
 // Then check if we are processing a submission or just displaying the form
@@ -50,7 +50,7 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it   
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr, $sequence, $lng_news_item_saved, $lng_problem_saving_news;
+	global $p, $cUser,$cErr, $sequence;
 	
 	$date = $values['expire_date'];
 	$expire_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
@@ -58,9 +58,9 @@ function process_data ($values) {
 	$success = $news->SaveNewNews();	
 	
 	if ($success)
-		$output = $lng_news_item_saved;
+		$output = _("News item saved.");
 	else
-		$output = $lng_problem_saving_news;
+		$output = _("There was a problem saving the news item.");
 		
 	$p->DisplayPage($output);
 	

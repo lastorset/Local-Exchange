@@ -90,7 +90,7 @@ class cMember
 	}
 
 	function Login($user, $pass, $from_cookie=false) {
-		global $cDB,$cErr, $lng_account_locked_too_many_login_attempts, $lng_pwd_or_member_id_incorrect, $lng_here, $lng_to_have_pwd_reset; // added $lng_pwd_or_member_id_incorrect by ejkv
+		global $cDB,$cErr;
 		
 		$login_history = new cLoginHistory();
 //echo "SELECT member_id, password, member_role FROM ".DATABASE_USERS." WHERE member_id = " . $cDB->EscTxt($user) . " AND (password=sha(". $cDB->EscTxt($pass) .") OR password=". $cDB->EscTxt($pass) .") and status = 'A';";
@@ -102,9 +102,9 @@ class cMember
 		} elseif (!$from_cookie) {
 			$query = $cDB->Query("SELECT NULL FROM ".DATABASE_USERS." WHERE status = 'L' and member_id=". $cDB->EscTxt($user) .";");
 			if($row = mysql_fetch_array($query)) {
-				$cErr->Error($lng_account_locked_too_many_login_attempts);
+				$cErr->Error(_("Your account has been locked due to too many unsuccessful login attempts. You will need to contact us to have your account unlocked."));
 			} else {
-				$cErr->Error($lng_pwd_or_member_id_incorrect." <A HREF=password_reset.php>".$lng_here."</A> ".$lng_to_have_pwd_reset.".", ERROR_SEVERITY_INFO);
+				$cErr->Error(_("Password or member id is incorrect.  Please try again, or go")." <A HREF=password_reset.php>"._("here")."</A> "._("to have your password reset").".", ERROR_SEVERITY_INFO);
 			}
 			$login_history->RecordLoginFailure($user);
 			return false;
@@ -159,14 +159,14 @@ class cMember
 	}
 	
 	function ChangePassword($pass) { // TODO: Should use SaveMember and should reset $this->password
-		global $cDB, $cErr, $lng_error_updating_pwd, $lng_try_again_later;
+		global $cDB, $cErr;
 		
 		$update = $cDB->Query("UPDATE ". DATABASE_MEMBERS ." SET password=sha(". $cDB->EscTxt($pass) .") WHERE member_id=". $cDB->EscTxt($this->member_id) .";");
 		
 		if($update) {
 			return true;
 		} else {
-			$cErr->Error($lng_error_updating_pwd." ".$lng_try_again_later);
+			$cErr->Error(_("There was an error updating the password.")." "._("Please try again later."));
 			include("redirect.php");
 		}
 	}
@@ -187,27 +187,26 @@ class cMember
 	}
 
 	function UserLoginPage() // A free-standing login page
-	{   global $lng_member_id, $lng_pwd, $lng_login, $lng_if_you_dont_have_account, $lng_if_you_dont_have_account_please_register;
+	{
 		return "<DIV STYLE='width=60%; padding: 5px;'><FORM ACTION=".SERVER_PATH_URL."/login.php METHOD=POST>
 					<INPUT TYPE=HIDDEN NAME=action VALUE=login>
 					<INPUT TYPE=HIDDEN NAME=location VALUE='".$_SERVER["REQUEST_URI"]."'>
-					<TABLE class=NoBorder><TR><TD ALIGN=LEFT>".$lng_member_id.":</TD><TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=12 NAME=user></TD></TR>
-					<TR><TD ALIGN=LEFT>".$lng_pwd." :</TD><TD ALIGN=LEFT><INPUT TYPE=PASSWORD SIZE=12 NAME=pass></TD></TR></TABLE>
-					<DIV align=LEFT><INPUT TYPE=SUBMIT VALUE=".$lng_login."></DIV>
+					<TABLE class=NoBorder><TR><TD ALIGN=LEFT>"._("Member ID").":</TD><TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=12 NAME=user></TD></TR>
+					<TR><TD ALIGN=LEFT>"._("Password")." :</TD><TD ALIGN=LEFT><INPUT TYPE=PASSWORD SIZE=12 NAME=pass></TD></TR></TABLE>
+					<DIV align=LEFT><INPUT TYPE=SUBMIT VALUE="._("Login")."></DIV>
 					</FORM></DIV>
 					<BR>
-					". (SELF_REGISTRATION ? $lng_if_you_dont_have_account_please_register : $lng_if_you_dont_have_account) ."<BR>";	
+					". (SELF_REGISTRATION ? _("If you don't have an account, you may <a href=/member_create.php>sign up online</a>.") : _("If you don't have an account, please contact us to join.")) ."<BR>";	
 	}
 
 	function UserLoginLogout() {
-		global $lng_logout, $lng_login;
 		if ($this->IsLoggedOn())
 		{
 			//$output = "<FONT SIZE=1><A HREF='".SERVER_PATH_URL."/member_logout.php'>Logout</A>&nbsp;&nbsp;&nbsp;";
-			$output = "<A HREF='".SERVER_PATH_URL."/member_logout.php'>".$lng_logout."</A>&nbsp;&nbsp;&nbsp;";
+			$output = "<A HREF='".SERVER_PATH_URL."/member_logout.php'>"._("Logout")."</A>&nbsp;&nbsp;&nbsp;";
 		} else {
 			//$output = "<FONT SIZE=1><A HREF='".SERVER_PATH_URL."/member_login.php'>Login</A>&nbsp;&nbsp;&nbsp;";
-			$output = "<A HREF='".SERVER_PATH_URL."/member_login.php'>".$lng_login."</A>&nbsp;&nbsp;&nbsp;";
+			$output = "<A HREF='".SERVER_PATH_URL."/member_login.php'>"._("Login")."</A>&nbsp;&nbsp;&nbsp;";
 		}
 
 		return $output;		
@@ -236,12 +235,12 @@ class cMember
 	}
 
 	function MustBeLevel($level) {
-		global $p, $lng_access_denied_no_permission, $lng_would_like_access_level_increased, $lng_eml_admin, $lng_and_ask;
+		global $p;
 		$this->MustBeLoggedOn(); // seems prudent to check first.
 
 		if ($this->member_role<$level)
 		{
-			$page = "<DIV Class='AccessDenied'>".$lng_access_denied_no_permission.".<BR><BR>".$lng_would_like_access_level_increased." <a href='mailto:".EMAIL_ADMIN."'>".$lng_eml_admin."</a>  ".$lng_and_ask.".</DIV>";
+			$page = "<DIV Class='AccessDenied'>"._("I'm sorry, but the action attempted was unable to be processed because you don't have permissions").".<BR><BR>"._("If you would like your access level increased, please")." <a href='mailto:".EMAIL_ADMIN."'>"._("email the admin")."</a>  "._("and ask").".</DIV>";
 			$p->DisplayPage($page);
 			exit;
 		}
@@ -262,7 +261,7 @@ class cMember
 	}
 	
 	function LoadMember($member, $redirect=true) {
-		global $cDB, $cErr, $lng_error_access_member, $lng_please_try_again_later, $lng_error_access_person_record;
+		global $cDB, $cErr;
 
 		//
 		// select all Member data and populate the properties
@@ -295,7 +294,7 @@ class cMember
 		else
 		{
 			if ($redirect) {
-				$cErr->Error($lng_error_access_member." (".$member."). ".$lng_please_try_again_later.".");
+				$cErr->Error(_("There was an error accessing this member")." (".$member."). "._("Please try again later").".");
 				include("redirect.php");
 			}
 			return false;
@@ -318,7 +317,7 @@ class cMember
 		if($i == 0)
 		{
 			if ($redirect) {
-				$cErr->Error($lng_error_access_person_record." (".$member.").  ".$lng_please_try_again_later.".");
+				$cErr->Error(_("There was an error accessing a person record for")." (".$member.").  "._("Please try again later").".");
 				include("redirect.php");			
 			}
 			return false;
@@ -327,11 +326,11 @@ class cMember
 	}
 	
 	function ShowMember()
-	{   global $lng_member_data, $lng_person_data;
-		$output = $lng_member_data.":<BR>";
+	{
+		$output = _("Member Data").":<BR>";
 		$output .= $this->member_id . ", " . $this->password . ", " . $this->member_role . ", " . $this->security_q . ", " . $this->security_a . ", " . $this->status . ", " . $this->member_note . ", " . $this->admin_note . ", " . $this->join_date . ", " . $this->expire_date . ", " . $this->away_date . ", " . $this->account_type . ", " . $this->email_updates . ", " . $this->balance . "<BR><BR>";
 		
-		$output .= $lng_person_data.":<BR>";
+		$output .= _("Person Data").":<BR>";
 		
 		foreach($this->person as $person)
 		{
@@ -348,13 +347,13 @@ class cMember
 	}
 	
 	function SaveMember() {
-		global $cDB, $cErr, $lng_could_not_save_changes_member, $lng_please_try_again_later;				
+		global $cDB, $cErr;				
 		
 		// [chris] included 'confirm_payments' preference
 		$update = $cDB->Query("UPDATE ".DATABASE_MEMBERS." SET password=". $cDB->EscTxt($this->password) .", member_role=". $cDB->EscTxt($this->member_role) .", security_q=". $cDB->EscTxt($this->security_q) .", security_a=". $cDB->EscTxt($this->security_a) .", status=". $cDB->EscTxt($this->status) .", member_note=". $cDB->EscTxt($this->member_note) .", admin_note=". $cDB->EscTxt($this->admin_note) .", join_date=". $cDB->EscTxt($this->join_date) .", expire_date=". $cDB->EscTxt($this->expire_date) .", away_date=". $cDB->EscTxt($this->away_date) .", account_type=". $cDB->EscTxt($this->account_type) .", email_updates=". $cDB->EscTxt($this->email_updates) .", confirm_payments=".$cDB->EscTxt($this->confirm_payments).", balance=". $cDB->EscTxt($this->balance) ." WHERE member_id=". $cDB->EscTxt($this->member_id) .";");	
 
 		if(!$update)
-			$cErr->Error($lng_could_not_save_changes_member." '". $this->member_id ."'. ".$lng_please_try_again_later.".");
+			$cErr->Error(_("Could not save changes to member")." '". $this->member_id ."'. "._("Please try again later").".");
 
 		foreach($this->person as $person) {
 			$person->SavePerson();
@@ -368,10 +367,10 @@ class cMember
 	}
 	
 	function VerifyPersonInAccount($person_id) { // Make sure hacker didn't manually change URL
-		global $cErr, $lng_which_joint_member, $lng_invalid_person_id_url;
+		global $cErr;
 
 		if ($person_id == "") { // Make sure a joint member was selected or account has no joint members - added by ejkv
-			$cErr->Error($lng_which_joint_member,ERROR_SEVERITY_LOW); // added by ejkv
+			$cErr->Error(_("Which Joint Member?"),ERROR_SEVERITY_LOW); // added by ejkv
 			include("redirect.php"); // added by ejkv
 		} // added by ejkv
 
@@ -379,7 +378,7 @@ class cMember
 			if($person->person_id == $person_id)
 				return true;
 		}
-		$cErr->Error($lng_invalid_person_id_url,ERROR_SEVERITY_HIGH);
+		$cErr->Error(_("Invalid person id in URL.  This break-in attempt has been reported."),ERROR_SEVERITY_HIGH);
 		include("redirect.php");
 	}
 	
@@ -407,7 +406,6 @@ class cMember
 	}
 	
 	function AllPhones () {
-		global $lng_fax, $lng_s_fax;
 		$phones = "";
 		$reg_phones[]="";
 		$fax_phones[]="";
@@ -422,7 +420,7 @@ class cMember
 					$reg_phones[] = $person->DisplayPhone(2);
 				}
 				if($person->fax_number != "") {
-					$phones .= "<br>". $person->DisplayPhone("fax"). " (".$lng_fax.")"; // replaced ", " by "<br>" - by ejkv
+					$phones .= "<br>". $person->DisplayPhone("fax"). " ("._("Fax").")"; // replaced ", " by "<br>" - by ejkv
 					$fax_phones[] = $person->DisplayPhone("fax");
 				}
 			} else {
@@ -435,7 +433,7 @@ class cMember
 					$reg_phones[] = $person->DisplayPhone(2);
 				}
 				if($person->fax_number != "" and array_search($person->DisplayPhone("fax"), $fax_phones) === false) {
-					$phones .= "<br>". $person->DisplayPhone("fax"). " (". $person->first_name .$lng_s_fax.")"; // replaced ", " by "<br>" - by ejkv
+					$phones .= "<br>". $person->DisplayPhone("fax"). " (". $person->first_name ._("'s Fax").")"; // replaced ", " by "<br>" - by ejkv
 					$fax_phones[] = $person->DisplayPhone("fax");
 				}
 			}	
@@ -509,34 +507,34 @@ class cMember
 		
 		/*[CDM] Added in image, placed all this in 2 column table, looks tidier */
 		
-		global $cDB,$agesArr,$sexArr, $lng_member, $lng_activity,$lng_no_exchanges_yet, $lng_exchanges_total, $lng_sum_of, $lng_last_on, $lng_feedback_cap, $lng_positive, $lng_total, $lng_negative_lc, $lng_neutral_lc, $lng_joined, $lng_email, $lng_primary_phone, $lng_secondary_phone, $lng_fax, $lng_joint_member, $lng_email, $lng_phone, $lng_secondary_phone, $lng_personal_information, $lng_unspecified, $lng_no_description_supplied, $lng_age, $lng_sex, $lng_about_me;
+		global $cDB,$agesArr,$sexArr;
 		
 		$output .= "<table width=100%><tr valign=top><td width=50%>";
 		
-		$output .= "<STRONG>".$lng_member.":</STRONG> ". $this->PrimaryName() . " (". $this->MemberLink().")"."<BR>";
+		$output .= "<STRONG>"._("Member").":</STRONG> ". $this->PrimaryName() . " (". $this->MemberLink().")"."<BR>";
 		$stats = new cTradeStats($this->member_id);
-		$output .= "<STRONG>".$lng_activity.":</STRONG> ";
+		$output .= "<STRONG>"._("Activity").":</STRONG> ";
 		if ($stats->most_recent == "")
-			$output .= $lng_no_exchanges_yet."<BR>";
+			$output .= _("No exchanges yet")."<BR>";
 		else		
-			$output .= '<A HREF="trade_history.php?mode=other&member_id='. $this->member_id .'">'. $stats->total_trades ." ".$lng_exchanges_total."</A> ".$lng_sum_of." ". $stats->total_units . " ". strtolower(UNITS) . ", ".$lng_last_on." ". $stats->most_recent->ShortDate() ."<BR>";
+			$output .= '<A HREF="trade_history.php?mode=other&member_id='. $this->member_id .'">'. $stats->total_trades ." "._("exchanges total")."</A> "._("for a sum of")." ". $stats->total_units . " ". strtolower(UNITS) . ", "._("last on")." ". $stats->most_recent->ShortDate() ."<BR>";
 		$feedbackgrp = new cFeedbackGroup;
 		$feedbackgrp->LoadFeedbackGroup($this->member_id);
 		if(isset($feedbackgrp->feedback)) {
-			$output .= "<b>".$lng_feedback_cap.":</b> <A HREF=feedback_all.php?mode=other&member_id=". $this->member_id . ">" . $feedbackgrp->PercentPositive() . "% ".$lng_positive."</A> (" . $feedbackgrp->TotalFeedback() . " ".$lng_total.", " . $feedbackgrp->num_negative ." ".$lng_negative_lc." & " . $feedbackgrp->num_neutral . " ".$lng_neutral_lc.")<BR>";		
+			$output .= "<b>"._("Feedback").":</b> <A HREF=feedback_all.php?mode=other&member_id=". $this->member_id . ">" . $feedbackgrp->PercentPositive() . "% "._("Positive")."</A> (" . $feedbackgrp->TotalFeedback() . " "._("total").", " . $feedbackgrp->num_negative ." "._("negative")." & " . $feedbackgrp->num_neutral . " "._("neutral").")<BR>";		
 		}
 
 		$joined = new cDateTime($this->join_date);
-		$output .= "<STRONG>".$lng_joined.":</STRONG> ". $joined->ShortDate() ."<BR>";
+		$output .= "<STRONG>"._("Joined").":</STRONG> ". $joined->ShortDate() ."<BR>";
 
 		if($this->person[0]->email != "")
-			$output .= "<STRONG>".$lng_email.":</STRONG> ". "<A HREF=email.php?email_to=". $this->person[0]->email ."&member_to=". $this->member_id .">". $this->person[0]->email ."</A><BR>";	
+			$output .= "<STRONG>"._("Email").":</STRONG> ". "<A HREF=email.php?email_to=". $this->person[0]->email ."&member_to=". $this->member_id .">". $this->person[0]->email ."</A><BR>";	
 		if($this->person[0]->phone1_number != "")
-			$output .= "<STRONG>".$lng_primary_phone.":</STRONG> ". $this->person[0]->DisplayPhone("1") ."<BR>";
+			$output .= "<STRONG>"._("Primary Phone").":</STRONG> ". $this->person[0]->DisplayPhone("1") ."<BR>";
 		if($this->person[0]->phone2_number != "")
-			$output .= "<STRONG>".$lng_secondary_phone.":</STRONG> ". $this->person[0]->DisplayPhone("2") ."<BR>";						
+			$output .= "<STRONG>"._("Secondary Phone").":</STRONG> ". $this->person[0]->DisplayPhone("2") ."<BR>";						
 		if($this->person[0]->fax_number != "")
-			$output .= "<STRONG>".$lng_fax.":</STRONG> ". $this->person[0]->DisplayPhone("fax") ."<BR>";	
+			$output .= "<STRONG>"._("Fax").":</STRONG> ". $this->person[0]->DisplayPhone("fax") ."<BR>";	
 		if($this->person[0]->address_street2 != "") {
             $output .= "<STRONG>" . ADDRESS_LINE_2 . ": </STRONG>" .
                            $this->person[0]->address_street2 . "<BR>";
@@ -563,15 +561,15 @@ class cMember
 				continue;	// Skip the primary member, since we already displayed above
 		
 			if($person->directory_list == "Y") {
-				$output .= "<BR><STRONG>".$lng_joint_member.":</STRONG> ". $person->first_name ." ". $person->mid_name ." ". $person->last_name ."<BR>"; // added mid_name by ejkv
+				$output .= "<BR><STRONG>"._("Joint Member").":</STRONG> ". $person->first_name ." ". $person->mid_name ." ". $person->last_name ."<BR>"; // added mid_name by ejkv
 				if($person->email != "")
-					$output .= "<STRONG>". $person->first_name ."'s ".$lng_email.":</STRONG> ". "<A HREF=email.php?email_to=". $person->email ."&member_to=". $this->member_id .">". $person->email ."</A><BR>";				
+					$output .= "<STRONG>". $person->first_name ."'s "._("Email").":</STRONG> ". "<A HREF=email.php?email_to=". $person->email ."&member_to=". $this->member_id .">". $person->email ."</A><BR>";				
 				if($person->phone1_number != "")
-					$output .= "<STRONG>". $person->first_name ."'s ".$lng_phone.":</STRONG> ". $person->DisplayPhone("1") ."<BR>";
+					$output .= "<STRONG>". $person->first_name ."'s "._("Phone").":</STRONG> ". $person->DisplayPhone("1") ."<BR>";
 				if($person->phone2_number != "")
-					$output .= "<STRONG>". $person->first_name ."'s ".$lng_secondary_phone.":</STRONG> ". $person->DisplayPhone("2") ."<BR>";						
+					$output .= "<STRONG>". $person->first_name ."'s "._("Secondary Phone").":</STRONG> ". $person->DisplayPhone("2") ."<BR>";						
 				if($person->fax_number != "")
-				$output .= "<STRONG>". $person->first_name ."'s ".$lng_fax.":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";				
+				$output .= "<STRONG>". $person->first_name ."'s "._("Fax").":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";				
 			}
 		}		
 	
@@ -583,17 +581,17 @@ class cMember
 	
 	if (SOC_NETWORK_FIELDS==true) {
 	
-		$output .= "<p><STRONG><I>".$lng_personal_information."</I></STRONG><P>";
+		$output .= "<p><STRONG><I>"._("PERSONAL INFORMATION")."</I></STRONG><P>";
 		
-		$pAge = (strlen($this->person[0]->age)<1) ? $lng_unspecified : $agesArr[$this->person[0]->age];
-		$pSex = (!$this->person[0]->sex) ? $lng_unspecified : $sexArr[$this->person[0]->sex];
-		$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'.$lng_no_description_supplied.'.</em>' : stripslashes($this->person[0]->about_me);
+		$pAge = (strlen($this->person[0]->age)<1) ? _("Unspecified") : $agesArr[$this->person[0]->age];
+		$pSex = (!$this->person[0]->sex) ? _("Unspecified") : $sexArr[$this->person[0]->sex];
+		$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'._("No description supplied").'.</em>' : stripslashes($this->person[0]->about_me);
 		
-		$output .= "<STRONG>".$lng_age.":</STRONG> ".$pAge."<br>";
+		$output .= "<STRONG>"._("Age").":</STRONG> ".$pAge."<br>";
 		
-		$output .= "<STRONG>".$lng_sex.":</STRONG> ".$pSex."<p>";
+		$output .= "<STRONG>"._("Sex").":</STRONG> ".$pSex."<p>";
 		
-		$output .= "<STRONG>".$lng_about_me.":</STRONG><p> ".$pAbout."<br>";
+		$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
 	}
 
 	return $output;	
@@ -733,13 +731,12 @@ class cMemberGroup {
 	}	
 	
 	function DoNamePicker() {
-		global $lng_matching_members, $lng_member_search;
 		$tmp = '<script src=includes/autocomplete.js></script>';
 		
 		$mems = $this->MakeNameArray();
 		
 		$tmp .= "<select name=member_to>
-			<option id=0 value=0>".count($mems)." ".$lng_matching_members."...</option>";
+			<option id=0 value=0>".count($mems)." "._("matching members")."...</option>";
 		
 		foreach($mems as $key=>$value) {
 			
@@ -748,7 +745,7 @@ class cMemberGroup {
 		
 		$tmp .= "</select>";
 //		$form->addElement("select", "member_to", "...", $name_list->MakeNameArray());
-		$tmp .= '<input type=text size=20 name=picker value='.$lng_member_search.' onKeyUp="autoComplete(this,document.all.member_to,\'text\')"
+		$tmp .= '<input type=text size=20 name=picker value='._("Member_search").' onKeyUp="autoComplete(this,document.all.member_to,\'text\')"
 			onFocus="this.value=\'\'">
 			<!--<input type=button value="Update Dropdown List">-->';
 		return $tmp;
@@ -756,14 +753,13 @@ class cMemberGroup {
 	
 	// Use of this function requires the inclusion of class.listing.php
 	function EmailListingUpdates($interval) {
-		global $lng_days, $lng_no_listings_found, $lng_wanted_listings, $lng_offered_listings, $lng_day, $lng_week, $lng_month, $lng_new_updated_listings_during_last; // removed $lng_from - by ejkv
 		if(!isset($this->members)) {
 			if(!$this->LoadMemberGroup())
 				return false;
 		}
 
 		$listings = new cListingGroup(OFFER_LISTING);
-		$since = new cDateTime("-". $interval ." days"); // $since = new cDateTime("-". $interval ." ".$lng_days);
+		$since = new cDateTime("-". $interval ." days"); // $since = new cDateTime("-". $interval ." "._("days"));
 		$listings->LoadListingGroup(null,null,null,$since->MySQLTime());
 		$offered_text = $listings->DisplayListingGroup(true);
 		$listings = new cListingGroup(WANT_LISTING);
@@ -771,25 +767,25 @@ class cMemberGroup {
 		$wanted_text = $listings->DisplayListingGroup(true);
 		
 		$email_text = "";
-		if($offered_text != $lng_no_listings_found)
-			$email_text .= "<h2>".$lng_offered_listings."</h2><br>". $offered_text ."<p><br>";
-		if($wanted_text != $lng_no_listings_found)
-			$email_text .= "<h2>".$lng_wanted_listings."</h2><br>". $wanted_text;
+		if($offered_text != _("No listings found."))
+			$email_text .= "<h2>"._("Offered Listings")."</h2><br>". $offered_text ."<p><br>";
+		if($wanted_text != _("No listings found."))
+			$email_text .= "<h2>"._("Wanted Listings")."</h2><br>". $wanted_text;
 		if(!$email_text)
 			return; // If no new listings, don't email
 		
 		$email_text = "<html><body>". LISTING_UPDATES_MESSAGE ."<p><br>".$email_text. "</body></html>";
 			
 		if ($interval == '1')
-			$period = $lng_day;
+			$period = _("day");
 		elseif ($interval == '7')
-			$period = $lng_week;
+			$period = _("week");
 		else
-			$period = $lng_month;			
+			$period = _("month");			
 		
 		foreach($this->members as $member) {						
 			if($member->email_updates == $interval and $member->person[0]->email) {
-				mail($member->person[0]->email, SITE_SHORT_TITLE .": ".$lng_new_updated_listings_during_last." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=iso-8859-1"); // replaced $lng_from.":" by "From:" - by ejkv
+				mail($member->person[0]->email, SITE_SHORT_TITLE .": "._("New and updated listings during the last")." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=iso-8859-1");
 			}
 		
 		}
@@ -798,7 +794,6 @@ class cMemberGroup {
 	
 	// Use of this function requires the inclusion of class.listing.php
 	function ExpireListings4InactiveMembers() {
-		global $lng_days, $lng_important_information_about,$lng_account_lc, $lng_from_colon, $lng_member_has_no_email, $lng_listing_expired_for, $lng_all_listings_auto_espired; // removed $lng_from_colon, - by ejkv
 		if(!isset($this->members)) {
 			if(!$this->LoadMemberGroup())
 				return false;
@@ -814,22 +809,22 @@ class cMemberGroup {
 				$wanted_exist = $want_listings->LoadListingGroup(null, null, $member->member_id, null, false);
 				
 				if($offered_exist or $wanted_exist)	{
-					$expire_date = new cDateTime("+". EXPIRATION_WINDOW ." days"); // $expire_date = new cDateTime("+". EXPIRATION_WINDOW ." ".$lng_days);
+					$expire_date = new cDateTime("+". EXPIRATION_WINDOW ." days"); // $expire_date = new cDateTime("+". EXPIRATION_WINDOW ." "._("days"));
 					if($offered_exist)
 						$offer_listings->ExpireAll($expire_date);
 					if($wanted_exist)
 						$want_listings->ExpireAll($expire_date);
 				
 					if($member->person[0]->email != null) {
-						mail($member->person[0]->email, $lng_important_information_about." ". SITE_SHORT_TITLE ." ".$lng_account_lc, wordwrap(EXPIRED_LISTINGS_MESSAGE, 64), "From:". EMAIL_ADMIN); // replaced $lng_from_colon by "From:" - by ejkv
+						mail($member->person[0]->email, _("Important information about your")." ". SITE_SHORT_TITLE ." "._("account"), wordwrap(EXPIRED_LISTINGS_MESSAGE, 64), "From:". EMAIL_ADMIN);
 						$note = "";
 						$subject_note = "";
 					} else {
-						$note = "\n\n".$lng_member_has_no_email;
+						$note = "\n\n"._("***NOTE: This member does not have an email address in the system, so they will need to be notified by phone that their listings have been inactivated.");
 						$subject_note = " (member has no email)";
 					}
 					
-					mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." ".$lng_listing_expired_for." ". $member->member_id. $subject_note, wordwrap($lng_all_listings_auto_espired. $note, 64) , "From:". EMAIL_ADMIN); // replaced $lng_from_colon by "From:" - by ejkv
+					mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("listings expired for")." ". $member->member_id. $subject_note, wordwrap(_("All of this member's listings were automatically expired due to inactivity.  To turn off this feature, see inc.config.php."). $note, 64) , "From:". EMAIL_ADMIN);
 				}
 			}
 		}
@@ -867,7 +862,7 @@ class cBalancesTotal {
 	var $balance;
 	
 	function Balanced() {
-		global $cDB, $cErr, $lng_could_not_query_dbase_for_balance, $lng_try_again_later;
+		global $cDB, $cErr;
 		
 		$query = $cDB->Query("SELECT sum(balance) from ". DATABASE_MEMBERS .";");
 		
@@ -879,7 +874,7 @@ class cBalancesTotal {
 			else
 				return false;
 		} else {
-			$cErr->Error($lng_could_not_query_dbase_for_balance." ".$lng_try_again_later);
+			$cErr->Error(_("Could not query database for balance information.")." "._("Please try again later."));
 			return false;
 		}		
 	}
@@ -904,7 +899,7 @@ class cIncomeTies extends cMember {
 	
 	function saveTie($data) {
 		
-		global $cDB, $lng_error_saving_income_share, $lng_income_share_saved;
+		global $cDB;
 		
 		if (!cIncomeTies::getTie($data["member_id"])) { // has no tie, INSERT row
 			
@@ -920,18 +915,18 @@ class cIncomeTies extends cMember {
 		$result = $cDB->Query($q);
 		
 		if (!$result)
-			return $lng_error_saving_income_share;
+			return _("Error saving Income Share.");
 			
-		return $lng_income_share_saved;
+		return _("Income Share saved successfully.");
 	}
 	
 	function deleteTie($member_id) {
 		
-		global $cDB, $lng_no_income_share_to_delete, $lng_error_deleting_income_share, $lng_income_share_deleted;
+		global $cDB;
 		
 			if (!cIncomeTies::getTie($member_id)) { // has no tie to delete!
 			
-				return $lng_no_income_share_to_delete."!";
+				return _("No Income Share to delete")."!";
 		}
 		
 		$q = "delete from income_ties where member_id=".$cDB->EscTxt($member_id)."";
@@ -939,9 +934,9 @@ class cIncomeTies extends cMember {
 		$result = $cDB->Query($q);
 		
 		if (!$result)
-			return $lng_error_deleting_income_share;
+			return _("Error deleting income Share.");
 		
-		return $lng_income_share_deleted;
+		return _("Income Share deleted successfully.");
 	}
 	
 }

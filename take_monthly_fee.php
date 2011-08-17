@@ -12,7 +12,7 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = ADMINISTRATION;
-$p->page_title = $lng_take_monthly_fee;
+$p->page_title = _("Take Monthly Fee");
 
 
 // *** Starts main() ***
@@ -43,15 +43,15 @@ $p->DisplayPage($page);
  * fee has been already taken this month.
  */
 function confirmation($cid)
-{   global $lng_not_setup_charge_monthly_fees, $lng_already_confirmed, $lng_sure_transfer_fee_for_month_of, $lng_monthly_fee_for, $lng_monthly_fee, $lng_has_already_been_taken, $lng_transfer_now, $lng_cancel, $lng_or; // added $lng_monthly_fee by ejkv
+{
     if( !defined("TAKE_MONTHLY_FEE"))
     {
-        return $lng_not_setup_charge_monthly_fees;
+        return _("This system isn't setup to charge monthly fees.");
     }
 
     if(isset($_SESSION["LAST_CID"]) && $cid <= $_SESSION["LAST_CID"])
     {
-        return $lng_already_confirmed;
+        return _("Already confirmed.  Start from the administration page for a new transfer.");
     }
     else
     {
@@ -63,7 +63,7 @@ function confirmation($cid)
     if(already_fee_takenp())
     {
         $month = strftime("%B", time());
-        $warning = "<p>".$lng_sure_transfer_fee_for_month_of." $month?  ".$lng_monthly_fee_for." $month ".$lng_has_already_been_taken.".</p>";
+        $warning = "<p>"._("Are you sure you want to tranfer monthly fee for the month of")." $month?  "._("The monthly fee for")." $month "._("has already been taken").".</p>";
 
     }
     else
@@ -77,13 +77,13 @@ function confirmation($cid)
 
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
-          <input type="submit" value=$lng_transfer_now />
+          <input type="submit" value=_("Transfer now") />
         </form>
 
-        <p><strong>$lng_or</strong></p>
+        <p><strong>_("Or")</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=$lng_cancel />
+          <input type="submit" value=_("Cancel") />
         </form>
 ENDHTML;
 
@@ -123,11 +123,11 @@ function already_fee_takenp()
  * Does the actual fee transfer from member accounts to the system account.
  */
 function transfer_fee($tid)
-{   global $cDB, $monthly_fee_exempt_list, $lng_already_transfered, $lng_error_during_transfer, $lng_done;
+{   global $cDB, $monthly_fee_exempt_list;
     // Make sure this transaction has not been done before.
     if(isset($_SESSION["LAST_TID"]) && $tid <= $_SESSION["LAST_TID"])
     {
-        return $lng_already_transfered;
+        return _("Already transfered.  Start from the administration page for a new transfer.");
 
     }
     else
@@ -136,7 +136,7 @@ function transfer_fee($tid)
         $_SESSION["LAST_TID"] = $tid;
     }
 
-    global $cDB, $monthly_fee_exempt_list, $lng_monthly_fee; // , $lng_monthly_fee added by ejkv
+    global $cDB, $monthly_fee_exempt_list;
     $monthly_fee = MONTHLY_FEE;
     $system_account_id = SYSTEM_ACCOUNT_ID;
     $member_table = DATABASE_MEMBERS;
@@ -167,7 +167,7 @@ function transfer_fee($tid)
             $query1 = "insert into $trade_table set trade_date=from_unixtime(".$ts."),   
             	 status='V', member_id_from='".$row->member_id."',
                               member_id_to='$system_account_id', amount=$monthly_fee, category=12,
-                                  description='".$lng_monthly_fee."', type='$trade_type'"; // changed 'Monthly fee' into $lng_monthly_fee by ejkv
+                                  description='"._("Monthly Fee")."', type='$trade_type'";
    
             $result1 = $cDB->Query($query1);
 	
@@ -187,7 +187,7 @@ function transfer_fee($tid)
             {
                 $cDB->Query("rollback");
 
-                return $lng_error_during_transfer;
+                return _("An Error occured during the transfer.");
             }
             
         }
@@ -195,7 +195,7 @@ function transfer_fee($tid)
 
     $cDB->Query("COMMIT");
 
-    return $lng_done;
+    return _("Done");
 }
 
 

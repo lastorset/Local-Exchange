@@ -10,9 +10,9 @@ if (ALLOW_INCOME_SHARES!=true) // Provision for allowing income ties has been tu
 	
 $ties = new cIncomeTies;
 
-$p->page_title = $lng_income_sharing;
+$p->page_title = _("Income Sharing");
 
-$output = $lng_income_sharing_message01." (".UNITS.") ".$lng_income_sharing_message02." ".UNITS." ".$lng_income_sharing_message03."<p>";
+$output = _("You have the option of contributing a percentage of any income")." (".UNITS.") "._("you receive to another account. If you specify an Income Share, every time you receive")." ".UNITS." "._("a specified percentage (of your choosing) will automatically be paid to the account of your choice. You can change this arrangement at any time, but you are only allowed to share your income with one other account at a time.")."<p>";
 
 if ($_REQUEST["process"]==1) {
 	
@@ -22,7 +22,7 @@ if ($_REQUEST["process"]==1) {
 	
 	if ($tie_id==$cUser->member_id) {
 		
-		$output = $lng_income_sharing_message04." :)";
+		$output = _("Sorry you can't share income with yourself.")." :)";
 		$p->DisplayPage($output);
 	
 		exit;
@@ -30,11 +30,11 @@ if ($_REQUEST["process"]==1) {
 	if (!$amount || !$tie_id || !is_numeric($amount) || $amount>99) {
 		
 		if (!$amount || !$tie_id)
-			$output = $lng_not_enough_data;
+			$output = _("Not enough data to proceed.");
 		else if (!is_numeric($amount))
-			$output = $lng_percentage_must_be_numeric;
+			$output = _("The percentage must be numeric and must not contain any other characters (e.g. '10' = good input, '10%' = bad input)");
 		else if ($amount>99)
-			$output = $lng_sorry_no_more_than_ninetynine_percent." :o).";
+			$output = _("Sorry, you can't contribute more than 99% of your income to another account - but it's the thought that counts")." :o).";
 		
 		$p->DisplayPage($output);
 	
@@ -60,25 +60,25 @@ $myTie = $ties->getTie($cUser->member_id);
 
 if (!$myTie) { // No Income Tie found
 	
-	$output .= "<font color=red><b>".$lng_income_share_inactive.":</b></font><p>"; 
+	$output .= "<font color=red><b>"._("Income Share Inactive").":</b></font><p>"; 
 	
-	$output .= "<b>".$lng_create_an_income_share."</b><p>";
+	$output .= "<b>"._("Create an Income Share")."</b><p>";
 	
 	$name_list = new cMemberGroup;
 	$name_list->LoadMemberGroup();
 	
 	$output .= "<form method=GET><input type=hidden name=process value=1>";
 	
-	$output .= $lng_i_would_like_to_share." <input type=text size=1 maxlength=2 name=amount value=10>% ".$lng_off_any." ".UNITS." ".$lng_i_receive."...<p>";
-	$output .= "... ".$lng_with_this_account.": ".$name_list->DoNamePicker();
+	$output .= _("I would like to share")." <input type=text size=1 maxlength=2 name=amount value=10>% "._("of any")." ".UNITS." "._("I receive")."...<p>";
+	$output .= "... "._("with this account").": ".$name_list->DoNamePicker();
 	
-	$output .= "<p><input type=submit value='".$lng_create_income_share."'></form>";
+	$output .= "<p><input type=submit value='"._("Create Income Share")."'></form>";
 }
 else {
 	
-	$output .= "<font color=green><b>".$lng_income_share_active.":</b></font><p>";
+	$output .= "<font color=green><b>"._("Income Share Active").":</b></font><p>";
 	
-	$output .= $lng_your_currently_sharing." <b>".$myTie->percent."%</b> ".$lng_off_your_income_with." <b>'".$myTie->tie_id."'</b>.<p><a href=income_ties.php?remove=1>".$lng_remove_income_share."</a><p>".$lng_if_amend_remove_first;
+	$output .= _("You are currently sharing")." <b>".$myTie->percent."%</b> "._("of your income with account")." <b>'".$myTie->tie_id."'</b>.<p><a href=income_ties.php?remove=1>"._("Remove Income Share")."</a><p>"._("If you wish to amend this Income Share you will first need to remove it and then create a new one.");
 }
 
 $p->DisplayPage($output);
