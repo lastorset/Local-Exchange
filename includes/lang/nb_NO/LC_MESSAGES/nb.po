@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-11 00:12+0200\n"
-"PO-Revision-Date: 2011-08-11 00:14+0100\n"
+"POT-Creation-Date: 2011-08-21 00:34+0200\n"
+"PO-Revision-Date: 2011-08-21 00:34+0100\n"
 "Last-Translator: Leif Arne Storset <lstorset@opera.com>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -1061,9 +1061,8 @@ msgstr ""
 msgid "If you wish to amend this Income Share you will first need to remove it and then create a new one."
 msgstr ""
 
-#: index.php:9
-#: org_index.php:9
-msgid "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' align=top></td><td><img src='images/localx_black.png' align=top><br><img src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
+#: index.php:22
+msgid "<p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
 msgstr ""
 
 #: info_permissions.php:13
@@ -2323,6 +2322,10 @@ msgstr ""
 
 #: news_to_edit.php:13
 msgid "Which News Item?"
+msgstr ""
+
+#: org_index.php:9
+msgid "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' align=top></td><td><img src='images/localx_black.png' align=top><br><img src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
 msgstr ""
 
 #: pages.php:10
