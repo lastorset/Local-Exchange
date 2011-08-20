@@ -639,7 +639,6 @@ $lng_let_know_invoice_from = "Just letting you know that you have received a new
 $lng_log_in_to_pay_reject_invoice = "Please log into your account now to pay or reject this invoice using the following URL...";
 $lng_has_been_send_invoice_for = "has been sent an invoice for";
 $lng_will_informed_when_member_pays = "You will be informed when the member pays this invoice and will be invited to leave Feedback for this member";
-$lng_you_have_transferred = "You have transferred";
 $lng_you_have = "You have transferred"; // changed by ejkv
 $lng_transferred_to = " to "; // changed by ejkv
 $lng_or_would_you_like_to_leave = "Or would you like to leave";
@@ -905,7 +904,8 @@ could be used in UK for county, and in the USA for state
 $lng_choose_state = "Choose state ";
 $lng_which_state = "Which state? ";
 $lng_state_deleted = "State deleted";
-$lng_state_already_exists = "Create a new state";
+$lng_state_already_exists = "State already exists";
+$lng_create_new_listing_state = "Create a New State";
 $lng_edit_listing_state = "Change state";
 $lng_state_description = "State name";
 $lng_enter_state_description = "Enter state name";
