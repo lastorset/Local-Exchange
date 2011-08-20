@@ -536,15 +536,15 @@ class cMember
 		if($this->person[0]->fax_number != "")
 			$output .= "<STRONG>"._("Fax").":</STRONG> ". $this->person[0]->DisplayPhone("fax") ."<BR>";	
 		if($this->person[0]->address_street2 != "") {
-            $output .= "<STRONG>" . ADDRESS_LINE_2 . ": </STRONG>" .
+            $output .= "<STRONG>" . _("Address Line 2") . ": </STRONG>" .
                            $this->person[0]->address_street2 . "<BR>";
         }
 		if($this->person[0]->address_city != "") {
-            $output .= "<STRONG>" . ADDRESS_LINE_3 . ": </STRONG>" .
+            $output .= "<STRONG>" . _("City") . ": </STRONG>" .
                            $this->person[0]->address_city . "<BR>";
         }
 		if($this->person[0]->address_post_code != "") {
-            $output .= "<STRONG>" . ZIP_TEXT . ": </STRONG>" .
+            $output .= "<STRONG>" . _("Zip Code") . ": </STRONG>" .
                            $this->person[0]->address_post_code . "<BR>";
         }
 		if($this->person[0]->address_state_code != "") { // added by ejkv
@@ -552,7 +552,7 @@ class cMember
 			$state_list = $states->MakeStateArray(); // added by ejkv
 			$state_list[0]="---"; // added by ejkv
 	
-            $output .= "<STRONG>" . STATE_TEXT . ": </STRONG>" .
+            $output .= "<STRONG>" . _("State") . ": </STRONG>" .
                            $state_list[$this->person[0]->address_state_code] . "<BR>";
         } // added address state code by ejkv
 

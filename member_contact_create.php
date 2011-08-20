@@ -45,9 +45,9 @@ $form->addElement("text", "phone1", _("Primary Phone"), array("size" => 20));
 $form->addElement("text", "phone2", _("Secondary Phone"), array("size" => 20));
 $form->addElement("text", "fax", _("Fax Number"), array("size" => 20));
 $form->addElement("static", null, null, null);
-$form->addElement("text", "address_street1", ADDRESS_LINE_1, array("size" => 25, "maxlength" => 50));
-$form->addElement("text", "address_street2", ADDRESS_LINE_2, array("size" => 25, "maxlength" => 50));
-$form->addElement("text", "address_city", ADDRESS_LINE_3, array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_street1", _("Address Line 1"), array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_street2", _("Address Line 2"), array("size" => 25, "maxlength" => 50));
+$form->addElement("text", "address_city", _("City"), array("size" => 25, "maxlength" => 50));
 
 // TODO: The State and Country codes should be Select Menus, and choices should be built
 // dynamically using an internet database (if such exists).
@@ -56,9 +56,9 @@ $state_list = $state->MakeStateArray(); // added by ejkv
 $state_list[0]="---"; // added by ejkv
 
 // address_state_code textbox replaced by Select menu, and contents filled from Database table states
-// $form->addElement("text", "address_state_code", STATE_TEXT, array("size" => 25, "maxlength" => 50));
-$form->addElement("select", "address_state_code", STATE_TEXT, $state_list); // changed by ejkv
-$form->addElement("text", "address_post_code", ZIP_TEXT, array("size" => 10, "maxlength" => 20));
+// $form->addElement("text", "address_state_code", _("State"), array("size" => 25, "maxlength" => 50));
+$form->addElement("select", "address_state_code", _("State"), $state_list); // changed by ejkv
+$form->addElement("text", "address_post_code", _("Zip Code"), array("size" => 10, "maxlength" => 20));
 $form->addElement("text", "address_country", _("Country"), array("size" => 25, "maxlength" => 50));
 $form->addElement("static", null, null, null);
 $form->addElement('submit', 'btnSubmit', _("Create Contact"));
@@ -69,9 +69,9 @@ $form->addElement('submit', 'btnSubmit', _("Create Contact"));
 $form->addRule('password', _("Password not long enough"), 'minlength', 7);
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
-$form->addRule('address_city', _("Enter a")." " . ADDRESS_LINE_3, 'required');
-$form->addRule('address_state_code', _("Enter a")." " . STATE_TEXT, 'required');
-$form->addRule('address_post_code', _("Enter a")." ".ZIP_TEXT, 'required');
+$form->addRule('address_city', _("Enter a")." " . _("City"), 'required');
+$form->addRule('address_state_code', _("Enter a")." " . _("State"), 'required');
+$form->addRule('address_post_code', _("Enter a")." "._("Zip Code"), 'required');
 $form->addRule('address_country', _("Enter a country"), 'required');
 
 $form->registerRule('verify_not_future_date','function','verify_not_future_date');

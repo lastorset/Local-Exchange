@@ -28,20 +28,20 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 		<option value='nh' ".$orderBySel["nh"].">"._("Neighbourhood")."</option>
 		<option value='loc' ".$orderBySel["loc"].">"._("Town")."</option>
 		<option value='pc' ".$orderBySel["pc"].">"._("Postal code")."</option>
-		<option value='addr2' ".$orderBySel["pc"].">".ADDRESS_LINE_2."</option>
+		<option value='addr2' ".$orderBySel["pc"].">"._("Address Line 2")."</option>
 		</select>";
 	$output .= "<p><input type=submit value="._("Search")."></form>"; 
 }
 
-// added STATE_TEXT column by ejkv
+// added _("State") column by ejkv
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
   <TR BGCOLOR=\"#d8dbea\">
     <TD><FONT SIZE=2><B>"._("Member")."</B></FONT></TD>
     <TD><FONT SIZE=2><B>"._("Phone")."</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . ADDRESS_LINE_2 . "</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . ADDRESS_LINE_3 . "</B></FONT></TD>
-	<TD><FONT SIZE=2><B>" . STATE_TEXT . "</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . ZIP_TEXT . "</B></FONT></TD>";
+    <TD><FONT SIZE=2><B>" . _("Address Line 2") . "</B></FONT></TD>
+    <TD><FONT SIZE=2><B>" . _("City") . "</B></FONT></TD>
+	<TD><FONT SIZE=2><B>" . _("State") . "</B></FONT></TD>
+    <TD><FONT SIZE=2><B>" . _("Zip Code") . "</B></FONT></TD>";
 
 if (MEM_LIST_DISPLAY_BALANCE==true || $cUser->member_role >= 1)  {   
 	$output .= "<TD ALIGN=RIGHT><FONT SIZE=2><B>"._("Balance")."</B></FONT></TD>"; // added ALIGN=RIGHT by ejkv

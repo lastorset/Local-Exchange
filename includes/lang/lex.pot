@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-21 00:34+0200\n"
+"POT-Creation-Date: 2011-08-21 00:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1377,6 +1377,38 @@ msgstr ""
 #: member_contact_create.php:46 member_contact_edit.php:48
 #: member_create.php:53 member_edit.php:57
 msgid "Fax Number"
+msgstr ""
+
+#: member_contact_create.php:48 member_contact_edit.php:50
+#: member_create.php:63 member_edit.php:66
+msgid "Address Line 1"
+msgstr ""
+
+#: member_contact_create.php:49 member_contact_edit.php:51
+#: member_create.php:64 member_directory.php:31 member_directory.php:41
+#: member_edit.php:67 classes/class.member.php:539
+msgid "Address Line 2"
+msgstr ""
+
+#: member_contact_create.php:50 member_contact_create.php:72
+#: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
+#: member_create.php:88 member_directory.php:42 member_edit.php:68
+#: member_edit.php:102 classes/class.member.php:543
+msgid "City"
+msgstr ""
+
+#: member_contact_create.php:60 member_contact_create.php:73
+#: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
+#: member_create.php:89 member_directory.php:43 member_edit.php:78
+#: member_edit.php:103 classes/class.member.php:555
+msgid "State"
+msgstr ""
+
+#: member_contact_create.php:61 member_contact_create.php:74
+#: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
+#: member_create.php:90 member_directory.php:44 member_edit.php:79
+#: member_edit.php:104 classes/class.member.php:547
+msgid "Zip Code"
 msgstr ""
 
 #: member_contact_create.php:62 member_contact_edit.php:64
