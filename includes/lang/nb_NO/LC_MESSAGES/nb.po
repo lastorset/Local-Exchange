@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-11 00:12+0200\n"
-"PO-Revision-Date: 2011-08-11 00:14+0100\n"
-"Last-Translator: Leif Arne Storset <lstorset@opera.com>\n"
+"POT-Creation-Date: 2011-11-22 21:39+0100\n"
+"PO-Revision-Date: 2011-11-22 22:47+0100\n"
+"Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: /home/lastorset/dev/lex/html\n"
 
-#: admin_menu.php:4
+#: admin_menu.php:4 includes/inc.global.php:98
 msgid "Administration Menu"
 msgstr "Administrasjonsmeny"
 
@@ -29,13 +30,11 @@ msgstr "Saldo er"
 msgid "Accounts"
 msgstr "Kontoer"
 
-#: admin_menu.php:21
-#: member_profile_all_in_one.php:35
+#: admin_menu.php:21 member_profile_all_in_one.php:35
 msgid "Create a New Member Account"
 msgstr "Opprett en ny medlemskonto"
 
-#: admin_menu.php:22
-#: member_profile_all_in_one.php:36
+#: admin_menu.php:22 member_profile_all_in_one.php:36
 msgid "Edit a Member Account"
 msgstr "Rediger medlemskonto"
 
@@ -43,3685 +42,4013 @@ msgstr "Rediger medlemskonto"
 msgid "Edit a Member Photo"
 msgstr "Bytt ut medlemsbilde"
 
-#: admin_menu.php:24
-#: admin_menu.php:41
-#: admin_menu.php:82
-#: admin_menu.php:114
-#: admin_menu.php:116
-#: admin_menu.php:122
-#: admin_menu.php:123
+#: admin_menu.php:24 admin_menu.php:41 admin_menu.php:82 admin_menu.php:114
+#: admin_menu.php:116 admin_menu.php:122 admin_menu.php:123
 msgid "New!"
 msgstr "Ny!"
 
 #: admin_menu.php:27
 msgid "Inactivate/Re-activate a Member Account"
-msgstr ""
+msgstr "Deaktiver/reaktiver medlemskonto"
 
 #: admin_menu.php:29
 msgid "Add joint member to existing account"
-msgstr ""
+msgstr "Legg husstandsmedlem til en konto"
 
-#: admin_menu.php:30
-#: member_profile.php:15
+#: admin_menu.php:30 member_profile.php:15
 msgid "Edit/Delete a Joint Member"
-msgstr ""
+msgstr "Rediger/slett et husstandsmedlem"
 
-#: admin_menu.php:33
-#: member_unlock.php:6
+#: admin_menu.php:33 member_unlock.php:6
 msgid "Unlock Account and Reset Password"
-msgstr ""
+msgstr "Lås opp konto og nullstill passordet"
 
 #: admin_menu.php:38
 msgid "Override Member Account Balance"
-msgstr ""
+msgstr "Overstyr saldo på medlemskonto"
 
-#: admin_menu.php:41
-#: manage_restrictions.php:11
+#: admin_menu.php:41 manage_restrictions.php:11
 msgid "Manage Account Restrictions"
-msgstr ""
+msgstr "Administrer kontobegrensinger"
 
-#: admin_menu.php:47
-#: exchange_menu.php:5
-#: member_profile_all_in_one.php:28
+#: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
 #: includes/inc.config.php:170
 msgid "Exchanges"
-msgstr ""
+msgstr "Handler"
 
 #: admin_menu.php:48
 msgid "Record an Exchange for a Member"
-msgstr ""
+msgstr "Registrer handel for et medlem"
 
-#: admin_menu.php:49
-#: member_profile_all_in_one.php:41
+#: admin_menu.php:49 member_profile_all_in_one.php:41
 msgid "Reverse an Exchange that was Made in Error"
-msgstr ""
+msgstr "Tilbakefør en feilhandel"
 
 #: admin_menu.php:50
 msgid "Record Feedback for a Member"
-msgstr ""
+msgstr "Registrer tilbakemelding for et medlem"
 
 #: admin_menu.php:54
 msgid "Listings"
-msgstr ""
+msgstr "Oppføringer"
 
 #: admin_menu.php:56
 msgid "Offers"
-msgstr ""
+msgstr "Til salgs"
 
 #: admin_menu.php:57
 msgid "Create a New Offer Listing for a Member"
-msgstr ""
+msgstr "Lag en ny oppføring under \"Til salgs\" for et medlem"
 
 #: admin_menu.php:58
 msgid "Edit a Member's Offered Listing"
-msgstr ""
+msgstr "Rediger et medlems oppføring under \"Til salgs\""
 
 #: admin_menu.php:59
 msgid "Delete a Member's Offered Listing"
-msgstr ""
+msgstr "Slett et medlems oppføring under \"Til salgs\""
 
 #: admin_menu.php:61
 msgid "Wants"
-msgstr ""
+msgstr "Ønskes kjøpt"
 
 #: admin_menu.php:62
 msgid "Create a New Want Listing for a Member"
-msgstr ""
+msgstr "Opprett et medlems oppføring under \"Ønskes kjøpt\""
 
 #: admin_menu.php:63
 msgid "Edit a Member's Wanted Listing"
-msgstr ""
+msgstr "Rediger et medlems oppføring under \"Ønskes kjøpt\""
 
 #: admin_menu.php:64
 msgid "Delete a Member's Wanted Listing"
-msgstr ""
+msgstr "Slett et medlems oppføring under \"Ønskes kjøpt\""
 
-#: admin_menu.php:66
-#: listings_menu.php:18
+#: admin_menu.php:66 create_db.php:99 listings_menu.php:18
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Diverse"
 
 #: admin_menu.php:67
 msgid "Member Going on Holiday"
-msgstr ""
+msgstr "Medlem på ferie"
 
-#: admin_menu.php:69
-#: category_create.php:6
+#: admin_menu.php:69 category_create.php:6
 msgid "Create a New Listing Category"
-msgstr ""
+msgstr "Lag ny oppføringskategori"
 
 #: admin_menu.php:70
 msgid "Edit/Delete Listing Category"
-msgstr ""
+msgstr "Rediger/slett oppføringskategori"
 
-#: admin_menu.php:71
-#: state_create.php:6
-#, fuzzy
+#: admin_menu.php:71 state_create.php:6
 msgid "Create a New State"
-msgstr "Opprett en ny medlemskonto"
+msgstr "Opprett et nytt fylke"
 
 #: admin_menu.php:72
 msgid "Edit State"
-msgstr ""
+msgstr "Rediger fylke"
 
-#: admin_menu.php:77
-#: create_info.php:18
-#: do_info_edit.php:21
+#: admin_menu.php:77 create_info.php:18 do_info_edit.php:21
 msgid "Content"
-msgstr ""
+msgstr "Innhold"
 
 #: admin_menu.php:78
 msgid "Information Pages"
-msgstr ""
+msgstr "Infosider"
 
-#: admin_menu.php:79
-#: create_info.php:11
+#: admin_menu.php:79 create_info.php:11
 msgid "Create a New Information Page"
-msgstr ""
+msgstr "Lag ny infoside"
 
 #: admin_menu.php:80
 msgid "Edit Info Pages"
-msgstr ""
+msgstr "Rediger infosider"
 
 #: admin_menu.php:81
 msgid "Delete an Info Page"
-msgstr ""
+msgstr "Slett infoside"
 
-#: admin_menu.php:82
-#: info_permissions.php:11
+#: admin_menu.php:82 info_permissions.php:11
 msgid "Edit Information Page Permissions"
-msgstr ""
+msgstr "Rediger tilgangsretter for infosider"
 
 #: admin_menu.php:83
 msgid "See Info Page URL 's"
-msgstr ""
+msgstr "Se URLer for infosider"
 
-#: admin_menu.php:85
-#: news.php:7
-#: includes/inc.config.php:166
+#: admin_menu.php:85 news.php:7 includes/inc.config.php:166
 msgid "News and Events"
-msgstr ""
+msgstr "Hva skjer?"
 
-#: admin_menu.php:86
-#: news_create.php:8
+#: admin_menu.php:86 news_create.php:8
 msgid "Create a News Item"
-msgstr ""
+msgstr "Lag nyhetssak"
 
 #: admin_menu.php:87
 msgid "Edit a News Item"
-msgstr ""
+msgstr "Rediger nyhetssak"
 
-#: admin_menu.php:88
-#: newsletter_upload.php:8
+#: admin_menu.php:88 newsletter_upload.php:8
 msgid "Upload a Newsletter"
-msgstr ""
+msgstr "Last opp nyhetsbrev"
 
-#: admin_menu.php:89
-#: newsletter_delete.php:9
+#: admin_menu.php:89 newsletter_delete.php:9
 msgid "Delete Newsletters"
-msgstr ""
+msgstr "Slett nyhetsbrev"
 
 #: admin_menu.php:95
 msgid "Admin Fees"
-msgstr ""
+msgstr "Administrasjonsgebyr"
 
-#: admin_menu.php:106
-#: take_monthly_fee.php:15
+#: admin_menu.php:106 take_monthly_fee.php:15
 msgid "Take Monthly Fee"
-msgstr ""
+msgstr "Ta månedsavgift"
 
 #: admin_menu.php:108
 msgid "Refund Monthly Fee"
-msgstr ""
+msgstr "Refunder månedsavift"
 
 #: admin_menu.php:114
 msgid "Take One-Off Service Charge"
-msgstr ""
+msgstr "Ta engangsgebyr"
 
-#: admin_menu.php:116
-#: refund_service_charge.php:5
+#: admin_menu.php:116 refund_service_charge.php:5
 msgid "Refund Service Charge"
-msgstr ""
+msgstr "Refunder engangsgebyr"
 
 #: admin_menu.php:120
 msgid "System & Reporting"
-msgstr ""
+msgstr "System og rapporter"
 
-#: admin_menu.php:122
-#: settings.php:4
+#: admin_menu.php:122 settings.php:4
 msgid "Site Settings"
-msgstr ""
+msgstr "Nettstedsinnstillinger"
 
 #: admin_menu.php:123
 msgid "MySQL Backup"
-msgstr ""
+msgstr "Sikkerhetskopi av MySQL"
 
 #: admin_menu.php:125
 msgid "Send an Email to All Members"
-msgstr ""
+msgstr "Send e-post til alle medlemmene"
 
 #: admin_menu.php:127
 msgid "View Members Not Yet Logged In"
-msgstr ""
+msgstr "Se medlemer som ennå ikke har logget på"
 
-#: balance_to_edit.php:11
-#: feedback.php:68
+#: balance_to_edit.php:11 feedback.php:68
 msgid "Choose Member whose Balance you wish to Edit"
-msgstr ""
+msgstr "Velg medlem som du vil endre saldoen for"
 
-#: balance_to_edit.php:17
-#: member_choose.php:26
-#: member_create.php:21
-#: member_directory.php:39
-#: member_edit.php:24
-#: member_to_edit.php:14
-#: photo_to_edit.php:14
-#: report_no_login.php:14
-#: classes/class.member.php:514
+#: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
+#: member_directory.php:39 member_edit.php:24 member_to_edit.php:14
+#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:514
 msgid "Member"
-msgstr ""
+msgstr "Medlem"
 
 #: balance_to_edit.php:19
 msgid "Edit Balance"
-msgstr ""
+msgstr "Endre saldo"
 
-#: category_choose.php:6
-#: listing_create.php:71
-#: trade.php:64
+#: category_choose.php:6 listing_create.php:71 trade.php:64
 msgid "Choose Category"
-msgstr ""
+msgstr "Velg kategori"
 
 #: category_choose.php:20
 msgid "Which Category?"
-msgstr ""
+msgstr "Hvilken kategori?"
 
-#: category_choose.php:23
-#: do_info_edit.php:13
-#: edit_info.php:21
-#: listing_edit.php:13
-#: member_contact_choose.php:12
-#: member_contact_to_edit.php:19
-#: member_to_edit.php:16
-#: news_edit.php:13
-#: news_to_edit.php:15
-#: state_choose.php:22
+#: category_choose.php:23 do_info_edit.php:13 edit_info.php:21
+#: listing_edit.php:13 member_contact_choose.php:12
+#: member_contact_to_edit.php:19 member_to_edit.php:16 news_edit.php:13
+#: news_to_edit.php:15 state_choose.php:22
 msgid "Edit"
-msgstr ""
+msgstr "Rediger"
 
-#: category_choose.php:24
-#: delete_info.php:36
-#: listing_delete.php:13
-#: listing_delete.php:52
-#: member_contact_choose.php:13
-#: member_contact_delete.php:22
-#: member_contact_to_edit.php:20
+#: category_choose.php:24 delete_info.php:36 listing_delete.php:13
+#: listing_delete.php:52 member_contact_choose.php:13
+#: member_contact_delete.php:22 member_contact_to_edit.php:20
 #: newsletter_delete.php:22
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 #: category_choose.php:49
-msgid "This category still has listings in it.  You will need to move these listings to new categories or delete them before you can delete this category.  Note that the listings could be temporarily inactive or expired, in which case they will not show in the offered/wanted lists."
+msgid ""
+"This category still has listings in it.  You will need to move these "
+"listings to new categories or delete them before you can delete this "
+"category.  Note that the listings could be temporarily inactive or expired, "
+"in which case they will not show in the offered/wanted lists."
 msgstr ""
+"Denne kategorien har fortsatt oppføringer. Du må flytte disse oppføringene "
+"til andre kategorier eller slette dem før du kan slette denne kategorien. "
+"Merk at oppføringene i så fall kan bli midlertidig deaktivert eller utløpt, "
+"og da vil de ikke vises i \"til salgs\"/\"ønskes kjøpt\"-listene."
 
 #: category_choose.php:51
 msgid "Listings in this category:"
-msgstr ""
+msgstr "Oppføringer i denne kategorien:"
 
 #: category_choose.php:55
 msgid "OFFERED"
-msgstr ""
+msgstr "TIL SALGS"
 
 #: category_choose.php:60
 msgid "WANTED"
-msgstr ""
+msgstr "ØNSKES KJØPT"
 
 #: category_choose.php:63
 msgid "The category has been deleted."
-msgstr ""
+msgstr "Kategorien er slettet."
 
-#: category_create.php:16
-#: category_edit.php:20
+#: category_create.php:16 category_edit.php:20
 msgid "Category Description"
-msgstr ""
+msgstr "Kategoribeskrivelse"
 
-#: category_create.php:19
-#: category_edit.php:23
-#: create_info.php:20
-#: do_info_edit.php:23
-#: feedback.php:38
-#: feedback_rebuttal.php:39
-#: feedback_reply.php:44
-#: listing_create.php:73
-#: member_choose.php:28
-#: news_create.php:27
-#: news_edit.php:32
-#: state_create.php:19
-#: state_edit.php:23
-#: timeframe_choose.php:19
-#: trade.php:55
+#: category_create.php:19 category_edit.php:23 create_info.php:20
+#: do_info_edit.php:23 feedback.php:38 feedback_rebuttal.php:39
+#: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
+#: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
+#: timeframe_choose.php:19 trade.php:55
 msgid "Submit"
-msgstr ""
+msgstr "Send inn"
 
 #: category_create.php:24
 msgid "Enter the category description"
-msgstr ""
+msgstr "Skriv en beskrivelse av kategorien"
 
 #: category_create.php:42
 msgid "The category has been created."
-msgstr ""
+msgstr "Kategorien er opprettet."
 
 #: category_create.php:44
 msgid "Could not save the category."
-msgstr ""
+msgstr "Kunne ikke lagre kategorien."
 
-#: category_create.php:44
-#: category_edit.php:48
-#: email.php:85
-#: feedback.php:84
-#: listing_create.php:123
-#: listing_edit.php:142
-#: member_contact_create.php:152
-#: member_contact_edit.php:168
-#: member_create.php:211
-#: member_edit.php:259
-#: member_status_change.php:61
-#: password_change.php:53
-#: state_create.php:44
-#: state_edit.php:48
-#: trade.php:140
-#: trade.php:154
-#: trade.php:166
-#: includes/inc.config.php:66
-#: classes/class.member.php:169
-#: classes/class.member.php:877
-#: classes/class.news.php:56
-#: classes/class.trade.php:94
+#: category_create.php:44 category_edit.php:48 email.php:85 feedback.php:84
+#: listing_create.php:123 listing_edit.php:142 member_contact_create.php:152
+#: member_contact_edit.php:168 member_create.php:211 member_edit.php:259
+#: member_status_change.php:61 password_change.php:53 state_create.php:44
+#: state_edit.php:48 trade.php:140 trade.php:154 trade.php:166
+#: includes/inc.config.php:66 classes/class.member.php:169
+#: classes/class.member.php:877 classes/class.trade.php:94
 #: classes/class.uploads.php:71
 msgid "Please try again later."
-msgstr ""
+msgstr "Vennligst prøv igjen senere."
 
 #: category_edit.php:6
 msgid "Edit Listing Category"
-msgstr ""
+msgstr "Rediger oppføringskategori"
 
 #: category_edit.php:28
 msgid "Category description cannot be blank"
-msgstr ""
+msgstr "Kategoribeskrivelse kan ikke være blank"
 
 #: category_edit.php:46
 msgid "The category has been updated."
-msgstr ""
+msgstr "Kategorien har blitt oppdatert."
 
 #: category_edit.php:48
 msgid "Could not save changes to the category."
-msgstr ""
+msgstr "Kunne lagre lagre endringene av kategorien."
 
 #: contact_all.php:4
 msgid "Email all Members"
-msgstr ""
+msgstr "Send e-post til alle medlemmene"
 
 #: contact_all.php:13
 msgid "This email will go out to <i>ALL</i> members of"
-msgstr ""
+msgstr "Denne e-posten vil gå ut til <i>alle</i> medlemmene av"
 
-#: contact_all.php:17
-#: contact.php:17
-#: email.php:34
+#: contact_all.php:17 contact.php:17 email.php:34
 msgid "Your Message"
-msgstr ""
+msgstr "Melding"
 
-#: contact_all.php:21
-#: contact.php:23
-#: email.php:37
+#: contact_all.php:21 contact.php:23 email.php:37
 msgid "Send"
-msgstr ""
+msgstr "Send"
 
 #: contact_all.php:26
 msgid "Enter a subject"
-msgstr ""
+msgstr "Skriv inn emne"
 
-#: contact_all.php:27
-#: email.php:42
+#: contact_all.php:27 email.php:42
 msgid "Enter your message"
-msgstr ""
+msgstr "Skriv inn melding"
 
 #: contact_all.php:60
 msgid "Your message has been sent to all members."
-msgstr ""
+msgstr "Meldinga har blitt sendt til alle medlemmen."
 
 #: contact_all.php:62
 msgid "There were errors sending the email to the following email addresses"
-msgstr ""
+msgstr "Det kom feilmeldinger ved sending av e-post til følgende adresser"
 
-#: contact.php:4
-#: includes/inc.config.php:173
+#: contact.php:4 includes/inc.config.php:173
 msgid "Contact Us"
-msgstr ""
+msgstr "Kontakt oss"
 
 #: contact.php:11
 msgid "For more information on the"
-msgstr ""
+msgstr "For flere opplysninger om"
 
 #: contact.php:11
-msgid "or to find out how to become a member, please fill out our information request. Someone will get back to you soon. Please check our"
+msgid ""
+"or to find out how to become a member, please fill out our information "
+"request. Someone will get back to you soon. Please check our"
 msgstr ""
+"eller for å finne ut hvordan bli medlem, vennligst fyll ut dette skjemaet. "
+"Du vil snart bli kontaktet. Vennligst se på vår"
 
 #: contact.php:11
 msgid "Events"
-msgstr ""
+msgstr "Arrangementer"
 
 #: contact.php:11
-msgid "page for our next New Member's Meeting if you would like to join our group!"
+msgid ""
+"page for our next New Member's Meeting if you would like to join our group!"
 msgstr ""
+"-side for opplysninger om det neste medlemsopptaket om du vil bli med i "
+"gruppa!"
 
 #: contact.php:13
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
-#: contact.php:14
-#: classes/class.member.php:531
-#: classes/class.member.php:566
+#: contact.php:14 classes/class.member.php:531
 msgid "Email"
-msgstr ""
+msgstr "E-postadresse"
 
-#: contact.php:15
-#: contact.php:46
-#: member_directory.php:40
-#: classes/class.member.php:568
+#: contact.php:15 contact.php:46 member_directory.php:40
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: contact.php:19
 msgid "(Select One)"
-msgstr ""
+msgstr "(Velg)"
 
 #: contact.php:19
 msgid "Newspaper"
-msgstr ""
+msgstr "Avis"
 
 #: contact.php:19
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 #: contact.php:19
 msgid "Search Engine"
-msgstr ""
+msgstr "Søkemotor"
 
 #: contact.php:19
 msgid "Friend"
-msgstr ""
+msgstr "Venn"
 
 #: contact.php:19
 msgid "Local Business"
-msgstr ""
+msgstr "Lokalt foretak"
 
 #: contact.php:19
 msgid "Article"
-msgstr ""
+msgstr "Artikkel"
 
 #: contact.php:19
 msgid "Other"
-msgstr ""
+msgstr "Annet"
 
 #: contact.php:20
 msgid "How did you hear about us?"
-msgstr ""
+msgstr "Hvordan hørte du om oss?"
 
 #: contact.php:28
 msgid "Enter your name"
-msgstr ""
+msgstr "Skriv inn navnet ditt"
 
 #: contact.php:29
 msgid "Enter your email address"
-msgstr ""
+msgstr "Skriv inn e-postadressa di"
 
 #: contact.php:30
 msgid "Enter your phone number"
-msgstr ""
+msgstr "Skriv inn telefonnummeret ditt"
 
 #: contact.php:46
 msgid "Contact Form"
-msgstr ""
+msgstr "Kontaktskjema"
 
-#: contact.php:46
-#: trades_pending.php:38
-#: classes/class.feedback.php:198
-#: classes/class.trade.php:258
-#: classes/class.trade.php:304
+#: contact.php:46 trades_pending.php:38 classes/class.feedback.php:198
+#: classes/class.trade.php:258 classes/class.trade.php:304
 msgid "From"
-msgstr ""
+msgstr "Fra"
 
 #: contact.php:46
 msgid "Heard From"
-msgstr ""
+msgstr "Hørte om oss fra"
 
 #: contact.php:49
 msgid "Thank you."
-msgstr ""
+msgstr "Takk."
 
 #: contact.php:51
-msgid "There was a problem sending the email.  Are your sure you entered your email address  correctly?"
+msgid ""
+"There was a problem sending the email.  Are your sure you entered your email "
+"address  correctly?"
+msgstr ""
+"Det oppstod en feil ved sending av e-posten. Er du sikker på at du skrev inn "
+"e-postadressa di rett?"
+
+#: create_db.php:77
+msgid "Arts & Crafts"
 msgstr ""
 
-#: create_info.php:17
-#: do_info_edit.php:20
-#: listing_create.php:45
-#: news_create.php:17
-#: news_edit.php:22
+#: create_db.php:79
+msgid "Building Services"
+msgstr ""
+
+#: create_db.php:81
+#, fuzzy
+msgid "Business & Administration"
+msgstr "Administrasjon"
+
+#: create_db.php:83
+msgid "Children & Childcare"
+msgstr ""
+
+#: create_db.php:85
+msgid "Computers"
+msgstr ""
+
+#: create_db.php:87
+msgid "Counseling & Therapy"
+msgstr ""
+
+#: create_db.php:89
+msgid "Food"
+msgstr ""
+
+#: create_db.php:91
+msgid "Gardening & Yard Work"
+msgstr ""
+
+#: create_db.php:93
+msgid "Goods"
+msgstr ""
+
+#: create_db.php:95
+msgid "Health & Personal"
+msgstr ""
+
+#: create_db.php:97 member_create.php:23 member_edit.php:26
+msgid "Household"
+msgstr "Husstand"
+
+#: create_db.php:101
+msgid "Music & Entertainment"
+msgstr ""
+
+#: create_db.php:103
+msgid "Pets"
+msgstr ""
+
+#: create_db.php:105
+msgid "Sports & Recreation"
+msgstr ""
+
+#: create_db.php:107
+msgid "Teaching"
+msgstr ""
+
+#: create_db.php:109
+#, fuzzy
+msgid "Transportation"
+msgstr "Transaksjonstype"
+
+#: create_db.php:111
+msgid "Freebies"
+msgstr ""
+
+#: create_db.php:190
+msgid "&quot;Account Restriction Lifted&quot; Email"
+msgstr "E-post om at kontobegrensninger er fjernet"
+
+#: create_db.php:190
+msgid "Restrictions on your account have been lifted."
+msgstr "Begrensningene er fjernet fra kontoen din."
+
+#: create_db.php:190
+msgid ""
+"Define email that is sent out when restrictions are lifted on an account."
+msgstr ""
+
+#: create_db.php:192
+msgid "&quot;Account Restricted&quot; Email"
+msgstr "E-post om kontobegrensninger"
+
+#: create_db.php:192
+msgid ""
+"Dear Member<br /><br />We have been reviewing members balances as we are "
+"concerned to ensure that trading goes back and forth on an equitable basis "
+"so that members are able to keep their accounts close to zero. We recognise "
+"that situations sometimes occur that lead to things getting out of balance. "
+"Therefore to assist you, we have restricted expenditure on your account for "
+"the time being. If have any queries about this, or if we can assist you in "
+"any particular way, please let us know, and we will review the situation in "
+"due course. The LETS Administrator "
+msgstr ""
+
+#: create_db.php:192
+msgid ""
+"Define email that is sent out when restrictions are imposed on an account."
+msgstr ""
+
+#: create_db.php:194
+msgid "Display Member Balance"
+msgstr "Vis medlemssaldo"
+
+#: create_db.php:194
+msgid ""
+"Do you want to display member balances in the Members List? (Balances are "
+"always visible to Admins and Committee members regardless of what is set "
+"here.)"
+msgstr ""
+
+#: create_db.php:196
+msgid "Enable Take Service Charge"
+msgstr "Tillat engangsgebyr"
+
+#: create_db.php:196
+msgid ""
+"Do you want the option of taking a service charge from members as and when?"
+msgstr ""
+
+#: create_db.php:198
+msgid "Show Inactive Members in Members List"
+msgstr ""
+
+#: create_db.php:198
+msgid "Do you want to display Inactive members in the Member List?"
+msgstr ""
+
+#: create_db.php:200
+msgid "Show Rate on Listings"
+msgstr "Vis vurdering på oppføringene"
+
+#: create_db.php:200
+msgid ""
+"Do you want to display the Rate alongside the offers/wants in the main "
+"listings?"
+msgstr ""
+
+#: create_db.php:202
+msgid "Show Postcode on Listings"
+msgstr "Vis postnummer på oppføringene"
+
+#: create_db.php:202
+msgid ""
+"Do you want to display the PostCode alongside the offers/wants in the main "
+"listings?"
+msgstr ""
+
+#: create_db.php:204
+msgid "Postcode Length (in chars)"
+msgstr ""
+
+#: create_db.php:204
+msgid ""
+"If you have elected to display the postcode on offers/wants listings, how "
+"much of the PostCode do you want to show? (the number you enter will be the "
+"number of characters displayed, so for eg if you just want to show the first "
+"3 characters of the postcode then put 3."
+msgstr ""
+
+#: create_db.php:206
+msgid "Enable Balance Override"
+msgstr ""
+
+#: create_db.php:206
+msgid ""
+"Do you want admins to have the option to override Balances on a per member "
+"basis? This can be useful during the initial site set-up for inputting "
+"existing balances. Link will appear in admin panel if set to TRUE.  Use with "
+"CAUTION to avoid the database going out of balance"
+msgstr ""
+
+#: create_db.php:208
+msgid "Enable Member-to-Member Invoicing"
+msgstr ""
+
+#: create_db.php:208
+msgid ""
+"Do you want to allow members to invoice one-another via the site? (The "
+"recipient is always given the option to confirm/reject payment of the "
+"invoice)"
+msgstr ""
+
+#: create_db.php:210
+msgid "Allow Members to Upload Images"
+msgstr ""
+
+#: create_db.php:210
+msgid ""
+"Do you want to allow members to upload an image of themselves, to be "
+"displayed with their personal profile?"
+msgstr ""
+
+#: create_db.php:212
+msgid "Enable Social Networking Fields"
+msgstr "Tillat funksjoner for sosialt nettverk"
+
+#: create_db.php:212
+msgid ""
+"Do you want to enable the Social Networking profile fields (Age, Sex, etc)?"
+msgstr ""
+
+#: create_db.php:214
+msgid "Out Of Balance Behaviour"
+msgstr ""
+
+#: create_db.php:214
+msgid ""
+"If, whilst processing a trade, the database is found to be out of balance, "
+"what should the system do?\n"
+"\n"
+"FATAL = Aborts the trade and informs the user why.\n"
+"\n"
+"SILENT = Continues with trade, displays no notifications whatsoever (NOTE: "
+"you can still set the option below to have an email notification sent to the "
+"admin)"
+msgstr ""
+
+#: create_db.php:220
+msgid "Email Admin on Out Of Balance"
+msgstr ""
+
+#: create_db.php:220
+msgid ""
+"Should the system send the Admin an email when the database is found to be "
+"out of balance?"
+msgstr ""
+
+#: create_db.php:222
+msgid "Email From Address"
+msgstr "E-post fra adresse"
+
+#: create_db.php:222
+msgid "reply@my-domain.org"
+msgstr ""
+
+#: create_db.php:222
+msgid "Email sent from this site will show as coming from this address"
+msgstr ""
+
+#: create_db.php:224
+msgid "Use Rates Fields"
+msgstr ""
+
+#: create_db.php:224
+msgid "If turned on, listings will include a &quot;Rate&quot; field"
+msgstr ""
+
+#: create_db.php:226
+msgid "Enable Monthly Fee"
+msgstr "Tillat månedsavgift"
+
+#: create_db.php:226
+msgid "Do you want to enable Monthly Fees"
+msgstr "Vil du tillate månedsavgifter"
+
+#: create_db.php:228
+msgid "Monthly Fee Amount"
+msgstr "Månedsavgiftsbeløp"
+
+#: create_db.php:228
+msgid "How much should the Monthly Fee be?"
+msgstr ""
+
+#: create_db.php:230
+msgid "Send Listing Updates via Email"
+msgstr ""
+
+#: create_db.php:230
+msgid "Should users receive automatic updates for new and modified listings?"
+msgstr ""
+
+#: create_db.php:232
+msgid "Default Email Listings Update Interval"
+msgstr ""
+
+#: create_db.php:232
+msgid "If automatic updates are sent, this is the default interval."
+msgstr ""
+
+#: create_db.php:234
+msgid "Allow Income Sharing"
+msgstr "Tillat inntektsfordeling"
+
+#: create_db.php:234
+msgid ""
+"Do you want to allow members to share a percentage of any income they "
+"generate with another account of their choosing? The member can specify the "
+"exact percentage they wish to donate."
+msgstr ""
+
+#: create_db.php:236
+msgid "Message Displayed to Leecher who tries to trade"
+msgstr ""
+
+#: create_db.php:236
+msgid ""
+"Restrictions have been imposed on your account which prevent you from "
+"trading outwards, Please contact the administrator for more information."
+msgstr ""
+
+#: create_db.php:236
+msgid "Leecher sees this notice when trying to send money."
+msgstr ""
+
+#: create_db.php:238
+msgid "Show monthly fees and service charges in global exchange view"
+msgstr ""
+
+#: create_db.php:238
+msgid ""
+"Do you want to show monthly fees and service charges in the global exchange "
+"view? (Note: individual members will still be able to see this in their own "
+"personal exchange history)."
+msgstr ""
+
+#: create_db.php:260
+msgid "Sample: Downtown"
+msgstr ""
+
+#: create_db.php:261
+msgid "Sample: North"
+msgstr ""
+
+#: create_db.php:262
+msgid "Sample: East"
+msgstr ""
+
+#: create_db.php:263
+msgid "Sample: South"
+msgstr ""
+
+#: create_db.php:264
+msgid "Sample: West"
+msgstr ""
+
+#: create_db.php:268
+msgid ""
+"Database has been created. Click <A HREF=member_login.php>here</A> to login."
+msgstr ""
+
+#: create_info.php:17 do_info_edit.php:20 listing_create.php:45
+#: news_create.php:17 news_edit.php:22
 msgid "Title"
-msgstr ""
+msgstr "Tittel"
 
-#: create_info.php:25
-#: do_info_edit.php:28
-#: listing_create.php:46
-#: listing_edit.php:31
-#: news_create.php:32
-#: news_edit.php:37
+#: create_info.php:25 do_info_edit.php:28 listing_create.php:46
+#: listing_edit.php:31 news_create.php:32 news_edit.php:37
 msgid "Enter a title"
-msgstr ""
+msgstr "Skriv inn tittel"
 
-#: create_info.php:26
-#: do_info_edit.php:29
+#: create_info.php:26 do_info_edit.php:29
 msgid "Enter some body text"
-msgstr ""
+msgstr "Skriv inn brødtekst"
 
 #: create_info.php:48
 msgid "New information page added."
-msgstr ""
+msgstr "Ny infoside er lagt til."
 
 #: create_info.php:50
 msgid "There was a problem adding the new page."
-msgstr ""
+msgstr "Det oppstod en feil ved oppretting av den nye sida."
 
 #: delete_info.php:5
 msgid "Choose Info Page to Delete"
-msgstr ""
+msgstr "Velg infoside som skal slettes"
 
 #: delete_info.php:16
 msgid "Page deleted."
-msgstr ""
+msgstr "Sida er slettet."
 
 #: delete_info.php:18
 msgid "There was a problem deleting the page."
-msgstr ""
+msgstr "Det oppstod en feil ved sletting av sida."
 
-#: delete_info.php:34
-#: edit_info.php:19
+#: delete_info.php:34 edit_info.php:19
 msgid "Which Info Page?"
-msgstr ""
+msgstr "Hvilken infoside?"
 
-#: delete_info.php:39
-#: edit_info.php:24
+#: delete_info.php:39 edit_info.php:24
 msgid "There are no current Info Pages."
-msgstr ""
+msgstr "Det er ingen infosider foreløpig."
 
 #: delete_info.php:55
 msgid "Really Delete this page (ID#"
-msgstr ""
+msgstr "Vil du virkelig slette denne sida (id-nr. "
 
-#: delete_info.php:55
-#: email.php:24
-#: member_contact_create.php:42
-#: member_contact_edit.php:44
-#: pages.php:13
-#: settings.php:93
+#: delete_info.php:55 email.php:24 member_contact_create.php:42
+#: member_contact_edit.php:44 pages.php:13 settings.php:93
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
-#: delete_info.php:55
-#: email.php:24
-#: member_contact_create.php:42
-#: member_contact_edit.php:44
-#: pages.php:13
-#: settings.php:95
+#: delete_info.php:55 email.php:24 member_contact_create.php:42
+#: member_contact_edit.php:44 pages.php:13 settings.php:95
 msgid "No"
-msgstr ""
+msgstr "Nei"
 
-#: delete_info.php:55
-#: pages.php:13
+#: delete_info.php:55 pages.php:13
 msgid "(go back)"
-msgstr ""
+msgstr "(gå tilbake)"
 
 #: directory.php:6
 msgid "Download Directory"
-msgstr ""
+msgstr "Last ned katalogen"
 
-#: directory.php:15
-#: export.php:13
-msgid "Download"
+#: directory.php:11
+msgid ""
+"Click on the button below and you will be prompted to open or save a printer-"
+"friendly (PDF) version of the directory. If you don't already have it, you "
+"can download Adobe Acrobat from <A HREF=\"http://www.tucows.com/"
+"preview/194959.html\">here</A>."
 msgstr ""
+"Klikk på knappen under og du vil bli forespurt om å åpne eller lagre en "
+"utskriftsvennlig PDF-utgave av katalogen. Dersom du ikke allerede har Adobe "
+"Acrobat, kan du laste ned programmet <A HREF=\"http://www.tucows.com/"
+"preview/194959.html\">herfra</A>."
+
+#: directory.php:13
+msgid ""
+"Note that <u>older versions of Acrobat may not be able to read this file</"
+"u>.  If you get an error message when trying to download, try upgrading <A "
+"HREF=\"http://www.tucows.com/preview/194959.html\">Acrobat</A>. If you have "
+"Windows 2000 or XP, you can upgrade to the newest version, but if you have "
+"Windows 98, you will want version 6.0."
+msgstr ""
+"Merk at <u>eldre versjoner av Acrobat kanskje ikke kan lese denne fila</u>. "
+"Hvis du får feilmelding når du prøver å laste ned fila, prøv å oppgradere <A "
+"HREF=\"http://www.tucows.com/preview/194959.html\">Acrobat</A>. Har du "
+"Windows 2000 eller XP, kan du oppgradere til nyeste versjon, men har du "
+"Windows 98 eller Mac OS 10.4 trenger du en eldre versjon."
+
+#: directory.php:15 export.php:13
+msgid "Download"
+msgstr "Last ned"
 
 #: directory.php:30
 msgid "Download complete."
-msgstr ""
+msgstr "Ferdig nedlastet."
 
-#: directory.php:13
-msgid "Note that <u>older versions of Acrobat may not be able to read this file</u>.  If you get an error message when trying to download, try upgrading <A HREF="
-msgstr ""
-
-#: directory.php:11
-msgid "Click on the button below and you will be prompted to open or save a printer-friendly (PDF) version of the directory. If you don't already have it, you can download Adobe Acrobat from <A HREF="
-msgstr ""
-
-#: do_info_edit.php:54
-#: member_contact_edit.php:166
-#: member_edit.php:257
+#: do_info_edit.php:54 member_contact_edit.php:166 member_edit.php:257
 #: news_edit.php:70
 msgid "Changes saved."
-msgstr ""
+msgstr "Endringene er lagret."
 
 #: do_info_edit.php:56
 msgid "There was a problem saving the page."
-msgstr ""
+msgstr "Det oppstod en feil under lagring av sida."
 
-#: edit_balance.php:22
-#: member_edit.php:16
+#: edit_balance.php:22 member_edit.php:16
 msgid "Edit Member"
-msgstr ""
+msgstr "Rediger medlemsopplysninger"
 
 #: edit_balance.php:22
 msgid "'s Balance"
-msgstr ""
+msgstr "s saldo"
 
 #: edit_balance.php:24
 msgid "Value (before decimal point, 8 digit max)"
-msgstr ""
+msgstr "Verdi (før komma, maks. 8 siffer)"
 
 #: edit_balance.php:25
 msgid "Value (after decimal point, 2 digit max)"
-msgstr ""
+msgstr "Verdi (etter komma, maks. 2 siffer)"
 
 #: edit_balance.php:26
 msgid "Update Balance"
-msgstr ""
+msgstr "Oppdater saldo"
 
 #: edit_balance.php:65
 msgid "This member's balance has now been set to"
-msgstr ""
+msgstr "Saldo for dette medlemmet har nå blitt satt til"
 
 #: edit_balance.php:65
 msgid "Edit another member's balance?"
-msgstr ""
+msgstr "Endre saldo for et annet medlem?"
 
 #: edit_balance.php:67
 msgid "There was a problem updated this member's balance."
-msgstr ""
+msgstr "Det oppstod en feil ved oppdatering av saldoen for dette medlemmet."
 
 #: edit_info.php:5
 msgid "Choose Info Page to Edit"
-msgstr ""
+msgstr "Velg infoside som skal redigeres"
 
 #: email.php:8
 msgid "Email a Member"
-msgstr ""
+msgstr "Send e-post til et medlem"
 
-#: email.php:22
-#: trades_pending.php:38
-#: classes/class.trade.php:258
+#: email.php:22 trades_pending.php:38 classes/class.trade.php:258
 #: classes/class.trade.php:304
 msgid "To"
-msgstr ""
+msgstr "Til"
 
 #: email.php:23
 msgid "Subject"
-msgstr ""
+msgstr "Emne"
 
 #: email.php:24
 msgid "Would you like to receive a copy?"
-msgstr ""
+msgstr "Vil du ha kopi?"
 
 #: email.php:82
 msgid "Your message has been sent."
-msgstr ""
+msgstr "Meldinga er blitt sendt."
 
 #: email.php:85
 msgid "There was a problem sending the email."
-msgstr ""
+msgstr "Det oppstod et problem ved sending av e-posten."
 
 #: exchange_menu.php:11
 msgid "Invoices and Transactions Pending"
-msgstr ""
+msgstr "Ventende  fakturaer og transaksjoner"
 
 #: exchange_menu.php:11
 msgid "require action"
-msgstr ""
+msgstr "krever behandling"
 
-#: exchange_menu.php:12
-#: member_profile_all_in_one.php:29
-#: trade.php:6
+#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:6
 msgid "Record an Exchange"
-msgstr ""
+msgstr "Registrer en handel"
 
-#: exchange_menu.php:13
-#: member_profile_all_in_one.php:30
+#: exchange_menu.php:13 member_profile_all_in_one.php:30
 msgid "View My Balance and Exchange History"
-msgstr ""
+msgstr "Vis saldo og handelslogg"
 
-#: exchange_menu.php:14
-#: member_profile_all_in_one.php:31
+#: exchange_menu.php:14 member_profile_all_in_one.php:31
 msgid "View Another Member's Exchange History"
-msgstr ""
+msgstr "Vis handelsloggen til et annet medlem"
 
 #: exchange_menu.php:15
 msgid "View My Feedback"
-msgstr ""
+msgstr "Vis tilbakemeldinger til meg"
 
 #: exchange_menu.php:16
 msgid "View Another Member's Feedback"
-msgstr ""
+msgstr "Vis tilbakemeldinger til et annet medlem"
 
 #: exchange_menu.php:17
 msgid "Leave Feedback for a Recent Exchange"
-msgstr ""
+msgstr "Gi tilbakemelding om en nylig handel"
 
 #: exchange_menu.php:18
 msgid "View All Trades in a Specified Time Period"
-msgstr ""
+msgstr "Vis alle handler i et visst tidsrom"
 
 #: export.php:6
 msgid "Export to Spreadsheet"
-msgstr ""
+msgstr "Eksporter til regneark"
 
 #: export.php:11
-msgid "This will export all the tables in the database to an Excel spreadsheet for backup and  reporting purposes.  Click on the button below and you will be prompted to open or save the file.  Please note that the information in this file is confidential and should only be stored in a private, secure location."
+msgid ""
+"This will export all the tables in the database to an Excel spreadsheet for "
+"backup and  reporting purposes.  Click on the button below and you will be "
+"prompted to open or save the file.  Please note that the information in this "
+"file is confidential and should only be stored in a private, secure location."
 msgstr ""
+"Dette vil eksportere alle tabellene i databasen til et excel-ark til bruk "
+"som sikkerhetskopi eller rapport. Klikk på knappen under og du vil bli bedt "
+"om å åpne eller lagre fila. Vær oppmerksom på at opplysningen i fila er "
+"konfidensielle og bare bør lagres på et privat, sikkert sted."
 
 #: export.php:28
 msgid "Export complete."
-msgstr ""
+msgstr "Eksporten er fullført."
 
 #: feedback_all.php:17
 msgid "Feedback for"
-msgstr ""
+msgstr "Tilbakemeldinger til"
 
 #: feedback_all.php:26
 msgid "You don't have any feedback yet."
-msgstr ""
+msgstr "Du har ikke fått noen tilbakemeldinger ennå."
 
 #: feedback_all.php:28
 msgid "This member does not have any feedback yet."
-msgstr ""
+msgstr "Dette medlemmet har ikke fått noen tilbakemeldinger ennå."
 
-#: feedback_choose_inbox.php:6
-#: feedback_choose.php:6
+#: feedback_choose_inbox.php:6 feedback_choose.php:6
 msgid "Leave Feedback"
-msgstr ""
+msgstr "Gi tilbakemelding"
 
-#: feedback_choose_inbox.php:24
-#: feedback_choose.php:24
+#: feedback_choose_inbox.php:24 feedback_choose.php:24
 msgid "For which Exchange?"
-msgstr ""
+msgstr "For hvilken handel?"
 
-#: feedback_choose_inbox.php:101
-#: feedback_choose.php:60
-msgid "There are no exchanges to leave feedback for.  You have already left feedback for all your recent exchanges."
+#: feedback_choose_inbox.php:101 feedback_choose.php:60
+msgid ""
+"There are no exchanges to leave feedback for.  You have already left "
+"feedback for all your recent exchanges."
 msgstr ""
+"Det er ingen handler å gi tilbakemelding om. Du har allerede gitt "
+"tilbakemelding om alle dine nylige handler."
 
-#: feedback.php:9
-#: feedback_rebuttal.php:9
+#: feedback.php:9 feedback_rebuttal.php:9
 msgid "Leave Feedback about"
-msgstr ""
+msgstr "Gi tilbakemelding om"
 
-#: feedback.php:22
-#: trade_history.php:18
+#: feedback.php:22 trade_history.php:18
 msgid "for"
-msgstr ""
+msgstr "til"
 
-#: feedback.php:28
-#: feedback_rebuttal.php:29
-msgid "All feedback is public. Before leaving <i>negative</i> feedback, we recommend trying to address your concerns with the other community member.  Often misunderstandings can be resolved to the benefit of both parties."
+#: feedback.php:28 feedback_rebuttal.php:29
+msgid ""
+"All feedback is public. Before leaving <i>negative</i> feedback, we "
+"recommend trying to address your concerns with the other community member.  "
+"Often misunderstandings can be resolved to the benefit of both parties."
 msgstr ""
+"Alle tilbakemeldinger er offentlige. Før du gir <i>negativ</i> "
+"tilbakemelding anbefaler vi å ta opp problemet overfor det andre medlemmet. "
+"Ofte kan misforståelser klares opp til begges fordel."
 
-#: feedback.php:30
-#: feedback_rebuttal.php:31
-#: classes/class.feedback.php:125
+#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:125
 #: classes/class.member.php:524
 msgid "Positive"
-msgstr ""
+msgstr "Positiv"
 
-#: feedback.php:30
-#: feedback_rebuttal.php:31
-#: classes/class.feedback.php:129
+#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:129
 msgid "Neutral"
-msgstr ""
+msgstr "Nøytral"
 
-#: feedback.php:30
-#: feedback_rebuttal.php:31
-#: classes/class.feedback.php:127
+#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:127
 msgid "Negative"
-msgstr ""
+msgstr "Negativ"
 
 #: feedback.php:31
 msgid "Feedback Rating"
-msgstr ""
+msgstr "Vurdering"
 
-#: feedback.php:36
-#: feedback_rebuttal.php:37
-#: feedback_reply.php:42
+#: feedback.php:36 feedback_rebuttal.php:37 feedback_reply.php:42
 msgid "Comments"
-msgstr ""
+msgstr "Merknader"
 
-#: feedback.php:44
-#: feedback_rebuttal.php:45
-#: feedback_reply.php:49
+#: feedback.php:44 feedback_rebuttal.php:45 feedback_reply.php:49
 msgid "Choose a rating"
-msgstr ""
+msgstr "Velg en vurdering"
 
-#: feedback.php:82
-#: feedback_rebuttal.php:71
-#: feedback_reply.php:86
+#: feedback.php:82 feedback_rebuttal.php:71 feedback_reply.php:86
 msgid "Your feedback has been recorded."
-msgstr ""
+msgstr "Tilbakemeldinga er registrert."
 
-#: feedback.php:84
-#: feedback_rebuttal.php:73
-#: feedback_reply.php:88
+#: feedback.php:84 feedback_rebuttal.php:73 feedback_reply.php:88
 msgid "There was an error recording your feedback."
-msgstr ""
+msgstr "Det oppstod en feil under registrering av tilbakemeldinga."
 
-#: feedback_rebuttal.php:46
-#: feedback_reply.php:50
+#: feedback_rebuttal.php:46 feedback_reply.php:50
 msgid "Comments cannot be longer than 255 characters"
-msgstr ""
+msgstr "Merknader kan ikke være lengre enn 255 tegn"
 
 #: feedback_reply.php:9
 msgid "Follow Up on Feedback"
-msgstr ""
+msgstr "Følg opp tilbakemelding"
 
 #: feedback_reply.php:36
 msgid "Prior Comments"
-msgstr ""
+msgstr "Tidligere merknader"
 
 #: feedback_reply.php:72
 msgid "Members do not match the trade selected."
-msgstr ""
+msgstr "Disse medlemmene var ikke parter i handelen."
 
-#: feedback_to_view.php:5
-#: trade.php:65
+#: feedback_to_view.php:5 trade.php:65
 msgid "Choose Member"
-msgstr ""
+msgstr "Velg medlem"
 
 #: feedback_to_view.php:11
 msgid "Whose Feedback?"
-msgstr ""
+msgstr "Tilbakemelding til hvem?"
 
-#: feedback_to_view.php:13
-#: trades_to_view.php:13
+#: feedback_to_view.php:13 trades_to_view.php:13
 msgid "View"
-msgstr ""
+msgstr "Vis"
 
 #: holiday.php:6
 msgid "Inactivate Listings While on Holiday"
-msgstr ""
+msgstr "Deaktiver oppføringer i ferien"
 
 #: holiday.php:16
-msgid "This feature will temporarily inactivate all of the member's offered and wanted listings while they are gone."
+msgid ""
+"This feature will temporarily inactivate all of the member's offered and "
+"wanted listings while they are gone."
 msgstr ""
+"Denne funksjonen vil midlertidig deaktivere alle oppføringene til medlemmet "
+"(både \"til salgs\" og \"ønskes kjøpt\") mens det er borte."
 
 #: holiday.php:17
 msgid "they"
-msgstr ""
+msgstr "de"
 
 #: holiday.php:22
-msgid "This feature will temporarily inactivate all of your offered and wanted listings while you are gone."
+msgid ""
+"This feature will temporarily inactivate all of your offered and wanted "
+"listings while you are gone."
 msgstr ""
+"Denne funksjonen vil midlertidig deaktivere alle dine oppføringer (både "
+"\"til salgs\" og \"ønskes kjøpt\") mens du er borte."
 
 #: holiday.php:23
 msgid "you"
-msgstr ""
+msgstr "du"
 
 #: holiday.php:26
-msgid "They will not appear in the directory during that time.  When the date you specify below arrives the listings will automatically reactivate."
+msgid ""
+"They will not appear in the directory during that time.  When the date you "
+"specify below arrives the listings will automatically reactivate."
 msgstr ""
+"De vil ikke vises i katalogen da. Når datoen du oppgir under kommer vil "
+"oppføringene automatisk reaktiveres."
 
-#: holiday.php:31
-#: listing_create.php:62
-#: member_contact_create.php:38
-#: member_contact_edit.php:38
-#: member_create.php:34
-#: member_create.php:45
-#: member_edit.php:31
-#: member_edit.php:33
-#: news_create.php:19
-#: news_edit.php:24
+#: holiday.php:31 listing_create.php:62 member_contact_create.php:38
+#: member_contact_edit.php:38 member_create.php:34 member_create.php:45
+#: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
 #: timeframe_choose.php:15
 msgid "en"
-msgstr ""
+msgstr "no"
 
 #: holiday.php:32
 msgid "When will"
-msgstr ""
+msgstr "Når vil"
 
 #: holiday.php:32
 msgid "return?"
-msgstr ""
+msgstr "komme tilbake?"
 
-#: holiday.php:34
-#: member_status_change.php:11
-#: member_status_change.php:25
+#: holiday.php:34 member_status_change.php:11 member_status_change.php:25
 msgid "Inactivate"
-msgstr ""
+msgstr "Deaktivere"
 
-#: holiday.php:37
-#: listing_edit.php:57
+#: holiday.php:37 listing_edit.php:57
 msgid "Must be a future date"
-msgstr ""
+msgstr "Må være i framtida"
 
-#: holiday.php:39
-#: listing_create.php:69
-#: listing_edit.php:54
-#: listing_edit.php:58
-#: news_create.php:37
-#: news_edit.php:40
+#: holiday.php:39 listing_create.php:69 listing_edit.php:54
+#: listing_edit.php:58 news_create.php:37 news_edit.php:40
 msgid "Date is invalid"
-msgstr ""
+msgstr "Datoen er ugyldig"
 
 #: holiday.php:62
 msgid "Listings successfully inactivated."
-msgstr ""
+msgstr "Oppføringene er deaktiverte."
 
 #: income_ties.php:13
 msgid "Income Sharing"
-msgstr ""
+msgstr "Inntektsfordeling"
 
 #: income_ties.php:15
 msgid "You have the option of contributing a percentage of any income"
-msgstr ""
+msgstr "Du har muligheten til å gi bort en andel av all inntekt"
 
 #: income_ties.php:15
-msgid "you receive to another account. If you specify an Income Share, every time you receive"
+msgid ""
+"you receive to another account. If you specify an Income Share, every time "
+"you receive"
 msgstr ""
+"du mottar til en annen konto. Dersom du oppgir inntektsfordeling, vil en "
+"viss andel (som du oppgir) automatisk betales til den kontoen du ønsker hver "
+"gang du mottar "
 
 #: income_ties.php:15
-msgid "a specified percentage (of your choosing) will automatically be paid to the account of your choice. You can change this arrangement at any time, but you are only allowed to share your income with one other account at a time."
+msgid ""
+"a specified percentage (of your choosing) will automatically be paid to the "
+"account of your choice. You can change this arrangement at any time, but you "
+"are only allowed to share your income with one other account at a time."
 msgstr ""
+". Du kan endre denne ordningen når som helst, men du kan bare dele inntekten "
+"med en annen konto av gangen."
 
 #: income_ties.php:25
 msgid "Sorry you can't share income with yourself."
-msgstr ""
+msgstr "Beklar, du kan ikke dele inntekt med deg selv."
 
 #: income_ties.php:33
 msgid "Not enough data to proceed."
-msgstr ""
+msgstr "Ikke nok opplysninger til å fortsette."
 
 #: income_ties.php:35
-msgid "The percentage must be numeric and must not contain any other characters (e.g. '10' = good input, '10%' = bad input)"
+msgid ""
+"The percentage must be numeric and must not contain any other characters (e."
+"g. '10' = good input, '10%' = bad input)"
 msgstr ""
+"Andelen må være et tall og må ikke inneholde andre tegn (f. eks. er '10' = "
+"godtatt, '10%' = ikke godtatt)"
 
 #: income_ties.php:37
 #, php-format
-msgid "Sorry, you can't contribute more than 99% of your income to another account - but it's the thought that counts"
+msgid ""
+"Sorry, you can't contribute more than 99% of your income to another account "
+"- but it's the thought that counts"
 msgstr ""
+"Beklager, du kan ikke gi bort mer enn 99 %% av inntekten din til en annen "
+"konto - men det er tanken som teller"
 
 #: income_ties.php:63
 msgid "Income Share Inactive"
-msgstr ""
+msgstr "Inntektsfordeling deaktivert"
 
 #: income_ties.php:65
 msgid "Create an Income Share"
-msgstr ""
+msgstr "Opprett inntektsfordeling"
 
 #: income_ties.php:72
 msgid "I would like to share"
-msgstr ""
+msgstr "Jeg vil gi bort"
 
 #: income_ties.php:72
 msgid "of any"
-msgstr ""
+msgstr " "
 
 #: income_ties.php:72
 msgid "I receive"
-msgstr ""
+msgstr "som jeg mottar"
 
 #: income_ties.php:73
 msgid "with this account"
-msgstr ""
+msgstr "i denne kontoen"
 
 #: income_ties.php:75
 msgid "Create Income Share"
-msgstr ""
+msgstr "Oprett inntektsfordeling"
 
 #: income_ties.php:79
 msgid "Income Share Active"
-msgstr ""
+msgstr "Inntektsfordelinga er aktiv"
 
 #: income_ties.php:81
 msgid "You are currently sharing"
-msgstr ""
+msgstr "Du gir for tida bort"
 
 #: income_ties.php:81
 msgid "of your income with account"
-msgstr ""
+msgstr "av inntekten din til konto"
 
 #: income_ties.php:81
 msgid "Remove Income Share"
-msgstr ""
+msgstr "Fjern inntektsfordeling"
 
 #: income_ties.php:81
-msgid "If you wish to amend this Income Share you will first need to remove it and then create a new one."
+msgid ""
+"If you wish to amend this Income Share you will first need to remove it and "
+"then create a new one."
 msgstr ""
+"Dersom du vil endre denne inntektsfordelinga må du først fjerne den og så "
+"opprette en ny."
 
-#: index.php:9
-#: org_index.php:9
-msgid "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' align=top></td><td><img src='images/localx_black.png' align=top><br><img src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
+#: index.php:9 org_index.php:9
+msgid ""
+"<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' "
+"align=top></td><td><img src='images/localx_black.png' align=top><br><img "
+"src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font "
+"size='4'>Why have a Local, Sustainable Currency?</font></strong></"
+"p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> "
+"Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your "
+"Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of "
+"Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
 msgstr ""
+"<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' "
+"align=top></td><td><img src='images/localx_black.png' align=top><br><img "
+"src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font "
+"size='4'>Hvorfor en lokal, bærekraftig valuta?</font></strong></"
+"p><ul><li><strong>Øk velstanden<br><br></strong></li><li><strong>Bygg opp et "
+"bærekraftig lokalsamfunn<br><br></strong></li><li><strong>Utnytt evnene "
+"dine<br><br></strong></li><li><strong>Dyrk det unike ved<br>hjemstedet ditt "
+"<br><br></strong></li><li><strong>Ha det gøy</strong></li></ul>"
 
 #: info_permissions.php:13
-msgid "*The Permissions level denotes the MINIMUM level a user must be to view the page. So, a page set with 'Committee' permissions would be visible to Committee AND Admin users, but not to those below Committee level (i.e. Members and Guests). Setting the permissions to 'Guests' effectively removes the permissions from that page and renders it visible to anyone and everyone."
+msgid ""
+"*The Permissions level denotes the MINIMUM level a user must be to view the "
+"page. So, a page set with 'Committee' permissions would be visible to "
+"Committee AND Admin users, but not to those below Committee level (i.e. "
+"Members and Guests). Setting the permissions to 'Guests' effectively removes "
+"the permissions from that page and renders it visible to anyone and everyone."
 msgstr ""
+"*Rettighetsnivået angir det MINSTE nivået en bruker må ha for å vise sida. "
+"Det betyr at ei side med nivået 'Styret' er synlig for styremedlemmer OG "
+"administratorer, men ikke til dem på lavere nivå (dvs. medlemmer og "
+"gjester). Angir du rettighetsnivået til 'Gjester', krever sida i realiteten "
+"ingen rettigheter, og den blir synlig for alle."
 
 #: info_permissions.php:26
 msgid "Info page permissions updated successfully."
-msgstr ""
+msgstr "Rettigheter for infosida er oppdatert."
 
 #: info_permissions.php:45
 msgid "Update Permissions"
-msgstr ""
+msgstr "Oppdater rettigheter"
 
 #: info_permissions.php:48
 msgid "No info pages found!"
-msgstr ""
+msgstr "Fant ingen infosider!"
 
-#: info_permissions.php:53
-#: info_permissions.php:77
+#: info_permissions.php:53 info_permissions.php:77
 msgid "Guests"
-msgstr ""
+msgstr "Gjester"
 
-#: info_permissions.php:53
-#: info_permissions.php:77
-#: manage_restrictions.php:107
+#: info_permissions.php:53 info_permissions.php:77 manage_restrictions.php:107
 #: manage_restrictions.php:118
 msgid "Members"
-msgstr ""
+msgstr "Medlemmer"
 
-#: info_permissions.php:53
-#: member_create.php:21
+#: info_permissions.php:53 info_permissions.php:77 member_create.php:21
 #: member_edit.php:24
 msgid "Committee"
-msgstr ""
+msgstr "Styret"
 
-#: info_permissions.php:53
-#: info_permissions.php:77
-#: member_create.php:21
+#: info_permissions.php:53 info_permissions.php:77 member_create.php:21
 #: member_edit.php:24
 msgid "Admin"
-msgstr ""
-
-#: info_permissions.php:77
-msgid "Comittee"
-msgstr ""
+msgstr "Administrator"
 
 #: initial_mailing.php:7
 msgid "Initial Mailing for Rollout"
-msgstr ""
+msgstr "E-postutsending ved lansering"
 
 #: initial_mailing.php:9
 msgid "Important information from"
-msgstr ""
+msgstr "Viktige opplysninger fra"
 
 #: initial_mailing.php:29
 msgid "Could not reset password for"
-msgstr ""
+msgstr "Kunne ikke nullstille passordet til"
 
 #: initial_mailing.php:29
 msgid "Skipped email"
-msgstr ""
+msgstr "Hoppet over e-postadressa"
 
-#: initial_mailing.php:34
-#: login_redirect.php:5
-#: member_create.php:17
-#: member_create.php:204
-#: member_directory.php:15
-#: member_unlock.php:47
-#: member_unlock.php:52
-#: trade.php:136
-#: classes/class.member.php:194
+#: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
+#: member_create.php:204 member_directory.php:15 member_unlock.php:47
+#: member_unlock.php:50 trade.php:136 classes/class.member.php:194
 msgid "Member ID"
-msgstr ""
+msgstr "Brukernavn"
 
-#: initial_mailing.php:34
-#: login_redirect.php:5
-#: member_create.php:18
-#: member_create.php:204
-#: member_unlock.php:47
-#: classes/class.member.php:195
+#: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
+#: member_create.php:204 member_unlock.php:47 classes/class.member.php:195
 msgid "Password"
-msgstr ""
+msgstr "Passord"
 
 #: initial_mailing.php:37
 msgid "Could not email"
-msgstr ""
+msgstr "Kunne ikke sende e-post til"
 
 #: initial_mailing.php:37
 msgid "His/her password is"
-msgstr ""
+msgstr "Passordet hans/hennes er"
 
 #: initial_mailing.php:41
 msgid "Email successfully sent to all members."
-msgstr ""
+msgstr "E-post er sendt til alle medlemmene."
 
-#: listing_create.php:8
-#: listing_delete.php:9
-#: listing_edit.php:10
-#: listings_found.php:7
-#: listings.php:6
-#: listing_to_edit.php:6
+#: listing_create.php:8 listing_delete.php:9 listing_edit.php:10
+#: listings_found.php:7 listings.php:6 listing_to_edit.php:6
 #: includes/inc.config.php:167
 msgid "Offered"
-msgstr ""
+msgstr "Til salgs"
 
-#: listing_create.php:10
-#: listing_delete.php:11
-#: listing_edit.php:12
-#: listings_found.php:9
-#: listings.php:8
-#: listing_to_edit.php:8
+#: listing_create.php:10 listing_delete.php:11 listing_edit.php:12
+#: listings_found.php:9 listings.php:8 listing_to_edit.php:8
 #: includes/inc.config.php:168
 msgid "Wanted"
-msgstr ""
+msgstr "Ønskes kjøpt"
 
 #: listing_create.php:12
 msgid "Create"
-msgstr ""
+msgstr "Opprett"
 
 #: listing_create.php:12
 msgid "Listing"
-msgstr ""
+msgstr "Oppføring"
 
-#: listing_create.php:35
-#: member_choose.php:6
+#: listing_create.php:35 member_choose.php:6
 msgid "For which member?"
-msgstr ""
+msgstr "For hvilket medlem?"
 
 #: listing_create.php:48
 msgid "You already have a listing with this title"
-msgstr ""
+msgstr "Du har alt ei oppføring med denne tittelen"
 
-#: listing_create.php:50
-#: listing_edit.php:35
-#: listings.php:21
-#: trade.php:48
+#: listing_create.php:50 listing_edit.php:35 listings.php:21 trade.php:48
 #: classes/class.trade.php:258
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
-#: listing_create.php:53
-#: listing_edit.php:38
-#: classes/class.listing.php:152
+#: listing_create.php:53 listing_edit.php:38 classes/class.listing.php:152
 msgid "Rate"
-msgstr ""
+msgstr "Pris"
 
-#: listing_create.php:57
-#: listing_edit.php:44
-#: news_create.php:25
-#: news_edit.php:30
-#: newsletter_save.php:10
-#: newsletter_upload.php:11
-#: trades_pending.php:38
-#: classes/class.listing.php:150
+#: listing_create.php:57 listing_edit.php:44 news_create.php:25
+#: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
+#: trades_pending.php:38 classes/class.listing.php:150
 #: classes/class.trade.php:258
 msgid "Description"
-msgstr ""
+msgstr "Tekst"
 
-#: listing_create.php:60
-#: listing_edit.php:47
+#: listing_create.php:60 listing_edit.php:47
 msgid "Should this listing be set to automatically expire?"
-msgstr ""
+msgstr "Skal denne oppføringa utløpe automatisk?"
 
-#: listing_create.php:63
-#: listing_edit.php:50
-#: news_create.php:20
+#: listing_create.php:63 listing_edit.php:50 news_create.php:20
 #: news_edit.php:25
 msgid "Expires"
-msgstr ""
+msgstr "Løper ut"
 
-#: listing_create.php:67
-#: listing_edit.php:52
-#: news_create.php:35
+#: listing_create.php:67 listing_edit.php:52 news_create.php:35
 msgid "Expiration must be for a future date"
-msgstr ""
+msgstr "Utløpsdato må være i framtida"
 
 #: listing_create.php:121
 msgid "Listing created. Create"
-msgstr ""
+msgstr "Oppføringa er opprettet. Opprett"
 
 #: listing_create.php:121
 msgid "another"
-msgstr ""
+msgstr "en ny?"
 
-#: listing_create.php:123
-#: listing_edit.php:142
+#: listing_create.php:123 listing_edit.php:142
 msgid "There was an error saving the listing."
-msgstr ""
+msgstr "Det oppstod en feil ved lagring av oppføringa."
 
-#: listing_delete.php:13
-#: listing_delete.php:59
-#: listings_found.php:11
-#: listings.php:10
-#: listing_to_edit.php:29
+#: listing_delete.php:13 listing_delete.php:59 listings_found.php:11
+#: listings.php:10 listing_to_edit.php:29
 msgid " listings"
-msgstr ""
+msgstr "oppføringer"
 
 #: listing_delete.php:55
 msgid "You don't"
-msgstr ""
+msgstr "Du har"
 
 #: listing_delete.php:57
 msgid "doesn't"
-msgstr ""
+msgstr "har"
 
 #: listing_delete.php:59
 msgid "currently have any"
-msgstr ""
+msgstr "for tida ingen"
 
 #: listing_delete.php:83
 msgid "1 listing deleted"
-msgstr ""
+msgstr "1 oppføring slettet"
 
 #: listing_delete.php:85
 msgid "listings deleted"
-msgstr ""
+msgstr "oppføringer slettet"
 
 #: listing_delete.php:87
 msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
+"Det oppstod en feil ved sletting av oppføringene. Husket du å krysse av?"
 
 #: listing_edit.php:55
 msgid "Should this listing be made temporarily inactive?"
-msgstr ""
+msgstr "Skal denne oppføringa deaktiveres midlertidig?"
 
 #: listing_edit.php:56
 msgid "Reactivates"
-msgstr ""
+msgstr "Reaktiverer"
 
-#: listing_edit.php:59
-#: member_contact_edit.php:69
-#: member_edit.php:93
+#: listing_edit.php:59 member_contact_edit.php:69 member_edit.php:93
 msgid "Update"
-msgstr ""
+msgstr "Oppdater"
 
 #: listing_edit.php:140
 msgid "Listing changes saved. Do you want to"
-msgstr ""
+msgstr "Endringene av oppføringa er lagret. Vil du"
 
 #: listing_edit.php:140
 msgid "edit"
-msgstr ""
+msgstr "redigere"
 
 #: listing_edit.php:140
 msgid "another listing?"
-msgstr ""
+msgstr "ei annen oppføring?"
 
 #: listings_create.php:4
 msgid "Create Listings"
-msgstr ""
+msgstr "Opprett oppføringer"
 
-#: listings_create.php:8
-#: listings_menu.php:8
-#: member_profile_all_in_one.php:16
-#: classes/class.directory.php:52
-#: classes/class.member.php:771
+#: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
+#: classes/class.directory.php:52 classes/class.member.php:771
 msgid "Offered Listings"
-msgstr ""
+msgstr "Til salgs-oppføringer"
 
-#: listings_create.php:9
-#: listings_menu.php:9
-#: member_profile_all_in_one.php:18
+#: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
 msgid "Create New Offer Listing"
-msgstr ""
+msgstr "Lag ny til salgs-oppføring"
 
-#: listings_create.php:10
-#: listings_menu.php:10
+#: listings_create.php:10 listings_menu.php:10
 #: member_profile_all_in_one.php:19
 msgid "Edit Offered Listings"
-msgstr ""
+msgstr "Rediger oppføringer under \"Til salgs\""
 
-#: listings_create.php:11
-#: listings_menu.php:11
+#: listings_create.php:11 listings_menu.php:11
 #: member_profile_all_in_one.php:20
 msgid "Delete Offered Listings"
-msgstr ""
+msgstr "Slett oppføringer under \"Til salgs\""
 
-#: listings_create.php:13
-#: listings_menu.php:13
-#: member_profile_all_in_one.php:22
-#: classes/class.directory.php:55
+#: listings_create.php:13 listings_menu.php:13
+#: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:773
 msgid "Wanted Listings"
-msgstr ""
+msgstr "Ønskes kjøpt"
 
-#: listings_create.php:14
-#: listings_menu.php:14
+#: listings_create.php:14 listings_menu.php:14
 #: member_profile_all_in_one.php:24
 msgid "Create New Want Listing"
-msgstr ""
+msgstr "Opprett \"Ønskes kjøpt\"-oppføring"
 
-#: listings_create.php:15
-#: listings_menu.php:15
+#: listings_create.php:15 listings_menu.php:15
 #: member_profile_all_in_one.php:25
 msgid "Edit Wanted Listings"
-msgstr ""
+msgstr "Rediger oppføringer under \"Ønskes kjøpt\""
 
-#: listings_create.php:16
-#: listings_menu.php:16
+#: listings_create.php:16 listings_menu.php:16
 #: member_profile_all_in_one.php:26
 msgid "Delete Wanted Listings"
-msgstr ""
+msgstr "Slett oppføringer under \"Ønskes kjøpt\""
 
-#: listings_menu.php:4
-#: includes/inc.config.php:169
+#: listings_menu.php:4 includes/inc.config.php:169
 msgid "Update Listings"
-msgstr ""
+msgstr "Oppdater oppføringer"
 
 #: listings_menu.php:19
 msgid "Going on Holiday"
-msgstr ""
+msgstr "På ferie"
 
 #: listings.php:16
-msgid "Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click"
+msgid ""
+"Select the category and time frame to view and press Continue. Or to view "
+"all listings at once, just press Continue. If you would like to print or "
+"download the complete directory, click"
 msgstr ""
+"Velg kategorien og tidsrommet som skal vises og klikk Fortsett. Eller klikk "
+"Fortsett for å se alle oppføringene. Dersom du vil skrive ut eller laste ned "
+"hele katalogen, klikk"
 
-#: listings.php:16
-#: member_create.php:198
-#: news.php:22
-#: trades_pending.php:25
+# Text for hyperlink. Immediately follows "go" as in "go here"
+#: listings.php:16 member_create.php:198 news.php:22 trades_pending.php:25
 #: classes/class.member.php:107
 msgid "here"
-msgstr ""
+msgstr "hit"
 
 #: listings.php:20
 msgid "View All Categories"
-msgstr ""
+msgstr "Vis alle kategorier"
 
 #: listings.php:22
 msgid "New/updated in last"
-msgstr ""
+msgstr "Nytt/oppdatert siste "
 
 #: listings.php:23
 msgid "Time Frame"
-msgstr ""
+msgstr "Tidsrom"
 
 #: listings.php:23
 msgid "View All Listings"
-msgstr ""
+msgstr "Vis alle oppføringer"
 
 #: listings.php:23
 msgid "3 days"
-msgstr ""
+msgstr "3 dager"
 
-#: listings.php:23
-#: classes/class.member.php:782
+#: listings.php:23 classes/class.member.php:782
 msgid "week"
-msgstr ""
+msgstr "uke"
 
 #: listings.php:23
 msgid "2 weeks"
-msgstr ""
+msgstr "2 uker"
 
-#: listings.php:23
-#: classes/class.member.php:784
+#: listings.php:23 classes/class.member.php:784
 msgid "month"
-msgstr ""
+msgstr "måned"
 
 #: listings.php:23
 msgid "3 months"
-msgstr ""
+msgstr "3 måneder"
 
 #: listings.php:26
 msgid "Keyword"
-msgstr ""
+msgstr "Stikkord"
 
-#: listings.php:29
-#: pages.php:10
+#: listings.php:29 pages.php:10
 msgid "Continue"
-msgstr ""
+msgstr "Fortsett"
 
 #: listing_to_edit.php:10
 msgid "Choose the"
-msgstr ""
+msgstr "Velg"
 
 #: listing_to_edit.php:10
 msgid "Listing to Edit"
-msgstr ""
+msgstr "Oppføring som skal redigeres"
 
 #: listing_to_edit.php:29
 msgid "You don't currently have any"
-msgstr ""
+msgstr "Du har for tida ingen"
 
 #: login.php:32
 msgid "Please enter a user name to log in."
-msgstr ""
+msgstr "Vennligst skriv inn et brukernavn for å logge inn."
 
 #: login.php:34
-msgid "Please enter a password to log on with this account.  If you've forgotten your password, you can request a new one."
+msgid ""
+"Please enter a password to log on with this account.  If you've forgotten "
+"your password, you can request a new one."
 msgstr ""
+"Vennligst skriv et passord for å logge på denne kontoen. Har du glemt "
+"passordet, kan du be om nytt."
 
 #: login_redirect.php:5
 msgid "In order to access this section of the site, you need to be logged on."
-msgstr ""
+msgstr "For å se denne delen av nettstedet må du logge inn."
 
 #: login_redirect.php:5
 msgid "If you already have an account, please log in below"
-msgstr ""
+msgstr "Dersom du allerede har konto, kan du logge inn under"
 
-#: login_redirect.php:5
-#: classes/class.member.php:196
+#: login_redirect.php:5 classes/class.member.php:196
 #: classes/class.member.php:209
 msgid "Login"
-msgstr ""
+msgstr "Logg inn"
 
 #: login_redirect.php:5
 msgid "If you don't have an account, please"
-msgstr ""
+msgstr "Har du ikke konto, vennligst"
 
-#: login_redirect.php:5
-#: password_reset.php:19
+#: login_redirect.php:5 password_reset.php:19
 msgid "contact"
-msgstr ""
+msgstr "kontakt"
 
 #: login_redirect.php:5
 msgid "us to join"
-msgstr ""
+msgstr "oss for å melde deg inn"
 
 #: manage_restrictions.php:13
-msgid "Restrictions can be placed on accounts if you feel they are over-using the services of others and not offering enough back in return"
+msgid ""
+"Restrictions can be placed on accounts if you feel they are over-using the "
+"services of others and not offering enough back in return"
 msgstr ""
+"Du kan legge begrensninger på kontoer som overforbruker andres tjenester og "
+"ikke tilbyr nok igjen"
 
-#: manage_restrictions.php:55
-#: manage_restrictions.php:80
+#: manage_restrictions.php:55 manage_restrictions.php:80
 msgid "Error: No member ID specified."
-msgstr ""
+msgstr "Feil: Brukernavn ikke oppgitt"
 
 #: manage_restrictions.php:66
 msgid "Error: could not impose restrictions on this account"
-msgstr ""
+msgstr "Feil: Kunne ikke legge begrensninger på kontoen"
 
-#: manage_restrictions.php:66
-#: manage_restrictions.php:91
+#: manage_restrictions.php:66 manage_restrictions.php:91
 msgid "MySQL Said"
-msgstr ""
+msgstr "MySQL sa"
 
 #: manage_restrictions.php:68
 msgid "Restrictions have been imposed on member id"
-msgstr ""
+msgstr "Begrensningene er lagt på brukernavn"
 
 #: manage_restrictions.php:70
 msgid "Access Restricted on"
-msgstr ""
+msgstr "Tilgangen er sperret til"
 
 #: manage_restrictions.php:91
 msgid "Error: could not lift restrictions on this account"
-msgstr ""
+msgstr "Feil: Kunne ikke fjerne begrensningene på denne kontoen"
 
 #: manage_restrictions.php:93
 msgid "Restrictions have been lifted on member id"
-msgstr ""
+msgstr "Begrensningene er fjernet fra brukernavn"
 
 #: manage_restrictions.php:95
 msgid "Account Restrictions lifted on"
-msgstr ""
+msgstr "Kontobegrensninger er fjernet fra"
 
 #: manage_restrictions.php:107
 msgid "Non-Restricted"
-msgstr ""
+msgstr "Ubegrenset"
 
 #: manage_restrictions.php:116
 msgid "Impose Restriction"
-msgstr ""
+msgstr "Legg begrensning"
 
 #: manage_restrictions.php:118
 msgid "Restricted"
-msgstr ""
+msgstr "Begrenset"
 
 #: manage_restrictions.php:127
 msgid "Lift Restriction"
-msgstr ""
+msgstr "Fjern begrensning"
 
 #: member_contact_choose.php:4
 msgid "Choose Joint Member"
-msgstr ""
+msgstr "Velg husstandsmedlem"
 
-#: member_contact_choose.php:9
-#: classes/class.member.php:373
+#: member_contact_choose.php:9 classes/class.member.php:373
 msgid "Which Joint Member?"
-msgstr ""
+msgstr "Hvilket husstandsmedlem?"
 
 #: member_contact_create.php:13
 msgid "Add Joint Member"
-msgstr ""
+msgstr "Legg til husstandsmedlem"
 
 #: member_contact_create.php:24
 msgid "Choose Member to Add Contact to"
-msgstr ""
+msgstr "Velg medlem som kontaktperson skal knyttes til"
 
-#: member_contact_create.php:32
-#: member_contact_edit.php:29
-#: member_create.php:39
-#: member_directory.php:26
-#: member_edit.php:49
+#: member_contact_create.php:32 member_contact_edit.php:29
+#: member_create.php:39 member_directory.php:26 member_edit.php:49
 msgid "First Name"
-msgstr ""
+msgstr "Fornavn"
 
-#: member_contact_create.php:33
-#: member_contact_edit.php:30
-#: member_create.php:40
-#: member_edit.php:50
+#: member_contact_create.php:33 member_contact_edit.php:30
+#: member_create.php:40 member_edit.php:50
 msgid "Middle Name"
-msgstr ""
+msgstr "Mellomnavn"
 
-#: member_contact_create.php:34
-#: member_contact_edit.php:31
-#: member_create.php:41
-#: member_directory.php:27
-#: member_edit.php:51
+#: member_contact_create.php:34 member_contact_edit.php:31
+#: member_create.php:41 member_directory.php:27 member_edit.php:51
 msgid "Last Name"
-msgstr ""
+msgstr "Etternavn"
 
-#: member_contact_create.php:39
-#: member_contact_edit.php:39
-#: member_create.php:46
-#: member_edit.php:34
+#: member_contact_create.php:39 member_contact_edit.php:39
+#: member_create.php:46 member_edit.php:34
 msgid "Date of Birth"
-msgstr ""
+msgstr "Fødselsdato"
 
-#: member_contact_create.php:40
-#: member_contact_edit.php:40
-#: member_create.php:47
-#: member_edit.php:35
+#: member_contact_create.php:40 member_contact_edit.php:40
+#: member_create.php:47 member_edit.php:35
 msgid "Mother's Maiden Name"
-msgstr ""
+msgstr "Mors pikenavn"
 
-#: member_contact_create.php:42
-#: member_contact_edit.php:44
+#: member_contact_create.php:42 member_contact_edit.php:44
 msgid "List this Person's Contact Information in the Directory?"
-msgstr ""
+msgstr "Vis kontaktinfo til denne personen i medlemsregisteret?"
 
-#: member_contact_create.php:43
-#: member_contact_edit.php:45
-#: member_create.php:50
-#: member_edit.php:54
+#: member_contact_create.php:43 member_contact_edit.php:45
+#: member_create.php:50 member_edit.php:54
 msgid "Email Address"
-msgstr ""
+msgstr "E-postadresse"
 
-#: member_contact_create.php:44
-#: member_contact_edit.php:46
-#: member_create.php:51
-#: member_edit.php:55
-#: classes/class.member.php:533
+#: member_contact_create.php:44 member_contact_edit.php:46
+#: member_create.php:51 member_edit.php:55 classes/class.member.php:533
 msgid "Primary Phone"
-msgstr ""
+msgstr "Hovedtelefonnummer"
 
-#: member_contact_create.php:45
-#: member_contact_edit.php:47
-#: member_create.php:52
-#: member_edit.php:56
-#: classes/class.member.php:535
-#: classes/class.member.php:570
+#: member_contact_create.php:45 member_contact_edit.php:47
+#: member_create.php:52 member_edit.php:56 classes/class.member.php:535
 msgid "Secondary Phone"
-msgstr ""
+msgstr "Annet telefonnummer"
 
-#: member_contact_create.php:46
-#: member_contact_edit.php:48
-#: member_create.php:53
-#: member_edit.php:57
+#: member_contact_create.php:46 member_contact_edit.php:48
+#: member_create.php:53 member_edit.php:57
 msgid "Fax Number"
-msgstr ""
+msgstr "Faksnummer"
 
-#: member_contact_create.php:62
-#: member_contact_edit.php:64
-#: member_create.php:77
-#: member_edit.php:80
+#: member_contact_create.php:62 member_contact_edit.php:64
+#: member_create.php:77 member_edit.php:80
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: member_contact_create.php:64
 msgid "Create Contact"
-msgstr ""
+msgstr "Opprett kontaktperson"
 
-#: member_contact_create.php:69
-#: member_create.php:85
-#: member_edit.php:99
+#: member_contact_create.php:69 member_create.php:85 member_edit.php:99
 #: password_change.php:29
 msgid "Password not long enough"
-msgstr ""
+msgstr "Passordet er for kort"
 
-#: member_contact_create.php:70
-#: member_contact_edit.php:74
-#: member_create.php:86
-#: member_edit.php:100
+#: member_contact_create.php:70 member_contact_edit.php:74
+#: member_create.php:86 member_edit.php:100
 msgid "Enter a first name"
-msgstr ""
+msgstr "Skriv inn fornavn"
 
-#: member_contact_create.php:71
-#: member_contact_edit.php:75
-#: member_create.php:87
-#: member_edit.php:101
+#: member_contact_create.php:71 member_contact_edit.php:75
+#: member_create.php:87 member_edit.php:101
 msgid "Enter a last name"
-msgstr ""
+msgstr "Skriv inn etternavn"
 
-#: member_contact_create.php:72
-#: member_contact_create.php:73
-#: member_contact_create.php:74
-#: member_contact_edit.php:80
-#: member_contact_edit.php:81
-#: member_contact_edit.php:82
-#: member_create.php:88
-#: member_create.php:89
-#: member_create.php:90
-#: member_edit.php:102
-#: member_edit.php:103
-#: member_edit.php:104
+#: member_contact_create.php:72 member_contact_create.php:73
+#: member_contact_create.php:74 member_contact_edit.php:80
+#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:88
+#: member_create.php:89 member_create.php:90 member_edit.php:102
+#: member_edit.php:103 member_edit.php:104
 msgid "Enter a"
-msgstr ""
+msgstr "Skriv inn et"
 
-#: member_contact_create.php:75
-#: member_contact_edit.php:83
-#: member_create.php:91
-#: member_edit.php:105
+#: member_contact_create.php:75 member_contact_edit.php:83
+#: member_create.php:91 member_edit.php:105
 msgid "Enter a country"
-msgstr ""
+msgstr "Skriv inn land"
 
-#: member_contact_create.php:78
-#: member_contact_edit.php:77
-#: member_create.php:107
-#: member_edit.php:114
+#: member_contact_create.php:78 member_contact_edit.php:77
+#: member_create.php:107 member_edit.php:114
 msgid "Birth date cannot be in the future"
-msgstr ""
+msgstr "Fødseldato kan ikke være i framtida"
 
-#: member_contact_create.php:80
-#: member_contact_edit.php:79
-#: member_create.php:109
-#: member_edit.php:116
+#: member_contact_create.php:80 member_contact_edit.php:79
+#: member_create.php:109 member_edit.php:116
 msgid "A little young, don't you think?"
-msgstr ""
+msgstr "Litt vel ung, ikke sant?"
 
-#: member_contact_create.php:82
-#: member_contact_edit.php:85
-#: member_create.php:111
-#: member_edit.php:118
+#: member_contact_create.php:82 member_contact_edit.php:85
+#: member_create.php:111 member_edit.php:118
 msgid "Not a valid email address"
-msgstr ""
+msgstr "Ikke en gyldig e-postadresse"
 
-#: member_contact_create.php:84
-#: member_contact_create.php:85
-#: member_contact_create.php:86
-#: member_contact_edit.php:87
-#: member_contact_edit.php:88
-#: member_contact_edit.php:89
-#: member_create.php:113
-#: member_create.php:114
-#: member_create.php:115
-#: member_edit.php:120
-#: member_edit.php:121
-#: member_edit.php:122
+#: member_contact_create.php:84 member_contact_create.php:85
+#: member_contact_create.php:86 member_contact_edit.php:87
+#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:113
+#: member_create.php:114 member_create.php:115 member_edit.php:120
+#: member_edit.php:121 member_edit.php:122
 msgid "Phone format invalid"
-msgstr ""
+msgstr "Ugyldig telefonnummer"
 
 #: member_contact_create.php:150
 msgid "Joint member created. Would you like to"
-msgstr ""
+msgstr "Husstandsmedlemmet er opprettet. Vil du"
 
 #: member_contact_create.php:150
 msgid "add another"
-msgstr ""
+msgstr "opprette enda en?"
 
 #: member_contact_create.php:152
 msgid "There was an error saving the joint member."
-msgstr ""
+msgstr "Det oppstod en feil ved lagring av husstandsmedlemmet."
 
 #: member_contact_delete.php:4
 msgid "Delete Joint Member"
-msgstr ""
+msgstr "Slett husstandsmedlem"
 
 #: member_contact_delete.php:20
 msgid "Are you sure you want to permanently delete"
-msgstr ""
+msgstr "Er du sikker på at du vil varig slette "
 
 #: member_contact_delete.php:35
 msgid "Joint member deleted."
-msgstr ""
+msgstr "Husstandsmedlemmet er slettet."
 
-#: member_contact_delete.php:37
-#: classes/class.person.php:156
+#: member_contact_delete.php:37 classes/class.person.php:156
 msgid "There was an error deleting the joint member."
-msgstr ""
+msgstr "Det oppstod en feil ved sletting av husstandsmedlemmet."
 
-#: member_contact_edit.php:25
-#: member_profile_all_in_one.php:14
+#: member_contact_edit.php:25 member_profile_all_in_one.php:14
 #: member_profile_all_in_one.php:38
 msgid "Edit a Joint Member"
-msgstr ""
+msgstr "Endre husstandsmedlem"
 
 #: member_contact_edit.php:168
 msgid "There was an error saving the person."
-msgstr ""
+msgstr "Det oppstod en feil ved lagring av kontaktpersonen."
 
 #: member_contact_to_edit.php:8
 msgid "Choose Joint Member to Edit"
-msgstr ""
+msgstr "Vel husstandsmedlem som skal redigeres"
 
 #: member_contact_to_edit.php:11
 msgid "Choose Member and Person"
-msgstr ""
+msgstr "Velg medlem og kontaktperson"
 
 #: member_create.php:14
 msgid "Register New Member"
-msgstr ""
+msgstr "Registrer nytt medlem"
 
-#: member_create.php:21
-#: member_edit.php:24
+#: member_create.php:21 member_edit.php:24
 msgid "Member Role"
-msgstr ""
+msgstr "Medlemsrolle"
 
-#: member_create.php:23
-#: member_edit.php:26
+#: member_create.php:23 member_edit.php:26
 msgid "Single"
-msgstr ""
+msgstr "Enslig"
 
-#: member_create.php:23
-#: member_edit.php:26
+#: member_create.php:23 member_edit.php:26
 msgid "Joint"
-msgstr ""
+msgstr "Husstandsmedlem"
 
-#: member_create.php:23
-#: member_edit.php:26
-msgid "Household"
-msgstr ""
-
-#: member_create.php:23
-#: member_edit.php:26
+#: member_create.php:23 member_edit.php:26
 msgid "Organization"
-msgstr ""
+msgstr "Organisasjon"
 
-#: member_create.php:23
-#: member_edit.php:26
+#: member_create.php:23 member_edit.php:26
 msgid "Business"
-msgstr ""
+msgstr "Bedrift"
 
-#: member_create.php:23
-#: member_edit.php:26
+#: member_create.php:23 member_edit.php:26
 msgid "Fund"
-msgstr ""
+msgstr "Fond"
 
-#: member_create.php:24
-#: member_edit.php:27
+#: member_create.php:24 member_edit.php:27
 msgid "Account Type"
-msgstr ""
+msgstr "Kontotype"
 
-#: member_create.php:27
-#: member_edit.php:28
+#: member_create.php:27 member_edit.php:28
 msgid "Administrator Note"
-msgstr ""
+msgstr "Merknad for administrator"
 
-#: member_create.php:35
-#: member_edit.php:32
-#: report_no_login.php:14
+#: member_create.php:35 member_edit.php:32 report_no_login.php:14
 msgid "Join Date"
-msgstr ""
+msgstr "Innmeldingsdato"
 
 #: member_create.php:44
 msgid "The next two fields may help us recover your password if you forget it."
 msgstr ""
+"De neste to feltene kan hjelpe oss å nullstille passordet dersom du glemmer "
+"det."
 
-#: member_create.php:55
-#: member_edit.php:59
+#: member_create.php:55 member_edit.php:59
 msgid "Never"
-msgstr ""
+msgstr "Aldri"
 
-#: member_create.php:55
-#: member_edit.php:59
+#: member_create.php:55 member_edit.php:59
 msgid "Daily"
-msgstr ""
+msgstr "Daglig"
 
-#: member_create.php:55
-#: member_edit.php:59
+#: member_create.php:55 member_edit.php:59
 msgid "Weekly"
-msgstr ""
+msgstr "Ukentlig"
 
-#: member_create.php:55
-#: member_edit.php:59
+#: member_create.php:55 member_edit.php:59
 msgid "Monthly"
-msgstr ""
+msgstr "Månedlig"
 
-#: member_create.php:58
-#: member_edit.php:37
+#: member_create.php:58 member_edit.php:37
 msgid "How frequently should the member receive email updates?"
-msgstr ""
+msgstr "Hvor ofte skal medlemmet få nyheter på e-post?"
 
 #: member_create.php:60
 msgid "How frequently do you wish to receive email updates?"
-msgstr ""
+msgstr "Hvor ofte ønsker du  å motta nyheter på e-post?"
 
 #: member_create.php:79
 msgid "Create Member"
-msgstr ""
+msgstr "Opprett medlem"
 
-#: member_create.php:84
-#: member_edit.php:98
-#: password_reset.php:10
+#: member_create.php:84 member_edit.php:98 password_reset.php:10
 msgid "Enter your Member ID"
-msgstr ""
+msgstr "Skriv in brukernavnet"
 
 #: member_create.php:94
 msgid "This ID is already being used"
-msgstr ""
+msgstr "Dette brukernavnet er opptatt"
 
 #: member_create.php:96
 msgid "Special characters are not allowed"
-msgstr ""
+msgstr "Spesialtegn er ikke tillatt"
 
 #: member_create.php:98
 msgid "Password must contain at least one number"
-msgstr ""
+msgstr "Passordet må inneholde minst ett tall"
 
 #: member_create.php:100
-msgid "You have the right idea, but it's best not to use apostraphes or backslashes in passwords"
+msgid ""
+"You have the right idea, but it's best not to use apostraphes or backslashes "
+"in passwords"
 msgstr ""
+"Du tenker riktig, men det er best å ikke bruke apostrof eller omvendt "
+"skråstrek i passord"
 
-#: member_create.php:103
-#: member_edit.php:108
+#: member_create.php:103 member_edit.php:108
 msgid "You cannot assign a higher level of access than you have"
-msgstr ""
+msgstr "Du kan ikke gi et høyere tilgangsnivå enn du selv har"
 
-#: member_create.php:106
-#: member_edit.php:113
+#: member_create.php:106 member_edit.php:113
 msgid "Join date cannot be in the future"
-msgstr ""
+msgstr "Innmeldingsdato kan ikke være i framtida"
 
-#: member_create.php:198
-#: member_create.php:202
+#: member_create.php:198 member_create.php:202
 msgid "Member created"
-msgstr ""
+msgstr "Medlem opprettet"
 
 #: member_create.php:198
 msgid "Click"
-msgstr ""
+msgstr "Klikk på"
 
 #: member_create.php:198
 msgid "to create another member account"
-msgstr ""
+msgstr "for å opprette enda en medlemskonto"
 
 #: member_create.php:198
-msgid "Or if you would like to add a joint member to this account (such as a spouse), click"
+msgid ""
+"Or if you would like to add a joint member to this account (such as a "
+"spouse), click"
 msgstr ""
+"Eller hvis du vil legge et husstandsmedlem (for eksempel en ektefelle) til "
+"denne kontoen, klikk på"
 
 #: member_create.php:200
-msgid "Since the new member does not have an email address, he/she needs to be notified of the member id"
+msgid ""
+"Since the new member does not have an email address, he/she needs to be "
+"notified of the member id"
 msgstr ""
+"Siden det nye medlemmet ikke har e-postadresse, må han/hun gjøres oppmerksom "
+"på brukernavnet"
 
-#: member_create.php:200
-#: member_create.php:208
+#: member_create.php:200 member_create.php:208
 msgid "and password"
-msgstr ""
+msgstr "og passordet"
 
 #: member_create.php:206
 msgid "An email has been sent to"
-msgstr ""
+msgstr "E-post er blitt sendt til"
 
 #: member_create.php:206
 msgid "containing the new user id and password"
-msgstr ""
+msgstr "med det nye brukernavnet og passordet"
 
 #: member_create.php:208
-msgid "An attempt to email the new member information failed.  This is most likely due to a technical problem.  You may want to contact your administrator at"
+msgid ""
+"An attempt to email the new member information failed.  This is most likely "
+"due to a technical problem.  You may want to contact your administrator at"
 msgstr ""
+"Det oppstod en feil ved sending av de nye medlemsopplysningene per e-post. "
+"Dette er sannsynligvis et teknisk problem. Det er kanskje best å kontakte "
+"administratoren på"
 
 #: member_create.php:208
-msgid "Since the email failed, the new member needs to be notified of the member id"
+msgid ""
+"Since the email failed, the new member needs to be notified of the member id"
 msgstr ""
+"Siden e-postsendinga gikk galt, må det nye medlemmet gjøres oppmerksom på "
+"brukernavnet"
 
-#: member_create.php:211
-#: member_edit.php:259
+#: member_create.php:211 member_edit.php:259
 msgid "There was an error saving the member."
-msgstr ""
+msgstr "Det oppstod en feil ved lagring av medlemmet."
 
 #: member_directory.php:5
 msgid "Member Directory"
-msgstr ""
+msgstr "Medlemsliste"
 
 #: member_directory.php:16
 msgid "Name (all or part)"
-msgstr ""
+msgstr "Navn (hele eller deler)"
 
 #: member_directory.php:17
 msgid "Location (e.g."
-msgstr ""
+msgstr "Sted (f. eks."
 
 #: member_directory.php:24
 msgid "Order by"
-msgstr ""
+msgstr "Sorter på"
 
 #: member_directory.php:25
 msgid "Membership No."
-msgstr ""
+msgstr "Medlemsnummer"
 
 #: member_directory.php:28
 msgid "Neighbourhood"
-msgstr ""
+msgstr "Nabolag"
 
 #: member_directory.php:29
 msgid "Town"
-msgstr ""
+msgstr "Sted"
 
 #: member_directory.php:30
 msgid "Postal code"
-msgstr ""
+msgstr "Postnummer"
 
 #: member_directory.php:33
 msgid "Search"
-msgstr ""
+msgstr "Søk"
 
 #: member_directory.php:47
 msgid "Balance"
-msgstr ""
+msgstr "Saldo"
 
 #: member_directory.php:187
 msgid "Total of"
-msgstr ""
+msgstr "Totalt"
 
 #: member_directory.php:187
 msgid "active accounts"
-msgstr ""
+msgstr "aktive kontoer"
 
 #: member_edit.php:38
 msgid "Should the member confirm any payments made to him/her?"
-msgstr ""
+msgstr "Skal medlemmet godkjenne innbetalinger?"
 
 #: member_edit.php:41
 msgid "Edit Personal Profile"
-msgstr ""
+msgstr "Rediger profil"
 
 #: member_edit.php:45
 msgid "How often would you like to receive email updates?"
-msgstr ""
+msgstr "Hvor ofte vil du motta nyheter på e-post?"
 
 #: member_edit.php:46
 msgid "Do you wish to confirm payments that are made to you?"
-msgstr ""
+msgstr "Ønsker du at innbetalinger skal godkjennes av deg?"
 
 #: member_edit.php:62
 msgid "Automatically Accept Payments"
-msgstr ""
+msgstr "Godkjenn innbetalinger automatisk"
 
 #: member_edit.php:62
 msgid "Confirm Payments"
-msgstr ""
+msgstr "Godkjenn innbetalinger selv"
 
-#: member_edit.php:87
-#: classes/class.member.php:590
+#: member_edit.php:87 classes/class.member.php:590
 msgid "Age"
-msgstr ""
+msgstr "Alder"
 
-#: member_edit.php:88
-#: classes/class.member.php:592
+#: member_edit.php:88 classes/class.member.php:592
 msgid "Sex"
-msgstr ""
+msgstr "Kjønn"
 
-#: member_edit.php:89
-#: classes/class.member.php:594
+#: member_edit.php:89 classes/class.member.php:594
 msgid "About Me"
-msgstr ""
+msgstr "Om meg"
 
 #: member_edit.php:110
 msgid "You cannot modify the member role of a higher level account"
-msgstr ""
+msgstr "Du kan ikke endre medlemsrollen til en konto av høyere nivå"
 
-#: member_login.php:7
-#: member_profile_all_in_one.php:7
+#: member_login.php:7 member_profile_all_in_one.php:7
 #: includes/inc.config.php:257
 msgid "Welcome to "
-msgstr ""
+msgstr "Velkommen til"
 
 #: member_login.php:10
 msgid "hi"
-msgstr ""
+msgstr "hei"
 
 #: member_logout.php:7
 msgid "You are now logged out"
-msgstr ""
+msgstr "Du er nå utlogget"
 
 #: member_logout.php:8
-msgid "You can login at any time by clicking on the 'Login' link at the bottom of the left menu."
+msgid ""
+"You can login at any time by clicking on the 'Login' link at the bottom of "
+"the left menu."
 msgstr ""
+"Du kan logge inn igjen når som helst ved å klikke på pekeren 'Logg inn' på "
+"bunnen av menyen til venstre."
 
 #: member_photo_upload.php:23
 msgid "Upload/Replace photo for"
-msgstr ""
+msgstr "Last opp/bytt ut foto for"
 
 #: member_photo_upload.php:27
 msgid "Upload a Photo"
-msgstr ""
+msgstr "Last opp foto"
 
 #: member_photo_upload.php:39
 msgid "Replace Image"
-msgstr ""
+msgstr "Bytt ut bilde"
 
 #: member_photo_upload.php:42
 msgid "Upload Image"
-msgstr ""
+msgstr "Last opp bilde"
 
-#: member_photo_upload.php:47
-#: classes/class.uploads.php:138
+#: member_photo_upload.php:47 classes/class.uploads.php:138
 msgid "Select file to upload"
-msgstr ""
+msgstr "Velg fil til opplasting"
 
-#: member_photo_upload.php:62
-#: member_photo_upload.php:63
+#: member_photo_upload.php:62 member_photo_upload.php:63
 msgid "Size of uploaded file is 0 bytes."
-msgstr ""
+msgstr "Den opplastede fila er 0 byte."
 
-#: member_photo_upload.php:106
-#: newsletter_save.php:12
+#: member_photo_upload.php:106 newsletter_save.php:12
 msgid "File uploaded."
-msgstr ""
+msgstr "Fila er lastet opp."
 
 #: member_photo_upload.php:108
 msgid "There was a problem resizing the file."
-msgstr ""
+msgstr "Det oppstod et problem ved endring av størrelsen på fila."
 
-#: member_photo_upload.php:110
-#: newsletter_save.php:14
+#: member_photo_upload.php:110 newsletter_save.php:14
 msgid "There was a problem uploading the file."
-msgstr ""
+msgstr "Det oppstod et problem ved opplasting av fila."
 
 #: member_profile_all_in_one.php:8
-msgid "Please choose from the following options, or navigate using the buttons on the sidebar to the left."
+msgid ""
+"Please choose from the following options, or navigate using the buttons on "
+"the sidebar to the left."
 msgstr ""
+"Vennligst velg mellom følgende alternativer, eller velg fra menyen til "
+"venstre."
 
 #: member_profile_all_in_one.php:10
 msgid "Member Settings"
-msgstr ""
+msgstr "Medlemsinnstillinger"
 
-#: member_profile_all_in_one.php:11
-#: member_profile.php:8
+#: member_profile_all_in_one.php:11 member_profile.php:8
 msgid "Change My Password"
-msgstr ""
+msgstr "Endre passordet"
 
-#: member_profile_all_in_one.php:12
-#: member_profile.php:9
+#: member_profile_all_in_one.php:12 member_profile.php:9
 msgid "Edit My Personal Information"
-msgstr ""
+msgstr "Rediger personopplysninger"
 
-#: member_profile_all_in_one.php:13
-#: member_profile.php:14
+#: member_profile_all_in_one.php:13 member_profile.php:14
 msgid "Add a Joint Member to My Account"
-msgstr ""
+msgstr "Legg husstandsmedlem til kontoen"
 
 #: member_profile_all_in_one.php:17
 msgid "View Offered Listings"
-msgstr ""
+msgstr "Vis \"Til salgs\""
 
 #: member_profile_all_in_one.php:23
 msgid "View Wanted Listings"
-msgstr ""
+msgstr "Vis \"Ønskes kjøpt\""
 
-#: member_profile_all_in_one.php:34
-#: classes/class.page.php:30
+#: member_profile_all_in_one.php:34 classes/class.page.php:30
 msgid "Administration"
-msgstr ""
+msgstr "Administrasjon"
 
 #: member_profile_all_in_one.php:37
 msgid "Add a Joint Member to an Existing Account"
-msgstr ""
+msgstr "Legg husstandsmedlem til en konto"
 
-#: member_profile.php:4
-#: includes/inc.config.php:172
+#: member_profile.php:4 includes/inc.config.php:172
 #: includes/inc.config.php:214
 msgid "Member Profile"
-msgstr ""
+msgstr "Medlemsprofil"
 
 #: member_profile.php:12
 msgid "Upload/Change Photo of Myself"
-msgstr ""
+msgstr "Last opp/endre foto av meg"
 
 #: member_profile.php:18
 msgid "Manage Income Shares"
-msgstr ""
+msgstr "Endre på inntektsfordelinger"
 
 #: member_profile.php:21
 msgid "View My Profile (as others see it)"
-msgstr ""
+msgstr "Vis profilen min (slik andre ser den)"
 
-#: member_status_change.php:13
-#: member_status_change.php:29
+#: member_status_change.php:13 member_status_change.php:29
 msgid "Re-activate"
-msgstr ""
+msgstr "Reaktiver"
 
 #: member_status_change.php:23
-msgid "Are you sure you want to inactivate this member?  They will no longer be able to use this website, and all their listings will be inactivated as well."
+msgid ""
+"Are you sure you want to inactivate this member?  They will no longer be "
+"able to use this website, and all their listings will be inactivated as well."
 msgstr ""
+"Er du sikker på at du vil deaktivere dette medlemmet? Det vil ikke lenger "
+"kunne bruke nettstedet, og det vil få alle oppføringene sine slettet."
 
 #: member_status_change.php:27
-msgid "Are you sure you want to re-activate this member?  Their listings will need to be reactivated individually or new ones created."
+msgid ""
+"Are you sure you want to re-activate this member?  Their listings will need "
+"to be reactivated individually or new ones created."
 msgstr ""
+"Er du sikker på at du vil reaktivere dette medlemmet? Oppføringene vil måtte "
+"reaktiveres hver for seg, eller medlemmet kan lage nye selv."
 
 #: member_status_change.php:59
 msgid "Changes to member status saved."
-msgstr ""
+msgstr "Endring av medlemsstatus er lagret."
 
 #: member_status_change.php:61
 msgid "There was an error changing the member's status."
-msgstr ""
+msgstr "Det oppstod en feil ved endring av medlemmets status."
 
 #: member_summary.php:12
 msgid "Summary for"
-msgstr ""
+msgstr "Oppsumering for"
 
 #: member_summary.php:16
 msgid "CONTACT INFORMATION"
-msgstr ""
+msgstr "KONTAKTINFORMASJON"
 
 #: member_summary.php:19
 msgid "OFFERED LISTINGS"
-msgstr ""
+msgstr "TIL SALGS"
 
 #: member_summary.php:24
 msgid "WANTED LISTINGS"
-msgstr ""
+msgstr "ØNSKES KJØPT"
 
 #: member_to_edit.php:8
 msgid "Choose Member to Edit"
-msgstr ""
+msgstr "Velg medlem som skal redigeres"
 
 #: member_unlock.php:10
-msgid "This form will both unlock an account (if it is locked) and reset the member's password.  Then it will email the new password to the member.  You may want to make sure the member's email is still current."
+msgid ""
+"This form will both unlock an account (if it is locked) and reset the "
+"member's password.  Then it will email the new password to the member.  You "
+"may want to make sure the member's email is still current."
 msgstr ""
+"Dette skjemaet vil både låse opp en konto og nullstille passordet. Så vil "
+"det sende e-post til medlemmet med det nye passordet. Det kan være lurt å "
+"passe på at e-postadressa fortsatt er oppdatert."
 
 #: member_unlock.php:14
 msgid "Choose the Member Account"
-msgstr ""
+msgstr "Velg medlemskonto"
 
 #: member_unlock.php:17
 msgid "Unlock and Reset"
-msgstr ""
+msgstr "Lås opp og nullstill"
 
 #: member_unlock.php:18
 msgid "Send 'Password Reset' email"
-msgstr ""
+msgstr "Send e-post om at passordet er nullstilt"
 
 #: member_unlock.php:19
 msgid "Send 'Welcome' Email"
-msgstr ""
+msgstr "Send velkomst-e-post"
 
 #: member_unlock.php:36
 msgid "This member account had been locked due to"
-msgstr ""
+msgstr "Medlemskontoen har blitt låst på grunn av"
 
 #: member_unlock.php:36
 msgid "consecutive login failures."
-msgstr ""
+msgstr "påfølgende innloggingsfeil."
 
 #: member_unlock.php:36
-msgid "It has been unlocked.  If the number of attempts is more than 10 or 20,you may want to contact your administrator at"
+msgid ""
+"It has been unlocked.  If the number of attempts is more than 10 or 20,you "
+"may want to contact your administrator at"
 msgstr ""
+"Den har blitt låst opp. Dersom antallet forsøk er høyere enn 10 eller 20 kan "
+"det være lurt å kontakte administrator på"
 
 #: member_unlock.php:36
 msgid "because it could indicate someone is trying to hack into the system."
-msgstr ""
+msgstr "fordi det kan tyde på at noen prøver å bryte seg inn."
 
 #: member_unlock.php:43
 msgid "The password has been reset"
-msgstr ""
+msgstr "Passordet har blitt nullstilt"
 
-#: member_unlock.php:52
-#: password_reset.php:39
+#: member_unlock.php:50 password_reset.php:39
 msgid "New Password"
-msgstr ""
+msgstr "Nytt passord"
 
 #: member_unlock.php:54
-msgid "Password Reset"
+msgid ""
+"and a 'Password Reset' email has been sent to the member's email address"
 msgstr ""
+"og en e-post om nullstilt passord har blitt sent til e-postadressa til "
+"medlemmet"
 
-#: member_unlock.php:58
-msgid "and a 'Password Reset' email has been sent to the member's email address"
+#: member_unlock.php:56 password_reset.php:43
+msgid ""
+"However, the attempt to email the new password failed.  This is most likely "
+"due to a technical problem.  Contact your administrator at"
 msgstr ""
-
-#: member_unlock.php:60
-#: password_reset.php:43
-msgid "However, the attempt to email the new password failed.  This is most likely due to a technical problem.  Contact your administrator at"
-msgstr ""
+"Dessverre har det ikke lykkes å sende e-post med det nye passordet. Dette er "
+"sannsynligvis på grunn av et teknisk problem. Kontakt administratoren på"
 
 #: mysql_backup.php:218
 msgid "Use this tool to backup your MySQL Database.<p>"
-msgstr ""
+msgstr "Bruk dette verktøyet for å ta sikkerhetskopi av MySQL-databasen.<p>"
 
 #: mysql_backup.php:219
 msgid "Backup Now"
-msgstr ""
+msgstr "Ta sikkerhetskopi nå"
 
-#: news_create.php:23
-#: news_edit.php:28
+#: news_create.php:23 news_edit.php:28
 msgid "Sequence"
-msgstr ""
+msgstr "Plassering"
 
-#: news_create.php:33
-#: news_edit.php:38
+#: news_create.php:33 news_edit.php:38
 msgid "Enter a description"
-msgstr ""
+msgstr "Skriv tekst"
 
 #: news_create.php:61
 msgid "News item saved."
-msgstr ""
+msgstr "Nyhetssak er lagret."
 
-#: news_create.php:63
-#: news_edit.php:72
+#: news_create.php:63 news_edit.php:72
 msgid "There was a problem saving the news item."
-msgstr ""
+msgstr "Det oppstod et problem ved lagring av nyhetssaka."
 
 #: newsletter_delete.php:24
 msgid "There are no newsletters in the system."
-msgstr ""
+msgstr "Det er ingen nyhetsbrev i systemet."
 
 #: newsletter_delete.php:50
 msgid "1 newsletter deleted."
-msgstr ""
+msgstr "1 nyhetsbrev er slettet."
 
 #: newsletter_delete.php:52
 msgid "newsletters deleted."
-msgstr ""
+msgstr "nyhetsbrev er slettet."
 
 #: newsletter_delete.php:54
 msgid "There was an error deleting the newsletters. Did you check any boxes?"
 msgstr ""
+"Det oppstod en feil ved sletting av nyhetsbreva. Husket du å krysse av for "
+"noe?"
 
 #: newsletter_save.php:8
 msgid "Newsletter Uploaded"
-msgstr ""
+msgstr "Nyhetsbrevet er lastet opp"
 
 #: newsletters.php:6
 msgid "Newsletters"
-msgstr ""
+msgstr "Nyhetsbrev"
 
 #: newsletters.php:18
 msgid "Latest Newsletter"
-msgstr ""
+msgstr "Siste nyhetsbrev"
 
 #: newsletters.php:21
 msgid "Archives"
-msgstr ""
+msgstr "Arkiv"
 
 #: newsletters.php:29
 msgid "No newsletters have yet been posted."
-msgstr ""
+msgstr "Ingen nyhetsbrev har blitt lagt ut."
 
-#: news.php:17
-#: news_to_edit.php:17
+#: news.php:17 news_to_edit.php:17
 msgid "There are no current news items"
-msgstr ""
+msgstr "Intet nytt."
 
 #: news.php:22
 msgid "To read the latest"
-msgstr ""
+msgstr "For å lese det siste"
 
 #: news.php:22
 msgid "newsletter, go"
-msgstr ""
+msgstr "nyhetsbrevet"
 
 #: news_to_edit.php:5
 msgid "Choose Item to Edit"
-msgstr ""
+msgstr "Velg sak som skal redigeres"
 
 #: news_to_edit.php:13
 msgid "Which News Item?"
-msgstr ""
+msgstr "Hvilken nyhetssak_"
 
 #: pages.php:10
 msgid "Session Destroyed"
-msgstr ""
+msgstr "Økta er slettet"
 
 #: pages.php:13
 msgid "Really Destroy Session?"
-msgstr ""
+msgstr "Skal økta virkelig slettes?"
 
 #: pages.php:40
 msgid "Oops, you have requested a non-existant page."
-msgstr ""
+msgstr "Opps, du har bedt om ei side som ikke finnes."
 
 #: password_change.php:13
 msgid "Change Password for"
-msgstr ""
+msgstr "Endre passord for"
 
-#: password_change.php:15
-#: password_change.php:35
-msgid "For your security, passwords must be at least 7 characters long and include at least one number."
+#: password_change.php:15 password_change.php:35
+msgid ""
+"For your security, passwords must be at least 7 characters long and include "
+"at least one number."
 msgstr ""
+"For din egen sikkerhet må passordet ha minst 7 tegn, og ett av dem må være "
+"et tall."
 
 #: password_change.php:18
 msgid "Old Password"
-msgstr ""
+msgstr "Gammelt passord"
 
 #: password_change.php:19
 msgid "Choose a New Password"
-msgstr ""
+msgstr "Velg nytt passord"
 
 #: password_change.php:20
 msgid "Repeat the New Password"
-msgstr ""
+msgstr "Gjenta det nye passordet"
 
 #: password_change.php:21
 msgid "Change Password"
-msgstr ""
+msgstr "Endre passord"
 
 #: password_change.php:26
 msgid "Enter your current password"
-msgstr ""
+msgstr "Skriv inn ditt nåværende passord"
 
 #: password_change.php:27
 msgid "Enter a new password"
-msgstr ""
+msgstr "Skriv inn nytt passord"
 
 #: password_change.php:28
 msgid "You must re-enter the new password"
-msgstr ""
+msgstr "Du må skrive inn det nye passordet på nyt"
 
 #: password_change.php:31
 msgid "Passwords are not the same"
-msgstr ""
+msgstr "Passorda er ikke like"
 
 #: password_change.php:33
 msgid "Password is incorrect"
-msgstr ""
+msgstr "Passordet er feil"
 
 #: password_change.php:51
 msgid "Password successfully changed."
-msgstr ""
+msgstr "Passordet er endret."
 
 #: password_change.php:53
 msgid "There was an error changing the password."
-msgstr ""
+msgstr "Det oppstod en feil ved endring av passordet."
 
-#: password_reset.php:7
-#: password_reset.php:14
+#: password_reset.php:7 password_reset.php:14
 msgid "Reset Password"
-msgstr ""
+msgstr "Nullstill passordet"
 
 #: password_reset.php:11
 msgid "Enter the Email Address for your Account"
-msgstr ""
+msgstr "Skriv inn e-postadressa for kontoen din"
 
 #: password_reset.php:17
 msgid "Address or member id is incorrect"
-msgstr ""
+msgstr "Adressa eller brukernavnet er feil"
 
 #: password_reset.php:19
 msgid "If you cannot remember your member id or email address, please"
-msgstr ""
+msgstr "Dersom du ikke kan huske brukernavnet eller e-postadresa, vennligst"
 
 #: password_reset.php:19
 msgid "us"
-msgstr ""
+msgstr "oss"
 
 #: password_reset.php:38
-msgid "Your password has been reset.  You can change the new password after you login by going into the Member Profile section of the web site."
+msgid ""
+"Your password has been reset.  You can change the new password after you "
+"login by going into the Member Profile section of the web site."
 msgstr ""
+"Passordet ditt har blitt nullstilt. Du kan endre passordet etter du har "
+"logget inn ved å gå inn på medlemsprofilen din på nettstedet."
 
 #: password_reset.php:41
 msgid "The new password has been sent to your email address."
-msgstr ""
+msgstr "Det nye passordet har blitt sendt til e-postadressa di."
 
 #: photo_to_edit.php:8
 msgid "Choose Member whose Photo you wish to Edit"
-msgstr ""
+msgstr "Velg medlem du vil endre foto for"
 
 #: photo_to_edit.php:16
 msgid "Upload/Replace Photo"
-msgstr ""
+msgstr "Last opp/bytt ut foto"
 
 #: refund_monthly_fee.php:17
 msgid "Refund monthly fee"
-msgstr ""
+msgstr "Refunder månedsavgift"
 
 #: refund_monthly_fee.php:70
 msgid "No monthly transfers found."
-msgstr ""
+msgstr "Fant ingen månedsoverføringer."
 
 #: refund_monthly_fee.php:97
 msgid "This system isn't setup to process monthly fees."
-msgstr ""
+msgstr "Systemet er ikke stilt inn for å kreve inn månedsavgifter."
 
-#: refund_monthly_fee.php:102
-#: refund_service_charge.php:91
-msgid "Action already executed.  Start from the administration page for a new refund."
+#: refund_monthly_fee.php:102 refund_service_charge.php:91
+msgid ""
+"Action already executed.  Start from the administration page for a new "
+"refund."
 msgstr ""
+"Handlingen er alt utført. Begynn fra administrasjonssida for å refundere mer."
 
-#: refund_monthly_fee.php:140
-#: refund_service_charge.php:130
-#: service_charge.php:85
-#: take_monthly_fee.php:130
-msgid "Already transfered.  Start from the administration page for a new transfer."
-msgstr ""
+#: refund_monthly_fee.php:140 refund_service_charge.php:130
+#: service_charge.php:85 take_monthly_fee.php:130
+msgid ""
+"Already transfered.  Start from the administration page for a new transfer."
+msgstr "Alt overført. Begynn fra administrasjonssida for å overføre mer."
 
 #: refund_monthly_fee.php:155
 msgid "Refund for monthly fee taken on"
-msgstr ""
+msgstr "Refusjon av månedsavgift krevd inn"
 
-#: refund_monthly_fee.php:203
-#: refund_service_charge.php:198
+#: refund_monthly_fee.php:203 refund_service_charge.php:198
 msgid "Couldn't transfer."
-msgstr ""
+msgstr "Kunne ikke overføre."
 
-#: refund_monthly_fee.php:210
-#: refund_service_charge.php:205
-#: service_charge.php:160
-#: take_monthly_fee.php:198
+#: refund_monthly_fee.php:210 refund_service_charge.php:205
+#: service_charge.php:160 take_monthly_fee.php:198
 msgid "Done"
-msgstr ""
+msgstr "Ferdig"
 
 #: refund_service_charge.php:60
 msgid "No service charges found."
-msgstr ""
+msgstr "Ingen engangsgebyrer ble funnet."
 
 #: refund_service_charge.php:86
 msgid "This system isn't setup to process service fees."
-msgstr ""
+msgstr "Systemet er ikke stilt inn for å kreve inn engangsavgifter."
 
 #: refund_service_charge.php:152
 msgid "Refund for"
-msgstr ""
+msgstr "Refusjon av"
 
 #: refund_service_charge.php:152
 msgid "taken on"
-msgstr ""
+msgstr "krevd inn"
 
 #: report_no_login.php:7
 msgid "Members Who Have Never Logged In"
-msgstr ""
+msgstr "Medlemmer som aldri har logget inn"
 
 #: report_no_login.php:14
 msgid "Phone Number(s)"
-msgstr ""
+msgstr "Telefonnummer"
 
 #: report_no_login.php:14
 msgid "Email(s)"
-msgstr ""
+msgstr "E-postadresse(r)"
 
 #: report_no_login.php:35
 msgid "All members in the system have logged in at least once."
-msgstr ""
+msgstr "All medlemmer i systemet har logget inn minst én gang."
 
-#: service_charge.php:5
-#: service_charge.php:102
+#: service_charge.php:5 service_charge.php:102
 msgid "Service Charge"
-msgstr ""
+msgstr "Engangsgebyr"
 
 #: service_charge.php:39
 msgid "This system isn't setup to charge service fees."
-msgstr ""
+msgstr "Systemet er ikke stilt inn for å kreve inn engangsgebyrer."
 
-#: service_charge.php:44
-#: take_monthly_fee.php:54
-msgid "Already confirmed.  Start from the administration page for a new transfer."
-msgstr ""
+#: service_charge.php:44 take_monthly_fee.php:54
+msgid ""
+"Already confirmed.  Start from the administration page for a new transfer."
+msgstr "Allerede bekreftet. Begynn fra administrasjonssida for å overføre mer."
 
 #: service_charge.php:97
-msgid "The fee entered must be numeric (e.g. '5') and contain no other characters (e.g. '5 units' = bad input!)"
+msgid ""
+"The fee entered must be numeric (e.g. '5') and contain no other characters "
+"(e.g. '5 units' = bad input!)"
 msgstr ""
+"Gebyret må være et tall (f. eks. \"5\") og ikke inneholde andre tegn (f. "
+"eks. er \"5 penger\" ugyldig)"
 
-#: service_charge.php:152
-#: take_monthly_fee.php:190
+#: service_charge.php:152 take_monthly_fee.php:190
 msgid "An Error occured during the transfer."
-msgstr ""
+msgstr "Det oppstod en feil under overføringa."
 
 #: settings.php:30
 msgid "General Settings"
-msgstr ""
+msgstr "Allmenne innstillinger"
 
 #: settings.php:30
 msgid "Site Features"
-msgstr ""
+msgstr "Nettsidefunksjoner"
 
 #: settings.php:30
 msgid "Display Options"
-msgstr ""
+msgstr "Visningsinnstillinger"
 
 #: settings.php:30
 msgid "Account Restrictions"
-msgstr ""
+msgstr "Kontobegrensninger"
 
 #: settings.php:30
 msgid "Social Networking"
-msgstr ""
+msgstr "Sosialt nettverk"
 
 #: settings.php:30
 msgid "Admin Settings"
-msgstr ""
+msgstr "Administrasjonsinnstillinger"
 
 #: settings.php:42
-msgid "<a name='top'></a><font color=red>PLEASE NOTE: The following are <em>General</em> Settings intended for use by the LETS Administrator. <p>More <em>Advanced</em> configuration settings for the Webmaster are located in the file 'includes/inc.config.php'.</font><p>"
+msgid ""
+"<a name='top'></a><font color=red>PLEASE NOTE: The following are "
+"<em>General</em> Settings intended for use by the LETS Administrator. "
+"<p>More <em>Advanced</em> configuration settings for the Webmaster are "
+"located in the file 'includes/inc.config.php'.</font><p>"
 msgstr ""
+"<a name='top'></a><font color=red>NB: Dette er <em>allmenne</em> "
+"innstillinger beregnet for LETS-administratoren. <p>Mer <em>avanserte</em> "
+"innstillinger for teknisk ansvarlig finnes i fila 'includes/inc.config.php'."
+"</font><p>"
 
 #: settings.php:63
 msgid "Back to top"
-msgstr ""
+msgstr "Til toppen"
 
 #: settings.php:168
 msgid "Save Settings"
-msgstr ""
+msgstr "Lagre innstillinger"
 
 #: state_choose.php:6
 msgid "Choose state"
-msgstr ""
+msgstr "Velg fylke"
 
 #: state_choose.php:19
 msgid "Which state?"
-msgstr ""
+msgstr "Hvilket fylke?"
 
 #: state_choose.php:54
 msgid "State deleted"
-msgstr ""
+msgstr "Fylket er slettet"
 
-#: state_create.php:16
-#: state_edit.php:20
+#: state_create.php:16 state_edit.php:20
 msgid "State name"
-msgstr ""
+msgstr "Fylkesnavn"
 
 #: state_create.php:24
 msgid "Enter state name"
-msgstr ""
+msgstr "Skriv inn fylkesnavn"
 
 #: state_create.php:42
 msgid "State created"
-msgstr ""
+msgstr "Fylket er opprettet"
 
 #: state_create.php:44
 msgid "Could not save state"
-msgstr ""
+msgstr "Kunne ikke lagre fylket"
 
 #: state_edit.php:6
 msgid "Modify state information"
-msgstr ""
+msgstr "Endre fylkesopplysninger"
 
 #: state_edit.php:28
-msgid "State name connot be blank"
-msgstr ""
+msgid "State name cannot be blank"
+msgstr "Fylkesnavn kan ikke være blankt"
 
 #: state_edit.php:46
 msgid "State name updated"
-msgstr ""
+msgstr "Fylkesnavnet er endret"
 
 #: state_edit.php:48
 msgid "Could not save state name changes"
-msgstr ""
+msgstr "Kunne ikke lagre endring av fylkesnavnet"
 
 #: take_monthly_fee.php:49
 msgid "This system isn't setup to charge monthly fees."
-msgstr ""
+msgstr "Systemet er ikke stilt inn for å ta månedsavgift."
 
 #: take_monthly_fee.php:66
-msgid "Are you sure you want to tranfer monthly fee for the month of"
-msgstr ""
+msgid "Are you sure you want to transfer monthly fee for the month of"
+msgstr "Er du sikker på at du vil kreve inn månedsavgifta for"
 
 #: take_monthly_fee.php:66
 msgid "The monthly fee for"
-msgstr ""
+msgstr "Avgifta for"
 
 #: take_monthly_fee.php:66
 msgid "has already been taken"
-msgstr ""
+msgstr "har alt blitt krevd inn"
 
 #: take_monthly_fee.php:170
 msgid "Monthly Fee"
-msgstr ""
+msgstr "Månedsavgift"
 
 #: timeframe_choose.php:5
 msgid "Choose time period"
-msgstr ""
+msgstr "Velg tidsperiode"
 
 #: timeframe_choose.php:16
 msgid "From when?"
-msgstr ""
+msgstr "Fra når?"
 
 #: timeframe_choose.php:17
 msgid "To when?"
-msgstr ""
+msgstr "Til når?"
 
-#: trade_history_all.php:6
-#: trade_history.php:6
+#: trade_history_all.php:6 trade_history.php:6
 msgid "Exchange History"
-msgstr ""
+msgstr "Handelslogg"
 
-#: trade_history_all.php:13
-#: trade_history.php:36
+#: trade_history_all.php:13 trade_history.php:36
 msgid "For period from"
-msgstr ""
+msgstr "For perioden fra"
 
 #: trade_history.php:36
 msgid "Current Balance"
-msgstr ""
+msgstr "Saldo nå"
 
 #: trade.php:35
 msgid "Transaction Type"
-msgstr ""
+msgstr "Transaksjonstype"
 
 #: trade.php:35
 msgid "Transfer"
-msgstr ""
+msgstr "Overføring"
 
 #: trade.php:35
 msgid "Invoice"
-msgstr ""
+msgstr "Faktura"
 
 #: trade.php:43
 msgid "To Member"
-msgstr ""
+msgstr "Til medlem"
 
 #: trade.php:45
 msgid "Transfer to Member"
-msgstr ""
+msgstr "Overfør til medlem"
 
 #: trade.php:49
 msgid "# of "
-msgstr ""
+msgstr "antall"
 
 #: trade.php:51
 msgid "# of Minutes"
-msgstr ""
+msgstr "antall minutter"
 
 #: trade.php:53
 msgid "Enter a Brief Description of the Exchange"
-msgstr ""
+msgstr "Skriv inn en kort beskrivelse av handelen"
 
 #: trade.php:62
 msgid "You cannot transfer to yourself"
-msgstr ""
+msgstr "Du kan ikke overføre til deg selv"
 
 #: trade.php:66
 msgid "Description too long - maximum length is 255 characters"
-msgstr ""
+msgstr "Beskrivelsen er for lang. Maksimal lengde er 255 tegn"
 
 #: trade.php:70
 msgid "Hours entered must be a positive, whole number"
-msgstr ""
+msgstr "Timer må skrives inn som et heltall over null"
 
 #: trade.php:72
 msgid "Enter 15, 30, or 45 (or other numbers in 3 minute increments)"
 msgstr ""
+"Skriv inn 15, 30 eller 45 (eller andre tall, dersom de er delelig på 3)"
 
 #: trade.php:75
 msgid "Enter a positive number with no more than two decimal points"
-msgstr ""
+msgstr "Skriv inn et tall over null med maksimalt to desimaler"
 
+# "Units" refers to the units of value used for trade
 #: trade.php:99
 msgid "No units were entered to exchange!"
-msgstr ""
+msgstr "Ingen kjøpesum ble skrevet inn!"
 
 #: trade.php:134
 msgid "Payment Received on"
-msgstr ""
+msgstr "Betaling mottatt"
 
-#: trade.php:134
-#: trade.php:148
+#: trade.php:134 trade.php:148
 msgid "Hi"
-msgstr ""
+msgstr "Hei"
 
 #: trade.php:134
 msgid "Just letting you know that you have received a new payment from"
-msgstr ""
+msgstr "Vi ville bare si fra at du har fått en innbetaling fra"
 
 #: trade.php:134
-msgid "As you have elected to confirm all payments made to you, please log into your account now and confirm or reject this payment using the following URL..."
+msgid ""
+"As you have elected to confirm all payments made to you, please log into "
+"your account now and confirm or reject this payment using the following "
+"URL..."
 msgstr ""
+"Siden du har bestemt at alle innbetalinger til deg skal godkjennes, vær "
+"vennligg logg inn på kontoen din snart for å godkjenne eller avvise "
+"betalingen, ved hjelp av denne URLen…"
 
 #: trade.php:136
 msgid "has been notified that you wish to transfer"
-msgstr ""
+msgstr "har blitt varslet om at du vil overføre"
 
 #: trade.php:136
 msgid "to him/her"
-msgstr ""
+msgstr "til ham/henne"
 
 #: trade.php:136
-msgid "This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member"
+msgid ""
+"This member has opted to confirm all transactions made to him/her. Once the "
+"member accepts this transaction your payment will be actioned and you will "
+"be invited to leave Feedback for this member"
 msgstr ""
+"Dette medlemmet ønsker å godkjenne alle innbetalinger. Så snart medlemmet "
+"godkjenner denne transaksjonen vil betalingen bli utført og du vil bli bedt "
+"om å legge igjen tilbakemeldinger til dette medlemmet"
 
-#: trade.php:137
-#: trade.php:151
-#: trade.php:173
+#: trade.php:137 trade.php:151 trade.php:173
 msgid "Would you like to"
-msgstr ""
+msgstr "Vil du"
 
-#: trade.php:137
-#: trade.php:151
-#: trade.php:173
+#: trade.php:137 trade.php:151 trade.php:173
 msgid "record another"
-msgstr ""
+msgstr "registrere enda en"
 
-#: trade.php:137
-#: trade.php:151
-#: trade.php:173
+#: trade.php:137 trade.php:151 trade.php:173
 msgid "exchange"
-msgstr ""
+msgstr "handel"
 
-#: trade.php:140
-#: trade.php:154
-#: trade.php:166
+#: trade.php:140 trade.php:154 trade.php:166
 msgid "Trade failed!"
-msgstr ""
+msgstr "Handelen gikk ikke gjennom!"
 
 #: trade.php:145
-msgid "Sorry, the Invoicing facility has been disabled by the site administrator."
-msgstr ""
+msgid ""
+"Sorry, the Invoicing facility has been disabled by the site administrator."
+msgstr "Beklager, fakturaverktøyet har blitt deaktivert av administratoren."
 
 #: trade.php:148
 msgid "Invoice Received on"
-msgstr ""
+msgstr "Fakturaen er mottatt"
 
 #: trade.php:148
 msgid "Just letting you know that you have received a new Invoice from"
-msgstr ""
+msgstr "Vi ville bare si fra at du har fått en faktura fra"
 
 #: trade.php:148
-msgid "Please log into your account now to pay or reject this invoice using the following URL..."
+msgid ""
+"Please log into your account now to pay or reject this invoice using the "
+"following URL..."
 msgstr ""
+"Vennligst logg på kontoen din snart for å betale eller avvise denne "
+"fakturaen, ved hjelp av denne URLen…"
 
 #: trade.php:150
 msgid "has been sent an invoice for"
-msgstr ""
+msgstr "har blitt fakturert for"
 
 #: trade.php:150
-msgid "You will be informed when the member pays this invoice and will be invited to leave Feedback for this member"
+msgid ""
+"You will be informed when the member pays this invoice and will be invited "
+"to leave Feedback for this member"
 msgstr ""
+"Du vil bli varslet når det andre medlemmet betaler fakturaen og blir bedt om "
+"å legge igjen tilbakemeldinger til deg"
 
 #: trade.php:173
 msgid "You have transferred"
-msgstr ""
+msgstr "Du har overført"
 
 #: trade.php:173
 msgid " to "
-msgstr ""
+msgstr " til "
 
 #: trade.php:173
 msgid "Or would you like to leave"
-msgstr ""
+msgstr "Eller vil du legge igjen"
 
 #: trade.php:173
 msgid "feedback"
-msgstr ""
+msgstr "tilbakemelding"
 
 #: trade.php:173
 msgid "for this member"
-msgstr ""
+msgstr "til dette medlemmet"
 
-#: trade.php:189
-#: trades_pending.php:152
+#: trade.php:189 trades_pending.php:152
 msgid "Donation from"
-msgstr ""
+msgstr "Gave fra"
 
 #: trade_reverse.php:7
 msgid "Reverse an Exchange"
-msgstr ""
+msgstr "Tilbakefør en handel"
 
 #: trade_reverse.php:17
 msgid "Choose the exchange to reverse"
-msgstr ""
+msgstr "Velg hvillken handel du vil føre tilbake"
 
 #: trade_reverse.php:19
-msgid "Enter a brief explanation. Information about the original exchange will be automatically included"
+msgid ""
+"Enter a brief explanation. Information about the original exchange will be "
+"automatically included"
 msgstr ""
+"Skriv inn en kort forklaring. Opplysningene fra den opprinnelige handelen "
+"vil automatisk legges ved"
 
 #: trade_reverse.php:21
 msgid "Reverse"
-msgstr ""
+msgstr "Før tilbake"
 
 #: trade_reverse.php:47
 msgid "Trade has been reversed."
-msgstr ""
+msgstr "Handelen er blitt tilbakeført."
 
 #: trade_reverse.php:49
 msgid "There was an error reversing the trade"
-msgstr ""
+msgstr "Det oppstod en feil ved tilbakeføring av handelen"
 
 #: trades_pending.php:17
 msgid "Exchanges Pending"
-msgstr ""
+msgstr "Ventende handler"
 
 #: trades_pending.php:25
-msgid "NOTE that only transactions currently pending approval from one member or the other are displayed here."
+msgid ""
+"NOTE that only transactions currently pending approval from one member or "
+"the other are displayed here."
 msgstr ""
+"MERK at bare transaksjoner som ennå venter på godkjenning fra en  av partene "
+"vises her. "
 
 #: trades_pending.php:25
 msgid "To view your complete Exchange History please click"
-msgstr ""
+msgstr "For å vise hele handelsloggen din klikk"
 
 #: trades_pending.php:25
 msgid "Summary"
-msgstr ""
+msgstr "Oppsummering"
 
 #: trades_pending.php:25
 msgid "Payments to Confirm"
-msgstr ""
+msgstr "Betalinger til godkjenning"
 
 #: trades_pending.php:29
 msgid "Invoices to Pay"
-msgstr ""
+msgstr "Fakturaer til godkjenning"
 
 #: trades_pending.php:31
 msgid "Sent Payments"
-msgstr ""
+msgstr "Utførte betalinger"
 
 #: trades_pending.php:34
 msgid "Sent Invoices"
-msgstr ""
+msgstr "Utsendte fakturaer"
 
-#: trades_pending.php:38
-#: classes/class.feedback.php:198
+#: trades_pending.php:38 classes/class.feedback.php:198
 #: classes/class.trade.php:258
 msgid "Date"
-msgstr ""
+msgstr "Dato"
 
 #: trades_pending.php:38
 msgid "Action"
-msgstr ""
+msgstr "Handling"
 
 #: trades_pending.php:61
 msgid "Accept Payment"
-msgstr ""
+msgstr "Godta betaling"
 
-#: trades_pending.php:61
-#: trades_pending.php:65
+#: trades_pending.php:61 trades_pending.php:65
 msgid "Reject"
-msgstr ""
+msgstr "Avvis"
 
 #: trades_pending.php:64
 msgid "Pay Invoice"
-msgstr ""
+msgstr "Betal faktura"
 
-#: trades_pending.php:70
-#: trades_pending.php:81
+#: trades_pending.php:70 trades_pending.php:81
 msgid "has rejected this transaction"
-msgstr ""
+msgstr "har avvist denne transaksjonen"
 
 #: trades_pending.php:71
 msgid "Resend Payment"
-msgstr ""
+msgstr "Utfør betaling på nytt"
 
-#: trades_pending.php:72
-#: trades_pending.php:83
-#: trades_pending.php:102
+#: trades_pending.php:72 trades_pending.php:83 trades_pending.php:102
 msgid "Remove this Notice"
-msgstr ""
+msgstr "Fjern denne merknaden"
 
 #: trades_pending.php:75
 msgid "Awaiting Confirmation by"
-msgstr ""
+msgstr "Venter på godkjenning fra"
 
 #: trades_pending.php:82
 msgid "Resend Invoice"
-msgstr ""
+msgstr "Send faktura på nytt"
 
 #: trades_pending.php:86
 msgid "Awaiting Payment from"
-msgstr ""
+msgstr "Venter på betaling fra"
 
 #: trades_pending.php:94
 msgid "Payment Accepted"
-msgstr ""
+msgstr "Betaling godkjent"
 
 #: trades_pending.php:96
 msgid "Invoice Paid"
-msgstr ""
+msgstr "Faktura er betalt"
 
 #: trades_pending.php:98
 msgid "has confirmed"
-msgstr ""
+msgstr "har godkjent"
 
 #: trades_pending.php:100
 msgid "has paid this invoice"
-msgstr ""
+msgstr "har betalt denne fakturaen"
 
-#: trades_pending.php:176
-#: trades_pending.php:202
-#: trades_pending.php:219
-#: trades_pending.php:245
-#: trades_pending.php:262
-#: trades_pending.php:289
-#: trades_pending.php:306
-#: trades_pending.php:337
+#: trades_pending.php:176 trades_pending.php:202 trades_pending.php:219
+#: trades_pending.php:245 trades_pending.php:262 trades_pending.php:289
+#: trades_pending.php:306 trades_pending.php:337
 msgid "This trade does not exist or you do not have permission to act on it."
-msgstr ""
+msgstr "Denne handelen finnes ikke, eller du har ikke rett til å behandle den."
 
+# "Open" means "unfinished"
 #: trades_pending.php:184
 msgid "Sorry, only Open trades can be rejected or resent."
-msgstr ""
+msgstr "Beklager, bare \"åpne\" handler kan avvises eller kreves på nytt."
 
-#: trades_pending.php:190
-#: trades_pending.php:233
+#: trades_pending.php:190 trades_pending.php:233
 msgid "This member hasn't rejected this transaction"
-msgstr ""
+msgstr "Medlemmet har ikke avvist denne transaksjonen"
 
 #: trades_pending.php:197
 msgid "Transaction re-submitted successfully."
-msgstr ""
+msgstr "Transaksjonen er sendt inn på nytt."
 
-#: trades_pending.php:199
-#: trades_pending.php:242
-#: trades_pending.php:286
+#: trades_pending.php:199 trades_pending.php:242 trades_pending.php:286
 #: trades_pending.php:334
 msgid "Error updating the database"
-msgstr ""
+msgstr "Det oppstod en feil ved oppdatering av databasen"
 
 #: trades_pending.php:227
 msgid "Sorry, only Open trades can be rejected."
-msgstr ""
+msgstr "Beklager, bare \"åpne\" handler kan avvises."
 
-#: trades_pending.php:240
-#: trades_pending.php:332
+#: trades_pending.php:240 trades_pending.php:332
 msgid "Transaction removed successfully."
-msgstr ""
+msgstr "Transaksjonen ble fjernet."
 
 #: trades_pending.php:270
 msgid "This trade is no longer Open and therefore cannot be rejected."
-msgstr ""
+msgstr "Denne handelen er ikke lenger \"åpen\" og kan derfor ikke avvises."
 
 #: trades_pending.php:284
 msgid "has been informed that you have rejected this transaction"
-msgstr ""
+msgstr "har blitt opplyst at du har avvist transaksjonen"
 
 #: trades_pending.php:314
-msgid "This trade is currently marked as Open and thus cannot be removed until the required action has been taken."
+msgid ""
+"This trade is currently marked as Open and thus cannot be removed until the "
+"required action has been taken."
 msgstr ""
+"Denne handelen er ennå merket som \"åpen\" og kan derfor ikke fjernes før "
+"neste påkrevde handling er utført."
 
 #: trades_pending.php:353
 msgid "This trade has already been confirmed and is now closed."
-msgstr ""
+msgstr "Denne handelen har alt blitt godkjent og er nå lukket."
 
-#: trades_pending.php:364
-#: trades_pending.php:382
+#: trades_pending.php:364 trades_pending.php:382
 msgid "You do not have permission to confirm this trade."
-msgstr ""
+msgstr "Du har ikke rett til å godkjenne denne handelen."
 
 #: trades_pending.php:372
 msgid "You have accepted a payment of"
-msgstr ""
+msgstr "Du har mottatt en betaling på"
 
 #: trades_pending.php:399
 msgid "Error sending payment"
-msgstr ""
+msgstr "Det oppstod en feil under betaling"
 
 #: trades_pending.php:404
 msgid "You have sent a payment of"
-msgstr ""
+msgstr "Du har betalt"
 
 #: trades_pending.php:412
-msgid "You have elected to confirm a non-existant trade"
-msgstr ""
+msgid "You have elected to confirm a non-existent trade"
+msgstr "Du har valgt å godkjenne en handel som ikke finnes"
 
 #: trades_pending.php:419
 msgid "The following Incoming Payments require your confirmation"
-msgstr ""
+msgstr "Disse innbetalingene trenger godkjenning fra deg"
 
-#: trades_pending.php:442
-#: trades_pending.php:467
-#: trades_pending.php:499
+#: trades_pending.php:442 trades_pending.php:467 trades_pending.php:499
 #: trades_pending.php:530
 msgid "None found"
-msgstr ""
+msgstr "Ingen ble funnet"
 
 #: trades_pending.php:448
 msgid "The following Invoices need paying"
-msgstr ""
+msgstr "Disse fakturaene må betales"
 
 #: trades_pending.php:475
 msgid "You are awaiting confirmation of the following Payments"
-msgstr ""
+msgstr "Du venter på godkjenning av disse utbetalingene"
 
 #: trades_pending.php:506
 msgid "You are awaiting payment for the following Invoices"
-msgstr ""
+msgstr "Du venter på betaling av disse fakturaene"
 
 #: trades_pending.php:537
 msgid "I need to pay"
-msgstr ""
+msgstr "Jeg må betale"
 
-#: trades_pending.php:537
-#: trades_pending.php:542
+#: trades_pending.php:537 trades_pending.php:542
 msgid "Invoices"
-msgstr ""
+msgstr "Fakturaer"
 
 #: trades_pending.php:539
 msgid "I need to confirm"
-msgstr ""
+msgstr "Jeg må godkjenne"
 
 #: trades_pending.php:539
 msgid "Incoming Payments"
-msgstr ""
+msgstr "Innbetalinger"
 
 #: trades_pending.php:542
 msgid "I am awaiting payment for"
-msgstr ""
+msgstr "Jeg venter på betaling for"
 
 #: trades_pending.php:544
 msgid "I am awaiting confirmation of"
-msgstr ""
+msgstr "Jeg venter på godkjenning av"
 
 #: trades_pending.php:544
 msgid "Outgoing Payments"
-msgstr ""
+msgstr "Utbetalinger"
 
 #: trades_to_view.php:5
 msgid "Choose Member to View"
-msgstr ""
+msgstr "Velg medlem som skal vises"
 
 #: trades_to_view.php:11
 msgid "Whose Exchange History?"
-msgstr ""
+msgstr "Handelslogg for hvem?"
 
 #: includes/inc.config.php:66
 msgid "is currently down for maintenance."
-msgstr ""
+msgstr "er for tida nede til vedlikehold."
 
 #: includes/inc.config.php:95
 msgid "Under 18"
-msgstr ""
+msgstr "Under 18"
 
 #: includes/inc.config.php:95
 msgid "18-30"
-msgstr ""
+msgstr "18-30"
 
 #: includes/inc.config.php:95
 msgid "30's"
-msgstr ""
+msgstr "30-åra"
 
 #: includes/inc.config.php:95
 msgid "40's"
-msgstr ""
+msgstr "40-åra"
 
 #: includes/inc.config.php:95
 msgid "50's"
-msgstr ""
+msgstr "50-åra"
 
 #: includes/inc.config.php:95
 msgid "60's"
-msgstr ""
+msgstr "60-åra"
 
 #: includes/inc.config.php:95
 msgid "70's"
-msgstr ""
+msgstr "70-åra"
 
 #: includes/inc.config.php:95
 msgid "Over 80"
-msgstr ""
+msgstr "Over 80"
 
-#: includes/inc.config.php:95
-#: includes/inc.config.php:98
+#: includes/inc.config.php:95 includes/inc.config.php:98
 msgid "n/a"
-msgstr ""
+msgstr "blankt"
 
 #: includes/inc.config.php:98
 msgid "Male"
-msgstr ""
+msgstr "Mann"
 
 #: includes/inc.config.php:98
 msgid "Female"
-msgstr ""
+msgstr "Kvinne"
 
 #: includes/inc.config.php:139
 msgid "local currency,lets,exchange,"
-msgstr ""
+msgstr "lokal valuta,lets,handel,"
 
 #: includes/inc.config.php:156
 msgid "Licensed under the"
-msgstr ""
+msgstr "Lisensiert under"
 
 #: includes/inc.config.php:156
 msgid "GPL"
-msgstr ""
+msgstr "GPL"
 
 #: includes/inc.config.php:156
 msgid "Local Exchange UK Ver."
-msgstr ""
+msgstr "Local Exchange (Storbritannia-utgave)"
 
 #: includes/inc.config.php:156
 msgid "Credits"
-msgstr ""
+msgstr "Medvirkende"
 
 #: includes/inc.config.php:162
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #: includes/inc.config.php:163
 msgid "Learn More"
-msgstr ""
+msgstr "Lær mer"
 
 #: includes/inc.config.php:165
 msgid "Information"
-msgstr ""
+msgstr "Informasjon"
 
 #: includes/inc.config.php:171
 msgid "Members List"
-msgstr ""
-
-#: includes/inc.config.php:202
-msgid "talents"
-msgstr ""
+msgstr "Medlemsliste"
 
 #: includes/inc.config.php:214
-msgid "The following listings are new or updated.<p>If you would prefer not to receive automatic email updates, or if you would like to change their frequency, you can do so at the"
+msgid ""
+"The following listings are new or updated.<p>If you would prefer not to "
+"receive automatic email updates, or if you would like to change their "
+"frequency, you can do so at the"
 msgstr ""
+"Disse oppføringene er nye eller oppdaterte.<p>Dersom du ikke ønsker å motta "
+"nyheter automatisk på e-post, eller om du vil endre hvor ofte de kommer, kan "
+"du gjøre det på"
 
 #: includes/inc.config.php:214
 msgid "area of our website."
-msgstr ""
+msgstr "området av nettstedet vårt."
 
 #: includes/inc.config.php:240
 msgid "Hello"
-msgstr ""
+msgstr "Hei"
 
 #: includes/inc.config.php:240
 msgid "Due to inactivity, your"
-msgstr ""
+msgstr "På grunn av lite aktivitet, vil oppføringene dine på "
 
 #: includes/inc.config.php:240
 msgid "listings have been set to automatically expire"
-msgstr ""
+msgstr "gå ut på dato"
 
 #: includes/inc.config.php:240
 msgid "days from now"
-msgstr ""
+msgstr "dager fra nå"
 
 #: includes/inc.config.php:240
 msgid "In order to keep the"
-msgstr ""
+msgstr "For å holde"
 
 #: includes/inc.config.php:240
-msgid "system up to date and working smoothly for all members, we have developed an automatic system to expire listings for members who haven't recorded exchanges or updated their listings during a period of"
+msgid ""
+"system up to date and working smoothly for all members, we have developed an "
+"automatic system to expire listings for members who haven't recorded "
+"exchanges or updated their listings during a period of"
 msgstr ""
+"systemet oppdatert og smidig for alle medlemmene har vi et automatisk system "
+"for å la oppføringene gå ut på dato for medlemmer som ikke har handlet eller "
+"oppdatering oppføringene i løpet av en periode på"
 
 #: includes/inc.config.php:240
-msgid "days. We want the directory to be up to date, so that members do not encounter listings that are out of date or expired. This works to everyone's advantage"
+msgid ""
+"days. We want the directory to be up to date, so that members do not "
+"encounter listings that are out of date or expired. This works to everyone's "
+"advantage"
 msgstr ""
+"dager. Vi ønsker å holde katalogen oppdatert slik at medlemmene ikke møter "
+"oppføringer som er foreldete eller utgåtte. Dette er til alles fordel"
 
 #: includes/inc.config.php:240
-msgid "We apologize for any inconvenience this may cause you and thank you for your participation. If you have any questions or comments, or are unsure how to best use the system, please reply to this email message or call us at"
+msgid ""
+"We apologize for any inconvenience this may cause you and thank you for your "
+"participation. If you have any questions or comments, or are unsure how to "
+"best use the system, please reply to this email message or call us at"
 msgstr ""
+"Vi beklager ulempene dette måtte gi deg og takker for deltakelsen. Har du "
+"noen spørsmål eller kommentarer, eller er usikker på hvordan best gjøre "
+"nytte av systemet, vennligst svar på denne e-posten eller ring oss på"
 
 #: includes/inc.config.php:240
 msgid "You have"
-msgstr ""
+msgstr "Du har"
 
 #: includes/inc.config.php:240
-msgid "days to login to the system and reactivate listings that you would still like to have in the directory.  If you do not reactivate them during that timeframe, your listings will no longer appear in the directory, but will still be stored in the system for another"
+msgid ""
+"days to login to the system and reactivate listings that you would still "
+"like to have in the directory.  If you do not reactivate them during that "
+"timeframe, your listings will no longer appear in the directory, but will "
+"still be stored in the system for another"
 msgstr ""
+"dager på deg til å logge på systemet og reaktivere oppføringene du ennå vil "
+"ha i katalogen. Dersom du ikke reaktiverer dem i før da, vil oppføringene "
+"ikke lenger stå i katalogen, men fortsatt være lagret i systemet i"
 
 #: includes/inc.config.php:240
 msgid "days, during which time you can still edit and reactivate them."
-msgstr ""
+msgstr "dager til. Innen den tid kan du fortsatt redigere og reaktivere dem."
 
 #: includes/inc.config.php:240
 msgid "Instructions to reactivate listings"
-msgstr ""
+msgstr "Bruksanvisning for reaktivering av oppføringer"
 
 #: includes/inc.config.php:240
 msgid "Login to the website"
-msgstr ""
+msgstr "Logg på nettstedet"
 
 #: includes/inc.config.php:240
 msgid "Go to Update Listings"
-msgstr ""
+msgstr "Gå til \"Oppdater oppføringer\""
 
 #: includes/inc.config.php:240
 msgid "Select Edit Offered (or Wanted) Listings"
 msgstr ""
+"Velg \"Rediger oppføringer under 'Til salgs'\" (eller \"Ønskes kjøpt\")"
 
 #: includes/inc.config.php:240
 msgid "Select the listing to edit"
-msgstr ""
+msgstr "Velg oppføringene du vil redigere"
 
 #: includes/inc.config.php:240
-msgid "Uncheck the box next to 'Should this listing be set to automatically expire?'"
-msgstr ""
+msgid ""
+"Uncheck the box next to 'Should this listing be set to automatically expire?'"
+msgstr "Fjern krysset foran \"Skal denne oppføringa utløpe automatisk?\""
 
 #: includes/inc.config.php:240
 msgid "Press the Update button"
-msgstr ""
+msgstr "Trykk \"Oppdater\""
 
 #: includes/inc.config.php:240
 msgid "Repeat steps 1-6 for all listings you wish to reactivate"
-msgstr ""
+msgstr "Gjenta steg 1-6 for alle oppføringene du ønsker å reaktivere"
 
 #: includes/inc.config.php:255
 msgid "Your"
-msgstr ""
+msgstr "Din"
 
 #: includes/inc.config.php:255
-#, fuzzy
 msgid "Account"
-msgstr "Kontoer"
+msgstr "Konto"
 
 #: includes/inc.config.php:256
 msgid "Your password for"
-msgstr ""
+msgstr "Passordet ditt for"
 
 #: includes/inc.config.php:256
-msgid "has been reset. If you did not request this reset, it is possible your account has been compromised, and you may want to contact the site administrator at"
+msgid ""
+"has been reset. If you did not request this reset, it is possible your "
+"account has been compromised, and you may want to contact the site "
+"administrator at"
 msgstr ""
+"har blitt nullstilt. Dersom du ikke bad om dette, er det mulig noen prøver å "
+"bryte seg inn i kontoen din. Det er kanskje lurt å kontakte administratoren "
+"av nettstedet på"
 
 #: includes/inc.config.php:256
-msgid "Your user id and new password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."
+msgid ""
+"Your user id and new password are listed at the end of this message. You can "
+"change the automatically generated password by going to the Member Profile "
+"section after you login."
 msgstr ""
+"Brukernavnet ditt og det nye passordet er oppført på slutten av meldinga. Du "
+"kan endre passordet vi har laget automatisk, dersom du går til "
+"\"Medlemsprofil\" etter at du har logget inn. "
 
 #: includes/inc.config.php:258
 msgid "Hello, and welcome to the"
-msgstr ""
+msgstr "Hei, og velkommen til"
 
 #: includes/inc.config.php:258
 msgid "community!"
-msgstr ""
+msgstr "samfunnet!"
 
 #: includes/inc.config.php:258
 msgid "A member account has been created for you at"
-msgstr ""
+msgstr "En medlemskonto har blitt opprettet for deg på"
 
 #: includes/inc.config.php:258
-msgid "Please login and create your Offered and Wanted Listings.  Your new user id and password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."
+msgid ""
+"Please login and create your Offered and Wanted Listings.  Your new user id "
+"and password are listed at the end of this message. You can change the "
+"automatically generated password by going to the Member Profile section "
+"after you login."
 msgstr ""
+"Vennligst logg inn og opprett oppføringene dine under \"Til salgs\" og "
+"\"Ønskes kjøpt\". Ditt nye brukernavn og passord er oppført på slutten av "
+"meldinga. Du kan endre passordet vi har laget automatisk, dersom du går til "
+"\"Medlemsprofil\" etter at du har logget inn."
 
 #: includes/inc.config.php:258
 msgid "Thank you for joining us."
-msgstr ""
+msgstr "Takk for at du ble med."
 
 #: includes/inc.forms.php:10
 msgid "denotes a required field"
-msgstr ""
+msgstr "markerer et påkrevet felt"
 
-#: classes/class.category.php:29
-#: classes/class.category.php:49
+#: classes/class.category.php:29 classes/class.category.php:49
 msgid "Category already exists"
-msgstr ""
+msgstr "Kategorien eksisterer alt"
 
-#: classes/class.category.php:69
-#: classes/class.category.php:129
+#: classes/class.category.php:69 classes/class.category.php:129
 msgid "There was an error accessing a category record"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av ei kategorioppføring"
 
-#: classes/class.category.php:69
-#: classes/class.category.php:83
-#: classes/class.category.php:129
-#: classes/class.feedback.php:104
-#: classes/class.feedback.php:283
-#: classes/class.listing.php:108
-#: classes/class.member.php:297
-#: classes/class.member.php:320
-#: classes/class.member.php:356
-#: classes/class.person.php:88
-#: classes/class.person.php:136
-#: classes/class.person.php:156
-#: classes/class.state_address.php:75
-#: classes/class.state_address.php:93
-#: classes/class.state_address.php:124
-#: classes/class.uploads.php:89
+#: classes/class.category.php:69 classes/class.category.php:83
+#: classes/class.category.php:129 classes/class.feedback.php:104
+#: classes/class.feedback.php:283 classes/class.listing.php:108
+#: classes/class.member.php:297 classes/class.member.php:320
+#: classes/class.member.php:356 classes/class.person.php:88
+#: classes/class.person.php:136 classes/class.person.php:156
+#: classes/class.state_address.php:75 classes/class.state_address.php:93
+#: classes/class.state_address.php:124 classes/class.uploads.php:89
 msgid "Please try again later"
-msgstr ""
+msgstr "Vennligst prøv igjen senere"
 
+# "Code" refers to the id of the category.
 #: classes/class.category.php:83
 msgid "There was an error deleting category code"
-msgstr ""
+msgstr "Det oppstod en feil ved sletting av kategorien med kode"
 
 #: classes/class.directory.php:49
 msgid "Member Information"
-msgstr ""
-
-#: classes/class.directory.php:58
-msgid "4thcorner.pdf"
-msgstr ""
+msgstr "Medlemsopplysninger"
 
 #: classes/class.directory.php:123
 msgid "Members Directory"
-msgstr ""
+msgstr "Medlemskatalog"
 
 #: classes/class.error.php:78
 msgid "Errors occurred on this page"
-msgstr ""
+msgstr "Det oppstod feil på denne sida"
 
 #: classes/class.feedback.php:59
 msgid "Cannot create duplicate feedback."
-msgstr ""
+msgstr "Kan ikke opprette duplikat tilbakemelding."
 
 #: classes/class.feedback.php:104
 msgid "There was an error accessing the feedback table"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av tilbakemelding"
 
 #: classes/class.feedback.php:134
 msgid "Seller"
-msgstr ""
+msgstr "Selger"
 
 #: classes/class.feedback.php:136
 msgid "Buyer"
-msgstr ""
+msgstr "Kjøper"
 
 #: classes/class.feedback.php:198
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
+# Refers to the role: buyer or seller
 #: classes/class.feedback.php:198
 msgid "Context"
-msgstr ""
+msgstr "Rolle"
 
 #: classes/class.feedback.php:198
 msgid "Comment"
-msgstr ""
+msgstr "Merknad"
 
 #: classes/class.feedback.php:283
 msgid "There was an error accessing the rebuttal table"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av motsvar"
 
 #: classes/class.feedback.php:317
 msgid "Reply"
-msgstr ""
+msgstr "Svar"
 
+# Noun referring to rebuttal of criticism
 #: classes/class.feedback.php:319
 msgid "Follow Up"
-msgstr ""
+msgstr "Respons"
 
 #: classes/class.listing.php:108
 msgid "There was an error accessing the"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av oppføringa "
 
 #: classes/class.listing.php:108
 msgid "listing for"
-msgstr ""
+msgstr "for"
 
 #: classes/class.listing.php:188
 msgid "Could not inactivate listing"
-msgstr ""
+msgstr "Kunne ikke deaktivere oppføringa"
 
 #: classes/class.listing.php:205
 msgid "Could not expire listing"
-msgstr ""
+msgstr "Kunne ikke markere oppføringa som utgått"
 
-#: classes/class.listing.php:334
-#: classes/class.member.php:770
+#: classes/class.listing.php:334 classes/class.member.php:770
 #: classes/class.member.php:772
 msgid "No listings found."
-msgstr ""
+msgstr "Ingen oppføringer ble funnet."
 
 #: classes/class.member.php:105
-msgid "Your account has been locked due to too many unsuccessful login attempts. You will need to contact us to have your account unlocked."
+msgid ""
+"Your account has been locked due to too many unsuccessful login attempts. "
+"You will need to contact us to have your account unlocked."
 msgstr ""
+"Kontoen din er blitt sperret på grunn av mange mislykkede innloggingsforsøk. "
+"Du må kontakte oss for å få hevet sperringa."
 
 #: classes/class.member.php:107
 msgid "Password or member id is incorrect.  Please try again, or go"
-msgstr ""
+msgstr "Passord eller brukernavn er feil. Vennligst prøv igjen, eller gå "
 
 #: classes/class.member.php:107
 msgid "to have your password reset"
-msgstr ""
+msgstr "for å nullstille passordet"
 
 #: classes/class.member.php:169
 msgid "There was an error updating the password."
-msgstr ""
+msgstr "Det oppstod en feil ved endring av passordet."
 
 #: classes/class.member.php:199
-msgid "If you don't have an account, you may <a href=/member_create.php>sign up online</a>."
+msgid ""
+"If you don't have an account, you may <a href=/member_create.php>sign up "
+"online</a>."
 msgstr ""
+"Har du ingen konto, kan du  <a href=/member_create.php>melde deg inn på "
+"nettet</a>."
 
 #: classes/class.member.php:199
 msgid "If you don't have an account, please contact us to join."
-msgstr ""
+msgstr "Har du ingen konto, vennligst kontakt oss for å melde deg inn."
 
 #: classes/class.member.php:206
 msgid "Logout"
-msgstr ""
+msgstr "Logg ut"
 
 #: classes/class.member.php:243
-msgid "I'm sorry, but the action attempted was unable to be processed because you don't have permissions"
+msgid ""
+"I'm sorry, but the action attempted was unable to be processed because you "
+"don't have permissions"
 msgstr ""
+"Jeg beklager, men handlinga du prøvde kunne ikke fullføres fordi du ikke har "
+"rettighetene som skal til"
 
 #: classes/class.member.php:243
 msgid "If you would like your access level increased, please"
-msgstr ""
+msgstr "Ønsker å få tilgangsnivået ditt hevet, vennligst"
 
 #: classes/class.member.php:243
 msgid "email the admin"
-msgstr ""
+msgstr "send e-post til administratoren"
 
 #: classes/class.member.php:243
 msgid "and ask"
-msgstr ""
+msgstr "og be om det"
 
 #: classes/class.member.php:297
 msgid "There was an error accessing this member"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av medlemsopplysningene"
 
 #: classes/class.member.php:320
 msgid "There was an error accessing a person record for"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av personopplysninger for"
 
 #: classes/class.member.php:330
 msgid "Member Data"
-msgstr ""
+msgstr "Medlemsopplysninger"
 
 #: classes/class.member.php:333
 msgid "Person Data"
-msgstr ""
+msgstr "Personopplysninger"
 
 #: classes/class.member.php:356
 msgid "Could not save changes to member"
-msgstr ""
+msgstr "Kunne ikke lagre endringer for medlemmet"
 
 #: classes/class.member.php:381
 msgid "Invalid person id in URL.  This break-in attempt has been reported."
 msgstr ""
+"Feil person-ID i URLen. Dette innbruddsforsøket har blitt meldt til "
+"administratoren."
 
-#: classes/class.member.php:423
-#: classes/class.member.php:537
-#: classes/class.member.php:572
+#: classes/class.member.php:423 classes/class.member.php:537
 msgid "Fax"
-msgstr ""
+msgstr "Faks"
 
-#: classes/class.member.php:436
+#: classes/class.member.php:436 classes/class.member.php:572
 msgid "'s Fax"
-msgstr ""
+msgstr "s faksnummer"
 
 #: classes/class.member.php:516
 msgid "Activity"
-msgstr ""
+msgstr "Aktivitet"
 
 #: classes/class.member.php:518
 msgid "No exchanges yet"
-msgstr ""
+msgstr "Ingen handler ennå"
 
 #: classes/class.member.php:520
 msgid "exchanges total"
-msgstr ""
+msgstr "handler totalt"
 
 #: classes/class.member.php:520
 msgid "for a sum of"
-msgstr ""
+msgstr "for til sammen"
 
 #: classes/class.member.php:520
 msgid "last on"
-msgstr ""
+msgstr "sist på"
 
 #: classes/class.member.php:524
 msgid "Feedback"
-msgstr ""
+msgstr "Tilbakemeldinger"
 
 #: classes/class.member.php:524
 msgid "total"
-msgstr ""
+msgstr "totalt"
 
 #: classes/class.member.php:524
 msgid "negative"
-msgstr ""
+msgstr "negative"
 
 #: classes/class.member.php:524
 msgid "neutral"
-msgstr ""
+msgstr "nøytrale"
 
 #: classes/class.member.php:528
 msgid "Joined"
-msgstr ""
+msgstr "Ble med"
 
 #: classes/class.member.php:564
 msgid "Joint Member"
-msgstr ""
+msgstr "Husstandsmedlem"
+
+#: classes/class.member.php:566
+msgid "'s Email"
+msgstr "s e-postadresse"
+
+#: classes/class.member.php:568
+msgid "'s Phone"
+msgstr "s telefonnummer"
+
+#: classes/class.member.php:570
+msgid "'s Secondary Phone"
+msgstr "s andre telefonnummer"
 
 #: classes/class.member.php:584
 msgid "PERSONAL INFORMATION"
-msgstr ""
+msgstr "PERSONOPPLYSNINGER"
 
-#: classes/class.member.php:586
-#: classes/class.member.php:587
+#: classes/class.member.php:586 classes/class.member.php:587
 msgid "Unspecified"
-msgstr ""
+msgstr "Uspesifisert"
 
 #: classes/class.member.php:588
 msgid "No description supplied"
-msgstr ""
+msgstr "Ingen beskrivelse er oppgitt"
 
+# Number of search results
 #: classes/class.member.php:739
 msgid "matching members"
-msgstr ""
+msgstr "treff på medlemmer"
 
 #: classes/class.member.php:748
-msgid "Member_search"
-msgstr ""
+msgid "Member search"
+msgstr "Medlemssøk"
 
 #: classes/class.member.php:780
 msgid "day"
-msgstr ""
+msgstr "dag"
 
 #: classes/class.member.php:788
 msgid "New and updated listings during the last"
-msgstr ""
+msgstr "Nye og oppdaterte oppføringer de siste"
 
 #: classes/class.member.php:819
 msgid "Important information about your"
-msgstr ""
+msgstr "Viktige opplysninger om din"
 
 #: classes/class.member.php:819
 msgid "account"
-msgstr ""
+msgstr "konto"
 
 #: classes/class.member.php:823
-msgid "***NOTE: This member does not have an email address in the system, so they will need to be notified by phone that their listings have been inactivated."
+msgid ""
+"***NOTE: This member does not have an email address in the system, so they "
+"will need to be notified by phone that their listings have been inactivated."
 msgstr ""
+"***MERK: Dette medlemmet har ingen e-postadresse i systemet, så de må ringes "
+"opp og gjøres oppmerksom på at oppføringene har blitt deaktiverte."
 
 #: classes/class.member.php:827
 msgid "listings expired for"
-msgstr ""
+msgstr "oppføringer er utløpt for"
 
 #: classes/class.member.php:827
-msgid "All of this member's listings were automatically expired due to inactivity.  To turn off this feature, see inc.config.php."
+msgid ""
+"All of this member's listings were automatically expired due to inactivity.  "
+"To turn off this feature, see inc.config.php."
 msgstr ""
+"Alle oppføringene til dette medlemmet har løpt ut på grunn av inaktivitet. "
+"For å slå av denne funksjonen, vennligst see inc.config.php. "
 
+# "Balance" as in "account balance"
 #: classes/class.member.php:877
 msgid "Could not query database for balance information."
-msgstr ""
+msgstr "Kunne ikke spørre databasen etter saldoopplysninger."
 
 #: classes/class.member.php:918
 msgid "Error saving Income Share."
-msgstr ""
+msgstr "Det oppstod en feil ved lagring av inntektsfordeling."
 
 #: classes/class.member.php:920
 msgid "Income Share saved successfully."
-msgstr ""
+msgstr "Inntektsfordelinga er lagret."
 
 #: classes/class.member.php:929
 msgid "No Income Share to delete"
-msgstr ""
+msgstr "Det fines ingen inntektsfordelinger å slette"
 
 #: classes/class.member.php:937
 msgid "Error deleting income Share."
-msgstr ""
+msgstr "Det oppstod en feil ved sletting av inntektsfordelinga."
 
 #: classes/class.member.php:939
 msgid "Income Share deleted successfully."
-msgstr ""
+msgstr "Inntektsfordelinga ble slettet."
 
 #: classes/class.news.php:28
 msgid "Could not save news item."
-msgstr ""
+msgstr "Kunne ikke lagre nyhetssak."
 
 #: classes/class.news.php:56
 msgid "There was an error accessing the news table.  Please try again later."
 msgstr ""
+"Det oppstod en feil ved henting av nyheter. Vennligst prøv igjen sener."
 
 #: classes/class.news.php:118
 msgid "At top of list"
-msgstr ""
+msgstr "Ved toppen av lista"
 
 #: classes/class.news.php:140
 msgid "After"
-msgstr ""
+msgstr "Etter"
 
 #: classes/class.page.php:104
 msgid "Printer Friendly View"
-msgstr ""
+msgstr "Utskriftsvennlig visning"
 
 #: classes/class.page.php:117
-msgid "DisplayPage() was called with no content included!  Was a blank page intended?"
+msgid ""
+"DisplayPage() was called with no content included!  Was a blank page "
+"intended?"
 msgstr ""
+"DisplayPage() ble kalt uten at innholdet fulgte med! Var det meninga å vise "
+"ei blank side?"
 
 #: classes/class.person.php:72
-msgid "Could not save new person. There is already a person in your account with the same name, date of birth, and mother's maiden name. If you received this error after pressing the Back button, try going back to the menu and starting again."
+msgid ""
+"Could not save new person. There is already a person in your account with "
+"the same name, date of birth, and mother's maiden name. If you received this "
+"error after pressing the Back button, try going back to the menu and "
+"starting again."
 msgstr ""
+"Kunne ikke lagre den nye personen. Det finnes alt en person i din konto med "
+"det samme navnet, fødselsdatoen og mors pikenavn. Dersom du fikk denne "
+"feilmeldinga etter å ha trykket \"Tilbake\", prøv å gå tilbake til menyen og "
+"prøv igjen."
 
 #: classes/class.person.php:88
 msgid "Could not save changes to"
-msgstr ""
+msgstr "Kunne ikke lagre endringene av"
 
 #: classes/class.person.php:136
 msgid "There was an error accessing this person"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av denne personen"
 
 #: classes/class.person.php:145
 msgid "Cannot delete primary member"
-msgstr ""
+msgstr "Kan ikke slette primærmedlem"
 
 #: classes/class.person.php:194
 msgid "Phone type does not exist."
-msgstr ""
+msgstr "Telefontype finnes ikke."
 
 #: classes/class.settings.php:122
 msgid "Update failed!"
-msgstr ""
+msgstr "Det oppstod en feil under oppdatering!"
 
 #: classes/class.settings.php:127
 msgid "Settings updated successfully."
-msgstr ""
+msgstr "Innstillingene ble oppdatert."
 
-#: classes/class.state_address.php:36
-#: classes/class.state_address.php:56
+#: classes/class.state_address.php:36 classes/class.state_address.php:56
 msgid "State already exists"
-msgstr ""
+msgstr "Fylket finnes allerede"
 
 #: classes/class.state_address.php:75
 msgid "There was an error accessing the state information"
-msgstr ""
+msgstr "Det oppstod en feil ved henting av fylkesopplysningene"
 
-#: classes/class.state_address.php:84
-#: classes/class.state_address.php:93
+#: classes/class.state_address.php:84 classes/class.state_address.php:93
 #: classes/class.state_address.php:124
 msgid "There was an error deleting state information"
-msgstr ""
+msgstr "Det oppstod en feil ved sletting av fylkesopplysningene"
 
 #: classes/class.trade.php:94
 msgid "There was an error accessing the trades table."
-msgstr ""
+msgstr "Det oppstod en feil ved tilgang til handelstabellen. "
 
 #: classes/class.trade.php:128
 msgid "Database out of balance on"
-msgstr ""
+msgstr "Databasen er ubalansert på"
 
 #: classes/class.trade.php:128
 msgid "Hi admin"
-msgstr ""
+msgstr "Hei, administrator"
 
 #: classes/class.trade.php:128
-msgid "We thought you should know that whilst processing a trade the system detected that your trade database is out of balance! Obviously something has gone wrong somewhere along the line and we suggest you investigate the cause of this ASAP."
+msgid ""
+"We thought you should know that whilst processing a trade the system "
+"detected that your trade database is out of balance! Obviously something has "
+"gone wrong somewhere along the line and we suggest you investigate the cause "
+"of this ASAP."
 msgstr ""
+"Vi syntes du burde vite at mens en handel ble utført merket systemet at "
+"handelsdatabasen din er ubalansert! Det er åpenbart at noe har gått galt ett "
+"eller annet sted og vi foreslår at du gransker årsaken så snart som mulig."
 
 #: classes/class.trade.php:134
-msgid "The trade database is out of balance!  Please contact your administrator at"
-msgstr ""
+msgid ""
+"The trade database is out of balance!  Please contact your administrator at"
+msgstr "Handelsdatabasen er ubalansert! Vennligst kontakt administratoren på"
 
 #: classes/class.trade.php:199
 msgid "Reversal of exchange"
-msgstr ""
+msgstr "Tilbakeføring av handel"
 
 #: classes/class.trade.php:199
 msgid "from"
-msgstr ""
+msgstr "fra"
 
 #: classes/class.trade.php:199
 msgid "by admin"
-msgstr ""
+msgstr "av administrator"
 
 #: classes/class.trade.php:304
 msgid "On"
-msgstr ""
+msgstr "På"
 
 #: classes/class.uploads.php:34
 msgid "A file with this name already exists on the server."
-msgstr ""
+msgstr "Ei fil med samme navn eksisterer alt på tjeneren."
 
 #: classes/class.uploads.php:48
 msgid "Could not save database row for uploaded file."
-msgstr ""
+msgstr "Kunne ikke lagre databaseraden for den opplastede fila."
 
 #: classes/class.uploads.php:52
-msgid "Could not save uploaded file. This could be because of a permissions problem.  Does the web user have permission to write to the uploads directory?  It could also be that the file is too large.  The current maximum size of file allowed is"
+msgid ""
+"Could not save uploaded file. This could be because of a permissions "
+"problem.  Does the web user have permission to write to the uploads "
+"directory?  It could also be that the file is too large.  The current "
+"maximum size of file allowed is"
 msgstr ""
+"Kunne ikke lagre den opplastede fila. Dette kan være på grunn av "
+"rettighetsproblemer. Har web-brukeren rettigheter til å skrive til "
+"opplastingsmappa? Det kan også være at fila er for stor. Maksgrensa for "
+"filstørrelse er for tida"
 
 #: classes/class.uploads.php:52
 msgid "bytes"
-msgstr ""
+msgstr "byte"
 
 #: classes/class.uploads.php:71
 msgid "There was an error accessing the uploads table."
-msgstr ""
+msgstr "Det oppstod en feil ved tilgang til opplastingstabellen."
 
 #: classes/class.uploads.php:85
-msgid "File was deleted but could not delete row from database.  The row will have to removed manually.  Please contact your systems administrator."
+msgid ""
+"File was deleted but could not delete row from database.  The row will have "
+"to removed manually.  Please contact your systems administrator."
 msgstr ""
+"Fila ble slettet men kunne ikke slette raden fra databasen. Raden vil måtte "
+"slettes manuelt. Vennligst kontakt systemadministratoren."
 
 #: classes/class.uploads.php:89
 msgid "Could not delete file"
-msgstr ""
+msgstr "Kunne ikke slette fil"
 
+# Verb on button to confirm upload.
 #: classes/class.uploads.php:138
 msgid "Upload"
-msgstr ""
+msgstr "Last opp"
 
+#~ msgid "Comittee"
+#~ msgstr "Komité"
+
+#~ msgid "Password Reset"
+#~ msgstr "Passordet er nullstilt"
+
+#~ msgid "talents"
+#~ msgstr "talenter"
+
+#~ msgid "4thcorner.pdf"
+#~ msgstr "4thcorner.pdf"
