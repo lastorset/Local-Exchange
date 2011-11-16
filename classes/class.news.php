@@ -53,7 +53,7 @@ class cNews {
 			$this->sequence = $row[3];
 			return true;
 		} else {
-			$cErr->Error(_("There was an error accessing the news table.  Please try again later.")." "._("Please try again later."));
+			$cErr->Error(_("There was an error accessing the news table.  Please try again later."));
 			include("redirect.php");
 		}
 		

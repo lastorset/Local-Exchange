@@ -25,7 +25,7 @@ $form->addElement('submit', 'btnSubmit', _("Submit"));
 //
 // Define form rules
 //
-$form->addRule('state', _("State name connot be blank"), 'required');
+$form->addRule('state', _("State name cannot be blank"), 'required');
 
 //
 // Then check if we are processing a submission or just displaying the form

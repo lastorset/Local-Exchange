@@ -409,7 +409,7 @@ switch($_REQUEST["action"]) {
 			
 		
 			else // This trade doesn't exist in the database!
-				$list .= "<em>"._("You have elected to confirm a non-existant trade")."!</em>";
+				$list .= "<em>"._("You have elected to confirm a non-existent trade")."!</em>";
 	
 	
 	break;

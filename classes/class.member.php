@@ -563,13 +563,13 @@ class cMember
 			if($person->directory_list == "Y") {
 				$output .= "<BR><STRONG>"._("Joint Member").":</STRONG> ". $person->first_name ." ". $person->mid_name ." ". $person->last_name ."<BR>"; // added mid_name by ejkv
 				if($person->email != "")
-					$output .= "<STRONG>". $person->first_name ."'s "._("Email").":</STRONG> ". "<A HREF=email.php?email_to=". $person->email ."&member_to=". $this->member_id .">". $person->email ."</A><BR>";				
+					$output .= "<STRONG>". $person->first_name ._("'s Email").":</STRONG> ". "<A HREF=email.php?email_to=". $person->email ."&member_to=". $this->member_id .">". $person->email ."</A><BR>";
 				if($person->phone1_number != "")
-					$output .= "<STRONG>". $person->first_name ."'s "._("Phone").":</STRONG> ". $person->DisplayPhone("1") ."<BR>";
+					$output .= "<STRONG>". $person->first_name ._("'s Phone").":</STRONG> ". $person->DisplayPhone("1") ."<BR>";
 				if($person->phone2_number != "")
-					$output .= "<STRONG>". $person->first_name ."'s "._("Secondary Phone").":</STRONG> ". $person->DisplayPhone("2") ."<BR>";						
+					$output .= "<STRONG>". $person->first_name ._("'s Secondary Phone").":</STRONG> ". $person->DisplayPhone("2") ."<BR>";
 				if($person->fax_number != "")
-				$output .= "<STRONG>". $person->first_name ."'s "._("Fax").":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";				
+				$output .= "<STRONG>". $person->first_name ._("'s Fax").":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";
 			}
 		}		
 	
@@ -745,7 +745,7 @@ class cMemberGroup {
 		
 		$tmp .= "</select>";
 //		$form->addElement("select", "member_to", "...", $name_list->MakeNameArray());
-		$tmp .= '<input type=text size=20 name=picker value='._("Member_search").' onKeyUp="autoComplete(this,document.all.member_to,\'text\')"
+		$tmp .= '<input type=text size=20 name=picker value='._("Member search").' onKeyUp="autoComplete(this,document.all.member_to,\'text\')"
 			onFocus="this.value=\'\'">
 			<!--<input type=button value="Update Dropdown List">-->';
 		return $tmp;
