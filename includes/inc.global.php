@@ -82,7 +82,7 @@ include_once("inc.config.php");
 
 /* Initialize gettext */
 
-$locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+// $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
 // Hardcoded for now. Later some prettier configuration.
 $locale = "nb_NO.utf8";
