@@ -55,7 +55,7 @@ class cDirectory {
 		$this->PrintSectionHeader(_("Wanted Listings"));
 		$this->PrintListings(WANT_LISTING);
 		
-		$this->pdf->Output(_("4thcorner.pdf"),true);
+		$this->pdf->Output("4thcorner.pdf",true);
 	}
 	
 	function PrintMembers() {	

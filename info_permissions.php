@@ -74,7 +74,7 @@ function permission2text($p) {
 	if (!$p)
 		$p = 0;
 		
-	$pTexts = Array(_("Guests"),_("Members"),_("Comittee"),_("Admin"));
+	$pTexts = Array(_("Guests"),_("Members"),_("Committee"),_("Admin"));
 	
 	return $pTexts[$p];
 }

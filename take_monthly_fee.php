@@ -63,7 +63,7 @@ function confirmation($cid)
     if(already_fee_takenp())
     {
         $month = strftime("%B", time());
-        $warning = "<p>"._("Are you sure you want to tranfer monthly fee for the month of")." $month?  "._("The monthly fee for")." $month "._("has already been taken").".</p>";
+        $warning = "<p>"._("Are you sure you want to transfer monthly fee for the month of")." $month?  "._("The monthly fee for")." $month "._("has already been taken").".</p>";
 
     }
     else
