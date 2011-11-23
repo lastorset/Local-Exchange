@@ -93,6 +93,7 @@ putenv("LANG=$locale");
 $ret = setlocale(LC_MESSAGES, $locale);
 
 bindtextdomain("messages", "./includes/lang");
+bind_textdomain_codeset("messages", "UTF-8");
 textdomain("messages");
 
 /* Initial session handling code starts */
