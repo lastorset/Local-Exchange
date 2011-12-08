@@ -99,19 +99,21 @@ class cTrade {
 	// It is very important that this function prevent the database from going out balance.
 	function MakeTrade($reversed_trade_id=null) { 
 		global $cDB, $cErr;
-		
-		if ($this->amount <= 0 and $this->type != TRADE_REVERSAL) // Amount should be positive unless
-			return false;									 // this is a reversal of a previous trade.
-			
-		if ($this->amount >= 0 and $this->type == TRADE_REVERSAL)	 // And likewise.
+
+		// Amount should be positive unless this is a reversal of a previous trade.
+		if ($this->amount <= 0 and $this->type != TRADE_REVERSAL)
+			return false;
+
+		// And likewise.
+		if ($this->amount >= 0 and $this->type == TRADE_REVERSAL)
 			return false;
 			
-		
+		// Don't allow trade to self
 		if ($this->member_from->member_id == $this->member_to->member_id)
-			return false;		// don't allow trade to self
+			return false;
 		
-		if ($this->member_from->restriction==1) { // This member's account has been restricted - he is not allowed to make outgoing trades
-			
+		// This member's account has been restricted - he is not allowed to make outgoing trades
+		if ($this->member_from->restriction==1) {
 			return false;
 		}
 	
