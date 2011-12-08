@@ -37,6 +37,9 @@ class cError
 
 	}
 
+	/** Use this function to save an error for emitting later. Remember to call SaveErrors
+		before redirecting; they will be saved as a session variable and restored when the
+		next page loads. Emit the error using ErrorBox. */
 	function Error($message, $severity=0, $file="", $line=0)
 	{
 		if ($severity==0)
@@ -49,6 +52,15 @@ class cError
 
 		if ($severity==ERROR_SEVERITY_STOP)
 			$this->DoStopError();
+	}
+
+	/** Use this function to log an error immediately. The caller is responsible for informing
+		the user, if necessary. */
+	function InternalError($message, $file="", $line=0)
+	{
+		global $cUser;
+		error_log(SITE_SHORT_TITLE ." error (INTERNAL) (user ". $cUser->member_id ."): ". $message 
+			. (strlen($file) > 0 ? " (". $file ." line ". $line .")" : ""));
 	}
 
 	function SaveErrors()
