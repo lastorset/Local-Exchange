@@ -100,20 +100,28 @@ class cTrade {
 	function MakeTrade($reversed_trade_id=null) { 
 		global $cDB, $cErr;
 
+		// FIXME: These first errors are really user errors, and should be revealed/checked in the UI.
 		// Amount should be positive unless this is a reversal of a previous trade.
-		if ($this->amount <= 0 and $this->type != TRADE_REVERSAL)
+		if ($this->amount <= 0 and $this->type != TRADE_REVERSAL) {
+			$cErr->InternalError("Amount must be positive.", __FILE__, __LINE__);
 			return false;
+		}
 
 		// And likewise.
-		if ($this->amount >= 0 and $this->type == TRADE_REVERSAL)
+		if ($this->amount >= 0 and $this->type == TRADE_REVERSAL) {
+			$cErr->InternalError("Amount must be negative for reversed trades.", __FILE__, __LINE__);
 			return false;
+		}
 			
 		// Don't allow trade to self
-		if ($this->member_from->member_id == $this->member_to->member_id)
+		if ($this->member_from->member_id == $this->member_to->member_id) {
+			$cErr->InternalError("Cannot trade with oneself.", __FILE__, __LINE__);
 			return false;
-		
+		}
+
 		// This member's account has been restricted - he is not allowed to make outgoing trades
 		if ($this->member_from->restriction==1) {
+			$cErr->InternalError("Account ". $this->member_from->member_id ." is restricted.", __FILE__, __LINE__);
 			return false;
 		}
 	
@@ -156,7 +164,11 @@ class cTrade {
 		if($this->SaveTrade()) {
 			
 			$success1 = $this->member_from->UpdateBalance(-($this->amount));
+			if (!$success1)
+				$cErr->InternalError("Could not update payer's balance.", __FILE__, __LINE__);
 			$success2 = $this->member_to->UpdateBalance($this->amount);
+			if (!$success2)
+				$cErr->InternalError("Could not update recipient's balance.", __FILE__, __LINE__);
 			
 			if(LOG_LEVEL > 0 and $this->type != TRADE_ENTRY) {//Log if enabled & not an ordinary trade
 				$log_entry = new cLogEntry (TRADE, $this->type, $this->trade_id);
@@ -164,12 +176,16 @@ class cTrade {
 			} else {
 				$success3 = true;
 			}
+			if (!$success3)
+				$cErr->InternalError("Could not log trade.", __FILE__, __LINE__);
 			
 			if($reversed_trade_id) {  // If this is a trade reversal, need to mark old trade reversed
 				$success4 = $cDB->Query("UPDATE ".DATABASE_TRADES." SET status='R', trade_date=trade_date WHERE trade_id=". $cDB->EscTxt($reversed_trade_id) .";");
 			} else {
 				$success4 = true;
 			}
+			if (!$success4)
+				$cErr->InternalError("Could not mark trade as reversed.", __FILE__, __LINE__);
 
 			if($success1 and $success2 and $success3 and $success4) {
 				$cDB->Query('COMMIT');
@@ -181,6 +197,7 @@ class cTrade {
 				return false;
 			}
 		} else {
+			$cErr->InternalError("SaveTrade failed.", __FILE__, __LINE__);
 			$cDB->Query("SET AUTOCOMMIT=1"); // Probably isn't necessary...
 			return false;
 		}			

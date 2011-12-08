@@ -163,7 +163,7 @@ function process_data ($values) {
 		$status = $trade->MakeTrade();
 		
 		if(!$status) {
-			$list .= _("Trade failed!")." "._("Please try again later.");
+			$list .= _("Trade failed!")." "._("Please try again later, or contact your administrator.");
 
 			if ($member->restriction==1)
 				$list .= LEECH_NOTICE;
