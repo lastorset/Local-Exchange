@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-11 16:41+0100\n"
-"PO-Revision-Date: 2011-11-23 22:04+0100\n"
+"PO-Revision-Date: 2012-01-03 21:15+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -496,73 +496,71 @@ msgstr ""
 
 #: create_db.php:77
 msgid "Arts & Crafts"
-msgstr ""
+msgstr "Kunst og håndverk"
 
 #: create_db.php:79
 msgid "Building Services"
-msgstr ""
+msgstr "Byggetjenester"
 
 #: create_db.php:81
-#, fuzzy
 msgid "Business & Administration"
-msgstr "Administrasjon"
+msgstr "Forretninger og ledelse"
 
 #: create_db.php:83
 msgid "Children & Childcare"
-msgstr ""
+msgstr "Barn og barneomsorg"
 
 #: create_db.php:85
 msgid "Computers"
-msgstr ""
+msgstr "Datamaskiner og IKT"
 
 #: create_db.php:87
 msgid "Counseling & Therapy"
-msgstr ""
+msgstr "Rådgivning og terapi"
 
 #: create_db.php:89
 msgid "Food"
-msgstr ""
+msgstr "Mat"
 
 #: create_db.php:91
 msgid "Gardening & Yard Work"
-msgstr ""
+msgstr "Hagearbeid"
 
 #: create_db.php:93
 msgid "Goods"
-msgstr ""
+msgstr "Varer"
 
 #: create_db.php:95
 msgid "Health & Personal"
-msgstr ""
+msgstr "Helse og personlige tjenester"
 
 #: create_db.php:97 member_create.php:23 member_edit.php:26
 msgid "Household"
-msgstr "Husstand"
+msgstr "Husholdning"
 
 #: create_db.php:101
 msgid "Music & Entertainment"
-msgstr ""
+msgstr "Musikk og underholdning"
 
 #: create_db.php:103
 msgid "Pets"
-msgstr ""
+msgstr "Kjæledyr"
 
 #: create_db.php:105
 msgid "Sports & Recreation"
-msgstr ""
+msgstr "Sport og fritid"
 
 #: create_db.php:107
 msgid "Teaching"
-msgstr ""
+msgstr "Undervisning"
 
 #: create_db.php:109
-#, fuzzy
 msgid "Transportation"
-msgstr "Transaksjonstype"
+msgstr "Transport"
 
 #: create_db.php:111
 msgid "Freebies"
-msgstr ""
+msgstr "Gis bort"
 
 #: create_db.php:190
 msgid "&quot;Account Restriction Lifted&quot; Email"
@@ -575,7 +573,7 @@ msgstr "Begrensningene er fjernet fra kontoen din."
 #: create_db.php:190
 msgid ""
 "Define email that is sent out when restrictions are lifted on an account."
-msgstr ""
+msgstr "Skriv e-post som blir sendt når kontobegrensinger blir fjernet"
 
 #: create_db.php:192
 msgid "&quot;Account Restricted&quot; Email"
@@ -592,11 +590,18 @@ msgid ""
 "any particular way, please let us know, and we will review the situation in "
 "due course. The LETS Administrator "
 msgstr ""
+"Kjære medlem<br /><br />Vi har sett over saldoene til våre medlemmer for å "
+"sikre at handel foregår rettferdig, og at medlemmene kan holde saldoen nær "
+"null. Vi forstår at omstendighetene av og til fører til at ting kommer ut av "
+"balanse. Derfor hjelper vi deg ved å stenge betalinger fra kontoen din "
+"inntil videre. Har du spørsmål om dette, eller om vi kan hjelpe deg med noe, "
+"vennligst ta kontakt og vi vil vurdere situasjonen etter hvert. LETS-"
+"Administratoren"
 
 #: create_db.php:192
 msgid ""
 "Define email that is sent out when restrictions are imposed on an account."
-msgstr ""
+msgstr "Skriv e-post som blir sendt når begrensinger blir lagt på en konto."
 
 #: create_db.php:194
 msgid "Display Member Balance"
@@ -608,6 +613,8 @@ msgid ""
 "always visible to Admins and Committee members regardless of what is set "
 "here.)"
 msgstr ""
+"Vil du vise saldoer i medlemslista? (Saldoer alltid synlig for "
+"administratorer og styret uansett.)"
 
 #: create_db.php:196
 msgid "Enable Take Service Charge"
@@ -617,24 +624,26 @@ msgstr "Tillat engangsgebyr"
 msgid ""
 "Do you want the option of taking a service charge from members as and when?"
 msgstr ""
+"Vil du ha muligheten til å ta engangsgebyr fra alle medlemmene når det er "
+"ønskelig?"
 
 #: create_db.php:198
 msgid "Show Inactive Members in Members List"
-msgstr ""
+msgstr "Vis inaktive medlemmer i medlemslista"
 
 #: create_db.php:198
 msgid "Do you want to display Inactive members in the Member List?"
-msgstr ""
+msgstr "Vil du vise inaktive medlemmer i medlemslista?"
 
 #: create_db.php:200
 msgid "Show Rate on Listings"
-msgstr "Vis vurdering på oppføringene"
+msgstr "Vis pris på oppføringene"
 
 #: create_db.php:200
 msgid ""
 "Do you want to display the Rate alongside the offers/wants in the main "
 "listings?"
-msgstr ""
+msgstr "Vil du vise prisen ved sida av oppføringene i listene?"
 
 #: create_db.php:202
 msgid "Show Postcode on Listings"
@@ -644,11 +653,11 @@ msgstr "Vis postnummer på oppføringene"
 msgid ""
 "Do you want to display the PostCode alongside the offers/wants in the main "
 "listings?"
-msgstr ""
+msgstr "Vil du vise postnummeren ved sida av oppføringene i listene?"
 
 #: create_db.php:204
 msgid "Postcode Length (in chars)"
-msgstr ""
+msgstr "Postnummerlengde (antall tegn)"
 
 #: create_db.php:204
 msgid ""
@@ -657,10 +666,14 @@ msgid ""
 "number of characters displayed, so for eg if you just want to show the first "
 "3 characters of the postcode then put 3."
 msgstr ""
+"Dersom du har valgt å vise postnummeret i oppføringene, hvor mye av "
+"postnummeret vil du vise? (Tallet du skriver inn vil være antall tegn som "
+"blir vist. Dersom du for eksempel skriver 3, vises de 3 første tegn av "
+"postnummeret.)"
 
 #: create_db.php:206
 msgid "Enable Balance Override"
-msgstr ""
+msgstr "Tillat manuell saldojustering"
 
 #: create_db.php:206
 msgid ""
@@ -669,10 +682,15 @@ msgid ""
 "existing balances. Link will appear in admin panel if set to TRUE.  Use with "
 "CAUTION to avoid the database going out of balance"
 msgstr ""
+"Vil du at administratorer skal kunne justere saldoer for enkeltmedlemmer? "
+"Dette kan være nyttig når man setter opp nettstedet for første gang, for å "
+"legge inn inngående saldo. En peker vil komme til syne i "
+"administrasjonspanel dersom satt til TRUE. VÆR VARSOM for å unngå at "
+"databasen blir ubalansert."
 
 #: create_db.php:208
 msgid "Enable Member-to-Member Invoicing"
-msgstr ""
+msgstr "Tillat at medlemmer sender faktura"
 
 #: create_db.php:208
 msgid ""
@@ -680,16 +698,20 @@ msgid ""
 "recipient is always given the option to confirm/reject payment of the "
 "invoice)"
 msgstr ""
+"Vil tillate at medlemmer sender faktura til hverandre via nettstedet? "
+"(Mottakeren har alltid muligheten til å godta/nekte å betale.)"
 
 #: create_db.php:210
 msgid "Allow Members to Upload Images"
-msgstr ""
+msgstr "Tillat at medlemmer laster opp bilder"
 
 #: create_db.php:210
 msgid ""
 "Do you want to allow members to upload an image of themselves, to be "
 "displayed with their personal profile?"
 msgstr ""
+"Vil du at medlemmer skal kunne laste opp et bilde av seg selv, til visning "
+"på profilen?"
 
 #: create_db.php:212
 msgid "Enable Social Networking Fields"
@@ -698,11 +720,11 @@ msgstr "Tillat funksjoner for sosialt nettverk"
 #: create_db.php:212
 msgid ""
 "Do you want to enable the Social Networking profile fields (Age, Sex, etc)?"
-msgstr ""
+msgstr "Vil du slå på feltene for sosialt nettverk (Alder, kjønn, osv.)?"
 
 #: create_db.php:214
 msgid "Out Of Balance Behaviour"
-msgstr ""
+msgstr "Oppførsel når databasen blir ubalansert"
 
 #: create_db.php:214
 msgid ""
@@ -1283,9 +1305,9 @@ msgstr ""
 "godtatt, '10%' = ikke godtatt)"
 
 #: income_ties.php:37
-#, fuzzy, php-format
+#, php-format
 msgid ""
-"Sorry, you can't contribute more than 99% of your income to another account "
+"Sorry, you can't contribute more than 99%% of your income to another account "
 "- but it's the thought that counts"
 msgstr ""
 "Beklager, du kan ikke gi bort mer enn 99 %% av inntekten din til en annen "
@@ -1345,27 +1367,27 @@ msgstr ""
 
 #: index.php:22
 msgid "Why have a Local, Sustainable Currency?"
-msgstr ""
+msgstr "Hvorfor en lokal, bærekraftig valuta?"
 
 #: index.php:22
 msgid "Enhance Your Prosperity"
-msgstr ""
+msgstr "Øk velstanden"
 
 #: index.php:22
 msgid "Build a Sustainable Community"
-msgstr ""
+msgstr "Bygg opp et bærekraftig lokalsamfunn"
 
 #: index.php:22
 msgid "Utilize Your Talents"
-msgstr ""
+msgstr "Utnytt evnene dine"
 
 #: index.php:22
 msgid "Nurture the Unique Quality of Your Hometown"
-msgstr ""
+msgstr "Dyrk det særegne ved hjemstedet ditt"
 
 #: index.php:22
 msgid "Have Fun"
-msgstr ""
+msgstr "Ha det gøy"
 
 #: info_permissions.php:13
 msgid ""
@@ -1878,9 +1900,8 @@ msgstr ""
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
 #: member_create.php:89 member_directory.php:43 member_edit.php:78
 #: member_edit.php:103 classes/class.member.php:558
-#, fuzzy
 msgid "State"
-msgstr "Rediger fylke"
+msgstr "Fylke"
 
 #: member_contact_create.php:61 member_contact_create.php:74
 #: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
