@@ -293,6 +293,9 @@ class cMember
 		}
 		else
 		{
+			if (is_null($member))
+				$cErr->InternalError("LoadMember was called with null", __FILE__, __LINE__);
+
 			if ($redirect) {
 				$cErr->Error(_("There was an error accessing this member")." (".$member."). "._("Please try again later").".");
 				include("redirect.php");

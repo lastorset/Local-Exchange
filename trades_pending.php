@@ -115,6 +115,7 @@ function displayTrade($t,$typ) {
 }
 
 function doTrade($t) {
+	global $member_logged_in;
 	$member_to = new cMember;
 	
 	if ($t["typ"]=='T')
