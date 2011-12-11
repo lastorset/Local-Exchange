@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-22 21:39+0100\n"
+"POT-Creation-Date: 2011-12-11 16:41+0100\n"
 "PO-Revision-Date: 2011-11-23 22:04+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: /home/lastorset/dev/lex/html\n"
 
-#: admin_menu.php:4 includes/inc.global.php:98
+#: admin_menu.php:4
 msgid "Administration Menu"
 msgstr "Administrasjonsmeny"
 
@@ -242,7 +242,7 @@ msgstr "Velg medlem som du vil endre saldoen for"
 
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:39 member_edit.php:24 member_to_edit.php:14
-#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:514
+#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:517
 msgid "Member"
 msgstr "Medlem"
 
@@ -328,10 +328,9 @@ msgstr "Kunne ikke lagre kategorien."
 #: listing_create.php:123 listing_edit.php:142 member_contact_create.php:152
 #: member_contact_edit.php:168 member_create.php:211 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
-#: state_edit.php:48 trade.php:140 trade.php:154 trade.php:166
-#: includes/inc.config.php:66 classes/class.member.php:169
-#: classes/class.member.php:877 classes/class.trade.php:94
-#: classes/class.uploads.php:71
+#: state_edit.php:48 trade.php:140 trade.php:154 includes/inc.config.php:66
+#: classes/class.member.php:169 classes/class.member.php:880
+#: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
 msgstr "Vennligst prøv igjen senere."
 
@@ -414,7 +413,7 @@ msgstr ""
 msgid "Name"
 msgstr "Navn"
 
-#: contact.php:14 classes/class.member.php:531
+#: contact.php:14 classes/class.member.php:534
 msgid "Email"
 msgstr "E-postadresse"
 
@@ -475,7 +474,7 @@ msgid "Contact Form"
 msgstr "Kontaktskjema"
 
 #: contact.php:46 trades_pending.php:38 classes/class.feedback.php:198
-#: classes/class.trade.php:258 classes/class.trade.php:304
+#: classes/class.trade.php:277 classes/class.trade.php:323
 msgid "From"
 msgstr "Fra"
 
@@ -917,12 +916,14 @@ msgstr ""
 "preview/194959.html\">herfra</A>."
 
 #: directory.php:13
+#, fuzzy
 msgid ""
 "Note that <u>older versions of Acrobat may not be able to read this file</"
 "u>.  If you get an error message when trying to download, try upgrading <A "
 "HREF=\"http://www.tucows.com/preview/194959.html\">Acrobat</A>. If you have "
-"Windows 2000 or XP, you can upgrade to the newest version, but if you have "
-"Windows 98, you will want version 6.0."
+"Windows XP, Vista or 7 or Mac Intel, you can upgrade to the newest version, "
+"but if you have Windows 98 or 2000 or Mac OS X 10.4, you will need an older "
+"version."
 msgstr ""
 "Merk at <u>eldre versjoner av Acrobat kanskje ikke kan lese denne fila</u>. "
 "Hvis du får feilmelding når du prøver å laste ned fila, prøv å oppgradere <A "
@@ -987,8 +988,8 @@ msgstr "Velg infoside som skal redigeres"
 msgid "Email a Member"
 msgstr "Send e-post til et medlem"
 
-#: email.php:22 trades_pending.php:38 classes/class.trade.php:258
-#: classes/class.trade.php:304
+#: email.php:22 trades_pending.php:38 classes/class.trade.php:277
+#: classes/class.trade.php:323
 msgid "To"
 msgstr "Til"
 
@@ -1111,7 +1112,7 @@ msgstr ""
 "Ofte kan misforståelser klares opp til begges fordel."
 
 #: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:125
-#: classes/class.member.php:524
+#: classes/class.member.php:527
 msgid "Positive"
 msgstr "Positiv"
 
@@ -1282,9 +1283,9 @@ msgstr ""
 "godtatt, '10%' = ikke godtatt)"
 
 #: income_ties.php:37
-#, php-format
+#, fuzzy, php-format
 msgid ""
-"Sorry, you can't contribute more than 99%% of your income to another account "
+"Sorry, you can't contribute more than 99% of your income to another account "
 "- but it's the thought that counts"
 msgstr ""
 "Beklager, du kan ikke gi bort mer enn 99 %% av inntekten din til en annen "
@@ -1342,25 +1343,29 @@ msgstr ""
 "Dersom du vil endre denne inntektsfordelinga må du først fjerne den og så "
 "opprette en ny."
 
-#: index.php:9 org_index.php:9
-msgid ""
-"<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' "
-"align=top></td><td><img src='images/localx_black.png' align=top><br><img "
-"src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font "
-"size='4'>Why have a Local, Sustainable Currency?</font></strong></"
-"p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> "
-"Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your "
-"Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of "
-"Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>"
+#: index.php:22
+msgid "Why have a Local, Sustainable Currency?"
 msgstr ""
-"<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home.png' "
-"align=top></td><td><img src='images/localx_black.png' align=top><br><img "
-"src='images/mutual_time.png' align=top></td></tr></table><p><strong> <font "
-"size='4'>Hvorfor en lokal, bærekraftig valuta?</font></strong></"
-"p><ul><li><strong>Øk velstanden<br><br></strong></li><li><strong>Bygg opp et "
-"bærekraftig lokalsamfunn<br><br></strong></li><li><strong>Utnytt evnene "
-"dine<br><br></strong></li><li><strong>Dyrk det særegne ved<br>hjemstedet "
-"ditt <br><br></strong></li><li><strong>Ha det gøy</strong></li></ul>"
+
+#: index.php:22
+msgid "Enhance Your Prosperity"
+msgstr ""
+
+#: index.php:22
+msgid "Build a Sustainable Community"
+msgstr ""
+
+#: index.php:22
+msgid "Utilize Your Talents"
+msgstr ""
+
+#: index.php:22
+msgid "Nurture the Unique Quality of Your Hometown"
+msgstr ""
+
+#: index.php:22
+msgid "Have Fun"
+msgstr ""
 
 #: info_permissions.php:13
 msgid ""
@@ -1475,7 +1480,7 @@ msgid "You already have a listing with this title"
 msgstr "Du har alt ei oppføring med denne tittelen"
 
 #: listing_create.php:50 listing_edit.php:35 listings.php:21 trade.php:48
-#: classes/class.trade.php:258
+#: classes/class.trade.php:277
 msgid "Category"
 msgstr "Kategori"
 
@@ -1486,7 +1491,7 @@ msgstr "Pris"
 #: listing_create.php:57 listing_edit.php:44 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
 #: trades_pending.php:38 classes/class.listing.php:150
-#: classes/class.trade.php:258
+#: classes/class.trade.php:277
 msgid "Description"
 msgstr "Tekst"
 
@@ -1574,7 +1579,7 @@ msgid "Create Listings"
 msgstr "Opprett oppføringer"
 
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
-#: classes/class.directory.php:52 classes/class.member.php:771
+#: classes/class.directory.php:52 classes/class.member.php:774
 msgid "Offered Listings"
 msgstr "Til salgs-oppføringer"
 
@@ -1594,7 +1599,7 @@ msgstr "Slett oppføringer under \"Til salgs\""
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
-#: classes/class.member.php:773
+#: classes/class.member.php:776
 msgid "Wanted Listings"
 msgstr "Ønskes kjøpt"
 
@@ -1657,7 +1662,7 @@ msgstr "Vis alle oppføringer"
 msgid "3 days"
 msgstr "3 dager"
 
-#: listings.php:23 classes/class.member.php:782
+#: listings.php:23 classes/class.member.php:785
 msgid "week"
 msgstr "uke"
 
@@ -1665,7 +1670,7 @@ msgstr "uke"
 msgid "2 weeks"
 msgstr "2 uker"
 
-#: listings.php:23 classes/class.member.php:784
+#: listings.php:23 classes/class.member.php:787
 msgid "month"
 msgstr "måned"
 
@@ -1790,7 +1795,7 @@ msgstr "Fjern begrensning"
 msgid "Choose Joint Member"
 msgstr "Velg husstandsmedlem"
 
-#: member_contact_choose.php:9 classes/class.member.php:373
+#: member_contact_choose.php:9 classes/class.member.php:376
 msgid "Which Joint Member?"
 msgstr "Hvilket husstandsmedlem?"
 
@@ -1837,12 +1842,12 @@ msgid "Email Address"
 msgstr "E-postadresse"
 
 #: member_contact_create.php:44 member_contact_edit.php:46
-#: member_create.php:51 member_edit.php:55 classes/class.member.php:533
+#: member_create.php:51 member_edit.php:55 classes/class.member.php:536
 msgid "Primary Phone"
 msgstr "Hovedtelefonnummer"
 
 #: member_contact_create.php:45 member_contact_edit.php:47
-#: member_create.php:52 member_edit.php:56 classes/class.member.php:535
+#: member_create.php:52 member_edit.php:56 classes/class.member.php:538
 msgid "Secondary Phone"
 msgstr "Annet telefonnummer"
 
@@ -1850,6 +1855,39 @@ msgstr "Annet telefonnummer"
 #: member_create.php:53 member_edit.php:57
 msgid "Fax Number"
 msgstr "Faksnummer"
+
+#: member_contact_create.php:48 member_contact_edit.php:50
+#: member_create.php:63 member_edit.php:66
+msgid "Address Line 1"
+msgstr ""
+
+#: member_contact_create.php:49 member_contact_edit.php:51
+#: member_create.php:64 member_directory.php:31 member_directory.php:41
+#: member_edit.php:67 classes/class.member.php:542
+msgid "Address Line 2"
+msgstr ""
+
+#: member_contact_create.php:50 member_contact_create.php:72
+#: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
+#: member_create.php:88 member_directory.php:42 member_edit.php:68
+#: member_edit.php:102 classes/class.member.php:546
+msgid "City"
+msgstr ""
+
+#: member_contact_create.php:60 member_contact_create.php:73
+#: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
+#: member_create.php:89 member_directory.php:43 member_edit.php:78
+#: member_edit.php:103 classes/class.member.php:558
+#, fuzzy
+msgid "State"
+msgstr "Rediger fylke"
+
+#: member_contact_create.php:61 member_contact_create.php:74
+#: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
+#: member_create.php:90 member_directory.php:44 member_edit.php:79
+#: member_edit.php:104 classes/class.member.php:550
+msgid "Zip Code"
+msgstr ""
 
 #: member_contact_create.php:62 member_contact_edit.php:64
 #: member_create.php:77 member_edit.php:80
@@ -2194,15 +2232,15 @@ msgstr "Godkjenn innbetalinger automatisk"
 msgid "Confirm Payments"
 msgstr "Godkjenn innbetalinger selv"
 
-#: member_edit.php:87 classes/class.member.php:590
+#: member_edit.php:87 classes/class.member.php:593
 msgid "Age"
 msgstr "Alder"
 
-#: member_edit.php:88 classes/class.member.php:592
+#: member_edit.php:88 classes/class.member.php:595
 msgid "Sex"
 msgstr "Kjønn"
 
-#: member_edit.php:89 classes/class.member.php:594
+#: member_edit.php:89 classes/class.member.php:597
 msgid "About Me"
 msgstr "Om meg"
 
@@ -2956,15 +2994,15 @@ msgstr ""
 "godkjenner denne transaksjonen vil betalingen bli utført og du vil bli bedt "
 "om å legge igjen tilbakemeldinger til dette medlemmet"
 
-#: trade.php:137 trade.php:151 trade.php:173
+#: trade.php:137 trade.php:151 trade.php:174
 msgid "Would you like to"
 msgstr "Vil du"
 
-#: trade.php:137 trade.php:151 trade.php:173
+#: trade.php:137 trade.php:151 trade.php:174
 msgid "record another"
 msgstr "registrere enda en"
 
-#: trade.php:137 trade.php:151 trade.php:173
+#: trade.php:137 trade.php:151 trade.php:174
 msgid "exchange"
 msgstr "handel"
 
@@ -3005,27 +3043,32 @@ msgstr ""
 "Du vil bli varslet når det andre medlemmet betaler fakturaen og blir bedt om "
 "å legge igjen tilbakemeldinger til deg"
 
-#: trade.php:173
+#: trade.php:166
+#, fuzzy
+msgid "Please try again later, or contact your administrator."
+msgstr "Handelsdatabasen er ubalansert! Vennligst kontakt administratoren på"
+
+#: trade.php:174
 msgid "You have transferred"
 msgstr "Du har overført"
 
-#: trade.php:173
+#: trade.php:174
 msgid " to "
 msgstr " til "
 
-#: trade.php:173
+#: trade.php:174
 msgid "Or would you like to leave"
 msgstr "Eller vil du legge igjen"
 
-#: trade.php:173
+#: trade.php:174
 msgid "feedback"
 msgstr "tilbakemelding"
 
-#: trade.php:173
+#: trade.php:174
 msgid "for this member"
 msgstr "til dette medlemmet"
 
-#: trade.php:189 trades_pending.php:152
+#: trade.php:190 trades_pending.php:153
 msgid "Donation from"
 msgstr "Gave fra"
 
@@ -3094,7 +3137,7 @@ msgid "Sent Invoices"
 msgstr "Utsendte fakturaer"
 
 #: trades_pending.php:38 classes/class.feedback.php:198
-#: classes/class.trade.php:258
+#: classes/class.trade.php:277
 msgid "Date"
 msgstr "Dato"
 
@@ -3154,47 +3197,47 @@ msgstr "har godkjent"
 msgid "has paid this invoice"
 msgstr "har betalt denne fakturaen"
 
-#: trades_pending.php:176 trades_pending.php:202 trades_pending.php:219
-#: trades_pending.php:245 trades_pending.php:262 trades_pending.php:289
-#: trades_pending.php:306 trades_pending.php:337
+#: trades_pending.php:177 trades_pending.php:203 trades_pending.php:220
+#: trades_pending.php:246 trades_pending.php:263 trades_pending.php:290
+#: trades_pending.php:307 trades_pending.php:338
 msgid "This trade does not exist or you do not have permission to act on it."
 msgstr "Denne handelen finnes ikke, eller du har ikke rett til å behandle den."
 
 # "Open" means "unfinished"
-#: trades_pending.php:184
+#: trades_pending.php:185
 msgid "Sorry, only Open trades can be rejected or resent."
 msgstr "Beklager, bare \"åpne\" handler kan avvises eller kreves på nytt."
 
-#: trades_pending.php:190 trades_pending.php:233
+#: trades_pending.php:191 trades_pending.php:234
 msgid "This member hasn't rejected this transaction"
 msgstr "Medlemmet har ikke avvist denne transaksjonen"
 
-#: trades_pending.php:197
+#: trades_pending.php:198
 msgid "Transaction re-submitted successfully."
 msgstr "Transaksjonen er sendt inn på nytt."
 
-#: trades_pending.php:199 trades_pending.php:242 trades_pending.php:286
-#: trades_pending.php:334
+#: trades_pending.php:200 trades_pending.php:243 trades_pending.php:287
+#: trades_pending.php:335
 msgid "Error updating the database"
 msgstr "Det oppstod en feil ved oppdatering av databasen"
 
-#: trades_pending.php:227
+#: trades_pending.php:228
 msgid "Sorry, only Open trades can be rejected."
 msgstr "Beklager, bare \"åpne\" handler kan avvises."
 
-#: trades_pending.php:240 trades_pending.php:332
+#: trades_pending.php:241 trades_pending.php:333
 msgid "Transaction removed successfully."
 msgstr "Transaksjonen ble fjernet."
 
-#: trades_pending.php:270
+#: trades_pending.php:271
 msgid "This trade is no longer Open and therefore cannot be rejected."
 msgstr "Denne handelen er ikke lenger \"åpen\" og kan derfor ikke avvises."
 
-#: trades_pending.php:284
+#: trades_pending.php:285
 msgid "has been informed that you have rejected this transaction"
 msgstr "har blitt opplyst at du har avvist transaksjonen"
 
-#: trades_pending.php:314
+#: trades_pending.php:315
 msgid ""
 "This trade is currently marked as Open and thus cannot be removed until the "
 "required action has been taken."
@@ -3202,76 +3245,77 @@ msgstr ""
 "Denne handelen er ennå merket som \"åpen\" og kan derfor ikke fjernes før "
 "neste påkrevde handling er utført."
 
-#: trades_pending.php:353
+#: trades_pending.php:354
 msgid "This trade has already been confirmed and is now closed."
 msgstr "Denne handelen har alt blitt godkjent og er nå lukket."
 
-#: trades_pending.php:364 trades_pending.php:382
+#: trades_pending.php:365 trades_pending.php:383
 msgid "You do not have permission to confirm this trade."
 msgstr "Du har ikke rett til å godkjenne denne handelen."
 
-#: trades_pending.php:372
+#: trades_pending.php:373
 msgid "You have accepted a payment of"
 msgstr "Du har mottatt en betaling på"
 
-#: trades_pending.php:399
-msgid "Error sending payment"
-msgstr "Det oppstod en feil under betaling"
+#: trades_pending.php:400
+#, fuzzy
+msgid "Error sending payment. Please contact your administrator."
+msgstr "Handelsdatabasen er ubalansert! Vennligst kontakt administratoren på"
 
-#: trades_pending.php:404
+#: trades_pending.php:405
 msgid "You have sent a payment of"
 msgstr "Du har betalt"
 
-#: trades_pending.php:412
+#: trades_pending.php:413
 msgid "You have elected to confirm a non-existent trade"
 msgstr "Du har valgt å godkjenne en handel som ikke finnes"
 
-#: trades_pending.php:419
+#: trades_pending.php:420
 msgid "The following Incoming Payments require your confirmation"
 msgstr "Disse innbetalingene trenger godkjenning fra deg"
 
-#: trades_pending.php:442 trades_pending.php:467 trades_pending.php:499
-#: trades_pending.php:530
+#: trades_pending.php:443 trades_pending.php:468 trades_pending.php:500
+#: trades_pending.php:531
 msgid "None found"
 msgstr "Ingen ble funnet"
 
-#: trades_pending.php:448
+#: trades_pending.php:449
 msgid "The following Invoices need paying"
 msgstr "Disse fakturaene må betales"
 
-#: trades_pending.php:475
+#: trades_pending.php:476
 msgid "You are awaiting confirmation of the following Payments"
 msgstr "Du venter på godkjenning av disse utbetalingene"
 
-#: trades_pending.php:506
+#: trades_pending.php:507
 msgid "You are awaiting payment for the following Invoices"
 msgstr "Du venter på betaling av disse fakturaene"
 
-#: trades_pending.php:537
+#: trades_pending.php:538
 msgid "I need to pay"
 msgstr "Jeg må betale"
 
-#: trades_pending.php:537 trades_pending.php:542
+#: trades_pending.php:538 trades_pending.php:543
 msgid "Invoices"
 msgstr "Fakturaer"
 
-#: trades_pending.php:539
+#: trades_pending.php:540
 msgid "I need to confirm"
 msgstr "Jeg må godkjenne"
 
-#: trades_pending.php:539
+#: trades_pending.php:540
 msgid "Incoming Payments"
 msgstr "Innbetalinger"
 
-#: trades_pending.php:542
+#: trades_pending.php:543
 msgid "I am awaiting payment for"
 msgstr "Jeg venter på betaling for"
 
-#: trades_pending.php:544
+#: trades_pending.php:545
 msgid "I am awaiting confirmation of"
 msgstr "Jeg venter på godkjenning av"
 
-#: trades_pending.php:544
+#: trades_pending.php:545
 msgid "Outgoing Payments"
 msgstr "Utbetalinger"
 
@@ -3558,8 +3602,8 @@ msgstr "Det oppstod en feil ved henting av ei kategorioppføring"
 #: classes/class.category.php:69 classes/class.category.php:83
 #: classes/class.category.php:129 classes/class.feedback.php:104
 #: classes/class.feedback.php:283 classes/class.listing.php:108
-#: classes/class.member.php:297 classes/class.member.php:320
-#: classes/class.member.php:356 classes/class.person.php:88
+#: classes/class.member.php:300 classes/class.member.php:323
+#: classes/class.member.php:359 classes/class.person.php:88
 #: classes/class.person.php:136 classes/class.person.php:156
 #: classes/class.state_address.php:75 classes/class.state_address.php:93
 #: classes/class.state_address.php:124 classes/class.uploads.php:89
@@ -3579,7 +3623,7 @@ msgstr "Medlemsopplysninger"
 msgid "Members Directory"
 msgstr "Medlemskatalog"
 
-#: classes/class.error.php:78
+#: classes/class.error.php:90
 msgid "Errors occurred on this page"
 msgstr "Det oppstod feil på denne sida"
 
@@ -3641,8 +3685,8 @@ msgstr "Kunne ikke deaktivere oppføringa"
 msgid "Could not expire listing"
 msgstr "Kunne ikke markere oppføringa som utgått"
 
-#: classes/class.listing.php:334 classes/class.member.php:770
-#: classes/class.member.php:772
+#: classes/class.listing.php:334 classes/class.member.php:773
+#: classes/class.member.php:775
 msgid "No listings found."
 msgstr "Ingen oppføringer ble funnet."
 
@@ -3702,134 +3746,134 @@ msgstr "send e-post til administratoren"
 msgid "and ask"
 msgstr "og be om det"
 
-#: classes/class.member.php:297
+#: classes/class.member.php:300
 msgid "There was an error accessing this member"
 msgstr "Det oppstod en feil ved henting av medlemsopplysningene"
 
-#: classes/class.member.php:320
+#: classes/class.member.php:323
 msgid "There was an error accessing a person record for"
 msgstr "Det oppstod en feil ved henting av personopplysninger for"
 
-#: classes/class.member.php:330
+#: classes/class.member.php:333
 msgid "Member Data"
 msgstr "Medlemsopplysninger"
 
-#: classes/class.member.php:333
+#: classes/class.member.php:336
 msgid "Person Data"
 msgstr "Personopplysninger"
 
-#: classes/class.member.php:356
+#: classes/class.member.php:359
 msgid "Could not save changes to member"
 msgstr "Kunne ikke lagre endringer for medlemmet"
 
-#: classes/class.member.php:381
+#: classes/class.member.php:384
 msgid "Invalid person id in URL.  This break-in attempt has been reported."
 msgstr ""
 "Feil person-ID i URLen. Dette innbruddsforsøket har blitt meldt til "
 "administratoren."
 
-#: classes/class.member.php:423 classes/class.member.php:537
+#: classes/class.member.php:426 classes/class.member.php:540
 msgid "Fax"
 msgstr "Faks"
 
-#: classes/class.member.php:436 classes/class.member.php:572
+#: classes/class.member.php:439 classes/class.member.php:575
 msgid "'s Fax"
 msgstr "s faksnummer"
 
-#: classes/class.member.php:516
+#: classes/class.member.php:519
 msgid "Activity"
 msgstr "Aktivitet"
 
-#: classes/class.member.php:518
+#: classes/class.member.php:521
 msgid "No exchanges yet"
 msgstr "Ingen handler ennå"
 
-#: classes/class.member.php:520
+#: classes/class.member.php:523
 msgid "exchanges total"
 msgstr "handler totalt"
 
-#: classes/class.member.php:520
+#: classes/class.member.php:523
 msgid "for a sum of"
 msgstr "for til sammen"
 
-#: classes/class.member.php:520
+#: classes/class.member.php:523
 msgid "last on"
 msgstr "sist på"
 
-#: classes/class.member.php:524
+#: classes/class.member.php:527
 msgid "Feedback"
 msgstr "Tilbakemeldinger"
 
-#: classes/class.member.php:524
+#: classes/class.member.php:527
 msgid "total"
 msgstr "totalt"
 
-#: classes/class.member.php:524
+#: classes/class.member.php:527
 msgid "negative"
 msgstr "negative"
 
-#: classes/class.member.php:524
+#: classes/class.member.php:527
 msgid "neutral"
 msgstr "nøytrale"
 
-#: classes/class.member.php:528
+#: classes/class.member.php:531
 msgid "Joined"
 msgstr "Ble med"
 
-#: classes/class.member.php:564
+#: classes/class.member.php:567
 msgid "Joint Member"
 msgstr "Husstandsmedlem"
 
-#: classes/class.member.php:566
+#: classes/class.member.php:569
 msgid "'s Email"
 msgstr "s e-postadresse"
 
-#: classes/class.member.php:568
+#: classes/class.member.php:571
 msgid "'s Phone"
 msgstr "s telefonnummer"
 
-#: classes/class.member.php:570
+#: classes/class.member.php:573
 msgid "'s Secondary Phone"
 msgstr "s andre telefonnummer"
 
-#: classes/class.member.php:584
+#: classes/class.member.php:587
 msgid "PERSONAL INFORMATION"
 msgstr "PERSONOPPLYSNINGER"
 
-#: classes/class.member.php:586 classes/class.member.php:587
+#: classes/class.member.php:589 classes/class.member.php:590
 msgid "Unspecified"
 msgstr "Uspesifisert"
 
-#: classes/class.member.php:588
+#: classes/class.member.php:591
 msgid "No description supplied"
 msgstr "Ingen beskrivelse er oppgitt"
 
 # Number of search results
-#: classes/class.member.php:739
+#: classes/class.member.php:742
 msgid "matching members"
 msgstr "treff på medlemmer"
 
-#: classes/class.member.php:748
+#: classes/class.member.php:751
 msgid "Member search"
 msgstr "Medlemssøk"
 
-#: classes/class.member.php:780
+#: classes/class.member.php:783
 msgid "day"
 msgstr "dag"
 
-#: classes/class.member.php:788
+#: classes/class.member.php:791
 msgid "New and updated listings during the last"
 msgstr "Nye og oppdaterte oppføringer de siste"
 
-#: classes/class.member.php:819
+#: classes/class.member.php:822
 msgid "Important information about your"
 msgstr "Viktige opplysninger om din"
 
-#: classes/class.member.php:819
+#: classes/class.member.php:822
 msgid "account"
 msgstr "konto"
 
-#: classes/class.member.php:823
+#: classes/class.member.php:826
 msgid ""
 "***NOTE: This member does not have an email address in the system, so they "
 "will need to be notified by phone that their listings have been inactivated."
@@ -3837,11 +3881,11 @@ msgstr ""
 "***MERK: Dette medlemmet har ingen e-postadresse i systemet, så de må ringes "
 "opp og gjøres oppmerksom på at oppføringene har blitt deaktiverte."
 
-#: classes/class.member.php:827
+#: classes/class.member.php:830
 msgid "listings expired for"
 msgstr "oppføringer er utløpt for"
 
-#: classes/class.member.php:827
+#: classes/class.member.php:830
 msgid ""
 "All of this member's listings were automatically expired due to inactivity.  "
 "To turn off this feature, see inc.config.php."
@@ -3850,27 +3894,27 @@ msgstr ""
 "For å slå av denne funksjonen, vennligst see inc.config.php. "
 
 # "Balance" as in "account balance"
-#: classes/class.member.php:877
+#: classes/class.member.php:880
 msgid "Could not query database for balance information."
 msgstr "Kunne ikke spørre databasen etter saldoopplysninger."
 
-#: classes/class.member.php:918
+#: classes/class.member.php:921
 msgid "Error saving Income Share."
 msgstr "Det oppstod en feil ved lagring av inntektsfordeling."
 
-#: classes/class.member.php:920
+#: classes/class.member.php:923
 msgid "Income Share saved successfully."
 msgstr "Inntektsfordelinga er lagret."
 
-#: classes/class.member.php:929
+#: classes/class.member.php:932
 msgid "No Income Share to delete"
 msgstr "Det fines ingen inntektsfordelinger å slette"
 
-#: classes/class.member.php:937
+#: classes/class.member.php:940
 msgid "Error deleting income Share."
 msgstr "Det oppstod en feil ved sletting av inntektsfordelinga."
 
-#: classes/class.member.php:939
+#: classes/class.member.php:942
 msgid "Income Share deleted successfully."
 msgstr "Inntektsfordelinga ble slettet."
 
@@ -3956,15 +4000,15 @@ msgstr "Det oppstod en feil ved sletting av fylkesopplysningene"
 msgid "There was an error accessing the trades table."
 msgstr "Det oppstod en feil ved tilgang til handelstabellen. "
 
-#: classes/class.trade.php:128
+#: classes/class.trade.php:138
 msgid "Database out of balance on"
 msgstr "Databasen er ubalansert på"
 
-#: classes/class.trade.php:128
+#: classes/class.trade.php:138
 msgid "Hi admin"
 msgstr "Hei, administrator"
 
-#: classes/class.trade.php:128
+#: classes/class.trade.php:138
 msgid ""
 "We thought you should know that whilst processing a trade the system "
 "detected that your trade database is out of balance! Obviously something has "
@@ -3975,24 +4019,24 @@ msgstr ""
 "handelsdatabasen din er ubalansert! Det er åpenbart at noe har gått galt ett "
 "eller annet sted og vi foreslår at du gransker årsaken så snart som mulig."
 
-#: classes/class.trade.php:134
+#: classes/class.trade.php:144
 msgid ""
 "The trade database is out of balance!  Please contact your administrator at"
 msgstr "Handelsdatabasen er ubalansert! Vennligst kontakt administratoren på"
 
-#: classes/class.trade.php:199
+#: classes/class.trade.php:218
 msgid "Reversal of exchange"
 msgstr "Tilbakeføring av handel"
 
-#: classes/class.trade.php:199
+#: classes/class.trade.php:218
 msgid "from"
 msgstr "fra"
 
-#: classes/class.trade.php:199
+#: classes/class.trade.php:218
 msgid "by admin"
 msgstr "av administrator"
 
-#: classes/class.trade.php:304
+#: classes/class.trade.php:323
 msgid "On"
 msgstr "På"
 
@@ -4040,6 +4084,30 @@ msgstr "Kunne ikke slette fil"
 #: classes/class.uploads.php:138
 msgid "Upload"
 msgstr "Last opp"
+
+#~ msgid ""
+#~ "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home."
+#~ "png' align=top></td><td><img src='images/localx_black.png' "
+#~ "align=top><br><img src='images/mutual_time.png' align=top></td></tr></"
+#~ "table><p><strong> <font size='4'>Why have a Local, Sustainable Currency?</"
+#~ "font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></"
+#~ "strong></li><li><strong> Build a Sustainable Community<br><br></strong></"
+#~ "li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> "
+#~ "Nurture the Unique Quality<br>of Your Hometown <br><br></strong></"
+#~ "li><li><strong> Have Fun</strong></li></ul>"
+#~ msgstr ""
+#~ "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home."
+#~ "png' align=top></td><td><img src='images/localx_black.png' "
+#~ "align=top><br><img src='images/mutual_time.png' align=top></td></tr></"
+#~ "table><p><strong> <font size='4'>Hvorfor en lokal, bærekraftig valuta?</"
+#~ "font></strong></p><ul><li><strong>Øk velstanden<br><br></strong></"
+#~ "li><li><strong>Bygg opp et bærekraftig lokalsamfunn<br><br></strong></"
+#~ "li><li><strong>Utnytt evnene dine<br><br></strong></li><li><strong>Dyrk "
+#~ "det særegne ved<br>hjemstedet ditt <br><br></strong></li><li><strong>Ha "
+#~ "det gøy</strong></li></ul>"
+
+#~ msgid "Error sending payment"
+#~ msgstr "Det oppstod en feil under betaling"
 
 #~ msgid "Comittee"
 #~ msgstr "Komité"
