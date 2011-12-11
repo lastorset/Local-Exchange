@@ -176,3 +176,13 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
 	color: #897413;
 	font-weight: bold;
 }
+
+.homepage ul {
+	font-size: small;
+	width: 20em;
+	font-weight: bold;
+}
+
+.homepage ul li {
+	margin-bottom: 1em;
+}

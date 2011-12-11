@@ -19,7 +19,7 @@ print <<<HTML
 </div>
 HTML;
 
-print _("<p><strong> <font size='4'>Why have a Local, Sustainable Currency?</font></strong></p><ul><li><strong>Enhance Your Prosperity<br><br></strong></li><li><strong> Build a Sustainable Community<br><br></strong></li><li><strong>Utilize Your Talents<br><br></strong></li><li><strong> Nurture the Unique Quality<br>of Your Hometown <br><br></strong></li><li><strong> Have Fun</strong></li></ul>");
+print "<h2>" ._("Why have a Local, Sustainable Currency?"). "</h2><ul><li>" ._("Enhance Your Prosperity"). "</li><li>" ._("Build a Sustainable Community"). "</li><li>" ._("Utilize Your Talents"). "</li><li> " ._("Nurture the Unique Quality of Your Hometown"). "</li><li>" ._("Have Fun"). "</li></ul>";
 
 print "</div>";
 
