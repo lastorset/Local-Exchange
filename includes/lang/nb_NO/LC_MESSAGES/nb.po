@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-11 16:41+0100\n"
-"PO-Revision-Date: 2012-01-03 21:15+0100\n"
+"PO-Revision-Date: 2012-01-24 14:40+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -94,35 +94,35 @@ msgstr "Oppføringer"
 
 #: admin_menu.php:56
 msgid "Offers"
-msgstr "Til salgs"
+msgstr "Tilbud"
 
 #: admin_menu.php:57
 msgid "Create a New Offer Listing for a Member"
-msgstr "Lag en ny oppføring under \"Til salgs\" for et medlem"
+msgstr "Lag en ny tilbudsoppføring for et medlem"
 
 #: admin_menu.php:58
 msgid "Edit a Member's Offered Listing"
-msgstr "Rediger et medlems oppføring under \"Til salgs\""
+msgstr "Rediger en tilbudsoppføring for et medlem"
 
 #: admin_menu.php:59
 msgid "Delete a Member's Offered Listing"
-msgstr "Slett et medlems oppføring under \"Til salgs\""
+msgstr "Slett en tilbudsoppføring for et medlem"
 
 #: admin_menu.php:61
 msgid "Wants"
-msgstr "Ønskes kjøpt"
+msgstr "Ønsker"
 
 #: admin_menu.php:62
 msgid "Create a New Want Listing for a Member"
-msgstr "Opprett et medlems oppføring under \"Ønskes kjøpt\""
+msgstr "Opprett en ønskeoppføring for et medlem"
 
 #: admin_menu.php:63
 msgid "Edit a Member's Wanted Listing"
-msgstr "Rediger et medlems oppføring under \"Ønskes kjøpt\""
+msgstr "Rediger en ønskeoppføring for et medlem"
 
 #: admin_menu.php:64
 msgid "Delete a Member's Wanted Listing"
-msgstr "Slett et medlems oppføring under \"Ønskes kjøpt\""
+msgstr "Slett en ønskeoppføring for et medlem"
 
 #: admin_menu.php:66 create_db.php:99 listings_menu.php:18
 msgid "Miscellaneous"
@@ -282,7 +282,7 @@ msgstr ""
 "Denne kategorien har fortsatt oppføringer. Du må flytte disse oppføringene "
 "til andre kategorier eller slette dem før du kan slette denne kategorien. "
 "Merk at oppføringene i så fall kan bli midlertidig deaktivert eller utløpt, "
-"og da vil de ikke vises i \"til salgs\"/\"ønskes kjøpt\"-listene."
+"og da vil de ikke vises i tilbuds- og ønskelistene."
 
 #: category_choose.php:51
 msgid "Listings in this category:"
@@ -290,11 +290,11 @@ msgstr "Oppføringer i denne kategorien:"
 
 #: category_choose.php:55
 msgid "OFFERED"
-msgstr "TIL SALGS"
+msgstr "TILBUDT"
 
 #: category_choose.php:60
 msgid "WANTED"
-msgstr "ØNSKES KJØPT"
+msgstr "ØNSKET"
 
 #: category_choose.php:63
 msgid "The category has been deleted."
@@ -1204,7 +1204,7 @@ msgid ""
 "wanted listings while they are gone."
 msgstr ""
 "Denne funksjonen vil midlertidig deaktivere alle oppføringene til medlemmet "
-"(både \"til salgs\" og \"ønskes kjøpt\") mens det er borte."
+"(både tilbud og ønsker) mens det er borte."
 
 #: holiday.php:17
 msgid "they"
@@ -1216,7 +1216,7 @@ msgid ""
 "listings while you are gone."
 msgstr ""
 "Denne funksjonen vil midlertidig deaktivere alle dine oppføringer (både "
-"\"til salgs\" og \"ønskes kjøpt\") mens du er borte."
+"tilbud og ønsker) mens du er borte."
 
 #: holiday.php:23
 msgid "you"
@@ -1477,13 +1477,13 @@ msgstr "E-post er sendt til alle medlemmene."
 #: listings_found.php:7 listings.php:6 listing_to_edit.php:6
 #: includes/inc.config.php:167
 msgid "Offered"
-msgstr "Til salgs"
+msgstr "Tilbudt"
 
 #: listing_create.php:10 listing_delete.php:11 listing_edit.php:12
 #: listings_found.php:9 listings.php:8 listing_to_edit.php:8
 #: includes/inc.config.php:168
 msgid "Wanted"
-msgstr "Ønskes kjøpt"
+msgstr "Ønsket"
 
 #: listing_create.php:12
 msgid "Create"
@@ -1603,42 +1603,42 @@ msgstr "Opprett oppføringer"
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
 #: classes/class.directory.php:52 classes/class.member.php:774
 msgid "Offered Listings"
-msgstr "Til salgs-oppføringer"
+msgstr "Tilbudsoppføringer"
 
 #: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
 msgid "Create New Offer Listing"
-msgstr "Lag ny til salgs-oppføring"
+msgstr "Lag ny tilbudsoppføring"
 
 #: listings_create.php:10 listings_menu.php:10
 #: member_profile_all_in_one.php:19
 msgid "Edit Offered Listings"
-msgstr "Rediger oppføringer under \"Til salgs\""
+msgstr "Rediger tilbudsoppføringer"
 
 #: listings_create.php:11 listings_menu.php:11
 #: member_profile_all_in_one.php:20
 msgid "Delete Offered Listings"
-msgstr "Slett oppføringer under \"Til salgs\""
+msgstr "Slett tilbudsoppføringer"
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:776
 msgid "Wanted Listings"
-msgstr "Ønskes kjøpt"
+msgstr "Ønskeoppføringer"
 
 #: listings_create.php:14 listings_menu.php:14
 #: member_profile_all_in_one.php:24
 msgid "Create New Want Listing"
-msgstr "Opprett \"Ønskes kjøpt\"-oppføring"
+msgstr "Opprett ønskeoppføring"
 
 #: listings_create.php:15 listings_menu.php:15
 #: member_profile_all_in_one.php:25
 msgid "Edit Wanted Listings"
-msgstr "Rediger oppføringer under \"Ønskes kjøpt\""
+msgstr "Rediger ønskeoppføringer"
 
 #: listings_create.php:16 listings_menu.php:16
 #: member_profile_all_in_one.php:26
 msgid "Delete Wanted Listings"
-msgstr "Slett oppføringer under \"Ønskes kjøpt\""
+msgstr "Slett ønskeoppføringer"
 
 #: listings_menu.php:4 includes/inc.config.php:169
 msgid "Update Listings"
@@ -2352,11 +2352,11 @@ msgstr "Legg husstandsmedlem til kontoen"
 
 #: member_profile_all_in_one.php:17
 msgid "View Offered Listings"
-msgstr "Vis \"Til salgs\""
+msgstr "Vis tilbudsoppføringer"
 
 #: member_profile_all_in_one.php:23
 msgid "View Wanted Listings"
-msgstr "Vis \"Ønskes kjøpt\""
+msgstr "Vis ønskeoppføringer"
 
 #: member_profile_all_in_one.php:34 classes/class.page.php:30
 msgid "Administration"
@@ -2421,11 +2421,11 @@ msgstr "KONTAKTINFORMASJON"
 
 #: member_summary.php:19
 msgid "OFFERED LISTINGS"
-msgstr "TIL SALGS"
+msgstr "TILBUDSOPPFØRINGER"
 
 #: member_summary.php:24
 msgid "WANTED LISTINGS"
-msgstr "ØNSKES KJØPT"
+msgstr "ØNSKEOPPFØRINGER"
 
 #: member_to_edit.php:8
 msgid "Choose Member to Edit"
@@ -2973,7 +2973,7 @@ msgstr "Skriv inn et tall over null med maksimalt to desimaler"
 # "Units" refers to the units of value used for trade
 #: trade.php:99
 msgid "No units were entered to exchange!"
-msgstr "Ingen kjøpesum ble skrevet inn!"
+msgstr "Ingen handelssum ble skrevet inn!"
 
 #: trade.php:134
 msgid "Payment Received on"
@@ -3528,8 +3528,7 @@ msgstr "Gå til \"Oppdater oppføringer\""
 
 #: includes/inc.config.php:240
 msgid "Select Edit Offered (or Wanted) Listings"
-msgstr ""
-"Velg \"Rediger oppføringer under 'Til salgs'\" (eller \"Ønskes kjøpt\")"
+msgstr "Velg \"Rediger ønske- eller tilbudsoppføringer\""
 
 #: includes/inc.config.php:240
 msgid "Select the listing to edit"
@@ -3599,10 +3598,10 @@ msgid ""
 "automatically generated password by going to the Member Profile section "
 "after you login."
 msgstr ""
-"Vennligst logg inn og opprett oppføringene dine under \"Til salgs\" og "
-"\"Ønskes kjøpt\". Ditt nye brukernavn og passord er oppført på slutten av "
-"meldinga. Du kan endre passordet vi har laget automatisk, dersom du går til "
-"\"Medlemsprofil\" etter at du har logget inn."
+"Vennligst logg inn og opprett tilbuds- og ønskeoppføringene dine. Ditt nye "
+"brukernavn og passord er oppført på slutten av meldinga. Du kan endre "
+"passordet vi har laget automatisk, dersom du går til \"Medlemsprofil\" etter "
+"at du har logget inn."
 
 #: includes/inc.config.php:258
 msgid "Thank you for joining us."
