@@ -4,12 +4,11 @@ include_once("includes/inc.global.php");
 $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 
-if ($_REQUEST["type"]==Offer)
-    $listing_name=_("Offered");
+if ($_REQUEST["type"]==OFFER_LISTING)
+	$p->page_title = _("Create Offered Listing");
 else
-    $listing_name=_("Wanted");
+	$p->page_title = _("Create Wanted Listing");
     
-$p->page_title = _("Create")." ". $listing_name ." "._("Listing");
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -41,7 +40,7 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for ano
 }
 
 $form->addElement('hidden','type',$_REQUEST['type']);
-$title_list = new cTitleList($listing_name);
+$title_list = new cTitleList($_REQUEST['type']);
 $form->addElement('text', 'title', _("Title"), array('size' => 30, 'maxlength' => 60));
 $form->addRule('title',_("Enter a title"),'required');
 $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');

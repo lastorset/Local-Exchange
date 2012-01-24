@@ -5,12 +5,10 @@ include_once("includes/inc.global.php");
 $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 
-if ($_REQUEST["type"]==Offer)
-    $listing_name=_("Offered");
+if ($_REQUEST["type"]==OFFER_LISTING)
+	$p->page_title = _("Delete Offered Listings");
 else
-    $listing_name=_("Wanted");
-
-$p->page_title = _("Delete")." ". $listing_name ._(" listings");
+	$p->page_title = _("Delete Wanted Listings");
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -52,11 +50,15 @@ if ($listings_exist) {
 	$form->addElement('submit', 'btnSubmit', _("Delete"));
 } else {
 	if($_REQUEST["mode"] == "self")
-		$text = _("You don't")." ";
+		if ($_REQUEST["type"]==OFFER_LISTING)
+			$message = _("You don't currently have any Offered listings.");
+		else
+			$message = _("You don't currently have any Wanted listings.");
 	else
-		$text = $member->PrimaryName()." "._("doesn't")." ";
-		
-	$message = $text ._("currently have any")." ". strtolower($listing_name) ._(" listings").".";
+		if ($_REQUEST["type"]==OFFER_LISTING)
+			$message = $member->PrimaryName()." "._("doesn't currently have any Offered listings.");
+		else
+			$message = $member->PrimaryName()." "._("doesn't currently have any Wanted listings.");
 }
 
 if ($form->validate()) { // Form is validated so processes the data

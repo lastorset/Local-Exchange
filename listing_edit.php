@@ -6,11 +6,10 @@ $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 $title = $cDB->UnEscTxt($_REQUEST['title']);
 
-if ($_REQUEST["type"]==Offer) // added to translate Offerd and Wanted in page title - by ejkv
-    $listing_name=_("Offered");
+if ($_REQUEST["type"]==OFFER_LISTING)
+	$p->page_title = _("Edit Offered:")." ". $title;
 else
-    $listing_name=_("Wanted");
-$p->page_title = _("Edit")." ". $listing_name .': '.$title; // $_REQUEST['type'] replaced by $listing_name - by ejkv
+	$p->page_title = _("Edit Wanted:")." ". $title;
 
 include("classes/class.listing.php");
 include("includes/inc.forms.php");

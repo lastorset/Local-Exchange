@@ -4,11 +4,9 @@ include_once("includes/inc.global.php");
 $p->site_section = LISTINGS;
 
 if ($_REQUEST["type"]==Offer)
-    $listing_name=_("Offered");
+	$p->page_title = _("Offered listings");
 else
-    $listing_name=_("Wanted");
-
-$p->page_title = $listing_name ._(" listings");
+	$p->page_title = _("Wanted listings");
 
 include_once("classes/class.listing.php");
 

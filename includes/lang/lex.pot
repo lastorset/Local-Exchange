@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) Calvin Priest
-# This file is distributed under the same license as the Local Excahnge package.
-# Leif Arne Storset <leifarne@storset.net>, 2011.
+# Copyright (C) YEAR Calvin Priest
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.01\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-11 16:41+0100\n"
+"Project-Id-Version: Local Exchange 1.01\n"
+"Report-Msgid-Bugs-To: leifarne@storset.net\n"
+"POT-Creation-Date: 2012-01-24 20:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -250,6 +250,7 @@ msgid "Edit Balance"
 msgstr ""
 
 #: category_choose.php:6 listing_create.php:71 trade.php:64
+#: listing_create.php:70
 msgid "Choose Category"
 msgstr ""
 
@@ -267,7 +268,7 @@ msgstr ""
 #: category_choose.php:24 delete_info.php:36 listing_delete.php:13
 #: listing_delete.php:52 member_contact_choose.php:13
 #: member_contact_delete.php:22 member_contact_to_edit.php:20
-#: newsletter_delete.php:22
+#: newsletter_delete.php:22 listing_delete.php:50
 msgid "Delete"
 msgstr ""
 
@@ -303,7 +304,7 @@ msgstr ""
 #: do_info_edit.php:23 feedback.php:38 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:55
+#: timeframe_choose.php:19 trade.php:55 listing_create.php:72
 msgid "Submit"
 msgstr ""
 
@@ -326,6 +327,7 @@ msgstr ""
 #: state_edit.php:48 trade.php:140 trade.php:154 includes/inc.config.php:66
 #: classes/class.member.php:169 classes/class.member.php:880
 #: classes/class.trade.php:94 classes/class.uploads.php:71
+#: listing_create.php:122 listing_edit.php:141
 msgid "Please try again later."
 msgstr ""
 
@@ -827,12 +829,13 @@ msgid ""
 msgstr ""
 
 #: create_info.php:17 do_info_edit.php:20 listing_create.php:45
-#: news_create.php:17 news_edit.php:22
+#: news_create.php:17 news_edit.php:22 listing_create.php:44
 msgid "Title"
 msgstr ""
 
 #: create_info.php:25 do_info_edit.php:28 listing_create.php:46
 #: listing_edit.php:31 news_create.php:32 news_edit.php:37
+#: listing_create.php:45 listing_edit.php:30
 msgid "Enter a title"
 msgstr ""
 
@@ -1173,7 +1176,7 @@ msgstr ""
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:15
+#: timeframe_choose.php:15 listing_create.php:61
 msgid "en"
 msgstr ""
 
@@ -1189,12 +1192,13 @@ msgstr ""
 msgid "Inactivate"
 msgstr ""
 
-#: holiday.php:37 listing_edit.php:57
+#: holiday.php:37 listing_edit.php:57 listing_edit.php:56
 msgid "Must be a future date"
 msgstr ""
 
 #: holiday.php:39 listing_create.php:69 listing_edit.php:54
 #: listing_edit.php:58 news_create.php:37 news_edit.php:40
+#: listing_create.php:68 listing_edit.php:53 listing_edit.php:57
 msgid "Date is invalid"
 msgstr ""
 
@@ -1417,52 +1421,57 @@ msgstr ""
 msgid "Listing"
 msgstr ""
 
-#: listing_create.php:35 member_choose.php:6
+#: listing_create.php:35 member_choose.php:6 listing_create.php:34
 msgid "For which member?"
 msgstr ""
 
-#: listing_create.php:48
+#: listing_create.php:48 listing_create.php:47
 msgid "You already have a listing with this title"
 msgstr ""
 
 #: listing_create.php:50 listing_edit.php:35 listings.php:21 trade.php:48
-#: classes/class.trade.php:277
+#: classes/class.trade.php:277 listing_create.php:49 listing_edit.php:34
+#: listings.php:19
 msgid "Category"
 msgstr ""
 
 #: listing_create.php:53 listing_edit.php:38 classes/class.listing.php:152
+#: listing_create.php:52 listing_edit.php:37
 msgid "Rate"
 msgstr ""
 
 #: listing_create.php:57 listing_edit.php:44 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
 #: trades_pending.php:38 classes/class.listing.php:150
-#: classes/class.trade.php:277
+#: classes/class.trade.php:277 listing_create.php:56 listing_edit.php:43
 msgid "Description"
 msgstr ""
 
-#: listing_create.php:60 listing_edit.php:47
+#: listing_create.php:60 listing_edit.php:47 listing_create.php:59
+#: listing_edit.php:46
 msgid "Should this listing be set to automatically expire?"
 msgstr ""
 
 #: listing_create.php:63 listing_edit.php:50 news_create.php:20
-#: news_edit.php:25
+#: news_edit.php:25 listing_create.php:62 listing_edit.php:49
 msgid "Expires"
 msgstr ""
 
 #: listing_create.php:67 listing_edit.php:52 news_create.php:35
+#: listing_create.php:66 listing_edit.php:51
 msgid "Expiration must be for a future date"
 msgstr ""
 
-#: listing_create.php:121
+#: listing_create.php:121 listing_create.php:120
 msgid "Listing created. Create"
 msgstr ""
 
-#: listing_create.php:121
+#: listing_create.php:121 listing_create.php:120
 msgid "another"
 msgstr ""
 
-#: listing_create.php:123 listing_edit.php:142
+#: listing_create.php:123 listing_edit.php:142 listing_create.php:122
+#: listing_edit.php:141
 msgid "There was an error saving the listing."
 msgstr ""
 
@@ -1483,39 +1492,40 @@ msgstr ""
 msgid "currently have any"
 msgstr ""
 
-#: listing_delete.php:83
+#: listing_delete.php:83 listing_delete.php:85
 msgid "1 listing deleted"
 msgstr ""
 
-#: listing_delete.php:85
+#: listing_delete.php:85 listing_delete.php:87
 msgid "listings deleted"
 msgstr ""
 
-#: listing_delete.php:87
+#: listing_delete.php:87 listing_delete.php:89
 msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 
-#: listing_edit.php:55
+#: listing_edit.php:55 listing_edit.php:54
 msgid "Should this listing be made temporarily inactive?"
 msgstr ""
 
-#: listing_edit.php:56
+#: listing_edit.php:56 listing_edit.php:55
 msgid "Reactivates"
 msgstr ""
 
 #: listing_edit.php:59 member_contact_edit.php:69 member_edit.php:93
+#: listing_edit.php:58
 msgid "Update"
 msgstr ""
 
-#: listing_edit.php:140
+#: listing_edit.php:140 listing_edit.php:139
 msgid "Listing changes saved. Do you want to"
 msgstr ""
 
-#: listing_edit.php:140
+#: listing_edit.php:140 listing_edit.php:139
 msgid "edit"
 msgstr ""
 
-#: listing_edit.php:140
+#: listing_edit.php:140 listing_edit.php:139
 msgid "another listing?"
 msgstr ""
 
@@ -1538,7 +1548,7 @@ msgid "Edit Offered Listings"
 msgstr ""
 
 #: listings_create.php:11 listings_menu.php:11
-#: member_profile_all_in_one.php:20
+#: member_profile_all_in_one.php:20 listing_delete.php:9
 msgid "Delete Offered Listings"
 msgstr ""
 
@@ -1559,7 +1569,7 @@ msgid "Edit Wanted Listings"
 msgstr ""
 
 #: listings_create.php:16 listings_menu.php:16
-#: member_profile_all_in_one.php:26
+#: member_profile_all_in_one.php:26 listing_delete.php:11
 msgid "Delete Wanted Listings"
 msgstr ""
 
@@ -1571,7 +1581,7 @@ msgstr ""
 msgid "Going on Holiday"
 msgstr ""
 
-#: listings.php:16
+#: listings.php:16 listings.php:14
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
@@ -1579,51 +1589,51 @@ msgid ""
 msgstr ""
 
 #: listings.php:16 member_create.php:198 news.php:22 trades_pending.php:25
-#: classes/class.member.php:107
+#: classes/class.member.php:107 listings.php:14
 msgid "here"
 msgstr ""
 
-#: listings.php:20
+#: listings.php:20 listings.php:18
 msgid "View All Categories"
 msgstr ""
 
-#: listings.php:22
+#: listings.php:22 listings.php:20
 msgid "New/updated in last"
 msgstr ""
 
-#: listings.php:23
+#: listings.php:23 listings.php:21
 msgid "Time Frame"
 msgstr ""
 
-#: listings.php:23
+#: listings.php:23 listings.php:21
 msgid "View All Listings"
 msgstr ""
 
-#: listings.php:23
+#: listings.php:23 listings.php:21
 msgid "3 days"
 msgstr ""
 
-#: listings.php:23 classes/class.member.php:785
+#: listings.php:23 classes/class.member.php:785 listings.php:21
 msgid "week"
 msgstr ""
 
-#: listings.php:23
+#: listings.php:23 listings.php:21
 msgid "2 weeks"
 msgstr ""
 
-#: listings.php:23 classes/class.member.php:787
+#: listings.php:23 classes/class.member.php:787 listings.php:21
 msgid "month"
 msgstr ""
 
-#: listings.php:23
+#: listings.php:23 listings.php:21
 msgid "3 months"
 msgstr ""
 
-#: listings.php:26
+#: listings.php:26 listings.php:24
 msgid "Keyword"
 msgstr ""
 
-#: listings.php:29 pages.php:10
+#: listings.php:29 pages.php:10 listings.php:27
 msgid "Continue"
 msgstr ""
 
@@ -3896,4 +3906,60 @@ msgstr ""
 
 #: classes/class.uploads.php:138
 msgid "Upload"
+msgstr ""
+
+#: listing_create.php:8
+msgid "Create Offered Listing"
+msgstr ""
+
+#: listing_create.php:10
+msgid "Create Wanted Listing"
+msgstr ""
+
+#: listing_delete.php:54
+msgid "You don't currently have any Offered listings."
+msgstr ""
+
+#: listing_delete.php:56
+msgid "You don't currently have any Wanted listings."
+msgstr ""
+
+#: listing_delete.php:59
+msgid "doesn't currently have any Offered listings."
+msgstr ""
+
+#: listing_delete.php:61
+msgid "doesn't currently have any Wanted listings."
+msgstr ""
+
+#: listing_edit.php:10
+msgid "Edit Offered:"
+msgstr ""
+
+#: listing_edit.php:12
+msgid "Edit Wanted:"
+msgstr ""
+
+#: listings_found.php:7 listings.php:6
+msgid "Offered listings"
+msgstr ""
+
+#: listings_found.php:9 listings.php:8
+msgid "Wanted listings"
+msgstr ""
+
+#: listing_to_edit.php:6
+msgid "Choose the Offered Listing to Edit"
+msgstr ""
+
+#: listing_to_edit.php:8
+msgid "Choose the Wanted Listing to Edit"
+msgstr ""
+
+#: listing_to_edit.php:28
+msgid "You don't currently have any Offered listings"
+msgstr ""
+
+#: listing_to_edit.php:30
+msgid "You don't currently have any Wanted listings"
 msgstr ""

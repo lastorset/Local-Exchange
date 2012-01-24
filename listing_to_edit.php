@@ -2,12 +2,10 @@
 include_once("includes/inc.global.php");
 $p->site_section = LISTINGS;
 
-if ($_REQUEST["type"]==Offer)
-    $listing_name=_("Offered");
+if ($_REQUEST["type"]==OFFER_LISTING)
+	$p->page_title = _("Choose the Offered Listing to Edit");
 else
-    $listing_name=_("Wanted");
-
-$p->page_title = _("Choose the")." ". $listing_name ." "._("Listing to Edit");
+	$p->page_title = _("Choose the Wanted Listing to Edit");
 
 include("classes/class.listing.php");
 
@@ -26,7 +24,10 @@ if($_REQUEST["mode"] == "admin") {
 $list = $listings->DisplayMemberListings($member);
 
 if($list == "")
-	$list = _("You don't currently have any")." ". strtolower($listing_name) ." "._(" listings").".";
+	if ($_REQUEST["type"]==OFFER_LISTING)
+		$list = _("You don't currently have any Offered listings").".";
+	else
+		$list = _("You don't currently have any Wanted listings").".";
 
 $p->DisplayPage($list);
 
