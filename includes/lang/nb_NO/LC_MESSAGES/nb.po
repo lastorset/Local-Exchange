@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-11 16:41+0100\n"
-"PO-Revision-Date: 2012-01-24 14:40+0100\n"
+"PO-Revision-Date: 2012-01-24 16:23+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -130,7 +130,7 @@ msgstr "Diverse"
 
 #: admin_menu.php:67
 msgid "Member Going on Holiday"
-msgstr "Medlem på ferie"
+msgstr "Medlem bortreist"
 
 #: admin_menu.php:69 category_create.php:6
 msgid "Create a New Listing Category"
@@ -1196,7 +1196,7 @@ msgstr "Vis"
 
 #: holiday.php:6
 msgid "Inactivate Listings While on Holiday"
-msgstr "Deaktiver oppføringer i ferien"
+msgstr "Deaktiver oppføringer mens jeg er bortreist"
 
 #: holiday.php:16
 msgid ""
@@ -1339,7 +1339,7 @@ msgstr "i denne kontoen"
 
 #: income_ties.php:75
 msgid "Create Income Share"
-msgstr "Oprett inntektsfordeling"
+msgstr "Opprett inntektsfordeling"
 
 #: income_ties.php:79
 msgid "Income Share Active"
@@ -1477,13 +1477,13 @@ msgstr "E-post er sendt til alle medlemmene."
 #: listings_found.php:7 listings.php:6 listing_to_edit.php:6
 #: includes/inc.config.php:167
 msgid "Offered"
-msgstr "Tilbudt"
+msgstr "Tilbud"
 
 #: listing_create.php:10 listing_delete.php:11 listing_edit.php:12
 #: listings_found.php:9 listings.php:8 listing_to_edit.php:8
 #: includes/inc.config.php:168
 msgid "Wanted"
-msgstr "Ønsket"
+msgstr "Ønsker"
 
 #: listing_create.php:12
 msgid "Create"
@@ -1603,42 +1603,42 @@ msgstr "Opprett oppføringer"
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
 #: classes/class.directory.php:52 classes/class.member.php:774
 msgid "Offered Listings"
-msgstr "Tilbudsoppføringer"
+msgstr "Tilbud"
 
 #: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
 msgid "Create New Offer Listing"
-msgstr "Lag ny tilbudsoppføring"
+msgstr "Registrer nytt tilbud"
 
 #: listings_create.php:10 listings_menu.php:10
 #: member_profile_all_in_one.php:19
 msgid "Edit Offered Listings"
-msgstr "Rediger tilbudsoppføringer"
+msgstr "Rediger tilbud"
 
 #: listings_create.php:11 listings_menu.php:11
 #: member_profile_all_in_one.php:20
 msgid "Delete Offered Listings"
-msgstr "Slett tilbudsoppføringer"
+msgstr "Slett tilbud"
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:776
 msgid "Wanted Listings"
-msgstr "Ønskeoppføringer"
+msgstr "Ønsker"
 
 #: listings_create.php:14 listings_menu.php:14
 #: member_profile_all_in_one.php:24
 msgid "Create New Want Listing"
-msgstr "Opprett ønskeoppføring"
+msgstr "Registrer nytt ønske"
 
 #: listings_create.php:15 listings_menu.php:15
 #: member_profile_all_in_one.php:25
 msgid "Edit Wanted Listings"
-msgstr "Rediger ønskeoppføringer"
+msgstr "Rediger ønsker"
 
 #: listings_create.php:16 listings_menu.php:16
 #: member_profile_all_in_one.php:26
 msgid "Delete Wanted Listings"
-msgstr "Slett ønskeoppføringer"
+msgstr "Slett ønsker"
 
 #: listings_menu.php:4 includes/inc.config.php:169
 msgid "Update Listings"
@@ -1646,7 +1646,7 @@ msgstr "Oppdater oppføringer"
 
 #: listings_menu.php:19
 msgid "Going on Holiday"
-msgstr "På ferie"
+msgstr "Merk meg som bortreist"
 
 #: listings.php:16
 msgid ""
@@ -2352,11 +2352,11 @@ msgstr "Legg husstandsmedlem til kontoen"
 
 #: member_profile_all_in_one.php:17
 msgid "View Offered Listings"
-msgstr "Vis tilbudsoppføringer"
+msgstr "Vis tilbud"
 
 #: member_profile_all_in_one.php:23
 msgid "View Wanted Listings"
-msgstr "Vis ønskeoppføringer"
+msgstr "Vis ønsker"
 
 #: member_profile_all_in_one.php:34 classes/class.page.php:30
 msgid "Administration"
@@ -2421,11 +2421,11 @@ msgstr "KONTAKTINFORMASJON"
 
 #: member_summary.php:19
 msgid "OFFERED LISTINGS"
-msgstr "TILBUDSOPPFØRINGER"
+msgstr "TILBUD"
 
 #: member_summary.php:24
 msgid "WANTED LISTINGS"
-msgstr "ØNSKEOPPFØRINGER"
+msgstr "ØNSKER"
 
 #: member_to_edit.php:8
 msgid "Choose Member to Edit"
@@ -2939,11 +2939,11 @@ msgstr "Overfør til medlem"
 
 #: trade.php:49
 msgid "# of "
-msgstr "antall"
+msgstr "Antall "
 
 #: trade.php:51
 msgid "# of Minutes"
-msgstr "antall minutter"
+msgstr "Antall minutter"
 
 #: trade.php:53
 msgid "Enter a Brief Description of the Exchange"
@@ -3528,7 +3528,7 @@ msgstr "Gå til \"Oppdater oppføringer\""
 
 #: includes/inc.config.php:240
 msgid "Select Edit Offered (or Wanted) Listings"
-msgstr "Velg \"Rediger ønske- eller tilbudsoppføringer\""
+msgstr "Velg \"Rediger tilbud\" eller \"Rediger ønsker\""
 
 #: includes/inc.config.php:240
 msgid "Select the listing to edit"
@@ -3598,10 +3598,10 @@ msgid ""
 "automatically generated password by going to the Member Profile section "
 "after you login."
 msgstr ""
-"Vennligst logg inn og opprett tilbuds- og ønskeoppføringene dine. Ditt nye "
-"brukernavn og passord er oppført på slutten av meldinga. Du kan endre "
-"passordet vi har laget automatisk, dersom du går til \"Medlemsprofil\" etter "
-"at du har logget inn."
+"Vennligst logg inn og registrer tilbud og ønsker. Ditt nye brukernavn og "
+"passord er oppført på slutten av meldinga. Du kan endre passordet vi har "
+"laget automatisk, dersom du går til \"Medlemsprofil\" etter at du har logget "
+"inn."
 
 #: includes/inc.config.php:258
 msgid "Thank you for joining us."
