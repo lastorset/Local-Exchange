@@ -78,19 +78,6 @@ define ("DATABASE_STATES", "states");  // added by ejkv
 $global = ""; 	// $global lets other includes know that 
 					// inc.global.php has been included
 
-/* Initialize gettext */
-
-// $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-
-// Hardcoded for now. Later some prettier configuration.
-$locale = "nb_NO.utf8";
-
-$ret = setlocale(LC_MESSAGES, $locale);
-
-bindtextdomain("messages", "./includes/lang");
-bind_textdomain_codeset("messages", "UTF-8");
-textdomain("messages");
-
 include_once("inc.config.php");
 
 /* Initial session handling code starts */
@@ -98,6 +85,8 @@ require_once("session_handler.php");
 session_name("LOCAL_EXCHANGE");
 session_start();
 /* Initial session handling code ends */
+
+include_once("inc.translation.php");
 
 include_once(CLASSES_PATH ."class.datetime.php");
 include_once(CLASSES_PATH ."class.error.php");
