@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:700);
+
 body {
 	font-family: Verdana, Georgia, Times, serif;
 	font-size: 14px;
@@ -87,6 +89,11 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
  h1 { font-size: 160%; }
  h2 { font-size: 140%; }
  h3 { font-size: 110%; }
+
+ h1, h2, h3, th, td b, #header h1 {
+ 	font-family: 'Droid Serif', serif;
+ 	font-weight: bold;
+ }
  
  #contenttable {
  	font-size: 13px;
