@@ -78,6 +78,8 @@ define ("DATABASE_STATES", "states");  // added by ejkv
 $global = ""; 	// $global lets other includes know that 
 					// inc.global.php has been included
 
+include_once("inc.translation.php");
+
 include_once("inc.config.php");
 
 /* Initial session handling code starts */
@@ -85,8 +87,6 @@ require_once("session_handler.php");
 session_name("LOCAL_EXCHANGE");
 session_start();
 /* Initial session handling code ends */
-
-include_once("inc.translation.php");
 
 include_once(CLASSES_PATH ."class.datetime.php");
 include_once(CLASSES_PATH ."class.error.php");
