@@ -61,9 +61,30 @@ class cPage {
 	<BODY>
 HTML;
 		
+		$output .= $this->MakeLanguageSelector();
 		$output .= $this->page_header ;
 	
 		return $output;
+	}
+
+	function MakeLanguageSelector() {
+		global $supported_languages, $current_language;
+
+		$out = "<form method=post><select size=1 name=set_language>";
+
+		if (extension_loaded(intl))
+		{
+			foreach ($supported_languages as $lang)
+			{
+				$selected = "";
+				if ($current_language == $lang)
+					$selected = "selected";
+
+				$out .= "<option value=$lang $selected>". Locale::getDisplayLanguage($lang, $lang) ."</option>";
+			}
+		}
+		$out .= "</select><input type=submit></form>";
+		return $out;
 	}
 
 	function MakePageMenu() {
