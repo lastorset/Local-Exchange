@@ -321,7 +321,7 @@ class cTradeGroup {
 		if($this->trade) {
 			foreach($this->trade as $trade) {
 				if($trade->type != "R" and $trade->status != "R") {
-					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". $site_settings->getUnitString() . " "._("From")." ". $trade->member_from->member_id ." "._("To")." ". $trade->member_to->member_id ." "._("On")." ". $trade->trade_date;
+					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". strtolower($site_settings->getUnitString()) . " "._("From")." ". $trade->member_from->member_id ." "._("To")." ". $trade->member_to->member_id ." "._("On")." ". $trade->trade_date;
 				}
 			}
 		}

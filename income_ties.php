@@ -14,7 +14,7 @@ $ties = new cIncomeTies;
 
 $p->page_title = _("Income Sharing");
 
-$output = _("You have the option of contributing a percentage of any income")." (".$site_settings->getUnitString().") "._("you receive to another account. If you specify an Income Share, every time you receive")." ".$site_settings->getUnitString()." "._("a specified percentage (of your choosing) will automatically be paid to the account of your choice. You can change this arrangement at any time, but you are only allowed to share your income with one other account at a time.")."<p>";
+$output = _("You have the option of contributing a percentage of any income")." (".strtolower($site_settings->getUnitString()).") "._("you receive to another account. If you specify an Income Share, every time you receive")." ".strtolower($site_settings->getUnitString())." "._("a specified percentage (of your choosing) will automatically be paid to the account of your choice. You can change this arrangement at any time, but you are only allowed to share your income with one other account at a time.")."<p>";
 
 if ($_REQUEST["process"]==1) {
 	
@@ -71,7 +71,7 @@ if (!$myTie) { // No Income Tie found
 	
 	$output .= "<form method=GET><input type=hidden name=process value=1>";
 	
-	$output .= _("I would like to share")." <input type=text size=1 maxlength=2 name=amount value=10>% "._("of any")." ".$site_settings->getUnitString()." "._("I receive")."...<p>";
+	$output .= _("I would like to share")." <input type=text size=1 maxlength=2 name=amount value=10>% "._("of any")." ".strtolower($site_settings->getUnitString())." "._("I receive")."...<p>";
 	$output .= "... "._("with this account").": ".$name_list->DoNamePicker();
 	
 	$output .= "<p><input type=submit value='"._("Create Income Share")."'></form>";

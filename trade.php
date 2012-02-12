@@ -48,7 +48,7 @@ else
 
 $category_list = new cCategoryList();
 $form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
-$form->addElement("text", "units", _("# of "). $site_settings->getUnitString() ."", array('size' => 5, 'maxlength' => 10));
+$form->addElement("text", "units", _("# of "). strtolower($site_settings->getUnitString()) ."", array('size' => 5, 'maxlength' => 10));
 if(UNITS == "Hours") {
 	$form->addElement("text","minutes",_("# of Minutes"),array('size'=>2,'maxlength'=>2));
 }

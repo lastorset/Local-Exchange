@@ -296,7 +296,7 @@ class cListingGroup
 						
 				// Rate
 				if (SHOW_RATE_ON_LISTINGS==true && $listing->rate)
-					$output .= " (".$listing->rate." ".$site_settings->getUnitString().")<br>"; // line-break added by ejkv
+					$output .= " (".$listing->rate." ".strtolower($site_settings->getUnitString()).")<br>"; // line-break added by ejkv
 				else // added by ejkv
 					$output .= "<br>"; // line-break added by ejkv
 			

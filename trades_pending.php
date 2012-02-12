@@ -371,7 +371,7 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have accepted a payment of")." ".$row["amount"]." ".$site_settings->getUnitString()." from ".$row["member_id_from"]."</em>";
+								$list .= "<em>"._("You have accepted a payment of")." ".$row["amount"]." ".strtolower($site_settings->getUnitString())." from ".$row["member_id_from"]."</em>";
 						}
 					}
 				}
@@ -403,7 +403,7 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have sent a payment of")." ".$row["amount"]." ".$site_settings->getUnitString()." to ".$row["member_id_from"]."</em>";
+								$list .= "<em>"._("You have sent a payment of")." ".$row["amount"]." ".strtolower($site_settings->getUnitString())." to ".$row["member_id_from"]."</em>";
 						}
 					}
 				}
