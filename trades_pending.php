@@ -35,7 +35,8 @@ if (MEMBERS_CAN_INVOICE==true) // ditto
 
 
 function initTradeTable() {
-	$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". UNITS ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD><td><font size=2><b>"._("Action")."</td></font></td></TR>";
+	global $site_settings;
+	$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". $site_settings->getUnitString() ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD><td><font size=2><b>"._("Action")."</td></font></td></TR>";
 	
 	return $output;
 }
@@ -370,7 +371,7 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have accepted a payment of")." ".$row["amount"]." ".UNITS." from ".$row["member_id_from"]."</em>";
+								$list .= "<em>"._("You have accepted a payment of")." ".$row["amount"]." ".$site_settings->getUnitString()." from ".$row["member_id_from"]."</em>";
 						}
 					}
 				}
@@ -402,7 +403,7 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have sent a payment of")." ".$row["amount"]." ".UNITS." to ".$row["member_id_from"]."</em>";
+								$list .= "<em>"._("You have sent a payment of")." ".$row["amount"]." ".$site_settings->getUnitString()." to ".$row["member_id_from"]."</em>";
 						}
 					}
 				}

@@ -126,6 +126,13 @@ class cSettings {
 		
 		return "<font color=green>"._("Settings updated successfully.")."</font>";
 	}
+
+	public function getUnitString() {
+		if (UNITS != "Hours")
+			return UNITS;
+		else
+			return _("Hours");
+	}
 }
 
 $site_settings = new cSettings();

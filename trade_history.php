@@ -1,5 +1,7 @@
 <?php
 	include_once("includes/inc.global.php");
+
+	global $site_settings;
 	
 	$cUser->MustBeLoggedOn();
 	$p->site_section = EXCHANGES;
@@ -33,7 +35,7 @@
 	$to = new cDateTime($to_date);
 // added trade history timeframe (from / to) - by ejkv
 	
-	$list = "<B>"._("Current Balance").": </B><FONT COLOR=". $color .">". $member->balance . " ". UNITS ." - "._("For period from")." ". $from->ShortDate() ." to ". $to->ShortDate() ."</FONT><P>"; // added (from / to) - by ejkv	
+	$list = "<B>"._("Current Balance").": </B><FONT COLOR=". $color .">". $member->balance . " ". $site_settings->getUnitString() ." - "._("For period from")." ". $from->ShortDate() ." to ". $to->ShortDate() ."</FONT><P>"; // added (from / to) - by ejkv
 
 	$trade_group = new cTradeGroup($member->member_id, $from_date, $to_date); // added (from / to) - by ejkv
 	$trade_group->LoadTradeGroup("individual");

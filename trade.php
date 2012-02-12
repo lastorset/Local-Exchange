@@ -2,6 +2,8 @@
 
 include_once("includes/inc.global.php");
 
+global $site_settings;
+
 $p->site_section = EXCHANGES;
 $p->page_title = _("Record an Exchange");
 
@@ -46,7 +48,7 @@ else
 
 $category_list = new cCategoryList();
 $form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
-$form->addElement("text", "units", _("# of "). UNITS ."", array('size' => 5, 'maxlength' => 10));
+$form->addElement("text", "units", _("# of "). $site_settings->getUnitString() ."", array('size' => 5, 'maxlength' => 10));
 if(UNITS == "Hours") {
 	$form->addElement("text","minutes",_("# of Minutes"),array('size'=>2,'maxlength'=>2));
 }
@@ -87,7 +89,7 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $member, $cErr, $cUser;
+	global $p, $member, $cErr, $cUser, $site_settings;
 	$list = "";
 	
 	if(UNITS == "Hours") {
@@ -133,7 +135,7 @@ function process_data ($values) {
 					
 					$mailed = mail($member_to->person[0]->email, _("Payment Received on")." ".SITE_LONG_TITLE."", _("Hi")." ".$member_to_id.",\n\n"._("Just letting you know that you have received a new payment from")." ".$member->member_id."\n\n"._("As you have elected to confirm all payments made to you, please log into your account now and confirm or reject this payment using the following URL...")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=incoming", "From:".EMAIL_FROM); // added "FROM:". - by ejkv
 			
-					$list .= _("Member ID")." ".$member_to_id." "._("has been notified that you wish to transfer")." ". $values['units'] ." ". strtolower(UNITS) ." "._("to him/her").".<p>"._("This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member").".<p>".
+					$list .= _("Member ID")." ".$member_to_id." "._("has been notified that you wish to transfer")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ." "._("to him/her").".<p>"._("This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member").".<p>".
 							_("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?";
 				}
 				else
@@ -147,7 +149,7 @@ function process_data ($values) {
 					
 					$mailed = mail($member_to->person[0]->email, _("Invoice Received on")." ".SITE_LONG_TITLE."", _("Hi")." ".$member_to_id.",\n\n"._("Just letting you know that you have received a new Invoice from")." ".$member->member_id."\n\n"._("Please log into your account now to pay or reject this invoice using the following URL...")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=outgoing", "From:".EMAIL_FROM); // added "From:". - by ejkv
 			
-					$list .= $member_to_id." "._("has been sent an invoice for")." ". $values['units'] ." ". strtolower(UNITS) .".<p> "._("You will be informed when the member pays this invoice and will be invited to leave Feedback for this member").".<p>".
+					$list .= $member_to_id." "._("has been sent an invoice for")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) .".<p> "._("You will be informed when the member pays this invoice and will be invited to leave Feedback for this member").".<p>".
 						_("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?";
 			}
 			else
@@ -171,7 +173,7 @@ function process_data ($values) {
 		else
 		{
 			// FIXME: String is split
-			$list .= _("You have transferred")." ". $values['units'] ." ". strtolower(UNITS) ._(" to "). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?";
+			$list .= _("You have transferred")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ._(" to "). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?";
 		
 			// Has the recipient got an income tie set-up? If so, we need to transfer a percentage of this elsewhere...
 		

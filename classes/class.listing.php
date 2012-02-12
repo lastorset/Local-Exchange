@@ -259,7 +259,7 @@ class cListingGroup
 	{
 		/*[chris]*/ // made some changes to way listings displayed, for better or for worse...
 		
-		global $cUser,$cDB;
+		global $cUser,$cDB,$site_settings;
 
 		$output = "";
 		$current_cat = "";
@@ -296,7 +296,7 @@ class cListingGroup
 						
 				// Rate
 				if (SHOW_RATE_ON_LISTINGS==true && $listing->rate)
-					$output .= " (".$listing->rate." ".UNITS.")<br>"; // line-break added by ejkv
+					$output .= " (".$listing->rate." ".$site_settings->getUnitString().")<br>"; // line-break added by ejkv
 				else // added by ejkv
 					$output .= "<br>"; // line-break added by ejkv
 			

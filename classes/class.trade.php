@@ -272,9 +272,9 @@ class cTradeGroup {
 	}
 	
 	function DisplayTradeGroup() {
-		global $cDB, $cUser;
+		global $cDB, $cUser, $site_settings;
 		
-		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". UNITS ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
+		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". $site_settings->getUnitString() ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
 		
 		if(!$this->trade)
 			return $output. "</TABLE>";   // No trades yet, presumably
@@ -316,11 +316,12 @@ class cTradeGroup {
 	}
 	
 	function MakeTradeArray() {
+		global $site_settings;
 		$trades = "";
 		if($this->trade) {
 			foreach($this->trade as $trade) {
 				if($trade->type != "R" and $trade->status != "R") {
-					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". UNITS . " "._("From")." ". $trade->member_from->member_id ." "._("To")." ". $trade->member_to->member_id ." "._("On")." ". $trade->trade_date;
+					$trades[$trade->trade_id] = "#". $trade->trade_id ." - ". $trade->amount ." ". $site_settings->getUnitString() . " "._("From")." ". $trade->member_from->member_id ." "._("To")." ". $trade->member_to->member_id ." "._("On")." ". $trade->trade_date;
 				}
 			}
 		}

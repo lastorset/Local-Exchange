@@ -510,7 +510,7 @@ class cMember
 		
 		/*[CDM] Added in image, placed all this in 2 column table, looks tidier */
 		
-		global $cDB,$agesArr,$sexArr;
+		global $cDB,$agesArr,$sexArr,$site_settings;
 		
 		$output .= "<table width=100%><tr valign=top><td width=50%>";
 		
@@ -520,7 +520,7 @@ class cMember
 		if ($stats->most_recent == "")
 			$output .= _("No exchanges yet")."<BR>";
 		else		
-			$output .= '<A HREF="trade_history.php?mode=other&member_id='. $this->member_id .'">'. $stats->total_trades ." "._("exchanges total")."</A> "._("for a sum of")." ". $stats->total_units . " ". strtolower(UNITS) . ", "._("last on")." ". $stats->most_recent->ShortDate() ."<BR>";
+			$output .= '<A HREF="trade_history.php?mode=other&member_id='. $this->member_id .'">'. $stats->total_trades ." "._("exchanges total")."</A> "._("for a sum of")." ". $stats->total_units . " ". strtolower($site_settings->getUnitString()) . ", "._("last on")." ". $stats->most_recent->ShortDate() ."<BR>";
 		$feedbackgrp = new cFeedbackGroup;
 		$feedbackgrp->LoadFeedbackGroup($this->member_id);
 		if(isset($feedbackgrp->feedback)) {
