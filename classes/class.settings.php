@@ -127,6 +127,8 @@ class cSettings {
 		return "<font color=green>"._("Settings updated successfully.")."</font>";
 	}
 
+	/** Gets the UNITS setting in a form suitable for UI. This makes sure "Hours" gets translated if necessary.
+		Strictly speaking this doesn't belong in this class, not being stored in the database. */
 	public function getUnitString() {
 		if (UNITS != "Hours")
 			return UNITS;
