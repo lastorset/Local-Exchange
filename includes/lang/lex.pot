@@ -249,8 +249,7 @@ msgstr ""
 msgid "Edit Balance"
 msgstr ""
 
-#: category_choose.php:6 listing_create.php:71 trade.php:64
-#: listing_create.php:70
+#: category_choose.php:6 listing_create.php:70 trade.php:66
 msgid "Choose Category"
 msgstr ""
 
@@ -259,16 +258,15 @@ msgid "Which Category?"
 msgstr ""
 
 #: category_choose.php:23 do_info_edit.php:13 edit_info.php:21
-#: listing_edit.php:13 member_contact_choose.php:12
-#: member_contact_to_edit.php:19 member_to_edit.php:16 news_edit.php:13
-#: news_to_edit.php:15 state_choose.php:22
+#: member_contact_choose.php:12 member_contact_to_edit.php:19
+#: member_to_edit.php:16 news_edit.php:13 news_to_edit.php:15
+#: state_choose.php:22
 msgid "Edit"
 msgstr ""
 
-#: category_choose.php:24 delete_info.php:36 listing_delete.php:13
-#: listing_delete.php:52 member_contact_choose.php:13
-#: member_contact_delete.php:22 member_contact_to_edit.php:20
-#: newsletter_delete.php:22 listing_delete.php:50
+#: category_choose.php:24 delete_info.php:36 listing_delete.php:50
+#: member_contact_choose.php:13 member_contact_delete.php:22
+#: member_contact_to_edit.php:20 newsletter_delete.php:22
 msgid "Delete"
 msgstr ""
 
@@ -302,9 +300,9 @@ msgstr ""
 
 #: category_create.php:19 category_edit.php:23 create_info.php:20
 #: do_info_edit.php:23 feedback.php:38 feedback_rebuttal.php:39
-#: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
+#: feedback_reply.php:44 listing_create.php:72 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:55 listing_create.php:72
+#: timeframe_choose.php:19 trade.php:57
 msgid "Submit"
 msgstr ""
 
@@ -321,13 +319,12 @@ msgid "Could not save the category."
 msgstr ""
 
 #: category_create.php:44 category_edit.php:48 email.php:85 feedback.php:84
-#: listing_create.php:123 listing_edit.php:142 member_contact_create.php:152
+#: listing_create.php:122 listing_edit.php:141 member_contact_create.php:152
 #: member_contact_edit.php:168 member_create.php:211 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
-#: state_edit.php:48 trade.php:140 trade.php:154 includes/inc.config.php:66
+#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:66
 #: classes/class.member.php:169 classes/class.member.php:880
 #: classes/class.trade.php:94 classes/class.uploads.php:71
-#: listing_create.php:122 listing_edit.php:141
 msgid "Please try again later."
 msgstr ""
 
@@ -466,8 +463,8 @@ msgstr ""
 msgid "Contact Form"
 msgstr ""
 
-#: contact.php:46 trades_pending.php:38 classes/class.feedback.php:198
-#: classes/class.trade.php:277 classes/class.trade.php:323
+#: contact.php:46 trades_pending.php:39 classes/class.feedback.php:198
+#: classes/class.trade.php:277 classes/class.trade.php:324
 msgid "From"
 msgstr ""
 
@@ -828,14 +825,13 @@ msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
 msgstr ""
 
-#: create_info.php:17 do_info_edit.php:20 listing_create.php:45
-#: news_create.php:17 news_edit.php:22 listing_create.php:44
+#: create_info.php:17 do_info_edit.php:20 listing_create.php:44
+#: news_create.php:17 news_edit.php:22
 msgid "Title"
 msgstr ""
 
-#: create_info.php:25 do_info_edit.php:28 listing_create.php:46
-#: listing_edit.php:31 news_create.php:32 news_edit.php:37
-#: listing_create.php:45 listing_edit.php:30
+#: create_info.php:25 do_info_edit.php:28 listing_create.php:45
+#: listing_edit.php:30 news_create.php:32 news_edit.php:37
 msgid "Enter a title"
 msgstr ""
 
@@ -968,8 +964,8 @@ msgstr ""
 msgid "Email a Member"
 msgstr ""
 
-#: email.php:22 trades_pending.php:38 classes/class.trade.php:277
-#: classes/class.trade.php:323
+#: email.php:22 trades_pending.php:39 classes/class.trade.php:277
+#: classes/class.trade.php:324
 msgid "To"
 msgstr ""
 
@@ -997,7 +993,7 @@ msgstr ""
 msgid "require action"
 msgstr ""
 
-#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:6
+#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:8
 msgid "Record an Exchange"
 msgstr ""
 
@@ -1071,7 +1067,7 @@ msgstr ""
 msgid "Leave Feedback about"
 msgstr ""
 
-#: feedback.php:22 trade_history.php:18
+#: feedback.php:22 trade_history.php:20
 msgid "for"
 msgstr ""
 
@@ -1131,7 +1127,7 @@ msgstr ""
 msgid "Members do not match the trade selected."
 msgstr ""
 
-#: feedback_to_view.php:5 trade.php:65
+#: feedback_to_view.php:5 trade.php:67
 msgid "Choose Member"
 msgstr ""
 
@@ -1173,10 +1169,10 @@ msgid ""
 "specify below arrives the listings will automatically reactivate."
 msgstr ""
 
-#: holiday.php:31 listing_create.php:62 member_contact_create.php:38
+#: holiday.php:31 listing_create.php:61 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:15 listing_create.php:61
+#: timeframe_choose.php:15
 msgid "en"
 msgstr ""
 
@@ -1192,13 +1188,12 @@ msgstr ""
 msgid "Inactivate"
 msgstr ""
 
-#: holiday.php:37 listing_edit.php:57 listing_edit.php:56
+#: holiday.php:37 listing_edit.php:56
 msgid "Must be a future date"
 msgstr ""
 
-#: holiday.php:39 listing_create.php:69 listing_edit.php:54
-#: listing_edit.php:58 news_create.php:37 news_edit.php:40
-#: listing_create.php:68 listing_edit.php:53 listing_edit.php:57
+#: holiday.php:39 listing_create.php:68 listing_edit.php:53
+#: listing_edit.php:57 news_create.php:37 news_edit.php:40
 msgid "Date is invalid"
 msgstr ""
 
@@ -1206,93 +1201,93 @@ msgstr ""
 msgid "Listings successfully inactivated."
 msgstr ""
 
-#: income_ties.php:13
+#: income_ties.php:15
 msgid "Income Sharing"
 msgstr ""
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid "You have the option of contributing a percentage of any income"
 msgstr ""
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid ""
 "you receive to another account. If you specify an Income Share, every time "
 "you receive"
 msgstr ""
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid ""
 "a specified percentage (of your choosing) will automatically be paid to the "
 "account of your choice. You can change this arrangement at any time, but you "
 "are only allowed to share your income with one other account at a time."
 msgstr ""
 
-#: income_ties.php:25
+#: income_ties.php:27
 msgid "Sorry you can't share income with yourself."
 msgstr ""
 
-#: income_ties.php:33
+#: income_ties.php:35
 msgid "Not enough data to proceed."
 msgstr ""
 
-#: income_ties.php:35
+#: income_ties.php:37
 msgid ""
 "The percentage must be numeric and must not contain any other characters (e."
 "g. '10' = good input, '10%' = bad input)"
 msgstr ""
 
-#: income_ties.php:37
+#: income_ties.php:39
 #, php-format
 msgid ""
 "Sorry, you can't contribute more than 99% of your income to another account "
 "- but it's the thought that counts"
 msgstr ""
 
-#: income_ties.php:63
+#: income_ties.php:65
 msgid "Income Share Inactive"
 msgstr ""
 
-#: income_ties.php:65
+#: income_ties.php:67
 msgid "Create an Income Share"
 msgstr ""
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "I would like to share"
 msgstr ""
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "of any"
 msgstr ""
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "I receive"
 msgstr ""
 
-#: income_ties.php:73
+#: income_ties.php:75
 msgid "with this account"
 msgstr ""
 
-#: income_ties.php:75
+#: income_ties.php:77
 msgid "Create Income Share"
 msgstr ""
 
-#: income_ties.php:79
+#: income_ties.php:81
 msgid "Income Share Active"
 msgstr ""
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "You are currently sharing"
 msgstr ""
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "of your income with account"
 msgstr ""
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "Remove Income Share"
 msgstr ""
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid ""
 "If you wish to amend this Income Share you will first need to remove it and "
 "then create a new one."
@@ -1380,7 +1375,7 @@ msgstr ""
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
 #: member_create.php:204 member_directory.php:15 member_unlock.php:47
-#: member_unlock.php:50 trade.php:136 classes/class.member.php:194
+#: member_unlock.php:50 trade.php:138 classes/class.member.php:194
 msgid "Member ID"
 msgstr ""
 
@@ -1401,131 +1396,130 @@ msgstr ""
 msgid "Email successfully sent to all members."
 msgstr ""
 
-#: listing_create.php:8 listing_delete.php:9 listing_edit.php:10
-#: listings_found.php:7 listings.php:6 listing_to_edit.php:6
-#: includes/inc.config.php:167
-msgid "Offered"
+#: listing_create.php:8
+msgid "Create Offered Listing"
 msgstr ""
 
-#: listing_create.php:10 listing_delete.php:11 listing_edit.php:12
-#: listings_found.php:9 listings.php:8 listing_to_edit.php:8
-#: includes/inc.config.php:168
-msgid "Wanted"
+#: listing_create.php:10
+msgid "Create Wanted Listing"
 msgstr ""
 
-#: listing_create.php:12
-msgid "Create"
-msgstr ""
-
-#: listing_create.php:12
-msgid "Listing"
-msgstr ""
-
-#: listing_create.php:35 member_choose.php:6 listing_create.php:34
+#: listing_create.php:34 member_choose.php:6
 msgid "For which member?"
 msgstr ""
 
-#: listing_create.php:48 listing_create.php:47
+#: listing_create.php:47
 msgid "You already have a listing with this title"
 msgstr ""
 
-#: listing_create.php:50 listing_edit.php:35 listings.php:21 trade.php:48
-#: classes/class.trade.php:277 listing_create.php:49 listing_edit.php:34
-#: listings.php:19
+#: listing_create.php:49 listing_edit.php:34 listings.php:19 trade.php:50
+#: classes/class.trade.php:277
 msgid "Category"
 msgstr ""
 
-#: listing_create.php:53 listing_edit.php:38 classes/class.listing.php:152
-#: listing_create.php:52 listing_edit.php:37
+#: listing_create.php:52 listing_edit.php:37 classes/class.listing.php:152
 msgid "Rate"
 msgstr ""
 
-#: listing_create.php:57 listing_edit.php:44 news_create.php:25
+#: listing_create.php:56 listing_edit.php:43 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
-#: trades_pending.php:38 classes/class.listing.php:150
-#: classes/class.trade.php:277 listing_create.php:56 listing_edit.php:43
+#: trades_pending.php:39 classes/class.listing.php:150
+#: classes/class.trade.php:277
 msgid "Description"
 msgstr ""
 
-#: listing_create.php:60 listing_edit.php:47 listing_create.php:59
-#: listing_edit.php:46
+#: listing_create.php:59 listing_edit.php:46
 msgid "Should this listing be set to automatically expire?"
 msgstr ""
 
-#: listing_create.php:63 listing_edit.php:50 news_create.php:20
-#: news_edit.php:25 listing_create.php:62 listing_edit.php:49
+#: listing_create.php:62 listing_edit.php:49 news_create.php:20
+#: news_edit.php:25
 msgid "Expires"
 msgstr ""
 
-#: listing_create.php:67 listing_edit.php:52 news_create.php:35
-#: listing_create.php:66 listing_edit.php:51
+#: listing_create.php:66 listing_edit.php:51 news_create.php:35
 msgid "Expiration must be for a future date"
 msgstr ""
 
-#: listing_create.php:121 listing_create.php:120
+#: listing_create.php:120
 msgid "Listing created. Create"
 msgstr ""
 
-#: listing_create.php:121 listing_create.php:120
+#: listing_create.php:120
 msgid "another"
 msgstr ""
 
-#: listing_create.php:123 listing_edit.php:142 listing_create.php:122
-#: listing_edit.php:141
+#: listing_create.php:122 listing_edit.php:141
 msgid "There was an error saving the listing."
 msgstr ""
 
-#: listing_delete.php:13 listing_delete.php:59 listings_found.php:11
-#: listings.php:10 listing_to_edit.php:29
-msgid " listings"
+#: listing_delete.php:9 listings_create.php:11 listings_menu.php:11
+#: member_profile_all_in_one.php:20
+msgid "Delete Offered Listings"
 msgstr ""
 
-#: listing_delete.php:55
-msgid "You don't"
+#: listing_delete.php:11 listings_create.php:16 listings_menu.php:16
+#: member_profile_all_in_one.php:26
+msgid "Delete Wanted Listings"
 msgstr ""
 
-#: listing_delete.php:57
-msgid "doesn't"
+#: listing_delete.php:54
+msgid "You don't currently have any Offered listings."
+msgstr ""
+
+#: listing_delete.php:56
+msgid "You don't currently have any Wanted listings."
 msgstr ""
 
 #: listing_delete.php:59
-msgid "currently have any"
+msgid "doesn't currently have any Offered listings."
 msgstr ""
 
-#: listing_delete.php:83 listing_delete.php:85
+#: listing_delete.php:61
+msgid "doesn't currently have any Wanted listings."
+msgstr ""
+
+#: listing_delete.php:85
 msgid "1 listing deleted"
 msgstr ""
 
-#: listing_delete.php:85 listing_delete.php:87
+#: listing_delete.php:87
 msgid "listings deleted"
 msgstr ""
 
-#: listing_delete.php:87 listing_delete.php:89
+#: listing_delete.php:89
 msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 
-#: listing_edit.php:55 listing_edit.php:54
+#: listing_edit.php:10
+msgid "Edit Offered:"
+msgstr ""
+
+#: listing_edit.php:12
+msgid "Edit Wanted:"
+msgstr ""
+
+#: listing_edit.php:54
 msgid "Should this listing be made temporarily inactive?"
 msgstr ""
 
-#: listing_edit.php:56 listing_edit.php:55
+#: listing_edit.php:55
 msgid "Reactivates"
 msgstr ""
 
-#: listing_edit.php:59 member_contact_edit.php:69 member_edit.php:93
-#: listing_edit.php:58
+#: listing_edit.php:58 member_contact_edit.php:69 member_edit.php:93
 msgid "Update"
 msgstr ""
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "Listing changes saved. Do you want to"
 msgstr ""
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "edit"
 msgstr ""
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "another listing?"
 msgstr ""
 
@@ -1547,11 +1541,6 @@ msgstr ""
 msgid "Edit Offered Listings"
 msgstr ""
 
-#: listings_create.php:11 listings_menu.php:11
-#: member_profile_all_in_one.php:20 listing_delete.php:9
-msgid "Delete Offered Listings"
-msgstr ""
-
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:776
@@ -1568,9 +1557,12 @@ msgstr ""
 msgid "Edit Wanted Listings"
 msgstr ""
 
-#: listings_create.php:16 listings_menu.php:16
-#: member_profile_all_in_one.php:26 listing_delete.php:11
-msgid "Delete Wanted Listings"
+#: listings_found.php:7 listings.php:6
+msgid "Offered listings"
+msgstr ""
+
+#: listings_found.php:9 listings.php:8
+msgid "Wanted listings"
 msgstr ""
 
 #: listings_menu.php:4 includes/inc.config.php:169
@@ -1581,72 +1573,76 @@ msgstr ""
 msgid "Going on Holiday"
 msgstr ""
 
-#: listings.php:16 listings.php:14
+#: listings.php:14
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
 "download the complete directory, click"
 msgstr ""
 
-#: listings.php:16 member_create.php:198 news.php:22 trades_pending.php:25
-#: classes/class.member.php:107 listings.php:14
+#: listings.php:14 member_create.php:198 news.php:22 trades_pending.php:25
+#: classes/class.member.php:107
 msgid "here"
 msgstr ""
 
-#: listings.php:20 listings.php:18
+#: listings.php:18
 msgid "View All Categories"
 msgstr ""
 
-#: listings.php:22 listings.php:20
+#: listings.php:20
 msgid "New/updated in last"
 msgstr ""
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "Time Frame"
 msgstr ""
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "View All Listings"
 msgstr ""
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "3 days"
 msgstr ""
 
-#: listings.php:23 classes/class.member.php:785 listings.php:21
+#: listings.php:21 classes/class.member.php:785
 msgid "week"
 msgstr ""
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "2 weeks"
 msgstr ""
 
-#: listings.php:23 classes/class.member.php:787 listings.php:21
+#: listings.php:21 classes/class.member.php:787
 msgid "month"
 msgstr ""
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "3 months"
 msgstr ""
 
-#: listings.php:26 listings.php:24
+#: listings.php:24
 msgid "Keyword"
 msgstr ""
 
-#: listings.php:29 pages.php:10 listings.php:27
+#: listings.php:27 pages.php:10
 msgid "Continue"
 msgstr ""
 
-#: listing_to_edit.php:10
-msgid "Choose the"
+#: listing_to_edit.php:6
+msgid "Choose the Offered Listing to Edit"
 msgstr ""
 
-#: listing_to_edit.php:10
-msgid "Listing to Edit"
+#: listing_to_edit.php:8
+msgid "Choose the Wanted Listing to Edit"
 msgstr ""
 
-#: listing_to_edit.php:29
-msgid "You don't currently have any"
+#: listing_to_edit.php:28
+msgid "You don't currently have any Offered listings"
+msgstr ""
+
+#: listing_to_edit.php:30
+msgid "You don't currently have any Wanted listings"
 msgstr ""
 
 #: login.php:32
@@ -2787,178 +2783,178 @@ msgstr ""
 msgid "To when?"
 msgstr ""
 
-#: trade_history_all.php:6 trade_history.php:6
+#: trade_history_all.php:6 trade_history.php:8
 msgid "Exchange History"
 msgstr ""
 
-#: trade_history_all.php:13 trade_history.php:36
+#: trade_history_all.php:13 trade_history.php:38
 msgid "For period from"
 msgstr ""
 
-#: trade_history.php:36
+#: trade_history.php:38
 msgid "Current Balance"
 msgstr ""
 
-#: trade.php:35
+#: trade.php:37
 msgid "Transaction Type"
 msgstr ""
 
-#: trade.php:35
+#: trade.php:37
 msgid "Transfer"
 msgstr ""
 
-#: trade.php:35
+#: trade.php:37
 msgid "Invoice"
 msgstr ""
 
-#: trade.php:43
+#: trade.php:45
 msgid "To Member"
 msgstr ""
 
-#: trade.php:45
+#: trade.php:47
 msgid "Transfer to Member"
 msgstr ""
 
-#: trade.php:49
+#: trade.php:51
 msgid "# of "
 msgstr ""
 
-#: trade.php:51
+#: trade.php:53
 msgid "# of Minutes"
 msgstr ""
 
-#: trade.php:53
+#: trade.php:55
 msgid "Enter a Brief Description of the Exchange"
 msgstr ""
 
-#: trade.php:62
+#: trade.php:64
 msgid "You cannot transfer to yourself"
 msgstr ""
 
-#: trade.php:66
+#: trade.php:68
 msgid "Description too long - maximum length is 255 characters"
 msgstr ""
 
-#: trade.php:70
+#: trade.php:72
 msgid "Hours entered must be a positive, whole number"
 msgstr ""
 
-#: trade.php:72
+#: trade.php:74
 msgid "Enter 15, 30, or 45 (or other numbers in 3 minute increments)"
 msgstr ""
 
-#: trade.php:75
+#: trade.php:77
 msgid "Enter a positive number with no more than two decimal points"
 msgstr ""
 
-#: trade.php:99
+#: trade.php:101
 msgid "No units were entered to exchange!"
 msgstr ""
 
-#: trade.php:134
+#: trade.php:136
 msgid "Payment Received on"
 msgstr ""
 
-#: trade.php:134 trade.php:148
+#: trade.php:136 trade.php:150
 msgid "Hi"
 msgstr ""
 
-#: trade.php:134
+#: trade.php:136
 msgid "Just letting you know that you have received a new payment from"
 msgstr ""
 
-#: trade.php:134
+#: trade.php:136
 msgid ""
 "As you have elected to confirm all payments made to you, please log into "
 "your account now and confirm or reject this payment using the following "
 "URL..."
 msgstr ""
 
-#: trade.php:136
+#: trade.php:138
 msgid "has been notified that you wish to transfer"
 msgstr ""
 
-#: trade.php:136
+#: trade.php:138
 msgid "to him/her"
 msgstr ""
 
-#: trade.php:136
+#: trade.php:138
 msgid ""
 "This member has opted to confirm all transactions made to him/her. Once the "
 "member accepts this transaction your payment will be actioned and you will "
 "be invited to leave Feedback for this member"
 msgstr ""
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "Would you like to"
 msgstr ""
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "record another"
 msgstr ""
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "exchange"
 msgstr ""
 
-#: trade.php:140 trade.php:154 trade.php:166
+#: trade.php:142 trade.php:156 trade.php:168
 msgid "Trade failed!"
 msgstr ""
 
-#: trade.php:145
+#: trade.php:147
 msgid ""
 "Sorry, the Invoicing facility has been disabled by the site administrator."
 msgstr ""
 
-#: trade.php:148
+#: trade.php:150
 msgid "Invoice Received on"
 msgstr ""
 
-#: trade.php:148
+#: trade.php:150
 msgid "Just letting you know that you have received a new Invoice from"
 msgstr ""
 
-#: trade.php:148
+#: trade.php:150
 msgid ""
 "Please log into your account now to pay or reject this invoice using the "
 "following URL..."
 msgstr ""
 
-#: trade.php:150
+#: trade.php:152
 msgid "has been sent an invoice for"
 msgstr ""
 
-#: trade.php:150
+#: trade.php:152
 msgid ""
 "You will be informed when the member pays this invoice and will be invited "
 "to leave Feedback for this member"
 msgstr ""
 
-#: trade.php:166
+#: trade.php:168
 msgid "Please try again later, or contact your administrator."
 msgstr ""
 
-#: trade.php:174
+#: trade.php:176
 msgid "You have transferred"
 msgstr ""
 
-#: trade.php:174
+#: trade.php:176
 msgid " to "
 msgstr ""
 
-#: trade.php:174
+#: trade.php:176
 msgid "Or would you like to leave"
 msgstr ""
 
-#: trade.php:174
+#: trade.php:176
 msgid "feedback"
 msgstr ""
 
-#: trade.php:174
+#: trade.php:176
 msgid "for this member"
 msgstr ""
 
-#: trade.php:190 trades_pending.php:153
+#: trade.php:192 trades_pending.php:154
 msgid "Donation from"
 msgstr ""
 
@@ -3022,182 +3018,182 @@ msgstr ""
 msgid "Sent Invoices"
 msgstr ""
 
-#: trades_pending.php:38 classes/class.feedback.php:198
+#: trades_pending.php:39 classes/class.feedback.php:198
 #: classes/class.trade.php:277
 msgid "Date"
 msgstr ""
 
-#: trades_pending.php:38
+#: trades_pending.php:39
 msgid "Action"
 msgstr ""
 
-#: trades_pending.php:61
+#: trades_pending.php:62
 msgid "Accept Payment"
 msgstr ""
 
-#: trades_pending.php:61 trades_pending.php:65
+#: trades_pending.php:62 trades_pending.php:66
 msgid "Reject"
 msgstr ""
 
-#: trades_pending.php:64
+#: trades_pending.php:65
 msgid "Pay Invoice"
 msgstr ""
 
-#: trades_pending.php:70 trades_pending.php:81
+#: trades_pending.php:71 trades_pending.php:82
 msgid "has rejected this transaction"
 msgstr ""
 
-#: trades_pending.php:71
+#: trades_pending.php:72
 msgid "Resend Payment"
 msgstr ""
 
-#: trades_pending.php:72 trades_pending.php:83 trades_pending.php:102
+#: trades_pending.php:73 trades_pending.php:84 trades_pending.php:103
 msgid "Remove this Notice"
 msgstr ""
 
-#: trades_pending.php:75
+#: trades_pending.php:76
 msgid "Awaiting Confirmation by"
 msgstr ""
 
-#: trades_pending.php:82
+#: trades_pending.php:83
 msgid "Resend Invoice"
 msgstr ""
 
-#: trades_pending.php:86
+#: trades_pending.php:87
 msgid "Awaiting Payment from"
 msgstr ""
 
-#: trades_pending.php:94
+#: trades_pending.php:95
 msgid "Payment Accepted"
 msgstr ""
 
-#: trades_pending.php:96
+#: trades_pending.php:97
 msgid "Invoice Paid"
 msgstr ""
 
-#: trades_pending.php:98
+#: trades_pending.php:99
 msgid "has confirmed"
 msgstr ""
 
-#: trades_pending.php:100
+#: trades_pending.php:101
 msgid "has paid this invoice"
 msgstr ""
 
-#: trades_pending.php:177 trades_pending.php:203 trades_pending.php:220
-#: trades_pending.php:246 trades_pending.php:263 trades_pending.php:290
-#: trades_pending.php:307 trades_pending.php:338
+#: trades_pending.php:178 trades_pending.php:204 trades_pending.php:221
+#: trades_pending.php:247 trades_pending.php:264 trades_pending.php:291
+#: trades_pending.php:308 trades_pending.php:339
 msgid "This trade does not exist or you do not have permission to act on it."
 msgstr ""
 
-#: trades_pending.php:185
+#: trades_pending.php:186
 msgid "Sorry, only Open trades can be rejected or resent."
 msgstr ""
 
-#: trades_pending.php:191 trades_pending.php:234
+#: trades_pending.php:192 trades_pending.php:235
 msgid "This member hasn't rejected this transaction"
 msgstr ""
 
-#: trades_pending.php:198
+#: trades_pending.php:199
 msgid "Transaction re-submitted successfully."
 msgstr ""
 
-#: trades_pending.php:200 trades_pending.php:243 trades_pending.php:287
-#: trades_pending.php:335
+#: trades_pending.php:201 trades_pending.php:244 trades_pending.php:288
+#: trades_pending.php:336
 msgid "Error updating the database"
 msgstr ""
 
-#: trades_pending.php:228
+#: trades_pending.php:229
 msgid "Sorry, only Open trades can be rejected."
 msgstr ""
 
-#: trades_pending.php:241 trades_pending.php:333
+#: trades_pending.php:242 trades_pending.php:334
 msgid "Transaction removed successfully."
 msgstr ""
 
-#: trades_pending.php:271
+#: trades_pending.php:272
 msgid "This trade is no longer Open and therefore cannot be rejected."
 msgstr ""
 
-#: trades_pending.php:285
+#: trades_pending.php:286
 msgid "has been informed that you have rejected this transaction"
 msgstr ""
 
-#: trades_pending.php:315
+#: trades_pending.php:316
 msgid ""
 "This trade is currently marked as Open and thus cannot be removed until the "
 "required action has been taken."
 msgstr ""
 
-#: trades_pending.php:354
+#: trades_pending.php:355
 msgid "This trade has already been confirmed and is now closed."
 msgstr ""
 
-#: trades_pending.php:365 trades_pending.php:383
+#: trades_pending.php:366 trades_pending.php:384
 msgid "You do not have permission to confirm this trade."
 msgstr ""
 
-#: trades_pending.php:373
+#: trades_pending.php:374
 msgid "You have accepted a payment of"
 msgstr ""
 
-#: trades_pending.php:400
+#: trades_pending.php:401
 msgid "Error sending payment. Please contact your administrator."
 msgstr ""
 
-#: trades_pending.php:405
+#: trades_pending.php:406
 msgid "You have sent a payment of"
 msgstr ""
 
-#: trades_pending.php:413
+#: trades_pending.php:414
 msgid "You have elected to confirm a non-existent trade"
 msgstr ""
 
-#: trades_pending.php:420
+#: trades_pending.php:421
 msgid "The following Incoming Payments require your confirmation"
 msgstr ""
 
-#: trades_pending.php:443 trades_pending.php:468 trades_pending.php:500
-#: trades_pending.php:531
+#: trades_pending.php:444 trades_pending.php:469 trades_pending.php:501
+#: trades_pending.php:532
 msgid "None found"
 msgstr ""
 
-#: trades_pending.php:449
+#: trades_pending.php:450
 msgid "The following Invoices need paying"
 msgstr ""
 
-#: trades_pending.php:476
+#: trades_pending.php:477
 msgid "You are awaiting confirmation of the following Payments"
 msgstr ""
 
-#: trades_pending.php:507
+#: trades_pending.php:508
 msgid "You are awaiting payment for the following Invoices"
 msgstr ""
 
-#: trades_pending.php:538
+#: trades_pending.php:539
 msgid "I need to pay"
 msgstr ""
 
-#: trades_pending.php:538 trades_pending.php:543
+#: trades_pending.php:539 trades_pending.php:544
 msgid "Invoices"
 msgstr ""
 
-#: trades_pending.php:540
+#: trades_pending.php:541
 msgid "I need to confirm"
 msgstr ""
 
-#: trades_pending.php:540
+#: trades_pending.php:541
 msgid "Incoming Payments"
 msgstr ""
 
-#: trades_pending.php:543
+#: trades_pending.php:544
 msgid "I am awaiting payment for"
 msgstr ""
 
-#: trades_pending.php:545
+#: trades_pending.php:546
 msgid "I am awaiting confirmation of"
 msgstr ""
 
-#: trades_pending.php:545
+#: trades_pending.php:546
 msgid "Outgoing Payments"
 msgstr ""
 
@@ -3287,6 +3283,14 @@ msgstr ""
 
 #: includes/inc.config.php:165
 msgid "Information"
+msgstr ""
+
+#: includes/inc.config.php:167
+msgid "Offered"
+msgstr ""
+
+#: includes/inc.config.php:168
+msgid "Wanted"
 msgstr ""
 
 #: includes/inc.config.php:171
@@ -3816,6 +3820,10 @@ msgstr ""
 msgid "Settings updated successfully."
 msgstr ""
 
+#: classes/class.settings.php:134
+msgid "Hours"
+msgstr ""
+
 #: classes/class.state_address.php:36 classes/class.state_address.php:56
 msgid "State already exists"
 msgstr ""
@@ -3866,7 +3874,7 @@ msgstr ""
 msgid "by admin"
 msgstr ""
 
-#: classes/class.trade.php:323
+#: classes/class.trade.php:324
 msgid "On"
 msgstr ""
 
@@ -3906,60 +3914,4 @@ msgstr ""
 
 #: classes/class.uploads.php:138
 msgid "Upload"
-msgstr ""
-
-#: listing_create.php:8
-msgid "Create Offered Listing"
-msgstr ""
-
-#: listing_create.php:10
-msgid "Create Wanted Listing"
-msgstr ""
-
-#: listing_delete.php:54
-msgid "You don't currently have any Offered listings."
-msgstr ""
-
-#: listing_delete.php:56
-msgid "You don't currently have any Wanted listings."
-msgstr ""
-
-#: listing_delete.php:59
-msgid "doesn't currently have any Offered listings."
-msgstr ""
-
-#: listing_delete.php:61
-msgid "doesn't currently have any Wanted listings."
-msgstr ""
-
-#: listing_edit.php:10
-msgid "Edit Offered:"
-msgstr ""
-
-#: listing_edit.php:12
-msgid "Edit Wanted:"
-msgstr ""
-
-#: listings_found.php:7 listings.php:6
-msgid "Offered listings"
-msgstr ""
-
-#: listings_found.php:9 listings.php:8
-msgid "Wanted listings"
-msgstr ""
-
-#: listing_to_edit.php:6
-msgid "Choose the Offered Listing to Edit"
-msgstr ""
-
-#: listing_to_edit.php:8
-msgid "Choose the Wanted Listing to Edit"
-msgstr ""
-
-#: listing_to_edit.php:28
-msgid "You don't currently have any Offered listings"
-msgstr ""
-
-#: listing_to_edit.php:30
-msgid "You don't currently have any Wanted listings"
 msgstr ""

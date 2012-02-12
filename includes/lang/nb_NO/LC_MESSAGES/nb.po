@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
-"Report-Msgid-Bugs-To: leifarne@storset.net\n"
-"POT-Creation-Date: 2012-01-24 20:12+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-12 16:53+0100\n"
 "PO-Revision-Date: 2012-01-24 20:17+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
@@ -250,8 +250,7 @@ msgstr "Medlem"
 msgid "Edit Balance"
 msgstr "Endre saldo"
 
-#: category_choose.php:6 listing_create.php:71 trade.php:64
-#: listing_create.php:70
+#: category_choose.php:6 listing_create.php:70 trade.php:66
 msgid "Choose Category"
 msgstr "Velg kategori"
 
@@ -260,16 +259,15 @@ msgid "Which Category?"
 msgstr "Hvilken kategori?"
 
 #: category_choose.php:23 do_info_edit.php:13 edit_info.php:21
-#: listing_edit.php:13 member_contact_choose.php:12
-#: member_contact_to_edit.php:19 member_to_edit.php:16 news_edit.php:13
-#: news_to_edit.php:15 state_choose.php:22
+#: member_contact_choose.php:12 member_contact_to_edit.php:19
+#: member_to_edit.php:16 news_edit.php:13 news_to_edit.php:15
+#: state_choose.php:22
 msgid "Edit"
 msgstr "Rediger"
 
-#: category_choose.php:24 delete_info.php:36 listing_delete.php:13
-#: listing_delete.php:52 member_contact_choose.php:13
-#: member_contact_delete.php:22 member_contact_to_edit.php:20
-#: newsletter_delete.php:22 listing_delete.php:50
+#: category_choose.php:24 delete_info.php:36 listing_delete.php:50
+#: member_contact_choose.php:13 member_contact_delete.php:22
+#: member_contact_to_edit.php:20 newsletter_delete.php:22
 msgid "Delete"
 msgstr "Slett"
 
@@ -307,9 +305,9 @@ msgstr "Kategoribeskrivelse"
 
 #: category_create.php:19 category_edit.php:23 create_info.php:20
 #: do_info_edit.php:23 feedback.php:38 feedback_rebuttal.php:39
-#: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
+#: feedback_reply.php:44 listing_create.php:72 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:55 listing_create.php:72
+#: timeframe_choose.php:19 trade.php:57
 msgid "Submit"
 msgstr "Send inn"
 
@@ -326,13 +324,12 @@ msgid "Could not save the category."
 msgstr "Kunne ikke lagre kategorien."
 
 #: category_create.php:44 category_edit.php:48 email.php:85 feedback.php:84
-#: listing_create.php:123 listing_edit.php:142 member_contact_create.php:152
+#: listing_create.php:122 listing_edit.php:141 member_contact_create.php:152
 #: member_contact_edit.php:168 member_create.php:211 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
-#: state_edit.php:48 trade.php:140 trade.php:154 includes/inc.config.php:66
+#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:66
 #: classes/class.member.php:169 classes/class.member.php:880
 #: classes/class.trade.php:94 classes/class.uploads.php:71
-#: listing_create.php:122 listing_edit.php:141
 msgid "Please try again later."
 msgstr "Vennligst prøv igjen senere."
 
@@ -475,8 +472,8 @@ msgstr "Skriv inn telefonnummeret ditt"
 msgid "Contact Form"
 msgstr "Kontaktskjema"
 
-#: contact.php:46 trades_pending.php:38 classes/class.feedback.php:198
-#: classes/class.trade.php:277 classes/class.trade.php:323
+#: contact.php:46 trades_pending.php:39 classes/class.feedback.php:198
+#: classes/class.trade.php:277 classes/class.trade.php:324
 msgid "From"
 msgstr "Fra"
 
@@ -863,14 +860,13 @@ msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
 msgstr ""
 
-#: create_info.php:17 do_info_edit.php:20 listing_create.php:45
-#: news_create.php:17 news_edit.php:22 listing_create.php:44
+#: create_info.php:17 do_info_edit.php:20 listing_create.php:44
+#: news_create.php:17 news_edit.php:22
 msgid "Title"
 msgstr "Tittel"
 
-#: create_info.php:25 do_info_edit.php:28 listing_create.php:46
-#: listing_edit.php:31 news_create.php:32 news_edit.php:37
-#: listing_create.php:45 listing_edit.php:30
+#: create_info.php:25 do_info_edit.php:28 listing_create.php:45
+#: listing_edit.php:30 news_create.php:32 news_edit.php:37
 msgid "Enter a title"
 msgstr "Skriv inn tittel"
 
@@ -1013,8 +1009,8 @@ msgstr "Velg infoside som skal redigeres"
 msgid "Email a Member"
 msgstr "Send e-post til et medlem"
 
-#: email.php:22 trades_pending.php:38 classes/class.trade.php:277
-#: classes/class.trade.php:323
+#: email.php:22 trades_pending.php:39 classes/class.trade.php:277
+#: classes/class.trade.php:324
 msgid "To"
 msgstr "Til"
 
@@ -1042,7 +1038,7 @@ msgstr "Ventende  fakturaer og transaksjoner"
 msgid "require action"
 msgstr "krever behandling"
 
-#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:6
+#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:8
 msgid "Record an Exchange"
 msgstr "Registrer en handel"
 
@@ -1122,7 +1118,7 @@ msgstr ""
 msgid "Leave Feedback about"
 msgstr "Gi tilbakemelding om"
 
-#: feedback.php:22 trade_history.php:18
+#: feedback.php:22 trade_history.php:20
 msgid "for"
 msgstr "til"
 
@@ -1185,7 +1181,7 @@ msgstr "Tidligere merknader"
 msgid "Members do not match the trade selected."
 msgstr "Disse medlemmene var ikke parter i handelen."
 
-#: feedback_to_view.php:5 trade.php:65
+#: feedback_to_view.php:5 trade.php:67
 msgid "Choose Member"
 msgstr "Velg medlem"
 
@@ -1233,10 +1229,10 @@ msgstr ""
 "De vil ikke vises i katalogen da. Når datoen du oppgir under kommer vil "
 "oppføringene automatisk reaktiveres."
 
-#: holiday.php:31 listing_create.php:62 member_contact_create.php:38
+#: holiday.php:31 listing_create.php:61 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:15 listing_create.php:61
+#: timeframe_choose.php:15
 msgid "en"
 msgstr "no"
 
@@ -1252,13 +1248,12 @@ msgstr "komme tilbake?"
 msgid "Inactivate"
 msgstr "Deaktivere"
 
-#: holiday.php:37 listing_edit.php:57 listing_edit.php:56
+#: holiday.php:37 listing_edit.php:56
 msgid "Must be a future date"
 msgstr "Må være i framtida"
 
-#: holiday.php:39 listing_create.php:69 listing_edit.php:54
-#: listing_edit.php:58 news_create.php:37 news_edit.php:40
-#: listing_create.php:68 listing_edit.php:53 listing_edit.php:57
+#: holiday.php:39 listing_create.php:68 listing_edit.php:53
+#: listing_edit.php:57 news_create.php:37 news_edit.php:40
 msgid "Date is invalid"
 msgstr "Datoen er ugyldig"
 
@@ -1266,15 +1261,15 @@ msgstr "Datoen er ugyldig"
 msgid "Listings successfully inactivated."
 msgstr "Oppføringene er deaktiverte."
 
-#: income_ties.php:13
+#: income_ties.php:15
 msgid "Income Sharing"
 msgstr "Inntektsfordeling"
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid "You have the option of contributing a percentage of any income"
 msgstr "Du har muligheten til å gi bort en andel av all inntekt"
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid ""
 "you receive to another account. If you specify an Income Share, every time "
 "you receive"
@@ -1283,7 +1278,7 @@ msgstr ""
 "viss andel (som du oppgir) automatisk betales til den kontoen du ønsker hver "
 "gang du mottar "
 
-#: income_ties.php:15
+#: income_ties.php:17
 msgid ""
 "a specified percentage (of your choosing) will automatically be paid to the "
 "account of your choice. You can change this arrangement at any time, but you "
@@ -1292,15 +1287,15 @@ msgstr ""
 ". Du kan endre denne ordningen når som helst, men du kan bare dele inntekten "
 "med en annen konto av gangen."
 
-#: income_ties.php:25
+#: income_ties.php:27
 msgid "Sorry you can't share income with yourself."
 msgstr "Beklar, du kan ikke dele inntekt med deg selv."
 
-#: income_ties.php:33
+#: income_ties.php:35
 msgid "Not enough data to proceed."
 msgstr "Ikke nok opplysninger til å fortsette."
 
-#: income_ties.php:35
+#: income_ties.php:37
 msgid ""
 "The percentage must be numeric and must not contain any other characters (e."
 "g. '10' = good input, '10%' = bad input)"
@@ -1308,60 +1303,60 @@ msgstr ""
 "Andelen må være et tall og må ikke inneholde andre tegn (f. eks. er '10' = "
 "godtatt, '10%' = ikke godtatt)"
 
-#: income_ties.php:37
-#, php-format
+#: income_ties.php:39
+#, fuzzy, php-format
 msgid ""
-"Sorry, you can't contribute more than 99%% of your income to another account "
+"Sorry, you can't contribute more than 99% of your income to another account "
 "- but it's the thought that counts"
 msgstr ""
 "Beklager, du kan ikke gi bort mer enn 99 %% av inntekten din til en annen "
 "konto - men det er tanken som teller"
 
-#: income_ties.php:63
+#: income_ties.php:65
 msgid "Income Share Inactive"
 msgstr "Inntektsfordeling deaktivert"
 
-#: income_ties.php:65
+#: income_ties.php:67
 msgid "Create an Income Share"
 msgstr "Opprett inntektsfordeling"
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "I would like to share"
 msgstr "Jeg vil gi bort"
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "of any"
 msgstr " "
 
-#: income_ties.php:72
+#: income_ties.php:74
 msgid "I receive"
 msgstr "som jeg mottar"
 
-#: income_ties.php:73
+#: income_ties.php:75
 msgid "with this account"
 msgstr "i denne kontoen"
 
-#: income_ties.php:75
+#: income_ties.php:77
 msgid "Create Income Share"
 msgstr "Opprett inntektsfordeling"
 
-#: income_ties.php:79
+#: income_ties.php:81
 msgid "Income Share Active"
 msgstr "Inntektsfordelinga er aktiv"
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "You are currently sharing"
 msgstr "Du gir for tida bort"
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "of your income with account"
 msgstr "av inntekten din til konto"
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid "Remove Income Share"
 msgstr "Fjern inntektsfordeling"
 
-#: income_ties.php:81
+#: income_ties.php:83
 msgid ""
 "If you wish to amend this Income Share you will first need to remove it and "
 "then create a new one."
@@ -1456,7 +1451,7 @@ msgstr "Hoppet over e-postadressa"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
 #: member_create.php:204 member_directory.php:15 member_unlock.php:47
-#: member_unlock.php:50 trade.php:136 classes/class.member.php:194
+#: member_unlock.php:50 trade.php:138 classes/class.member.php:194
 msgid "Member ID"
 msgstr "Brukernavn"
 
@@ -1477,132 +1472,131 @@ msgstr "Passordet hans/hennes er"
 msgid "Email successfully sent to all members."
 msgstr "E-post er sendt til alle medlemmene."
 
-#: listing_create.php:8 listing_delete.php:9 listing_edit.php:10
-#: listings_found.php:7 listings.php:6 listing_to_edit.php:6
-#: includes/inc.config.php:167
-msgid "Offered"
-msgstr "Tilbud"
+#: listing_create.php:8
+msgid "Create Offered Listing"
+msgstr "Registrer et tilbud"
 
-#: listing_create.php:10 listing_delete.php:11 listing_edit.php:12
-#: listings_found.php:9 listings.php:8 listing_to_edit.php:8
-#: includes/inc.config.php:168
-msgid "Wanted"
-msgstr "Ønsker"
+#: listing_create.php:10
+msgid "Create Wanted Listing"
+msgstr "Registrer et ønske"
 
-#: listing_create.php:12
-msgid "Create"
-msgstr "Opprett"
-
-#: listing_create.php:12
-msgid "Listing"
-msgstr "Oppføring"
-
-#: listing_create.php:35 member_choose.php:6 listing_create.php:34
+#: listing_create.php:34 member_choose.php:6
 msgid "For which member?"
 msgstr "For hvilket medlem?"
 
-#: listing_create.php:48 listing_create.php:47
+#: listing_create.php:47
 msgid "You already have a listing with this title"
 msgstr "Du har alt ei oppføring med denne tittelen"
 
-#: listing_create.php:50 listing_edit.php:35 listings.php:21 trade.php:48
-#: classes/class.trade.php:277 listing_create.php:49 listing_edit.php:34
-#: listings.php:19
+#: listing_create.php:49 listing_edit.php:34 listings.php:19 trade.php:50
+#: classes/class.trade.php:277
 msgid "Category"
 msgstr "Kategori"
 
-#: listing_create.php:53 listing_edit.php:38 classes/class.listing.php:152
-#: listing_create.php:52 listing_edit.php:37
+#: listing_create.php:52 listing_edit.php:37 classes/class.listing.php:152
 msgid "Rate"
 msgstr "Pris"
 
-#: listing_create.php:57 listing_edit.php:44 news_create.php:25
+#: listing_create.php:56 listing_edit.php:43 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
-#: trades_pending.php:38 classes/class.listing.php:150
-#: classes/class.trade.php:277 listing_create.php:56 listing_edit.php:43
+#: trades_pending.php:39 classes/class.listing.php:150
+#: classes/class.trade.php:277
 msgid "Description"
 msgstr "Tekst"
 
-#: listing_create.php:60 listing_edit.php:47 listing_create.php:59
-#: listing_edit.php:46
+#: listing_create.php:59 listing_edit.php:46
 msgid "Should this listing be set to automatically expire?"
 msgstr "Skal denne oppføringa utløpe automatisk?"
 
-#: listing_create.php:63 listing_edit.php:50 news_create.php:20
-#: news_edit.php:25 listing_create.php:62 listing_edit.php:49
+#: listing_create.php:62 listing_edit.php:49 news_create.php:20
+#: news_edit.php:25
 msgid "Expires"
 msgstr "Løper ut"
 
-#: listing_create.php:67 listing_edit.php:52 news_create.php:35
-#: listing_create.php:66 listing_edit.php:51
+#: listing_create.php:66 listing_edit.php:51 news_create.php:35
 msgid "Expiration must be for a future date"
 msgstr "Utløpsdato må være i framtida"
 
-#: listing_create.php:121 listing_create.php:120
+#: listing_create.php:120
 msgid "Listing created. Create"
 msgstr "Oppføringa er opprettet. Opprett"
 
-#: listing_create.php:121 listing_create.php:120
+#: listing_create.php:120
 msgid "another"
 msgstr "en ny?"
 
-#: listing_create.php:123 listing_edit.php:142 listing_create.php:122
-#: listing_edit.php:141
+#: listing_create.php:122 listing_edit.php:141
 msgid "There was an error saving the listing."
 msgstr "Det oppstod en feil ved lagring av oppføringa."
 
-#: listing_delete.php:13 listing_delete.php:59 listings_found.php:11
-#: listings.php:10 listing_to_edit.php:29
-msgid " listings"
-msgstr "oppføringer"
+#: listing_delete.php:9 listings_create.php:11 listings_menu.php:11
+#: member_profile_all_in_one.php:20
+msgid "Delete Offered Listings"
+msgstr "Slett tilbud"
 
-#: listing_delete.php:55
-msgid "You don't"
-msgstr "Du har"
+#: listing_delete.php:11 listings_create.php:16 listings_menu.php:16
+#: member_profile_all_in_one.php:26
+msgid "Delete Wanted Listings"
+msgstr "Slett ønsker"
 
-#: listing_delete.php:57
-msgid "doesn't"
-msgstr "har"
+#: listing_delete.php:54
+msgid "You don't currently have any Offered listings."
+msgstr "Du har for tida ingen registrerte tilbud."
+
+#: listing_delete.php:56
+msgid "You don't currently have any Wanted listings."
+msgstr "Du har for tida ingen registrerte ønsker."
 
 #: listing_delete.php:59
-msgid "currently have any"
-msgstr "for tida ingen"
+msgid "doesn't currently have any Offered listings."
+msgstr "har for tida ingen registrerte ønsker."
 
-#: listing_delete.php:83 listing_delete.php:85
+#: listing_delete.php:61
+msgid "doesn't currently have any Wanted listings."
+msgstr "har for tida ingen registrerte tilbud."
+
+#: listing_delete.php:85
 msgid "1 listing deleted"
 msgstr "1 oppføring slettet"
 
-#: listing_delete.php:85 listing_delete.php:87
+#: listing_delete.php:87
 msgid "listings deleted"
 msgstr "oppføringer slettet"
 
-#: listing_delete.php:87 listing_delete.php:89
+#: listing_delete.php:89
 msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 "Det oppstod en feil ved sletting av oppføringene. Husket du å krysse av?"
 
-#: listing_edit.php:55 listing_edit.php:54
+#: listing_edit.php:10
+msgid "Edit Offered:"
+msgstr "Rediger tilbud:"
+
+#: listing_edit.php:12
+msgid "Edit Wanted:"
+msgstr "Rediger ønske:"
+
+#: listing_edit.php:54
 msgid "Should this listing be made temporarily inactive?"
 msgstr "Skal denne oppføringa deaktiveres midlertidig?"
 
-#: listing_edit.php:56 listing_edit.php:55
+#: listing_edit.php:55
 msgid "Reactivates"
 msgstr "Reaktiverer"
 
-#: listing_edit.php:59 member_contact_edit.php:69 member_edit.php:93
-#: listing_edit.php:58
+#: listing_edit.php:58 member_contact_edit.php:69 member_edit.php:93
 msgid "Update"
 msgstr "Oppdater"
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "Listing changes saved. Do you want to"
 msgstr "Endringene av oppføringa er lagret. Vil du"
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "edit"
 msgstr "redigere"
 
-#: listing_edit.php:140 listing_edit.php:139
+#: listing_edit.php:139
 msgid "another listing?"
 msgstr "ei annen oppføring?"
 
@@ -1624,11 +1618,6 @@ msgstr "Registrer nytt tilbud"
 msgid "Edit Offered Listings"
 msgstr "Rediger tilbud"
 
-#: listings_create.php:11 listings_menu.php:11
-#: member_profile_all_in_one.php:20 listing_delete.php:9
-msgid "Delete Offered Listings"
-msgstr "Slett tilbud"
-
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:776
@@ -1645,10 +1634,13 @@ msgstr "Registrer nytt ønske"
 msgid "Edit Wanted Listings"
 msgstr "Rediger ønsker"
 
-#: listings_create.php:16 listings_menu.php:16
-#: member_profile_all_in_one.php:26 listing_delete.php:11
-msgid "Delete Wanted Listings"
-msgstr "Slett ønsker"
+#: listings_found.php:7 listings.php:6
+msgid "Offered listings"
+msgstr "Tilbud"
+
+#: listings_found.php:9 listings.php:8
+msgid "Wanted listings"
+msgstr "Ønsker"
 
 #: listings_menu.php:4 includes/inc.config.php:169
 msgid "Update Listings"
@@ -1658,7 +1650,7 @@ msgstr "Oppdater oppføringer"
 msgid "Going on Holiday"
 msgstr "Merk meg som bortreist"
 
-#: listings.php:16 listings.php:14
+#: listings.php:14
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
@@ -1669,66 +1661,70 @@ msgstr ""
 "hele katalogen, klikk"
 
 # Text for hyperlink. Immediately follows "go" as in "go here"
-#: listings.php:16 member_create.php:198 news.php:22 trades_pending.php:25
-#: classes/class.member.php:107 listings.php:14
+#: listings.php:14 member_create.php:198 news.php:22 trades_pending.php:25
+#: classes/class.member.php:107
 msgid "here"
 msgstr "hit"
 
-#: listings.php:20 listings.php:18
+#: listings.php:18
 msgid "View All Categories"
 msgstr "Vis alle kategorier"
 
-#: listings.php:22 listings.php:20
+#: listings.php:20
 msgid "New/updated in last"
 msgstr "Nytt/oppdatert siste "
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "Time Frame"
 msgstr "Tidsrom"
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "View All Listings"
 msgstr "Vis alle oppføringer"
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "3 days"
 msgstr "3 dager"
 
-#: listings.php:23 classes/class.member.php:785 listings.php:21
+#: listings.php:21 classes/class.member.php:785
 msgid "week"
 msgstr "uke"
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "2 weeks"
 msgstr "2 uker"
 
-#: listings.php:23 classes/class.member.php:787 listings.php:21
+#: listings.php:21 classes/class.member.php:787
 msgid "month"
 msgstr "måned"
 
-#: listings.php:23 listings.php:21
+#: listings.php:21
 msgid "3 months"
 msgstr "3 måneder"
 
-#: listings.php:26 listings.php:24
+#: listings.php:24
 msgid "Keyword"
 msgstr "Stikkord"
 
-#: listings.php:29 pages.php:10 listings.php:27
+#: listings.php:27 pages.php:10
 msgid "Continue"
 msgstr "Fortsett"
 
-#: listing_to_edit.php:10
-msgid "Choose the"
-msgstr "Velg"
+#: listing_to_edit.php:6
+msgid "Choose the Offered Listing to Edit"
+msgstr "Velg tilbudet som skal redigeres"
 
-#: listing_to_edit.php:10
-msgid "Listing to Edit"
-msgstr "Oppføring som skal redigeres"
+#: listing_to_edit.php:8
+msgid "Choose the Wanted Listing to Edit"
+msgstr "Velg ønsket som skal redigeres"
 
-#: listing_to_edit.php:29
-msgid "You don't currently have any"
-msgstr "Du har for tida ingen"
+#: listing_to_edit.php:28
+msgid "You don't currently have any Offered listings"
+msgstr "Du har for tida ingen registrerte tilbud"
+
+#: listing_to_edit.php:30
+msgid "You don't currently have any Wanted listings"
+msgstr "Du har for tida ingen registrerte ønsker"
 
 #: login.php:32
 msgid "Please enter a user name to log in."
@@ -2915,89 +2911,89 @@ msgstr "Fra når?"
 msgid "To when?"
 msgstr "Til når?"
 
-#: trade_history_all.php:6 trade_history.php:6
+#: trade_history_all.php:6 trade_history.php:8
 msgid "Exchange History"
 msgstr "Handelslogg"
 
-#: trade_history_all.php:13 trade_history.php:36
+#: trade_history_all.php:13 trade_history.php:38
 msgid "For period from"
 msgstr "For perioden fra"
 
-#: trade_history.php:36
+#: trade_history.php:38
 msgid "Current Balance"
 msgstr "Saldo nå"
 
-#: trade.php:35
+#: trade.php:37
 msgid "Transaction Type"
 msgstr "Transaksjonstype"
 
-#: trade.php:35
+#: trade.php:37
 msgid "Transfer"
 msgstr "Overføring"
 
-#: trade.php:35
+#: trade.php:37
 msgid "Invoice"
 msgstr "Faktura"
 
-#: trade.php:43
+#: trade.php:45
 msgid "To Member"
 msgstr "Til medlem"
 
-#: trade.php:45
+#: trade.php:47
 msgid "Transfer to Member"
 msgstr "Overfør til medlem"
 
-#: trade.php:49
+#: trade.php:51
 msgid "# of "
 msgstr "Antall "
 
-#: trade.php:51
+#: trade.php:53
 msgid "# of Minutes"
 msgstr "Antall minutter"
 
-#: trade.php:53
+#: trade.php:55
 msgid "Enter a Brief Description of the Exchange"
 msgstr "Skriv inn en kort beskrivelse av handelen"
 
-#: trade.php:62
+#: trade.php:64
 msgid "You cannot transfer to yourself"
 msgstr "Du kan ikke overføre til deg selv"
 
-#: trade.php:66
+#: trade.php:68
 msgid "Description too long - maximum length is 255 characters"
 msgstr "Beskrivelsen er for lang. Maksimal lengde er 255 tegn"
 
-#: trade.php:70
+#: trade.php:72
 msgid "Hours entered must be a positive, whole number"
 msgstr "Timer må skrives inn som et heltall over null"
 
-#: trade.php:72
+#: trade.php:74
 msgid "Enter 15, 30, or 45 (or other numbers in 3 minute increments)"
 msgstr ""
 "Skriv inn 15, 30 eller 45 (eller andre tall, dersom de er delelig på 3)"
 
-#: trade.php:75
+#: trade.php:77
 msgid "Enter a positive number with no more than two decimal points"
 msgstr "Skriv inn et tall over null med maksimalt to desimaler"
 
 # "Units" refers to the units of value used for trade
-#: trade.php:99
+#: trade.php:101
 msgid "No units were entered to exchange!"
 msgstr "Ingen handelssum ble skrevet inn!"
 
-#: trade.php:134
+#: trade.php:136
 msgid "Payment Received on"
 msgstr "Betaling mottatt"
 
-#: trade.php:134 trade.php:148
+#: trade.php:136 trade.php:150
 msgid "Hi"
 msgstr "Hei"
 
-#: trade.php:134
+#: trade.php:136
 msgid "Just letting you know that you have received a new payment from"
 msgstr "Vi ville bare si fra at du har fått en innbetaling fra"
 
-#: trade.php:134
+#: trade.php:136
 msgid ""
 "As you have elected to confirm all payments made to you, please log into "
 "your account now and confirm or reject this payment using the following "
@@ -3007,15 +3003,15 @@ msgstr ""
 "vennligg logg inn på kontoen din snart for å godkjenne eller avvise "
 "betalingen, ved hjelp av denne URLen…"
 
-#: trade.php:136
+#: trade.php:138
 msgid "has been notified that you wish to transfer"
 msgstr "har blitt varslet om at du vil overføre"
 
-#: trade.php:136
+#: trade.php:138
 msgid "to him/her"
 msgstr "til ham/henne"
 
-#: trade.php:136
+#: trade.php:138
 msgid ""
 "This member has opted to confirm all transactions made to him/her. Once the "
 "member accepts this transaction your payment will be actioned and you will "
@@ -3025,36 +3021,36 @@ msgstr ""
 "godkjenner denne transaksjonen vil betalingen bli utført og du vil bli bedt "
 "om å legge igjen tilbakemeldinger til dette medlemmet"
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "Would you like to"
 msgstr "Vil du"
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "record another"
 msgstr "registrere enda en"
 
-#: trade.php:137 trade.php:151 trade.php:174
+#: trade.php:139 trade.php:153 trade.php:176
 msgid "exchange"
 msgstr "handel"
 
-#: trade.php:140 trade.php:154 trade.php:166
+#: trade.php:142 trade.php:156 trade.php:168
 msgid "Trade failed!"
 msgstr "Handelen gikk ikke gjennom!"
 
-#: trade.php:145
+#: trade.php:147
 msgid ""
 "Sorry, the Invoicing facility has been disabled by the site administrator."
 msgstr "Beklager, fakturaverktøyet har blitt deaktivert av administratoren."
 
-#: trade.php:148
+#: trade.php:150
 msgid "Invoice Received on"
 msgstr "Fakturaen er mottatt"
 
-#: trade.php:148
+#: trade.php:150
 msgid "Just letting you know that you have received a new Invoice from"
 msgstr "Vi ville bare si fra at du har fått en faktura fra"
 
-#: trade.php:148
+#: trade.php:150
 msgid ""
 "Please log into your account now to pay or reject this invoice using the "
 "following URL..."
@@ -3062,11 +3058,11 @@ msgstr ""
 "Vennligst logg på kontoen din snart for å betale eller avvise denne "
 "fakturaen, ved hjelp av denne URLen…"
 
-#: trade.php:150
+#: trade.php:152
 msgid "has been sent an invoice for"
 msgstr "har blitt fakturert for"
 
-#: trade.php:150
+#: trade.php:152
 msgid ""
 "You will be informed when the member pays this invoice and will be invited "
 "to leave Feedback for this member"
@@ -3074,31 +3070,31 @@ msgstr ""
 "Du vil bli varslet når det andre medlemmet betaler fakturaen og blir bedt om "
 "å legge igjen tilbakemeldinger til deg"
 
-#: trade.php:166
+#: trade.php:168
 msgid "Please try again later, or contact your administrator."
 msgstr "Vennligst prøv igjen senere, eller kontakt administrator."
 
-#: trade.php:174
+#: trade.php:176
 msgid "You have transferred"
 msgstr "Du har overført"
 
-#: trade.php:174
+#: trade.php:176
 msgid " to "
 msgstr " til "
 
-#: trade.php:174
+#: trade.php:176
 msgid "Or would you like to leave"
 msgstr "Eller vil du legge igjen"
 
-#: trade.php:174
+#: trade.php:176
 msgid "feedback"
 msgstr "tilbakemelding"
 
-#: trade.php:174
+#: trade.php:176
 msgid "for this member"
 msgstr "til dette medlemmet"
 
-#: trade.php:190 trades_pending.php:153
+#: trade.php:192 trades_pending.php:154
 msgid "Donation from"
 msgstr "Gave fra"
 
@@ -3166,108 +3162,108 @@ msgstr "Utførte betalinger"
 msgid "Sent Invoices"
 msgstr "Utsendte fakturaer"
 
-#: trades_pending.php:38 classes/class.feedback.php:198
+#: trades_pending.php:39 classes/class.feedback.php:198
 #: classes/class.trade.php:277
 msgid "Date"
 msgstr "Dato"
 
-#: trades_pending.php:38
+#: trades_pending.php:39
 msgid "Action"
 msgstr "Handling"
 
-#: trades_pending.php:61
+#: trades_pending.php:62
 msgid "Accept Payment"
 msgstr "Godta betaling"
 
-#: trades_pending.php:61 trades_pending.php:65
+#: trades_pending.php:62 trades_pending.php:66
 msgid "Reject"
 msgstr "Avvis"
 
-#: trades_pending.php:64
+#: trades_pending.php:65
 msgid "Pay Invoice"
 msgstr "Betal faktura"
 
-#: trades_pending.php:70 trades_pending.php:81
+#: trades_pending.php:71 trades_pending.php:82
 msgid "has rejected this transaction"
 msgstr "har avvist denne transaksjonen"
 
-#: trades_pending.php:71
+#: trades_pending.php:72
 msgid "Resend Payment"
 msgstr "Utfør betaling på nytt"
 
-#: trades_pending.php:72 trades_pending.php:83 trades_pending.php:102
+#: trades_pending.php:73 trades_pending.php:84 trades_pending.php:103
 msgid "Remove this Notice"
 msgstr "Fjern denne merknaden"
 
-#: trades_pending.php:75
+#: trades_pending.php:76
 msgid "Awaiting Confirmation by"
 msgstr "Venter på godkjenning fra"
 
-#: trades_pending.php:82
+#: trades_pending.php:83
 msgid "Resend Invoice"
 msgstr "Send faktura på nytt"
 
-#: trades_pending.php:86
+#: trades_pending.php:87
 msgid "Awaiting Payment from"
 msgstr "Venter på betaling fra"
 
-#: trades_pending.php:94
+#: trades_pending.php:95
 msgid "Payment Accepted"
 msgstr "Betaling godkjent"
 
-#: trades_pending.php:96
+#: trades_pending.php:97
 msgid "Invoice Paid"
 msgstr "Faktura er betalt"
 
-#: trades_pending.php:98
+#: trades_pending.php:99
 msgid "has confirmed"
 msgstr "har godkjent"
 
-#: trades_pending.php:100
+#: trades_pending.php:101
 msgid "has paid this invoice"
 msgstr "har betalt denne fakturaen"
 
-#: trades_pending.php:177 trades_pending.php:203 trades_pending.php:220
-#: trades_pending.php:246 trades_pending.php:263 trades_pending.php:290
-#: trades_pending.php:307 trades_pending.php:338
+#: trades_pending.php:178 trades_pending.php:204 trades_pending.php:221
+#: trades_pending.php:247 trades_pending.php:264 trades_pending.php:291
+#: trades_pending.php:308 trades_pending.php:339
 msgid "This trade does not exist or you do not have permission to act on it."
 msgstr "Denne handelen finnes ikke, eller du har ikke rett til å behandle den."
 
 # "Open" means "unfinished"
-#: trades_pending.php:185
+#: trades_pending.php:186
 msgid "Sorry, only Open trades can be rejected or resent."
 msgstr "Beklager, bare \"åpne\" handler kan avvises eller kreves på nytt."
 
-#: trades_pending.php:191 trades_pending.php:234
+#: trades_pending.php:192 trades_pending.php:235
 msgid "This member hasn't rejected this transaction"
 msgstr "Medlemmet har ikke avvist denne transaksjonen"
 
-#: trades_pending.php:198
+#: trades_pending.php:199
 msgid "Transaction re-submitted successfully."
 msgstr "Transaksjonen er sendt inn på nytt."
 
-#: trades_pending.php:200 trades_pending.php:243 trades_pending.php:287
-#: trades_pending.php:335
+#: trades_pending.php:201 trades_pending.php:244 trades_pending.php:288
+#: trades_pending.php:336
 msgid "Error updating the database"
 msgstr "Det oppstod en feil ved oppdatering av databasen"
 
-#: trades_pending.php:228
+#: trades_pending.php:229
 msgid "Sorry, only Open trades can be rejected."
 msgstr "Beklager, bare \"åpne\" handler kan avvises."
 
-#: trades_pending.php:241 trades_pending.php:333
+#: trades_pending.php:242 trades_pending.php:334
 msgid "Transaction removed successfully."
 msgstr "Transaksjonen ble fjernet."
 
-#: trades_pending.php:271
+#: trades_pending.php:272
 msgid "This trade is no longer Open and therefore cannot be rejected."
 msgstr "Denne handelen er ikke lenger \"åpen\" og kan derfor ikke avvises."
 
-#: trades_pending.php:285
+#: trades_pending.php:286
 msgid "has been informed that you have rejected this transaction"
 msgstr "har blitt opplyst at du har avvist transaksjonen"
 
-#: trades_pending.php:315
+#: trades_pending.php:316
 msgid ""
 "This trade is currently marked as Open and thus cannot be removed until the "
 "required action has been taken."
@@ -3275,76 +3271,76 @@ msgstr ""
 "Denne handelen er ennå merket som \"åpen\" og kan derfor ikke fjernes før "
 "neste påkrevde handling er utført."
 
-#: trades_pending.php:354
+#: trades_pending.php:355
 msgid "This trade has already been confirmed and is now closed."
 msgstr "Denne handelen har alt blitt godkjent og er nå lukket."
 
-#: trades_pending.php:365 trades_pending.php:383
+#: trades_pending.php:366 trades_pending.php:384
 msgid "You do not have permission to confirm this trade."
 msgstr "Du har ikke rett til å godkjenne denne handelen."
 
-#: trades_pending.php:373
+#: trades_pending.php:374
 msgid "You have accepted a payment of"
 msgstr "Du har mottatt en betaling på"
 
-#: trades_pending.php:400
+#: trades_pending.php:401
 msgid "Error sending payment. Please contact your administrator."
 msgstr "Det oppstod en feil ved betaling. Vennligst kontakt administrator."
 
-#: trades_pending.php:405
+#: trades_pending.php:406
 msgid "You have sent a payment of"
 msgstr "Du har betalt"
 
-#: trades_pending.php:413
+#: trades_pending.php:414
 msgid "You have elected to confirm a non-existent trade"
 msgstr "Du har valgt å godkjenne en handel som ikke finnes"
 
-#: trades_pending.php:420
+#: trades_pending.php:421
 msgid "The following Incoming Payments require your confirmation"
 msgstr "Disse innbetalingene trenger godkjenning fra deg"
 
-#: trades_pending.php:443 trades_pending.php:468 trades_pending.php:500
-#: trades_pending.php:531
+#: trades_pending.php:444 trades_pending.php:469 trades_pending.php:501
+#: trades_pending.php:532
 msgid "None found"
 msgstr "Ingen ble funnet"
 
-#: trades_pending.php:449
+#: trades_pending.php:450
 msgid "The following Invoices need paying"
 msgstr "Disse fakturaene må betales"
 
-#: trades_pending.php:476
+#: trades_pending.php:477
 msgid "You are awaiting confirmation of the following Payments"
 msgstr "Du venter på godkjenning av disse utbetalingene"
 
-#: trades_pending.php:507
+#: trades_pending.php:508
 msgid "You are awaiting payment for the following Invoices"
 msgstr "Du venter på betaling av disse fakturaene"
 
-#: trades_pending.php:538
+#: trades_pending.php:539
 msgid "I need to pay"
 msgstr "Jeg må betale"
 
-#: trades_pending.php:538 trades_pending.php:543
+#: trades_pending.php:539 trades_pending.php:544
 msgid "Invoices"
 msgstr "Fakturaer"
 
-#: trades_pending.php:540
+#: trades_pending.php:541
 msgid "I need to confirm"
 msgstr "Jeg må godkjenne"
 
-#: trades_pending.php:540
+#: trades_pending.php:541
 msgid "Incoming Payments"
 msgstr "Innbetalinger"
 
-#: trades_pending.php:543
+#: trades_pending.php:544
 msgid "I am awaiting payment for"
 msgstr "Jeg venter på betaling for"
 
-#: trades_pending.php:545
+#: trades_pending.php:546
 msgid "I am awaiting confirmation of"
 msgstr "Jeg venter på godkjenning av"
 
-#: trades_pending.php:545
+#: trades_pending.php:546
 msgid "Outgoing Payments"
 msgstr "Utbetalinger"
 
@@ -3435,6 +3431,14 @@ msgstr "Lær mer"
 #: includes/inc.config.php:165
 msgid "Information"
 msgstr "Informasjon"
+
+#: includes/inc.config.php:167
+msgid "Offered"
+msgstr "Tilbud"
+
+#: includes/inc.config.php:168
+msgid "Wanted"
+msgstr "Ønsker"
 
 #: includes/inc.config.php:171
 msgid "Members List"
@@ -4011,6 +4015,10 @@ msgstr "Det oppstod en feil under oppdatering!"
 msgid "Settings updated successfully."
 msgstr "Innstillingene ble oppdatert."
 
+#: classes/class.settings.php:134
+msgid "Hours"
+msgstr "Timer"
+
 #: classes/class.state_address.php:36 classes/class.state_address.php:56
 msgid "State already exists"
 msgstr "Fylket finnes allerede"
@@ -4064,7 +4072,7 @@ msgstr "fra"
 msgid "by admin"
 msgstr "av administrator"
 
-#: classes/class.trade.php:323
+#: classes/class.trade.php:324
 msgid "On"
 msgstr "På"
 
@@ -4113,61 +4121,32 @@ msgstr "Kunne ikke slette fil"
 msgid "Upload"
 msgstr "Last opp"
 
-#: listing_create.php:8
-msgid "Create Offered Listing"
-msgstr "Registrer et tilbud"
+#~ msgid "Create"
+#~ msgstr "Opprett"
 
-#: listing_create.php:10
-msgid "Create Wanted Listing"
-msgstr "Registrer et ønske"
+#~ msgid "Listing"
+#~ msgstr "Oppføring"
 
-#: listing_delete.php:54
-msgid "You don't currently have any Offered listings."
-msgstr "Du har for tida ingen registrerte tilbud."
+#~ msgid " listings"
+#~ msgstr "oppføringer"
 
-#: listing_delete.php:56
-msgid "You don't currently have any Wanted listings."
-msgstr "Du har for tida ingen registrerte ønsker."
+#~ msgid "You don't"
+#~ msgstr "Du har"
 
-#: listing_delete.php:59
-msgid "doesn't currently have any Offered listings."
-msgstr "har for tida ingen registrerte ønsker."
+#~ msgid "doesn't"
+#~ msgstr "har"
 
-#: listing_delete.php:61
-msgid "doesn't currently have any Wanted listings."
-msgstr "har for tida ingen registrerte tilbud."
+#~ msgid "currently have any"
+#~ msgstr "for tida ingen"
 
-#: listing_edit.php:10
-msgid "Edit Offered:"
-msgstr "Rediger tilbud:"
+#~ msgid "Choose the"
+#~ msgstr "Velg"
 
-#: listing_edit.php:12
-msgid "Edit Wanted:"
-msgstr "Rediger ønske:"
+#~ msgid "Listing to Edit"
+#~ msgstr "Oppføring som skal redigeres"
 
-#: listings_found.php:7 listings.php:6
-msgid "Offered listings"
-msgstr "Tilbud"
-
-#: listings_found.php:9 listings.php:8
-msgid "Wanted listings"
-msgstr "Ønsker"
-
-#: listing_to_edit.php:6
-msgid "Choose the Offered Listing to Edit"
-msgstr "Velg tilbudet som skal redigeres"
-
-#: listing_to_edit.php:8
-msgid "Choose the Wanted Listing to Edit"
-msgstr "Velg ønsket som skal redigeres"
-
-#: listing_to_edit.php:28
-msgid "You don't currently have any Offered listings"
-msgstr "Du har for tida ingen registrerte tilbud"
-
-#: listing_to_edit.php:30
-msgid "You don't currently have any Wanted listings"
-msgstr "Du har for tida ingen registrerte ønsker"
+#~ msgid "You don't currently have any"
+#~ msgstr "Du har for tida ingen"
 
 #~ msgid ""
 #~ "<table cellpadding=0 cellspacing=2><tr><td><img src='images/localx_home."
