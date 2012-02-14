@@ -61,9 +61,31 @@ class cPage {
 	<BODY>
 HTML;
 		
+		$output .= $this->MakeLanguageSelector();
 		$output .= $this->page_header ;
 	
 		return $output;
+	}
+
+	function MakeLanguageSelector() {
+		global $supported_languages, $current_language;
+
+		$out = "<form id=language-selector method=post><select size=1 name=set_language>";
+
+		if (extension_loaded(intl))
+		{
+			foreach ($supported_languages as $lang)
+			{
+				$selected = "";
+				if ($current_language == $lang)
+					$selected = "selected";
+
+				$out .= "<option value=$lang $selected>". ucfirst(Locale::getDisplayLanguage($lang, $lang)) ."</option>";
+			}
+		}
+		// "Choose language" should not be translated
+		$out .= "</select><input type=submit value='Choose language'></form>";
+		return $out;
 	}
 
 	function MakePageMenu() {

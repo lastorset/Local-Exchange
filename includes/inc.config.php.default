@@ -35,10 +35,7 @@ define ("UPLOADS_PATH",$_SERVER["DOCUMENT_ROOT"].SERVER_PATH_URL."/uploads/");
 /**********************************************************/
 /***************** DATABASE LOGIN  ************************/
 
-define ("DATABASE_USERNAME","dbuser");
-define ("DATABASE_PASSWORD","password");
-define ("DATABASE_NAME","dbname");
-define ("DATABASE_SERVER","localhost"); // often "localhost"
+require_once("inc.config-database.php");
 
 /**********************************************************/
 /********************* SITE NAMES *************************/

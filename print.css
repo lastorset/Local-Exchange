@@ -10,6 +10,8 @@ body {
 	margin-left: 3%;
 }
 
+#language-selector { display: none }
+
 #mainTable {
 			width: 725px;
 			color: #FBE697;
