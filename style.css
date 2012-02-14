@@ -11,6 +11,13 @@ body {
 	margin-left: 3%;
 }
 
+#language-selector {
+	width: 85%;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 table {  color: #909090}
 a:active {  color: #909090}
 a:hover {  color: #6C81C6}

@@ -70,7 +70,7 @@ HTML;
 	function MakeLanguageSelector() {
 		global $supported_languages, $current_language;
 
-		$out = "<form method=post><select size=1 name=set_language>";
+		$out = "<form id=language-selector method=post><select size=1 name=set_language>";
 
 		if (extension_loaded(intl))
 		{
@@ -80,10 +80,11 @@ HTML;
 				if ($current_language == $lang)
 					$selected = "selected";
 
-				$out .= "<option value=$lang $selected>". Locale::getDisplayLanguage($lang, $lang) ."</option>";
+				$out .= "<option value=$lang $selected>". ucfirst(Locale::getDisplayLanguage($lang, $lang)) ."</option>";
 			}
 		}
-		$out .= "</select><input type=submit></form>";
+		// "Choose language" should not be translated
+		$out .= "</select><input type=submit value='Choose language'></form>";
 		return $out;
 	}
 
