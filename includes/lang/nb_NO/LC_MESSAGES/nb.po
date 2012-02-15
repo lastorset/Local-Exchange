@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-12 16:53+0100\n"
-"PO-Revision-Date: 2012-01-24 20:17+0100\n"
+"Report-Msgid-Bugs-To: leifarne@storset.net\n"
+"POT-Creation-Date: 2012-01-24 20:12+0100\n"
+"PO-Revision-Date: 2012-03-14 21:52+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -289,11 +289,11 @@ msgstr "Oppføringer i denne kategorien:"
 
 #: category_choose.php:55
 msgid "OFFERED"
-msgstr "TILBUDT"
+msgstr "TILBUD"
 
 #: category_choose.php:60
 msgid "WANTED"
-msgstr "ØNSKET"
+msgstr "ØNSKE"
 
 #: category_choose.php:63
 msgid "The category has been deleted."
@@ -2278,7 +2278,7 @@ msgstr "Du kan ikke endre medlemsrollen til en konto av høyere nivå"
 #: member_login.php:7 member_profile_all_in_one.php:7
 #: includes/inc.config.php:257
 msgid "Welcome to "
-msgstr "Velkommen til"
+msgstr "Velkommen til "
 
 #: member_login.php:10
 msgid "hi"
@@ -2586,7 +2586,7 @@ msgstr "Velg sak som skal redigeres"
 
 #: news_to_edit.php:13
 msgid "Which News Item?"
-msgstr "Hvilken nyhetssak_"
+msgstr "Hvilken nyhetssak?"
 
 #: pages.php:10
 msgid "Session Destroyed"
