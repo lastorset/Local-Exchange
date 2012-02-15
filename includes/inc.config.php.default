@@ -13,6 +13,29 @@ if (file_exists("upgrade.php") && $running_upgrade_script!=true) {
 }
 
 /**********************************************************/
+/***************** CUSTOM TRANSLATIONS ********************/
+
+/* If you wish to use custom texts in this configuration file and
+ * have them translated dynamically, fill in the following array.
+ * Then, call translate(the string) instead of just the string.
+ *
+ * See the $supported_languages array in inc.translation.php
+ * for a list of supported languages.
+ *
+ * Example:
+
+$customTranslations = array(
+	"Getting started" => array( "nb_NO.utf8" => "Komme i gang", "eo_EO.utf8" => "Kiel komenci"),
+	"What's new" => array( "nb_NO.utf8" => "Hva skjer", "eo_EO.utf8" => "Kio okazas")
+);
+
+$SIDEBAR = array (
+	array(_("Home"),"index.php"),
+	array(translate("Getting started"),"info/more.php"),
+	array(translate("What's new"),"news.php"),
+ */
+
+/**********************************************************/
 /******************* SITE LOCATIONS ***********************/
 
 // What is the domain name of the site?  
