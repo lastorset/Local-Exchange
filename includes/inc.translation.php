@@ -69,4 +69,15 @@ function setLanguageCookie() {
 	$_SESSION['preferred_language'] = $supported_languages[$idx];
 }
 
+/** Custom translations for strings in inc.config.php that do not appear in other
+	source code. Configure using $customTranslations. */
+function translate($string) {
+	global $current_language, $customTranslations;
+
+	if (isset($customTranslations[$string]) &&
+		isset($customTranslations[$string][$current_language]))
+		return $customTranslations[$string][$current_language];
+	else
+		return $string;
+}
 ?>
