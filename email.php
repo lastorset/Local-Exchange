@@ -56,22 +56,20 @@ if ($form->validate()) { // Form is validated so processes the data
 function process_data ($values) {
 	global $p, $cUser;
 
-	if (SAFE_MODE_ON) { // - added safe mode check by ejkv
-		$body = wordwrap($values["message"], 64); // replaced $copy by $body with message-body - by ejkv
+	$headers = "From:". $cUser->person[0]->email;
+	$body = wordwrap($values["message"], 64);
+
+	if($values["cc"] == "Y") {
+		$headers .= "\r\nCc: ". $cUser->person[0]->email;
 	}
-	else {
-		if($values["cc"] == "Y") {
-			$body = "Cc: ". $cUser->person[0]->email . "\r\n\r\n" . wordwrap($values["message"], 64);
-	    }
-    }
 
     if(known_email_addressp($_REQUEST["email_to"])) {
 	// added SAFE_MODE check, and removed 5th parameter, if safe mode = ON - by ejkv
 	    if (SAFE_MODE_ON) {
-			$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, "From:". $cUser->person[0]->email);
+			$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, $headers);
 		}
 		else {
-	    	$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, "From:". $cUser->person[0]->email, $cUser->person[0]->email);
+			$mailed = mail($_REQUEST["email_to"], SITE_SHORT_TITLE .": ". $values["subject"], $body, $headers, $cUser->person[0]->email);
 		}
     }
     else {
