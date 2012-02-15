@@ -60,7 +60,7 @@ class cNews {
 	}
 
 	function DisplayNews () {
-		$output = "<STRONG>". $this->title ."</STRONG><P>";
+		$output = "<H2>". $this->title ."</H2><P>";
 		$output .= $this->description ."<P>";
 		return $output;
 	}
