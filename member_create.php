@@ -85,6 +85,8 @@ $form->addRule('member_id', _("Enter your Member ID"), 'required');
 $form->addRule('password', _("Password not long enough"), 'minlength', PASSWORD_MIN_LENGTH);
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
+if (SELF_REGISTRATION && REQUIRE_EMAIL)
+	$form->addRule('email', _("Enter an e-mail address"), 'required');
 $form->addRule('address_city', _("Enter a")." ". _("City"), 'required');
 $form->addRule('address_state_code',_("Enter a")." " . _("State"), 'required');
 $form->addRule('address_post_code',_("Enter a")." "._("Zip Code"), 'required');
@@ -292,7 +294,7 @@ function verify_not_future_date ($element_name,$element_value) {
 // TODO: This simplistic function should ultimately be replaced by this class method on Pear:
 // 		http://pear.php.net/manual/en/package.mail.mail-rfc822.intro.php
 function verify_valid_email ($element_name,$element_value) {
-	if ($element_value=="")
+	if ($element_value=="" && !(REQUIRE_EMAIL && SELF_REGISTRATION))
 		return true;		// Currently not planning to require this field
 	if (strstr($element_value,"@") and strstr($element_value,"."))
 		return true;	
