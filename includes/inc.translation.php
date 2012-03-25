@@ -11,7 +11,7 @@ $supported_languages = array(
 );
 
 // Set the language cookie, if the user posted a preference.
-setLanguageCookie();
+storeLanguageChoice();
 
 // Select the locale based on a variety of factors, and save it in this global variable.
 $current_language = selectLocale();
@@ -25,7 +25,7 @@ textdomain("messages");
 // TODO These functions can probably go into a class.
 /** Pick the locale to use based on the following prioritized factors:
 
-	- TODO: The user's preferred language, as stored in his profile.
+	- The user's preferred language, as stored in his profile.
 	- What the user picked in this session using the dropdown.
 	- TODO: What the user agent suggests in the HTTP request.
 	- The site's default language. */
@@ -37,7 +37,9 @@ function selectLocale() {
 	$default_locale = "nb_NO.utf8";
 
 	// First, if the user is logged in, check preferred language.
-	// TODO
+	$preference = retrieveLanguagePreference();
+	if ($preference)
+		return $preference;
 
 	// If not logged in, or language is not available, check the cookie.
 	if (isset($_SESSION['preferred_language']))
@@ -55,10 +57,48 @@ function selectLocale() {
 	return $default_locale;
 }
 
-/** Validate the language setting and store it in a cookie. */
-function setLanguageCookie() {
+/**	If the user is logged in, get their language preference.
+
+	@return the string stored by storeLanguageChoice, or false if the user is logged in
+	        or has not chosen a language. */
+
+/*	This code (and the database portion of storeLanguageChoice) should really have been with the other
+	code in the cMember class, but because of an unfortunate circular dependency chain, it cannot be
+	there: this file would depend on the cMember class, which depends on inc.config.php, which
+	depends on selecting a language, which is done in this file.
+
+	The future solution is likely to translate customizable strings at display time, so that the
+	configuration file no longer dependent on language.  Alternatively, use a more sophisticated
+	configuration mechanism, where default strings can be set programmatically (or some other way
+	Gettext can pick them up) and webmaster can override. */
+	
+function retrieveLanguagePreference() {
+	if (!isset($_SESSION["user_login"]))
+		return false;
+	$user = $_SESSION["user_login"];
+
+	// PHP will automatically reuse the link when the database class connects.
+	mysql_connect(DATABASE_SERVER,DATABASE_USERNAME,DATABASE_PASSWORD)
+		   or die("Could not connect to database for language selection");
+	mysql_selectdb(DATABASE_NAME)
+		   or die("Could not select database");
+
+	$resource = mysql_query("SELECT preferred_language FROM ". DATABASE_MEMBERS ." WHERE member_id = '". $user ."'");
+	if (!$resource)
+		return false;
+
+	$row = mysql_fetch_array($resource);
+	return $row[0];
+}
+
+/**	Validate the language setting and store it in a cookie and in the database. */
+
+/*	The direct database access performed by this function is unfortunate; see note at
+	retrieveLanguagePreference for more information. */
+function storeLanguageChoice() {
 	global $supported_languages;
 
+	// If user chose a language, store it in a cookie
 	if (!isset($_POST['set_language']))
 		return;
 
@@ -67,6 +107,16 @@ function setLanguageCookie() {
 		return;
 
 	$_SESSION['preferred_language'] = $supported_languages[$idx];
+
+	// If user is logged in, store their choice in the database
+	if (!isset($_SESSION["user_login"]))
+		return;
+	$user = $_SESSION["user_login"];
+
+	// No escaping needed, since user is not in control of string
+	mysql_query("UPDATE ". DATABASE_MEMBERS ."
+		SET preferred_language = '". $_SESSION['preferred_language'] ."'
+		WHERE member_id = '". $user. "'");
 }
 
 /** Custom translations for strings in inc.config.php that do not appear in other

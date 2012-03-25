@@ -8,6 +8,9 @@ if (!isset($global))
 include_once("class.person.php");
 include_once("Text/Password.php");
 
+/*	There is some direct access to the member table in inc.translation.php that ideally should be
+	performed in this class. Until that happens, be careful. See note at retrieveLanguagePreference
+	for more information. */
 class cMember
 {
 	var $person;  // this will be an array of cPerson class objects
