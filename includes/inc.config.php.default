@@ -19,8 +19,8 @@ if (file_exists("upgrade.php") && $running_upgrade_script!=true) {
  * have them translated dynamically, fill in the following array.
  * Then, call translate(the string) instead of just the string.
  *
- * See the $supported_languages array in inc.translation.php
- * for a list of supported languages.
+ * See the cTranslationSupport::$supported_languages array in
+ * inc.translation.php for a list of supported languages.
  *
  * Example:
 
