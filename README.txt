@@ -68,6 +68,8 @@ Ok, onward and upward.
 
 9) In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
 
+10) If you wish to display the site in another language than English, PHP's intl extension is required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php, or use Debian package php5-intl.
+
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.
 2) In the "info" folder are a number of essentially static html files that help to explain what local currency is.  Included among them is some information specific to the area the original developer of the system lives in (me, that is).  You may use these files as you like, of course, but you may want to tailor them to your needs.  The files themselves need to be edited with a text editor, there is no content editor included in the system currently. (RF: Update ver 0.4.0 - there *is* now an (optional) content editor built in for creating additional info pages which can be edited online - see includes/inc.config.php )
