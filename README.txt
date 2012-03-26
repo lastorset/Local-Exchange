@@ -68,7 +68,7 @@ Ok, onward and upward.
 
 9) In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
 
-10) If you wish to display the site in another language than English, PHP's intl extension is required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php, or use Debian package php5-intl.
+10) If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php (or use Debian package php5-intl) and http://php.net/manual/en/http.install.php for installation instructions.
 
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.

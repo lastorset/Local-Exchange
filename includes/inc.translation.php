@@ -11,6 +11,16 @@ class cTranslationSupport {
 		'en_US',     // English (no translation)
 		'nb_NO.utf8' // Norwegian Bokmål
 	);
+	/** Aliases for HTTP header Accept-Language. Accept-Language expects the key; the value is
+		the locale we use. The first entry has special significance: it is set to the default
+		locale in selectLocale. */
+	static $http_language_map = array(
+		'first_entry' => 'none',
+		'en' => 'en_US',
+		'nb' => 'nb_NO.utf8',
+		'no' => 'nb_NO.utf8'
+	);
+
 	public $current_language;
 
 	function initialize() {
@@ -48,8 +58,14 @@ class cTranslationSupport {
 		}
 
 		// If no cookie is set, accept from HTTP.
-		// TODO doesn't work, http.so crashes
-		// $http_locale = http_negotiate_language($supported_languages);
+		if (extension_loaded('http'))
+		{
+			// Prepare the first member of the map as the default for http_negotiate_language
+			self::$http_language_map['first_entry'] = self::$default_locale;
+
+			$http_locale = http_negotiate_language(array_keys(self::$http_language_map), $result);
+			return self::$http_language_map[$http_locale];
+		}
 
 		// If all else fails, use the default language.
 		return self::$default_locale;
