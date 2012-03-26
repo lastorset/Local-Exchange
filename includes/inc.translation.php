@@ -133,9 +133,10 @@ class cTranslationSupport {
 	/** Custom translations for strings in inc.config.php that do not appear in other
 		source code. Configure using $customTranslations. */
 	function translate($string) {
-		if (isset($this->customTranslations[$string]) &&
-			isset($this->customTranslations[$string][$this->current_language]))
-			return $this->customTranslations[$string][$this->current_language];
+		global $customTranslations;
+		if (isset($customTranslations[$string]) &&
+			isset($customTranslations[$string][$this->current_language]))
+			return $customTranslations[$string][$this->current_language];
 		else
 			return $string;
 	}
