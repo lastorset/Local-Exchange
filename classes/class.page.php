@@ -68,16 +68,16 @@ HTML;
 	}
 
 	function MakeLanguageSelector() {
-		global $supported_languages, $current_language;
+		global $translation;
 
 		$out = "<form id=language-selector method=post><select size=1 name=set_language>";
 
 		if (extension_loaded(intl))
 		{
-			foreach ($supported_languages as $lang)
+			foreach (cTranslationSupport::$supported_languages as $lang)
 			{
 				$selected = "";
-				if ($current_language == $lang)
+				if ($translation->current_language == $lang)
 					$selected = "selected";
 
 				$out .= "<option value=$lang $selected>". ucfirst(Locale::getDisplayLanguage($lang, $lang)) ."</option>";
