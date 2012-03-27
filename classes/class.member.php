@@ -196,7 +196,7 @@ class cMember
 					<INPUT TYPE=HIDDEN NAME=location VALUE='".$_SERVER["REQUEST_URI"]."'>
 					<TABLE class=NoBorder><TR><TD ALIGN=LEFT>"._("Member ID").":</TD><TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=12 NAME=user></TD></TR>
 					<TR><TD ALIGN=LEFT>"._("Password")." :</TD><TD ALIGN=LEFT><INPUT TYPE=PASSWORD SIZE=12 NAME=pass></TD></TR></TABLE>
-					<DIV align=LEFT><INPUT TYPE=SUBMIT VALUE="._("Login")."></DIV>
+					<DIV align=LEFT><INPUT TYPE=SUBMIT VALUE='"._("Login")."'></DIV>
 					</FORM></DIV>
 					<BR>
 					". (SELF_REGISTRATION ? _("If you don't have an account, you may <a href=/member_create.php>sign up online</a>.") : _("If you don't have an account, please contact us to join.")) ."<BR>";	
