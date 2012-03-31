@@ -102,6 +102,11 @@ h1, h2, h3, th, td b, #header h1 {
 	font-weight: bold;
 }
 
+th {
+	font-size: 14px;
+	text-align: left;
+}
+
 /* Settings */
 form#settings td {
 	/* The following are typical browser default styles, but they are set explicitly to ensure they
@@ -114,6 +119,36 @@ form#settings p.description {
 	padding: 3px;
 	color: green;
 }
+
+/* Language settings */
+
+input:not(:checked) + label[for=ENABLE_TRANSLATION] ~ table.language-selector {
+	display: none;
+}
+
+table.language-selector {
+	/* border-spacing: 1em 0; */
+	margin: 1em 0;
+}
+
+table.language-selector td,
+table.language-selector th {
+	border-right: 1em solid transparent;
+}
+
+table.language-selector td.widget {
+	text-align: center; /* Perhaps better? */
+}
+
+table.language-selector td.widget:first-child {
+	/* text-align: right; */
+}
+
+table.language-selector td.widget:nth-child(2) {
+	/* text-align: left; */
+}
+
+/* End language settings */
 
 #contenttable {
 	font-size: 13px;
