@@ -102,6 +102,19 @@ h1, h2, h3, th, td b, #header h1 {
 	font-weight: bold;
 }
 
+/* Settings */
+form#settings td {
+	/* The following are typical browser default styles, but they are set explicitly to ensure they
+	line up with 'p.description' below. */
+	padding: 1px;
+	border-spacing: 2px;
+}
+
+form#settings p.description {
+	padding: 3px;
+	color: green;
+}
+
 #contenttable {
 	font-size: 13px;
 	text-align: left;

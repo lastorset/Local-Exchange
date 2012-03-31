@@ -20,7 +20,7 @@ if ($_REQUEST["process"]==true) {
 
 // DISPLAY Settings form
 
-$output .= "<form method=POST><input type=hidden name=process value=true>";
+$output .= "<form id=settings method=POST><input type=hidden name=process value=true>";
 
 $output .= "<table width=100%>";
 
@@ -64,7 +64,7 @@ foreach($sections as $a => $b) {
 	else
 		$aSectionDone = true;
 		
-	$output .= "<a name='sec".$a."'></a><table width=100%><tr valign=top><td><STRONG>".$section_names[$a]."</STRONG></td></tr></table>
+	$output .= "<a name='sec".$a."'></a><table width=100%><tr valign=top><td><H3>".$section_names[$a]."</H3></td></tr></table>
 				<p><table width=100%>";
 	
 	foreach($b as $key) {
@@ -159,7 +159,7 @@ foreach($sections as $a => $b) {
 		if ($key->descrip) {
 			
 			$output .= "</table>
-				<table width=100%><tr valign=top><td><font color=green>".$key->descrip."</font></td></tr></table>
+				<p class=description>$key->descrip</p>
 				<p><table width=100%>";
 		}
 	}
