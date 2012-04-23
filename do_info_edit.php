@@ -4,6 +4,15 @@ include_once("includes/inc.global.php");
 include("classes/class.info.php");
 include("includes/inc.forms.php");
 
+// CKEditor - added by ejkv
+// Include the CKEditor class.
+include_once "../ckeditor/ckeditor.php";
+// Create a class instance.
+$CKEditor = new CKEditor();
+// Path to the CKEditor directory.
+$CKEditor->basePath = '/ckeditor/';
+// CKEditor - added by ejkv
+
 $cUser->MustBeLevel(1);
 
 $p->site_section = EVENTS;
@@ -20,6 +29,7 @@ $form->addElement("hidden","id",$_REQUEST["id"]);
 $form->addElement("text", "title", _("Title"), array("size" => 35, "maxlength" => 100));
 $form->addElement("textarea", "description", _("Content"), array("cols"=>65, "rows"=>20, "wrap"=>"soft"));
 
+// not essential, since the save-button in CKeditor does the same - ejkv
 $form->addElement("submit", "btnSubmit", _("Submit"));
 
 //
@@ -40,6 +50,11 @@ if ($form->validate()) { // Form is validated so processes the data
 	
 	$form->setDefaults($current_values);
    $p->DisplayPage($form->toHtml());  // just display the form
+
+// CKEditor - added by ejkv
+// Replace a textarea element with id "description".
+$CKEditor->replace("description");
+// CKEditor - added by ejkv
 }
 
 //
