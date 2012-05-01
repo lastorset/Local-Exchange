@@ -123,8 +123,45 @@ class cSettings {
 		}
 		
 		$this->getCurrent(); // Refresh settings in current memory with new updated settings
-		
+
+		$this->saveLanguageSettings();
+
 		return "<font color=green>"._("Settings updated successfully.")."</font>";
+	}
+
+	function saveLanguageSettings() {
+		global $cDB;
+
+		if (is_array($_REQUEST['available_languages'])) {
+			$selected = $_REQUEST['available_languages'];
+			// Ensure all supported languages are in database while updating availability
+			$query = "INSERT INTO `languages` (langcode, available) VALUES ";
+			$first = true;
+			foreach (cTranslationSupport::$supported_languages as $lang) {
+				if (!$first)
+					$query .= ",";
+				$first = false;
+
+				// Escaping not needed for values; not provided by user
+				if (in_array($lang, $selected))
+					$query .= " ('$lang', true) ";
+				else
+					$query .= " ('$lang', false) ";
+			}
+			$query .= "ON DUPLICATE KEY UPDATE available=VALUES(available)";
+			$cDB->Query($query);
+		}
+		else {
+			// Nothing was selected, make all languages unavailable
+			$cDB->Query("UPDATE `languages` SET available = false");
+		}
+
+		if (isset($_REQUEST['DEFAULT_LANGUAGE']))
+		{
+			$new_default = $_REQUEST['DEFAULT_LANGUAGE'];
+			if (in_array($new_default, cTranslationSupport::$supported_languages))
+				$cDB->Query("UPDATE SETTINGS SET current_value='$new_default' WHERE name='DEFAULT_LANGUAGE')");
+		}
 	}
 }
 
