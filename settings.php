@@ -26,8 +26,9 @@ $output .= "<table width=100%>";
 
 // Sort settings into sections
 
-$sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array());
-$section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"));
+// Please leave "Language settings" last in order to allow appending the language selection widget.
+$sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array(),8 => array());
+$section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"),8=>_("Language Settings"));
 
 foreach($site_settings->theSettings as $key) {
 	
@@ -169,10 +170,7 @@ foreach($sections as $a => $b) {
 
 if (extension_loaded(intl)) // Required for Locale::getDisplayLanguage
 {
-	$output .= "</table>";
-	$output .= "<h3>". _("Language settings") ."</h3>"
-			.  "<input type=checkbox checked id=ENABLE_TRANSLATION name=ENABLE_TRANSLATION /><label for=ENABLE_TRANSLATION>". _("Enable translation of user interface") ."</label>"
-			.  "<p class=description>". _("Enable translation of user-interface text. This only translates text that is built into Local Exchange; news, listings etc. are not automatically translated.") ."</p>"
+	$output .= "</table>"
 			.  "<table class='language-selector'><tr>"
 			// Translation hint: Default language
 			.  "<th title='". _("If the user does not select a language, they will see this one") ."'>". _("Default") ."</th>"
@@ -180,11 +178,14 @@ if (extension_loaded(intl)) // Required for Locale::getDisplayLanguage
 			.  "<th title='". _("Allow users to select this language from the dropdown") ."'>". _("Available") ."</th>"
 			.  "<th>". _("Language") ."</th>"
 			.  "</tr>";
+	cTranslationSupport::retrieveAvailableLanguages();
 	foreach (cTranslationSupport::$supported_languages as $lang) {
+		$available_checked = in_array($lang, cTranslationSupport::$available_languages) ? "checked" : "";
+		$default_checked = $lang == cTranslationSupport::$default_locale ? "checked" : "not-checked";
 		$output .= "<tr>"
-				.  "<td class=widget><input type=radio name='DEFAULT_LANGUAGE[]' value='$lang'></td>"
-				.  "<td class=widget><input type=checkbox name='available_languages[]' value='$lang'></td>"
-				.  "<td>". ucfirst(Locale::getDisplayLanguage($lang, $translation->current_language)) ."</td>"
+				.  "<td class=widget><input $default_checked type=radio name='DEFAULT_LANGUAGE' value='$lang'></td>"
+				.  "<td class=widget><input $available_checked type=checkbox name='available_languages[]' id='available_languages_$lang' value='$lang'></td>"
+				.  "<td><label for='available_languages_$lang'>". ucfirst(Locale::getDisplayLanguage($lang, $translation->current_language)) ."</td>"
 				.  "</tr>";
 	}
 	$output .= "</table>";
