@@ -2,15 +2,20 @@
 /* Initialize gettext */
 
 class cTranslationSupport {
-	// The fallback locale, used when nothing else works.
-	// TODO: Move to settings
-	static $default_locale = "nb_NO.utf8";
+	/// Whether string translation is enabled
+	static $translation_enabled = false;
+	/// The fallback locale, used when nothing else works.
+	static $default_locale;
 
 	/// All languages supported by this version of Local Exchange.
 	static $supported_languages = array(
 		'en_US',     // English (no translation)
 		'nb_NO.utf8' // Norwegian Bokmål
 	);
+
+	/// Available languages in the drop-down menu, as decided by the administrator.
+	static $available_languages = array();
+
 	/** Aliases for HTTP header Accept-Language. Accept-Language expects the key; the value is
 		the locale we use. The first entry has special significance: it is set to the default
 		locale in selectLocale. */
@@ -24,17 +29,22 @@ class cTranslationSupport {
 	public $current_language;
 
 	function initialize() {
+		$this->retrieveAvailableLanguages();
+
 		// Set the language cookie, if the user posted a preference.
 		$this->storeLanguageChoice();
 
-		// Select the locale based on a variety of factors, and save it this member.
-		$this->current_language = $this->selectLocale();
-		$ret = setlocale(LC_MESSAGES, $this->current_language);
+		if (self::$translation_enabled)
+		{
+			// Select the locale based on a variety of factors, and save it this member.
+			$this->current_language = $this->selectLocale();
+			$ret = setlocale(LC_MESSAGES, $this->current_language);
 
-		// Gettext invocations
-		bindtextdomain("messages", "./includes/lang");
-		bind_textdomain_codeset("messages", "UTF-8");
-		textdomain("messages");
+			// Gettext invocations
+			bindtextdomain("messages", "./includes/lang");
+			bind_textdomain_codeset("messages", "UTF-8");
+			textdomain("messages");
+		}
 	}
 
 	/** Pick the locale to use based on the following prioritized factors:
@@ -42,7 +52,11 @@ class cTranslationSupport {
 		- The user's preferred language, as stored in his profile.
 		- What the user picked in this session using the dropdown.
 		- TODO: What the user agent suggests in the HTTP request.
-		- The site's default language. */
+		- The site's default language.
+
+		@note This code does not cancel a user's choice of a language that previously was
+		      available but no longer is. This is simpler, more respectful, arguably less
+		      surprising, and not less secure. */
 	function selectLocale() {
 		// First, if the user is logged in, check preferred language.
 		$preference = $this->retrieveLanguagePreference();
@@ -113,11 +127,11 @@ class cTranslationSupport {
 		if (!isset($_POST['set_language']))
 			return;
 
-		$idx = array_search($_POST['set_language'], self::$supported_languages);
+		$idx = array_search($_POST['set_language'], self::$available_languages);
 		if ($idx === false)
 			return;
 
-		$_SESSION['preferred_language'] = self::$supported_languages[$idx];
+		$_SESSION['preferred_language'] = self::$available_languages[$idx];
 
 		// If user is logged in, store their choice in the database
 		if (!isset($_SESSION["user_login"]))
@@ -128,6 +142,35 @@ class cTranslationSupport {
 		mysql_query("UPDATE ". DATABASE_MEMBERS ."
 			SET preferred_language = '". $_SESSION['preferred_language'] ."'
 			WHERE member_id = '". $user. "'");
+	}
+
+	static function retrieveAvailableLanguages() {
+		// Enable translation?
+		$resource = mysql_query("SELECT current_value FROM `settings` WHERE name = 'ENABLE_TRANSLATION'");
+
+		$row = mysql_fetch_array($resource);
+		if ($row['current_value'] == 'TRUE')
+			self::$translation_enabled = true;
+		else
+			return;
+
+		// Default language
+		$resource = mysql_query("SELECT current_value, default_value FROM `settings` WHERE name = 'DEFAULT_LANGUAGE'");
+
+		$row = mysql_fetch_array($resource);
+		if ($row['current_value'])
+			self::$default_locale = $row['current_value'];
+		else
+			self::$default_locale = $row['default_value'];
+
+		// Available languages
+		$resource = mysql_query("SELECT langcode FROM `languages` WHERE available = TRUE");
+		self::$available_languages = array(); // Empty in case this is called several times
+
+		while($row = mysql_fetch_array($resource))
+		{
+			array_push(self::$available_languages, $row['langcode']);
+		}
 	}
 
 	/** Custom translations for strings in inc.config.php that do not appear in other
