@@ -3,6 +3,7 @@
 
 class cTranslationSupport {
 	/// Whether string translation is enabled
+	// TODO Need we really have all these fields static?
 	static $translation_enabled = false;
 	/// The fallback locale, used when nothing else works.
 	static $default_locale;
@@ -10,7 +11,7 @@ class cTranslationSupport {
 	/// All languages supported by this version of Local Exchange.
 	static $supported_languages = array(
 		'en_US',     // English (no translation)
-		'nb_NO.utf8' // Norwegian Bokmål
+		'nb_NO.utf8' // Norwegian Bokmål // TODO Is '.utf8' really needed, if we maintain a UTF-8 ecosystem?
 	);
 
 	/// Available languages in the drop-down menu, as decided by the administrator.

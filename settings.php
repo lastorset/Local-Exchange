@@ -27,6 +27,7 @@ $output .= "<table width=100%>";
 // Sort settings into sections
 
 // Please leave "Language settings" last in order to allow appending the language selection widget.
+// TODO That can probably be handled more robustly.
 $sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array(),8 => array());
 $section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"),8=>_("Language Settings"));
 
