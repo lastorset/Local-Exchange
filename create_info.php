@@ -35,15 +35,14 @@ if ($form->validate()) { // Form is validated so processes the data
 } else {
 	$p->DisplayPage($form->toHtml());  // just display the form
 
-	// CKEditor
-	include_once "ckeditor/ckeditor.php";
-	$CKEditor = new CKEditor();
-	// Path to the CKEditor directory, relative to the web server root.
-	$CKEditor->basePath = '/ckeditor/';
+	if (CKEDITOR) {
+		include_once CKEDITOR_PATH ."/ckeditor.php";
+		$CKEditor = new CKEditor();
+		$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
 
-	// CKEditor replaces the textarea whose ID is "description".
-	$CKEditor->replace("description");
-	// End CKEditor
+		// CKEditor replaces the textarea whose ID is "description".
+		$CKEditor->replace("description");
+	}
 }
 
 //
