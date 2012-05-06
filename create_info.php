@@ -4,15 +4,6 @@ include_once("includes/inc.global.php");
 include("classes/class.info.php");
 include("includes/inc.forms.php");
 
-// CKEditor - added by ejkv
-// Include the CKEditor class.
-include_once "../ckeditor/ckeditor.php";
-// Create a class instance.
-$CKEditor = new CKEditor();
-// Path to the CKEditor directory.
-$CKEditor->basePath = '/ckeditor/';
-// CKEditor - added by ejkv
-
 $cUser->MustBeLevel(1);
 
 $p->site_section = EVENTS;
@@ -26,7 +17,7 @@ $p->page_title = _("Create a New Information Page");
 $form->addElement("text", "title", _("Title"), array("size" => 35, "maxlength" => 100));
 $form->addElement("textarea", "description", _("Content"), array("cols"=>55, "rows"=>20, "wrap"=>"soft")); // changed cols from 65 into 55 by ejkv
 
-// not essential, since the save-button in CKeditor does the same - ejkv
+// Note that CKEditor may also submit the form.
 $form->addElement("submit", "btnSubmit", _("Submit"));
 
 //
@@ -45,10 +36,15 @@ if ($form->validate()) { // Form is validated so processes the data
 	
    $p->DisplayPage($form->toHtml());  // just display the form
 
-// CKEditor - added by ejkv
-// Replace a textarea element with id "description".
-$CKEditor->replace("description");
-// CKEditor - added by ejkv
+	// CKEditor
+	include_once "ckeditor/ckeditor.php";
+	$CKEditor = new CKEditor();
+	// Path to the CKEditor directory, relative to the web server root.
+	$CKEditor->basePath = '/ckeditor/';
+
+	// CKEditor replaces the textarea whose ID is "description".
+	$CKEditor->replace("description");
+	// End CKEditor
 }
 
 //
