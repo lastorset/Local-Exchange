@@ -30,11 +30,10 @@ $form->addRule("description",_("Enter some body text"),"required");
 // Then check if we are processing a submission or just displaying the form
 //
 if ($form->validate()) { // Form is validated so processes the data
-   $form->freeze();
- 	$form->process("process_data", false);
+	$form->freeze();
+	$form->process("process_data", false);
 } else {
-	
-   $p->DisplayPage($form->toHtml());  // just display the form
+	$p->DisplayPage($form->toHtml());  // just display the form
 
 	// CKEditor
 	include_once "ckeditor/ckeditor.php";
@@ -61,5 +60,4 @@ function process_data ($values) {
 		$output = _("There was a problem adding the new page.");
 		
 	$p->DisplayPage($output);
-	
 }
