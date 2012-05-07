@@ -70,6 +70,8 @@ Ok, onward and upward.
 
 10) If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php (or use Debian package php5-intl) and http://php.net/manual/en/http.install.php for installation instructions.
 
+11) If you wish to use a WYSIWYG editor for information pages, download CKEditor and place it in a folder "ckeditor". In inc.config.php, change the setting called "CKEDITOR" from "false" to "true".
+
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.
 2) In the "info" folder are a number of essentially static html files that help to explain what local currency is.  Included among them is some information specific to the area the original developer of the system lives in (me, that is).  You may use these files as you like, of course, but you may want to tailor them to your needs.  The files themselves need to be edited with a text editor, there is no content editor included in the system currently. (RF: Update ver 0.4.0 - there *is* now an (optional) content editor built in for creating additional info pages which can be edited online - see includes/inc.config.php )
