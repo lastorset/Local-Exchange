@@ -40,15 +40,7 @@ if ($form->validate()) { // Form is validated so processes the data
 	
 	$form->setDefaults($current_values);
 	$p->DisplayPage($form->toHtml());  // just display the form
-
-	if (CKEDITOR) {
-		include_once CKEDITOR_PATH ."/ckeditor.php";
-		$CKEditor = new CKEditor();
-		$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
-
-		// CKEditor replaces the textarea whose ID is "description".
-		$CKEditor->replace("description", array( 'customConfig' => '/includes/ckeditor.config.js'));
-	}
+	$p->InsertCKEditor("description");
 }
 
 //
