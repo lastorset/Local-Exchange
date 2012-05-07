@@ -160,13 +160,18 @@ HTML;
 
 		@param id the id of the text field to replace. */
 	function InsertCKEditor($id) {
+		global $translation;
 		// If CKEditor cannot be included, prevent a fatal error
 		if (CKEDITOR && include_once CKEDITOR_PATH ."/ckeditor.php") {
 			$CKEditor = new CKEditor();
 			$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
 
 			// CKEditor replaces the textarea whose ID is "description".
-			$CKEditor->replace($id, array( 'customConfig' => '/includes/ckeditor.config.js'));
+			$CKEditor->replace($id, array(
+				'customConfig' => '/includes/ckeditor.config.js',
+				// If this parameter is an unknown language code, CKEditor will fall back to English.
+				'language' => substr($translation->current_language, 0, 2),
+			));
 		}
 	}
 }
