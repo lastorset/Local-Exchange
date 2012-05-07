@@ -41,7 +41,7 @@ if ($form->validate()) { // Form is validated so processes the data
 		$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
 
 		// CKEditor replaces the textarea whose ID is "description".
-		$CKEditor->replace("description");
+		$CKEditor->replace("description", array( 'customConfig' => '/includes/ckeditor.config.js'));
 	}
 }
 
