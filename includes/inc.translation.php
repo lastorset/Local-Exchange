@@ -27,7 +27,7 @@ class cTranslationSupport {
 		'no' => 'nb_NO.utf8'
 	);
 
-	public $current_language;
+	public $current_language = 'en_US';
 
 	function initialize() {
 		$this->retrieveAvailableLanguages();
