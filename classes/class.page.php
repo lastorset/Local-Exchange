@@ -160,7 +160,8 @@ HTML;
 
 		@param id the id of the text field to replace. */
 	function InsertCKEditor($id) {
-		if (CKEDITOR) {
+		// If CKEditor cannot be included, prevent a fatal error
+		if (CKEDITOR && include_once CKEDITOR_PATH ."/ckeditor.php") {
 			$CKEditor = new CKEditor();
 			$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
 
