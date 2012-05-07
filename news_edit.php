@@ -50,6 +50,7 @@ if ($form->validate()) { // Form is validated so processes the data
 	
 	$form->setDefaults($current_values);
    $p->DisplayPage($form->toHtml());  // just display the form
+   $p->InsertCKEditor("description");
 }
 
 //

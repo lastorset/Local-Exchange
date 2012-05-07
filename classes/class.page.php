@@ -155,8 +155,19 @@ HTML;
 			print $this->MakePageFooter();
 		}
 	}	
-	
-	
+
+	/** Output code to replace a text field with CKEditor.
+
+		@param id the id of the text field to replace. */
+	function InsertCKEditor($id) {
+		if (CKEDITOR) {
+			$CKEditor = new CKEditor();
+			$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
+
+			// CKEditor replaces the textarea whose ID is "description".
+			$CKEditor->replace($id, array( 'customConfig' => '/includes/ckeditor.config.js'));
+		}
+	}
 }
 
 class cMenuItem {
