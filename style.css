@@ -127,7 +127,6 @@ input:not(:checked) + label[for=ENABLE_TRANSLATION] ~ table.language-selector {
 }
 
 table.language-selector {
-	/* border-spacing: 1em 0; */
 	margin: 1em 0;
 }
 
@@ -137,15 +136,7 @@ table.language-selector th {
 }
 
 table.language-selector td.widget {
-	text-align: center; /* Perhaps better? */
-}
-
-table.language-selector td.widget:first-child {
-	/* text-align: right; */
-}
-
-table.language-selector td.widget:nth-child(2) {
-	/* text-align: left; */
+	text-align: center;
 }
 
 /* End language settings */
