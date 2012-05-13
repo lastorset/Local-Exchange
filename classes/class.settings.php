@@ -129,6 +129,8 @@ class cSettings {
 		return "<font color=green>"._("Settings updated successfully.")."</font>";
 	}
 
+	/** Saves language availability to the database. If the database table was empty,
+		fills the table with supported languages. */
 	function saveLanguageSettings() {
 		global $cDB;
 
