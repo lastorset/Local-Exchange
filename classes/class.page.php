@@ -11,7 +11,7 @@ class cPage {
 	var $page_header;	// HTML
 	var $page_footer;	// HTML
 	var $keywords;		
-	var $site_section;
+	var $site_section;	// Section constants are defined in inc.config.php
 	var $sidebar_buttons; 	// An array of cMenuItem objects
 	var $top_buttons;			// An array of cMenuItem objects    TODO: Implement top buttons...
 
