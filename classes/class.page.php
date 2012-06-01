@@ -73,7 +73,7 @@ HTML;
 		if (extension_loaded(intl))
 		{
 			if (!cTranslationSupport::$translation_enabled
-				|| count(cTranslationSupport::$available_languages) == 0)
+				|| count(cTranslationSupport::$available_languages) < 2)
 				return "";
 
 			$out = "<form id=language-selector method=post><select size=1 name=set_language>";
