@@ -25,8 +25,9 @@ $us_result = $cDB->Query(<<<SQL
 		address_country
 	FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
 	WHERE
-		(`latitude` IS NULL OR `longitude` IS NULL)
-		AND status = '{$c['ACTIVE']}'
+		-- disabled for testing (`latitude` IS NULL OR `longitude` IS NULL)
+		-- AND
+		status = '{$c['ACTIVE']}'
 		AND address_post_code NOT LIKE "0000aa" -- Special accounts
 SQL
 );
@@ -77,6 +78,10 @@ while($us_person = mysql_fetch_array($us_result))
 	}
 
 	$geocode_count++;
+
+	// for testing
+	if ($geocode_count > 20)
+		break;
 
 	// Throttle requests by waiting 200ms to prevent Google from blocking us
 	usleep(200000);
