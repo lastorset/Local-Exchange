@@ -1,15 +1,15 @@
 <?php
 if (!function_exists('http_get'))
-	die("Error: pecl_http extension with libcurl required");
+	die("ERROR pecl_http extension with libcurl required\nFINISHED");
 
 include_once("includes/inc.global.php");
 
 // Make absolutely sure error reporting is invisible
 ini_set('display_errors', 0); 
-header('Content-type: application/json');
+header('Content-type: text/plain');
 
 if (!$cUser->HasLevel(1))
-	die("ERROR Must have administrator permissions");
+	die("ERROR Must have administrator permissions\nFINISHED");
 
 // 1: Get list of addresses that need geocoding
 
