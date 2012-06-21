@@ -51,7 +51,7 @@ while($us_person = mysql_fetch_array($us_result))
 	foreach ($us_person as $i => $us)
 		$su_person[$i] = urlencode($us);
 
-	// 2: Send requests to Google. Will PHP automatically throttle the number of connections? Otherwise, throttle yourself.
+	// 2: Send requests to Google.
 	$geocode_request = sprintf($url_template,
 		$su_person['address_street1'],
 		$su_person['address_street2'],
@@ -78,10 +78,6 @@ while($us_person = mysql_fetch_array($us_result))
 	}
 
 	$geocode_count++;
-
-	// for testing
-	if ($geocode_count > 20)
-		break;
 
 	// Throttle requests by waiting 200ms to prevent Google from blocking us
 	usleep(200000);

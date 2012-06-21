@@ -144,6 +144,10 @@ define("CKEDITOR", false);
 // Path of CKEditor, relative to web server root, without a trailing slash.
 define("CKEDITOR_PATH", "ckeditor");
 
+// Enable geocoding and display a Google map?
+// When switching this on, run the initial geocoding script at [FIXME].
+define("GEOCODE", true);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 

@@ -72,6 +72,8 @@ class cPerson
 			$cErr->Error(_("Could not save new person. There is already a person in your account with the same name, date of birth, and mother's maiden name. If you received this error after pressing the Back button, try going back to the menu and starting again."));
 			include("redirect.php");
 		}
+		else
+			$this->Geocode();
 	
 		$insert = $cDB->Query("INSERT INTO ".DATABASE_PERSONS." (member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country) VALUES (". $cDB->EscTxt($this->member_id) .",". $cDB->EscTxt($this->primary_member) .",". $cDB->EscTxt($this->directory_list) .",". $cDB->EscTxt($this->first_name) .",". $cDB->EscTxt($this->last_name) .",". $cDB->EscTxt($this->mid_name) .",". $cDB->EscTxt($this->dob) .",". $cDB->EscTxt($this->mother_mn) .",". $cDB->EscTxt($this->email) .",". $cDB->EscTxt($this->phone1_area) .",". $cDB->EscTxt($this->phone1_number) .",". $cDB->EscTxt($this->phone1_ext) .",". $cDB->EscTxt($this->phone2_area) .",". $cDB->EscTxt($this->phone2_number) .",". $cDB->EscTxt($this->phone2_ext) .",". $cDB->EscTxt($this->fax_area) .",". $cDB->EscTxt($this->fax_number) .",". $cDB->EscTxt($this->fax_ext) .",". $cDB->EscTxt($this->address_street1) .",". $cDB->EscTxt($this->address_street2) .",". $cDB->EscTxt($this->address_city) .",". $cDB->EscTxt($this->address_state_code) .",". $cDB->EscTxt($this->address_post_code) .",". $cDB->EscTxt($this->address_country).");");
 		
@@ -86,6 +88,8 @@ class cPerson
 
 		if(!$update)
 			$cErr->Error(_("Could not save changes to")." '". $this->first_name ." ". $this->mid_name ." ". $this->last_name ."'. "._("Please try again later")."."); // added mid_name by ejkv	
+		else
+			$this->Geocode();
 			
 		return $update;
 	}
@@ -211,6 +215,15 @@ class cPerson
         $phone = $phone_number;
 		
 		return $phone;
+	}
+
+	function Geocode() {
+		if (!GEOCODE)
+			return;
+
+		cGeocode::Geocode(array (
+			TODO
+		));
 	}
 }
 
