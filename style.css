@@ -200,3 +200,7 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
 .homepage ul li {
 	margin-bottom: 1em;
 }
+
+#map_canvas {
+	height: 300px;
+}

@@ -8,6 +8,7 @@ else
 	$p->page_title = _("Wanted listings");
 
 include("classes/class.listing.php");
+include("classes/class.geocode.php");
 include("includes/inc.forms.php");
 
 $form->addElement("hidden","type", $_REQUEST["type"]);
@@ -33,7 +34,9 @@ if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
  	$form->process("process_data", false);
 } else {  // Display the form
-	$p->DisplayPage($form->toHtml());
+	$output = $form->toHtml();
+	$output .= cGeoCode::GenerateMap();
+	$p->DisplayPage($output);
 }
 
 function process_data ($values) {

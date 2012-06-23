@@ -221,9 +221,11 @@ class cPerson
 		if (!GEOCODE)
 			return;
 
+		/*
 		cGeocode::Geocode(array (
 			TODO
 		));
+		*/
 	}
 }
 
