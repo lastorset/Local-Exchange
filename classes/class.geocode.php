@@ -72,18 +72,70 @@ class cGeocode {
 				src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
 			</script>
 			<script type="text/javascript">
+				var map;
 				function initializeMap() {
 					var myOptions = {
 						center: new google.maps.LatLng(59.931624, 10.741882),
 						zoom: 12,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
-					var map = new google.maps.Map(document.getElementById("map_canvas"),
+					map = new google.maps.Map(document.getElementById("map_canvas"),
 							myOptions);
+					loadMarkers();
+				}
+
+				var markerRequest = new XMLHttpRequest();
+
+				function loadMarkers() {
+					var url = "http://lex.localhost/ajax/map.php";
+					markerRequest.onload = addMarkers;
+					// TODO How wide is browser support for onload?
+					// TODO Also listen for failure
+					markerRequest.open("GET", url, true); 
+					markerRequest.send();
 				}
 				
+				function addMarkers() {
+					// TODO Use a compatibility shim (such as jQuery) for JSON.parse
+					var markers = JSON.parse(markerRequest.responseText);
+					for (var i = 0; i < markers.length; i++) {
+						new google.maps.Marker({
+							position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
+							map: map,
+							title:"id = " + markers[i].id
+						});
+					}
+				}
+				
+				// TODO: More robust mechanism for onload. If more than one script sets
+				// onload, one of them will break.
 				window.onload = initializeMap;
 			</script>
 HTML;
+	}
+
+	static function AllMarkers() {
+		global $cDB;
+		// TODO When user is not logged in, return fuzzy data.
+		$c = get_defined_constants();
+		$result = $cDB->Query(<<<SQL
+			SELECT person_id,
+				latitude,
+				longitude
+			FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
+			WHERE
+				`latitude` IS NOT NULL AND `longitude` IS NOT NULL
+				AND
+				status = '{$c['ACTIVE']}'
+SQL
+		);
+		$out = array();
+		while($marker = mysql_fetch_array($result))
+			array_push($out, array(
+				'id' => $marker['person_id'],
+				'latitude' => $marker['latitude'],
+				'longitude' => $marker['longitude']
+				));
+		return $out;
 	}
 }
