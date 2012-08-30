@@ -73,6 +73,8 @@ class cGeocode {
 			</script>
 			<script type="text/javascript">
 				var map;
+				var infowindow = new google.maps.InfoWindow();
+
 				function initializeMap() {
 					var myOptions = {
 						center: new google.maps.LatLng(59.931624, 10.741882),
@@ -82,6 +84,10 @@ class cGeocode {
 					map = new google.maps.Map(document.getElementById("map_canvas"),
 							myOptions);
 					loadMarkers();
+
+					google.maps.event.addListener(map, 'click', function() {
+							infowindow.close();
+					});
 				}
 
 				var markerRequest = new XMLHttpRequest();
@@ -99,11 +105,19 @@ class cGeocode {
 					// TODO Use a compatibility shim (such as jQuery) for JSON.parse
 					var markers = JSON.parse(markerRequest.responseText);
 					for (var i = 0; i < markers.length; i++) {
-						new google.maps.Marker({
+						var marker = new google.maps.Marker({
 							position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
 							map: map,
 							title:"id = " + markers[i].id
 						});
+						var text = "<h1>"+ markers[i].id +"</h1>";
+						// TODO More lightweight method? (without a separate function for each marker)
+						google.maps.event.addListener(marker, 'click', (function(marker, text) {
+							return function() {
+								infowindow.content = text;
+								infowindow.open(map,marker);
+							}
+						})(marker, text));
 					}
 				}
 				
