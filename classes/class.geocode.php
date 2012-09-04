@@ -111,15 +111,15 @@ class cGeocode {
 						var marker = new google.maps.Marker({
 							position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
 							map: map,
-							title:"id = " + markers[i].id
 						});
 						var text;
 						if (markers[i].name)
 							// TODO Some way to get internationalized text
-							text = "<h1>"+ markers[i].name +"</h1><ul>"
+							text = "<h1>"+ markers[i].name +"</h1>"
 							     + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "Se tilbud og ønsker" +"</a>";
+							// TODO Display listings directly in info window
 						else
-							text = "Logg deg på for å se tilbud og ønsker";
+							text = "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering";
 						// TODO More lightweight method? (without a separate function for each marker)
 						google.maps.event.addListener(marker, 'click', (function(marker, text) {
 							return function() {
@@ -152,6 +152,15 @@ HTML;
 					array_push($listings, $listing);
 				}
 			return $listings;
+		}
+
+		// Generates a hash-based coefficient between -1 and 1 to use when obfuscating location
+		function member_id_obfuscate($member_id) {
+			$prime = 31;
+			$result = 1;
+			for ($i = 0; $i < strlen($member_id); $i++)
+				$result = $prime * $result + ord($member_id[$i]);
+			return ($result % 226) / 113 - 1;
 		}
 
 		// TODO When user is not logged in, return fuzzy data.
@@ -197,13 +206,17 @@ SQL
 					'longitude' => $marker['longitude']
 					));
 			else
+			{
+				$obf = member_id_obfuscate($marker['member_id']);
 				array_push($out, array(
 					'id' => $marker['member_id'],
 					'name' => null,
 					'listings' => $listings,
-					'latitude' => $marker['latitude'],
-					'longitude' => $marker['longitude']
+					'latitude' => $marker['latitude'] + $obf * 0.005,
+					'longitude' => $marker['longitude'] + $obf * 0.005
 					));
+				error_log($marker['member_id'] ." obfuscation coefficient: ". $obf);
+			}
 		}
 		return $out;
 	}
