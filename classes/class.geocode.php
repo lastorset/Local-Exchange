@@ -1,5 +1,8 @@
 <?php
 
+include_once("class.listing.php");
+include_once("class.member.php");
+
 /** Contains functions that transmit geocoding requests to Google and process
     the result. */
 class cGeocode {
@@ -110,7 +113,13 @@ class cGeocode {
 							map: map,
 							title:"id = " + markers[i].id
 						});
-						var text = "<h1>"+ markers[i].id +"</h1>";
+						var text;
+						if (markers[i].name)
+							// TODO Some way to get internationalized text
+							text = "<h1>"+ markers[i].name +"</h1><ul>"
+							     + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "Se tilbud og ønsker" +"</a>";
+						else
+							text = "Logg deg på for å se tilbud og ønsker";
 						// TODO More lightweight method? (without a separate function for each marker)
 						google.maps.event.addListener(marker, 'click', (function(marker, text) {
 							return function() {
@@ -120,7 +129,7 @@ class cGeocode {
 						})(marker, text));
 					}
 				}
-				
+
 				// TODO: More robust mechanism for onload. If more than one script sets
 				// onload, one of them will break.
 				window.onload = initializeMap;
@@ -129,11 +138,32 @@ HTML;
 	}
 
 	static function AllMarkers() {
-		global $cDB;
+		global $cDB, $cUser;
+
+		function getListings(&$listing_group) {
+			$listings = array();
+			if ($listing_group->listing)
+				foreach ($listing_group->listing as $l) {
+					$listing = array(
+						'title' => $l->title,
+						// TODO Factor out URL generation (taken from class.listing.php)
+						'url' => "http://".HTTP_BASE."/listing_detail.php?type=". $l->type ."&title=" . urlencode($l->title) ."&member_id=". $l->member_id
+					);
+					array_push($listings, $listing);
+				}
+			return $listings;
+		}
+
 		// TODO When user is not logged in, return fuzzy data.
+		// TODO Should probably either use a nicely encapsulated method here, or more
+		// performant SQL queries for everything
 		$c = get_defined_constants();
 		$result = $cDB->Query(<<<SQL
 			SELECT person_id,
+				member_id,
+				first_name,
+				mid_name,
+				last_name,
 				latitude,
 				longitude
 			FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
@@ -144,12 +174,37 @@ HTML;
 SQL
 		);
 		$out = array();
+		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow)
 		while($marker = mysql_fetch_array($result))
-			array_push($out, array(
-				'id' => $marker['person_id'],
-				'latitude' => $marker['latitude'],
-				'longitude' => $marker['longitude']
-				));
+		{
+			$listing_group = new cListingGroup(OFFER_LISTING_CODE);
+			$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
+			// TODO Cleaner way of getting out the listings, including getting both types in one call
+			$listings_offered = getListings($listing_group);
+			$listing_group = new cListingGroup(WANT_LISTING_CODE);
+			$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
+			$listings_wanted = getListings($listing_group);
+			$listings = array('offered' => $listings_offered, 'wanted' => $listings_wanted);
+
+			if ($cUser->IsLoggedOn())
+				array_push($out, array(
+					'id' => $marker['member_id'],
+					'name' => $marker['first_name'] ." ".
+							  $marker['mid_name'] ." ".
+							  $marker['last_name'] ." ",
+					'listings' => $listings,
+					'latitude' => $marker['latitude'],
+					'longitude' => $marker['longitude']
+					));
+			else
+				array_push($out, array(
+					'id' => $marker['member_id'],
+					'name' => null,
+					'listings' => $listings,
+					'latitude' => $marker['latitude'],
+					'longitude' => $marker['longitude']
+					));
+		}
 		return $out;
 	}
 }

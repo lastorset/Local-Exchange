@@ -204,3 +204,7 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
 #map_canvas {
 	height: 300px;
 }
+
+.logoheader + #map_canvas {
+	margin-top: 15px;
+}

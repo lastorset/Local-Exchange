@@ -148,6 +148,9 @@ define("CKEDITOR_PATH", "ckeditor");
 // When switching this on, run the initial geocoding script at [FIXME].
 define("GEOCODE", true);
 
+// Show a map on the home page? This requires geocoding.
+define("HOME_PAGE_MAP", false);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 

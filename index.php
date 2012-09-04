@@ -1,6 +1,7 @@
 <?php
 
 include_once("includes/inc.global.php");
+include_once("classes/class.geocode.php");
 $p->site_section = 0;
 
 print $p->MakePageHeader();
@@ -19,7 +20,10 @@ print <<<HTML
 </div>
 HTML;
 
-print "<h2>" ._("Why have a Local, Sustainable Currency?"). "</h2><ul><li>" ._("Enhance Your Prosperity"). "</li><li>" ._("Build a Sustainable Community"). "</li><li>" ._("Utilize Your Talents"). "</li><li> " ._("Nurture the Unique Quality of Your Hometown"). "</li><li>" ._("Have Fun"). "</li></ul>";
+if (!HOME_PAGE_MAP)
+	print "<h2>" ._("Why have a Local, Sustainable Currency?"). "</h2><ul><li>" ._("Enhance Your Prosperity"). "</li><li>" ._("Build a Sustainable Community"). "</li><li>" ._("Utilize Your Talents"). "</li><li> " ._("Nurture the Unique Quality of Your Hometown"). "</li><li>" ._("Have Fun"). "</li></ul>";
+else
+	print cGeoCode::GenerateMap();
 
 print "</div>";
 
