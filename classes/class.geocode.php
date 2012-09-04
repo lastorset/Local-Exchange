@@ -96,7 +96,7 @@ class cGeocode {
 				var markerRequest = new XMLHttpRequest();
 
 				function loadMarkers() {
-					var url = "http://lex.localhost/ajax/map.php";
+					var url = "ajax/map.php";
 					markerRequest.onload = addMarkers;
 					// TODO How wide is browser support for onload?
 					// TODO Also listen for failure
