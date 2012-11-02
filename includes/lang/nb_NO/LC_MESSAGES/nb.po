@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
-"Report-Msgid-Bugs-To: leifarne@storset.net\n"
-"POT-Creation-Date: 2012-01-24 20:12+0100\n"
-"PO-Revision-Date: 2012-03-14 21:52+0100\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-02 21:17+0100\n"
+"PO-Revision-Date: 2012-11-02 21:17+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -72,7 +72,7 @@ msgid "Manage Account Restrictions"
 msgstr "Administrer kontobegrensinger"
 
 #: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
-#: includes/inc.config.php:170
+#: includes/inc.config.php:204
 msgid "Exchanges"
 msgstr "Handler"
 
@@ -176,7 +176,7 @@ msgstr "Rediger tilgangsretter for infosider"
 msgid "See Info Page URL 's"
 msgstr "Se URLer for infosider"
 
-#: admin_menu.php:85 news.php:7 includes/inc.config.php:166
+#: admin_menu.php:85 news.php:7 includes/inc.config.php:200
 msgid "News and Events"
 msgstr "Hva skjer?"
 
@@ -242,7 +242,7 @@ msgstr "Velg medlem som du vil endre saldoen for"
 
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:39 member_edit.php:24 member_to_edit.php:14
-#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:517
+#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:522
 msgid "Member"
 msgstr "Medlem"
 
@@ -303,8 +303,8 @@ msgstr "Kategorien er slettet."
 msgid "Category Description"
 msgstr "Kategoribeskrivelse"
 
-#: category_create.php:19 category_edit.php:23 create_info.php:20
-#: do_info_edit.php:23 feedback.php:38 feedback_rebuttal.php:39
+#: category_create.php:19 category_edit.php:23 create_info.php:21
+#: do_info_edit.php:24 feedback.php:38 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:72 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
 #: timeframe_choose.php:19 trade.php:57
@@ -323,12 +323,12 @@ msgstr "Kategorien er opprettet."
 msgid "Could not save the category."
 msgstr "Kunne ikke lagre kategorien."
 
-#: category_create.php:44 category_edit.php:48 email.php:85 feedback.php:84
+#: category_create.php:44 category_edit.php:48 email.php:83 feedback.php:84
 #: listing_create.php:122 listing_edit.php:141 member_contact_create.php:152
-#: member_contact_edit.php:168 member_create.php:211 member_edit.php:259
+#: member_contact_edit.php:168 member_create.php:213 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
-#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:66
-#: classes/class.member.php:169 classes/class.member.php:880
+#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:86
+#: classes/class.member.php:172 classes/class.member.php:885
 #: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
 msgstr "Vennligst prøv igjen senere."
@@ -381,7 +381,7 @@ msgstr "Meldinga har blitt sendt til alle medlemmen."
 msgid "There were errors sending the email to the following email addresses"
 msgstr "Det kom feilmeldinger ved sending av e-post til følgende adresser"
 
-#: contact.php:4 includes/inc.config.php:173
+#: contact.php:4 includes/inc.config.php:207
 msgid "Contact Us"
 msgstr "Kontakt oss"
 
@@ -412,7 +412,7 @@ msgstr ""
 msgid "Name"
 msgstr "Navn"
 
-#: contact.php:14 classes/class.member.php:534
+#: contact.php:14 classes/class.member.php:539
 msgid "Email"
 msgstr "E-postadresse"
 
@@ -855,7 +855,7 @@ msgstr ""
 msgid "Sample: West"
 msgstr ""
 
-#: create_db.php:268
+#: create_db.php:271
 msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
 msgstr ""
@@ -865,20 +865,20 @@ msgstr ""
 msgid "Title"
 msgstr "Tittel"
 
-#: create_info.php:25 do_info_edit.php:28 listing_create.php:45
+#: create_info.php:26 do_info_edit.php:29 listing_create.php:45
 #: listing_edit.php:30 news_create.php:32 news_edit.php:37
 msgid "Enter a title"
 msgstr "Skriv inn tittel"
 
-#: create_info.php:26 do_info_edit.php:29
+#: create_info.php:27 do_info_edit.php:30
 msgid "Enter some body text"
 msgstr "Skriv inn brødtekst"
 
-#: create_info.php:48
+#: create_info.php:49
 msgid "New information page added."
 msgstr "Ny infoside er lagt til."
 
-#: create_info.php:50
+#: create_info.php:51
 msgid "There was a problem adding the new page."
 msgstr "Det oppstod en feil ved oppretting av den nye sida."
 
@@ -960,12 +960,12 @@ msgstr "Last ned"
 msgid "Download complete."
 msgstr "Ferdig nedlastet."
 
-#: do_info_edit.php:54 member_contact_edit.php:166 member_edit.php:257
-#: news_edit.php:70
+#: do_info_edit.php:55 member_contact_edit.php:166 member_edit.php:257
+#: news_edit.php:71
 msgid "Changes saved."
 msgstr "Endringene er lagret."
 
-#: do_info_edit.php:56
+#: do_info_edit.php:57
 msgid "There was a problem saving the page."
 msgstr "Det oppstod en feil under lagring av sida."
 
@@ -1022,11 +1022,11 @@ msgstr "Emne"
 msgid "Would you like to receive a copy?"
 msgstr "Vil du ha kopi?"
 
-#: email.php:82
+#: email.php:80
 msgid "Your message has been sent."
 msgstr "Meldinga er blitt sendt."
 
-#: email.php:85
+#: email.php:83
 msgid "There was a problem sending the email."
 msgstr "Det oppstod et problem ved sending av e-posten."
 
@@ -1133,7 +1133,7 @@ msgstr ""
 "Ofte kan misforståelser klares opp til begges fordel."
 
 #: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:125
-#: classes/class.member.php:527
+#: classes/class.member.php:532
 msgid "Positive"
 msgstr "Positiv"
 
@@ -1364,27 +1364,27 @@ msgstr ""
 "Dersom du vil endre denne inntektsfordelinga må du først fjerne den og så "
 "opprette en ny."
 
-#: index.php:22
+#: index.php:24
 msgid "Why have a Local, Sustainable Currency?"
 msgstr "Hvorfor en lokal, bærekraftig valuta?"
 
-#: index.php:22
+#: index.php:24
 msgid "Enhance Your Prosperity"
 msgstr "Øk velstanden"
 
-#: index.php:22
+#: index.php:24
 msgid "Build a Sustainable Community"
 msgstr "Bygg opp et bærekraftig lokalsamfunn"
 
-#: index.php:22
+#: index.php:24
 msgid "Utilize Your Talents"
 msgstr "Utnytt evnene dine"
 
-#: index.php:22
+#: index.php:24
 msgid "Nurture the Unique Quality of Your Hometown"
 msgstr "Dyrk det særegne ved hjemstedet ditt"
 
-#: index.php:22
+#: index.php:24
 msgid "Have Fun"
 msgstr "Ha det gøy"
 
@@ -1450,13 +1450,13 @@ msgid "Skipped email"
 msgstr "Hoppet over e-postadressa"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
-#: member_create.php:204 member_directory.php:15 member_unlock.php:47
-#: member_unlock.php:50 trade.php:138 classes/class.member.php:194
+#: member_create.php:206 member_directory.php:15 member_unlock.php:47
+#: member_unlock.php:50 trade.php:138 classes/class.member.php:197
 msgid "Member ID"
 msgstr "Brukernavn"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
-#: member_create.php:204 member_unlock.php:47 classes/class.member.php:195
+#: member_create.php:206 member_unlock.php:47 classes/class.member.php:198
 msgid "Password"
 msgstr "Passord"
 
@@ -1488,7 +1488,7 @@ msgstr "For hvilket medlem?"
 msgid "You already have a listing with this title"
 msgstr "Du har alt ei oppføring med denne tittelen"
 
-#: listing_create.php:49 listing_edit.php:34 listings.php:19 trade.php:50
+#: listing_create.php:49 listing_edit.php:34 listings.php:20 trade.php:50
 #: classes/class.trade.php:277
 msgid "Category"
 msgstr "Kategori"
@@ -1568,6 +1568,10 @@ msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 "Det oppstod en feil ved sletting av oppføringene. Husket du å krysse av?"
 
+#: listing_detail.php:16
+msgid "You may see more details if you sign up and log in."
+msgstr ""
+
 #: listing_edit.php:10
 msgid "Edit Offered:"
 msgstr "Rediger tilbud:"
@@ -1605,7 +1609,7 @@ msgid "Create Listings"
 msgstr "Opprett oppføringer"
 
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
-#: classes/class.directory.php:52 classes/class.member.php:774
+#: classes/class.directory.php:52 classes/class.member.php:779
 msgid "Offered Listings"
 msgstr "Tilbud"
 
@@ -1620,7 +1624,7 @@ msgstr "Rediger tilbud"
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
-#: classes/class.member.php:776
+#: classes/class.member.php:781
 msgid "Wanted Listings"
 msgstr "Ønsker"
 
@@ -1642,7 +1646,7 @@ msgstr "Tilbud"
 msgid "Wanted listings"
 msgstr "Ønsker"
 
-#: listings_menu.php:4 includes/inc.config.php:169
+#: listings_menu.php:4 includes/inc.config.php:203
 msgid "Update Listings"
 msgstr "Oppdater oppføringer"
 
@@ -1650,7 +1654,7 @@ msgstr "Oppdater oppføringer"
 msgid "Going on Holiday"
 msgstr "Merk meg som bortreist"
 
-#: listings.php:14
+#: listings.php:15
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
@@ -1661,52 +1665,52 @@ msgstr ""
 "hele katalogen, klikk"
 
 # Text for hyperlink. Immediately follows "go" as in "go here"
-#: listings.php:14 member_create.php:198 news.php:22 trades_pending.php:25
-#: classes/class.member.php:107
+#: listings.php:15 member_create.php:200 news.php:22 trades_pending.php:25
+#: classes/class.member.php:110
 msgid "here"
 msgstr "hit"
 
-#: listings.php:18
+#: listings.php:19
 msgid "View All Categories"
 msgstr "Vis alle kategorier"
 
-#: listings.php:20
+#: listings.php:21
 msgid "New/updated in last"
 msgstr "Nytt/oppdatert siste "
 
-#: listings.php:21
+#: listings.php:22
 msgid "Time Frame"
 msgstr "Tidsrom"
 
-#: listings.php:21
+#: listings.php:22
 msgid "View All Listings"
 msgstr "Vis alle oppføringer"
 
-#: listings.php:21
+#: listings.php:22
 msgid "3 days"
 msgstr "3 dager"
 
-#: listings.php:21 classes/class.member.php:785
+#: listings.php:22 classes/class.member.php:790
 msgid "week"
 msgstr "uke"
 
-#: listings.php:21
+#: listings.php:22
 msgid "2 weeks"
 msgstr "2 uker"
 
-#: listings.php:21 classes/class.member.php:787
+#: listings.php:22 classes/class.member.php:792
 msgid "month"
 msgstr "måned"
 
-#: listings.php:21
+#: listings.php:22
 msgid "3 months"
 msgstr "3 måneder"
 
-#: listings.php:24
+#: listings.php:25
 msgid "Keyword"
 msgstr "Stikkord"
 
-#: listings.php:27 pages.php:10
+#: listings.php:28 pages.php:10
 msgid "Continue"
 msgstr "Fortsett"
 
@@ -1746,10 +1750,19 @@ msgstr "For å se denne delen av nettstedet må du logge inn."
 msgid "If you already have an account, please log in below"
 msgstr "Dersom du allerede har konto, kan du logge inn under"
 
-#: login_redirect.php:5 classes/class.member.php:196
-#: classes/class.member.php:209
+#: login_redirect.php:5 classes/class.member.php:199
+#: classes/class.member.php:214
 msgid "Login"
 msgstr "Logg inn"
+
+#. Translation hint: Complete phrase is "If you forgot your password, you may _request a new one_." (link)
+#: login_redirect.php:5 classes/class.member.php:202
+msgid "If you forgot your password, you may"
+msgstr "Har du glemt passordet, kan du"
+
+#: login_redirect.php:5 classes/class.member.php:202
+msgid "request a new one"
+msgstr "bestille nytt"
 
 #: login_redirect.php:5
 msgid "If you don't have an account, please"
@@ -1823,7 +1836,7 @@ msgstr "Fjern begrensning"
 msgid "Choose Joint Member"
 msgstr "Velg husstandsmedlem"
 
-#: member_contact_choose.php:9 classes/class.member.php:376
+#: member_contact_choose.php:9 classes/class.member.php:381
 msgid "Which Joint Member?"
 msgstr "Hvilket husstandsmedlem?"
 
@@ -1870,12 +1883,12 @@ msgid "Email Address"
 msgstr "E-postadresse"
 
 #: member_contact_create.php:44 member_contact_edit.php:46
-#: member_create.php:51 member_edit.php:55 classes/class.member.php:536
+#: member_create.php:51 member_edit.php:55 classes/class.member.php:541
 msgid "Primary Phone"
 msgstr "Hovedtelefonnummer"
 
 #: member_contact_create.php:45 member_contact_edit.php:47
-#: member_create.php:52 member_edit.php:56 classes/class.member.php:538
+#: member_create.php:52 member_edit.php:56 classes/class.member.php:543
 msgid "Secondary Phone"
 msgstr "Annet telefonnummer"
 
@@ -1891,28 +1904,28 @@ msgstr ""
 
 #: member_contact_create.php:49 member_contact_edit.php:51
 #: member_create.php:64 member_directory.php:31 member_directory.php:41
-#: member_edit.php:67 classes/class.member.php:542
+#: member_edit.php:67 classes/class.member.php:547
 msgid "Address Line 2"
 msgstr ""
 
 #: member_contact_create.php:50 member_contact_create.php:72
 #: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
-#: member_create.php:88 member_directory.php:42 member_edit.php:68
-#: member_edit.php:102 classes/class.member.php:546
+#: member_create.php:90 member_directory.php:42 member_edit.php:68
+#: member_edit.php:102 classes/class.member.php:551
 msgid "City"
 msgstr ""
 
 #: member_contact_create.php:60 member_contact_create.php:73
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
-#: member_create.php:89 member_directory.php:43 member_edit.php:78
-#: member_edit.php:103 classes/class.member.php:558
+#: member_create.php:91 member_directory.php:43 member_edit.php:78
+#: member_edit.php:103 classes/class.member.php:563
 msgid "State"
 msgstr "Fylke"
 
 #: member_contact_create.php:61 member_contact_create.php:74
 #: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
-#: member_create.php:90 member_directory.php:44 member_edit.php:79
-#: member_edit.php:104 classes/class.member.php:550
+#: member_create.php:92 member_directory.php:44 member_edit.php:79
+#: member_edit.php:104 classes/class.member.php:555
 msgid "Zip Code"
 msgstr ""
 
@@ -1942,36 +1955,36 @@ msgstr "Skriv inn etternavn"
 
 #: member_contact_create.php:72 member_contact_create.php:73
 #: member_contact_create.php:74 member_contact_edit.php:80
-#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:88
-#: member_create.php:89 member_create.php:90 member_edit.php:102
+#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:90
+#: member_create.php:91 member_create.php:92 member_edit.php:102
 #: member_edit.php:103 member_edit.php:104
 msgid "Enter a"
 msgstr "Skriv inn et"
 
 #: member_contact_create.php:75 member_contact_edit.php:83
-#: member_create.php:91 member_edit.php:105
+#: member_create.php:93 member_edit.php:105
 msgid "Enter a country"
 msgstr "Skriv inn land"
 
 #: member_contact_create.php:78 member_contact_edit.php:77
-#: member_create.php:107 member_edit.php:114
+#: member_create.php:109 member_edit.php:114
 msgid "Birth date cannot be in the future"
 msgstr "Fødseldato kan ikke være i framtida"
 
 #: member_contact_create.php:80 member_contact_edit.php:79
-#: member_create.php:109 member_edit.php:116
+#: member_create.php:111 member_edit.php:116
 msgid "A little young, don't you think?"
 msgstr "Litt vel ung, ikke sant?"
 
 #: member_contact_create.php:82 member_contact_edit.php:85
-#: member_create.php:111 member_edit.php:118
+#: member_create.php:113 member_edit.php:118
 msgid "Not a valid email address"
 msgstr "Ikke en gyldig e-postadresse"
 
 #: member_contact_create.php:84 member_contact_create.php:85
 #: member_contact_create.php:86 member_contact_edit.php:87
-#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:113
-#: member_create.php:114 member_create.php:115 member_edit.php:120
+#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:115
+#: member_create.php:116 member_create.php:117 member_edit.php:120
 #: member_edit.php:121 member_edit.php:122
 msgid "Phone format invalid"
 msgstr "Ugyldig telefonnummer"
@@ -2000,7 +2013,7 @@ msgstr "Er du sikker på at du vil varig slette "
 msgid "Joint member deleted."
 msgstr "Husstandsmedlemmet er slettet."
 
-#: member_contact_delete.php:37 classes/class.person.php:156
+#: member_contact_delete.php:37 classes/class.person.php:160
 msgid "There was an error deleting the joint member."
 msgstr "Det oppstod en feil ved sletting av husstandsmedlemmet."
 
@@ -2099,19 +2112,24 @@ msgstr "Opprett medlem"
 msgid "Enter your Member ID"
 msgstr "Skriv in brukernavnet"
 
-#: member_create.php:94
+#: member_create.php:89
+#, fuzzy
+msgid "Enter an e-mail address"
+msgstr "Skriv inn e-postadressa di"
+
+#: member_create.php:96
 msgid "This ID is already being used"
 msgstr "Dette brukernavnet er opptatt"
 
-#: member_create.php:96
+#: member_create.php:98
 msgid "Special characters are not allowed"
 msgstr "Spesialtegn er ikke tillatt"
 
-#: member_create.php:98
+#: member_create.php:100
 msgid "Password must contain at least one number"
 msgstr "Passordet må inneholde minst ett tall"
 
-#: member_create.php:100
+#: member_create.php:102
 msgid ""
 "You have the right idea, but it's best not to use apostraphes or backslashes "
 "in passwords"
@@ -2119,27 +2137,27 @@ msgstr ""
 "Du tenker riktig, men det er best å ikke bruke apostrof eller omvendt "
 "skråstrek i passord"
 
-#: member_create.php:103 member_edit.php:108
+#: member_create.php:105 member_edit.php:108
 msgid "You cannot assign a higher level of access than you have"
 msgstr "Du kan ikke gi et høyere tilgangsnivå enn du selv har"
 
-#: member_create.php:106 member_edit.php:113
+#: member_create.php:108 member_edit.php:113
 msgid "Join date cannot be in the future"
 msgstr "Innmeldingsdato kan ikke være i framtida"
 
-#: member_create.php:198 member_create.php:202
+#: member_create.php:200 member_create.php:204
 msgid "Member created"
 msgstr "Medlem opprettet"
 
-#: member_create.php:198
+#: member_create.php:200
 msgid "Click"
 msgstr "Klikk på"
 
-#: member_create.php:198
+#: member_create.php:200
 msgid "to create another member account"
 msgstr "for å opprette enda en medlemskonto"
 
-#: member_create.php:198
+#: member_create.php:200
 msgid ""
 "Or if you would like to add a joint member to this account (such as a "
 "spouse), click"
@@ -2147,7 +2165,7 @@ msgstr ""
 "Eller hvis du vil legge et husstandsmedlem (for eksempel en ektefelle) til "
 "denne kontoen, klikk på"
 
-#: member_create.php:200
+#: member_create.php:202
 msgid ""
 "Since the new member does not have an email address, he/she needs to be "
 "notified of the member id"
@@ -2155,19 +2173,19 @@ msgstr ""
 "Siden det nye medlemmet ikke har e-postadresse, må han/hun gjøres oppmerksom "
 "på brukernavnet"
 
-#: member_create.php:200 member_create.php:208
+#: member_create.php:202 member_create.php:210
 msgid "and password"
 msgstr "og passordet"
 
-#: member_create.php:206
+#: member_create.php:208
 msgid "An email has been sent to"
 msgstr "E-post er blitt sendt til"
 
-#: member_create.php:206
+#: member_create.php:208
 msgid "containing the new user id and password"
 msgstr "med det nye brukernavnet og passordet"
 
-#: member_create.php:208
+#: member_create.php:210
 msgid ""
 "An attempt to email the new member information failed.  This is most likely "
 "due to a technical problem.  You may want to contact your administrator at"
@@ -2176,14 +2194,14 @@ msgstr ""
 "Dette er sannsynligvis et teknisk problem. Det er kanskje best å kontakte "
 "administratoren på"
 
-#: member_create.php:208
+#: member_create.php:210
 msgid ""
 "Since the email failed, the new member needs to be notified of the member id"
 msgstr ""
 "Siden e-postsendinga gikk galt, må det nye medlemmet gjøres oppmerksom på "
 "brukernavnet"
 
-#: member_create.php:211 member_edit.php:259
+#: member_create.php:213 member_edit.php:259
 msgid "There was an error saving the member."
 msgstr "Det oppstod en feil ved lagring av medlemmet."
 
@@ -2259,15 +2277,15 @@ msgstr "Godkjenn innbetalinger automatisk"
 msgid "Confirm Payments"
 msgstr "Godkjenn innbetalinger selv"
 
-#: member_edit.php:87 classes/class.member.php:593
+#: member_edit.php:87 classes/class.member.php:598
 msgid "Age"
 msgstr "Alder"
 
-#: member_edit.php:88 classes/class.member.php:595
+#: member_edit.php:88 classes/class.member.php:600
 msgid "Sex"
 msgstr "Kjønn"
 
-#: member_edit.php:89 classes/class.member.php:597
+#: member_edit.php:89 classes/class.member.php:602
 msgid "About Me"
 msgstr "Om meg"
 
@@ -2276,7 +2294,7 @@ msgid "You cannot modify the member role of a higher level account"
 msgstr "Du kan ikke endre medlemsrollen til en konto av høyere nivå"
 
 #: member_login.php:7 member_profile_all_in_one.php:7
-#: includes/inc.config.php:257
+#: includes/inc.config.php:291
 msgid "Welcome to "
 msgstr "Velkommen til "
 
@@ -2372,8 +2390,8 @@ msgstr "Administrasjon"
 msgid "Add a Joint Member to an Existing Account"
 msgstr "Legg husstandsmedlem til en konto"
 
-#: member_profile.php:4 includes/inc.config.php:172
-#: includes/inc.config.php:214
+#: member_profile.php:4 includes/inc.config.php:206
+#: includes/inc.config.php:248
 msgid "Member Profile"
 msgstr "Medlemsprofil"
 
@@ -2522,11 +2540,11 @@ msgstr "Plassering"
 msgid "Enter a description"
 msgstr "Skriv tekst"
 
-#: news_create.php:61
+#: news_create.php:62
 msgid "News item saved."
 msgstr "Nyhetssak er lagret."
 
-#: news_create.php:63 news_edit.php:72
+#: news_create.php:64 news_edit.php:73
 msgid "There was a problem saving the news item."
 msgstr "Det oppstod et problem ved lagring av nyhetssaka."
 
@@ -3352,99 +3370,91 @@ msgstr "Velg medlem som skal vises"
 msgid "Whose Exchange History?"
 msgstr "Handelslogg for hvem?"
 
-#: includes/inc.config.php:66
+#: includes/inc.config.php:86
 msgid "is currently down for maintenance."
 msgstr "er for tida nede til vedlikehold."
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "Under 18"
 msgstr "Under 18"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "18-30"
 msgstr "18-30"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "30's"
 msgstr "30-åra"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "40's"
 msgstr "40-åra"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "50's"
 msgstr "50-åra"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "60's"
 msgstr "60-åra"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "70's"
 msgstr "70-åra"
 
-#: includes/inc.config.php:95
+#: includes/inc.config.php:115
 msgid "Over 80"
 msgstr "Over 80"
 
-#: includes/inc.config.php:95 includes/inc.config.php:98
+#: includes/inc.config.php:115 includes/inc.config.php:118
 msgid "n/a"
 msgstr "blankt"
 
-#: includes/inc.config.php:98
+#: includes/inc.config.php:118
 msgid "Male"
 msgstr "Mann"
 
-#: includes/inc.config.php:98
+#: includes/inc.config.php:118
 msgid "Female"
 msgstr "Kvinne"
 
-#: includes/inc.config.php:139
-msgid "local currency,lets,exchange,"
-msgstr "lokal valuta,lets,handel,"
-
-#: includes/inc.config.php:156
+#: includes/inc.config.php:190
 msgid "Licensed under the"
 msgstr "Lisensiert under"
 
-#: includes/inc.config.php:156
+#: includes/inc.config.php:190
 msgid "GPL"
 msgstr "GPL"
 
-#: includes/inc.config.php:156
+#: includes/inc.config.php:190
 msgid "Local Exchange UK Ver."
 msgstr "Local Exchange (Storbritannia-utgave)"
 
-#: includes/inc.config.php:156
+#: includes/inc.config.php:190
 msgid "Credits"
 msgstr "Medvirkende"
 
-#: includes/inc.config.php:162
+#: includes/inc.config.php:196
 msgid "Home"
 msgstr "Hjem"
 
-#: includes/inc.config.php:163
-msgid "Learn More"
-msgstr "Lær mer"
-
-#: includes/inc.config.php:165
+#: includes/inc.config.php:199
 msgid "Information"
 msgstr "Informasjon"
 
-#: includes/inc.config.php:167
+#: includes/inc.config.php:201
 msgid "Offered"
 msgstr "Tilbud"
 
-#: includes/inc.config.php:168
+#: includes/inc.config.php:202
 msgid "Wanted"
 msgstr "Ønsker"
 
-#: includes/inc.config.php:171
+#: includes/inc.config.php:205
 msgid "Members List"
 msgstr "Medlemsliste"
 
-#: includes/inc.config.php:214
+#: includes/inc.config.php:248
 msgid ""
 "The following listings are new or updated.<p>If you would prefer not to "
 "receive automatic email updates, or if you would like to change their "
@@ -3454,31 +3464,31 @@ msgstr ""
 "nyheter automatisk på e-post, eller om du vil endre hvor ofte de kommer, kan "
 "du gjøre det på"
 
-#: includes/inc.config.php:214
+#: includes/inc.config.php:248
 msgid "area of our website."
 msgstr "området av nettstedet vårt."
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Hello"
 msgstr "Hei"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Due to inactivity, your"
 msgstr "På grunn av lite aktivitet, vil oppføringene dine på "
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "listings have been set to automatically expire"
 msgstr "gå ut på dato"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "days from now"
 msgstr "dager fra nå"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "In order to keep the"
 msgstr "For å holde"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid ""
 "system up to date and working smoothly for all members, we have developed an "
 "automatic system to expire listings for members who haven't recorded "
@@ -3488,7 +3498,7 @@ msgstr ""
 "for å la oppføringene gå ut på dato for medlemmer som ikke har handlet eller "
 "oppdatering oppføringene i løpet av en periode på"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid ""
 "days. We want the directory to be up to date, so that members do not "
 "encounter listings that are out of date or expired. This works to everyone's "
@@ -3497,7 +3507,7 @@ msgstr ""
 "dager. Vi ønsker å holde katalogen oppdatert slik at medlemmene ikke møter "
 "oppføringer som er foreldete eller utgåtte. Dette er til alles fordel"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid ""
 "We apologize for any inconvenience this may cause you and thank you for your "
 "participation. If you have any questions or comments, or are unsure how to "
@@ -3507,11 +3517,11 @@ msgstr ""
 "noen spørsmål eller kommentarer, eller er usikker på hvordan best gjøre "
 "nytte av systemet, vennligst svar på denne e-posten eller ring oss på"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "You have"
 msgstr "Du har"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid ""
 "days to login to the system and reactivate listings that you would still "
 "like to have in the directory.  If you do not reactivate them during that "
@@ -3522,56 +3532,56 @@ msgstr ""
 "ha i katalogen. Dersom du ikke reaktiverer dem i før da, vil oppføringene "
 "ikke lenger stå i katalogen, men fortsatt være lagret i systemet i"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "days, during which time you can still edit and reactivate them."
 msgstr "dager til. Innen den tid kan du fortsatt redigere og reaktivere dem."
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Instructions to reactivate listings"
 msgstr "Bruksanvisning for reaktivering av oppføringer"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Login to the website"
 msgstr "Logg på nettstedet"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Go to Update Listings"
 msgstr "Gå til \"Oppdater oppføringer\""
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Select Edit Offered (or Wanted) Listings"
 msgstr "Velg \"Rediger tilbud\" eller \"Rediger ønsker\""
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Select the listing to edit"
 msgstr "Velg oppføringene du vil redigere"
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid ""
 "Uncheck the box next to 'Should this listing be set to automatically expire?'"
 msgstr "Fjern krysset foran \"Skal denne oppføringa utløpe automatisk?\""
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Press the Update button"
 msgstr "Trykk \"Oppdater\""
 
-#: includes/inc.config.php:240
+#: includes/inc.config.php:274
 msgid "Repeat steps 1-6 for all listings you wish to reactivate"
 msgstr "Gjenta steg 1-6 for alle oppføringene du ønsker å reaktivere"
 
-#: includes/inc.config.php:255
+#: includes/inc.config.php:289
 msgid "Your"
 msgstr "Din"
 
-#: includes/inc.config.php:255
+#: includes/inc.config.php:289
 msgid "Account"
 msgstr "Konto"
 
-#: includes/inc.config.php:256
+#: includes/inc.config.php:290
 msgid "Your password for"
 msgstr "Passordet ditt for"
 
-#: includes/inc.config.php:256
+#: includes/inc.config.php:290
 msgid ""
 "has been reset. If you did not request this reset, it is possible your "
 "account has been compromised, and you may want to contact the site "
@@ -3581,7 +3591,7 @@ msgstr ""
 "bryte seg inn i kontoen din. Det er kanskje lurt å kontakte administratoren "
 "av nettstedet på"
 
-#: includes/inc.config.php:256
+#: includes/inc.config.php:290
 msgid ""
 "Your user id and new password are listed at the end of this message. You can "
 "change the automatically generated password by going to the Member Profile "
@@ -3591,19 +3601,19 @@ msgstr ""
 "kan endre passordet vi har laget automatisk, dersom du går til "
 "\"Medlemsprofil\" etter at du har logget inn. "
 
-#: includes/inc.config.php:258
+#: includes/inc.config.php:292
 msgid "Hello, and welcome to the"
 msgstr "Hei, og velkommen til"
 
-#: includes/inc.config.php:258
+#: includes/inc.config.php:292
 msgid "community!"
 msgstr "samfunnet!"
 
-#: includes/inc.config.php:258
+#: includes/inc.config.php:292
 msgid "A member account has been created for you at"
 msgstr "En medlemskonto har blitt opprettet for deg på"
 
-#: includes/inc.config.php:258
+#: includes/inc.config.php:292
 msgid ""
 "Please login and create your Offered and Wanted Listings.  Your new user id "
 "and password are listed at the end of this message. You can change the "
@@ -3615,7 +3625,7 @@ msgstr ""
 "laget automatisk, dersom du går til \"Medlemsprofil\" etter at du har logget "
 "inn."
 
-#: includes/inc.config.php:258
+#: includes/inc.config.php:292
 msgid "Thank you for joining us."
 msgstr "Takk for at du ble med."
 
@@ -3634,9 +3644,9 @@ msgstr "Det oppstod en feil ved henting av ei kategorioppføring"
 #: classes/class.category.php:69 classes/class.category.php:83
 #: classes/class.category.php:129 classes/class.feedback.php:104
 #: classes/class.feedback.php:283 classes/class.listing.php:108
-#: classes/class.member.php:300 classes/class.member.php:323
-#: classes/class.member.php:359 classes/class.person.php:88
-#: classes/class.person.php:136 classes/class.person.php:156
+#: classes/class.member.php:305 classes/class.member.php:328
+#: classes/class.member.php:364 classes/class.person.php:90
+#: classes/class.person.php:140 classes/class.person.php:160
 #: classes/class.state_address.php:75 classes/class.state_address.php:93
 #: classes/class.state_address.php:124 classes/class.uploads.php:89
 msgid "Please try again later"
@@ -3709,20 +3719,20 @@ msgstr "Det oppstod en feil ved henting av oppføringa "
 msgid "listing for"
 msgstr "for"
 
-#: classes/class.listing.php:188
+#: classes/class.listing.php:187
 msgid "Could not inactivate listing"
 msgstr "Kunne ikke deaktivere oppføringa"
 
-#: classes/class.listing.php:205
+#: classes/class.listing.php:204
 msgid "Could not expire listing"
 msgstr "Kunne ikke markere oppføringa som utgått"
 
-#: classes/class.listing.php:334 classes/class.member.php:773
-#: classes/class.member.php:775
+#: classes/class.listing.php:333 classes/class.member.php:778
+#: classes/class.member.php:780
 msgid "No listings found."
 msgstr "Ingen oppføringer ble funnet."
 
-#: classes/class.member.php:105
+#: classes/class.member.php:108
 msgid ""
 "Your account has been locked due to too many unsuccessful login attempts. "
 "You will need to contact us to have your account unlocked."
@@ -3730,19 +3740,19 @@ msgstr ""
 "Kontoen din er blitt sperret på grunn av mange mislykkede innloggingsforsøk. "
 "Du må kontakte oss for å få hevet sperringa."
 
-#: classes/class.member.php:107
+#: classes/class.member.php:110
 msgid "Password or member id is incorrect.  Please try again, or go"
 msgstr "Passord eller brukernavn er feil. Vennligst prøv igjen, eller gå "
 
-#: classes/class.member.php:107
+#: classes/class.member.php:110
 msgid "to have your password reset"
 msgstr "for å nullstille passordet"
 
-#: classes/class.member.php:169
+#: classes/class.member.php:172
 msgid "There was an error updating the password."
 msgstr "Det oppstod en feil ved endring av passordet."
 
-#: classes/class.member.php:199
+#: classes/class.member.php:204
 msgid ""
 "If you don't have an account, you may <a href=/member_create.php>sign up "
 "online</a>."
@@ -3750,15 +3760,15 @@ msgstr ""
 "Har du ingen konto, kan du  <a href=/member_create.php>melde deg inn på "
 "nettet</a>."
 
-#: classes/class.member.php:199
+#: classes/class.member.php:204
 msgid "If you don't have an account, please contact us to join."
 msgstr "Har du ingen konto, vennligst kontakt oss for å melde deg inn."
 
-#: classes/class.member.php:206
+#: classes/class.member.php:211
 msgid "Logout"
 msgstr "Logg ut"
 
-#: classes/class.member.php:243
+#: classes/class.member.php:248
 msgid ""
 "I'm sorry, but the action attempted was unable to be processed because you "
 "don't have permissions"
@@ -3766,146 +3776,146 @@ msgstr ""
 "Jeg beklager, men handlinga du prøvde kunne ikke fullføres fordi du ikke har "
 "rettighetene som skal til"
 
-#: classes/class.member.php:243
+#: classes/class.member.php:248
 msgid "If you would like your access level increased, please"
 msgstr "Ønsker å få tilgangsnivået ditt hevet, vennligst"
 
-#: classes/class.member.php:243
+#: classes/class.member.php:248
 msgid "email the admin"
 msgstr "send e-post til administratoren"
 
-#: classes/class.member.php:243
+#: classes/class.member.php:248
 msgid "and ask"
 msgstr "og be om det"
 
-#: classes/class.member.php:300
+#: classes/class.member.php:305
 msgid "There was an error accessing this member"
 msgstr "Det oppstod en feil ved henting av medlemsopplysningene"
 
-#: classes/class.member.php:323
+#: classes/class.member.php:328
 msgid "There was an error accessing a person record for"
 msgstr "Det oppstod en feil ved henting av personopplysninger for"
 
-#: classes/class.member.php:333
+#: classes/class.member.php:338
 msgid "Member Data"
 msgstr "Medlemsopplysninger"
 
-#: classes/class.member.php:336
+#: classes/class.member.php:341
 msgid "Person Data"
 msgstr "Personopplysninger"
 
-#: classes/class.member.php:359
+#: classes/class.member.php:364
 msgid "Could not save changes to member"
 msgstr "Kunne ikke lagre endringer for medlemmet"
 
-#: classes/class.member.php:384
+#: classes/class.member.php:389
 msgid "Invalid person id in URL.  This break-in attempt has been reported."
 msgstr ""
 "Feil person-ID i URLen. Dette innbruddsforsøket har blitt meldt til "
 "administratoren."
 
-#: classes/class.member.php:426 classes/class.member.php:540
+#: classes/class.member.php:431 classes/class.member.php:545
 msgid "Fax"
 msgstr "Faks"
 
-#: classes/class.member.php:439 classes/class.member.php:575
+#: classes/class.member.php:444 classes/class.member.php:580
 msgid "'s Fax"
 msgstr "s faksnummer"
 
-#: classes/class.member.php:519
+#: classes/class.member.php:524
 msgid "Activity"
 msgstr "Aktivitet"
 
-#: classes/class.member.php:521
+#: classes/class.member.php:526
 msgid "No exchanges yet"
 msgstr "Ingen handler ennå"
 
-#: classes/class.member.php:523
+#: classes/class.member.php:528
 msgid "exchanges total"
 msgstr "handler totalt"
 
-#: classes/class.member.php:523
+#: classes/class.member.php:528
 msgid "for a sum of"
 msgstr "for til sammen"
 
-#: classes/class.member.php:523
+#: classes/class.member.php:528
 msgid "last on"
 msgstr "sist på"
 
-#: classes/class.member.php:527
+#: classes/class.member.php:532
 msgid "Feedback"
 msgstr "Tilbakemeldinger"
 
-#: classes/class.member.php:527
+#: classes/class.member.php:532
 msgid "total"
 msgstr "totalt"
 
-#: classes/class.member.php:527
+#: classes/class.member.php:532
 msgid "negative"
 msgstr "negative"
 
-#: classes/class.member.php:527
+#: classes/class.member.php:532
 msgid "neutral"
 msgstr "nøytrale"
 
-#: classes/class.member.php:531
+#: classes/class.member.php:536
 msgid "Joined"
 msgstr "Ble med"
 
-#: classes/class.member.php:567
+#: classes/class.member.php:572
 msgid "Joint Member"
 msgstr "Husstandsmedlem"
 
-#: classes/class.member.php:569
+#: classes/class.member.php:574
 msgid "'s Email"
 msgstr "s e-postadresse"
 
-#: classes/class.member.php:571
+#: classes/class.member.php:576
 msgid "'s Phone"
 msgstr "s telefonnummer"
 
-#: classes/class.member.php:573
+#: classes/class.member.php:578
 msgid "'s Secondary Phone"
 msgstr "s andre telefonnummer"
 
-#: classes/class.member.php:587
+#: classes/class.member.php:592
 msgid "PERSONAL INFORMATION"
 msgstr "PERSONOPPLYSNINGER"
 
-#: classes/class.member.php:589 classes/class.member.php:590
+#: classes/class.member.php:594 classes/class.member.php:595
 msgid "Unspecified"
 msgstr "Uspesifisert"
 
-#: classes/class.member.php:591
+#: classes/class.member.php:596
 msgid "No description supplied"
 msgstr "Ingen beskrivelse er oppgitt"
 
 # Number of search results
-#: classes/class.member.php:742
+#: classes/class.member.php:747
 msgid "matching members"
 msgstr "treff på medlemmer"
 
-#: classes/class.member.php:751
+#: classes/class.member.php:756
 msgid "Member search"
 msgstr "Medlemssøk"
 
-#: classes/class.member.php:783
+#: classes/class.member.php:788
 msgid "day"
 msgstr "dag"
 
-#: classes/class.member.php:791
+#: classes/class.member.php:796
 msgid "New and updated listings during the last"
 msgstr "Nye og oppdaterte oppføringer de siste"
 
-#: classes/class.member.php:822
+#: classes/class.member.php:827
 msgid "Important information about your"
 msgstr "Viktige opplysninger om din"
 
-#: classes/class.member.php:822
+#: classes/class.member.php:827
 msgid "account"
 msgstr "konto"
 
-#: classes/class.member.php:826
+#: classes/class.member.php:831
 msgid ""
 "***NOTE: This member does not have an email address in the system, so they "
 "will need to be notified by phone that their listings have been inactivated."
@@ -3913,11 +3923,11 @@ msgstr ""
 "***MERK: Dette medlemmet har ingen e-postadresse i systemet, så de må ringes "
 "opp og gjøres oppmerksom på at oppføringene har blitt deaktiverte."
 
-#: classes/class.member.php:830
+#: classes/class.member.php:835
 msgid "listings expired for"
 msgstr "oppføringer er utløpt for"
 
-#: classes/class.member.php:830
+#: classes/class.member.php:835
 msgid ""
 "All of this member's listings were automatically expired due to inactivity.  "
 "To turn off this feature, see inc.config.php."
@@ -3926,27 +3936,27 @@ msgstr ""
 "For å slå av denne funksjonen, vennligst see inc.config.php. "
 
 # "Balance" as in "account balance"
-#: classes/class.member.php:880
+#: classes/class.member.php:885
 msgid "Could not query database for balance information."
 msgstr "Kunne ikke spørre databasen etter saldoopplysninger."
 
-#: classes/class.member.php:921
+#: classes/class.member.php:926
 msgid "Error saving Income Share."
 msgstr "Det oppstod en feil ved lagring av inntektsfordeling."
 
-#: classes/class.member.php:923
+#: classes/class.member.php:928
 msgid "Income Share saved successfully."
 msgstr "Inntektsfordelinga er lagret."
 
-#: classes/class.member.php:932
+#: classes/class.member.php:937
 msgid "No Income Share to delete"
 msgstr "Det fines ingen inntektsfordelinger å slette"
 
-#: classes/class.member.php:940
+#: classes/class.member.php:945
 msgid "Error deleting income Share."
 msgstr "Det oppstod en feil ved sletting av inntektsfordelinga."
 
-#: classes/class.member.php:942
+#: classes/class.member.php:947
 msgid "Income Share deleted successfully."
 msgstr "Inntektsfordelinga ble slettet."
 
@@ -3967,11 +3977,11 @@ msgstr "Ved toppen av lista"
 msgid "After"
 msgstr "Etter"
 
-#: classes/class.page.php:104
+#: classes/class.page.php:126
 msgid "Printer Friendly View"
 msgstr "Utskriftsvennlig visning"
 
-#: classes/class.page.php:117
+#: classes/class.page.php:139
 msgid ""
 "DisplayPage() was called with no content included!  Was a blank page "
 "intended?"
@@ -3991,19 +4001,19 @@ msgstr ""
 "feilmeldinga etter å ha trykket \"Tilbake\", prøv å gå tilbake til menyen og "
 "prøv igjen."
 
-#: classes/class.person.php:88
+#: classes/class.person.php:90
 msgid "Could not save changes to"
 msgstr "Kunne ikke lagre endringene av"
 
-#: classes/class.person.php:136
+#: classes/class.person.php:140
 msgid "There was an error accessing this person"
 msgstr "Det oppstod en feil ved henting av denne personen"
 
-#: classes/class.person.php:145
+#: classes/class.person.php:149
 msgid "Cannot delete primary member"
 msgstr "Kan ikke slette primærmedlem"
 
-#: classes/class.person.php:194
+#: classes/class.person.php:198
 msgid "Phone type does not exist."
 msgstr "Telefontype finnes ikke."
 
@@ -4015,7 +4025,7 @@ msgstr "Det oppstod en feil under oppdatering!"
 msgid "Settings updated successfully."
 msgstr "Innstillingene ble oppdatert."
 
-#: classes/class.settings.php:134
+#: classes/class.settings.php:136
 msgid "Hours"
 msgstr "Timer"
 
@@ -4120,6 +4130,12 @@ msgstr "Kunne ikke slette fil"
 #: classes/class.uploads.php:138
 msgid "Upload"
 msgstr "Last opp"
+
+#~ msgid "local currency,lets,exchange,"
+#~ msgstr "lokal valuta,lets,handel,"
+
+#~ msgid "Learn More"
+#~ msgstr "Lær mer"
 
 #~ msgid "Create"
 #~ msgstr "Opprett"
