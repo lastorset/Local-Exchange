@@ -213,7 +213,9 @@ function process_data ($values) {
 				mail(EMAIL_ADMIN,
 					_("New member of "). SITE_SHORT_TITLE .": ". $values['first_name'] ." ". $values['mid_name'] ." ". $values['last_name'],
 					_("Member ID").": ". $values['member_id'] ."\n"
-					._("City").": ". $values['address_city']);
+					._("City").": ". $values['address_city']  ."\n\n"
+					._("Read more").": http://". SERVER_DOMAIN.SERVER_PATH_URL ."/member_summary.php?member_id=". $values['member_id']
+					);
 		}
 	} else {
 		$cErr->Error(_("There was an error saving the member.")." "._("Please try again later."));
