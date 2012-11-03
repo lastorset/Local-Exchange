@@ -195,6 +195,7 @@ SQL
 			$listings_wanted = getListings($listing_group);
 			$listings = array('offered' => $listings_offered, 'wanted' => $listings_wanted);
 
+			// TODO Skip New Member Fund etc.
 			if ($cUser->IsLoggedOn())
 				array_push($out, array(
 					'id' => $marker['member_id'],
