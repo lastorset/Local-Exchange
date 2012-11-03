@@ -203,11 +203,17 @@ function process_data ($values) {
 			$list .= $msg_no_email;
 			mail(EMAIL_ADMIN, _("Member created") .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM);
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM . (NEW_MEMBER_EMAIL_ADMIN ? "\r\nCc: ". EMAIL_ADMIN : "")); // added "From:" - by ejkv
+			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM); // added "From:" - by ejkv
 			if($mailed)
 				$list .= _("An email has been sent to")." '". $values["email"] ."' "._("containing the new user id and password").".";
 			else
 				$list .= _("An attempt to email the new member information failed.  This is most likely due to a technical problem.  You may want to contact your administrator at")." ". PHONE_ADMIN .". <I>"._("Since the email failed, the new member needs to be notified of the member id")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').</I>";	 
+
+			if (NEW_MEMBER_EMAIL_ADMIN)
+				mail(EMAIL_ADMIN,
+					_("New member of "). SITE_SHORT_TITLE .": ". $values['first_name'] ." ". $values['mid_name'] ." ". $values['last_name'],
+					_("Member ID").": ". $values['member_id'] ."\n"
+					._("City").": ". $values['address_city']);
 		}
 	} else {
 		$cErr->Error(_("There was an error saving the member.")." "._("Please try again later."));
