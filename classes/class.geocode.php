@@ -215,7 +215,6 @@ SQL
 					'latitude' => $marker['latitude'] + $obf * 0.005,
 					'longitude' => $marker['longitude'] + $obf * 0.005
 					));
-				error_log($marker['member_id'] ." obfuscation coefficient: ". $obf);
 			}
 		}
 		return $out;
