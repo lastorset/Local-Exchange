@@ -19,6 +19,11 @@ body {
 }
 
 table {  color: #909090}
+th {
+	font-size: small;
+	text-align: left;
+	background-color: #d8dbea;
+}
 a:active {  color: #909090}
 a:hover {  color: #6C81C6}
 a:link {

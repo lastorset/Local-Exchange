@@ -35,16 +35,17 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 
 // added _("State") column by ejkv
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
-  <TR BGCOLOR=\"#d8dbea\">
-    <TD><FONT SIZE=2><B>"._("Member")."</B></FONT></TD>
-    <TD><FONT SIZE=2><B>"._("Phone")."</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . _("Address Line 2") . "</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . _("City") . "</B></FONT></TD>
-	<TD><FONT SIZE=2><B>" . _("State") . "</B></FONT></TD>
-    <TD><FONT SIZE=2><B>" . _("Zip Code") . "</B></FONT></TD>";
+  <TR>
+    <TH>"._("Member")."</TH>
+    <TH>"._("Phone")."</TH>
+    <TH>" . _("Address Line 2") . "</TH>
+    <TH>" . _("City") . "</TH>
+    <TH>" . _("State") . "</TH>
+    <TH>" . _("Zip Code") . "</TH>
+";
 
 if (MEM_LIST_DISPLAY_BALANCE==true || $cUser->member_role >= 1)  {   
-	$output .= "<TD ALIGN=RIGHT><FONT SIZE=2><B>"._("Balance")."</B></FONT></TD>"; // added ALIGN=RIGHT by ejkv
+	$output .= "<TH ALIGN=RIGHT>"._("Balance")."</TH>"; // added ALIGN=RIGHT by ejkv
 
 }
 $output .= "</TR>";
@@ -170,16 +171,16 @@ if($member_list->members) {
 					   <TD><FONT SIZE=2>". $member->person[0]->address_street2 ."</FONT></TD>
 					   <TD><FONT SIZE=2>". $member->person[0]->address_city . "</FONT></TD>
 					   <TD><FONT SIZE=2>". $state_list[$member->person[0]->address_state_code] . "</FONT></TD>
-					   <TD><FONT SIZE=2>". $member->person[0]->address_post_code ."</FONT></TD>";				   
+					   <TD><FONT SIZE=2>". $member->person[0]->address_post_code ."</FONT></TD>";
 				
 				if (MEM_LIST_DISPLAY_BALANCE==true || $cUser->member_role >= 1)
 					$output .= "<TD ALIGN=RIGHT><FONT SIZE=2>". $member->balance ."</FONT></TD>"; // added ALIGN=RIGHT by ejkv
 					
 				$output .= "</TR>";
 				$i+=1;
-		 }
-	 } // end loop to force display of inactive members off
-}
+			}
+		} // end loop to force display of inactive members off
+	}
 } 
 
 // $output .= "</TABLE>";

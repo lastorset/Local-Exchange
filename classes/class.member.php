@@ -272,7 +272,12 @@ class cMember
 		// select all Member data and populate the properties
 		//
 		/*[chris] adjusted to retrieve 'confirm_payments' */
-		$query = $cDB->Query("SELECT member_id, password, member_role, security_q, security_a, status, member_note, admin_note, join_date, expire_date, away_date, account_type, email_updates, balance, confirm_payments, restriction FROM ".DATABASE_MEMBERS." WHERE member_id=". $cDB->EscTxt($member));
+		$query = $cDB->Query("SELECT member_id, password, member_role,
+				security_q, security_a, status, member_note, admin_note, join_date,
+				expire_date, away_date, account_type, email_updates, balance,
+				confirm_payments, restriction
+			FROM ".DATABASE_MEMBERS."
+			WHERE member_id=". $cDB->EscTxt($member));
 		
 		if($row = mysql_fetch_array($query))
 		{		
