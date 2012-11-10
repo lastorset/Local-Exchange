@@ -37,6 +37,7 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
   <TR>
     <TH>"._("Member")."</TH>
+    ". (GAME_MECHANICS ? "<TH>" . _("Karma") . "</TH>" : "") ."
     <TH>"._("Phone")."</TH>
     <TH>" . _("Address Line 2") . "</TH>
     <TH>" . _("City") . "</TH>
@@ -151,6 +152,7 @@ $state_list = $state->MakeStateArray(); // added by ejkv
 $state_list[0]="---"; // added by ejkv
 
 if($member_list->members) {
+	$karma_total = 0;
 
 	foreach($member_list->members as $member) {
 		// RF next condition is a hack to disable display of inactive members
@@ -162,11 +164,14 @@ if($member_list->members) {
 					$bgcolor = "#e4e9ea";
 				else
 					$bgcolor = "#FFFFFF";
-		
+
+				$karma = $member->GetKarma();
+
 				$output .= // added $state_list[$member->person[0]->address_state_code] by ejkv
 					"<TR VALIGN=TOP BGCOLOR=". $bgcolor .">
 					   <TD><FONT SIZE=2>". $member->AllNames()." (". $member->MemberLink() .")
 					       </FONT></TD>
+					   ". (GAME_MECHANICS ? "<TD><FONT SIZE=2>". $karma ."</FONT></TD>" : "") ."
 					   <TD><FONT SIZE=2>". $member->AllPhones() ."</FONT></TD>
 					   <TD><FONT SIZE=2>". $member->person[0]->address_street2 ."</FONT></TD>
 					   <TD><FONT SIZE=2>". $member->person[0]->address_city . "</FONT></TD>
@@ -178,6 +183,10 @@ if($member_list->members) {
 					
 				$output .= "</TR>";
 				$i+=1;
+				if ($karma) {
+					$karma_total += $karma;
+					$karma_n++;
+				}
 			}
 		} // end loop to force display of inactive members off
 	}
@@ -185,7 +194,11 @@ if($member_list->members) {
 
 // $output .= "</TABLE>";
 // RF display active accounts 
-$output .= "<TR><TD colspan=5><br><br>"._("Total of")." ".$i." "._("active accounts").".</TD></TR></TABLE>";
+$output .= "<TR><TD colspan=5><br><br>".
+	(GAME_MECHANICS
+		? sprintf(_('Total of %1$d active accounts. %2$d accounts have a total of %3$d karma.'), $i, $karma_n, $karma_total)
+		: sprintf(_('Total of %1$d active accounts.'), $i))
+	."</TD></TR></TABLE>";
 
 $p->DisplayPage($output); 
 

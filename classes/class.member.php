@@ -28,6 +28,8 @@ class cMember
 	var $account_type; ///< O: system, S: Single, J: Joint, H: Household, O: Organization, B: Business, F: Fund
 	var $email_updates;
 	var $balance;
+	var $sent;
+	var $received;
 	var $restriction;
 
 	function cMember($values=null) {
@@ -276,7 +278,11 @@ class cMember
 				security_q, security_a, status, member_note, admin_note, join_date,
 				expire_date, away_date, account_type, email_updates, balance,
 				confirm_payments, restriction
+				". (GAME_MECHANICS ? ", t_from.sent, t_to.received" : "") ."
 			FROM ".DATABASE_MEMBERS."
+				". (GAME_MECHANICS ? ",
+				(SELECT SUM(amount) AS sent FROM ".DATABASE_TRADES." WHERE member_id_from = ". $cDB->EscTxt($member) ." AND type NOT IN ('M', 'N') AND status NOT IN ('M', 'N')) AS t_from,
+				(SELECT SUM(amount) AS received FROM ".DATABASE_TRADES." WHERE member_id_to = ". $cDB->EscTxt($member) ." AND type NOT IN ('M', 'N') AND status NOT IN ('M', 'N')) AS t_to" : "" ) ."
 			WHERE member_id=". $cDB->EscTxt($member));
 		
 		if($row = mysql_fetch_array($query))
@@ -295,6 +301,11 @@ class cMember
 			$this->account_type=$row[11];
 			$this->email_updates=$row[12];
 			$this->balance=$row[13];
+			if (GAME_MECHANICS)
+			{
+				$this->sent=$row[16];
+				$this->received=$row[17];
+			}
 			
 			// [chris]		
 			$this->confirm_payments=$row[14];
@@ -652,6 +663,17 @@ class cMember
 
 		return $last_update->DaysAgo();
 	}	
+
+	/** Returns min(hours sent, hours received) */
+	function GetKarma() {
+		if (!GAME_MECHANICS || $this->sent < 1 || $this->received < 1)
+			return null;
+
+		if ($this->sent > $this->received)
+			return (int) $this->received;
+		else
+			return (int) $this->sent;
+	}
 }
 
 class cMemberGroup {

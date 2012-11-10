@@ -144,6 +144,9 @@ define("CKEDITOR", false);
 // Path of CKEditor, relative to web server root, without a trailing slash.
 define("CKEDITOR_PATH", "ckeditor");
 
+// Use game mechanics? This shows "karma points" – the lesser number of hours given and received - at various points in the UI.
+define("GAME_MECHANICS", true);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 
