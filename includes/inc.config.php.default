@@ -136,7 +136,7 @@ define("SELF_REGISTRATION", false);
 // Require self-registering users to provide an e-mail address?
 define("REQUIRE_EMAIL", true);
 
-// Send administrator a copy of the welcome e-mail?
+// Notify administrator of new members?
 define("NEW_MEMBER_EMAIL_ADMIN", true);
 
 // Use CKEditor to edit info pages?
