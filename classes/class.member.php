@@ -25,7 +25,7 @@ class cMember
 	var $join_date;
 	var $expire_date;
 	var $away_date;
-	var $account_type;
+	var $account_type; ///< O: system, S: Single, J: Joint, H: Household, O: Organization, B: Business, F: Fund
 	var $email_updates;
 	var $balance;
 	var $restriction;

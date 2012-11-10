@@ -11,13 +11,13 @@ include_once("class.feedback.php");
 class cTrade {
 	var $trade_id;
 	var $trade_date;
-	var $status;
+	var $status;		///< 'V' for valid, 'R' for reversed
 	var $member_from;
 	var $member_to;
 	var $amount;
 	var $category;		// this will be an object of class cCategory
 	var $description;
-	var $type;
+	var $type;			// One of the constants listed in inc.global.php (starting from "TRADE" in that file)
 	var $feedback_buyer;	// added after trade completed; object of type cFeedback
 	var $feedback_seller; // added after trade completed; object of type cFeedback
 
