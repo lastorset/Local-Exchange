@@ -89,6 +89,7 @@ session_start();
 // Translation is required to read config file
 include_once("inc.translation.php");
 include_once("inc.config.php");
+include_once("inc.feature-defaults.php");
 
 include_once(CLASSES_PATH ."class.datetime.php");
 include_once(CLASSES_PATH ."class.error.php");
