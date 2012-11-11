@@ -61,10 +61,16 @@ class cPage {
 	<BODY>
 HTML;
 		
-		$output .= $this->MakeLanguageSelector();
+		$output .= $this->MakeUserControls();
 		$output .= $this->page_header ;
 	
 		return $output;
+	}
+
+	/** Generate the language selector and karma indicator. */
+	function MakeUserControls() {
+		$lang_selector = $this->MakeLanguageSelector();
+		return "<header id=user-controls>$lang_selector</header>";
 	}
 
 	function MakeLanguageSelector() {

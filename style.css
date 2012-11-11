@@ -11,11 +11,17 @@ body {
 	margin-left: 3%;
 }
 
-#language-selector {
-	width: 85%;
+header#user-controls {
+	display: block;
 	text-align: right;
 	margin-left: auto;
 	margin-right: auto;
+	width: 85%;
+}
+
+#language-selector {
+	text-align: right;
+	display: inline-block;
 }
 
 table {  color: #909090}
