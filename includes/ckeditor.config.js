@@ -18,4 +18,5 @@ CKEDITOR.editorConfig = function( config )
 		{ name: 'insert',      items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
 		{ name: 'tools',       items : [ 'Maximize', 'ShowBlocks','-','About' ] }
 	];
+	config.contentsCss = '../style.css';
 };
