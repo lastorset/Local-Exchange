@@ -167,6 +167,10 @@ if($member_list->members) {
 
 				$karma = $member->GetKarma();
 
+				if ($karma == 0)
+					// Don't fill in the column at all if it's zero. This way active users stand out.
+					$karma = null;
+
 				$output .= // added $state_list[$member->person[0]->address_state_code] by ejkv
 					"<TR VALIGN=TOP BGCOLOR=". $bgcolor .">
 					   <TD><FONT SIZE=2>". $member->AllNames()." (". $member->MemberLink() .")

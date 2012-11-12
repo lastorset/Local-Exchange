@@ -666,7 +666,7 @@ class cMember
 
 	/** Returns min(hours sent, hours received) */
 	function GetKarma() {
-		if (!GAME_MECHANICS || $this->sent < 1 || $this->received < 1)
+		if (!GAME_MECHANICS)
 			return null;
 
 		if ($this->sent > $this->received)
