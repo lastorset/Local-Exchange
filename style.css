@@ -49,6 +49,10 @@ header#user-controls > * {
 	text-decoration: underline;
 }
 
+.member-info .karma-indicator {
+	margin-top: 1em;
+}
+
 small {
 	font-size: smaller;
 }

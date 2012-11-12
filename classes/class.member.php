@@ -531,8 +531,9 @@ class cMember
 
 		/*[CDM] Added in image, placed all this in 2 column table, looks tidier */
 
-		global $cDB,$agesArr,$sexArr,$site_settings;
+		global $cDB,$agesArr,$sexArr,$site_settings,$p;
 
+		$output .= "<div class=member-info>";
 		$output .= "<table width=100%><tr valign=top><td width=50%>";
 
 		$output .= "<STRONG>"._("Member").":</STRONG> ". $this->PrimaryName() . " (". $this->MemberLink().")"."<BR>";
@@ -601,6 +602,8 @@ class cMember
 
 		$output .= cMember::DisplayMemberImg($this->member_id);
 
+		$output .= $p->MakeKarmaIndicator($this);
+
 		$output .= "</td></tr></table>";
 
 		if (SOC_NETWORK_FIELDS==true) {
@@ -617,6 +620,8 @@ class cMember
 
 			$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
 		}
+
+		$output .= "</div>"; // class=member-info
 
 		return $output;
 	}

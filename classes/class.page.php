@@ -74,26 +74,40 @@ HTML;
 		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
 	}
 
-	function MakeKarmaIndicator() {
+	/** Generates an indicator of karma and balance.
+
+		$param member_name the member whose karma we are showing, or null if it's the logged-on user. */
+	function MakeKarmaIndicator($member=null) {
 		global $cUser;
 		if (!$cUser->IsLoggedOn())
 			return "";
 
-		$balance = $cUser->balance;
+		if (!$member)
+			$member = $cUser;
+
+		$balance = $member->balance;
 		$balance_text = sprintf("%+.2f", $balance);
 
-		$karma_help = _("These are your Karma points. They reflect how much you've spent and received in the LETS.");
-		$balance_help = _("This is your account balance.")." ";
-		if ($balance > 0)
-			$balance_help .= _("Spend some of it to gain Karma points!");
-		else if ($balance < 0)
-			$balance_help .= _("Do something for others to gain Karma points!");
+		if ($cUser == $member) {
+			$karma_help = _("These are your Karma points. They reflect how active you've been in the LETS, both in spending and receiving.");
+			$balance_help = _("This is your account balance.")." ";
+			if ($balance > 0)
+				$balance_help .= _("Spend some of it to gain Karma points!");
+			else if ($balance < 0)
+				$balance_help .= _("Do something for others to gain Karma points!");
+		}
+		else {
+			// Translation hint: The first name of another member. Gender information is not available.
+			$karma_help = sprintf(_("These are %s's Karma points. They reflect how active the member has been in the LETS, both in spending and receiving."), $member->person[0]->first_name);
+			// Translation hint: The first name of another member. Gender information is not available.
+			$balance_help = sprintf(_("This is %s's account balance."), $member->person[0]->first_name);
+		}
 
 		$c = get_defined_constants();
 		return <<<HTML
 <div class=karma-indicator>
 	<a href=//{$c['HTTP_BASE']}/karma_explanation.php>
-	<span class=karma title="$karma_help">{$cUser->GetKarma()}</span>
+	<span class=karma title="$karma_help">{$member->GetKarma()}</span>
 	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
 	<span class=balance title="$balance_help">$balance_text</span>
 	<small>What's this?</small></a>
