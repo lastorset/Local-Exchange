@@ -200,6 +200,7 @@ if($member_list->members) {
 // RF display active accounts 
 $output .= "<TR><TD colspan=5><br><br>".
 	(GAME_MECHANICS
+		// Translation hint: All placeholders are numbers.
 		? sprintf(_('Total of %1$d active accounts. %2$d accounts have a total of %3$d karma.'), $i, $karma_n, $karma_total)
 		: sprintf(_('Total of %1$d active accounts.'), $i))
 	."</TD></TR></TABLE>";

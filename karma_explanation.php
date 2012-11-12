@@ -11,9 +11,10 @@ print $p->MakePageTitle();
 $balance = $cUser->balance;
 $balance_text = sprintf("%+.2f", $balance);
 if ($balance > 0)
+	// Translation hint: "it" refers to the member's account balance.
 	$balance_hint .= _("Spend some of it to gain Karma points!");
 else if ($balance < 0)
-	$balance_hint .= _("Do something for others to gain Karma points!");
+	$balance_hint .= _("Do something for other members to gain Karma points!");
 
 $c = get_defined_constants();
 print <<<HTML
@@ -39,9 +40,9 @@ print <<<HTML
 			<th>
 				Explanation
 			<td class=karma>
-				{$_("These are your Karma points. They reflect your activity in the system, and the equilibrium between how much you have done for others and how much others have done for you.")}
+				{$_("These are your Karma points. They reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you.")}
 			<td>
-				{$_("This is your account balance. It shows how many ". $site_settings->getUnitString() ." you have received minus what you have sent.")} <strong>$balance_hint</strong>
+				{$_("This is your account balance. It shows how many ". $site_settings->getUnitString() ." you have earned minus what you have spent.")} <strong>$balance_hint</strong>
 	</table>
 </article>
 HTML;
