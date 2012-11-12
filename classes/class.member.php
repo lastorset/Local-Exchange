@@ -526,15 +526,15 @@ class cMember
 		else
 			return 	"<img src='".DEFAULT_PHOTO."'><BR>"; // in case no member-photo uploaded, use default - added by ejkv
 	}
-	
+
 	function DisplayMember () {
-		
+
 		/*[CDM] Added in image, placed all this in 2 column table, looks tidier */
-		
+
 		global $cDB,$agesArr,$sexArr,$site_settings;
-		
+
 		$output .= "<table width=100%><tr valign=top><td width=50%>";
-		
+
 		$output .= "<STRONG>"._("Member").":</STRONG> ". $this->PrimaryName() . " (". $this->MemberLink().")"."<BR>";
 		$stats = new cTradeStats($this->member_id);
 		$output .= "<STRONG>"._("Activity").":</STRONG> ";
@@ -575,7 +575,7 @@ class cMember
 			$states = new cStateList; // added by ejkv
 			$state_list = $states->MakeStateArray(); // added by ejkv
 			$state_list[0]="---"; // added by ejkv
-	
+
             $output .= "<STRONG>" . _("State") . ": </STRONG>" .
                            $state_list[$this->person[0]->address_state_code] . "<BR>";
         } // added address state code by ejkv
@@ -583,7 +583,7 @@ class cMember
 		foreach($this->person as $person) {
 			if($person->primary_member == "Y")
 				continue;	// Skip the primary member, since we already displayed above
-		
+
 			if($person->directory_list == "Y") {
 				$output .= "<BR><STRONG>"._("Joint Member").":</STRONG> ". $person->first_name ." ". $person->mid_name ." ". $person->last_name ."<BR>"; // added mid_name by ejkv
 				if($person->email != "")
@@ -595,32 +595,32 @@ class cMember
 				if($person->fax_number != "")
 				$output .= "<STRONG>". $person->first_name ._("'s Fax").":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";
 			}
-		}		
-	
-	$output .= "</td><td width=50% align=center>";
-		
-	$output .= cMember::DisplayMemberImg($this->member_id);	
-		
-	$output .= "</td></tr></table>";
-	
-	if (SOC_NETWORK_FIELDS==true) {
-	
-		$output .= "<p><STRONG><I>"._("PERSONAL INFORMATION")."</I></STRONG><P>";
-		
-		$pAge = (strlen($this->person[0]->age)<1) ? _("Unspecified") : $agesArr[$this->person[0]->age];
-		$pSex = (!$this->person[0]->sex) ? _("Unspecified") : $sexArr[$this->person[0]->sex];
-		$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'._("No description supplied").'.</em>' : stripslashes($this->person[0]->about_me);
-		
-		$output .= "<STRONG>"._("Age").":</STRONG> ".$pAge."<br>";
-		
-		$output .= "<STRONG>"._("Sex").":</STRONG> ".$pSex."<p>";
-		
-		$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
+		}
+
+		$output .= "</td><td width=50% align=center>";
+
+		$output .= cMember::DisplayMemberImg($this->member_id);
+
+		$output .= "</td></tr></table>";
+
+		if (SOC_NETWORK_FIELDS==true) {
+
+			$output .= "<p><STRONG><I>"._("PERSONAL INFORMATION")."</I></STRONG><P>";
+
+			$pAge = (strlen($this->person[0]->age)<1) ? _("Unspecified") : $agesArr[$this->person[0]->age];
+			$pSex = (!$this->person[0]->sex) ? _("Unspecified") : $sexArr[$this->person[0]->sex];
+			$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'._("No description supplied").'.</em>' : stripslashes($this->person[0]->about_me);
+
+			$output .= "<STRONG>"._("Age").":</STRONG> ".$pAge."<br>";
+
+			$output .= "<STRONG>"._("Sex").":</STRONG> ".$pSex."<p>";
+
+			$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
+		}
+
+		return $output;
 	}
 
-	return $output;	
-	}
-	
 	function MakeJointMemberArray() {
 		global $cDB;
 		
