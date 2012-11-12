@@ -53,6 +53,48 @@ small {
 	font-size: smaller;
 }
 
+table#karma-explanation {
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	border-collapse: separate;
+	border-spacing: 1em 0;
+}
+
+table#karma-explanation td {
+	vertical-align: top;
+}
+
+table#karma-explanation td.picture {
+	width: 20%;
+	background-image: url(images/handshake-color.svgz);
+	background-repeat: no-repeat;
+	background-position: 0 0.2em;
+	background-size: 100%;
+}
+
+table#karma-explanation td.karma,
+table#karma-explanation td.balance {
+	width: 30%;
+}
+
+table#karma-explanation tr.main-numbers td {
+	font-family: Droid Serif, serif;
+	font-size: 500%;
+}
+
+table#karma-explanation td.karma {
+	text-align: right;
+}
+
+table#karma-explanation tr.exposition td {
+	text-align: justify;
+}
+
+table#karma-explanation th {
+	display: none; /* Only for accessibility purposes */
+}
+
 table {  color: #909090}
 th {
 	font-size: small;

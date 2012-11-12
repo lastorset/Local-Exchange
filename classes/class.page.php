@@ -92,7 +92,7 @@ HTML;
 		$c = get_defined_constants();
 		return <<<HTML
 <div class=karma-indicator>
-	<a href=karma_explanation.html>
+	<a href=//{$c['HTTP_BASE']}/karma_explanation.php>
 	<span class=karma title="$karma_help">{$cUser->GetKarma()}</span>
 	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
 	<span class=balance title="$balance_help">$balance_text</span>
