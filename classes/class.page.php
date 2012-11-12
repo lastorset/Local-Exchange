@@ -70,7 +70,35 @@ HTML;
 	/** Generate the language selector and karma indicator. */
 	function MakeUserControls() {
 		$lang_selector = $this->MakeLanguageSelector();
-		return "<header id=user-controls>$lang_selector</header>";
+		$karma_indicator = $this->MakeKarmaIndicator();
+		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
+	}
+
+	function MakeKarmaIndicator() {
+		global $cUser;
+		if (!$cUser->IsLoggedOn())
+			return "";
+
+		$balance = $cUser->balance;
+		$balance_text = sprintf("%+.2f", $balance);
+
+		$karma_help = _("These are your Karma points. They reflect how much you've spent and received in the LETS.");
+		$balance_help = _("This is your account balance.")." ";
+		if ($balance > 0)
+			$balance_help .= _("Spend some of it to gain Karma points!");
+		else if ($balance < 0)
+			$balance_help .= _("Do something for others to gain Karma points!");
+
+		$c = get_defined_constants();
+		return <<<HTML
+<div class=karma-indicator>
+	<a href=karma_explanation.html>
+	<span class=karma title="$karma_help">{$cUser->GetKarma()}</span>
+	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
+	<span class=balance title="$balance_help">$balance_text</span>
+	<small>What's this?</small></a>
+</div>
+HTML;
 	}
 
 	function MakeLanguageSelector() {

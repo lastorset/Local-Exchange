@@ -19,9 +19,38 @@ header#user-controls {
 	width: 85%;
 }
 
-#language-selector {
+header#user-controls > * {
 	text-align: right;
 	display: inline-block;
+	margin-left: 1em;
+}
+
+.karma-indicator span {
+	font-size: 125%;
+	font-family: Droid serif, serif;
+	height: 1em;
+}
+
+.karma-indicator img {
+	height: 2em;
+	vertical-align: text-top;
+	width: auto;
+}
+
+.karma-indicator a,
+.karma-indicator a:visited {
+	color: black;
+	text-transform: lowercase;
+	text-decoration: none;
+}
+
+.karma-indicator a:hover > * {
+	color: black;
+	text-decoration: underline;
+}
+
+small {
+	font-size: smaller;
 }
 
 table {  color: #909090}
