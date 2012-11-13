@@ -43,7 +43,11 @@ if (GAME_MECHANICS) {
 					<td class=karma>
 						{$_("These are your Karma points. They reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you.")}
 					<td>
-						{$_("This is your account balance. It shows how many ". $site_settings->getUnitString() ." you have earned minus what you have spent.")} <strong>$balance_hint</strong>
+HTML;
+						// Translation hint: %s is the currency name, which may be "hours".
+						printf(_("This is your account balance. It shows how many %s you have earned minus what you have spent."), $site_settings->getUnitString());
+					print <<<HTML
+						<strong>$balance_hint</strong>
 			</table>
 		</article>
 HTML;
