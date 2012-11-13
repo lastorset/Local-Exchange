@@ -62,6 +62,12 @@ if (GAME_MECHANICS) {
 	// Find out how wide the largest addend (earned/spent figure) is.
 	$addend_width = max(strlen($earned_text), strlen($spent_text));
 
+	/* The calculation below is intended to be nicely aligned, like so:
+		Earned     7.00
+		Spent   − 10.00
+		‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+		−   3  .  0   0  (large)
+	*/
 	$c = get_defined_constants();
 	print <<<HTML
 		<article class=karma-explanation>
