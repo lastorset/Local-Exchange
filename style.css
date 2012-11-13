@@ -82,9 +82,15 @@ table#karma-explanation td.balance {
 	width: 30%;
 }
 
-table#karma-explanation tr.main-numbers td {
+table#karma-explanation tr.main-numbers td,
+table#karma-explanation tr.calculation td {
 	font-family: Droid Serif, serif;
-	font-size: 500%;
+}
+
+table#karma-explanation tr.main-numbers td,
+table#karma-explanation tr.calculation table {
+	font-size: 80px; /* For UAs that don't support 'rem' */
+	font-size: 5rem;
 }
 
 table#karma-explanation td.karma {
@@ -93,6 +99,29 @@ table#karma-explanation td.karma {
 
 table#karma-explanation tr.exposition td {
 	text-align: justify;
+}
+
+table#karma-explanation tr.calculation table {
+	border-collapse: collapse;
+	border-bottom: 1px solid black;
+	color: black;
+	margin-bottom: 16px; /* For UAs that don't support 'rem' */
+	margin-bottom: 1rem;
+	table-layout: fixed;
+}
+
+table#karma-explanation tr.calculation table * {
+	font-size: large;
+}
+
+table#karma-explanation tr.calculation table td:first-child {
+	text-align: left;
+}
+
+table#karma-explanation tr.calculation table td:nth-child(2),
+table#karma-explanation tr.calculation table td:nth-child(3) {
+	text-align: right;
+	white-space: pre;
 }
 
 table#karma-explanation th {

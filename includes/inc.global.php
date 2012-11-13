@@ -8,6 +8,8 @@ need to be edited for site installation, and in fact should
 only be modified with care.
 ************************************************************/
 
+mb_internal_encoding("utf-8");
+
 /*********************************************************/
 /******************* GLOBAL CONSTANTS ********************/
 
