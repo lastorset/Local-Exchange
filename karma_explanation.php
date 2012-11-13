@@ -48,9 +48,9 @@ if (GAME_MECHANICS) {
 	else {
 		// "John Doe's", "the member's", "they"
 		// Translation hint: %s is a member's name.
-		$karma_help = sprintf(_("These are %s's Karma points. They reflect the member's activity in the LETS system, and the equilibrium between how much they have done for others and how much others have done for them."), $member->PrimaryName());
+		$karma_help = sprintf(_("These are %s's Karma points. They reflect the member's activity in the LETS system, and the equilibrium between how much they have done for others and how much others have done for them."), "<a href=//". HTTP_BASE ."/member_summary.php?member_id={$member->member_id}>{$member->PrimaryName()}</a>");
 		// Translation hint: %1$s is a member's name. %2$s is the currency name, which may be "hours".
-		$balance_help = sprintf(_('This is %1$s\'s account balance. It shows how many %2$s the member has earned minus what they have spent.'), $member->PrimaryName(), $site_settings->getUnitString());
+		$balance_help = sprintf(_('This is %1$s\'s account balance. It shows how many %2$s the member has earned minus what they have spent.'), $member->person[0]->first_name, $site_settings->getUnitString());
 		$balance_hint = "";
 	}
 
