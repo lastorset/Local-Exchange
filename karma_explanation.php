@@ -25,8 +25,8 @@ if (GAME_MECHANICS) {
 		// Mock user
 		$member = new cMember();
 		$member->balance
-			= $member->sent
-			= $member->received
+			= $member->spent
+			= $member->earned
 			= 0;
 	}
 
@@ -56,11 +56,11 @@ if (GAME_MECHANICS) {
 
 	// mb_strlen is necessary since we use a double-byte minus sign.
 	$calculation_width = mb_strlen($balance_text) - .3;
-	$received_text = sprintf("%.2f", $member->received);
-	$sent_text = sprintf("%.2f", $member->sent);
+	$earned_text = sprintf("%.2f", $member->earned);
+	$spent_text = sprintf("%.2f", $member->spent);
 
 	// Find out how wide the largest addend (earned/spent figure) is.
-	$addend_width = max(strlen($received_text), strlen($sent_text));
+	$addend_width = max(strlen($earned_text), strlen($spent_text));
 
 	$c = get_defined_constants();
 	print <<<HTML
@@ -80,9 +80,9 @@ if (GAME_MECHANICS) {
 					<td>
 						<table style="width: {$calculation_width}ex;">
 							<tr>
-								<td>{$_("Earned")}<td/><td style="width: {$addend_width}ex">{$received_text}</td>
+								<td>{$_("Earned")}<td/><td style="width: {$addend_width}ex">{$earned_text}</td>
 							<tr>
-								<td>{$_("Spent")}<td> − <td>{$sent_text}</td>
+								<td>{$_("Spent")}<td> − <td>{$spent_text}</td>
 						</table>
 
 				<tr class=main-numbers>
