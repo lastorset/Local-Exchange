@@ -78,7 +78,7 @@ HTML;
 
 		$param member_name the member whose karma we are showing, or null if it's the logged-on user. */
 	function MakeKarmaIndicator($member=null) {
-		global $cUser;
+		global $cUser, $_;
 		if (!$cUser->IsLoggedOn() || !GAME_MECHANICS)
 			return "";
 
@@ -111,7 +111,7 @@ HTML;
 	<span class=karma title="$karma_help">{$member->GetKarma()}</span>
 	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
 	<span class=balance title="$balance_help">$balance_text</span>
-	<small>What's this?</small></a>
+	<small>{$_("What's this?")}</small></a>
 </div>
 HTML;
 	}

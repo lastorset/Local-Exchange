@@ -13,7 +13,7 @@ if (GAME_MECHANICS) {
 	$balance_text = sprintf("%+.2f", $balance);
 	if ($balance > 0)
 		// Translation hint: "it" refers to the member's account balance.
-		$balance_hint .= _("Spend some of it to gain Karma points!");
+		$balance_hint .= _("Spend some of them to gain Karma points!");
 	else if ($balance < 0)
 		$balance_hint .= _("Do something for other members to gain Karma points!");
 
