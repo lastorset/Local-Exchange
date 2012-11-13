@@ -74,12 +74,12 @@ HTML;
 		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
 	}
 
-	/** Generates an indicator of karma and balance.
+	/** Generates an indicator of karma and balance. If GAME_MECHANICS is disabled, returns null.
 
 		$param member_name the member whose karma we are showing, or null if it's the logged-on user. */
 	function MakeKarmaIndicator($member=null) {
 		global $cUser;
-		if (!$cUser->IsLoggedOn())
+		if (!$cUser->IsLoggedOn() || !GAME_MECHANICS)
 			return "";
 
 		if (!$member)
