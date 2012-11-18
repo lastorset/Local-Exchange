@@ -56,6 +56,10 @@ class cPage {
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<meta name="description" content="{$this->page_title}">
 		<meta name="keywords" content="{$this->keywords}">
+		<meta property="og:title" content='{$c['SITE_LONG_TITLE']}' />
+		<meta property="og:type" content='website' />
+		<meta property="og:description" content='{$c['SITE_TOP_TAGLINE']}' />
+		<meta property="og:url" content='http://{$c['HTTP_BASE']}' />
 		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
 	</HEAD>
 	<BODY>
