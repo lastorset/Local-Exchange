@@ -75,13 +75,13 @@ if (GAME_MECHANICS) {
 				<tr>
 					<th/>
 					<th>
-						Karma points
+						{$_("Karma points")}
 					<th/>
 					<th>
-						Balance
+						{$_("Balance")}
 				<tr class=calculation>
 					<th>
-						Calculation
+						{$_("Calculation")}
 					<td colspan=2 />
 					<td>
 						<table style="width: {$calculation_width}ex;">
@@ -93,7 +93,7 @@ if (GAME_MECHANICS) {
 
 				<tr class=main-numbers>
 					<th>
-						Numbers
+						{$_("Numbers")}
 					<td class=karma>
 						{$member->GetKarma()}
 					<td rowspan=2 class=picture />
@@ -102,7 +102,7 @@ if (GAME_MECHANICS) {
 						{$balance_text}
 				<tr class=exposition>
 					<th>
-						Explanation
+						{$_("Explanation")}
 					<td class=karma>
 						$karma_help
 					<td>
