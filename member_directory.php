@@ -138,8 +138,8 @@ if ($_REQUEST["uLoc"]) // We're searching for a specific Location in the SQL
 $c = get_defined_constants();
 $query = $cDB->Query("
 	SELECT {$c['DATABASE_MEMBERS']}.member_id
-	FROM {$c['DATABASE_MEMBERS']}, {$c['DATABASE_PERSONS']}
-	WHERE ". DATABASE_MEMBERS .".member_id=". DATABASE_PERSONS.".member_id AND primary_member='Y'
+	FROM {$c['DATABASE_MEMBERS']} NATURAL JOIN {$c['DATABASE_PERSONS']}
+	WHERE primary_member='Y'
 		$condition
 		$orderBy;
 ");
