@@ -23,6 +23,9 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 // added 'addr2' for address_street2 - by ejkv
 	$output .= "<br>"._("Order by").": <select name='orderBy'>
 		<option value='idA' ".$orderBySel["idA"].">"._("Membership No.")."</option>
+		". (GAME_MECHANICS ? "
+		<option value='k' ".$orderBySel["k"].">"._("Karma points")."</option>
+		" : "") ."
 		<option value='fl' ".$orderBySel["fl"].">"._("First Name")."</option>
 		<option value='lf' ".$orderBySel["lf"].">"._("Last Name")."</option>
 		<option value='nh' ".$orderBySel["nh"].">"._("Neighbourhood")."</option>
@@ -88,6 +91,12 @@ switch($_REQUEST["orderBy"]) {
 		$orderBy = 'ORDER BY last_name, first_name';
 	break;
 	
+	case("k"):
+		$orderBy = 'ORDER BY karma DESC';
+		if (GAME_MECHANICS)
+			break;
+		// else: fall through
+	
 	default:
 		$orderBy = 'ORDER BY member_id asc';
 	break;
@@ -139,6 +148,7 @@ $c = get_defined_constants();
 $query = $cDB->Query("
 	SELECT {$c['DATABASE_MEMBERS']}.member_id
 	FROM {$c['DATABASE_MEMBERS']} NATURAL JOIN {$c['DATABASE_PERSONS']}
+	". (GAME_MECHANICS ? "NATURAL LEFT JOIN karma" : "") ."
 	WHERE primary_member='Y'
 		$condition
 		$orderBy;
