@@ -135,7 +135,15 @@ if ($_REQUEST["uLoc"]) // We're searching for a specific Location in the SQL
 //ECHO "SELECT ".DATABASE_MEMBERS.".member_id FROM ". DATABASE_MEMBERS .",". DATABASE_PERSONS." WHERE ". DATABASE_MEMBERS .".member_id=". DATABASE_PERSONS.".member_id AND primary_member='Y' ".$condition." $orderBy";
 
 // Do search in SQL
-$query = $cDB->Query("SELECT ".DATABASE_MEMBERS.".member_id FROM ". DATABASE_MEMBERS .",". DATABASE_PERSONS." WHERE ". DATABASE_MEMBERS .".member_id=". DATABASE_PERSONS.".member_id AND primary_member='Y' ".$condition." $orderBy;");
+$c = get_defined_constants();
+$query = $cDB->Query("
+	SELECT {$c['DATABASE_MEMBERS']}.member_id
+	FROM {$c['DATABASE_MEMBERS']}, {$c['DATABASE_PERSONS']}
+	WHERE ". DATABASE_MEMBERS .".member_id=". DATABASE_PERSONS.".member_id AND primary_member='Y'
+		$condition
+		$orderBy;
+");
+
 		
 $i=0;
 
