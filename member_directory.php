@@ -40,7 +40,7 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
   <TR>
     <TH>"._("Member")."</TH>
-    ". (GAME_MECHANICS ? "<TH>" . _("Karma") . "</TH>" : "") ."
+    ". (GAME_MECHANICS ? "<TH title='"._("Karma points reflect how active the member has been in the LETS system, both in earning and spending.")."'>" . _("Karma") . "</TH>" : "") ."
     <TH>"._("Phone")."</TH>
     <TH>" . _("Address Line 2") . "</TH>
     <TH>" . _("City") . "</TH>
