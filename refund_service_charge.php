@@ -60,6 +60,7 @@ function select_time()
         return _("No service charges found.");
     }
 
+	global $_;
     $html = <<<ENDHTML
         <form method="GET" action="">
           <input type="hidden" name="CID" value="$ts" />
@@ -67,7 +68,7 @@ function select_time()
             $selection_list
           </select>
 
-          <input type="submit" value=_("Refund") />
+          <input type="submit" value={$_("Refund")} />
         </form>
 ENDHTML;
 
@@ -96,20 +97,21 @@ function confirmation($cid, $selected_time)
     }
 
     $ts = time();
+	global $_;
     $html = <<<ENDHTML
-        _("You are about to refund the service charge taken on")
+		{$_("You are about to refund the service charge taken on")}
         <em>$selected_time</em>.
 
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
           <input type="hidden" name="trade_time" value="$selected_time">
-          <input type="submit" value=_("Refund now") />
+          <input type="submit" value={$_("Refund now")} />
         </form>
 
         <p><strong>Or</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=_("Cancel") />
+          <input type="submit" value={$_("Cancel")} />
         </form>
 ENDHTML;
 

@@ -72,18 +72,19 @@ function confirmation($cid)
     }
 
     $ts = time();
+	global $_;
     $html = <<<ENDHTML
         $warning        
 
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
-          <input type="submit" value=_("Transfer now") />
+          <input type="submit" value="{$_("Transfer now")}" />
         </form>
 
-        <p><strong>_("Or")</strong></p>
+        <p><strong>{$_("Or")}</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=_("Cancel") />
+          <input type="submit" value="{$_("Cancel")}" />
         </form>
 ENDHTML;
 

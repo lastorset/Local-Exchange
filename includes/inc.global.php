@@ -80,6 +80,9 @@ $global = ""; 	// $global lets other includes know that
 
 include_once("inc.config-database.php");
 
+// Workaround for gettext in Heredoc (e.g. <<<HTML):
+$_="_"; // Then use {$_("text")}. Remember to specify "global $_;" first when in a function.
+
 /* Initial session handling code starts */
 require_once("session_handler.php");
 session_name("LOCAL_EXCHANGE");

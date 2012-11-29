@@ -52,21 +52,22 @@ function confirmation($cid)
 
     $ts = time();
  
+	global $_;
     $html = <<<ENDHTML
         $warning        
 
         <form method="GET" action="">
           <input type="hidden" name="TID" value="$ts" />
           <table><tr><td>
-          <b>_("Amount")</b></td><td> <input type="text" name="amount" size=4 maxlength=5></tr>
+          <b>{$_("Amount")}</b></td><td> <input type="text" name="amount" size=4 maxlength=5></tr>
           <tr><td> 
-          <b>_("Fee Description")</b></td><td> <textarea name="desc" rows=2 cols=40 maxlength=255>_("Service Fee")</textarea></tr></table>
+          <b>{$_("Fee Description")}</b></td><td> <textarea name="desc" rows=2 cols=40 maxlength=255>{$_("Service Fee")}</textarea></tr></table>
         
-<p><input type="submit" value=_("Transfer now") />
-        </form><p><strong>_("Or")</strong></p>
+<p><input type="submit" value={$_("Transfer now")} />
+        </form><p><strong>{$_("Or")}</strong></p>
 
         <form method="GET" action="admin_menu.php">
-          <input type="submit" value=_("Cancel") />
+          <input type="submit" value={$_("Cancel")} />
         </form>
 ENDHTML;
 
