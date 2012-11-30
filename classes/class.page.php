@@ -105,15 +105,19 @@ HTML;
 		}
 
 		$c = get_defined_constants();
-		return <<<HTML
+		$out = <<<HTML
 <div class=karma-indicator>
 	<a href=//{$c['HTTP_BASE']}/karma_explanation.php?member={$member->member_id}>
 	<span class=karma title="$karma_help">{$member->GetKarma()}</span>
 	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
 	<span class=balance title="$balance_help">$balance_text</span>
-	<small>{$_("What's this?")}</small></a>
-</div>
 HTML;
+		// Show "What's this" only for inexperienced users
+		if (EXPLAIN_KARMA === true && EXPLAIN_KARMA !== false
+			|| EXPLAIN_KARMA > $member->GetKarma())
+			$out .= " <small>{$_("What's this?")}</small>";
+
+		return $out ."</a></div>";
 	}
 
 	function MakeLanguageSelector() {

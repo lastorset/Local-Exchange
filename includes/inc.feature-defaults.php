@@ -16,6 +16,7 @@ $features = array(
 	'NEW_MEMBER_EMAIL_ADMIN'  => true,
 	'CKEDITOR'                => false, // needs additional configuration
 	'GAME_MECHANICS'          => false,
+	'EXPLAIN_KARMA'           => 10,
 	'FAVICON'                 => "localx_logo.png"
 );
 
