@@ -2,16 +2,18 @@
 /** This will be a script that extract strings that use the gettext heredoc
  *  workaround, and put them in a separate file that can be read by gettext.
  */
-$dirs = array(".", "includes", "classes");
-$out = fopen("heredoc_gettext_strings.php", "w");
+//$dirs = array(".", "includes", "classes");
+$dirs = array_slice($argv, 1);
+$out = STDOUT;
 
-fwrite($out, "// Gettext strings extracted from heredocs\n");
+fwrite($out, "<?php\n// Gettext strings extracted from heredocs\n");
 
 foreach ($dirs as $dir) {
 	foreach(php_files_in_dir(getcwd() ."/". $dir) as $filename) {
 		heredocs($filename, $out);
 	}
 }
+fwrite($out, "?>");
 fclose($out);
 
 function php_files_in_dir($dir) {
@@ -34,7 +36,7 @@ function heredocs($filename, $out) {
 					$n++;
 				}
 		if ($n == 0)
-			fwrite($out, "// (no gettext strings found)\n");
+			fwrite($out, "// (heredocs found, but no gettext strings)\n");
 	}
 }
 

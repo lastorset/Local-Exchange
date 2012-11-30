@@ -1,0 +1,6 @@
+php includes/lang/find_heredoc_strings.php . includes classes > includes/lang/heredoc_gettext_strings.out.php
+xgettext -c"Translation hint:" --language=PHP --output=includes/lang/lex.pot *.php includes/*.php classes/*.php includes/lang/heredoc_gettext_strings.php
+echo includes/lang/lex.pot was updated. Now run for each language
+echo $ msgmerge --update includes/lang/nb_NO/LC_MESSAGES/nb.po includes/lang/lex.pot
+echo "then edit your translations (using e.g. Poedit) and run"
+echo $ msgfmt includes/lang/nb_NO/LC_MESSAGES/nb.po --output includes/lang/nb_NO/LC_MESSAGES/messages.mo
