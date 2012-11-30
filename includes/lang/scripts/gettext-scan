@@ -1,5 +1,5 @@
 #!/bin/bash
-php includes/lang/find_heredoc_strings.php . includes classes > includes/lang/heredoc_gettext_strings.out.php
+php includes/lang/scripts/find_heredoc_strings.php . includes classes > includes/lang/heredoc_gettext_strings.out.php
 if xgettext -c"Translation hint:" --language=PHP --output=includes/lang/lex.pot *.php includes/*.php classes/*.php includes/lang/heredoc_gettext_strings.out.php;
 then
 	echo includes/lang/lex.pot was updated. Now run for each language
