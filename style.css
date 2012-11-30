@@ -11,14 +11,129 @@ body {
 	margin-left: 3%;
 }
 
-#language-selector {
-	width: 85%;
+header#user-controls {
+	display: block;
 	text-align: right;
 	margin-left: auto;
 	margin-right: auto;
+	width: 85%;
+}
+
+header#user-controls > * {
+	text-align: right;
+	display: inline-block;
+	margin-left: 1em;
+}
+
+.karma-indicator span {
+	font-size: 125%;
+	font-family: Droid serif, serif;
+	height: 1em;
+}
+
+.karma-indicator img {
+	height: 2em;
+	vertical-align: text-top;
+	width: auto;
+}
+
+.karma-indicator a,
+.karma-indicator a:visited {
+	color: black;
+	text-transform: lowercase;
+	text-decoration: none;
+}
+
+.karma-indicator a:hover > * {
+	color: black;
+	text-decoration: underline;
+}
+
+.member-info .karma-indicator {
+	margin-top: 1em;
+}
+
+small {
+	font-size: smaller;
+}
+
+table#karma-explanation {
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	border-collapse: separate;
+	border-spacing: 1em 0;
+}
+
+table#karma-explanation td {
+	vertical-align: top;
+}
+
+table#karma-explanation td.picture {
+	width: 20%;
+	background-image: url(images/handshake-color.svgz);
+	background-repeat: no-repeat;
+	background-position: 0 0.2em;
+	background-size: 100%;
+}
+
+table#karma-explanation td.karma,
+table#karma-explanation td.balance {
+	width: 30%;
+}
+
+table#karma-explanation tr.main-numbers td,
+table#karma-explanation tr.calculation td {
+	font-family: Droid Serif, serif;
+}
+
+table#karma-explanation tr.main-numbers td,
+table#karma-explanation tr.calculation table {
+	font-size: 80px; /* For UAs that don't support 'rem' */
+	font-size: 5rem;
+}
+
+table#karma-explanation td.karma {
+	text-align: right;
+}
+
+table#karma-explanation tr.exposition td {
+	text-align: justify;
+}
+
+table#karma-explanation tr.calculation table {
+	border-collapse: collapse;
+	border-bottom: 1px solid black;
+	color: black;
+	margin-bottom: 16px; /* For UAs that don't support 'rem' */
+	margin-bottom: 1rem;
+	table-layout: fixed;
+}
+
+table#karma-explanation tr.calculation table * {
+	font-size: large;
+}
+
+table#karma-explanation tr.calculation table td:first-child {
+	text-align: left;
+}
+
+table#karma-explanation tr.calculation table td:nth-child(2),
+table#karma-explanation tr.calculation table td:nth-child(3) {
+	text-align: right;
+	white-space: pre;
+}
+
+table#karma-explanation th {
+	display: none; /* Only for accessibility purposes */
 }
 
 table {  color: #909090}
+th {
+	font-size: small;
+	text-align: left;
+	background-color: #d8dbea;
+}
 a:active {  color: #909090}
 a:hover {  color: #6C81C6}
 a:link {

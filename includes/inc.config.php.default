@@ -144,6 +144,12 @@ define("CKEDITOR", false);
 // Path of CKEditor, relative to web server root, without a trailing slash.
 define("CKEDITOR_PATH", "ckeditor");
 
+// Use game mechanics? This shows "karma points" – the lesser number of hours spent and earned - at various points in the UI.
+define("GAME_MECHANICS", true);
+
+// When user has fewer karma than this, a "What's this?" hint is displayed. Set to true or false to always or never explain.
+define("EXPLAIN_KARMA", 10);
+
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
 
@@ -172,7 +178,10 @@ define ("HOME_PIC", "localx_home.png");
 // What content should be in the site header and footer?
 define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1>". SITE_TOP_TITLE ."</h1><div>". SITE_TOP_TAGLINE ."</div></td></tr>");
 
-define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">"._("Licensed under the")." <a href=\"http://www.gnu.org/copyleft/gpl.html\">"._("GPL")."</a> &#8226; "._("Local Exchange UK Ver.")." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">"._("Credits")."</a></td></tr></table><br>");
+define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">"._("Licensed under the")." <a href=\"http://www.gnu.org/copyleft/gpl.html\">"._("GPL")."</a> ".
+// Translation hint: %s starts an HTML link.
+sprintf(_("with some %s exceptions"), "<a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php#license\">")."</a>
+&#8226; "._("Local Exchange UK Ver.")." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">"._("Credits")."</a></td></tr></table><br>");
 
 /**********************************************************/
 /**************** DEFINE SIDEBAR MENU *********************/

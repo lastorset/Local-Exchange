@@ -38,7 +38,15 @@ Developed by Evert Jan Klein Velderman.
   to Laurie &amp; Scott Shultis for their generous assistance with the original Fourth 
   Corner Exchange website.</p>
 
-<p> 
+<h3>License</h3>
+
+Licensed under the <a href=http://www.gnu.org/copyleft/gpl.html>GNU General Public License</a> with one exception:
+
+<ul>
+<li>The "Handshake" icon is created by <a href="http://www.dragonartz.net">DragonArtz</a> and licensed under the <a href="http://www.dragonartz.net/license-2/">Creative
+Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>.
+</ul>
+
 <?
 
 print $p->MakePageFooter();

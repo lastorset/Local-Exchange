@@ -65,10 +65,63 @@ class cPage {
 	<BODY>
 HTML;
 		
-		$output .= $this->MakeLanguageSelector();
+		$output .= $this->MakeUserControls();
 		$output .= $this->page_header ;
 	
 		return $output;
+	}
+
+	/** Generate the language selector and karma indicator. */
+	function MakeUserControls() {
+		$lang_selector = $this->MakeLanguageSelector();
+		$karma_indicator = $this->MakeKarmaIndicator();
+		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
+	}
+
+	/** Generates an indicator of karma and balance. If GAME_MECHANICS is disabled, returns null.
+
+		$param member_name the member whose karma we are showing, or null if it's the logged-on user. */
+	function MakeKarmaIndicator($member=null) {
+		global $cUser, $_;
+		if (!$cUser->IsLoggedOn() || !GAME_MECHANICS)
+			return "";
+
+		if (!$member)
+			$member = $cUser;
+
+		$balance = $member->balance;
+		$balance_text = sprintf("%+.2f", $balance);
+
+		if ($cUser == $member) {
+			$karma_help = _("These are your Karma points. They reflect how active you've been in the LETS system, both in earning and spending.");
+			$balance_help = _("This is your account balance.")." ";
+			if ($balance > 0)
+				// Translation hint: "it" refers to the member's account balance.
+				$balance_help .= _("Spend some of it to gain Karma points!");
+			else if ($balance < 0)
+				$balance_help .= _("Do something for other members to gain Karma points!");
+		}
+		else {
+			// Translation hint: %s is the first name of another member.
+			$karma_help = sprintf(_("These are %s's Karma points. They reflect how active the member has been in the LETS system, both in earning and spending ."), $member->person[0]->first_name);
+			// Translation hint: %s is the first name of another member.
+			$balance_help = sprintf(_("This is %s's account balance."), $member->person[0]->first_name);
+		}
+
+		$c = get_defined_constants();
+		$out = <<<HTML
+<div class=karma-indicator>
+	<a href=//{$c['HTTP_BASE']}/karma_explanation.php?member={$member->member_id}>
+	<span class=karma title="$karma_help">{$member->GetKarma()}</span>
+	<img src=//{$c['HTTP_BASE']}/images/handshake-color.svgz width=75>
+	<span class=balance title="$balance_help">$balance_text</span>
+HTML;
+		// Show "What's this" only for inexperienced users
+		if (EXPLAIN_KARMA === true && EXPLAIN_KARMA !== false
+			|| EXPLAIN_KARMA > $member->GetKarma())
+			$out .= " <small>". _("What's this?") ."</small>";
+
+		return $out ."</a></div>";
 	}
 
 	function MakeLanguageSelector() {

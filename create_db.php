@@ -19,6 +19,60 @@ $cDB->Query("CREATE TABLE " . DATABASE_LISTINGS . "( title varchar(60) NOT NULL 
 $cDB->Query("CREATE TABLE " . DATABASE_CATEGORIES . "( category_id smallint(4) unsigned NOT NULL auto_increment, parent_id smallint(4) unsigned default NULL, description varchar(30) NOT NULL default '', PRIMARY KEY (category_id)) TYPE=MyISAM;") or die("Error - database already exists! If you want to create a new database delete the old one first.");
 
 $cDB->Query("CREATE TABLE " . DATABASE_TRADES . "( trade_id mediumint(8) unsigned NOT NULL auto_increment, trade_date timestamp(14) NOT NULL, status char(1) default NULL, member_id_from varchar(15) NOT NULL default '', member_id_to varchar(15) NOT NULL default '', amount decimal(8,2) NOT NULL default '0.00', category smallint(4) unsigned NOT NULL default '0', description varchar(255) default NULL, type char(1) NOT NULL default '', PRIMARY KEY (trade_id)) TYPE=InnoDB;") or die("Error - database already exists! If you want to create a new database delete the old one first.");
+$cDB->Query("CREATE INDEX trades_from ON ". DATABASE_TRADES ." (member_id_from)");
+$cDB->Query("CREATE INDEX trades_to ON ". DATABASE_TRADES ." (member_id_to)");
+
+// Karma points
+
+// TODO This implementation of karma, which seemed like a good idea at the time,
+// is rather complex (it involves a Cartesian join over members and trades) and incohesive
+// (member_directory joins with a view, whereas LoadMember sums using a different query).
+// Consider rewriting it to work more like balances do. See comments at
+// https://trello.com/card/game-mechanics/4f2af6dc418686231b0f75e4/21
+
+// First, a cartesian view of all members paired with all trades.
+$cDB->Query(<<<SQL
+CREATE view member_x_trades AS
+SELECT m.member_id, t.trade_id
+		FROM member m, trades t
+SQL
+);
+
+// Then, views for all spent and earned credits.
+$cDB->Query(<<<SQL
+CREATE VIEW trades_from AS
+SELECT member_id, trade_id, amount
+FROM member m, trades t
+WHERE member_id = member_id_from
+	AND type NOT IN ('M', 'N')
+	AND t.status NOT IN ('M', 'N')
+SQL
+);
+
+$cDB->Query(<<<SQL
+CREATE VIEW trades_to AS
+SELECT member_id, trade_id, amount
+FROM member m, trades t
+WHERE member_id = member_id_to
+	AND type NOT IN ('M', 'N')
+	AND t.status NOT IN ('M', 'N')
+SQL
+);
+
+// Then, a calculation of karma.
+
+$cDB->Query(<<<SQL
+CREATE VIEW karma AS
+SELECT mt.member_id, SUM(t_from.amount) AS spent, SUM(t_to.amount) AS earned, LEAST(SUM(t_from.amount), SUM(t_to.amount)) AS karma
+FROM member_x_trades AS mt
+	LEFT JOIN trades_from t_from
+	ON mt.trade_id = t_from.trade_id AND mt.member_id = t_from.member_id
+	LEFT JOIN trades_to t_to
+	ON mt.trade_id = t_to.trade_id AND mt.member_id = t_to.member_id
+GROUP BY member_id
+ORDER BY karma DESC
+SQL
+);
 
 $cDB->Query("CREATE TABLE " . DATABASE_LOGGING . "( log_id mediumint(8) unsigned NOT NULL auto_increment, log_date timestamp(14) NOT NULL, admin_id varchar(15) NOT NULL default '', category char(1) NOT NULL default '', action char(1) NOT NULL default '', ref_id varchar(15) NOT NULL default '', note varchar(100) default NULL, PRIMARY KEY (log_id)) TYPE=InnoDB;") or die("Error - database already exists! If you want to create a new database delete the old one first.");
 

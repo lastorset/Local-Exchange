@@ -25,9 +25,11 @@ class cMember
 	var $join_date;
 	var $expire_date;
 	var $away_date;
-	var $account_type;
+	var $account_type; ///< O: system, S: Single, J: Joint, H: Household, O: Organization, B: Business, F: Fund
 	var $email_updates;
 	var $balance;
+	var $spent;
+	var $earned;
 	var $restriction;
 
 	function cMember($values=null) {
@@ -272,7 +274,16 @@ class cMember
 		// select all Member data and populate the properties
 		//
 		/*[chris] adjusted to retrieve 'confirm_payments' */
-		$query = $cDB->Query("SELECT member_id, password, member_role, security_q, security_a, status, member_note, admin_note, join_date, expire_date, away_date, account_type, email_updates, balance, confirm_payments, restriction FROM ".DATABASE_MEMBERS." WHERE member_id=". $cDB->EscTxt($member));
+		$query = $cDB->Query("SELECT member_id, password, member_role,
+				security_q, security_a, status, member_note, admin_note, join_date,
+				expire_date, away_date, account_type, email_updates, balance,
+				confirm_payments, restriction
+				". (GAME_MECHANICS ? ", t_from.spent, t_to.earned" : "") ."
+			FROM ".DATABASE_MEMBERS."
+				". (GAME_MECHANICS ? ",
+				(SELECT SUM(amount) AS spent FROM ".DATABASE_TRADES." WHERE member_id_from = ". $cDB->EscTxt($member) ." AND type NOT IN ('M', 'N') AND status NOT IN ('M', 'N')) AS t_from,
+				(SELECT SUM(amount) AS earned FROM ".DATABASE_TRADES." WHERE member_id_to = ". $cDB->EscTxt($member) ." AND type NOT IN ('M', 'N') AND status NOT IN ('M', 'N')) AS t_to" : "" ) ."
+			WHERE member_id=". $cDB->EscTxt($member));
 		
 		if($row = mysql_fetch_array($query))
 		{		
@@ -290,6 +301,11 @@ class cMember
 			$this->account_type=$row[11];
 			$this->email_updates=$row[12];
 			$this->balance=$row[13];
+			if (GAME_MECHANICS)
+			{
+				$this->spent=$row[16];
+				$this->earned=$row[17];
+			}
 			
 			// [chris]		
 			$this->confirm_payments=$row[14];
@@ -510,15 +526,16 @@ class cMember
 		else
 			return 	"<img src='".DEFAULT_PHOTO."'><BR>"; // in case no member-photo uploaded, use default - added by ejkv
 	}
-	
+
 	function DisplayMember () {
-		
+
 		/*[CDM] Added in image, placed all this in 2 column table, looks tidier */
-		
-		global $cDB,$agesArr,$sexArr,$site_settings;
-		
+
+		global $cDB,$agesArr,$sexArr,$site_settings,$p;
+
+		$output .= "<div class=member-info>";
 		$output .= "<table width=100%><tr valign=top><td width=50%>";
-		
+
 		$output .= "<STRONG>"._("Member").":</STRONG> ". $this->PrimaryName() . " (". $this->MemberLink().")"."<BR>";
 		$stats = new cTradeStats($this->member_id);
 		$output .= "<STRONG>"._("Activity").":</STRONG> ";
@@ -559,7 +576,7 @@ class cMember
 			$states = new cStateList; // added by ejkv
 			$state_list = $states->MakeStateArray(); // added by ejkv
 			$state_list[0]="---"; // added by ejkv
-	
+
             $output .= "<STRONG>" . _("State") . ": </STRONG>" .
                            $state_list[$this->person[0]->address_state_code] . "<BR>";
         } // added address state code by ejkv
@@ -567,7 +584,7 @@ class cMember
 		foreach($this->person as $person) {
 			if($person->primary_member == "Y")
 				continue;	// Skip the primary member, since we already displayed above
-		
+
 			if($person->directory_list == "Y") {
 				$output .= "<BR><STRONG>"._("Joint Member").":</STRONG> ". $person->first_name ." ". $person->mid_name ." ". $person->last_name ."<BR>"; // added mid_name by ejkv
 				if($person->email != "")
@@ -579,32 +596,36 @@ class cMember
 				if($person->fax_number != "")
 				$output .= "<STRONG>". $person->first_name ._("'s Fax").":</STRONG> ". $person->DisplayPhone("fax") ."<BR>";
 			}
-		}		
-	
-	$output .= "</td><td width=50% align=center>";
-		
-	$output .= cMember::DisplayMemberImg($this->member_id);	
-		
-	$output .= "</td></tr></table>";
-	
-	if (SOC_NETWORK_FIELDS==true) {
-	
-		$output .= "<p><STRONG><I>"._("PERSONAL INFORMATION")."</I></STRONG><P>";
-		
-		$pAge = (strlen($this->person[0]->age)<1) ? _("Unspecified") : $agesArr[$this->person[0]->age];
-		$pSex = (!$this->person[0]->sex) ? _("Unspecified") : $sexArr[$this->person[0]->sex];
-		$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'._("No description supplied").'.</em>' : stripslashes($this->person[0]->about_me);
-		
-		$output .= "<STRONG>"._("Age").":</STRONG> ".$pAge."<br>";
-		
-		$output .= "<STRONG>"._("Sex").":</STRONG> ".$pSex."<p>";
-		
-		$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
+		}
+
+		$output .= "</td><td width=50% align=center>";
+
+		$output .= cMember::DisplayMemberImg($this->member_id);
+
+		$output .= $p->MakeKarmaIndicator($this);
+
+		$output .= "</td></tr></table>";
+
+		if (SOC_NETWORK_FIELDS==true) {
+
+			$output .= "<p><STRONG><I>"._("PERSONAL INFORMATION")."</I></STRONG><P>";
+
+			$pAge = (strlen($this->person[0]->age)<1) ? _("Unspecified") : $agesArr[$this->person[0]->age];
+			$pSex = (!$this->person[0]->sex) ? _("Unspecified") : $sexArr[$this->person[0]->sex];
+			$pAbout = (!stripslashes($this->person[0]->about_me)) ? '<em>'._("No description supplied").'.</em>' : stripslashes($this->person[0]->about_me);
+
+			$output .= "<STRONG>"._("Age").":</STRONG> ".$pAge."<br>";
+
+			$output .= "<STRONG>"._("Sex").":</STRONG> ".$pSex."<p>";
+
+			$output .= "<STRONG>"._("About Me").":</STRONG><p> ".$pAbout."<br>";
+		}
+
+		$output .= "</div>"; // class=member-info
+
+		return $output;
 	}
 
-	return $output;	
-	}
-	
 	function MakeJointMemberArray() {
 		global $cDB;
 		
@@ -647,6 +668,17 @@ class cMember
 
 		return $last_update->DaysAgo();
 	}	
+
+	/** Returns min(hours spent, hours earned) */
+	function GetKarma() {
+		if (!GAME_MECHANICS)
+			return null;
+
+		if ($this->spent > $this->earned)
+			return (int) $this->earned;
+		else
+			return (int) $this->spent;
+	}
 }
 
 class cMemberGroup {
