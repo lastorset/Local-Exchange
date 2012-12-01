@@ -118,7 +118,7 @@ HTML;
 HTML;
 		// Show "What's this" only for inexperienced users
 		if (EXPLAIN_KARMA === true && EXPLAIN_KARMA !== false
-			|| EXPLAIN_KARMA > $member->GetKarma())
+			|| EXPLAIN_KARMA > $cUser->GetKarma())
 			$out .= " <small>". _("What's this?") ."</small>";
 
 		return $out ."</a></div>";
