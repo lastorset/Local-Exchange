@@ -32,6 +32,8 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 		<option value='loc' ".$orderBySel["loc"].">"._("Town")."</option>
 		<option value='pc' ".$orderBySel["pc"].">"._("Postal code")."</option>
 		<option value='addr2' ".$orderBySel["addr2"].">"._("Address Line 2")."</option>
+		<option value='bal' ".$orderBySel["bal"].">"._("Balance")."</option>
+		<option value='abs' ".$orderBySel["abs"].">"._("Absolute balance")."</option>
 		</select>";
 	$output .= "<p><input type=submit value="._("Search")."></form>"; 
 }
@@ -89,6 +91,14 @@ switch($_REQUEST["orderBy"]) {
 	
 	case("lf"):
 		$orderBy = 'ORDER BY last_name, first_name';
+	break;
+	
+	case("bal"):
+		$orderBy = 'ORDER BY balance DESC';
+	break;
+	
+	case("abs"):
+		$orderBy = 'ORDER BY ABS(balance) DESC';
 	break;
 	
 	case("k"):
