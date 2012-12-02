@@ -64,18 +64,20 @@ Ok, onward and upward.
 
 7) Also for security reasons, you should delete the create_db.php file at this point, or change the file permissions so that it can't be run by the web user account. 
 
-8) In order to use file uploading features (such as uploading a Newsletter), you will need to create an "uploads" directory and set the permissions such that the web user account (often www-data) has access to write to it.
-
-9) In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
-
-10) If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php (or use Debian package php5-intl) and http://php.net/manual/en/http.install.php for installation instructions.
-
-11) If you wish to use a WYSIWYG editor for information pages, download CKEditor and place it in a folder "ckeditor". In inc.config.php, change the setting called "CKEDITOR" from "false" to "true".
-
 Further Configuration:
 1) Edit style.css, print.css, inc.config.php and add graphics files to the "images" folder as needed to personalize the site.  The main site graphics can be modified be editing inc.config.php.
 2) In the "info" folder are a number of essentially static html files that help to explain what local currency is.  Included among them is some information specific to the area the original developer of the system lives in (me, that is).  You may use these files as you like, of course, but you may want to tailor them to your needs.  The files themselves need to be edited with a text editor, there is no content editor included in the system currently. (RF: Update ver 0.4.0 - there *is* now an (optional) content editor built in for creating additional info pages which can be edited online - see includes/inc.config.php )
 3) Default listing categories were created by the create_db script.  You can edit these categories from the Administration menu.
+
+Optional features:
+
+* In order to use file uploading features (such as uploading a Newsletter or uploading photos), you will need to create an "uploads" directory and set the permissions such that the web user account (often www-data) has access to write to it.
+
+* In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
+
+* If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php (or use Debian package php5-intl) and http://php.net/manual/en/http.install.php for installation instructions.
+
+* If you wish to use a WYSIWYG editor for information pages, download CKEditor and place it in a folder "ckeditor". In inc.config.php, change the setting called "CKEDITOR" from "false" to "true".
 
 
 The system has been run on Linux and FreeBSD.  It should of course run on a Windows server too, but this has not seen any testing. 
