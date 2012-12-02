@@ -75,7 +75,9 @@ Optional features:
 
 * In order to upload photos, you need to add the GD extension to PHP. Many web hosts will have this pre-installed, and Ubuntu offers a package php5-gd. In other cases, please see http://php.net/manual/en/book.image.php for instructions. After installation, add the extension in php.ini as indicated at the aforementioned site.
 
-* If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php (or use Debian package php5-intl) and http://php.net/manual/en/http.install.php for installation instructions.
+* If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/intl.installation.php for installation instructions. Or, if you are running Debian, simply install the package php5-intl. See next bullet point for instructions on the PECL http extension.
+
+* If you wish to use the geocoding features, the PECL http extension is required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/http.install.php for installation instructions. Or, if you are running Debian, simply install the package php-http.
 
 * If you wish to use a WYSIWYG editor for information pages, download CKEditor and place it in a folder "ckeditor". In inc.config.php, change the setting called "CKEDITOR" from "false" to "true".
 
