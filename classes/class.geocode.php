@@ -154,16 +154,19 @@ HTML;
 			return $listings;
 		}
 
-		// Generates a hash-based coefficient between -1 and 1 to use when obfuscating location
+		/** Generates a hash-based coefficient between -1 and 1 to use when obfuscating location
+			We hash on a combination of the member id and the database password.
+			The member id makes each location uniquely obfuscated; the database password
+			makes the obfuscation unique for each Local Exchange installation. */
 		function member_id_obfuscate($member_id) {
 			$prime = 31;
 			$result = 1;
-			for ($i = 0; $i < strlen($member_id); $i++)
-				$result = $prime * $result + ord($member_id[$i]);
+			foreach(array($member_id, DATABASE_PASSWORD) as $string)
+				for ($i = 0; $i < strlen($string); $i++)
+					$result = $prime * $result + ord($string[$i]);
 			return ($result % 226) / 113 - 1;
 		}
 
-		// TODO When user is not logged in, return fuzzy data.
 		// TODO Should probably either use a nicely encapsulated method here, or more
 		// performant SQL queries for everything
 		$c = get_defined_constants();
