@@ -52,20 +52,20 @@ class cGeocode {
 			throw new Exception("ERROR HTTP error; response code was ". $response->responseCode);
 
 		ProcessGeocode($su_person['person_id'], $response->body, $status, $msg);
-	if ($status != "OK") {
-		error_log("Error processing request $geocode_request for person {$su_person['id']}: $msg");
-		print "ERROR ". $su_person['person_id'] ." ". $msg ."\n";
-		if (!$continue)
-			break;
-	}
-	else {
-		print "OK ". $su_person['person_id'] ."\n";
-	}
+		if ($status != "OK") {
+			error_log("Error processing request $geocode_request for person {$su_person['id']}: $msg");
+			print "ERROR ". $su_person['person_id'] ." ". $msg ."\n";
+			if (!$continue)
+				break;
+		}
+		else {
+			print "OK ". $su_person['person_id'] ."\n";
+		}
 
-	$geocode_count++;
+		$geocode_count++;
 
-	// Throttle requests by waiting 200ms to prevent Google from blocking us
-	usleep(200000);
+		// Throttle requests by waiting 200ms to prevent Google from blocking us
+		usleep(200000);
 	}
 
 	static function GenerateMap() {
