@@ -41,10 +41,13 @@ class cPage {
 	function MakePageHeader() {
 		global $cUser;
 		
-		if(isset($this->page_title)) 
+		if(isset($this->page_title)) {
 			$title = " - ". $this->page_title;
-		else
+			$opengraph_title = SITE_SHORT_TITLE .": ". $this->page_title;
+		} else {
 			$title = "";
+			$opengraph_title = SITE_LONG_TITLE;
+		}
 
 		$c = get_defined_constants();
 		
@@ -56,7 +59,7 @@ class cPage {
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<meta name="description" content="{$this->page_title}">
 		<meta name="keywords" content="{$this->keywords}">
-		<meta property="og:title" content='{$c['SITE_LONG_TITLE']}' />
+		<meta property="og:title" content='$opengraph_title' />
 		<meta property="og:type" content='website' />
 		<meta property="og:description" content='{$c['SITE_TOP_TAGLINE']}' />
 		<meta property="og:url" content='http://{$c['HTTP_BASE']}' />
