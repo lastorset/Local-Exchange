@@ -49,7 +49,7 @@ function process_data ($values) {
 			$errors .= ", ";
 		
 		if($member->person[0]->email != "")
-			$mailed = mail($member->person[0]->email, $values["subject"], wordwrap($values["message"], 64) , "From:". EMAIL_ADMIN);
+			$mailed = mail($member->person[0]->email, $values["subject"], wordwrap($values["message"], 64) , "From:". EMAIL_ADMIN ."\nContent-type: text/plain; charset=UTF-8");
 		else
 			$mailed = true;
 		

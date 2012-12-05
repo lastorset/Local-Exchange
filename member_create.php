@@ -201,9 +201,9 @@ function process_data ($values) {
 		if($values['email'] == "") {
 			$msg_no_email = _("Since the new member does not have an email address, he/she needs to be notified of the member id")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').";
 			$list .= $msg_no_email;
-			mail(EMAIL_ADMIN, _("Member created") .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM);
+			mail(EMAIL_ADMIN, _("Member created") .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8");
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM); // added "From:" - by ejkv
+			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 			if($mailed)
 				$list .= _("An email has been sent to")." '". $values["email"] ."' "._("containing the new user id and password").".";
 			else

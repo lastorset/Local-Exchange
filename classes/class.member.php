@@ -856,7 +856,7 @@ class cMemberGroup {
 						$want_listings->ExpireAll($expire_date);
 				
 					if($member->person[0]->email != null) {
-						mail($member->person[0]->email, _("Important information about your")." ". SITE_SHORT_TITLE ." "._("account"), wordwrap(EXPIRED_LISTINGS_MESSAGE, 64), "From:". EMAIL_ADMIN);
+						mail($member->person[0]->email, _("Important information about your")." ". SITE_SHORT_TITLE ." "._("account"), wordwrap(EXPIRED_LISTINGS_MESSAGE, 64), "From:". EMAIL_ADMIN ."\nContent-type: text/plain; charset=UTF-8");
 						$note = "";
 						$subject_note = "";
 					} else {
@@ -864,7 +864,7 @@ class cMemberGroup {
 						$subject_note = " (member has no email)";
 					}
 					
-					mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("listings expired for")." ". $member->member_id. $subject_note, wordwrap(_("All of this member's listings were automatically expired due to inactivity.  To turn off this feature, see inc.config.php."). $note, 64) , "From:". EMAIL_ADMIN);
+					mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("listings expired for")." ". $member->member_id. $subject_note, wordwrap(_("All of this member's listings were automatically expired due to inactivity.  To turn off this feature, see inc.config.php."). $note, 64) , "From:". EMAIL_ADMIN ."\nContent-type: text/plain; charset=UTF-8");
 				}
 			}
 		}

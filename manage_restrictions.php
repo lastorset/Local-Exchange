@@ -67,7 +67,7 @@ if ($_REQUEST["process"]) {
 			else {
 				$output .= _("Restrictions have been imposed on member id")." '".$_REQUEST["ok"]."'";
 				
-				$mailed = mail($member->person[0]->email, _("Access Restricted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URLOCKED , "From:".EMAIL_FROM); // added "From:" - by ejkv
+				$mailed = mail($member->person[0]->email, _("Access Restricted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URLOCKED , "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 			
 			}
 			
@@ -92,7 +92,7 @@ if ($_REQUEST["process"]) {
 			else {
 				$output .= _("Restrictions have been lifted on member id")." '".$_REQUEST["restricted"]."'";
 				
-				$mailed = mail($member->person[0]->email, _("Account Restrictions lifted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URUNLOCKED , "From:".EMAIL_FROM); // Added "From:" - by ejkv
+				$mailed = mail($member->person[0]->email, _("Account Restrictions lifted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URUNLOCKED , "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // Added "From:" - by ejkv
 			}
 			
 		break;

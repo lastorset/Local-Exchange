@@ -56,7 +56,7 @@ if ($form->validate()) { // Form is validated so processes the data
 function process_data ($values) {
 	global $p, $cUser;
 
-	$headers = "From:". $cUser->person[0]->email;
+	$headers = "From:". $cUser->person[0]->email ."\nContent-type: text/plain; charset=UTF-8";
 	$body = wordwrap($values["message"], 64);
 
 	if($values["cc"] == "Y") {

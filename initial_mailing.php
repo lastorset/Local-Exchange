@@ -31,7 +31,7 @@ foreach ($all_members->members as $member) {
 	}
 
 // $member->person[0]->email
-	$mailed = mail($member->person[0]->email, $subject, $message . "\n\n"._("Member ID").": ". $member->member_id ."\n". _("Password").": ". $password, "From:".EMAIL_FROM); // added "From:" - by ejkv
+	$mailed = mail($member->person[0]->email, $subject, $message . "\n\n"._("Member ID").": ". $member->member_id ."\n". _("Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 
 	if(!$mailed)
 		$output .= _("Could not email")." ". $member->member_id .".  "._("His/her password is")." '". $password ."'.<BR>";

@@ -43,7 +43,7 @@ if ($form->validate()) { // Form is validated so processes the data
 function process_data ($values) {
 	global $p, $heard_from;
 	
-	$mailed = mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("Contact Form"), _("From").": ". $values["name"]. "\n". _("Phone").": ". $values["phone"] ."\n". _("Heard From").": ". $heard_from[$values["how_heard"]] ."\n\n". wordwrap($values["message"], 64) , "From:". $values["email"]);
+	$mailed = mail(EMAIL_ADMIN, SITE_SHORT_TITLE ." "._("Contact Form"), _("From").": ". $values["name"]. "\n". _("Phone").": ". $values["phone"] ."\n". _("Heard From").": ". $heard_from[$values["how_heard"]] ."\n\n". wordwrap($values["message"], 64) , "From:". $values["email"] ."\nContent-type: text/plain; charset=UTF-8");
 	
 	if($mailed)
 		$output = _("Thank you.");
