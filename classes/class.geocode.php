@@ -3,13 +3,20 @@
 include_once("class.listing.php");
 include_once("class.member.php");
 
+/** Signals that we're over our daily quota and must stop for today. */
+class HaltGeocodingException extends Exception { }
+
 /** Contains functions that transmit geocoding requests to Google and process
     the result. */
 class cGeocode {
 	static $url_template = "https://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false";
 
-	static function only_zero($string) {
+	static function OnlyZero($string) {
 		$len = mb_strlen($string);
+
+		if ($len === 0)
+			return false;
+
 		for ($i = 0; $i < $len; $i++)
 			if ($string[$i] != '0')
 				return false;
@@ -18,54 +25,56 @@ class cGeocode {
 	}
 
 	static function Geocode(array $address_components) {
+		if (!function_exists('http_get'))
+			throw new Exception("pecl_http extension with libcurl required");
+
 		// Input validation
 		if (count($address_components) == 0)
 			throw new Exception("Need an address in order to geocode");
 
-		// Get a lits of states to use when geocoding
-		$state = new cStateList;
-		$state_list = $state->MakeStateArray();
-		$state_list[0]="---";
-
 		// Build a GET request for the geocoding server
-		$first = false;
-		$address = "";
 		/* Skip postcodes that have only zeros, by failing if at least one
 		   address component is all zero. */
 		foreach ($address_components as $component)
-			if (only_zero($component))
-				throw new Exception("Addresses with zero are not geocoded");
-			else
-				if ($first)
-					$address .= $component;
-				else
-					$address .= ",". $component;
+			if (self::OnlyZero($component))
+				throw new Exception("Addresses with zero (\"$component\") are not geocoded");
+		$address = implode(",", $address_components);
 
 		// su = safe string for URL
 		$su_address = urlencode($address);
 		$su_geocode_request = sprintf(self::$url_template, $su_address);
 
 		// Send request
-		$response = http_parse_message(http_get($geocode_request));
+		$response = http_parse_message(http_get($su_geocode_request));
 
-		if ($response->responseCode != 200) 
-			throw new Exception("ERROR HTTP error; response code was ". $response->responseCode);
+		if ($response->responseCode != 200)
+			throw new Exception("HTTP error; response code was ". $response->responseCode);
 
-		ProcessGeocode($su_person['person_id'], $response->body, $status, $msg);
-		if ($status != "OK") {
-			error_log("Error processing request $geocode_request for person {$su_person['id']}: $msg");
-			print "ERROR ". $su_person['person_id'] ." ". $msg ."\n";
-			if (!$continue)
-				break;
-		}
-		else {
-			print "OK ". $su_person['person_id'] ."\n";
-		}
+		return self::ProcessGeocode($su_person['person_id'], $response->body);
+	}
 
-		$geocode_count++;
+	/** @return an array with the latitude and the longitude.
+	 *  @throws HaltGeocodingException if the daily quota was exceeded, or Exception on other errors. */
+	static function ProcessGeocode($id, $response) {
+		$json = json_decode($response);
+		$result = $json->status;
 
-		// Throttle requests by waiting 200ms to prevent Google from blocking us
-		usleep(200000);
+		if ($json->status == "ZERO_RESULTS")
+			throw new Exception("No results were found");
+		else if ($json->status == "OVER_QUERY_LIMIT")
+			throw new HaltGeocodingException("Daily quota exceeded. Geocoding aborted");
+		else if ($json->status == "REQUEST_DENIED" || $json->status == "INVALID_REQUEST")
+			throw new Exception("Invalid request or request denied");
+		else if ($json->status != "OK")
+			throw new Exception("Unknown error: ". $json->status);
+
+		if (count($json->results) == 1) {
+			$coord = $json->results[0]->geometry->location;
+			$lat = $coord->lat;
+			$lng = $coord->lng;
+			return array($lat, $lng);
+		} else
+			throw new Exception("Partial matches not supported");
 	}
 
 	static function GenerateMap() {

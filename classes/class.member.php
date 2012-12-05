@@ -369,7 +369,7 @@ class cMember
 				
 		return $update;	
 	}
-	
+
 	function PrimaryName () {
 		return $this->person[0]->first_name . " " . $this->person[0]->mid_name . " " . $this->person[0]->last_name; // added mid_name by ejkv
 	}

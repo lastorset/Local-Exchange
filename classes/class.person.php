@@ -27,6 +27,8 @@ class cPerson
 	var $address_state_code;
 	var $address_post_code;
 	var $address_country;
+	// TODO Consider a caching solution to avoid storing this in the database.
+	var $coordinates;
 
 	function cPerson($values=null) {
 		if($values) {
@@ -74,36 +76,43 @@ class cPerson
 		}
 		else
 			$this->Geocode();
-	
-		$insert = $cDB->Query("INSERT INTO ".DATABASE_PERSONS." (member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country) VALUES (". $cDB->EscTxt($this->member_id) .",". $cDB->EscTxt($this->primary_member) .",". $cDB->EscTxt($this->directory_list) .",". $cDB->EscTxt($this->first_name) .",". $cDB->EscTxt($this->last_name) .",". $cDB->EscTxt($this->mid_name) .",". $cDB->EscTxt($this->dob) .",". $cDB->EscTxt($this->mother_mn) .",". $cDB->EscTxt($this->email) .",". $cDB->EscTxt($this->phone1_area) .",". $cDB->EscTxt($this->phone1_number) .",". $cDB->EscTxt($this->phone1_ext) .",". $cDB->EscTxt($this->phone2_area) .",". $cDB->EscTxt($this->phone2_number) .",". $cDB->EscTxt($this->phone2_ext) .",". $cDB->EscTxt($this->fax_area) .",". $cDB->EscTxt($this->fax_number) .",". $cDB->EscTxt($this->fax_ext) .",". $cDB->EscTxt($this->address_street1) .",". $cDB->EscTxt($this->address_street2) .",". $cDB->EscTxt($this->address_city) .",". $cDB->EscTxt($this->address_state_code) .",". $cDB->EscTxt($this->address_post_code) .",". $cDB->EscTxt($this->address_country).");");
-		
+
+		$insert = $cDB->Query("INSERT INTO ".DATABASE_PERSONS." (member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country ".
+			(is_array($this->coordinates) ? ", latitude, longitude" : "")
+			.") VALUES (". $cDB->EscTxt($this->member_id) .",". $cDB->EscTxt($this->primary_member) .",". $cDB->EscTxt($this->directory_list) .",". $cDB->EscTxt($this->first_name) .",". $cDB->EscTxt($this->last_name) .",". $cDB->EscTxt($this->mid_name) .",". $cDB->EscTxt($this->dob) .",". $cDB->EscTxt($this->mother_mn) .",". $cDB->EscTxt($this->email) .",". $cDB->EscTxt($this->phone1_area) .",". $cDB->EscTxt($this->phone1_number) .",". $cDB->EscTxt($this->phone1_ext) .",". $cDB->EscTxt($this->phone2_area) .",". $cDB->EscTxt($this->phone2_number) .",". $cDB->EscTxt($this->phone2_ext) .",". $cDB->EscTxt($this->fax_area) .",". $cDB->EscTxt($this->fax_number) .",". $cDB->EscTxt($this->fax_ext) .",". $cDB->EscTxt($this->address_street1) .",". $cDB->EscTxt($this->address_street2) .",". $cDB->EscTxt($this->address_city) .",". $cDB->EscTxt($this->address_state_code) .",". $cDB->EscTxt($this->address_post_code) .",". $cDB->EscTxt($this->address_country).
+			(is_array($this->coordinates) ? ", {$this->coordinates[0]}, {$this->coordinates[1]}" : "")
+			.");");
+
 		return $insert;
 	}
-			
+
 	function SavePerson() {
 		global $cDB, $cErr;
-		
+
+		$this->Geocode();
+		$query = "UPDATE ". DATABASE_PERSONS ." SET member_id=". $cDB->EscTxt($this->member_id) .", primary_member=". $cDB->EscTxt($this->primary_member) .", directory_list=". $cDB->EscTxt($this->directory_list) .", first_name=". $cDB->EscTxt($this->first_name) .", last_name=". $cDB->EscTxt($this->last_name) .", mid_name=". $cDB->EscTxt($this->mid_name) .", dob=". $cDB->EscTxt($this->dob) .", mother_mn=". $cDB->EscTxt($this->mother_mn) .", email=". $cDB->EscTxt($this->email) .", phone1_area=". $cDB->EscTxt($this->phone1_area) .", phone1_number=". $cDB->EscTxt($this->phone1_number) .", phone1_ext=". $cDB->EscTxt($this->phone1_ext) .", phone2_area=". $cDB->EscTxt($this->phone2_area) .", phone2_number=". $cDB->EscTxt($this->phone2_number) .", phone2_ext=". $cDB->EscTxt($this->phone2_ext) .", fax_area=". $cDB->EscTxt($this->fax_area) .", fax_number=". $cDB->EscTxt($this->fax_number) .", fax_ext=". $cDB->EscTxt($this->fax_ext) .", address_street1=". $cDB->EscTxt($this->address_street1) .", address_street2=". $cDB->EscTxt($this->address_street2) .", address_city=". $cDB->EscTxt($this->address_city) .", address_state_code=". $cDB->EscTxt($this->address_state_code) .", address_post_code=". $cDB->EscTxt($this->address_post_code) .", address_country=". $cDB->EscTxt($this->address_country).", about_me=". $cDB->EscTxt($this->about_me) .","."age=".  $cDB->EscTxt($this->age) .",". "sex=". $cDB->EscTxt($this->sex) .
+			(is_array($this->coordinates) ? ", latitude={$this->coordinates[0]}, longitude={$this->coordinates[1]}" : "")
+			." WHERE person_id=". $cDB->EscTxt($this->person_id) .";";
+
 		/*[chris]*/ // Added store personal profile data
-		$update = $cDB->Query("UPDATE ". DATABASE_PERSONS ." SET member_id=". $cDB->EscTxt($this->member_id) .", primary_member=". $cDB->EscTxt($this->primary_member) .", directory_list=". $cDB->EscTxt($this->directory_list) .", first_name=". $cDB->EscTxt($this->first_name) .", last_name=". $cDB->EscTxt($this->last_name) .", mid_name=". $cDB->EscTxt($this->mid_name) .", dob=". $cDB->EscTxt($this->dob) .", mother_mn=". $cDB->EscTxt($this->mother_mn) .", email=". $cDB->EscTxt($this->email) .", phone1_area=". $cDB->EscTxt($this->phone1_area) .", phone1_number=". $cDB->EscTxt($this->phone1_number) .", phone1_ext=". $cDB->EscTxt($this->phone1_ext) .", phone2_area=". $cDB->EscTxt($this->phone2_area) .", phone2_number=". $cDB->EscTxt($this->phone2_number) .", phone2_ext=". $cDB->EscTxt($this->phone2_ext) .", fax_area=". $cDB->EscTxt($this->fax_area) .", fax_number=". $cDB->EscTxt($this->fax_number) .", fax_ext=". $cDB->EscTxt($this->fax_ext) .", address_street1=". $cDB->EscTxt($this->address_street1) .", address_street2=". $cDB->EscTxt($this->address_street2) .", address_city=". $cDB->EscTxt($this->address_city) .", address_state_code=". $cDB->EscTxt($this->address_state_code) .", address_post_code=". $cDB->EscTxt($this->address_post_code) .", address_country=". $cDB->EscTxt($this->address_country).", about_me=". $cDB->EscTxt($this->about_me) .","."age=".  $cDB->EscTxt($this->age) .",". "sex=". $cDB->EscTxt($this->sex) . " WHERE person_id=". $cDB->EscTxt($this->person_id) .";");
+		$update = $cDB->Query($query);
 
 		if(!$update)
-			$cErr->Error(_("Could not save changes to")." '". $this->first_name ." ". $this->mid_name ." ". $this->last_name ."'. "._("Please try again later")."."); // added mid_name by ejkv	
-		else
-			$this->Geocode();
-			
+			$cErr->Error(_("Could not save changes to")." '". $this->first_name ." ". $this->mid_name ." ". $this->last_name ."'. "._("Please try again later")."."); // added mid_name by ejkv
+
 		return $update;
 	}
 
 	function LoadPerson($who)
 	{
 		global $cDB, $cErr;
-		
+
 		/*[chris]*/ // Added fetch personal profile data
-		$query = $cDB->Query("SELECT member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country, about_me, age, sex FROM ".DATABASE_PERSONS." WHERE person_id=". $cDB->EscTxt($who));
-		
+		$query = $cDB->Query("SELECT member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country, about_me, age, sex, latitude, longitude FROM ".DATABASE_PERSONS." WHERE person_id=". $cDB->EscTxt($who));
+
 		if($row = mysql_fetch_array($query))
 		{
-			$this->person_id=$who;	
+			$this->person_id=$who;
 			$this->member_id=$row[0];
 			$this->primary_member=$row[1];
 			$this->directory_list=$row[2];
@@ -127,20 +136,24 @@ class cPerson
 			$this->address_city=$row[20];
 			$this->address_state_code=$row[21];
 			$this->address_post_code=$row[22];
-			$this->address_country=$row[23];		
-			
+			$this->address_country=$row[23];
+			if (!is_null($row['latitude']) && !is_null($row['longitude']))
+				$this->coordinates=array($row['latitude'], $row['longitude']);
+			else
+				$this->coordinates=null;
+
 			/*[chris]*/
-			
+
 			$this->about_me=$row[24];
 			$this->age=$row[25];
-			$this->sex=$row[26];		
+			$this->sex=$row[26];
 		}
 		else 
 		{
 			$cErr->Error(_("There was an error accessing this person")." (".$who.").  "._("Please try again later").".");
 			include("redirect.php");
-		}		
-	}		
+		}
+	}
 	
 	function DeletePerson() {
 		global $cDB, $cErr;
@@ -218,14 +231,31 @@ class cPerson
 	}
 
 	function Geocode() {
-		if (!GEOCODE)
+		global $cErr;
+		if (!GEOCODE) {
+			$this->coordinates = null;
 			return;
+		}
 
-		/*
-		cGeocode::Geocode(array (
-			TODO
-		));
-		*/
+		$state = new cStateList;
+		$state_list = $state->MakeStateArray();
+		$state_list[0]="---";
+
+		try {
+			$this->coordinates = cGeocode::Geocode(array(
+				$this->address_street1,
+				$this->address_street2,
+				$this->address_city,
+				$state_list[$this->address_state_code],
+				$this->address_post_code,
+				$this->address_country));
+		} catch (Exception $e) {
+			// This error is only noted in the log, since it doesn't prevent creating the user
+			// TODO Test error reporting
+			// TODO Consider reporting error to end user in addition to logging
+			$cErr->InternalError("Could not geocode ". $this->Name() ." ($this->member_id): ". $e->getMessage(), __FILE__, __LINE__);
+			$this->coordinates = null;
+		}
 	}
 }
 

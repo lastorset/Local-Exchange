@@ -1,4 +1,5 @@
 <?php
+// TODO Needs some work to work
 // Upgrade to use geocoding
 
 $cDB->Query("ALTER TABLE ". DATABASE_PERSONS ."
