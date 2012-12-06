@@ -70,15 +70,15 @@ switch($_REQUEST["orderBy"]) {
 	break;
 	
 	case("pc"):
-		$orderBy = 'ORDER BY address_post_code asc';
+		$orderBy = 'ORDER BY address_post_code asc, member_id';
 	break;
 	
 	case("nh"):
-		$orderBy = 'ORDER BY address_state_code asc'; // changed address_street2 into address_state_code - by ejkv
+		$orderBy = 'ORDER BY address_state_code asc, address_city, member_id'; // changed address_street2 into address_state_code - by ejkv
 	break;
 	
 	case("loc"):
-		$orderBy = 'ORDER BY address_city asc';
+		$orderBy = 'ORDER BY address_city asc, member_id';
 	break;
 	
 	case("fl"):
@@ -94,11 +94,11 @@ switch($_REQUEST["orderBy"]) {
 	break;
 	
 	case("bal"):
-		$orderBy = 'ORDER BY balance DESC';
+		$orderBy = 'ORDER BY balance DESC, member_id';
 	break;
 	
 	case("abs"):
-		$orderBy = 'ORDER BY ABS(balance) DESC';
+		$orderBy = 'ORDER BY ABS(balance) DESC, balance DESC, member_id';
 	break;
 	
 	case("k"):
