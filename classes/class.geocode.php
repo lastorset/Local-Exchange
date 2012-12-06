@@ -183,7 +183,7 @@ HTML;
 								// TODO More lightweight method? (without a separate function for each marker)
 								google.maps.event.addListener(marker, 'click', (function(marker, text) {
 									return function() {
-										infowindow.content = text;
+										infowindow.setContent(text);
 										infowindow.open(map,marker);
 									}
 								})(marker, text));
