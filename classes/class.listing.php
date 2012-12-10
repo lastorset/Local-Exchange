@@ -288,8 +288,8 @@ class cListingGroup
 				// a small change to the way member info is displayed i.e. (joe bloggs - 212)
 				$memInfo = " (<em>".stripslashes($row["first_name"])." ".stripslashes($row["mid_name"])." ".stripslashes($row["last_name"])."</em> - <a href=http://". HTTP_BASE ."/member_summary.php?member_id=".$listing->member_id.">". $listing->member_id ."</a>)"; // added mid_name, moved ")", removed </center> - by ejkv
 				
-				// TODO E-mails should display as if the recipient was logged on
-				if ($cUser->IsLoggedOn())
+				// $show_ids implies that the member id is not hidden, so direct links should be OK
+				if ($show_ids || $cUser->IsLoggedOn())
 					$output .= "<A HREF=http://".HTTP_BASE."/listing_detail.php?type=". $this->type ."&title=" . urlencode($listing->title) ."&member_id=". $listing->member_id .">" . $listing->title ."</A><br>". $details; // removed <FONT SIZE=2> .. </FONT>, line-break added by ejkv
 				else
 					$output .= "<A HREF=http://".HTTP_BASE."/member_login.php>" . $listing->title ."</A><br>". $details; // link to login page, removed <FONT SIZE=2> .. </FONT>, and line-break added by ejkv
