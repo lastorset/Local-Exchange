@@ -77,6 +77,41 @@ class cGeocode {
 			throw new Exception("Partial matches not supported");
 	}
 
+	static function UserMap($coordinates) {
+		if (!is_array($coordinates) ||
+			!is_numeric($coordinates[0]) || !is_numeric($coordinates[1]))
+			return "<!-- No coordinates exist for member -->";
+
+		$latitude = $coordinates[0];
+		$longitude = $coordinates[1];
+
+		return <<<HTML
+			<div id="map_canvas"></div>
+			<script type="text/javascript"
+				src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
+			</script>
+			<script type="text/javascript">
+				var map;
+
+				function initializeMap() {
+					var myOptions = {
+						center: new google.maps.LatLng($latitude, $longitude),
+						zoom: 14,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					map = new google.maps.Map(document.getElementById("map_canvas"),
+							myOptions);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng($latitude, $longitude),
+						map: map,
+					});
+				}
+
+				window.addEventListener('DOMContentLoaded', initializeMap, false);
+			</script>
+HTML;
+	}
+
 	static function GenerateMap() {
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
@@ -109,10 +144,10 @@ class cGeocode {
 					markerRequest.onload = addMarkers;
 					// TODO How wide is browser support for onload?
 					// TODO Also listen for failure
-					markerRequest.open("GET", url, true); 
+					markerRequest.open("GET", url, true);
 					markerRequest.send();
 				}
-				
+
 				function addMarkers() {
 					// TODO Use a compatibility shim (such as jQuery) for JSON.parse
 					var markers = JSON.parse(markerRequest.responseText);
@@ -139,9 +174,12 @@ class cGeocode {
 					}
 				}
 
-				// TODO: More robust mechanism for onload. If more than one script sets
-				// onload, one of them will break.
-				window.onload = initializeMap;
+				// Since this is used for the front page map, let's make sure even old IE gets it
+				if (window.addEventListener) {
+					window.addEventListener('DOMContentLoaded', initializeMap, false);
+				} else if (window.attachEvent)  { // IE<9
+					window.attachEvent('DOMContentLoaded', initializeMap);
+				}
 			</script>
 HTML;
 	}
