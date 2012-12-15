@@ -6,10 +6,18 @@ include_once("class.member.php");
 /** Signals that we're over our daily quota and must stop for today. */
 class HaltGeocodingException extends Exception { }
 
+/** Signals that the user likely has entered an invalid address. */
+class AddressException extends Exception { }
+
 /** Contains functions that transmit geocoding requests to Google and process
     the result. */
 class cGeocode {
 	static $url_template = "https://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=false";
+
+	/** User-visible string that identifies our geocoding provider. */
+	static function GeocodingProvider() {
+		return "Google Maps";
+	}
 
 	static function OnlyZero($string) {
 		$len = mb_strlen($string);
@@ -37,7 +45,7 @@ class cGeocode {
 		   address component is all zero. */
 		foreach ($address_components as $component)
 			if (self::OnlyZero($component))
-				throw new Exception("Addresses with zero (\"$component\") are not geocoded");
+				throw new AddressException("Addresses with zero (\"$component\") are not geocoded");
 		$address = implode(",", $address_components);
 
 		// su = safe string for URL
@@ -56,19 +64,20 @@ class cGeocode {
 	}
 
 	/** @return an array with the latitude and the longitude.
-	 *  @throws HaltGeocodingException if the daily quota was exceeded, or Exception on other errors. */
+	 *  @throws HaltGeocodingException if the daily quota was exceeded, AddressException
+	 *          if the address is suspected malformed, or Exception on other errors. */
 	static function ProcessGeocode($id, $response) {
 		$json = json_decode($response);
 		$result = $json->status;
 
 		if ($json->status == "ZERO_RESULTS")
-			throw new Exception("No results were found");
+			throw new AddressException("No results were found");
 		else if ($json->status == "OVER_QUERY_LIMIT")
-			throw new HaltGeocodingException("Daily quota exceeded. Geocoding aborted");
+			throw new HaltGeocodingException("Daily quota exceeded. Please abort geocoding");
 		else if ($json->status == "REQUEST_DENIED" || $json->status == "INVALID_REQUEST")
 			throw new Exception("Invalid request or request denied");
 		else if ($json->status != "OK")
-			throw new Exception("Unknown error: ". $json->status);
+			throw new Exception("Unknown error: \"$json->status\"");
 
 		if (count($json->results) == 1) {
 			$coord = $json->results[0]->geometry->location;
@@ -76,7 +85,7 @@ class cGeocode {
 			$lng = $coord->lng;
 			return array($lat, $lng);
 		} else
-			throw new Exception("Partial matches not supported");
+			throw new AddressException("Partial matches not supported");
 	}
 
 	static function UserMap($coordinates) {

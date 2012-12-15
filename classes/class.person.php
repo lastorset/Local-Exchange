@@ -241,19 +241,25 @@ class cPerson
 		$state_list = $state->MakeStateArray();
 		$state_list[0]="---";
 
-		try {
-			$this->coordinates = cGeocode::Geocode(array(
+		$address_components = array(
 				$this->address_street1,
 				$this->address_street2,
 				$this->address_city,
 				$state_list[$this->address_state_code],
 				$this->address_post_code,
-				$this->address_country));
+				$this->address_country);
+		try {
+			$this->coordinates = cGeocode::Geocode($address_components);
+		} catch (AddressException $e) {
+			// Maybe the user can fix the error themselves
+			// Translation hint: %s is the geocoding service (finds addresses on a map).
+			$cErr->Error(sprintf(_("%s could not find your address. However, we will attempt to save your account information."), cGeocode::GeocodingProvider()), ERROR_SEVERITY_LOW);
+			// TODO When we're confident that geocoding works as it should, this error log message may be removed, as it's likely a user error.
+			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): address was \"". implode(', ', $address_components) ."\"; error was \"". $e->getMessage() ."\"", __FILE__, __LINE__);
+			$this->coordinates = null;
 		} catch (Exception $e) {
-			// This error is only noted in the log, since it doesn't prevent creating the user
-			// TODO Test error reporting
-			// TODO Consider reporting error to end user in addition to logging
-			$cErr->InternalError("Could not geocode ". $this->Name() ." ($this->member_id): ". $e->getMessage(), __FILE__, __LINE__);
+			$cErr->Error(_("There was a system error locating your address on the map. However, we will attempt to save your account information."), ERROR_SEVERITY_LOW);
+			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): ". $e->getMessage(), __FILE__, __LINE__);
 			$this->coordinates = null;
 		}
 	}
