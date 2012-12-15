@@ -20,14 +20,16 @@ print <<<HTML
 </div>
 HTML;
 
-if (!HOME_PAGE_MAP)
+if (!HOME_PAGE_MAP) {
 	print "<h2>" ._("Why have a Local, Sustainable Currency?"). "</h2><ul><li>" ._("Enhance Your Prosperity"). "</li><li>" ._("Build a Sustainable Community"). "</li><li>" ._("Utilize Your Talents"). "</li><li> " ._("Nurture the Unique Quality of Your Hometown"). "</li><li>" ._("Have Fun"). "</li></ul>";
-else
+	print "<p>". HOME_PAGE_MESSAGE;
+} else {
+	print "<p>". HOME_PAGE_MESSAGE;
 	print cGeoCode::GenerateMap();
+}
 
 print "</div>";
 
 print $p->MakePageFooter();
 
 ?>
-  

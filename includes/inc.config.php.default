@@ -26,7 +26,7 @@ if (file_exists("upgrade.php") && $running_upgrade_script!=true) {
 
 $customTranslations = array(
 	"Getting started" => array( "nb_NO.utf8" => "Komme i gang", "eo_EO.utf8" => "Kiel komenci"),
-	"What's new" => array( "nb_NO.utf8" => "Hva skjer", "eo_EO.utf8" => "Kio okazas")
+	"What's new" => array( "nb_NO.utf8" => "Hva skjer", "eo_EO.utf8" => "Kio okazas"),
 );
 
 $SIDEBAR = array (
@@ -175,6 +175,10 @@ define ("HEADER_LOGO", "localx_logo.png"); // changed by ejkv
 
 // Picture appearing left of logo on Home Page
 define ("HOME_PIC", "localx_home.png");
+
+// Additional message on the home page. You may want to use custom translations for this.
+// Translation hint: %s are link tags and must be left as is.
+define ("HOME_PAGE_MESSAGE", sprintf(_("%sLearn more%s about this community"), "<a href=info/more.php", "</a>"));
 
 // What content should be in the site header and footer?
 define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1>". SITE_TOP_TITLE ."</h1><div>". SITE_TOP_TAGLINE ."</div></td></tr>");
