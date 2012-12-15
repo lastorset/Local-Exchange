@@ -45,9 +45,11 @@ class cGeocode {
 		$su_geocode_request = sprintf(self::$url_template, $su_address);
 
 		// Send request
-		$response = http_parse_message(http_get($su_geocode_request));
+		$response = http_parse_message(http_get($su_geocode_request, array('timeout' => 15)));
 
-		if ($response->responseCode != 200)
+		if (!$response)
+			throw new Exception("Could not connect to geocoding server");
+		else if ($response->responseCode != 200)
 			throw new Exception("HTTP error; response code was ". $response->responseCode);
 
 		return self::ProcessGeocode($su_person['person_id'], $response->body);
