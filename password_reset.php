@@ -36,7 +36,7 @@ function process_data ($values) {
 	$member->UnlockAccount();
 	
 	$list = _("Your password has been reset.  You can change the new password after you login by going into the Member Profile section of the web site.")."<P>";
-	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("New Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
+	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("New Password").": ". $password ."\n"._("Member ID").": ". $member->member_id, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 	if($mailed)
 		$list .= _("The new password has been sent to your email address.");
 	else
