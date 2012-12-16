@@ -1,4 +1,5 @@
 <?php
+// Note: this script may also receive feedback from trade.php.
 
 include_once("includes/inc.global.php");
 

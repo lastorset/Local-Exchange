@@ -173,7 +173,7 @@ function process_data ($values) {
 		else
 		{
 			// FIXME: String is split
-			$list .= _("You have transferred")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ._(" to "). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>"._("Or would you like to leave")." <A HREF=feedback.php?mode=". $_REQUEST["mode"] ."&author=". $member->member_id ."&about=". $member_to_id ."&trade_id=". $trade->trade_id .">"._("feedback")."</A> "._("for this member")."?";
+			$list .= _("You have transferred")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ._(" to "). $member_to_id .".  "._("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?<P>";
 		
 			// Has the recipient got an income tie set-up? If so, we need to transfer a percentage of this elsewhere...
 		
@@ -193,6 +193,40 @@ function process_data ($values) {
 		
 				$status = $trade2->MakeTrade();
 			}
+
+			// Ask for feedback immediately. Adapted from feedback.php and inc.forms.php
+			// (could not include because we need to set action and member details)
+			$list .= '<h2>Legg igjen tilbakemelding</h2>';
+
+			require_once('HTML/QuickForm.php');
+
+			$form = new HTML_QuickForm('', 'post', 'feedback.php');
+			$renderer =& $form->defaultRenderer();
+
+			$renderer->setFormTemplate('<form{attributes}><table id="contentTable">{content}</table></form>');
+			$renderer->setHeaderTemplate('<tr><td><H2>{header}</H2></td></tr>');
+			$renderer->setElementTemplate('<TR><TD><FONT SIZE=2>{label}<!-- BEGIN required --><font> *</font><!-- END required --></FONT><!-- BEGIN error --><font color=RED size=2>   {error}</font><br /><!-- END error -->&nbsp;{element}</TD></TR>');
+			$form->setRequiredNote('<br><tr><td><font size=2>* '._("denotes a required field").'</font></td></tr>');
+
+			include_once("includes/inc.forms.validation.php");
+
+			$form->addElement('static', null, _("All feedback is public. Before leaving <i>negative</i> feedback, we recommend trying to address your concerns with the other community member.  Often misunderstandings can be resolved to the benefit of both parties."), null);
+			$form->addElement('static', null, null, null);
+			$ratings = array(0=>"", POSITIVE=>_("Positive"), NEUTRAL=>_("Neutral"), NEGATIVE=>_("Negative"));
+			$form->addElement("select", "rating", _("Feedback Rating"), $ratings);
+			$form->addElement("hidden", "about", $member_to->member_id);
+			$form->addElement("hidden", "author", $member->member_id);
+			$form->addElement("hidden", "mode", 'self');
+			$form->addElement("hidden", "trade_id", $trade->trade_id);
+			$form->addElement('static', null, _("Comments"), null);
+			$form->addElement('textarea', 'comments', null, array('cols'=>60, 'rows'=>4, 'wrap'=>'soft'));
+			$form->addElement('submit', 'btnSubmit', _("Submit"));
+
+			// Define form rules
+			$form->registerRule('verify_selection','function','verify_selection');
+			$form->addRule('rating', _("Choose a rating"), 'verify_selection');
+
+			$list .= $form->toHtml();
 		}
 	}
 	
