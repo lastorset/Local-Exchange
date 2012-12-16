@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/inc.global.php");
-include("classes/class.info.php");
+include_once("classes/class.info.php");
 include("includes/inc.forms.php");
 
 $cUser->MustBeLevel(2); // Wouldn't make sense to allow anyone below the top Admin level to edit page permissions 

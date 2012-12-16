@@ -5,7 +5,7 @@ include_once("includes/inc.global.php");
 $p->site_section = FEEDBACK;
 $p->page_title = _("Leave Feedback");
 
-include("classes/class.feedback.php");
+include_once("classes/class.feedback.php");
 
 $member = new cMember;
 

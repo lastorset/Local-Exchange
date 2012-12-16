@@ -5,7 +5,7 @@ $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
 $p->page_title = _("Download Directory");
 
-include("classes/class.directory.php");
+include_once("classes/class.directory.php");
 include("includes/inc.forms.php");
 
 $form->addElement("static", null, _("Click on the button below and you will be prompted to open or save a printer-friendly (PDF) version of the directory. If you don't already have it, you can download Adobe Acrobat from <A HREF=\"http://www.tucows.com/preview/194959.html\">here</A>."), null);

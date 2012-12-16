@@ -1,7 +1,7 @@
 <?php
 include_once("includes/inc.global.php");
-include("classes/class.news.php");
-include("classes/class.uploads.php");
+include_once("classes/class.news.php");
+include_once("classes/class.uploads.php");
 
 $p->site_section = EVENTS;
 $p->page_title = _("News and Events");

@@ -11,7 +11,7 @@ if ($_REQUEST["type"]==OFFER_LISTING)
 else
 	$p->page_title = _("Edit Wanted:")." ". $title;
 
-include("classes/class.listing.php");
+include_once("classes/class.listing.php");
 include("includes/inc.forms.php");
 
 //

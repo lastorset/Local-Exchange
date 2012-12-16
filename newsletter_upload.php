@@ -1,6 +1,6 @@
 <?php
 include_once("includes/inc.global.php");
-include("classes/class.uploads.php");
+include_once("classes/class.uploads.php");
 
 $cUser->MustBeLevel(1);
 

@@ -7,7 +7,7 @@ global $site_settings;
 $p->site_section = EXCHANGES;
 $p->page_title = _("Record an Exchange");
 
-include("classes/class.trade.php");
+include_once("classes/class.trade.php");
 include("includes/inc.forms.validation.php");
 
 //

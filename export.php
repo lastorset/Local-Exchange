@@ -5,7 +5,7 @@ $cUser->MustBeLevel(2);
 $p->site_section = ADMINISTRATION;
 $p->page_title = _("Export to Spreadsheet");
 
-include("classes/class.backup.php");
+include_once("classes/class.backup.php");
 include("includes/inc.forms.php");
 
 $form->addElement("static", 'contact', _("This will export all the tables in the database to an Excel spreadsheet for backup and  reporting purposes.  Click on the button below and you will be prompted to open or save the file.  Please note that the information in this file is confidential and should only be stored in a private, secure location."), null);

@@ -7,7 +7,7 @@ if ($_REQUEST["type"]==OFFER_LISTING)
 else
 	$p->page_title = _("Choose the Wanted Listing to Edit");
 
-include("classes/class.listing.php");
+include_once("classes/class.listing.php");
 
 $listings = new cTitleList($_GET['type']);
 

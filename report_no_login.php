@@ -1,7 +1,7 @@
 <?php
 	include_once("includes/inc.global.php");
 	
-	include("classes/class.table.php");
+	include_once("classes/class.table.php");
 	
 	$p->site_section = ADMINISTRATION;
 	$p->page_title = _("Members Who Have Never Logged In");

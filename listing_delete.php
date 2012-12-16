@@ -10,7 +10,7 @@ if ($_REQUEST["type"]==OFFER_LISTING)
 else
 	$p->page_title = _("Delete Wanted Listings");
 
-include("classes/class.listing.php");
+include_once("classes/class.listing.php");
 include("includes/inc.forms.php");
 $message = "";
 

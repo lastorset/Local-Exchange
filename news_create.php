@@ -7,7 +7,7 @@ $cUser->MustBeLevel(1);
 $p->site_section = EVENTS;
 $p->page_title = _("Create a News Item");
 
-include("classes/class.news.php");
+include_once("classes/class.news.php");
 include("includes/inc.forms.php");
 
 //

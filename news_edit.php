@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/inc.global.php");
-include("classes/class.news.php");
+include_once("classes/class.news.php");
 include("includes/inc.forms.php");
 
 $cUser->MustBeLevel(1);

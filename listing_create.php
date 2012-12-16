@@ -10,7 +10,7 @@ else
 	$p->page_title = _("Create Wanted Listing");
     
 
-include("classes/class.listing.php");
+include_once("classes/class.listing.php");
 include("includes/inc.forms.php");
 
 // removed by ejkv

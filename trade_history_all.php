@@ -5,7 +5,7 @@
 	$p->site_section = EXCHANGES;
 	$p->page_title = _("Exchange History");
 
-	include("classes/class.trade.php");
+	include_once("classes/class.trade.php");
 	
 	$from = new cDateTime($_REQUEST["from"]);
 	$to = new cDateTime($_REQUEST["to"]);

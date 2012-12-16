@@ -8,7 +8,7 @@ $member_about->LoadMember($_REQUEST["about"]);
 $p->site_section = SECTION_FEEDBACK;
 $p->page_title = _("Leave Feedback about")." ". $member_about->PrimaryName();
 
-include("classes/class.feedback.php");
+include_once("classes/class.feedback.php");
 include("includes/inc.forms.validation.php");
 
 //

@@ -6,7 +6,7 @@ $cUser->MustBeLevel(2);
 $p->site_section = EXCHANGES;
 $p->page_title = _("Reverse an Exchange");
 
-include("classes/class.trade.php");
+include_once("classes/class.trade.php");
 include("includes/inc.forms.php");
 
 //

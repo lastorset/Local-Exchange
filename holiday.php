@@ -5,7 +5,7 @@ $cUser->MustBeLoggedOn();
 $p->site_section = PROFILE;
 $p->page_title = _("Inactivate Listings While on Holiday");
 
-include("classes/class.directory.php");
+include_once("classes/class.directory.php");
 include("includes/inc.forms.php");
 
 if($_REQUEST["mode"] == "admin") {

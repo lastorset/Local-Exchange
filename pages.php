@@ -1,7 +1,7 @@
 <?php
 
 include_once("includes/inc.global.php");
-include("classes/class.info.php");
+include_once("classes/class.info.php");
 
 if ($_GET["destroySess"]==1) {
 	
