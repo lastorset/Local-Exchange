@@ -75,7 +75,7 @@ class cPerson
 			include("redirect.php");
 		}
 		else
-			$this->Geocode();
+			$this->GeocodeCatch();
 
 		$insert = $cDB->Query("INSERT INTO ".DATABASE_PERSONS." (member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country ".
 			(is_array($this->coordinates) ? ", latitude, longitude" : "")
@@ -89,7 +89,7 @@ class cPerson
 	function SavePerson() {
 		global $cDB, $cErr;
 
-		$this->Geocode();
+		$this->GeocodeCatch();
 		$query = "UPDATE ". DATABASE_PERSONS ." SET member_id=". $cDB->EscTxt($this->member_id) .", primary_member=". $cDB->EscTxt($this->primary_member) .", directory_list=". $cDB->EscTxt($this->directory_list) .", first_name=". $cDB->EscTxt($this->first_name) .", last_name=". $cDB->EscTxt($this->last_name) .", mid_name=". $cDB->EscTxt($this->mid_name) .", dob=". $cDB->EscTxt($this->dob) .", mother_mn=". $cDB->EscTxt($this->mother_mn) .", email=". $cDB->EscTxt($this->email) .", phone1_area=". $cDB->EscTxt($this->phone1_area) .", phone1_number=". $cDB->EscTxt($this->phone1_number) .", phone1_ext=". $cDB->EscTxt($this->phone1_ext) .", phone2_area=". $cDB->EscTxt($this->phone2_area) .", phone2_number=". $cDB->EscTxt($this->phone2_number) .", phone2_ext=". $cDB->EscTxt($this->phone2_ext) .", fax_area=". $cDB->EscTxt($this->fax_area) .", fax_number=". $cDB->EscTxt($this->fax_number) .", fax_ext=". $cDB->EscTxt($this->fax_ext) .", address_street1=". $cDB->EscTxt($this->address_street1) .", address_street2=". $cDB->EscTxt($this->address_street2) .", address_city=". $cDB->EscTxt($this->address_city) .", address_state_code=". $cDB->EscTxt($this->address_state_code) .", address_post_code=". $cDB->EscTxt($this->address_post_code) .", address_country=". $cDB->EscTxt($this->address_country).", about_me=". $cDB->EscTxt($this->about_me) .","."age=".  $cDB->EscTxt($this->age) .",". "sex=". $cDB->EscTxt($this->sex) .
 			(is_array($this->coordinates) ? ", latitude={$this->coordinates[0]}, longitude={$this->coordinates[1]}" : "")
 			." WHERE person_id=". $cDB->EscTxt($this->person_id) .";";
@@ -230,6 +230,25 @@ class cPerson
 		return $phone;
 	}
 
+	/** Delegates to Geocode, but catches exceptions, nulls coordinates and produces
+	 *  user-facing error messages and system error logs. */
+	function GeocodeCatch() {
+		try {
+			return $this->Geocode();
+		} catch (AddressException $e) {
+			// Maybe the user can fix the error themselves
+			// Translation hint: %s is the geocoding service (finds addresses on a map).
+			$cErr->Error(sprintf(_("%s could not find your address. However, we will attempt to save your account information."), cGeocode::GeocodingProvider()), ERROR_SEVERITY_LOW);
+			// TODO When we're confident that geocoding works as it should, this error log message may be removed, as it's likely a user error.
+			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): address was \"". implode(', ', $address_components) ."\"; error was \"". $e->getMessage() ."\"", __FILE__, __LINE__);
+			$this->coordinates = null;
+		} catch (Exception $e) {
+			$cErr->Error(_("There was a system error locating your address on the map. However, we will attempt to save your account information."), ERROR_SEVERITY_LOW);
+			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): ". $e->getMessage(), __FILE__, __LINE__);
+			$this->coordinates = null;
+		}
+	}
+
 	function Geocode() {
 		global $cErr;
 		if (!GEOCODE) {
@@ -248,20 +267,7 @@ class cPerson
 				$state_list[$this->address_state_code],
 				$this->address_post_code,
 				$this->address_country);
-		try {
-			$this->coordinates = cGeocode::Geocode($address_components);
-		} catch (AddressException $e) {
-			// Maybe the user can fix the error themselves
-			// Translation hint: %s is the geocoding service (finds addresses on a map).
-			$cErr->Error(sprintf(_("%s could not find your address. However, we will attempt to save your account information."), cGeocode::GeocodingProvider()), ERROR_SEVERITY_LOW);
-			// TODO When we're confident that geocoding works as it should, this error log message may be removed, as it's likely a user error.
-			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): address was \"". implode(', ', $address_components) ."\"; error was \"". $e->getMessage() ."\"", __FILE__, __LINE__);
-			$this->coordinates = null;
-		} catch (Exception $e) {
-			$cErr->Error(_("There was a system error locating your address on the map. However, we will attempt to save your account information."), ERROR_SEVERITY_LOW);
-			$cErr->InternalError("Could not geocode {$this->Name()} ($this->member_id): ". $e->getMessage(), __FILE__, __LINE__);
-			$this->coordinates = null;
-		}
+		$this->coordinates = cGeocode::Geocode($address_components);
 	}
 }
 

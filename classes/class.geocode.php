@@ -281,4 +281,27 @@ SQL
 		}
 		return $out;
 	}
+
+	/** Select all persons that are missing geocoding data. */
+	function MissingPersons() {
+		$c = get_defined_constants();
+		$result = $cDB->Query(<<<SQL
+			SELECT DISTINCT person_id
+			FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
+			WHERE
+				(`latitude` IS NULL OR `longitude` IS NULL)
+				AND
+				status = '{$c['ACTIVE']}'
+				AND address_post_code NOT LIKE "0000aa" -- Special accounts
+SQL
+		);
+		$people = array();
+		while($person_row = mysql_fetch_array($result))
+		{
+			$person = new cPerson();
+			$person->LoadPerson($person_row['person_id']);
+			array_push($people, $person);
+		}
+		return $people;
+	}
 }

@@ -6,14 +6,14 @@ $p->site_section = ADMINISTRATION;
 print $p->MakePageHeader();
 print $p->MakePageMenu();
 
-print "<noscript>You do not have JavaScript enabled. Please <a href=initial_geocoding_ajax.php>run the script manually</a>.</noscript>";
+print "<noscript>You do not have JavaScript enabled. Please <a href=ajax/geocode.php>run the script manually</a> (takes a long time and may be interrupted by PHP).</noscript>";
 print <<<HTML
 <p id=status style="background-color: lightgoldenrodyellow">Waiting for results…</p>
 <pre id=log></pre>
 <script>
 var xhr = new XMLHttpRequest();
-var url = "http://lex.localhost/initial_geocoding_ajax.php";
- xhr.open("GET", url, true); 
+var url = "http://lex.localhost/ajax/geocode.php";
+ xhr.open("GET", url, true);
  xhr.send();
 var log = document.getElementById("log");
 var status = document.getElementById("status");
@@ -40,4 +40,3 @@ HTML;
 print $p->MakePageFooter();
 
 ?>
-  
