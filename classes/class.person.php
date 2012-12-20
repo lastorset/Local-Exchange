@@ -233,6 +233,7 @@ class cPerson
 	/** Delegates to Geocode, but catches exceptions, nulls coordinates and produces
 	 *  user-facing error messages and system error logs. */
 	function GeocodeCatch() {
+		global $cErr;
 		try {
 			return $this->Geocode();
 		} catch (AddressException $e) {
@@ -250,7 +251,6 @@ class cPerson
 	}
 
 	function Geocode() {
-		global $cErr;
 		if (!GEOCODE) {
 			$this->coordinates = null;
 			return;

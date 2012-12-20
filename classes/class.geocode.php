@@ -55,6 +55,7 @@ class cGeocode {
 		// Send request
 		$response = http_parse_message(http_get($su_geocode_request, array('timeout' => 15)));
 
+		// TODO Authentication error with incorrect key (wrong domain, invalid key)
 		if (!$response)
 			throw new Exception("Could not connect to geocoding server");
 		else if ($response->responseCode != 200)
@@ -195,7 +196,7 @@ HTML;
 HTML;
 	}
 
-	static function AllMarkers() {
+	static function AllMarkers($fetch_listings = true) {
 		global $cDB, $cUser;
 
 		function getListings(&$listing_group) {
@@ -244,19 +245,21 @@ HTML;
 SQL
 		);
 		$out = array();
-		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow)
+		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow). With that in place, the $fetch_listings parameter becomes unnecessary.
 		while($marker = mysql_fetch_array($result))
 		{
-			$listing_group = new cListingGroup(OFFER_LISTING_CODE);
-			$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
-			// TODO Cleaner way of getting out the listings, including getting both types in one call
-			$listings_offered = getListings($listing_group);
-			$listing_group = new cListingGroup(WANT_LISTING_CODE);
-			$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
-			$listings_wanted = getListings($listing_group);
-			$listings = array('offered' => $listings_offered, 'wanted' => $listings_wanted);
+			if ($fetch_listings) {
+				$listing_group = new cListingGroup(OFFER_LISTING_CODE);
+				$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
+				// TODO Cleaner way of getting out the listings, including getting both types in one call
+				$listings_offered = getListings($listing_group);
+				$listing_group = new cListingGroup(WANT_LISTING_CODE);
+				$listing_group->LoadListingGroup(null, null, $marker['member_id'], null, false);
+				$listings_wanted = getListings($listing_group);
+				$listings = array('offered' => $listings_offered, 'wanted' => $listings_wanted);
+			} else
+				$listings = null;
 
-			// TODO Skip New Member Fund etc.
 			if ($cUser->IsLoggedOn())
 				array_push($out, array(
 					'id' => $marker['member_id'],
@@ -282,18 +285,18 @@ SQL
 		return $out;
 	}
 
-	/** Select all persons that are missing geocoding data. */
-	function MissingPersons() {
+	/** Select all persons that can be geocoded, or that are missing geocoding data. */
+	static function GeocodablePersons($only_missing=false) {
+		global $cDB;
 		$c = get_defined_constants();
 		$result = $cDB->Query(<<<SQL
 			SELECT DISTINCT person_id
 			FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
 			WHERE
-				(`latitude` IS NULL OR `longitude` IS NULL)
-				AND
 				status = '{$c['ACTIVE']}'
 				AND address_post_code NOT LIKE "0000aa" -- Special accounts
 SQL
+				. ($only_missing ? "\n AND (`latitude` IS NULL OR `longitude` IS NULL)" : "")
 		);
 		$people = array();
 		while($person_row = mysql_fetch_array($result))
@@ -303,5 +306,9 @@ SQL
 			array_push($people, $person);
 		}
 		return $people;
+	}
+
+	static function MissingPersons() {
+		return self::GeocodablePersons(true);
 	}
 }
