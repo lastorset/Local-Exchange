@@ -50,8 +50,8 @@ foreach ($people as $person) {
 
 	$geocode_count++;
 
-	// Throttle requests by waiting 200ms to prevent Google from blocking us
-	usleep(200000);
+	// Throttle requests by waiting 300ms to prevent Google from blocking us
+	usleep(300000);
 }
 
 print "FINISHED Geocoding completed. $geocode_count responses processed.";
