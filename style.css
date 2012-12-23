@@ -154,122 +154,161 @@ body {scrollbar-shadow-color: #6C81C6; scrollbar-highlight-color: #6C81C6; scrol
 }
 
 #maincontent {
- 	width: 650px; /* changed from 600px to 650px by ejkv */	
+	width: 650px; /* changed from 600px to 650px by ejkv */	
 	border-left: 1px solid #6C81C6;
 	border-right: 1px solid #6C81C6;
- 	font-size: 13px;
+	font-size: 13px;
 	color: #000033;
 	padding: 25px;
- }
- 
- #sidebar {
- 	width: 105px;
- 	font-size: 80%;
- 	font-family: sans;
-	vertical-align: top;
- 	background-color: #E2E4EF;
- }
- 
- #header {
- 	background-color: #6C81C6;
- 	color: #FFFFFF;
- }
+}
 
- #header h1, #header div {
+#sidebar {
+	width: 105px;
+	font-size: 80%;
+	font-family: sans;
+	vertical-align: top;
+	background-color: #E2E4EF;
+}
+
+#header {
+	background-color: #6C81C6;
+	color: #FFFFFF;
+}
+
+#header h1, #header div {
 	color: #d7dbeb;
 	text-align: right;
 	font-family: serif;
 	font-weight: bold;
 	text-shadow: 2px 2px 0px #122;
- }
+}
 
- #header h1 {
+#header h1 {
 	margin-bottom: 0;
 	font-size: 25px;
 	text-shadow: 2px 2px 2px #122;
- }
- 
- #footer {
- 	background-color: #6C81C6;
- 	color: #CCCCCC;
+}
+
+#footer {
+	background-color: #6C81C6;
+	color: #CCCCCC;
 	font-size: 10px;
 	}
 
 #footer a:link, #footer a:visited {
- 	color: #CCCCCC;
- }
- 
- td, p, ul {
- 	font-family: Verdana, Georgia, Times, serif;
- 	font-size: 13px;
- }
- 
- h1:first-child {margin-top: 0;}/*starts first h1 in TD flush top*/
- h2:first-child {margin-top: 0;}/*starts first h2 in TD flush top*/
- h3:first-child {margin-top: 0;}/*starts first h3 in TD flush top*/
- 
- h1 { font-size: 160%; }
- h2 { font-size: 140%; }
- h3 { font-size: 110%; }
+	color: #CCCCCC;
+}
 
- h1, h2, h3, th, td b, #header h1 {
- 	font-family: 'Droid Serif', serif;
- 	font-weight: bold;
- }
- 
- #contenttable {
- 	font-size: 13px;
- 	text-align: left;
- 	width: 100%;
- 	border: 0;
- }
- 
- #tableheader {
- 	background-color: #d8dbea;
- }
- 
- #tablerow {
- 	background-color: white;
- }
- 
- #tablealtrow {
- 	background-color: #e4e9ea;
- }
- 
- #sidebar a {
- 	/*/*/padding: 3px;
- 	display: block;
- 	border: 2px solid #CCC;
- 	text-decoration: none;
- 	line-height: 1em;
- 	width: 100px;
- }
- 
- #sidebar a:link, #sidebar a:visited {
- 	color: #666;
- }
- 
- #sidebar a:hover, #sidebar a:active {
- 	color: #FFFFFF;
- 	background-color: #6C81C6;
- 	border: 2px solid #000;
- }
- 
- #sidebar ul {
- 	/*/*/padding-left: 3px;
- 	margin-left: 3px;
- 	list-style-type: none; /* */
- }
- 
- #sidebar li {
- 	/*/*/margin: 0px 0px 6px 0px; /* */
- }
- 
- #current a {
- 	color: #FFFFFF !important;
- 	/*/*/background-color: #999999!important;
- 	border: 2px solid #999 !important; /* */
- }
+td, p, ul {
+	font-family: Verdana, Georgia, Times, serif;
+	font-size: 13px;
+}
+
+h1:first-child {margin-top: 0;}/*starts first h1 in TD flush top*/
+h2:first-child {margin-top: 0;}/*starts first h2 in TD flush top*/
+h3:first-child {margin-top: 0;}/*starts first h3 in TD flush top*/
+
+h1 { font-size: 160%; }
+h2 { font-size: 140%; }
+h3 { font-size: 110%; }
+
+h1, h2, h3, th, td b, #header h1 {
+	font-family: 'Droid Serif', serif;
+	font-weight: bold;
+}
+
+th {
+	font-size: 14px;
+	text-align: left;
+}
+
+/* Settings */
+form#settings td {
+	/* The following are typical browser default styles, but they are set explicitly to ensure they
+	line up with 'p.description' below. */
+	padding: 1px;
+	border-spacing: 2px;
+}
+
+form#settings p.description {
+	padding: 3px;
+	color: green;
+}
+
+/* Language settings */
+
+input:not(:checked) + label[for=ENABLE_TRANSLATION] ~ table.language-selector {
+	display: none;
+}
+
+table.language-selector {
+	margin: 1em 0;
+}
+
+table.language-selector td,
+table.language-selector th {
+	border-right: 1em solid transparent;
+}
+
+table.language-selector td.widget {
+	text-align: center;
+}
+
+/* End language settings */
+
+#contenttable {
+	font-size: 13px;
+	text-align: left;
+	width: 100%;
+	border: 0;
+}
+
+#tableheader {
+	background-color: #d8dbea;
+}
+
+#tablerow {
+	background-color: white;
+}
+
+#tablealtrow {
+	background-color: #e4e9ea;
+}
+
+#sidebar a {
+	/*/*/padding: 3px;
+	display: block;
+	border: 2px solid #CCC;
+	text-decoration: none;
+	line-height: 1em;
+	width: 100px;
+}
+
+#sidebar a:link, #sidebar a:visited {
+	color: #666;
+}
+
+#sidebar a:hover, #sidebar a:active {
+	color: #FFFFFF;
+	background-color: #6C81C6;
+	border: 2px solid #000;
+}
+
+#sidebar ul {
+	/*/*/padding-left: 3px;
+	margin-left: 3px;
+	list-style-type: none; /* */
+}
+
+#sidebar li {
+	/*/*/margin: 0px 0px 6px 0px; /* */
+}
+
+#current a {
+	color: #FFFFFF !important;
+	/*/*/background-color: #999999!important;
+	border: 2px solid #999 !important; /* */
+}
 
 .image-right {
 	float: right;
