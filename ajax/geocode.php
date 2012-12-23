@@ -6,15 +6,6 @@ include_once("../classes/class.person.php");
 
 include_once("../includes/inc.global.php");
 
-class GeocodingError {
-	var $member_id;
-	var $message;
-	function __construct($person, $message) {
-		$this->member_id = $person->member_id;
-		$this->message = $message;
-	}
-}
-
 if (isset($_GET['progress']))
 {
 	// Return all coordinates found so far
@@ -24,28 +15,30 @@ if (isset($_GET['progress']))
 
 // TODO Figure out how to report that PHP has timed out the script.
 
-if (!$cUser->HasLevel(1))
-	die("ERROR Must have administrator permissions\nFINISHED");
+$general_errors = array();
+$address_errors = array();
+$other_errors = array();
+if (!$cUser->HasLevel(1)) {
+	$general_errors[] = array('message' => "Must have administrator permissions");
+	print makeResponse();
+	exit();
+}
 
 // Get list of addresses that need geocoding
 $people = cGeocode::MissingPersons();
 
 $geocode_count = 0;
-$address_errors = array();
-$other_errors = array();
 foreach ($people as $person) {
 	try {
 		$person->Geocode();
 		$person->SavePerson();
 	} catch (AddressException $e) {
-		echo "ERROR $person->member_id {$e->getMessage()}\n";
-		array_push($address_errors, $e->getMessage());
+		$address_errors[] = array('member' => $person->member_id, 'message' => $e->getMessage());
 	} catch (HaltGeocodingException $e) {
-		print "ERROR Daily quota exceeded. Geocoding aborted\n";
+		$general_errors[] = array('message' => "Quota exceeded. Geocoding aborted");
 		break;
 	} catch (Exception $e) {
-		echo "ERROR $person->member_id {$e->getMessage()}\n";
-		array_push($other_errors, $e->getMessage());
+		$other_errors[] = array('member' => $person->member_id, 'message' => $e->getMessage());
 	}
 
 	$geocode_count++;
@@ -54,6 +47,15 @@ foreach ($people as $person) {
 	usleep(300000);
 }
 
-print "FINISHED Geocoding completed. $geocode_count responses processed.";
+function makeResponse() {
+	global $geocode_count, $address_errors, $other_errors, $general_errors;
+	return json_encode(array(
+		'processedCount' => $geocode_count,
+		'addressErrors' => $address_errors,
+		'otherErrors' => $other_errors,
+		'generalErrors' => $general_errors
+	));
+}
 
+print makeResponse();
 ?>

@@ -2,25 +2,45 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = ADMINISTRATION;
+$p->page_title = _("Initial geocoding");
+
+$cUser->MustBeLevel(1);
 
 print $p->MakePageHeader();
 print $p->MakePageMenu();
 
 $geocodable_count = count(cGeocode::GeocodablePersons());
+$provider = cGeocode::GeocodingProvider();
 
-print "<noscript>You do not have JavaScript enabled. Please <a href=ajax/geocode.php>run the script manually</a> (takes a long time and may be interrupted by PHP).</noscript>";
 print <<<HTML
+<h2>Initial geocoding</h2>
+This script contacts $provider to place every member on a map.
+<noscript><p>You do not have JavaScript enabled. Please <a href=ajax/geocode.php>run the script manually</a> (takes a long time and may be interrupted by PHP).</p></noscript>
 <p id=status style="background-color: lightgoldenrodyellow">Waiting for results…</p>
 <progress max=$geocodable_count></progress>
-<div id="map_canvas" style="width:100%;"></div>
-<pre id=log></pre>
+<div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
+<div id=log style="display: none">
+<!-- TODO Error reporting needs to be tested when Google unblocks us -->
+	<span id=processed_count></span>
+	<h3>Errors</h3>
+	<ul id=general_errors>
+	</ul>
+
+	<h4>Address errors</h4>
+	<ul id=address_errors>
+	</ul>
+
+	<h4>Other errors</h4>
+	<ul id=other_errors>
+	</ul>
+</div>
 <script type="text/javascript"
 	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
 </script>
 <script>
 	// Initialize XHR
 	var geocodingRequest = new XMLHttpRequest();
-	var url = "http://lex.localhost/ajax/geocode.php";
+	var url = "http://lex.localhost/ajax/geocode.php?"+ Date.now();
 	geocodingRequest.open("GET", url, true);
 	geocodingRequest.send();
 	geocodingRequest.onload = finish;
@@ -36,8 +56,32 @@ print <<<HTML
 	function finish() {
 		status.innerText = "Done";
 		progress.value = $geocodable_count;
-		log.innerText = geocodingRequest.responseText;
+		outputLog(log, JSON.parse(geocodingRequest.responseText));
+		// TODO This is not clearing the interval.
 		clearInterval(interval);
+	}
+
+	function outputLog(log, response) {
+		if (response.processedCount)
+			document.getElementById('processed_count').innerText = response.processedCount +" responses processed.";
+
+		addItem(response.generalErrors, document.getElementById('general_errors'))
+		addItem(response.addressErrors, document.getElementById('address_errors'))
+		addItem(response.otherErrors, document.getElementById('other_errors'))
+
+		function addItem(errors, elm) {
+			if (errors)
+				for (var i = 0; i < errors.length; i++) {
+					var item = document.createElement("li");
+
+					var html = "";
+					if (errors[i].member)
+						html = "<a href='member_summary.php?member_id="+ errors[i].member +"'>"+ errors[i].member +"</a>: ";
+					item.innerHTML = html + errors[i].message;
+					elm.appendChild(item);
+				}
+		}
+		log.style.display = 'block';
 	}
 
 	// Set up map
