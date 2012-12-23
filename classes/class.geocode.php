@@ -74,7 +74,7 @@ class cGeocode {
 		if ($json->status == "ZERO_RESULTS")
 			throw new AddressException("No results were found");
 		else if ($json->status == "OVER_QUERY_LIMIT")
-			throw new HaltGeocodingException("Daily quota exceeded. Please abort geocoding");
+			throw new HaltGeocodingException("Quota exceeded. Please abort geocoding");
 		else if ($json->status == "REQUEST_DENIED" || $json->status == "INVALID_REQUEST")
 			throw new Exception("Invalid request or request denied");
 		else if ($json->status != "OK")
