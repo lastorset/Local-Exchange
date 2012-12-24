@@ -40,8 +40,8 @@ This script contacts $provider to place every member on a map.
 <script>
 	// Initialize XHR
 	var geocodingRequest = new XMLHttpRequest();
-	var url = "http://lex.localhost/ajax/geocode.php?"+ Date.now();
-	geocodingRequest.open("GET", url, true);
+	var url = "http://lex.localhost/ajax/geocode.php";
+	geocodingRequest.open("POST", url, true);
 	geocodingRequest.addEventListener('load', finish, false);
 	geocodingRequest.send();
 
