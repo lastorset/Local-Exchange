@@ -57,8 +57,7 @@ This script contacts $provider to place every member on a map.
 		status.innerText = "Done";
 		progress.value = $geocodable_count;
 		outputLog(log, JSON.parse(geocodingRequest.responseText));
-		// TODO This is not clearing the interval.
-		clearInterval(interval);
+		window.clearInterval(interval);
 	}
 
 	function outputLog(log, response) {
