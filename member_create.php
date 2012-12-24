@@ -193,6 +193,8 @@ function process_data ($values) {
 	$new_member = new cMember($values);
 	$new_person = new cPerson($values);
 
+	$new_person->GeocodeCatch();
+
 	if($created = $new_person->SaveNewPerson()) 
 		$created = $new_member->SaveNewMember();
 

@@ -74,8 +74,6 @@ class cPerson
 			$cErr->Error(_("Could not save new person. There is already a person in your account with the same name, date of birth, and mother's maiden name. If you received this error after pressing the Back button, try going back to the menu and starting again."));
 			include("redirect.php");
 		}
-		else
-			$this->GeocodeCatch();
 
 		$insert = $cDB->Query("INSERT INTO ".DATABASE_PERSONS." (member_id, primary_member, directory_list, first_name, last_name, mid_name, dob, mother_mn, email, phone1_area, phone1_number, phone1_ext, phone2_area, phone2_number, phone2_ext, fax_area, fax_number, fax_ext, address_street1, address_street2, address_city, address_state_code, address_post_code, address_country ".
 			(is_array($this->coordinates) ? ", latitude, longitude" : "")
@@ -89,7 +87,6 @@ class cPerson
 	function SavePerson() {
 		global $cDB, $cErr;
 
-		$this->GeocodeCatch();
 		$query = "UPDATE ". DATABASE_PERSONS ." SET member_id=". $cDB->EscTxt($this->member_id) .", primary_member=". $cDB->EscTxt($this->primary_member) .", directory_list=". $cDB->EscTxt($this->directory_list) .", first_name=". $cDB->EscTxt($this->first_name) .", last_name=". $cDB->EscTxt($this->last_name) .", mid_name=". $cDB->EscTxt($this->mid_name) .", dob=". $cDB->EscTxt($this->dob) .", mother_mn=". $cDB->EscTxt($this->mother_mn) .", email=". $cDB->EscTxt($this->email) .", phone1_area=". $cDB->EscTxt($this->phone1_area) .", phone1_number=". $cDB->EscTxt($this->phone1_number) .", phone1_ext=". $cDB->EscTxt($this->phone1_ext) .", phone2_area=". $cDB->EscTxt($this->phone2_area) .", phone2_number=". $cDB->EscTxt($this->phone2_number) .", phone2_ext=". $cDB->EscTxt($this->phone2_ext) .", fax_area=". $cDB->EscTxt($this->fax_area) .", fax_number=". $cDB->EscTxt($this->fax_number) .", fax_ext=". $cDB->EscTxt($this->fax_ext) .", address_street1=". $cDB->EscTxt($this->address_street1) .", address_street2=". $cDB->EscTxt($this->address_street2) .", address_city=". $cDB->EscTxt($this->address_city) .", address_state_code=". $cDB->EscTxt($this->address_state_code) .", address_post_code=". $cDB->EscTxt($this->address_post_code) .", address_country=". $cDB->EscTxt($this->address_country).", about_me=". $cDB->EscTxt($this->about_me) .","."age=".  $cDB->EscTxt($this->age) .",". "sex=". $cDB->EscTxt($this->sex) .
 			(is_array($this->coordinates) ? ", latitude={$this->coordinates[0]}, longitude={$this->coordinates[1]}" : "")
 			." WHERE person_id=". $cDB->EscTxt($this->person_id) .";";

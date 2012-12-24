@@ -136,6 +136,7 @@ function process_data ($values) {
     }
 
 	$new_person = new cPerson($values);
+	$new_person->GeocodeCatch();
 	$created = $new_person->SaveNewPerson();
 	
 	$member = new cMember();

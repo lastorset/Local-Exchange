@@ -252,6 +252,8 @@ function process_data ($values) {
 		$member->person[0]->sex = htmlspecialchars($values["sex"]);	
 		$member->person[0]->about_me = ($values["about_me"]);	
 	}
+
+	$member->person[0]->GeocodeCatch();
 	
 	if($member->SaveMember()) {
 		$list .= _("Changes saved."); 
