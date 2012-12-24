@@ -125,7 +125,7 @@ HTML;
 	}
 
 	static function GenerateMap() {
-		global $cUser;
+		global $cUser, $_;
 		// Used to influence caching by giving the private map its own cache key
 		$is_logged_on = $cUser->IsLoggedOn() ? "?logged_on" : "";
 
@@ -176,10 +176,10 @@ HTML;
 								if (markers[i].name)
 									// TODO Some way to get internationalized text
 									text = "<h1>"+ markers[i].name +"</h1>"
-										 + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "Se tilbud og ønsker" +"</a>";
+										 + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
 									// TODO Display listings directly in info window
 								else
-									text = "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering";
+									text = "{$_("Log in to see offers, wants and precise location")}";
 								// TODO More lightweight method? (without a separate function for each marker)
 								google.maps.event.addListener(marker, 'click', (function(marker, text) {
 									return function() {

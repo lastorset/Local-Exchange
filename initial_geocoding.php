@@ -12,15 +12,16 @@ print $p->MakePageMenu();
 $geocodable_count = count(cGeocode::GeocodablePersons());
 $provider = cGeocode::GeocodingProvider();
 
-print <<<HTML
-<h2>Initial geocoding</h2>
-This script contacts $provider to place every member on a map.
-<noscript><p>You do not have JavaScript enabled. Please <a href=ajax/geocode.php>run the script manually</a> (takes a long time and may be interrupted by PHP).</p></noscript>
-<p id=status style="background-color: lightgoldenrodyellow">Waiting for results…</p>
-<progress max=$geocodable_count></progress>
+?>
+<h2><?= _("Initial geocoding") ?></h2>
+<?= // Translation hint: %1$s is the name of a geocoding provider
+sprintf(_('This script contacts %1$s to place every member on a map.'), $provider) ?>
+<noscript><p><?= // Translation hint: %s are HTML tags making a link.
+sprintf(_("You do not have JavaScript enabled. Please %s run the script manually%s (takes a long time and may be interrupted by PHP)."), "<a href=ajax/geocode.php>", "</a>") ?></p></noscript>
+<p id=status style="background-color: lightgoldenrodyellow"><?= _("Waiting for results…") ?></p>
+<progress max=<?= $geocodable_count ?>></progress>
 <div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
 <div id=log style="display: none">
-<!-- TODO Error reporting needs to be tested when Google unblocks us -->
 	<span id=processed_count></span>
 	<h3>Errors</h3>
 	<ul id=general_errors>
@@ -37,6 +38,7 @@ This script contacts $provider to place every member on a map.
 <script type="text/javascript"
 	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
 </script>
+<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
 <script>
 	// Initialize XHR
 	var geocodingRequest = new XMLHttpRequest();
@@ -55,12 +57,12 @@ This script contacts $provider to place every member on a map.
 	function finish() {
 		if (geocodingRequest.readyState === 4) {
 			if (geocodingRequest.status === 200) {
-				status.innerText = "Done";
-				progress.value = $geocodable_count;
+				status.innerText = "<?= _("Done") ?>";
+				progress.value = <?= $geocodable_count ?>;
 				outputLog(log, JSON.parse(geocodingRequest.responseText));
 				window.clearInterval(interval);
 			} else {
-				status.innerText = "Request failed.";
+				status.innerText = "<?= _("Request failed.") ?>";
 				progress.value = 0;
 				window.clearInterval(interval);
 			}
@@ -69,7 +71,7 @@ This script contacts $provider to place every member on a map.
 
 	function outputLog(log, response) {
 		if (response.processedCount)
-			document.getElementById('processed_count').innerText = response.processedCount +" responses processed.";
+			document.getElementById('processed_count').innerText = sprintf("<?= _("%(number)s responses processed.") ?>", { number: response.processedCount });
 
 		addItem(response.generalErrors, document.getElementById('general_errors'))
 		addItem(response.addressErrors, document.getElementById('address_errors'))
@@ -141,7 +143,7 @@ This script contacts $provider to place every member on a map.
 
 	window.addEventListener('DOMContentLoaded', initializeMap, false);
 </script>
-HTML;
+<?php
 
 print $p->MakePageFooter();
 
