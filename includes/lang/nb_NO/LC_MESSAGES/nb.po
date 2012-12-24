@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-24 18:21+0100\n"
-"PO-Revision-Date: 2012-11-12 23:56+0100\n"
+"POT-Creation-Date: 2012-12-24 22:36+0100\n"
+"PO-Revision-Date: 2012-12-24 22:38+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -74,7 +74,7 @@ msgstr "Administrer kontobegrensinger"
 #: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
 #: includes/inc.config.php:218
 msgid "Exchanges"
-msgstr "Handler"
+msgstr "Handel"
 
 #: admin_menu.php:48
 msgid "Record an Exchange for a Member"
@@ -236,7 +236,7 @@ msgstr "Send e-post til alle medlemmene"
 msgid "View Members Not Yet Logged In"
 msgstr "Se medlemer som ennå ikke har logget på"
 
-#: balance_to_edit.php:11 feedback.php:68
+#: balance_to_edit.php:11 feedback.php:69
 msgid "Choose Member whose Balance you wish to Edit"
 msgstr "Velg medlem som du vil endre saldoen for"
 
@@ -304,10 +304,10 @@ msgid "Category Description"
 msgstr "Kategoribeskrivelse"
 
 #: category_create.php:19 category_edit.php:23 create_info.php:21
-#: do_info_edit.php:24 feedback.php:38 feedback_rebuttal.php:39
+#: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:72 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:57
+#: timeframe_choose.php:19 trade.php:57 trade.php:223
 msgid "Submit"
 msgstr "Send inn"
 
@@ -323,7 +323,7 @@ msgstr "Kategorien er opprettet."
 msgid "Could not save the category."
 msgstr "Kunne ikke lagre kategorien."
 
-#: category_create.php:44 category_edit.php:48 email.php:83 feedback.php:84
+#: category_create.php:44 category_edit.php:48 email.php:83 feedback.php:85
 #: listing_create.php:122 listing_edit.php:141 member_contact_create.php:152
 #: member_contact_edit.php:168 member_create.php:221 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
@@ -746,13 +746,15 @@ msgstr ""
 
 #: create_db.php:274
 msgid "Email Admin on Out Of Balance"
-msgstr ""
+msgstr "Send e-post til administrator når saldobalansen er feil"
 
 #: create_db.php:274
 msgid ""
 "Should the system send the Admin an email when the database is found to be "
 "out of balance?"
 msgstr ""
+"Skal systemet sende e-post til administratoren når saldobalansen i databasen "
+"er feil?"
 
 #: create_db.php:276
 msgid "Email From Address"
@@ -760,19 +762,22 @@ msgstr "E-post fra adresse"
 
 #: create_db.php:276
 msgid "reply@my-domain.org"
-msgstr ""
+msgstr "svar@mitt-domene.org"
 
 #: create_db.php:276
 msgid "Email sent from this site will show as coming from this address"
 msgstr ""
+"E-post som blir sendt fra dette nettstedet vil se ut til å komme fra denne "
+"addressen"
 
 #: create_db.php:278
 msgid "Use Rates Fields"
-msgstr ""
+msgstr "Vis pris-felt"
 
 #: create_db.php:278
 msgid "If turned on, listings will include a &quot;Rate&quot; field"
 msgstr ""
+"Dersom dette er slått på, vil oppføringene ha et felt for &quot;pris&quot;"
 
 #: create_db.php:280
 msgid "Enable Monthly Fee"
@@ -788,23 +793,25 @@ msgstr "Månedsavgiftsbeløp"
 
 #: create_db.php:282
 msgid "How much should the Monthly Fee be?"
-msgstr ""
+msgstr "Hvor høy skal månedsavgifta være?"
 
 #: create_db.php:284
 msgid "Send Listing Updates via Email"
-msgstr ""
+msgstr "Send oppdaterte oppføringer via e-post"
 
 #: create_db.php:284
 msgid "Should users receive automatic updates for new and modified listings?"
-msgstr ""
+msgstr "Skal brukerne automatisk få melding om nye og endrede oppføringer?"
 
 #: create_db.php:286
 msgid "Default Email Listings Update Interval"
-msgstr ""
+msgstr "Forvalg for hvor ofte e-postoppdateringer blir sendt ut"
 
 #: create_db.php:286
 msgid "If automatic updates are sent, this is the default interval."
 msgstr ""
+"Dersom oppdateringer automatisk blir sendt ut, er dette forslaget til hvor "
+"ofte det skjer."
 
 #: create_db.php:288
 msgid "Allow Income Sharing"
@@ -816,24 +823,29 @@ msgid ""
 "generate with another account of their choosing? The member can specify the "
 "exact percentage they wish to donate."
 msgstr ""
+"Vil du tillate medlemmene å dele en prosentandel av inntekten sin med et "
+"annet medlem de velger? Medlemmet kan oppgi den presise prosentandelen de "
+"vil gi bort."
 
 #: create_db.php:290
 msgid "Message Displayed to Leecher who tries to trade"
-msgstr ""
+msgstr "Melding til gratispassasjer som prøver å handle"
 
 #: create_db.php:290
 msgid ""
 "Restrictions have been imposed on your account which prevent you from "
 "trading outwards, Please contact the administrator for more information."
 msgstr ""
+"Kontoen din har blitt begrenset slik at du ikke kan overføre til andre. "
+"Vennligst kontakt administrator for å høre mer."
 
 #: create_db.php:290
 msgid "Leecher sees this notice when trying to send money."
-msgstr ""
+msgstr "Gratispassasjeren ser denne meldinga når de prøver å overføre."
 
 #: create_db.php:292
 msgid "Show monthly fees and service charges in global exchange view"
-msgstr ""
+msgstr "Vis månedsavgifter og engangsgebyrer i global handelslogg"
 
 #: create_db.php:292
 msgid ""
@@ -841,31 +853,35 @@ msgid ""
 "view? (Note: individual members will still be able to see this in their own "
 "personal exchange history)."
 msgstr ""
+"Vil du vise månedsavgifter og engangsgebyrer i den globale handelsloggen? "
+"(Merk: medlemmene kan alltid se dette i sin egen handelslogg.)"
 
 #: create_db.php:314
 msgid "Sample: Downtown"
-msgstr ""
+msgstr "Eksempel: Sentrum"
 
 #: create_db.php:315
 msgid "Sample: North"
-msgstr ""
+msgstr "Eksempel: Nord"
 
 #: create_db.php:316
 msgid "Sample: East"
-msgstr ""
+msgstr "Eksempel: Øst"
 
 #: create_db.php:317
 msgid "Sample: South"
-msgstr ""
+msgstr "Eksempel: Sør"
 
 #: create_db.php:318
 msgid "Sample: West"
-msgstr ""
+msgstr "Eksempel: Vest"
 
 #: create_db.php:325
 msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
 msgstr ""
+"Databasen har blitt opprettet. Klikk  <A HREF=member_login.php>her</A> for å "
+"logge inn."
 
 #: create_info.php:17 do_info_edit.php:20 listing_create.php:44
 #: news_create.php:17 news_edit.php:22
@@ -944,7 +960,6 @@ msgstr ""
 "preview/194959.html\">herfra</A>."
 
 #: directory.php:13
-#, fuzzy
 msgid ""
 "Note that <u>older versions of Acrobat may not be able to read this file</"
 "u>.  If you get an error message when trying to download, try upgrading <A "
@@ -954,10 +969,11 @@ msgid ""
 "version."
 msgstr ""
 "Merk at <u>eldre versjoner av Acrobat kanskje ikke kan lese denne fila</u>. "
-"Hvis du får feilmelding når du prøver å laste ned fila, prøv å oppgradere <A "
+"Hvis du får feilmelding når du prøver å laste den ned, prøv å oppgradere <A "
 "HREF=\"http://www.tucows.com/preview/194959.html\">Acrobat</A>. Har du "
-"Windows 2000 eller XP, kan du oppgradere til nyeste versjon, men har du "
-"Windows 98 eller Mac OS 10.4 trenger du en eldre versjon."
+"Windows XP, Vista eller 7 eller Mac med Intel, kan du oppgradere til nyeste "
+"versjon, men har du Windows 98 eller 2000 eller Mac OS X 10.4 trenger du en "
+"eldre versjon."
 
 #: directory.php:15 export.php:13
 msgid "Download"
@@ -1121,15 +1137,15 @@ msgstr ""
 "Det er ingen handler å gi tilbakemelding om. Du har allerede gitt "
 "tilbakemelding om alle dine nylige handler."
 
-#: feedback.php:9 feedback_rebuttal.php:9
+#: feedback.php:10 feedback_rebuttal.php:9
 msgid "Leave Feedback about"
 msgstr "Gi tilbakemelding om"
 
-#: feedback.php:22 trade_history.php:20
+#: feedback.php:23 trade_history.php:20
 msgid "for"
 msgstr "til"
 
-#: feedback.php:28 feedback_rebuttal.php:29
+#: feedback.php:29 feedback_rebuttal.php:29 trade.php:213
 msgid ""
 "All feedback is public. Before leaving <i>negative</i> feedback, we "
 "recommend trying to address your concerns with the other community member.  "
@@ -1139,36 +1155,40 @@ msgstr ""
 "tilbakemelding anbefaler vi å ta opp problemet overfor det andre medlemmet. "
 "Ofte kan misforståelser klares opp til begges fordel."
 
-#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:125
-#: classes/class.member.php:549
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:125 classes/class.member.php:549
 msgid "Positive"
 msgstr "Positiv"
 
-#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:129
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:129
 msgid "Neutral"
 msgstr "Nøytral"
 
-#: feedback.php:30 feedback_rebuttal.php:31 classes/class.feedback.php:127
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:127
 msgid "Negative"
 msgstr "Negativ"
 
-#: feedback.php:31
+#: feedback.php:32 trade.php:216
 msgid "Feedback Rating"
 msgstr "Vurdering"
 
-#: feedback.php:36 feedback_rebuttal.php:37 feedback_reply.php:42
+#: feedback.php:37 feedback_rebuttal.php:37 feedback_reply.php:42
+#: trade.php:221
 msgid "Comments"
 msgstr "Merknader"
 
-#: feedback.php:44 feedback_rebuttal.php:45 feedback_reply.php:49
+#: feedback.php:45 feedback_rebuttal.php:45 feedback_reply.php:49
+#: trade.php:227
 msgid "Choose a rating"
 msgstr "Velg en vurdering"
 
-#: feedback.php:82 feedback_rebuttal.php:71 feedback_reply.php:86
+#: feedback.php:83 feedback_rebuttal.php:71 feedback_reply.php:86
 msgid "Your feedback has been recorded."
 msgstr "Tilbakemeldinga er registrert."
 
-#: feedback.php:84 feedback_rebuttal.php:73 feedback_reply.php:88
+#: feedback.php:85 feedback_rebuttal.php:73 feedback_reply.php:88
 msgid "There was an error recording your feedback."
 msgstr "Det oppstod en feil under registrering av tilbakemeldinga."
 
@@ -1311,12 +1331,12 @@ msgstr ""
 "godtatt, '10%' = ikke godtatt)"
 
 #: income_ties.php:39
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Sorry, you can't contribute more than 99% of your income to another account "
 "- but it's the thought that counts"
 msgstr ""
-"Beklager, du kan ikke gi bort mer enn 99 %% av inntekten din til en annen "
+"Beklager, du kan ikke gi bort mer enn 99 % av inntekten din til en annen "
 "konto - men det er tanken som teller"
 
 #: income_ties.php:65
@@ -1440,9 +1460,43 @@ msgstr "Styret"
 msgid "Admin"
 msgstr "Administrator"
 
-#: initial_geocoding.php:5
+#: initial_geocoding.php:5 initial_geocoding.php:16
 msgid "Initial geocoding"
+msgstr "Første gangs geokoding"
+
+#. Translation hint: %1$s is the name of a geocoding provider
+#: initial_geocoding.php:18
+#, php-format
+msgid "This script contacts %1$s to place every member on a map."
+msgstr "Dette skriptet kontakter %1$s for å plassere hvert medlem på et kart."
+
+#. Translation hint: %s are HTML tags making a link.
+#: initial_geocoding.php:20
+#, php-format
+msgid ""
+"You do not have JavaScript enabled. Please %s run the script manually%s "
+"(takes a long time and may be interrupted by PHP)."
 msgstr ""
+"Du har ikke JavaScript påslått. Vær vennlig %s kjør skriptet manuelt%s (tar "
+"lang tid og kan bli avbrutt av PHP)."
+
+#: initial_geocoding.php:21
+msgid "Waiting for results…"
+msgstr "Venter på resultater…"
+
+#: initial_geocoding.php:60 refund_monthly_fee.php:212
+#: refund_service_charge.php:207 service_charge.php:161
+#: take_monthly_fee.php:199
+msgid "Done"
+msgstr "Ferdig"
+
+#: initial_geocoding.php:65
+msgid "Request failed."
+msgstr "Førespørselen gikk ikke gjennom."
+
+#: initial_geocoding.php:74
+msgid "%(number)s responses processed."
+msgstr "%(number)s svar er behandlet."
 
 #: initial_mailing.php:7
 msgid "Initial Mailing for Rollout"
@@ -1462,8 +1516,8 @@ msgstr "Hoppet over e-postadressa"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
 #: member_create.php:206 member_create.php:215 member_directory.php:15
-#: member_unlock.php:47 member_unlock.php:50 trade.php:138
-#: classes/class.member.php:199
+#: member_unlock.php:47 member_unlock.php:50 password_reset.php:39
+#: trade.php:138 classes/class.member.php:199
 msgid "Member ID"
 msgstr "Brukernavn"
 
@@ -1489,14 +1543,14 @@ msgid "What are Karma points?"
 msgstr "Hva er karmapoeng?"
 
 #: karma_explanation.php:39
-#, fuzzy
 msgid ""
 "These are your Karma points. They reflect your activity in the LETS system, "
 "and the equilibrium between how much you have done for others and how much "
 "others have done for you."
 msgstr ""
-"Dette er karmapoengene dine. De illustrerer hvor aktiv du har vært i LETS-"
-"systemet, både når det gjelder opptjening og forbruk."
+"Dette er kar­ma­po­engene dine. De il­lus­tre­rer hvor ak­tiv du har vært i LETS-sys­"
+"te­met, og lik­e­vek­ten mel­lom hvor mye du har gjort for an­dre og det an­dre har "
+"gjort for deg."
 
 #. Translation hint: %s is the currency name, which may be "hours".
 #: karma_explanation.php:41
@@ -1505,27 +1559,29 @@ msgid ""
 "This is your account balance. It shows how many %s you have earned minus "
 "what you have spent."
 msgstr ""
+"Dette er sal­doen din. Den viser hvor mange %s du har tjent min­us det du har "
+"for­brukt."
 
 #. Translation hint: "it" refers to the member's account balance.
 #: karma_explanation.php:44
-#, fuzzy
 msgid "Spend some of them to gain Karma points!"
-msgstr "Bruk av den for å tjene karmapoeng!"
+msgstr "Bruk av dem for å tjene kar­ma­po­eng!"
 
 #: karma_explanation.php:46 classes/class.page.php:105
 msgid "Do something for other members to gain Karma points!"
-msgstr "Gjør noe for andre medlemmer for å tjene karmapoeng!"
+msgstr "Gjør noe for an­dre med­lem­mer for å tjene kar­ma­po­eng!"
 
 #. Translation hint: %s is a member's name.
 #: karma_explanation.php:51
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "These are %s's Karma points. They reflect the member's activity in the LETS "
 "system, and the equilibrium between how much they have done for others and "
 "how much others have done for them."
 msgstr ""
-"Dette er karmapoengene til %s. De illustrerer hvor aktivt medlemmet har "
-"vært, både når det gjelder opptjening og forbruk."
+"Dette er kar­ma­po­eng­ene til %s. De il­lus­tre­rer hvor ak­tivt med­lem­met har vært "
+"i LETS-sys­te­met, og like­vek­ten mel­lom hvor mye de har gjort for an­dre og det "
+"an­dre har gjort for dem."
 
 #. Translation hint: %1$s is a member's name. %2$s is the currency name, which may be "hours".
 #: karma_explanation.php:53
@@ -1534,6 +1590,8 @@ msgid ""
 "This is %1$s's account balance. It shows how many %2$s the member has earned "
 "minus what they have spent."
 msgstr ""
+"Dette er sal­doen til %1$s. Den viser hvor mange %2$s medlemmet har tjent min­"
+"us det de har for­brukt."
 
 #. Translation hint: %s is the site's name.
 #: karma_explanation.php:117
@@ -1544,6 +1602,10 @@ msgid ""
 "have done for others and how much others have done for you. Contact the "
 "administrators if you wish to request that they be enabled."
 msgstr ""
+"Karma­poeng er ikke aktivert hos %s. Var de aktivert, ville de il­lus­tre­re "
+"hvor ak­tiv du har vært i LETS-sys­te­met, og like­vek­ten mel­lom hvor mye du har "
+"gjort for an­dre og det an­dre har gjort for deg. Ta kon­takt med ad­mini­strat­or­"
+"ene om du vil be om at de ak­tiv­eres."
 
 #: listing_create.php:8
 msgid "Create Offered Listing"
@@ -1643,7 +1705,7 @@ msgstr ""
 
 #: listing_detail.php:16
 msgid "You may see more details if you sign up and log in."
-msgstr ""
+msgstr "Du får se flere detaljer om du melder deg inn og logger deg på."
 
 #: listing_edit.php:10
 msgid "Edit Offered:"
@@ -1973,20 +2035,20 @@ msgstr "Faksnummer"
 #: member_contact_create.php:48 member_contact_edit.php:50
 #: member_create.php:63 member_edit.php:66
 msgid "Address Line 1"
-msgstr ""
+msgstr "Adresselinje 1"
 
 #: member_contact_create.php:49 member_contact_edit.php:51
 #: member_create.php:64 member_directory.php:34 member_directory.php:47
 #: member_edit.php:67 classes/class.member.php:564
 msgid "Address Line 2"
-msgstr ""
+msgstr "Adresselinje 2"
 
 #: member_contact_create.php:50 member_contact_create.php:72
 #: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
 #: member_create.php:90 member_create.php:216 member_directory.php:48
 #: member_edit.php:68 member_edit.php:102 classes/class.member.php:568
 msgid "City"
-msgstr ""
+msgstr "Sted"
 
 #: member_contact_create.php:60 member_contact_create.php:73
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
@@ -2000,7 +2062,7 @@ msgstr "Fylke"
 #: member_create.php:92 member_directory.php:50 member_edit.php:79
 #: member_edit.php:104 classes/class.member.php:572
 msgid "Zip Code"
-msgstr ""
+msgstr "Postnr."
 
 #: member_contact_create.php:62 member_contact_edit.php:64
 #: member_create.php:77 member_edit.php:80
@@ -2186,7 +2248,6 @@ msgid "Enter your Member ID"
 msgstr "Skriv in brukernavnet"
 
 #: member_create.php:89
-#, fuzzy
 msgid "Enter an e-mail address"
 msgstr "Skriv inn e-postadressa di"
 
@@ -2276,11 +2337,11 @@ msgstr ""
 
 #: member_create.php:214
 msgid "New member of "
-msgstr ""
+msgstr "Nytt medlem i "
 
 #: member_create.php:217
 msgid "Read more"
-msgstr ""
+msgstr "Les mer"
 
 #: member_create.php:221 member_edit.php:259
 msgid "There was an error saving the member."
@@ -2306,10 +2367,9 @@ msgstr "Sorter på"
 msgid "Membership No."
 msgstr "Medlemsnummer"
 
-#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:11
-#, fuzzy
+#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
 msgid "Karma points"
-msgstr "Hva er karmapoeng?"
+msgstr "Karmapoeng"
 
 #: member_directory.php:31
 msgid "Neighbourhood"
@@ -2324,27 +2384,25 @@ msgid "Postal code"
 msgstr "Postnummer"
 
 #: member_directory.php:35 member_directory.php:54
-#: includes/lang/heredoc_gettext_strings.out.php:12
+#: includes/lang/heredoc_gettext_strings.out.php:9
 msgid "Balance"
 msgstr "Saldo"
 
 #: member_directory.php:36
-#, fuzzy
 msgid "Absolute balance"
-msgstr "Databasen er ubalansert på"
+msgstr "Absolutt saldo"
 
 #: member_directory.php:38
 msgid "Search"
 msgstr "Søk"
 
 #: member_directory.php:45
-#, fuzzy
 msgid ""
 "Karma points reflect how active the member has been in the LETS system, both "
 "in earning and spending."
 msgstr ""
-"Dette er karmapoengene til %s. De illustrerer hvor aktivt medlemmet har "
-"vært, både når det gjelder opptjening og forbruk."
+"Karmapoeng illustrerer hvor aktivt medlemmet har vært i LETSen, både når det "
+"gjelder opptjening og forbruk."
 
 #: member_directory.php:45
 msgid "Karma"
@@ -2549,9 +2607,8 @@ msgid "Summary for"
 msgstr "Oppsumering for"
 
 #: member_summary.php:18
-#, fuzzy
 msgid "Contact information"
-msgstr "Endre fylkesopplysninger"
+msgstr "Kontaktopplysninger"
 
 #: member_to_edit.php:8
 msgid "Choose Member to Edit"
@@ -2853,11 +2910,6 @@ msgstr "Refusjon av månedsavgift krevd inn"
 msgid "Couldn't transfer."
 msgstr "Kunne ikke overføre."
 
-#: refund_monthly_fee.php:212 refund_service_charge.php:207
-#: service_charge.php:161 take_monthly_fee.php:199
-msgid "Done"
-msgstr "Ferdig"
-
 #: refund_service_charge.php:60
 msgid "No service charges found."
 msgstr "Ingen engangsgebyrer ble funnet."
@@ -2940,9 +2992,8 @@ msgid "Admin Settings"
 msgstr "Administrasjonsinnstillinger"
 
 #: settings.php:30
-#, fuzzy
 msgid "Language Settings"
-msgstr "Lagre innstillinger"
+msgstr "Språkinnstillinger"
 
 #: settings.php:42
 msgid ""
@@ -2966,23 +3017,25 @@ msgid ""
 "If the user or their browser does not select a language, they will see this "
 "one"
 msgstr ""
+"Dersom en bruker eller nettleseren ikke velger et språk, vil de se dette "
+"språket"
 
 #: settings.php:156
 msgid "Default"
-msgstr ""
+msgstr "Forvalg"
 
 #. Translation hint: Available language
 #: settings.php:158
 msgid "Allow users to select this language from the dropdown"
-msgstr ""
+msgstr "La brukerne velge dette språket fra nedtrekksmenyen"
 
 #: settings.php:158
 msgid "Available"
-msgstr ""
+msgstr "Tilgjengelig"
 
 #: settings.php:159
 msgid "Language"
-msgstr ""
+msgstr "Språk"
 
 #: settings.php:172
 msgid ""
@@ -2991,12 +3044,19 @@ msgid ""
 "menu. Selecting one or no languages will disable the drop-down menu. Web-"
 "browser preferences may still select languages you have not made available."
 msgstr ""
+"Velg forvalgt språk ved hjelp av radioknappene. Velg hvilke språk skal være "
+"tilgjengelige ved hjelp av avkrysningsboksene. Valgene du gjør vil bare "
+"påvirke nedtrekksmenyen. Velger du ett eller ingen språk, vil "
+"nedtrekksmenyen bli slått av. Nettleserinnstillingene kan fortsatt velge "
+"språk du har gjort utilgjengelige."
 
 #: settings.php:177
 msgid ""
 "In order to select available languages, please install the <code>intl</code> "
 "PHP extension."
 msgstr ""
+"For å bestemme tilgjengelige språk, vennligst installér <code>intl</code>-"
+"utvidelsen for PHP."
 
 #: settings.php:203
 msgid "Save Settings"
@@ -3249,21 +3309,13 @@ msgstr "Du har overført"
 msgid " to "
 msgstr " til "
 
-#: trade.php:176
-msgid "Or would you like to leave"
-msgstr "Eller vil du legge igjen"
-
-#: trade.php:176
-msgid "feedback"
-msgstr "tilbakemelding"
-
-#: trade.php:176
-msgid "for this member"
-msgstr "til dette medlemmet"
-
 #: trade.php:192 trades_pending.php:154
 msgid "Donation from"
 msgstr "Gave fra"
+
+#: trade.php:209 includes/inc.forms.php:10
+msgid "denotes a required field"
+msgstr "markerer et påkrevet felt"
 
 #: trade_reverse.php:7
 msgid "Reverse an Exchange"
@@ -3574,7 +3626,7 @@ msgstr "Lisensiert under"
 #: includes/inc.config.php:204
 #, php-format
 msgid "with some %s exceptions"
-msgstr ""
+msgstr "med noen %s unntak"
 
 #: includes/inc.config.php:204
 msgid "Local Exchange UK Ver."
@@ -3779,9 +3831,11 @@ msgstr ""
 msgid "Thank you for joining us."
 msgstr "Takk for at du ble med."
 
-#: includes/inc.forms.php:10
-msgid "denotes a required field"
-msgstr "markerer et påkrevet felt"
+#. Translation hint: %s are link tags and must be left as is.
+#: includes/inc.feature-defaults.php:22
+#, php-format
+msgid "%sLearn more%s about this community"
+msgstr "%sLær mer%s om dette samfunnet"
 
 #: classes/class.category.php:29 classes/class.category.php:49
 msgid "Category already exists"
@@ -3877,7 +3931,7 @@ msgstr "Kunne ikke deaktivere oppføringa"
 msgid "Could not expire listing"
 msgstr "Kunne ikke markere oppføringa som utgått"
 
-#: classes/class.listing.php:333 classes/class.member.php:810
+#: classes/class.listing.php:334 classes/class.member.php:810
 #: classes/class.member.php:812
 msgid "No listings found."
 msgstr "Ingen oppføringer ble funnet."
@@ -4150,7 +4204,7 @@ msgstr "Dette er saldoen til %s."
 
 #: classes/class.page.php:125
 msgid "What's this?"
-msgstr ""
+msgstr "Hva er dette?"
 
 #: classes/class.page.php:191
 msgid "Printer Friendly View"
@@ -4199,12 +4253,16 @@ msgid ""
 "%s could not find your address. However, we will attempt to save your "
 "account information."
 msgstr ""
+"%s kunne ikke finne adressa di. Vi vil likevel prøve å lagre "
+"kontoopplysningene dine."
 
 #: classes/class.person.php:247
 msgid ""
 "There was a system error locating your address on the map. However, we will "
 "attempt to save your account information."
 msgstr ""
+"Det oppstod en systemfeil da vi prøvde å finne adressa di på kartet. Vi vil "
+"likevel prøve å lagre kontoopplysningene dine."
 
 #: classes/class.settings.php:122
 msgid "Update failed!"
@@ -4216,7 +4274,7 @@ msgstr "Innstillingene ble oppdatert."
 
 #: classes/class.settings.php:138
 msgid "Hours"
-msgstr "Timer"
+msgstr "timer"
 
 #: classes/class.state_address.php:36 classes/class.state_address.php:56
 msgid "State already exists"
@@ -4320,89 +4378,81 @@ msgstr "Kunne ikke slette fil"
 msgid "Upload"
 msgstr "Last opp"
 
-#: includes/lang/heredoc_gettext_strings.out.php:13
+#: includes/lang/heredoc_gettext_strings.out.php:10
 msgid "Calculation"
-msgstr ""
+msgstr "Utregning"
+
+#: includes/lang/heredoc_gettext_strings.out.php:11
+msgid "Earned"
+msgstr "Opptjent"
+
+#: includes/lang/heredoc_gettext_strings.out.php:12
+msgid "Spent"
+msgstr "Forbrukt"
+
+#: includes/lang/heredoc_gettext_strings.out.php:13
+msgid "Numbers"
+msgstr "Tall"
 
 #: includes/lang/heredoc_gettext_strings.out.php:14
-msgid "Earned"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:15
-msgid "Spent"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:16
-#, fuzzy
-msgid "Numbers"
-msgstr "Medlemmer"
+msgid "Explanation"
+msgstr "Forklaring"
 
 #: includes/lang/heredoc_gettext_strings.out.php:17
-#, fuzzy
-msgid "Explanation"
-msgstr "Organisasjon"
+#: includes/lang/heredoc_gettext_strings.out.php:24
+msgid "Refund"
+msgstr "Refusjon"
+
+#: includes/lang/heredoc_gettext_strings.out.php:18
+msgid "You are about to refund the monthly fee taken on"
+msgstr "Du skal til å refundere månedsavgifta som ble krevd inn"
+
+#: includes/lang/heredoc_gettext_strings.out.php:19
+#: includes/lang/heredoc_gettext_strings.out.php:26
+msgid "Refund now"
+msgstr "Refunder nå"
 
 #: includes/lang/heredoc_gettext_strings.out.php:20
-#: includes/lang/heredoc_gettext_strings.out.php:27
-#, fuzzy
-msgid "Refund"
-msgstr "Refusjon av"
+#: includes/lang/heredoc_gettext_strings.out.php:34
+#: includes/lang/heredoc_gettext_strings.out.php:39
+msgid "Or"
+msgstr "Eller"
 
 #: includes/lang/heredoc_gettext_strings.out.php:21
-#, fuzzy
-msgid "You are about to refund the monthly fee taken on"
-msgstr "Refusjon av månedsavgift krevd inn"
-
-#: includes/lang/heredoc_gettext_strings.out.php:22
-#: includes/lang/heredoc_gettext_strings.out.php:29
-#, fuzzy
-msgid "Refund now"
-msgstr "Refusjon av"
-
-#: includes/lang/heredoc_gettext_strings.out.php:23
-#: includes/lang/heredoc_gettext_strings.out.php:37
-#: includes/lang/heredoc_gettext_strings.out.php:42
-msgid "Or"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:24
-#: includes/lang/heredoc_gettext_strings.out.php:30
-#: includes/lang/heredoc_gettext_strings.out.php:38
-#: includes/lang/heredoc_gettext_strings.out.php:43
-#, fuzzy
-msgid "Cancel"
-msgstr "Saldo"
-
-#: includes/lang/heredoc_gettext_strings.out.php:28
-msgid "You are about to refund the service charge taken on"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:33
-#, fuzzy
-msgid "Amount"
-msgstr "Konto"
-
-#: includes/lang/heredoc_gettext_strings.out.php:34
-#, fuzzy
-msgid "Fee Description"
-msgstr "Tekst"
-
+#: includes/lang/heredoc_gettext_strings.out.php:27
 #: includes/lang/heredoc_gettext_strings.out.php:35
-#, fuzzy
+#: includes/lang/heredoc_gettext_strings.out.php:40
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: includes/lang/heredoc_gettext_strings.out.php:25
+msgid "You are about to refund the service charge taken on"
+msgstr "Du skal til å refundere gebyret som ble krevd inn"
+
+#: includes/lang/heredoc_gettext_strings.out.php:30
+msgid "Amount"
+msgstr "Sum"
+
+#: includes/lang/heredoc_gettext_strings.out.php:31
+msgid "Fee Description"
+msgstr "Avgiftstekst"
+
+#: includes/lang/heredoc_gettext_strings.out.php:32
 msgid "Service Fee"
 msgstr "Engangsgebyr"
 
-#: includes/lang/heredoc_gettext_strings.out.php:36
-#: includes/lang/heredoc_gettext_strings.out.php:41
-#, fuzzy
+#: includes/lang/heredoc_gettext_strings.out.php:33
+#: includes/lang/heredoc_gettext_strings.out.php:38
 msgid "Transfer now"
-msgstr "Overføring"
+msgstr "Overfør nå"
 
-#~ msgid "If you don't have an account, please"
-#~ msgstr "Har du ikke konto, vennligst"
+#: includes/lang/heredoc_gettext_strings.out.php:43
+msgid "See offers and wants"
+msgstr "Se tilbud og ønsker"
 
-#~ msgid "us to join"
-#~ msgstr "oss for å melde deg inn"
+#: includes/lang/heredoc_gettext_strings.out.php:44
+msgid "Log in to see offers, wants and precise location"
+msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
 
 #~ msgid "CONTACT INFORMATION"
 #~ msgstr "KONTAKTINFORMASJON"
@@ -4412,6 +4462,21 @@ msgstr "Overføring"
 
 #~ msgid "WANTED LISTINGS"
 #~ msgstr "ØNSKER"
+
+#~ msgid "Or would you like to leave"
+#~ msgstr "Eller vil du legge igjen"
+
+#~ msgid "feedback"
+#~ msgstr "tilbakemelding"
+
+#~ msgid "for this member"
+#~ msgstr "til dette medlemmet"
+
+#~ msgid "If you don't have an account, please"
+#~ msgstr "Har du ikke konto, vennligst"
+
+#~ msgid "us to join"
+#~ msgstr "oss for å melde deg inn"
 
 #~ msgid "GPL"
 #~ msgstr "GPL"
