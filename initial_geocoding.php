@@ -42,7 +42,7 @@ This script contacts $provider to place every member on a map.
 	var geocodingRequest = new XMLHttpRequest();
 	var url = "http://lex.localhost/ajax/geocode.php";
 	geocodingRequest.open("POST", url, true);
-	geocodingRequest.addEventListener('load', finish, false);
+	geocodingRequest.onreadystatechange = finish;
 	geocodingRequest.send();
 
 	// Various elements and variables
@@ -52,12 +52,19 @@ This script contacts $provider to place every member on a map.
 	var interval;
 
 	// Finish up
-	// TODO Also listen for failure
 	function finish() {
-		status.innerText = "Done";
-		progress.value = $geocodable_count;
-		outputLog(log, JSON.parse(geocodingRequest.responseText));
-		window.clearInterval(interval);
+		if (geocodingRequest.readyState === 4) {
+			if (geocodingRequest.status === 200) {
+				status.innerText = "Done";
+				progress.value = $geocodable_count;
+				outputLog(log, JSON.parse(geocodingRequest.responseText));
+				window.clearInterval(interval);
+			} else {
+				status.innerText = "Request failed.";
+				progress.value = 0;
+				window.clearInterval(interval);
+			}
+		}
 	}
 
 	function outputLog(log, response) {
@@ -109,7 +116,6 @@ This script contacts $provider to place every member on a map.
 
 		var url = "ajax/geocode.php?progress";
 		markerRequest.addEventListener('load', addMarkers, false);
-		// TODO Also listen for failure
 		markerRequest.open("GET", url, true);
 		markerRequest.send();
 	}

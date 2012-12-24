@@ -157,36 +157,44 @@ HTML;
 
 				function loadMarkers() {
 					var url = "ajax/map.php$is_logged_on";
-					markerRequest.addEventListener('load', addMarkers, false);
-					// TODO Also listen for failure
+					markerRequest.onreadystatechange = addMarkers;
 					markerRequest.open("GET", url, true);
 					markerRequest.send();
 				}
 
 				function addMarkers() {
-					// TODO Use a compatibility shim (such as jQuery) for JSON.parse
-					var markers = JSON.parse(markerRequest.responseText);
-					for (var i = 0; i < markers.length; i++) {
-						var marker = new google.maps.Marker({
-							position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
-							map: map,
-						});
-						var text;
-						if (markers[i].name)
-							// TODO Some way to get internationalized text
-							text = "<h1>"+ markers[i].name +"</h1>"
-							     + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "Se tilbud og ønsker" +"</a>";
-							// TODO Display listings directly in info window
-						else
-							text = "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering";
-						// TODO More lightweight method? (without a separate function for each marker)
-						google.maps.event.addListener(marker, 'click', (function(marker, text) {
-							return function() {
-								infowindow.content = text;
-								infowindow.open(map,marker);
+					if (markerRequest.readyState === 4) {
+						if (markerRequest.status === 200) {
+							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
+							var markers = JSON.parse(markerRequest.responseText);
+							for (var i = 0; i < markers.length; i++) {
+								var marker = new google.maps.Marker({
+									position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
+									map: map,
+								});
+								var text;
+								if (markers[i].name)
+									// TODO Some way to get internationalized text
+									text = "<h1>"+ markers[i].name +"</h1>"
+										 + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "Se tilbud og ønsker" +"</a>";
+									// TODO Display listings directly in info window
+								else
+									text = "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering";
+								// TODO More lightweight method? (without a separate function for each marker)
+								google.maps.event.addListener(marker, 'click', (function(marker, text) {
+									return function() {
+										infowindow.content = text;
+										infowindow.open(map,marker);
+									}
+								})(marker, text));
 							}
-						})(marker, text));
-					}
+						} else {
+							var failedP = document.createElement("p");
+							failedP.innerHTML = "Failed to load map. <!-- HTTP "+ markerRequest.status +" -->";
+							var map_canvas = document.getElementById("map_canvas");
+							map_canvas.parentElement.replaceChild(failedP, map_canvas);
+						}
+					} // else: not ready
 				}
 
 				// Since this is used for the front page map, let's make sure even old IE gets it
