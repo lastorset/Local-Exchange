@@ -42,8 +42,8 @@ This script contacts $provider to place every member on a map.
 	var geocodingRequest = new XMLHttpRequest();
 	var url = "http://lex.localhost/ajax/geocode.php?"+ Date.now();
 	geocodingRequest.open("GET", url, true);
+	geocodingRequest.addEventListener('load', finish, false);
 	geocodingRequest.send();
-	geocodingRequest.onload = finish;
 
 	// Various elements and variables
 	var log = document.getElementById("log");
@@ -109,8 +109,7 @@ This script contacts $provider to place every member on a map.
 			return;
 
 		var url = "ajax/geocode.php?progress";
-		// TODO Narrow browser support for onload
-		markerRequest.onload = addMarkers;
+		markerRequest.addEventListener('load', addMarkers, false);
 		// TODO Also listen for failure
 		markerRequest.open("GET", url, true);
 		markerRequest.send();

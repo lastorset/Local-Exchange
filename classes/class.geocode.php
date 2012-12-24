@@ -153,8 +153,7 @@ HTML;
 
 				function loadMarkers() {
 					var url = "ajax/map.php";
-					markerRequest.onload = addMarkers;
-					// TODO How wide is browser support for onload?
+					markerRequest.addEventListener('load', addMarkers, false);
 					// TODO Also listen for failure
 					markerRequest.open("GET", url, true);
 					markerRequest.send();
