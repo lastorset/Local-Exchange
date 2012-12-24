@@ -42,7 +42,7 @@ sprintf(_("You do not have JavaScript enabled. Please %s run the script manually
 <script>
 	// Initialize XHR
 	var geocodingRequest = new XMLHttpRequest();
-	var url = "http://lex.localhost/ajax/geocode.php";
+	var url = "http://<?= HTTP_BASE ?>/ajax/geocode.php";
 	geocodingRequest.open("POST", url, true);
 	geocodingRequest.onreadystatechange = finish;
 	geocodingRequest.send();
