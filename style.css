@@ -354,3 +354,25 @@ table.language-selector td.widget {
 .homepage ul li {
 	margin-bottom: 1em;
 }
+
+#map_canvas {
+	height: 300px;
+}
+
+.logoheader + #map_canvas {
+	margin-top: 15px;
+}
+
+#member_summary #map_canvas {
+	float: right;
+	margin-left: 2em;
+	margin-bottom: 1em;
+	margin-top: 2em;
+	width: 50%;
+}
+
+#member_summary h4 {
+	font-style: italic;
+	margin-top: 3em;
+	text-transform: uppercase;
+}

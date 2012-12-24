@@ -150,7 +150,6 @@ class cListing
 			$output .= "<STRONG>"._("Description").":</STRONG> ". $this->description ."<BR>";
 		if($this->rate != "")
 			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";		
-		$output .= $this->member->DisplayMember();
 		return $output;
 	}	
 }

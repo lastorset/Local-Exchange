@@ -385,7 +385,7 @@ class cMember
 				
 		return $update;	
 	}
-	
+
 	function PrimaryName () {
 		return $this->person[0]->first_name . " " . $this->person[0]->mid_name . " " . $this->person[0]->last_name; // added mid_name by ejkv
 	}
@@ -825,7 +825,7 @@ class cMemberGroup {
 		
 		foreach($this->members as $member) {						
 			if($member->email_updates == $interval and $member->person[0]->email) {
-				mail($member->person[0]->email, SITE_SHORT_TITLE .": "._("New and updated listings during the last")." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=iso-8859-1");
+				mail($member->person[0]->email, SITE_SHORT_TITLE .": "._("New and updated listings during the last")." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=UTF-8");
 			}
 		
 		}

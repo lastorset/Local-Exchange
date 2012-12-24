@@ -7,8 +7,9 @@ if ($_REQUEST["type"]==Offer)
 else
 	$p->page_title = _("Wanted listings");
 
-include("classes/class.listing.php");
-include("includes/inc.forms.php");
+include_once("classes/class.listing.php");
+include_once("classes/class.geocode.php");
+include_once("includes/inc.forms.php");
 
 $form->addElement("hidden","type", $_REQUEST["type"]);
 $form->addElement("static", null, _("Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click")." <A HREF=directory.php>"._("here")."</A>.", null);
@@ -33,7 +34,9 @@ if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
  	$form->process("process_data", false);
 } else {  // Display the form
-	$p->DisplayPage($form->toHtml());
+	$output = $form->toHtml();
+	$output .= cGeoCode::GenerateMap();
+	$p->DisplayPage($output);
 }
 
 function process_data ($values) {

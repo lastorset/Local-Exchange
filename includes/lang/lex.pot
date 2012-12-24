@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-12 23:59+0100\n"
+"POT-Creation-Date: 2012-12-24 18:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,7 +71,7 @@ msgid "Manage Account Restrictions"
 msgstr ""
 
 #: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
-#: includes/inc.config.php:207
+#: includes/inc.config.php:218
 msgid "Exchanges"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgstr ""
 msgid "Delete a Member's Wanted Listing"
 msgstr ""
 
-#: admin_menu.php:66 create_db.php:101 listings_menu.php:18
+#: admin_menu.php:66 create_db.php:153 listings_menu.php:18
 msgid "Miscellaneous"
 msgstr ""
 
@@ -175,7 +175,7 @@ msgstr ""
 msgid "See Info Page URL 's"
 msgstr ""
 
-#: admin_menu.php:85 news.php:7 includes/inc.config.php:203
+#: admin_menu.php:85 news.php:7 includes/inc.config.php:214
 msgid "News and Events"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgid "Choose Member whose Balance you wish to Edit"
 msgstr ""
 
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
-#: member_directory.php:39 member_edit.php:24 member_to_edit.php:14
+#: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
 #: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:539
 msgid "Member"
 msgstr ""
@@ -320,9 +320,9 @@ msgstr ""
 
 #: category_create.php:44 category_edit.php:48 email.php:83 feedback.php:84
 #: listing_create.php:122 listing_edit.php:141 member_contact_create.php:152
-#: member_contact_edit.php:168 member_create.php:213 member_edit.php:259
+#: member_contact_edit.php:168 member_create.php:221 member_edit.php:259
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
-#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:86
+#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:92
 #: classes/class.member.php:174 classes/class.member.php:917
 #: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
@@ -376,7 +376,7 @@ msgstr ""
 msgid "There were errors sending the email to the following email addresses"
 msgstr ""
 
-#: contact.php:4 includes/inc.config.php:210
+#: contact.php:4 includes/inc.config.php:221
 msgid "Contact Us"
 msgstr ""
 
@@ -407,7 +407,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: contact.php:15 contact.php:46 member_directory.php:41
+#: contact.php:15 contact.php:46 member_directory.php:46
 msgid "Phone"
 msgstr ""
 
@@ -482,92 +482,92 @@ msgid ""
 "address  correctly?"
 msgstr ""
 
-#: create_db.php:79
+#: create_db.php:131
 msgid "Arts & Crafts"
 msgstr ""
 
-#: create_db.php:81
+#: create_db.php:133
 msgid "Building Services"
 msgstr ""
 
-#: create_db.php:83
+#: create_db.php:135
 msgid "Business & Administration"
 msgstr ""
 
-#: create_db.php:85
+#: create_db.php:137
 msgid "Children & Childcare"
 msgstr ""
 
-#: create_db.php:87
+#: create_db.php:139
 msgid "Computers"
 msgstr ""
 
-#: create_db.php:89
+#: create_db.php:141
 msgid "Counseling & Therapy"
 msgstr ""
 
-#: create_db.php:91
+#: create_db.php:143
 msgid "Food"
 msgstr ""
 
-#: create_db.php:93
+#: create_db.php:145
 msgid "Gardening & Yard Work"
 msgstr ""
 
-#: create_db.php:95
+#: create_db.php:147
 msgid "Goods"
 msgstr ""
 
-#: create_db.php:97
+#: create_db.php:149
 msgid "Health & Personal"
 msgstr ""
 
-#: create_db.php:99 member_create.php:23 member_edit.php:26
+#: create_db.php:151 member_create.php:23 member_edit.php:26
 msgid "Household"
 msgstr ""
 
-#: create_db.php:103
+#: create_db.php:155
 msgid "Music & Entertainment"
 msgstr ""
 
-#: create_db.php:105
+#: create_db.php:157
 msgid "Pets"
 msgstr ""
 
-#: create_db.php:107
+#: create_db.php:159
 msgid "Sports & Recreation"
 msgstr ""
 
-#: create_db.php:109
+#: create_db.php:161
 msgid "Teaching"
 msgstr ""
 
-#: create_db.php:111
+#: create_db.php:163
 msgid "Transportation"
 msgstr ""
 
-#: create_db.php:113
+#: create_db.php:165
 msgid "Freebies"
 msgstr ""
 
-#: create_db.php:192
+#: create_db.php:244
 msgid "&quot;Account Restriction Lifted&quot; Email"
 msgstr ""
 
-#: create_db.php:192
+#: create_db.php:244
 msgid "Restrictions on your account have been lifted."
 msgstr ""
 
-#: create_db.php:192
+#: create_db.php:244
 msgid ""
 "Define email that is sent out when restrictions are lifted on an account."
 msgstr ""
 
-#: create_db.php:194
+#: create_db.php:246
 msgid "&quot;Account Restricted&quot; Email"
 msgstr ""
 
-#: create_db.php:194
+#: create_db.php:246
 msgid ""
 "Dear Member<br /><br />We have been reviewing members balances as we are "
 "concerned to ensure that trading goes back and forth on an equitable basis "
@@ -579,64 +579,64 @@ msgid ""
 "due course. The LETS Administrator "
 msgstr ""
 
-#: create_db.php:194
+#: create_db.php:246
 msgid ""
 "Define email that is sent out when restrictions are imposed on an account."
 msgstr ""
 
-#: create_db.php:196
+#: create_db.php:248
 msgid "Display Member Balance"
 msgstr ""
 
-#: create_db.php:196
+#: create_db.php:248
 msgid ""
 "Do you want to display member balances in the Members List? (Balances are "
 "always visible to Admins and Committee members regardless of what is set "
 "here.)"
 msgstr ""
 
-#: create_db.php:198
+#: create_db.php:250
 msgid "Enable Take Service Charge"
 msgstr ""
 
-#: create_db.php:198
+#: create_db.php:250
 msgid ""
 "Do you want the option of taking a service charge from members as and when?"
 msgstr ""
 
-#: create_db.php:200
+#: create_db.php:252
 msgid "Show Inactive Members in Members List"
 msgstr ""
 
-#: create_db.php:200
+#: create_db.php:252
 msgid "Do you want to display Inactive members in the Member List?"
 msgstr ""
 
-#: create_db.php:202
+#: create_db.php:254
 msgid "Show Rate on Listings"
 msgstr ""
 
-#: create_db.php:202
+#: create_db.php:254
 msgid ""
 "Do you want to display the Rate alongside the offers/wants in the main "
 "listings?"
 msgstr ""
 
-#: create_db.php:204
+#: create_db.php:256
 msgid "Show Postcode on Listings"
 msgstr ""
 
-#: create_db.php:204
+#: create_db.php:256
 msgid ""
 "Do you want to display the PostCode alongside the offers/wants in the main "
 "listings?"
 msgstr ""
 
-#: create_db.php:206
+#: create_db.php:258
 msgid "Postcode Length (in chars)"
 msgstr ""
 
-#: create_db.php:206
+#: create_db.php:258
 msgid ""
 "If you have elected to display the postcode on offers/wants listings, how "
 "much of the PostCode do you want to show? (the number you enter will be the "
@@ -644,11 +644,11 @@ msgid ""
 "3 characters of the postcode then put 3."
 msgstr ""
 
-#: create_db.php:208
+#: create_db.php:260
 msgid "Enable Balance Override"
 msgstr ""
 
-#: create_db.php:208
+#: create_db.php:260
 msgid ""
 "Do you want admins to have the option to override Balances on a per member "
 "basis? This can be useful during the initial site set-up for inputting "
@@ -656,41 +656,41 @@ msgid ""
 "CAUTION to avoid the database going out of balance"
 msgstr ""
 
-#: create_db.php:210
+#: create_db.php:262
 msgid "Enable Member-to-Member Invoicing"
 msgstr ""
 
-#: create_db.php:210
+#: create_db.php:262
 msgid ""
 "Do you want to allow members to invoice one-another via the site? (The "
 "recipient is always given the option to confirm/reject payment of the "
 "invoice)"
 msgstr ""
 
-#: create_db.php:212
+#: create_db.php:264
 msgid "Allow Members to Upload Images"
 msgstr ""
 
-#: create_db.php:212
+#: create_db.php:264
 msgid ""
 "Do you want to allow members to upload an image of themselves, to be "
 "displayed with their personal profile?"
 msgstr ""
 
-#: create_db.php:214
+#: create_db.php:266
 msgid "Enable Social Networking Fields"
 msgstr ""
 
-#: create_db.php:214
+#: create_db.php:266
 msgid ""
 "Do you want to enable the Social Networking profile fields (Age, Sex, etc)?"
 msgstr ""
 
-#: create_db.php:216
+#: create_db.php:268
 msgid "Out Of Balance Behaviour"
 msgstr ""
 
-#: create_db.php:216
+#: create_db.php:268
 msgid ""
 "If, whilst processing a trade, the database is found to be out of balance, "
 "what should the system do?\n"
@@ -702,125 +702,125 @@ msgid ""
 "admin)"
 msgstr ""
 
-#: create_db.php:222
+#: create_db.php:274
 msgid "Email Admin on Out Of Balance"
 msgstr ""
 
-#: create_db.php:222
+#: create_db.php:274
 msgid ""
 "Should the system send the Admin an email when the database is found to be "
 "out of balance?"
 msgstr ""
 
-#: create_db.php:224
+#: create_db.php:276
 msgid "Email From Address"
 msgstr ""
 
-#: create_db.php:224
+#: create_db.php:276
 msgid "reply@my-domain.org"
 msgstr ""
 
-#: create_db.php:224
+#: create_db.php:276
 msgid "Email sent from this site will show as coming from this address"
 msgstr ""
 
-#: create_db.php:226
+#: create_db.php:278
 msgid "Use Rates Fields"
 msgstr ""
 
-#: create_db.php:226
+#: create_db.php:278
 msgid "If turned on, listings will include a &quot;Rate&quot; field"
 msgstr ""
 
-#: create_db.php:228
+#: create_db.php:280
 msgid "Enable Monthly Fee"
 msgstr ""
 
-#: create_db.php:228
+#: create_db.php:280
 msgid "Do you want to enable Monthly Fees"
 msgstr ""
 
-#: create_db.php:230
+#: create_db.php:282
 msgid "Monthly Fee Amount"
 msgstr ""
 
-#: create_db.php:230
+#: create_db.php:282
 msgid "How much should the Monthly Fee be?"
 msgstr ""
 
-#: create_db.php:232
+#: create_db.php:284
 msgid "Send Listing Updates via Email"
 msgstr ""
 
-#: create_db.php:232
+#: create_db.php:284
 msgid "Should users receive automatic updates for new and modified listings?"
 msgstr ""
 
-#: create_db.php:234
+#: create_db.php:286
 msgid "Default Email Listings Update Interval"
 msgstr ""
 
-#: create_db.php:234
+#: create_db.php:286
 msgid "If automatic updates are sent, this is the default interval."
 msgstr ""
 
-#: create_db.php:236
+#: create_db.php:288
 msgid "Allow Income Sharing"
 msgstr ""
 
-#: create_db.php:236
+#: create_db.php:288
 msgid ""
 "Do you want to allow members to share a percentage of any income they "
 "generate with another account of their choosing? The member can specify the "
 "exact percentage they wish to donate."
 msgstr ""
 
-#: create_db.php:238
+#: create_db.php:290
 msgid "Message Displayed to Leecher who tries to trade"
 msgstr ""
 
-#: create_db.php:238
+#: create_db.php:290
 msgid ""
 "Restrictions have been imposed on your account which prevent you from "
 "trading outwards, Please contact the administrator for more information."
 msgstr ""
 
-#: create_db.php:238
+#: create_db.php:290
 msgid "Leecher sees this notice when trying to send money."
 msgstr ""
 
-#: create_db.php:240
+#: create_db.php:292
 msgid "Show monthly fees and service charges in global exchange view"
 msgstr ""
 
-#: create_db.php:240
+#: create_db.php:292
 msgid ""
 "Do you want to show monthly fees and service charges in the global exchange "
 "view? (Note: individual members will still be able to see this in their own "
 "personal exchange history)."
 msgstr ""
 
-#: create_db.php:262
+#: create_db.php:314
 msgid "Sample: Downtown"
 msgstr ""
 
-#: create_db.php:263
+#: create_db.php:315
 msgid "Sample: North"
 msgstr ""
 
-#: create_db.php:264
+#: create_db.php:316
 msgid "Sample: East"
 msgstr ""
 
-#: create_db.php:265
+#: create_db.php:317
 msgid "Sample: South"
 msgstr ""
 
-#: create_db.php:266
+#: create_db.php:318
 msgid "Sample: West"
 msgstr ""
 
-#: create_db.php:273
+#: create_db.php:325
 msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
 msgstr ""
@@ -1293,27 +1293,27 @@ msgid ""
 "then create a new one."
 msgstr ""
 
-#: index.php:22
+#: index.php:23
 msgid "Why have a Local, Sustainable Currency?"
 msgstr ""
 
-#: index.php:22
+#: index.php:25
 msgid "Enhance Your Prosperity"
 msgstr ""
 
-#: index.php:22
+#: index.php:26
 msgid "Build a Sustainable Community"
 msgstr ""
 
-#: index.php:22
+#: index.php:27
 msgid "Utilize Your Talents"
 msgstr ""
 
-#: index.php:22
+#: index.php:28
 msgid "Nurture the Unique Quality of Your Hometown"
 msgstr ""
 
-#: index.php:22
+#: index.php:29
 msgid "Have Fun"
 msgstr ""
 
@@ -1357,6 +1357,10 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
+#: initial_geocoding.php:5
+msgid "Initial geocoding"
+msgstr ""
+
 #: initial_mailing.php:7
 msgid "Initial Mailing for Rollout"
 msgstr ""
@@ -1374,8 +1378,9 @@ msgid "Skipped email"
 msgstr ""
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
-#: member_create.php:206 member_directory.php:15 member_unlock.php:47
-#: member_unlock.php:50 trade.php:138 classes/class.member.php:199
+#: member_create.php:206 member_create.php:215 member_directory.php:15
+#: member_unlock.php:47 member_unlock.php:50 trade.php:138
+#: classes/class.member.php:199
 msgid "Member ID"
 msgstr ""
 
@@ -1396,17 +1401,59 @@ msgstr ""
 msgid "Email successfully sent to all members."
 msgstr ""
 
-#: karma_explanation.php:5
+#: karma_explanation.php:6
 msgid "What are Karma points?"
 msgstr ""
 
-#. Translation hint: "it" refers to the member's account balance.
-#: karma_explanation.php:15 classes/class.page.php:96
-msgid "Spend some of it to gain Karma points!"
+#: karma_explanation.php:39
+msgid ""
+"These are your Karma points. They reflect your activity in the LETS system, "
+"and the equilibrium between how much you have done for others and how much "
+"others have done for you."
 msgstr ""
 
-#: karma_explanation.php:17 classes/class.page.php:98
+#. Translation hint: %s is the currency name, which may be "hours".
+#: karma_explanation.php:41
+#, php-format
+msgid ""
+"This is your account balance. It shows how many %s you have earned minus "
+"what you have spent."
+msgstr ""
+
+#. Translation hint: "it" refers to the member's account balance.
+#: karma_explanation.php:44
+msgid "Spend some of them to gain Karma points!"
+msgstr ""
+
+#: karma_explanation.php:46 classes/class.page.php:105
 msgid "Do something for other members to gain Karma points!"
+msgstr ""
+
+#. Translation hint: %s is a member's name.
+#: karma_explanation.php:51
+#, php-format
+msgid ""
+"These are %s's Karma points. They reflect the member's activity in the LETS "
+"system, and the equilibrium between how much they have done for others and "
+"how much others have done for them."
+msgstr ""
+
+#. Translation hint: %1$s is a member's name. %2$s is the currency name, which may be "hours".
+#: karma_explanation.php:53
+#, php-format
+msgid ""
+"This is %1$s's account balance. It shows how many %2$s the member has earned "
+"minus what they have spent."
+msgstr ""
+
+#. Translation hint: %s is the site's name.
+#: karma_explanation.php:117
+#, php-format
+msgid ""
+"Karma points are disabled in %s. If they were enabled, they would reflect "
+"your activity in the LETS system, and the equilibrium between how much you "
+"have done for others and how much others have done for you. Contact the "
+"administrators if you wish to request that they be enabled."
 msgstr ""
 
 #: listing_create.php:8
@@ -1425,7 +1472,7 @@ msgstr ""
 msgid "You already have a listing with this title"
 msgstr ""
 
-#: listing_create.php:49 listing_edit.php:34 listings.php:19 trade.php:50
+#: listing_create.php:49 listing_edit.php:34 listings.php:20 trade.php:50
 #: classes/class.trade.php:277
 msgid "Category"
 msgstr ""
@@ -1504,6 +1551,10 @@ msgstr ""
 msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 
+#: listing_detail.php:16
+msgid "You may see more details if you sign up and log in."
+msgstr ""
+
 #: listing_edit.php:10
 msgid "Edit Offered:"
 msgstr ""
@@ -1570,15 +1621,15 @@ msgstr ""
 msgid "Edit Wanted Listings"
 msgstr ""
 
-#: listings_found.php:7 listings.php:6
+#: listings_found.php:7 listings.php:6 member_summary.php:25
 msgid "Offered listings"
 msgstr ""
 
-#: listings_found.php:9 listings.php:8
+#: listings_found.php:9 listings.php:8 member_summary.php:30
 msgid "Wanted listings"
 msgstr ""
 
-#: listings_menu.php:4 includes/inc.config.php:206
+#: listings_menu.php:4 includes/inc.config.php:217
 msgid "Update Listings"
 msgstr ""
 
@@ -1586,59 +1637,59 @@ msgstr ""
 msgid "Going on Holiday"
 msgstr ""
 
-#: listings.php:14
+#: listings.php:15
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
 "download the complete directory, click"
 msgstr ""
 
-#: listings.php:14 member_create.php:200 news.php:22 trades_pending.php:25
+#: listings.php:15 member_create.php:200 news.php:22 trades_pending.php:25
 #: classes/class.member.php:112
 msgid "here"
 msgstr ""
 
-#: listings.php:18
+#: listings.php:19
 msgid "View All Categories"
 msgstr ""
 
-#: listings.php:20
+#: listings.php:21
 msgid "New/updated in last"
 msgstr ""
 
-#: listings.php:21
+#: listings.php:22
 msgid "Time Frame"
 msgstr ""
 
-#: listings.php:21
+#: listings.php:22
 msgid "View All Listings"
 msgstr ""
 
-#: listings.php:21
+#: listings.php:22
 msgid "3 days"
 msgstr ""
 
-#: listings.php:21 classes/class.member.php:822
+#: listings.php:22 classes/class.member.php:822
 msgid "week"
 msgstr ""
 
-#: listings.php:21
+#: listings.php:22
 msgid "2 weeks"
 msgstr ""
 
-#: listings.php:21 classes/class.member.php:824
+#: listings.php:22 classes/class.member.php:824
 msgid "month"
 msgstr ""
 
-#: listings.php:21
+#: listings.php:22
 msgid "3 months"
 msgstr ""
 
-#: listings.php:24
+#: listings.php:25
 msgid "Keyword"
 msgstr ""
 
-#: listings.php:27 pages.php:10
+#: listings.php:28 pages.php:10
 msgid "Continue"
 msgstr ""
 
@@ -1690,16 +1741,14 @@ msgstr ""
 msgid "request a new one"
 msgstr ""
 
-#: login_redirect.php:5
-msgid "If you don't have an account, please"
+#: login_redirect.php:6 classes/class.member.php:206
+msgid ""
+"If you don't have an account, you may <a href=/member_create.php>sign up "
+"online</a>."
 msgstr ""
 
-#: login_redirect.php:5 password_reset.php:19
-msgid "contact"
-msgstr ""
-
-#: login_redirect.php:5
-msgid "us to join"
+#: login_redirect.php:6 classes/class.member.php:206
+msgid "If you don't have an account, please contact us to join."
 msgstr ""
 
 #: manage_restrictions.php:13
@@ -1773,7 +1822,7 @@ msgid "Choose Member to Add Contact to"
 msgstr ""
 
 #: member_contact_create.php:32 member_contact_edit.php:29
-#: member_create.php:39 member_directory.php:26 member_edit.php:49
+#: member_create.php:39 member_directory.php:29 member_edit.php:49
 msgid "First Name"
 msgstr ""
 
@@ -1783,7 +1832,7 @@ msgid "Middle Name"
 msgstr ""
 
 #: member_contact_create.php:34 member_contact_edit.php:31
-#: member_create.php:41 member_directory.php:27 member_edit.php:51
+#: member_create.php:41 member_directory.php:30 member_edit.php:51
 msgid "Last Name"
 msgstr ""
 
@@ -1827,28 +1876,28 @@ msgid "Address Line 1"
 msgstr ""
 
 #: member_contact_create.php:49 member_contact_edit.php:51
-#: member_create.php:64 member_directory.php:31 member_directory.php:42
+#: member_create.php:64 member_directory.php:34 member_directory.php:47
 #: member_edit.php:67 classes/class.member.php:564
 msgid "Address Line 2"
 msgstr ""
 
 #: member_contact_create.php:50 member_contact_create.php:72
 #: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
-#: member_create.php:90 member_directory.php:43 member_edit.php:68
-#: member_edit.php:102 classes/class.member.php:568
+#: member_create.php:90 member_create.php:216 member_directory.php:48
+#: member_edit.php:68 member_edit.php:102 classes/class.member.php:568
 msgid "City"
 msgstr ""
 
 #: member_contact_create.php:60 member_contact_create.php:73
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
-#: member_create.php:91 member_directory.php:44 member_edit.php:78
+#: member_create.php:91 member_directory.php:49 member_edit.php:78
 #: member_edit.php:103 classes/class.member.php:580
 msgid "State"
 msgstr ""
 
 #: member_contact_create.php:61 member_contact_create.php:74
 #: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
-#: member_create.php:92 member_directory.php:45 member_edit.php:79
+#: member_create.php:92 member_directory.php:50 member_edit.php:79
 #: member_edit.php:104 classes/class.member.php:572
 msgid "Zip Code"
 msgstr ""
@@ -1937,7 +1986,7 @@ msgstr ""
 msgid "Joint member deleted."
 msgstr ""
 
-#: member_contact_delete.php:37 classes/class.person.php:156
+#: member_contact_delete.php:37 classes/class.person.php:173
 msgid "There was an error deleting the joint member."
 msgstr ""
 
@@ -2111,7 +2160,15 @@ msgid ""
 "Since the email failed, the new member needs to be notified of the member id"
 msgstr ""
 
-#: member_create.php:213 member_edit.php:259
+#: member_create.php:214
+msgid "New member of "
+msgstr ""
+
+#: member_create.php:217
+msgid "Read more"
+msgstr ""
+
+#: member_create.php:221 member_edit.php:259
 msgid "There was an error saving the member."
 msgstr ""
 
@@ -2135,38 +2192,53 @@ msgstr ""
 msgid "Membership No."
 msgstr ""
 
-#: member_directory.php:28
+#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:11
+msgid "Karma points"
+msgstr ""
+
+#: member_directory.php:31
 msgid "Neighbourhood"
 msgstr ""
 
-#: member_directory.php:29
+#: member_directory.php:32
 msgid "Town"
 msgstr ""
 
-#: member_directory.php:30
+#: member_directory.php:33
 msgid "Postal code"
 msgstr ""
 
-#: member_directory.php:33
-msgid "Search"
-msgstr ""
-
-#: member_directory.php:40
-msgid "Karma"
-msgstr ""
-
-#: member_directory.php:49
+#: member_directory.php:35 member_directory.php:54
+#: includes/lang/heredoc_gettext_strings.out.php:12
 msgid "Balance"
 msgstr ""
 
+#: member_directory.php:36
+msgid "Absolute balance"
+msgstr ""
+
+#: member_directory.php:38
+msgid "Search"
+msgstr ""
+
+#: member_directory.php:45
+msgid ""
+"Karma points reflect how active the member has been in the LETS system, both "
+"in earning and spending."
+msgstr ""
+
+#: member_directory.php:45
+msgid "Karma"
+msgstr ""
+
 #. Translation hint: All placeholders are numbers.
-#: member_directory.php:204
+#: member_directory.php:232
 #, php-format
 msgid ""
 "Total of %1$d active accounts. %2$d accounts have a total of %3$d karma."
 msgstr ""
 
-#: member_directory.php:205
+#: member_directory.php:233
 #, php-format
 msgid "Total of %1$d active accounts."
 msgstr ""
@@ -2212,7 +2284,7 @@ msgid "You cannot modify the member role of a higher level account"
 msgstr ""
 
 #: member_login.php:7 member_profile_all_in_one.php:7
-#: includes/inc.config.php:294
+#: includes/inc.config.php:305
 msgid "Welcome to "
 msgstr ""
 
@@ -2304,8 +2376,8 @@ msgstr ""
 msgid "Add a Joint Member to an Existing Account"
 msgstr ""
 
-#: member_profile.php:4 includes/inc.config.php:209
-#: includes/inc.config.php:251
+#: member_profile.php:4 includes/inc.config.php:220
+#: includes/inc.config.php:262
 msgid "Member Profile"
 msgstr ""
 
@@ -2349,16 +2421,8 @@ msgstr ""
 msgid "Summary for"
 msgstr ""
 
-#: member_summary.php:16
-msgid "CONTACT INFORMATION"
-msgstr ""
-
-#: member_summary.php:19
-msgid "OFFERED LISTINGS"
-msgstr ""
-
-#: member_summary.php:24
-msgid "WANTED LISTINGS"
+#: member_summary.php:18
+msgid "Contact information"
 msgstr ""
 
 #: member_to_edit.php:8
@@ -2513,7 +2577,7 @@ msgstr ""
 msgid "Really Destroy Session?"
 msgstr ""
 
-#: pages.php:40
+#: pages.php:31
 msgid "Oops, you have requested a non-existant page."
 msgstr ""
 
@@ -2588,6 +2652,10 @@ msgid "If you cannot remember your member id or email address, please"
 msgstr ""
 
 #: password_reset.php:19
+msgid "contact"
+msgstr ""
+
+#: password_reset.php:19
 msgid "us"
 msgstr ""
 
@@ -2617,32 +2685,32 @@ msgstr ""
 msgid "No monthly transfers found."
 msgstr ""
 
-#: refund_monthly_fee.php:97
+#: refund_monthly_fee.php:98
 msgid "This system isn't setup to process monthly fees."
 msgstr ""
 
-#: refund_monthly_fee.php:102 refund_service_charge.php:91
+#: refund_monthly_fee.php:103 refund_service_charge.php:92
 msgid ""
 "Action already executed.  Start from the administration page for a new "
 "refund."
 msgstr ""
 
-#: refund_monthly_fee.php:140 refund_service_charge.php:130
-#: service_charge.php:85 take_monthly_fee.php:130
+#: refund_monthly_fee.php:142 refund_service_charge.php:132
+#: service_charge.php:86 take_monthly_fee.php:131
 msgid ""
 "Already transfered.  Start from the administration page for a new transfer."
 msgstr ""
 
-#: refund_monthly_fee.php:155
+#: refund_monthly_fee.php:157
 msgid "Refund for monthly fee taken on"
 msgstr ""
 
-#: refund_monthly_fee.php:203 refund_service_charge.php:198
+#: refund_monthly_fee.php:205 refund_service_charge.php:200
 msgid "Couldn't transfer."
 msgstr ""
 
-#: refund_monthly_fee.php:210 refund_service_charge.php:205
-#: service_charge.php:160 take_monthly_fee.php:198
+#: refund_monthly_fee.php:212 refund_service_charge.php:207
+#: service_charge.php:161 take_monthly_fee.php:199
 msgid "Done"
 msgstr ""
 
@@ -2650,15 +2718,15 @@ msgstr ""
 msgid "No service charges found."
 msgstr ""
 
-#: refund_service_charge.php:86
+#: refund_service_charge.php:87
 msgid "This system isn't setup to process service fees."
 msgstr ""
 
-#: refund_service_charge.php:152
+#: refund_service_charge.php:154
 msgid "Refund for"
 msgstr ""
 
-#: refund_service_charge.php:152
+#: refund_service_charge.php:154
 msgid "taken on"
 msgstr ""
 
@@ -2678,7 +2746,7 @@ msgstr ""
 msgid "All members in the system have logged in at least once."
 msgstr ""
 
-#: service_charge.php:5 service_charge.php:102
+#: service_charge.php:5 service_charge.php:103
 msgid "Service Charge"
 msgstr ""
 
@@ -2691,13 +2759,13 @@ msgid ""
 "Already confirmed.  Start from the administration page for a new transfer."
 msgstr ""
 
-#: service_charge.php:97
+#: service_charge.php:98
 msgid ""
 "The fee entered must be numeric (e.g. '5') and contain no other characters "
 "(e.g. '5 units' = bad input!)"
 msgstr ""
 
-#: service_charge.php:152 take_monthly_fee.php:190
+#: service_charge.php:153 take_monthly_fee.php:191
 msgid "An Error occured during the transfer."
 msgstr ""
 
@@ -2725,6 +2793,10 @@ msgstr ""
 msgid "Admin Settings"
 msgstr ""
 
+#: settings.php:30
+msgid "Language Settings"
+msgstr ""
+
 #: settings.php:42
 msgid ""
 "<a name='top'></a><font color=red>PLEASE NOTE: The following are "
@@ -2737,7 +2809,45 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: settings.php:168
+#. Translation hint: Default language
+#: settings.php:156
+msgid ""
+"If the user or their browser does not select a language, they will see this "
+"one"
+msgstr ""
+
+#: settings.php:156
+msgid "Default"
+msgstr ""
+
+#. Translation hint: Available language
+#: settings.php:158
+msgid "Allow users to select this language from the dropdown"
+msgstr ""
+
+#: settings.php:158
+msgid "Available"
+msgstr ""
+
+#: settings.php:159
+msgid "Language"
+msgstr ""
+
+#: settings.php:172
+msgid ""
+"Select the default language using the radio buttons. Select which languages "
+"are available using the checkboxes. Your choices apply only to the drop-down "
+"menu. Selecting one or no languages will disable the drop-down menu. Web-"
+"browser preferences may still select languages you have not made available."
+msgstr ""
+
+#: settings.php:177
+msgid ""
+"In order to select available languages, please install the <code>intl</code> "
+"PHP extension."
+msgstr ""
+
+#: settings.php:203
 msgid "Save Settings"
 msgstr ""
 
@@ -2801,7 +2911,7 @@ msgstr ""
 msgid "has already been taken"
 msgstr ""
 
-#: take_monthly_fee.php:170
+#: take_monthly_fee.php:171
 msgid "Monthly Fee"
 msgstr ""
 
@@ -3239,147 +3349,148 @@ msgstr ""
 msgid "Whose Exchange History?"
 msgstr ""
 
-#: includes/inc.config.php:86
+#: includes/inc.config.php:92
 msgid "is currently down for maintenance."
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "Under 18"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "18-30"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "30's"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "40's"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "50's"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "60's"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "70's"
 msgstr ""
 
-#: includes/inc.config.php:115
+#: includes/inc.config.php:121
 msgid "Over 80"
 msgstr ""
 
-#: includes/inc.config.php:115 includes/inc.config.php:118
+#: includes/inc.config.php:121 includes/inc.config.php:124
 msgid "n/a"
 msgstr ""
 
-#: includes/inc.config.php:118
+#: includes/inc.config.php:124
 msgid "Male"
 msgstr ""
 
-#: includes/inc.config.php:118
+#: includes/inc.config.php:124
 msgid "Female"
 msgstr ""
 
-#: includes/inc.config.php:193
+#: includes/inc.config.php:204
 msgid "Licensed under the"
 msgstr ""
 
-#: includes/inc.config.php:193
-msgid "GPL"
-msgstr ""
-
-#: includes/inc.config.php:193
-msgid "Local Exchange UK Ver."
-msgstr ""
-
-#: includes/inc.config.php:193
-msgid "Credits"
-msgstr ""
-
-#: includes/inc.config.php:199
-msgid "Home"
-msgstr ""
-
-#: includes/inc.config.php:202
-msgid "Information"
+#: includes/inc.config.php:204
+#, php-format
+msgid "with some %s exceptions"
 msgstr ""
 
 #: includes/inc.config.php:204
+msgid "Local Exchange UK Ver."
+msgstr ""
+
+#: includes/inc.config.php:204
+msgid "Credits"
+msgstr ""
+
+#: includes/inc.config.php:210
+msgid "Home"
+msgstr ""
+
+#: includes/inc.config.php:213
+msgid "Information"
+msgstr ""
+
+#: includes/inc.config.php:215
 msgid "Offered"
 msgstr ""
 
-#: includes/inc.config.php:205
+#: includes/inc.config.php:216
 msgid "Wanted"
 msgstr ""
 
-#: includes/inc.config.php:208
+#: includes/inc.config.php:219
 msgid "Members List"
 msgstr ""
 
-#: includes/inc.config.php:251
+#: includes/inc.config.php:262
 msgid ""
 "The following listings are new or updated.<p>If you would prefer not to "
 "receive automatic email updates, or if you would like to change their "
 "frequency, you can do so at the"
 msgstr ""
 
-#: includes/inc.config.php:251
+#: includes/inc.config.php:262
 msgid "area of our website."
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Hello"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Due to inactivity, your"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "listings have been set to automatically expire"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "days from now"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "In order to keep the"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid ""
 "system up to date and working smoothly for all members, we have developed an "
 "automatic system to expire listings for members who haven't recorded "
 "exchanges or updated their listings during a period of"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid ""
 "days. We want the directory to be up to date, so that members do not "
 "encounter listings that are out of date or expired. This works to everyone's "
 "advantage"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid ""
 "We apologize for any inconvenience this may cause you and thank you for your "
 "participation. If you have any questions or comments, or are unsure how to "
 "best use the system, please reply to this email message or call us at"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "You have"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid ""
 "days to login to the system and reactivate listings that you would still "
 "like to have in the directory.  If you do not reactivate them during that "
@@ -3387,82 +3498,82 @@ msgid ""
 "still be stored in the system for another"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "days, during which time you can still edit and reactivate them."
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Instructions to reactivate listings"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Login to the website"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Go to Update Listings"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Select Edit Offered (or Wanted) Listings"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Select the listing to edit"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid ""
 "Uncheck the box next to 'Should this listing be set to automatically expire?'"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Press the Update button"
 msgstr ""
 
-#: includes/inc.config.php:277
+#: includes/inc.config.php:288
 msgid "Repeat steps 1-6 for all listings you wish to reactivate"
 msgstr ""
 
-#: includes/inc.config.php:292
+#: includes/inc.config.php:303
 msgid "Your"
 msgstr ""
 
-#: includes/inc.config.php:292
+#: includes/inc.config.php:303
 msgid "Account"
 msgstr ""
 
-#: includes/inc.config.php:293
+#: includes/inc.config.php:304
 msgid "Your password for"
 msgstr ""
 
-#: includes/inc.config.php:293
+#: includes/inc.config.php:304
 msgid ""
 "has been reset. If you did not request this reset, it is possible your "
 "account has been compromised, and you may want to contact the site "
 "administrator at"
 msgstr ""
 
-#: includes/inc.config.php:293
+#: includes/inc.config.php:304
 msgid ""
 "Your user id and new password are listed at the end of this message. You can "
 "change the automatically generated password by going to the Member Profile "
 "section after you login."
 msgstr ""
 
-#: includes/inc.config.php:295
+#: includes/inc.config.php:306
 msgid "Hello, and welcome to the"
 msgstr ""
 
-#: includes/inc.config.php:295
+#: includes/inc.config.php:306
 msgid "community!"
 msgstr ""
 
-#: includes/inc.config.php:295
+#: includes/inc.config.php:306
 msgid "A member account has been created for you at"
 msgstr ""
 
-#: includes/inc.config.php:295
+#: includes/inc.config.php:306
 msgid ""
 "Please login and create your Offered and Wanted Listings.  Your new user id "
 "and password are listed at the end of this message. You can change the "
@@ -3470,7 +3581,7 @@ msgid ""
 "after you login."
 msgstr ""
 
-#: includes/inc.config.php:295
+#: includes/inc.config.php:306
 msgid "Thank you for joining us."
 msgstr ""
 
@@ -3490,8 +3601,8 @@ msgstr ""
 #: classes/class.category.php:129 classes/class.feedback.php:104
 #: classes/class.feedback.php:283 classes/class.listing.php:108
 #: classes/class.member.php:321 classes/class.member.php:344
-#: classes/class.member.php:380 classes/class.person.php:88
-#: classes/class.person.php:136 classes/class.person.php:156
+#: classes/class.member.php:380 classes/class.person.php:101
+#: classes/class.person.php:153 classes/class.person.php:173
 #: classes/class.state_address.php:75 classes/class.state_address.php:93
 #: classes/class.state_address.php:124 classes/class.uploads.php:89
 msgid "Please try again later"
@@ -3561,15 +3672,15 @@ msgstr ""
 msgid "listing for"
 msgstr ""
 
-#: classes/class.listing.php:188
+#: classes/class.listing.php:187
 msgid "Could not inactivate listing"
 msgstr ""
 
-#: classes/class.listing.php:205
+#: classes/class.listing.php:204
 msgid "Could not expire listing"
 msgstr ""
 
-#: classes/class.listing.php:334 classes/class.member.php:810
+#: classes/class.listing.php:333 classes/class.member.php:810
 #: classes/class.member.php:812
 msgid "No listings found."
 msgstr ""
@@ -3590,16 +3701,6 @@ msgstr ""
 
 #: classes/class.member.php:174
 msgid "There was an error updating the password."
-msgstr ""
-
-#: classes/class.member.php:206
-msgid ""
-"If you don't have an account, you may <a href=/member_create.php>sign up "
-"online</a>."
-msgstr ""
-
-#: classes/class.member.php:206
-msgid "If you don't have an account, please contact us to join."
 msgstr ""
 
 #: classes/class.member.php:213
@@ -3804,18 +3905,23 @@ msgstr ""
 msgid "After"
 msgstr ""
 
-#: classes/class.page.php:92
+#: classes/class.page.php:99
 msgid ""
 "These are your Karma points. They reflect how active you've been in the LETS "
 "system, both in earning and spending."
 msgstr ""
 
-#: classes/class.page.php:93
+#: classes/class.page.php:100
 msgid "This is your account balance."
 msgstr ""
 
+#. Translation hint: "it" refers to the member's account balance.
+#: classes/class.page.php:103
+msgid "Spend some of it to gain Karma points!"
+msgstr ""
+
 #. Translation hint: %s is the first name of another member.
-#: classes/class.page.php:102
+#: classes/class.page.php:109
 #, php-format
 msgid ""
 "These are %s's Karma points. They reflect how active the member has been in "
@@ -3823,22 +3929,26 @@ msgid ""
 msgstr ""
 
 #. Translation hint: %s is the first name of another member.
-#: classes/class.page.php:104
+#: classes/class.page.php:111
 #, php-format
 msgid "This is %s's account balance."
 msgstr ""
 
-#: classes/class.page.php:175
+#: classes/class.page.php:125
+msgid "What's this?"
+msgstr ""
+
+#: classes/class.page.php:191
 msgid "Printer Friendly View"
 msgstr ""
 
-#: classes/class.page.php:188
+#: classes/class.page.php:204
 msgid ""
 "DisplayPage() was called with no content included!  Was a blank page "
 "intended?"
 msgstr ""
 
-#: classes/class.person.php:72
+#: classes/class.person.php:74
 msgid ""
 "Could not save new person. There is already a person in your account with "
 "the same name, date of birth, and mother's maiden name. If you received this "
@@ -3846,31 +3956,45 @@ msgid ""
 "starting again."
 msgstr ""
 
-#: classes/class.person.php:88
+#: classes/class.person.php:101
 msgid "Could not save changes to"
 msgstr ""
 
-#: classes/class.person.php:136
+#: classes/class.person.php:153
 msgid "There was an error accessing this person"
 msgstr ""
 
-#: classes/class.person.php:145
+#: classes/class.person.php:162
 msgid "Cannot delete primary member"
 msgstr ""
 
-#: classes/class.person.php:194
+#: classes/class.person.php:211
 msgid "Phone type does not exist."
+msgstr ""
+
+#. Translation hint: %s is the geocoding service (finds addresses on a map).
+#: classes/class.person.php:242
+#, php-format
+msgid ""
+"%s could not find your address. However, we will attempt to save your "
+"account information."
+msgstr ""
+
+#: classes/class.person.php:247
+msgid ""
+"There was a system error locating your address on the map. However, we will "
+"attempt to save your account information."
 msgstr ""
 
 #: classes/class.settings.php:122
 msgid "Update failed!"
 msgstr ""
 
-#: classes/class.settings.php:127
+#: classes/class.settings.php:129
 msgid "Settings updated successfully."
 msgstr ""
 
-#: classes/class.settings.php:136
+#: classes/class.settings.php:138
 msgid "Hours"
 msgstr ""
 
@@ -3964,4 +4088,72 @@ msgstr ""
 
 #: classes/class.uploads.php:138
 msgid "Upload"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:13
+msgid "Calculation"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:14
+msgid "Earned"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:15
+msgid "Spent"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:16
+msgid "Numbers"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:17
+msgid "Explanation"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:20
+#: includes/lang/heredoc_gettext_strings.out.php:27
+msgid "Refund"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:21
+msgid "You are about to refund the monthly fee taken on"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:22
+#: includes/lang/heredoc_gettext_strings.out.php:29
+msgid "Refund now"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:23
+#: includes/lang/heredoc_gettext_strings.out.php:37
+#: includes/lang/heredoc_gettext_strings.out.php:42
+msgid "Or"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:24
+#: includes/lang/heredoc_gettext_strings.out.php:30
+#: includes/lang/heredoc_gettext_strings.out.php:38
+#: includes/lang/heredoc_gettext_strings.out.php:43
+msgid "Cancel"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:28
+msgid "You are about to refund the service charge taken on"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:33
+msgid "Amount"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:34
+msgid "Fee Description"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:35
+msgid "Service Fee"
+msgstr ""
+
+#: includes/lang/heredoc_gettext_strings.out.php:36
+#: includes/lang/heredoc_gettext_strings.out.php:41
+msgid "Transfer now"
 msgstr ""
