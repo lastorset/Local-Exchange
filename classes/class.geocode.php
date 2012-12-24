@@ -242,8 +242,6 @@ HTML;
 			return ($result % 226) / 113 - 1;
 		}
 
-		// TODO Should probably either use a nicely encapsulated method here, or more
-		// performant SQL queries for everything
 		$c = get_defined_constants();
 		$result = $cDB->Query(<<<SQL
 			SELECT person_id,
