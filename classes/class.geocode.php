@@ -207,7 +207,7 @@ HTML;
 HTML;
 	}
 
-	static function AllMarkers($fetch_listings = true) {
+	static function AllMarkers($fetch_listings = /* true */ false /* TODO until listings can be shown properly and anonymously */) {
 		global $cDB, $cUser;
 
 		if ($cUser->IsLoggedOn())
