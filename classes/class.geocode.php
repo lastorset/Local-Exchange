@@ -125,6 +125,10 @@ HTML;
 	}
 
 	static function GenerateMap() {
+		global $cUser;
+		// Used to influence caching by giving the private map its own cache key
+		$is_logged_on = $cUser->IsLoggedOn() ? "?logged_on" : "";
+
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
 			<script type="text/javascript"
@@ -152,7 +156,7 @@ HTML;
 				var markerRequest = new XMLHttpRequest();
 
 				function loadMarkers() {
-					var url = "ajax/map.php";
+					var url = "ajax/map.php$is_logged_on";
 					markerRequest.addEventListener('load', addMarkers, false);
 					// TODO Also listen for failure
 					markerRequest.open("GET", url, true);
@@ -197,6 +201,11 @@ HTML;
 
 	static function AllMarkers($fetch_listings = true) {
 		global $cDB, $cUser;
+
+		if ($cUser->IsLoggedOn())
+			header("Cache-control: max-age=3600, private");
+		else
+			header("Cache-control: max-age=3600, public");
 
 		function getListings(&$listing_group) {
 			$listings = array();

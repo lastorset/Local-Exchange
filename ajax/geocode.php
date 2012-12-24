@@ -8,6 +8,7 @@ include_once("../includes/inc.global.php");
 
 if (isset($_GET['progress']))
 {
+	header("Cache-control: max-age: 1, private");
 	// Return all coordinates found so far
 	echo json_encode(cGeocode::AllMarkers(false), JSON_NUMERIC_CHECK);
 	exit();
