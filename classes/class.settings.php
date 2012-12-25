@@ -171,7 +171,7 @@ class cSettings {
 		{
 			$new_default = $_REQUEST['DEFAULT_LANGUAGE'];
 			if (in_array($new_default, cTranslationSupport::$supported_languages))
-				$cDB->Query("UPDATE SETTINGS SET current_value='$new_default' WHERE name='DEFAULT_LANGUAGE')");
+				$cDB->Query("UPDATE settings SET current_value='$new_default' WHERE name='DEFAULT_LANGUAGE'");
 		}
 	}
 }
