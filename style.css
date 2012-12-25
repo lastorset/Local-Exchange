@@ -25,6 +25,10 @@ header#user-controls > * {
 	margin-left: 1em;
 }
 
+header .karma-indicator {
+	margin-bottom: 0.4em;
+}
+
 .karma-indicator span {
 	font-size: 125%;
 	font-family: Droid serif, serif;
