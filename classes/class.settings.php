@@ -119,8 +119,7 @@ class cSettings {
 		}
 		
 		foreach ($sql_data as $setting => $value) {
-			
-			$result = $cDB->Query("update settings set current_value=".$cDB->EscTxt($value)." where name=".$cDB->EscTxt($setting)."");
+			$result = $this->set($setting, $value);
 			
 			if (!$result)
 				return "<font color=red>"._("Update failed!")."</font>".mysql_error();
@@ -131,6 +130,12 @@ class cSettings {
 		$this->saveLanguageSettings();
 
 		return "<font color=green>"._("Settings updated successfully.")."</font>";
+	}
+
+	/** Set a single setting. This will not update the global constants or this object's data; call getCurrent to update those. */
+	function set($setting, $value) {
+		global $cDB;
+		return $cDB->Query("UPDATE settings SET current_value=".$cDB->EscTxt($value)." WHERE name=".$cDB->EscTxt($setting)."");
 	}
 
 	/** Gets the UNITS setting in a form suitable for UI. This makes sure "Hours" gets translated if necessary.
