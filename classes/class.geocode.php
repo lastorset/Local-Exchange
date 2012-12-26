@@ -19,6 +19,11 @@ class cGeocode {
 		return "Google Maps";
 	}
 
+	/** Administrator-visible URL for obtaining an API key. */
+	static function GeocodingProviderAPIRequest() {
+		return "https://developers.google.com/maps/documentation/javascript/tutorial#api_key";
+	}
+
 	static function OnlyZero($string) {
 		$len = mb_strlen($string);
 

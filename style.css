@@ -380,3 +380,10 @@ table.language-selector td.widget {
 	margin-top: 3em;
 	text-transform: uppercase;
 }
+
+#initial_geocoding h2::before {
+	display: inline;
+	color: #6c81c6;
+	counter-increment: geocoding-step;
+	content: counter(geocoding-step) " ";
+}
