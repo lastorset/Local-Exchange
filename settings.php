@@ -26,8 +26,8 @@ $output .= "<table width=100%>";
 
 // Sort settings into sections
 
-$sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array(),8 => array());
-$section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"),8=>_("Language Settings"));
+$sections = array(1 => array(),2 => array(),7 => array(), 3 => array(),4 => array(),6 => array(),8 => array(),9 => array());
+$section_names = array(1 => _("General Settings"), 2 => _("Site Features"), 7 => _("Display Options"), 3 => _("Account Restrictions"), 4=>_("Social Networking"),6=>_("Admin Settings"),8=>_("Language Settings"),9=>_("Geocoding"));
 
 foreach($site_settings->theSettings as $key) {
 	

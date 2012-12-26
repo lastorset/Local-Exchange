@@ -144,13 +144,6 @@ define("CKEDITOR", false);
 // Path of CKEditor, relative to web server root, without a trailing slash.
 define("CKEDITOR_PATH", "ckeditor");
 
-// Enable geocoding and display a Google map?
-// When switching this on, run the initial geocoding script at [FIXME].
-define("GEOCODE", true);
-
-// Show a map on the home page? This requires geocoding.
-define("HOME_PAGE_MAP", false);
-
 // Use game mechanics? This shows "karma points" – the lesser number of hours spent and earned - at various points in the UI.
 define("GAME_MECHANICS", true);
 

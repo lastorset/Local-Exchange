@@ -96,11 +96,12 @@ class cGeocode {
 
 		$latitude = $coordinates[0];
 		$longitude = $coordinates[1];
+		$map_api_key = urlencode(MAP_API_KEY);
 
 		return <<<HTML
 			<div id="map_canvas"></div>
 			<script type="text/javascript"
-				src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
+				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
 			<script type="text/javascript">
 				var map;
@@ -128,11 +129,12 @@ HTML;
 		global $cUser, $_;
 		// Used to influence caching by giving the private map its own cache key
 		$is_logged_on = $cUser->IsLoggedOn() ? "?logged_on" : "";
+		$map_api_key = urlencode(MAP_API_KEY);
 
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
 			<script type="text/javascript"
-				src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA5n7eMkwocdSFXiGrPNJPz32CLxzDYpGk&sensor=false">
+				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
 			<script type="text/javascript">
 				var map;

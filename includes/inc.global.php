@@ -105,8 +105,7 @@ include_once(CLASSES_PATH ."class.page.php");
 include_once(CLASSES_PATH ."class.logging.php");
 include_once(CLASSES_PATH ."class.settings.php");
 include_once(CLASSES_PATH ."class.state_address.php"); // added by ejkv
-if (GEOCODE)
-	include_once(CLASSES_PATH ."class.geocode.php");
+include_once(CLASSES_PATH ."class.geocode.php");
 
 global $site_settings;
 
