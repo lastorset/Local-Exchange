@@ -30,8 +30,6 @@ class cSettings {
 		
 		$this->retrieve();
 		
-		//$this->current = Array();
-		
 		// Store current settings in easily accessible constants
 		
 		$stngs = $this->theSettings;
@@ -45,17 +43,23 @@ class cSettings {
 					
 					if (strtolower($ss->current_value)=='false') {
 						$ss->current_value = "";
-						
+						$this->current[$ss->name] = false;
 					}
-					else
+					else {
 						$ss->current_value = 1;
+						$this->current[$ss->name] = true;
+					}
 			
 					define("".$ss->name."",((boolean) $ss->current_value));	
 				}
-				else if ($ss->typ=='int')
+				else if ($ss->typ=='int') {
 					define("".$ss->name."",((int) $ss->current_value));
-				else
+					$this->current[$ss->name] = (int) $ss->current_value;
+				}
+				else {
 					define("".$ss->name."","".$ss->current_value."");
+					$this->current[$ss->name] = (string) $ss->current_value;
+				}
 		}
 		
 	}
