@@ -15,8 +15,8 @@ CREATE TABLE `languages` (
 SQL
 ) or die("Error altering member table.  Does the web user account have alter table permission?");
 
-$cDB->Query("INSERT INTO `settings` VALUES ('37', 'DEFAULT_LANGUAGE', '" . _("Available and default languages") . "', 'language', NULL, '', 'en_US', '', '" . _("Which languages are available, and which is the default") . "', 8)") or die("Error - Could not insert row into settings table.");
-$cDB->Query("INSERT INTO `settings` VALUES ('38', 'ENABLE_TRANSLATION', '" . _("Enable translation of user interface") . "', 'bool', '', '', 'TRUE', '', '" . _("Enable translation of user-interface text. This only translates text that is built into Local Exchange; news, listings etc. are not automatically translated.") . "', 8)") or die("Error - Could not insert row into settings table.");
+$cDB->Query("INSERT INTO `settings` VALUES (NULL, 'DEFAULT_LANGUAGE', '" . _("Available and default languages") . "', 'language', NULL, '', 'en_US', '', '" . _("Which languages are available, and which is the default") . "', 8)") or die("Error - Could not insert row into settings table.");
+$cDB->Query("INSERT INTO `settings` VALUES (NULL, 'ENABLE_TRANSLATION', '" . _("Enable translation of user interface") . "', 'bool', '', '', 'TRUE', '', '" . _("Enable translation of user-interface text. This only translates text that is built into Local Exchange; news, listings etc. are not automatically translated.") . "', 8)") or die("Error - Could not insert row into settings table.");
 
 // User's preferred language
 $cDB->Query("ALTER TABLE ". DATABASE_MEMBERS ." ADD COLUMN  `preferred_language` VARCHAR(20) DEFAULT NULL AFTER `confirm_payments`") or die("Error altering member table.  Does the web user account have alter table permission?");
