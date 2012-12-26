@@ -19,6 +19,11 @@ if (isset($_GET['progress']))
 $general_errors = array();
 $address_errors = array();
 $other_errors = array();
+if (!GEOCODE) {
+	$general_errors[] = array('message' => "Geocoding is disabled");
+	print makeResponse();
+	exit();
+}
 if (!$cUser->HasLevel(1)) {
 	$general_errors[] = array('message' => "Must have administrator permissions");
 	print makeResponse();
