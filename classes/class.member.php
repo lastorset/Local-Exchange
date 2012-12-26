@@ -157,6 +157,7 @@ class cMember
 	function ReactivateMember() {
 		if($this->status != ACTIVE) {
 			$this->status = ACTIVE;
+			$this->person[0]->GeocodeCatch();
 			return $this->SaveMember();
 		} else {
 			return false;	
