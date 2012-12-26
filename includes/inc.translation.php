@@ -52,7 +52,7 @@ class cTranslationSupport {
 
 		- The user's preferred language, as stored in his profile.
 		- What the user picked in this session using the dropdown.
-		- TODO: What the user agent suggests in the HTTP request.
+		- What the user agent suggests in the HTTP request.
 		- The site's default language.
 
 		@note This code does not cancel a user's choice of a language that previously was
