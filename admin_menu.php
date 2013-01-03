@@ -21,7 +21,7 @@ $list .= "<STRONG>"._("Accounts")."</STRONG><P>";
 $list .= "<A HREF=member_create.php><FONT SIZE=2>"._("Create a New Member Account")."</FONT></A><BR>";
 $list .= "<A HREF=member_to_edit.php><FONT SIZE=2>"._("Edit a Member Account")."</FONT></A><BR>";
 if ($cUser->member_role > 1) {
-	$list .= "<A HREF=photo_to_edit.php><FONT SIZE=2>"._("Edit a Member Photo")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
+	$list .= "<A HREF=photo_to_edit.php><FONT SIZE=2>"._("Edit a Member Photo")."</FONT></A> <font color=red></font><BR>";
 }
 if ($cUser->member_role > 1) {
 	$list .= "<A HREF=member_choose.php?action=member_status_change&inactive=Y><FONT SIZE=2>"._("Inactivate/Re-activate a Member Account")."</FONT></A><BR>";
@@ -38,7 +38,7 @@ if (OVRIDE_BALANCES==true && $cUser->member_role > 1) // Only display Override B
 	$list .= "<A HREF=balance_to_edit.php><FONT SIZE=2>"._("Override Member Account Balance")."</FONT></A><BR>";
 
 if ($cUser->member_role>1)
-	$list .= "<a href=manage_restrictions.php><font size=2>"._("Manage Account Restrictions")."</font></a> <font color=red>"._("New!")."</font>";
+	$list .= "<a href=manage_restrictions.php><font size=2>"._("Manage Account Restrictions")."</font></a> <font color=red></font>";
 	
 $list .= "</td><td>";
 
@@ -79,7 +79,7 @@ $list .= "<em>"._("Information Pages")."</em><p>";
 $list .= "<A HREF=create_info.php><FONT SIZE=2>"._("Create a New Information Page")."</FONT></A><BR>";
 $list .= "<A HREF=edit_info.php><FONT SIZE=2>"._("Edit Info Pages")."</FONT></A><BR>";
 $list .= "<A HREF=delete_info.php><FONT SIZE=2>"._("Delete an Info Page")."</FONT></A><BR>";
-$list .= "<A HREF=info_permissions.php><FONT SIZE=2>"._("Edit Information Page Permissions")."</FONT></A> <font size=2 color=red>"._("New!")."</font> <BR>";
+$list .= "<A HREF=info_permissions.php><FONT SIZE=2>"._("Edit Information Page Permissions")."</FONT></A> <font size=2 color=red></font> <BR>";
 $list .= "<A HREF=info_url.php><FONT SIZE=2>"._("See Info Page URL 's")."</FONT></A><p>";
 
 $list .= "<em>"._("News and Events")."</em><p>";
@@ -111,17 +111,17 @@ if (TAKE_MONTHLY_FEE && $cUser->member_role > 1) {
 if (TAKE_SERVICE_FEE==true && $cUser->member_role > 1) {
 	
 	$list .= "<p><a href='service_charge.php?CID=$ts'>
-                <font size=2>"._("Take One-Off Service Charge")."</font></a> <font color=red>"._("New!")."</font><br>
+                <font size=2>"._("Take One-Off Service Charge")."</font></a> <font color=red></font><br>
                 <a href='refund_service_charge.php'>
-                <font size=2>"._("Refund Service Charge")."</font></a> <font color=red>"._("New!")."</font><p>";
+                <font size=2>"._("Refund Service Charge")."</font></a> <font color=red></font><p>";
 }
 $list .= "</td><td>";
 
 $list .= "<STRONG>"._("System & Reporting")."</STRONG><P>";
 if ($cUser->member_role > 1) {
-	$list .= "<A HREF=settings.php><FONT SIZE=2>"._("Site Settings")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
+	$list .= "<A HREF=settings.php><FONT SIZE=2>"._("Site Settings")."</FONT></A> <font color=red></font><BR>";
 	$list .= "<A HREF=geocoding_setup.php><FONT SIZE=2>"._("Set Up Geocoding")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
-	$list .= "<A HREF=mysql_backup.php><FONT SIZE=2>"._("MySQL Backup")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
+	$list .= "<A HREF=mysql_backup.php><FONT SIZE=2>"._("MySQL Backup")."</FONT></A> <font color=red></font><BR>";
 
 	$list .= "<A HREF=contact_all.php><FONT SIZE=2>"._("Send an Email to All Members")."</FONT></A><BR>";
 }
