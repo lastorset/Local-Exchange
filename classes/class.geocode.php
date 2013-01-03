@@ -135,6 +135,12 @@ HTML;
 		// Used to influence caching by giving the private map its own cache key
 		$is_logged_on = $cUser->IsLoggedOn() ? "?logged_on" : "";
 		$map_api_key = urlencode(MAP_API_KEY);
+		$center = self::ParseCoordinates(MAP_CENTER);
+		$zoom = MAP_ZOOM;
+		if (is_null($center) || !is_numeric($zoom)) {
+			$center = array(0, 0);
+			$zoom = 1;
+		}
 
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
@@ -147,8 +153,8 @@ HTML;
 
 				function initializeMap() {
 					var myOptions = {
-						center: new google.maps.LatLng(59.931624, 10.741882),
-						zoom: 12,
+						center: new google.maps.LatLng($center[0], $center[1]),
+						zoom: $zoom,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 					map = new google.maps.Map(document.getElementById("map_canvas"),
@@ -304,6 +310,15 @@ SQL
 			}
 		}
 		return $out;
+	}
+
+	/** Parses a coordinate string (like "(59.123, 12.30)") into an array such as "array(59.123, 12.30)".
+	 *  @returns an array with two items, or NULL if the coordinate cannot be parsed. */
+	static function ParseCoordinates($string) {
+		$coords = sscanf($string, "(%f, %f)");
+		if ($coords == -1)
+			return null;
+		return $coords;
 	}
 
 	/** Select all persons that can be geocoded, or that are missing geocoding data. */

@@ -9,26 +9,103 @@ $cUser->MustBeLevel(1);
 print $p->MakePageHeader();
 print $p->MakePageMenu();
 
-$geocodable_count = count(cGeocode::GeocodablePersons());
-$missing_count = count(cGeocode::MissingPersons());
-$provider = cGeocode::GeocodingProvider();
-$provider_api_key_request = cGeocode::GeocodingProviderAPIRequest();
+// Receive form input
 
 if ($_POST['saved-geocode-apikey'] == true) {
-	$site_settings->set("GEOCODE", (string) isset($_POST['GEOCODE']));
+	$site_settings->set("GEOCODE", isset($_POST['GEOCODE']) ? "TRUE" : "FALSE");
 	$site_settings->set("MAP_API_KEY", $_POST['MAP_API_KEY']);
+}
+
+if ($_POST['saved-viewport'] == true) {
+	$site_settings->set("MAP_CENTER", $_POST['MAP_CENTER']);
+	$site_settings->set("MAP_ZOOM", $_POST['MAP_ZOOM']);
+}
+
+if ($_POST['saved-home-page-map'] == true) {
+	$site_settings->set("HOME_PAGE_MAP", isset($_POST['HOME_PAGE_MAP']) ? "TRUE" : "FALSE");
 }
 
 $site_settings->getCurrent();
 
+// Set up some variables
+
+$geocodable_count = count(cGeocode::GeocodablePersons());
+$missing_count = count(cGeocode::MissingPersons());
+
+$provider = cGeocode::GeocodingProvider();
+$provider_api_key_request = cGeocode::GeocodingProviderAPIRequest();
+
+$map_center = cGeocode::ParseCoordinates($site_settings->current['MAP_CENTER']);
+if (is_null($map_center))
+	$map_center = array(0, 0);
+
 ?>
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?key=<?= urlencode($site_settings->current['MAP_API_KEY']) ?>&sensor=false">
+</script>
+<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
+
+<script>
+	<? /* TODO: Disable map if key is empty and catch authentication errors
+	https://groups.google.com/forum/?fromgroups=#!topic/google-maps-api/oHfKEazKd0M */ ?>
+
+	// Set up map
+	var map;
+	var members_seen = new Array();
+
+	function initializeMap() {
+		var myOptions = {
+			center: new google.maps.LatLng(<?= $map_center[0] ?>, <?= $map_center[1] ?>),
+			zoom: <?= $site_settings->current['MAP_ZOOM'] ?>,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById("map_canvas"),
+				myOptions);
+		loadMarkers();
+	}
+
+	var markerRequest = new XMLHttpRequest();
+
+	function loadMarkers() {
+		// Don't send a request if one is already in progress
+		if (markerRequest.readyState != 0 && markerRequest.readyState != 4)
+			return;
+
+		var url = "ajax/geocode.php?progress";
+		markerRequest.addEventListener('load', addMarkers, false);
+		markerRequest.open("GET", url, true);
+		markerRequest.send();
+	}
+
+	// Add markers that haven't been seen yet
+	function addMarkers() {
+		var markers = JSON.parse(markerRequest.responseText);
+		progress.value = markers.length;
+		for (var i = 0; i < markers.length; i++) {
+			var member = markers[i];
+			if (members_seen.some(function(member_seen) { return member_seen == member.id; }))
+				continue;
+			else {
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(member.latitude, member.longitude),
+					map: map,
+					animation: google.maps.Animation.DROP
+				});
+				members_seen.push(member.id);
+			}
+		}
+	}
+
+	window.addEventListener('DOMContentLoaded', initializeMap, false);
+</script>
+
 <div id=initial_geocoding>
 <h1><?= _("Geocoding setup") ?></h1>
 <p><?= _("This page guides you through the steps required to start geocoding members.") ?>
 <p><?= _("<i>Geocoding</i> means finding the latitude/longitude coordinates of a member's address. We store these coordinates in the database and use them to show members on a map.") ?>
 
-<h2><?= _("API key") ?></h2>
-<form method=post>
+<h2 id=api-key><?= _("API key") ?></h2>
+<form method=post action=#api-key>
 	<p><?= // Translation hint: %s is the name of a geocoding provider
 	sprintf(_('%s requires sites like yours to obtain an API key. Please visit the following site to obtain a key.'), $provider) ?>
 	<p><a href=<?= $provider_api_key_request ?>><?= $provider_api_key_request ?></a>
@@ -44,6 +121,20 @@ $site_settings->getCurrent();
 		<input type=submit value="<?= _("Save") ?>">
 </form>
 
+<h2 id="center-viewport">Map viewport</h2>
+	<?= _("Choose the map's default view by panning and zooming.") ?>
+	<div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
+	<form method=post action=#center-viewport>
+		<input type=hidden name=saved-viewport value=true>
+		<input type=hidden name=MAP_CENTER id=viewport-coord value="<?= $site_settings->current['MAP_CENTER'] ?>">
+		<input type=hidden name=MAP_ZOOM   id=viewport-zoom  value="<?= $site_settings->current['MAP_ZOOM'] ?>">
+		<input type=submit value="<?= _("Save") ?>" onclick="
+			var center = map.getCenter();
+			document.getElementById('viewport-coord').value = '('+ center.lat() +', '+ center.lng() +')';
+			document.getElementById('viewport-zoom').value = map.getZoom();
+		">
+	</form>
+
 <h2><?= _("Geocode all members") ?></h2>
 <? if ($missing_count === 0) {
 	print _("All members have been geocoded. You may skip this step.");
@@ -57,10 +148,11 @@ $site_settings->getCurrent();
 	<p id=status style="background-color: lightgoldenrodyellow; visibility: hidden;"><?= _("Not started") ?></p>
 	<progress max=<?= $geocodable_count ?> style="visibility: hidden;"></progress>
 
-	<div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
-
 	<div id=log style="display: none">
 		<span id=processed_count></span>
+
+		<p><?= _("You may wish to re-center the map viewport above to show the newly geocoded members.") ?>
+
 		<h3>Errors</h3>
 		<ul id=general_errors>
 		</ul>
@@ -73,13 +165,7 @@ $site_settings->getCurrent();
 		<ul id=other_errors>
 		</ul>
 	</div>
-	</div>
-	<? /* TODO: Disable map if key is empty and catch authentication errors
-	https://groups.google.com/forum/?fromgroups=#!topic/google-maps-api/oHfKEazKd0M */ ?>
-	<script type="text/javascript"
-		src="http://maps.googleapis.com/maps/api/js?key=<?= urlencode($site_settings->current['MAP_API_KEY']) ?>&sensor=false">
-	</script>
-	<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
+
 	<script>
 		// Initialize XHR
 		var geocodingRequest = new XMLHttpRequest();
@@ -121,8 +207,13 @@ $site_settings->getCurrent();
 		}
 
 		function outputLog(log, response) {
+			var errorCount = response.generalErrors.length
+				+ response.addressErrors.length
+				+ response.otherErrors.length;
 			if (response.processedCount)
-				document.getElementById('processed_count').innerText = sprintf("<?= _("%(number)s responses processed.") ?>", { number: response.processedCount });
+				document.getElementById('processed_count').innerText = errorCount > 0
+					? sprintf("<?= _("%(response_count)s responses processed with %(error_count)s errors.") ?>", { response_count: response.processedCount, error_count: errorCount })
+					: sprintf("<?= _("%(response_count)s responses processed.") ?>", { response_count: response.processedCount });
 
 			addItem(response.generalErrors, document.getElementById('general_errors'))
 			addItem(response.addressErrors, document.getElementById('address_errors'))
@@ -142,57 +233,21 @@ $site_settings->getCurrent();
 			}
 			log.style.display = 'block';
 		}
-
-		// Set up map
-		var map;
-		var members_seen = new Array();
-
-		function initializeMap() {
-			var myOptions = {
-				center: new google.maps.LatLng(59.931624, 10.741882),
-				zoom: 12,
-				mapTypeId: google.maps.MapTypeId.ROADMAP
-			};
-			map = new google.maps.Map(document.getElementById("map_canvas"),
-					myOptions);
-		}
-
-		var markerRequest = new XMLHttpRequest();
-
-		function loadMarkers() {
-			// Don't send a request if one is already in progress
-			if (markerRequest.readyState != 0 && markerRequest.readyState != 4)
-				return;
-
-			var url = "ajax/geocode.php?progress";
-			markerRequest.addEventListener('load', addMarkers, false);
-			markerRequest.open("GET", url, true);
-			markerRequest.send();
-		}
-
-		// Add markers that haven't been seen yet
-		function addMarkers() {
-			var markers = JSON.parse(markerRequest.responseText);
-			progress.value = markers.length;
-			for (var i = 0; i < markers.length; i++) {
-				var member = markers[i];
-				if (members_seen.some(function(member_seen) { return member_seen == member.id; }))
-					continue;
-				else {
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(member.latitude, member.longitude),
-						map: map,
-						animation: google.maps.Animation.DROP
-					});
-					members_seen.push(member.id);
-				}
-			}
-		}
-
-		window.addEventListener('DOMContentLoaded', initializeMap, false);
 	</script>
 	<?php
-}
+} ?>
+
+<h2 id=home-page-map><?= _("Home page map") ?></h2>
+<form method=post action="#home-page-map">
+	<p><?= _("If you wish to display a map on the front page, check this box. Other maps will display regardless of this setting.") ?>
+	<p>
+		<input type=checkbox id=HOME_PAGE_MAP name=HOME_PAGE_MAP <?= $site_settings->current['HOME_PAGE_MAP'] === true ? "checked" : "" ?>><label for=HOME_PAGE_MAP><?= _("Show map on home page") ?></label>
+		<input type=hidden name=saved-home-page-map value=true>
+	<p>
+		<input type=submit value="<?= _("Save") ?>">
+</form>
+
+<?php
 
 print $p->MakePageFooter();
 
