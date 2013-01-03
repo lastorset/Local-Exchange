@@ -120,6 +120,7 @@ $list .= "</td><td>";
 $list .= "<STRONG>"._("System & Reporting")."</STRONG><P>";
 if ($cUser->member_role > 1) {
 	$list .= "<A HREF=settings.php><FONT SIZE=2>"._("Site Settings")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
+	$list .= "<A HREF=geocoding_setup.php><FONT SIZE=2>"._("Set Up Geocoding")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
 	$list .= "<A HREF=mysql_backup.php><FONT SIZE=2>"._("MySQL Backup")."</FONT></A> <font color=red>"._("New!")."</font><BR>";
 
 	$list .= "<A HREF=contact_all.php><FONT SIZE=2>"._("Send an Email to All Members")."</FONT></A><BR>";
