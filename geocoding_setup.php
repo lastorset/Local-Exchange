@@ -43,14 +43,7 @@ if (is_null($map_center))
 	$map_center = array(0, 0);
 
 ?>
-<script>
-// Google Maps throws authentication errors using an alert box, which is very ugly.
-var alert = function (text) {
-	var errorElm = document.getElementById("map_errors");
-	errorElm.innerText = text;
-	errorElm.style.display = 'block';
-}
-
+<script type="text/javascript" src="ajax/lib/replace_alert.js">
 </script>
 <?php if ($api_key == "") { ?>
 	<script>
