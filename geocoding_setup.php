@@ -151,7 +151,10 @@ if (is_null($map_center))
 	</form>
 
 <h2><?= _("Geocode all members") ?></h2>
-<? if ($missing_count === 0) {
+<?
+if (!$site_settings->current['GEOCODE'])
+	print _("Enable geocoding to continue.");
+else if ($missing_count === 0) {
 	print _("All members have been geocoded. You may skip this step.");
 } else {
 	printf(_('Although you have enabled geocoding for the future, %d existing members also need to be geocoded.'), $missing_count);
