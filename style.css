@@ -363,6 +363,13 @@ table.language-selector td.widget {
 	height: 300px;
 }
 
+#map_errors {
+	background: lightpink;
+	margin: 1em auto;
+	padding: 1em;
+	display: none;
+}
+
 .logoheader + #map_canvas {
 	margin-top: 15px;
 }

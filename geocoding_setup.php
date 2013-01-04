@@ -34,70 +34,91 @@ $missing_count = count(cGeocode::MissingPersons());
 
 $provider = cGeocode::GeocodingProvider();
 $provider_api_key_request = cGeocode::GeocodingProviderAPIRequest();
+$api_key = $site_settings->current['MAP_API_KEY'];
+if ($api_key == "FALSE")
+	$api_key = "";
 
 $map_center = cGeocode::ParseCoordinates($site_settings->current['MAP_CENTER']);
 if (is_null($map_center))
 	$map_center = array(0, 0);
 
 ?>
-<script type="text/javascript"
-	src="http://maps.googleapis.com/maps/api/js?key=<?= urlencode($site_settings->current['MAP_API_KEY']) ?>&sensor=false">
-</script>
-<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
-
 <script>
-	<? /* TODO: Disable map if key is empty and catch authentication errors
-	https://groups.google.com/forum/?fromgroups=#!topic/google-maps-api/oHfKEazKd0M */ ?>
+// Google Maps throws authentication errors using an alert box, which is very ugly.
+var alert = function (text) {
+	var errorElm = document.getElementById("map_errors");
+	errorElm.innerText = text;
+	errorElm.style.display = 'block';
+}
 
-	// Set up map
-	var map;
-	var members_seen = new Array();
+</script>
+<?php if ($api_key == "") { ?>
+	<script>
+	window.addEventListener('DOMContentLoaded', function() {
+		document.getElementById('map_canvas').innerText = "<?= _("(A map will be displayed here as soon as an API key is entered.)") ?>";
+	}, false);
+	</script>
+<?php } else { ?>
+	<script type="text/javascript"
+		src="http://maps.googleapis.com/maps/api/js?key=<?= urlencode($api_key) ?>&sensor=false">
+	</script>
+	<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
 
-	function initializeMap() {
-		var myOptions = {
-			center: new google.maps.LatLng(<?= $map_center[0] ?>, <?= $map_center[1] ?>),
-			zoom: <?= $site_settings->current['MAP_ZOOM'] ?>,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map = new google.maps.Map(document.getElementById("map_canvas"),
-				myOptions);
-		loadMarkers();
-	}
+	<script>
+		<? /* TODO: Disable map if key is empty and catch authentication errors
+		https://groups.google.com/forum/?fromgroups=#!topic/google-maps-api/oHfKEazKd0M */ ?>
 
-	var markerRequest = new XMLHttpRequest();
+		// Set up map
+		var map;
+		var members_seen = new Array();
 
-	function loadMarkers() {
-		// Don't send a request if one is already in progress
-		if (markerRequest.readyState != 0 && markerRequest.readyState != 4)
-			return;
+		function initializeMap() {
+			var myOptions = {
+				center: new google.maps.LatLng(<?= $map_center[0] ?>, <?= $map_center[1] ?>),
+				zoom: <?= $site_settings->current['MAP_ZOOM'] ?>,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			map = new google.maps.Map(document.getElementById("map_canvas"),
+					myOptions);
+			loadMarkers();
+		}
 
-		var url = "ajax/geocode.php?progress";
-		markerRequest.addEventListener('load', addMarkers, false);
-		markerRequest.open("GET", url, true);
-		markerRequest.send();
-	}
+		var markerRequest = new XMLHttpRequest();
 
-	// Add markers that haven't been seen yet
-	function addMarkers() {
-		var markers = JSON.parse(markerRequest.responseText);
-		progress.value = markers.length;
-		for (var i = 0; i < markers.length; i++) {
-			var member = markers[i];
-			if (members_seen.some(function(member_seen) { return member_seen == member.id; }))
-				continue;
-			else {
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(member.latitude, member.longitude),
-					map: map,
-					animation: google.maps.Animation.DROP
-				});
-				members_seen.push(member.id);
+		function loadMarkers() {
+			// Don't send a request if one is already in progress
+			if (markerRequest.readyState != 0 && markerRequest.readyState != 4)
+				return;
+
+			var url = "ajax/geocode.php?progress";
+			markerRequest.addEventListener('load', addMarkers, false);
+			markerRequest.open("GET", url, true);
+			markerRequest.send();
+		}
+
+		// Add markers that haven't been seen yet
+		function addMarkers() {
+			var markers = JSON.parse(markerRequest.responseText);
+			progress.value = markers.length;
+			for (var i = 0; i < markers.length; i++) {
+				var member = markers[i];
+				if (members_seen.some(function(member_seen) { return member_seen == member.id; }))
+					continue;
+				else {
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(member.latitude, member.longitude),
+						map: map,
+						animation: google.maps.Animation.DROP
+					});
+					members_seen.push(member.id);
+				}
 			}
 		}
-	}
 
-	window.addEventListener('DOMContentLoaded', initializeMap, false);
-</script>
+		window.addEventListener('DOMContentLoaded', initializeMap, false);
+
+	</script>
+<?php } ?>
 
 <div id=initial_geocoding>
 <h1><?= _("Geocoding setup") ?></h1>
@@ -111,7 +132,7 @@ if (is_null($map_center))
 	<p><a href=<?= $provider_api_key_request ?>><?= $provider_api_key_request ?></a>
 
 	<p><?= _("Then, paste the key in the following box.") ?>
-	<p><input size=39 style="font-family: monospace" name=MAP_API_KEY value="<?= $site_settings->current['MAP_API_KEY'] ?>"/>
+	<p><input size=39 style="font-family: monospace" name=MAP_API_KEY value="<?= htmlspecialchars($api_key) ?>"/>
 
 	<p><?= _("Check this box to enable geocoding. Then save your settings. This causes new members and members who modify their profile to be geocoded automatically.") ?>
 	<p>
@@ -123,6 +144,7 @@ if (is_null($map_center))
 
 <h2 id="center-viewport">Map viewport</h2>
 	<?= _("Choose the map's default view by panning and zooming.") ?>
+	<div id="map_errors"></div>
 	<div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
 	<form method=post action=#center-viewport>
 		<input type=hidden name=saved-viewport value=true>
