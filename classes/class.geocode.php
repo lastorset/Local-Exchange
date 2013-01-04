@@ -105,6 +105,7 @@ class cGeocode {
 
 		return <<<HTML
 			<div id="map_canvas"></div>
+			<script type="text/javascript" src="ajax/lib/replace_alert.js"></script>
 			<script type="text/javascript"
 				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
@@ -144,6 +145,7 @@ HTML;
 
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
+			<script type="text/javascript" src="ajax/lib/replace_alert.js"></script>
 			<script type="text/javascript"
 				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
