@@ -5,6 +5,12 @@ Requirements:
 	- MySQL 3.23 or higher with InnoDB table support*
 	- Pear system and the libraries specified below 
 
+==== Oslo fork 1.XX ====
+
+TODO: write more extensive and cohesive upgrade instructions when submitting the changes to the UK guys or releasing a version of the fork
+
+You can upgrade from version 1.01 UK by running the upgrade scripts in the "upgrade" directory using a web browser.
+
 ==== New version 1.01 UK ====
 N.B. - This package (localx-UK-1.01.zip) is for installing a NEW site using version 1.01 from scratch. 
 We suggest you read RELEASENOTES.txt before attempting to install for an overview and understanding of new features and bug fixes introduced since 0.3.2 

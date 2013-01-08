@@ -322,6 +322,11 @@ $cDB->Query("INSERT INTO " . DATABASE_STATES . "(description) VALUES ('" . _("Sa
 // Upgrade to Gettext version
 include_once("upgrade/upgrade_1.01multilang_to_1.XXgettext.php");
 
+// Upgrade to support Google map
+include_once("upgrade/upgrade_1.01multilang_to_1.XXgoogle_map.php");
+
+// Karma points and some bug fixes
+include_once("upgrade/upgrade_1.01multilang_to_1.1oslo.php");
 $p->DisplayPage(_("Database has been created. Click <A HREF=member_login.php>here</A> to login."));
 
 ?>
