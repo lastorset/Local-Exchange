@@ -63,5 +63,5 @@ ORDER BY karma DESC
 SQL
 );
 
-$p->DisplayPage(_("Database has been updated to version ")."1.1oslo.");
+echo (_("Database has been updated to version ")."1.1oslo.");
 ?>
