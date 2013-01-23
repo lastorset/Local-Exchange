@@ -36,61 +36,60 @@ class cListing
 			$this->category = new cCategory();
 			$this->category->LoadCategory($values['category']);
 		}
-		
-	}	
+	}
 
 	function TypeCode() {
 		if($this->type == OFFER_LISTING)
 			return OFFER_LISTING_CODE;
 		else
-			return WANT_LISTING_CODE;			
+			return WANT_LISTING_CODE;
 	}
 
 	function TypeDesc($type_code) {
 		if($type_code == OFFER_LISTING_CODE)
 			return OFFER_LISTING;
 		else
-			return WANT_LISTING;			
+			return WANT_LISTING;
 	}
 
 	function SaveNewListing() {
-		global $cDB, $cErr;		
+		global $cDB, $cErr;
 
-		$insert = $cDB->Query("INSERT INTO ".DATABASE_LISTINGS." (title, description, category_code, member_id, rate, status, expire_date, reactivate_date, type) VALUES (". $cDB->EscTxt($this->title) .",". $cDB->EscTxt($this->description) .",". $cDB->EscTxt($this->category->id) .",". $cDB->EscTxt($this->member->member_id) .",". $cDB->EscTxt($this->rate) .",". $cDB->EscTxt($this->status) .",". $cDB->EscTxt($this->expire_date) .",". $cDB->EscTxt($this->reactivate_date) .",". $cDB->EscTxt($this->TypeCode()) .");");	
+		$insert = $cDB->Query("INSERT INTO ".DATABASE_LISTINGS." (title, description, category_code, member_id, rate, status, expire_date, reactivate_date, type) VALUES (". $cDB->EscTxt($this->title) .",". $cDB->EscTxt($this->description) .",". $cDB->EscTxt($this->category->id) .",". $cDB->EscTxt($this->member->member_id) .",". $cDB->EscTxt($this->rate) .",". $cDB->EscTxt($this->status) .",". $cDB->EscTxt($this->expire_date) .",". $cDB->EscTxt($this->reactivate_date) .",". $cDB->EscTxt($this->TypeCode()) .");");
 
 		return $insert;
-	}			
-		
+	}
+
 	function SaveListing($update_posting_date=true) {
-		global $cDB, $cErr;			
-		
+		global $cDB, $cErr;
+
 		if($update_posting_date) // changed posting date if update=true, due to the date a listing was modified - by ejkv
 			$posting_date = ", posting_date='".date("Y-m-d h:i:s")."'"; // changed by ejkv
 		else
 			$posting_date = "";
 
-		$update = $cDB->Query("UPDATE ".DATABASE_LISTINGS." SET title=". $cDB->EscTxt($this->title) .", description=". $cDB->EscTxt($this->description) .", category_code=". $cDB->EscTxt($this->category->id) .", rate=". $cDB->EscTxt($this->rate) .", status=". $cDB->EscTxt($this->status) .", expire_date=". $cDB->EscTxt($this->expire_date) .", reactivate_date=". $cDB->EscTxt($this->reactivate_date) . $posting_date ." WHERE title=". $cDB->EscTxt($this->title) ." AND member_id=". $cDB->EscTxt($this->member->member_id) ." AND type=". $cDB->EscTxt($this->TypeCode()) .";");	
+		$update = $cDB->Query("UPDATE ".DATABASE_LISTINGS." SET title=". $cDB->EscTxt($this->title) .", description=". $cDB->EscTxt($this->description) .", category_code=". $cDB->EscTxt($this->category->id) .", rate=". $cDB->EscTxt($this->rate) .", status=". $cDB->EscTxt($this->status) .", expire_date=". $cDB->EscTxt($this->expire_date) .", reactivate_date=". $cDB->EscTxt($this->reactivate_date) . $posting_date ." WHERE title=". $cDB->EscTxt($this->title) ." AND member_id=". $cDB->EscTxt($this->member->member_id) ." AND type=". $cDB->EscTxt($this->TypeCode()) .";");
 
 		return $update;
 	}
-	
+
 	function DeleteListing($title,$member_id,$type_code) {
 		global $cDB, $cErr;
-		
+
 		$query = $cDB->Query("DELETE FROM ". DATABASE_LISTINGS ." WHERE title=".$cDB->EscTxt($title)." AND member_id=". $cDB->EscTxt($member_id) ." AND type=".  $cDB->EscTxt($type_code) .";");
 
 		return mysql_affected_rows();
 	}
-							
+
 	function LoadListing($title,$member_id,$type_code)
 	{
 		global $cDB, $cErr;
-		
+
 		// select all offer data and populate the variables
 		$query = $cDB->Query("SELECT description, category_code, member_id, rate, status, posting_date, expire_date, reactivate_date FROM ".DATABASE_LISTINGS." WHERE title=".$cDB->EscTxt($title)." AND member_id=" . $cDB->EscTxt($member_id) . " AND type=". $cDB->EscTxt($type_code) .";");
-		
+
 		if($row = mysql_fetch_array($query))
-		{		
+		{
 			$this->title=$title;
 			$this->description=$cDB->UnEscTxt($row[0]);
 			$this->member_id=$row[2];
@@ -99,23 +98,23 @@ class cListing
 			$this->posting_date=$row[5];
 			$this->expire_date=$row[6];
 			$this->reactivate_date=$row[7];
-			$this->type=$this->TypeDesc($type_code);	
+			$this->type=$this->TypeDesc($type_code);
 			$this->category = new cCategory();
-			$this->category->LoadCategory($row[1]);		
+			$this->category->LoadCategory($row[1]);
 		}
-		else 
+		else
 		{
 			$cErr->Error(_("There was an error accessing the")." ".$cDB->EscTxt($title)." "._("listing for")." ".$member_id.".  "._("Please try again later").".");
 			include("redirect.php");
-		}		
-		
+		}
+
 		// load member associated with member_id
 		$this->member = new cMember;
 		$this->member->LoadMember($member_id);
-		
+
 		$this->DeactivateReactivate();
 	}
-	
+
 	function DeactivateReactivate() {
 		if($this->reactivate_date) {
 			$reactivate_date = new cDateTime($this->reactivate_date);
@@ -133,25 +132,25 @@ class cListing
 			}
 		}
 	}
-			
+
 	function ShowListing()
 	{
 		$output = $this->type . "ed Data:<BR>";
 		$output .= $this->title . ", " . $this->description . ", " . $this->category->id . ", " . $this->member->member_id . ", " . $this->rate . ", " . $this->status . ", " . $this->posting_date . ", " . $this->expire_date . ", " . $this->reactivate_date . "<BR><BR>";
 		$output .= $this->member->ShowMember();
-		
+
 		return $output;
 	}
-	
+
 	function DisplayListing()
 	{
 		$output = "";
 		if($this->description != "")
 			$output .= "<STRONG>"._("Description").":</STRONG> ". $this->description ."<BR>";
 		if($this->rate != "")
-			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";		
+			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";
 		return $output;
-	}	
+	}
 }
 
 class cListingGroup
@@ -167,45 +166,45 @@ class cListingGroup
 		if($type == OFFER_LISTING)
 			$this->type_code = OFFER_LISTING_CODE;
 		else
-			$this->type_code = WANT_LISTING_CODE;		
+			$this->type_code = WANT_LISTING_CODE;
 	}
-	
+
 	function InactivateAll($reactivate_date) {
 		global $cErr;
-		
+
 		if (!isset($this->listing))
 			return true;
-		
+
 		foreach($this->listing as $listing)	{
 			$current_reactivate = new cDateTime($listing->reactivate_date, false);
 			if(($listing->reactivate_date == null or $current_reactivate->Timestamp() < $reactivate_date->Timestamp()) and $listing->status != EXPIRED) {
 				$listing->reactivate_date = $reactivate_date->MySQLDate();
 				$listing->status = INACTIVE;
 				$success = $listing->SaveListing();
-				
+
 				if(!$success)
 					$cErr->Error(_("Could not inactivate listing").": '".$listing->title."'");
 			}
 		}
 		return true;
 	}
-	
+
 	function ExpireAll($expire_date) {
 		global $cErr;
-		
+
 		if (!isset($this->listing))
 			return true;
-		
+
 		foreach($this->listing as $listing)	{
 			$listing->expire_date = $expire_date->MySQLDate();
 			$success = $listing->SaveListing(false);
-				
+
 			if(!$success)
 				$cErr->Error(_("Could not expire listing").": '".$listing->title."'");
 		}
 		return true;
-	}	
-	
+	}
+
 	function LoadListingGroup($title=null, $category=null, $member_id=null, $since=null, $include_expired=true)
 	{
 		global $cDB, $cErr;
@@ -214,31 +213,31 @@ class cListingGroup
 			$this->title = "%";
 		else
 			$this->title = $title;
-			
+
 		if($category == null)
 			$category = "%";
-			
+
 		if($member_id == null)
 			$member_id = "%";
-			
-		if($since == null) 
+
+		if($since == null)
 			$since = "19990101000000";
-			
+
 		if($include_expired)
 			$expired = "";
 		else
 			$expired = " AND expire_date is null";
-			
+
 		//select all the member_ids for this $title
 		$query = $cDB->Query("SELECT title, member_id FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES." WHERE title LIKE ". $cDB->EscTxt($this->title) ." AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ." AND type=". $cDB->EscTxt($this->type_code) ." AND member_id LIKE ". $cDB->EscTxt($member_id) ." AND posting_date >= '". $since ."'". $expired ." ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
 
 		// instantiate new cOffer objects and load them
 		$i = 0;
 		$this->num_listings = 0;
-				
+
 		while($row = mysql_fetch_array($query))
 		{
-			$this->listing[$i] = new cListing;			
+			$this->listing[$i] = new cListing;
 			$this->listing[$i]->LoadListing($row[0],$row[1],$this->type_code);
 			if($this->listing[$i]->status == 'A')
 			{
@@ -250,14 +249,14 @@ class cListingGroup
 		if($i == 0) {
 			return false;
 		}
-		
+
 		return true;
 	}
-	
+
 	function DisplayListingGroup($show_ids=false, $active_only=true)
 	{
 		/*[chris]*/ // made some changes to way listings displayed, for better or for worse...
-		
+
 		global $cUser,$cDB,$site_settings;
 
 		$output = "";
@@ -265,81 +264,79 @@ class cListingGroup
 
 		if(isset($this->listing)) {
 			foreach($this->listing as $listing) {
-			
+
 				if($active_only and $listing->status != ACTIVE)
 					continue; // Skip inactive items
-					
+
 				if($current_cat != $listing->category->id) {
 					$output .= "<P><STRONG>" . $listing->category->description . "</STRONG><P>";
 				}
 				else
 					$output .= "<br>";
-				
+
 				if ($listing->description != "")
 					$details = " ".  $listing->description; // RF - simple space is fine
 				else
 					//$details = "<em>Not supplied</em>"; // Better than leaving a blank space?
 					$details = " --- "; // if no details, fill with --- changed by ejkv
-				
+
 				$query = $cDB->Query("SELECT * FROM person WHERE member_id  = ". $cDB->EscTxt($listing->member_id) . " limit 0,1;");
-				
+
 				$row = mysql_fetch_array($query);
-	
+
 				// a small change to the way member info is displayed i.e. (joe bloggs - 212)
 				$memInfo = " (<em>".stripslashes($row["first_name"])." ".stripslashes($row["mid_name"])." ".stripslashes($row["last_name"])."</em> - <a href=http://". HTTP_BASE ."/member_summary.php?member_id=".$listing->member_id.">". $listing->member_id ."</a>)"; // added mid_name, moved ")", removed </center> - by ejkv
-				
+
 				// $show_ids implies that the member id is not hidden, so direct links should be OK
 				if ($show_ids || $cUser->IsLoggedOn())
 					$output .= "<A HREF=http://".HTTP_BASE."/listing_detail.php?type=". $this->type ."&title=" . urlencode($listing->title) ."&member_id=". $listing->member_id .">" . $listing->title ."</A><br>". $details; // removed <FONT SIZE=2> .. </FONT>, line-break added by ejkv
 				else
 					$output .= "<A HREF=http://".HTTP_BASE."/member_login.php>" . $listing->title ."</A><br>". $details; // link to login page, removed <FONT SIZE=2> .. </FONT>, and line-break added by ejkv
-						
+
 				// Rate
 				if (SHOW_RATE_ON_LISTINGS==true && $listing->rate)
 					$output .= " (".$listing->rate." ".strtolower($site_settings->getUnitString()).")<br>"; // line-break added by ejkv
 				else // added by ejkv
 					$output .= "<br>"; // line-break added by ejkv
-			
+
 				if ($show_ids)
 					$output .= "$memInfo"."<br>"; // removed <FONT SIZE=2> .. </FONT>, line-break added by ejkv
-				
+
 				// Do we want to display the PostCode alongside the listing?
 				if (SHOW_POSTCODE_ON_LISTINGS==true && $cUser->IsLoggedOn()) { // Only show postcode to logged i members
 
 					$pcode = stripslashes($row["address_post_code"]);
 					$pcode = str_replace(array("\n", "\r", "\t", " ", "\o", "\xOB"), '', $pcode); // Remove any white spaces as these will screw up our character count below
-					
+
 					$short_pcode = '';
-					
+
 					// Only display X number of characters from the postcode
 					for ($i=0;$i<(NUM_CHARS_POSTCODE_SHOW_ON_LISTINGS+1);$i++) {
-						
-						$short_pcode .= $pcode{$i};	
-						
+
+						$short_pcode .= $pcode{$i};
+
 					}
-				
+
 				$states = new cStateList; // added by ejkv
 				$state_list = $states->MakeStateArray(); // added by ejkv
 				$state_list[0]="---"; // added by ejkv
-	
+
 				$output .= " ".$short_pcode." - ".$state_list[$row["address_state_code"]]."<br>"; // added address_state_code and line-break by ejkv
 				}
-	
+
 				$current_cat = $listing->category->id;
 				$current_title = $listing->title;
 			}
-		} 
-		
+		}
+
 		if($output == "")
 			$output = _("No listings found.");
-	
-								
-		return $output;		
+
+
+		return $output;
 	}
 
 }
-
-
 
 class cTitleList  // This class circumvents the cListing class for performance reasons
 {
@@ -354,31 +351,31 @@ class cTitleList  // This class circumvents the cListing class for performance r
 			$this->type_code = OFFER_LISTING_CODE;
 		else
 			$this->type_code = WANT_LISTING_CODE;
-	}	
-									
+	}
+
 	function MakeTitleArray($member_id="%") {
 		global $cDB, $cErr;
 
 		$query = $cDB->Query("SELECT DISTINCT title FROM ".DATABASE_LISTINGS." WHERE member_id LIKE ". $cDB->EscTxt($member_id) . " AND type=". $cDB->EscTxt($this->type_code) .";");
 
-		$i=0;		
+		$i=0;
 		while($row = mysql_fetch_array($query))
 		{
 			$titles[$i]= $cDB->UnEscTxt($row[0]);
 			$i += 1;
 		}
-		
+
 		if ($i == 0)
 			$titles[0]= "";
-		
+
 		return $titles;
-	}	
+	}
 
 	function DisplayMemberListings($member) {
 		global $cDB;
 
 		$query = $cDB->Query("SELECT title FROM ".DATABASE_LISTINGS." WHERE member_id=". $cDB->EscTxt($member->member_id) ." AND type=". $cDB->EscTxt($this->type_code) ." ORDER BY title;");
-		
+
 		$output = "";
 		$current_cat = "";
 		while($row = mysql_fetch_array($query)) {
@@ -387,8 +384,5 @@ class cTitleList  // This class circumvents the cListing class for performance r
 
 		return $output;
 	}
-
 }
-
-
 ?>
