@@ -15,9 +15,8 @@ include("includes/inc.forms.php");
 $message = "";
 
 // First, need to change the default form template so checkbox comes before the label
-$renderer->setElementTemplate('<TR><TD>{element}<!-- BEGIN required --><font> *</font><!-- END required --></FONT><!-- BEGIN error --><font color=RED size=2>   *{error}*</font><br /><!-- END error -->&nbsp;<FONT SIZE=2>{label}</FONT></TD></TR>');  
+$renderer->setElementTemplate('<TR><TD><LABEL>{element}<!-- BEGIN required --><font> *</font><!-- END required --></FONT><!-- BEGIN error --><font color=RED size=2>   *{error}*</font><br /><!-- END error -->&nbsp;<FONT SIZE=2>{label}</FONT></LABEL></TD></TR>');
 
-$form->addElement('hidden','type',$_REQUEST['type']);
 $form->addElement('hidden','mode',$_REQUEST['mode']);
 
 
@@ -31,18 +30,14 @@ else {
 	$member = $cUser;
 }
 
-$form->addElement('hidden','member_id',$member->member_id);
-
 $title_list = new cTitleList($_REQUEST['type']);
 $titles = $title_list->MakeTitleArray($member->member_id);
 
 $listings_exist = false;
 
 while (list($key, $title) = each ($titles)) {
-	if($title != "") {
-		$form->addElement('checkbox', $key, $title);
-		$listings_exist=true;
-	}
+	$form->addElement('checkbox', $key, $title);
+	$listings_exist=true;
 }
 
 if ($listings_exist) {
@@ -69,14 +64,20 @@ if ($form->validate()) { // Form is validated so processes the data
 }
 
 function process_data ($values) {
-	global $p, $cErr, $titles, $member;
+	global $p, $cErr, $member, $cUser;
 	$list = "";
 	$deleted = 0;
 	$listing = new cListing;
 	while (list ($key, $value) = each ($values)) {
 		$affected = 0;
 		if(is_numeric($key))  // Two of the values are hidden fields.  Need to skip those.
-			$affected = $listing->DeleteListing($titles[$key],$member->member_id,substr($_REQUEST['type'],0,1));
+			// Check that we only delete the member's listings
+			$listing->LoadListing($key);
+			if ($listing->member->member_id == $member->member_id)
+				$affected = $listing->DeleteListing($key);
+			else
+				$cErr->InternalError($cUser->member_id
+					." tried to delete listing ". $listing->listing_id ." owned by ". $listing->member->member_id);
 
 		$deleted += $affected;
 	}

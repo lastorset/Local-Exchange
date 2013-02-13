@@ -2,14 +2,27 @@
 
 include_once("includes/inc.global.php");
 
+/** Loads the current listing with whatever parameters (old or new) were given. */
+function LoadListing() {
+	global $cDB;
+	$listing = new cListing;
+	if (!$_REQUEST['id'])
+		// Old primary key
+		$listing->LoadListingOldPK($cDB->UnEscTxt($_REQUEST['title']), $_REQUEST['member_id'], substr($_REQUEST['type'],0,1));
+	else
+		$listing->LoadListing($_REQUEST['id']);
+	return $listing;
+}
+
 $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
-$title = $cDB->UnEscTxt($_REQUEST['title']);
 
-if ($_REQUEST["type"]==OFFER_LISTING)
-	$p->page_title = _("Edit Offered:")." ". $title;
+$listing = LoadListing();
+
+if ($listing->type==OFFER_LISTING)
+	$p->page_title = _("Edit Offered:")." ". $listing->title;
 else
-	$p->page_title = _("Edit Wanted:")." ". $title;
+	$p->page_title = _("Edit Wanted:")." ". $listing->title;
 
 include_once("classes/class.listing.php");
 include("includes/inc.forms.php");
@@ -20,15 +33,27 @@ include("includes/inc.forms.php");
 if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for another member
 	$cUser->MustBeLevel(1);
 	$form->addElement("hidden","mode","admin");
-	$form->addElement("hidden", "member_id", $_REQUEST["member_id"]);
+	$form->addElement("hidden", "member_id", $listing->member->member_id);
 } else {  // Member is creating offer for his/her self
 	$cUser->MustBeLoggedOn();
+
+	// Check whether user owns this listing
+	if ($cUser->member_id != $listing->member->member_id) {
+		$cErr->Error(_("Cannot edit listing: It appears to belong to someone else"));
+		$cErr->InternalError($cUser->member_id
+			." tried to edit listing ". $listing->listing_id ." owned by ". $listing->member->member_id);
+		$p->DisplayPage(sprintf("<a href=listing_to_edit.php?type=%s&mode=self>%s</a>",
+			$listing->type, _("Edit another listing")));
+		exit();
+	}
+
 	$form->addElement("hidden","member_id", $cUser->member_id);
 	$form->addElement("hidden","mode","self");
 }
 
 $form->addRule('title',_("Enter a title"),'required');
 $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');
+// TODO: Enable when titles are editable
 //$form->addRule('title','You already have a listing with this title','verify_not_duplicate');
 $category_list = new cCategoryList();
 $form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
@@ -38,8 +63,8 @@ if(USE_RATES)
 else
 	$form->addElement('hidden', 'rate');
 
-$form->addElement('hidden', 'title', $title);
-$form->addElement('hidden','type',$_REQUEST['type']);
+$form->addElement('hidden', 'title', $listing->title);
+$form->addElement('hidden', 'id', $_REQUEST['id']);
 $form->addElement('static', null, _("Description"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>45, 'rows'=>5, 'wrap'=>'soft'));
 $form->addElement('html', '<TR><TD></TD><TD><BR></TD></TR>');
@@ -64,8 +89,6 @@ if ($form->validate()) { // Form is validated so processes the data
 	$form->freeze();
 	$form->process('process_data', false);
 } else {  // Massage existing values and display them
-	$listing = new cListing;
-	$listing->LoadListing($title,$_REQUEST['member_id'],substr($_REQUEST['type'],0,1));
 	if ($listing->expire_date) {
 		$temporary_listing = true;
 		$expire_date = array ('d'=>substr($listing->expire_date,8,2),'F'=>date('n',strtotime($listing->expire_date)),'Y'=>substr($listing->expire_date,0,4));  // Using 'n' due to a bug in Quickform
@@ -91,11 +114,11 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr, $cDB, $title;
+	global $p, $cUser,$cErr;
 	$list = "";
-	
-	$listing = new cListing();
-	$listing->LoadListing($title,$_REQUEST['member_id'],substr($_REQUEST['type'],0,1));  
+
+	$listing = LoadListing();
+
 	$date = $values['expire_date'];
 	$expire_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
 	$date = $values['reactivate_date'];
@@ -127,15 +150,22 @@ function process_data ($values) {
 			$listing->status = 'A';
 	}
 
-	$listing->title = htmlspecialchars($title, ENT_NOQUOTES);
+	// TODO: Re-enable when titles are editable
+	// $listing->title = htmlspecialchars($title, ENT_NOQUOTES);
 	$listing->description = htmlspecialchars($values['description'], ENT_NOQUOTES);
 	$listing->category->id = htmlspecialchars($values['category']);
 	$listing->rate = $values['rate'];
 
-	$created = $listing->SaveListing();
+	$created = false;
+	// Check that we only edit the member's listings
+	if ($listing->member->member_id == $cUser->member_id || $_REQUEST['mode'] == 'admin')
+		$created = $listing->SaveListing();
+	else
+		$cErr->InternalError($cUser->member_id
+			." tried to edit listing ". $listing->listing_id ." owned by ". $listing->member->member_id);
 
 	if($created) {
-		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $_REQUEST["member_id"] .'&type='. $_REQUEST["type"] .'">'._("edit").'</A> '._("another listing?");
+		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $listing->member->member_id .'&type='. $listing->type .'">'._("edit").'</A> '._("another listing?");
 	} else {
 		$cErr->Error(_("There was an error saving the listing.")." "._("Please try again later."));
 	}
@@ -146,10 +176,10 @@ function process_data ($values) {
 // And finally, the following functions verify form data
 //
 function verify_future_date ($element_name,$element_value) {
-	global $form, $title;
+	global $form;
 
-	$listing = new cListing;
-	$listing->LoadListing($title,$_REQUEST['member_id'],substr($_REQUEST['type'],0,1));
+	$listing = LoadListing();
+
 	if ($listing->status == 'E' and !$form->getElementValue("set_expire_date")) {
 		return true; // They must have unchecked the box to reactivate the listing
 	}
@@ -175,6 +205,7 @@ function verify_valid_date ($element_name,$element_value) {
 	return checkdate($date['F'],$date['d'],$date['Y']);
 }
 
+// TODO: Probably doesn't work when titles are editable (and this rule is actually in use). Use logic from listing_create.php.
 function verify_not_duplicate ($element_name,$element_value) {
 	global $cUser;
 	$title_list = new cTitleList();

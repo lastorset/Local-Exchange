@@ -17,5 +17,13 @@ $cDB->Query("INSERT INTO `settings` VALUES (NULL, 'MAP_CENTER', '" . _("Center o
 $cDB->Query("INSERT INTO `settings` VALUES (NULL, 'MAP_ZOOM', '" . _("Zoom level of map") . "', 'int', '', '', '1', '', '" . _("The default zoom level of the map. Enter a number, or use <a href=geocoding_setup.php>geocoding setup</a>.") . "', 9)") or die("Error - Could not insert row into settings table.");
 $cDB->Query("INSERT INTO `settings` VALUES (NULL, 'MAP_API_KEY', '" . _("Google Maps API key") . "', 'smalltext', '', '', '', '40', '" . _("The API key allows you to use mapping services. Obtain one from Google Maps.") . "', 9)") or die("Error - Could not insert row into settings table.");
 
+// Add serial number to allow editing listing titles, and displaying map without revealing member IDs.
+$cDB->Query("ALTER TABLE ". DATABASE_LISTINGS ."
+	DROP PRIMARY KEY,
+	ADD COLUMN listing_id mediumint(8) unsigned NOT NULL auto_increment FIRST,
+	ADD PRIMARY KEY (listing_id),
+	ADD CONSTRAINT UNIQUE (title, category_code, member_id, type)
+") or die("Error - Could not modify listing table.");
+
 echo "Finished geocoding upgrade.";
 ?>

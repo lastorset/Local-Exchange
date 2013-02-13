@@ -237,7 +237,7 @@ HTML;
 					$listing = array(
 						'title' => $l->title,
 						// TODO Factor out URL generation (taken from class.listing.php)
-						'url' => "http://".HTTP_BASE."/listing_detail.php?type=". $l->type ."&title=" . urlencode($l->title) ."&member_id=". $l->member_id
+						'url' => "http://".HTTP_BASE."/listing_detail.php?id=". $l->listing_id
 					);
 					array_push($listings, $listing);
 				}
