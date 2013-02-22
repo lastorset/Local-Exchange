@@ -25,9 +25,9 @@ class cDirectory {
 		$this->member_list = new cMemberGroup();
 		$this->member_list->LoadMemberGroup();
 		$this->offer_list = new cListingGroup(OFFER_LISTING);
-		$this->offer_list->LoadListingGroup("%");
+		$this->offer_list->LoadListingGroup();
 		$this->want_list = new cListingGroup(WANT_LISTING);
-		$this->want_list->LoadListingGroup("%");
+		$this->want_list->LoadListingGroup();
 		$this->column = 1;	
 		$this->margin = 15;
 		$this->font = "Times";
