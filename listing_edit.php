@@ -100,7 +100,6 @@ function process_data ($values) {
 	$expire_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
 	$date = $values['reactivate_date'];
 	$reactivate_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
-	$today = getdate();
 
 	if($values['set_expire_date'] and $expire_date != "0/0/0") {
 		// they checked the box and entered a date, so store the value
@@ -155,7 +154,6 @@ function verify_future_date ($element_name,$element_value) {
 		return true; // They must have unchecked the box to reactivate the listing
 	}
 	
-	$today = getdate();
 	$date = $element_value;
 
 	if($date['F'] == '0' and $date['d'] == '0' and $date['Y'] == '0')
