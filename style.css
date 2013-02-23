@@ -57,6 +57,15 @@ header .karma-indicator {
 	margin-top: 1em;
 }
 
+article.listing .member-info table {
+    margin-top: 1em;
+    border-collapse: collapse;
+}
+
+article.listing .member-info td {
+    padding: 0;
+}
+
 small {
 	font-size: smaller;
 }
