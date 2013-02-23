@@ -107,9 +107,9 @@ function process_data ($values) {
 		$parms['expire_date'] = $expire_date;
 	}
 
-	$parms['title'] = htmlspecialchars($values['title']);
-	$parms['description'] = $values['description']; // changed htmlspecialchars($values['description']) - by ejkv
-	$parms['category'] = $values['category'];	
+	$parms['title'] = htmlspecialchars($values['title'], ENT_NOQUOTES);
+	$parms['description'] = htmlspecialchars($values['description'], ENT_NOQUOTES);
+	$parms['category'] = $values['category'];
 	$parms['rate'] = htmlspecialchars($values['rate']);
 	$parms['type'] = $_REQUEST['type'];
 

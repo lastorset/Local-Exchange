@@ -127,8 +127,8 @@ function process_data ($values) {
 			$listing->status = 'A';
 	}
 
-	$listing->title = htmlspecialchars($title);
-	$listing->description = $values['description']; // changed htmlspecialchars($values['description']) - by ejkv
+	$listing->title = htmlspecialchars($title, ENT_NOQUOTES);
+	$listing->description = htmlspecialchars($values['description'], ENT_NOQUOTES);
 	$listing->category->id = htmlspecialchars($values['category']);
 	$listing->rate = $values['rate'];
 
