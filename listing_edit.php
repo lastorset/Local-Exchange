@@ -1,6 +1,6 @@
 <?php
 
-include_once("includes/inc.global.php");  
+include_once("includes/inc.global.php");
 
 $cUser->MustBeLoggedOn();
 $p->site_section = LISTINGS;
@@ -61,9 +61,9 @@ $form->addElement('submit', 'btnSubmit', _("Update"));
 // Then check if we are processing a submission or just displaying the form
 //
 if ($form->validate()) { // Form is validated so processes the data
-   $form->freeze();
- $form->process('process_data', false);
-} else {  // Download existing values and display them
+	$form->freeze();
+	$form->process('process_data', false);
+} else {  // Massage existing values and display them
 	$listing = new cListing;
 	$listing->LoadListing($title,$_REQUEST['member_id'],substr($_REQUEST['type'],0,1));
 	if ($listing->expire_date) {
@@ -80,15 +80,15 @@ if ($form->validate()) { // Form is validated so processes the data
 		$inactive_listing = false;
 		$reactivate_date = array("d"=>0, "F"=>0, "Y"=>0);
 	}
-		
+
 	$current_values = array ("title"=>$listing->title, "description"=>$listing->description, "rate"=>$listing->rate, "category"=>$listing->category->id, "set_expire_date"=>$temporary_listing, "expire_date"=>$expire_date, "set_reactivate_date"=>$inactive_listing, "reactivate_date"=>$reactivate_date);
 
 	$form->setDefaults($current_values);
-    $p->DisplayPage($form->toHtml());  // just display the form
+	$p->DisplayPage($form->toHtml());  // just display the form
 }
 
 //
-// The form has been submitted with valid data, so process it   
+// The form has been submitted with valid data, so process it
 //
 function process_data ($values) {
 	global $p, $cUser,$cErr, $cDB, $title;
@@ -102,32 +102,32 @@ function process_data ($values) {
 	$reactivate_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
 	$today = getdate();
 
-	if($values['set_expire_date'] and $expire_date != "0/0/0") { 
+	if($values['set_expire_date'] and $expire_date != "0/0/0") {
 		// they checked the box and entered a date, so store the value
 		$listing->expire_date = htmlspecialchars($expire_date);
-	} elseif ($listing->expire_date==null and $expire_date != "0/0/0") {	
+	} elseif ($listing->expire_date==null and $expire_date != "0/0/0") {
 		// they didn't check it but they changed the date, so store
 		$listing->expire_date = htmlspecialchars($expire_date);
-	} else { 
+	} else {
 		$listing->expire_date = null;
 		if($listing->status == 'E') // they must have unchecked the box or blanked the date
 			$listing->status = 'A';
-	}	
+	}
 
-	if($values['set_reactivate_date'] and $reactivate_date != "0/0/0") { 
+	if($values['set_reactivate_date'] and $reactivate_date != "0/0/0") {
 		// they checked the box and entered a date, so store the value
 		$listing->reactivate_date = htmlspecialchars($reactivate_date);
 		$listing->status = 'I';
-	} elseif ($listing->reactivate_date==null and $reactivate_date != "0/0/0") {	
+	} elseif ($listing->reactivate_date==null and $reactivate_date != "0/0/0") {
 		// they didn't check it but they changed the date, so store
 		$listing->reactivate_date = htmlspecialchars($reactivate_date);
 		$listing->status = 'I';
-	} else { 
+	} else {
 		$listing->reactivate_date = null;
 		if($listing->status == 'I') // they must have unchecked the box or blanked the date
 			$listing->status = 'A';
-	}	
-	
+	}
+
 	$listing->title = htmlspecialchars($title);
 	$listing->description = $values['description']; // changed htmlspecialchars($values['description']) - by ejkv
 	$listing->category->id = htmlspecialchars($values['category']);
@@ -136,7 +136,7 @@ function process_data ($values) {
 	$created = $listing->SaveListing();
 
 	if($created) {
-		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $_REQUEST["member_id"] .'&type='. $_REQUEST["type"] .'">'._("edit").'</A> '._("another listing?");	
+		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $_REQUEST["member_id"] .'&type='. $_REQUEST["type"] .'">'._("edit").'</A> '._("another listing?");
 	} else {
 		$cErr->Error(_("There was an error saving the listing.")." "._("Please try again later."));
 	}
