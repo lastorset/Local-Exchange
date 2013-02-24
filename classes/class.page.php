@@ -42,8 +42,8 @@ class cPage {
 		global $cUser;
 		
 		if(isset($this->page_title)) {
-			$title = " - ". $this->page_title;
-			$opengraph_title = SITE_SHORT_TITLE .": ". $this->page_title;
+			$title = " - ". htmlspecialchars($this->page_title, ENT_QUOTES);
+			$opengraph_title = SITE_SHORT_TITLE .": ". $title;
 		} else {
 			$title = "";
 			$opengraph_title = SITE_LONG_TITLE;
@@ -57,7 +57,7 @@ class cPage {
 		<link rel="stylesheet" href="http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}" type="text/css"></link>
 		<link rel="shortcut icon" href="http://{$c['IMAGES_PATH']}{$c['FAVICON']}" />
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<meta name="description" content="{$this->page_title}">
+		<meta name="description" content="{$title}">
 		<meta name="keywords" content="{$this->keywords}">
 		<meta property="og:title" content='$opengraph_title' />
 		<meta property="og:type" content='website' />
