@@ -826,6 +826,7 @@ class cMemberGroup {
 		
 		foreach($this->members as $member) {						
 			if($member->email_updates == $interval and $member->person[0]->email) {
+				// Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
 				mail($member->person[0]->email, SITE_SHORT_TITLE .": "._("New and updated listings during the last")." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=UTF-8");
 			}
 		

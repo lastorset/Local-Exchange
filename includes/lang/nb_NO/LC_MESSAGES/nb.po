@@ -4097,7 +4097,7 @@ msgstr "dag"
 
 #: classes/class.member.php:828
 msgid "New and updated listings during the last"
-msgstr "Nye og oppdaterte oppføringer de siste"
+msgstr "Nye og oppdaterte oppføringer siste"
 
 #: classes/class.member.php:859
 msgid "Important information about your"
