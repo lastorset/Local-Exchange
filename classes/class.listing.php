@@ -147,7 +147,7 @@ class cListing
 		$output = "";
 		if($this->description != "")
 			$output .= "<STRONG>"._("Description").":</STRONG> ". $this->description ."<BR>";
-		if($this->rate != "")
+		if($this->rate != "" && SHOW_RATE_ON_LISTINGS == true)
 			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";
 		return $output;
 	}
