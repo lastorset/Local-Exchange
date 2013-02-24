@@ -156,15 +156,15 @@ function process_data ($values) {
 	$listing->category->id = htmlspecialchars($values['category']);
 	$listing->rate = $values['rate'];
 
-	$created = false;
+	$saved = false;
 	// Check that we only edit the member's listings
 	if ($listing->member->member_id == $cUser->member_id || $_REQUEST['mode'] == 'admin')
-		$created = $listing->SaveListing();
+		$saved = $listing->SaveListing();
 	else
 		$cErr->InternalError($cUser->member_id
 			." tried to edit listing ". $listing->listing_id ." owned by ". $listing->member->member_id);
 
-	if($created) {
+	if($saved) {
 		$list .= _("Listing changes saved. Do you want to").' <A HREF="listing_to_edit.php?mode='. $_REQUEST['mode'] .'&member_id='. $listing->member->member_id .'&type='. $listing->type .'">'._("edit").'</A> '._("another listing?");
 	} else {
 		$cErr->Error(_("There was an error saving the listing.")." "._("Please try again later."));
