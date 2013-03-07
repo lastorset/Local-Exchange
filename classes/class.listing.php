@@ -171,6 +171,11 @@ class cListing
 			$output .= "<STRONG>"._("Rate").":</STRONG> ". $this->rate ."<BR>";
 		return $output;
 	}
+
+	function GetURL()
+	{
+		return "http://".HTTP_BASE."/listing_detail.php?id=". $this->listing_id;
+	}
 }
 
 class cListingGroup

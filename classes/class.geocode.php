@@ -236,8 +236,7 @@ HTML;
 				foreach ($listing_group->listing as $l) {
 					$listing = array(
 						'title' => $l->title,
-						// TODO Factor out URL generation (taken from class.listing.php)
-						'url' => "http://".HTTP_BASE."/listing_detail.php?id=". $l->listing_id
+						'url' => $l->GetURL(),
 					);
 					array_push($listings, $listing);
 				}
