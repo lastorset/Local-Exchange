@@ -47,6 +47,7 @@ $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');
 $form->addRule('title',_("You already have a listing with this title"),'verify_not_duplicate');
 $category_list = new cCategoryList();
 $form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
+$form->addRule('category',_("Pick a category"),'required'); // Doesn't validate much, but at least indicates visually that it is required
 
 if(USE_RATES)
 	$form->addElement('text', 'rate', _("Rate"), array('size' => 15, 'maxlength' => 30));
