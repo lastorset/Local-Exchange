@@ -135,6 +135,23 @@ class cListing
 		}
 	}
 
+	static function HasDuplicateTitle($listing, $new_title) {
+		global $cDB;
+
+		$result = $cDB->Query("
+			SELECT listing_id
+			FROM ".DATABASE_LISTINGS."
+			WHERE title=".$cDB->EscTxt($new_title)."
+				AND member_id=" . $cDB->EscTxt($listing->member->member_id) . "
+				AND type=". $cDB->EscTxt($listing->TypeCode()));
+
+		if (($row = mysql_fetch_array($result))
+			&& $row['listing_id'] != $listing->listing_id)
+			return true;
+
+		return false;
+	}
+
 	function DeactivateReactivate() {
 		if($this->reactivate_date) {
 			$reactivate_date = new cDateTime($this->reactivate_date);

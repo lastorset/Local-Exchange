@@ -51,10 +51,11 @@ if($_REQUEST["mode"] == "admin") {  // Administrator is creating listing for ano
 	$form->addElement("hidden","mode","self");
 }
 
+$form->addElement('text', 'title', _("Title"), array('size' => 30, 'maxlength' => 60));
 $form->addRule('title',_("Enter a title"),'required');
 $form->registerRule('verify_not_duplicate','function','verify_not_duplicate');
-// TODO: Enable when titles are editable
-//$form->addRule('title','You already have a listing with this title','verify_not_duplicate');
+$form->addRule('title','You already have a listing with this title','verify_not_duplicate');
+
 $category_list = new cCategoryList();
 $form->addElement('select', 'category', _("Category"), $category_list->MakeCategoryArray());
 
@@ -63,7 +64,6 @@ if(USE_RATES)
 else
 	$form->addElement('hidden', 'rate');
 
-$form->addElement('hidden', 'title', $listing->title);
 $form->addElement('hidden', 'id', $_REQUEST['id']);
 $form->addElement('static', null, _("Description"), null);
 $form->addElement('textarea', 'description', null, array('cols'=>45, 'rows'=>5, 'wrap'=>'soft'));
@@ -104,7 +104,16 @@ if ($form->validate()) { // Form is validated so processes the data
 		$reactivate_date = array("d"=>0, "F"=>0, "Y"=>0);
 	}
 
-	$current_values = array ("title"=>$listing->title, "description"=>$listing->description, "rate"=>$listing->rate, "category"=>$listing->category->id, "set_expire_date"=>$temporary_listing, "expire_date"=>$expire_date, "set_reactivate_date"=>$inactive_listing, "reactivate_date"=>$reactivate_date);
+	$current_values = array (
+		"title" => $listing->title,
+		"description" => $listing->description,
+		"rate" => $listing->rate,
+		"category" => $listing->category->id,
+		"set_expire_date" => $temporary_listing,
+		"expire_date" => $expire_date,
+		"set_reactivate_date" => $inactive_listing,
+		"reactivate_date" => $reactivate_date
+	);
 
 	$form->setDefaults($current_values);
 	$p->DisplayPage($form->toHtml());  // just display the form
@@ -114,10 +123,8 @@ if ($form->validate()) { // Form is validated so processes the data
 // The form has been submitted with valid data, so process it
 //
 function process_data ($values) {
-	global $p, $cUser,$cErr;
+	global $p, $cUser,$cErr, $listing;
 	$list = "";
-
-	$listing = LoadListing();
 
 	$date = $values['expire_date'];
 	$expire_date = $date['Y'] . '/' . $date['F'] . '/' . $date['d'];
@@ -150,8 +157,7 @@ function process_data ($values) {
 			$listing->status = 'A';
 	}
 
-	// TODO: Re-enable when titles are editable
-	// $listing->title = htmlspecialchars($title, ENT_NOQUOTES);
+	$listing->title = htmlspecialchars($values['title'], ENT_NOQUOTES);
 	$listing->description = htmlspecialchars($values['description'], ENT_NOQUOTES);
 	$listing->category->id = htmlspecialchars($values['category']);
 	$listing->rate = $values['rate'];
@@ -176,9 +182,7 @@ function process_data ($values) {
 // And finally, the following functions verify form data
 //
 function verify_future_date ($element_name,$element_value) {
-	global $form;
-
-	$listing = LoadListing();
+	global $form, $listing;
 
 	if ($listing->status == 'E' and !$form->getElementValue("set_expire_date")) {
 		return true; // They must have unchecked the box to reactivate the listing
@@ -205,18 +209,10 @@ function verify_valid_date ($element_name,$element_value) {
 	return checkdate($date['F'],$date['d'],$date['Y']);
 }
 
-// TODO: Probably doesn't work when titles are editable (and this rule is actually in use). Use logic from listing_create.php.
 function verify_not_duplicate ($element_name,$element_value) {
-	global $cUser;
-	$title_list = new cTitleList();
-	
-	$titles = $title_list->MakeTitleArray($cUser->member_id);
-	
-	foreach ($titles as $title) {
-		if($element_value == $title)
-			return false;
-	}
-	return true;
+	global $cUser, $listing;
+
+	return !cListing::HasDuplicateTitle($listing, $element_value);
 }
 
 ?>
