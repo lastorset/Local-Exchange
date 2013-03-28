@@ -168,30 +168,30 @@ HTML;
 					});
 				}
 
-				var markerRequest = new XMLHttpRequest();
+				var memberRequest = new XMLHttpRequest();
 
-				function loadMarkers() {
+				function loadMembers() {
 					var url = "ajax/map.php$is_logged_on";
-					markerRequest.onreadystatechange = addMarkers;
-					markerRequest.open("GET", url, true);
-					markerRequest.send();
+					memberRequest.onreadystatechange = addMarkers;
+					memberRequest.open("GET", url, true);
+					memberRequest.send();
 				}
 
 				function addMarkers() {
-					if (markerRequest.readyState === 4) {
-						if (markerRequest.status === 200) {
+					if (memberRequest.readyState === 4) {
+						if (memberRequest.status === 200) {
 							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
-							var markers = JSON.parse(markerRequest.responseText);
-							for (var i = 0; i < markers.length; i++) {
+							var members = JSON.parse(memberRequest.responseText);
+							for (var i = 0; i < members.length; i++) {
 								var marker = new google.maps.Marker({
-									position: new google.maps.LatLng(markers[i].latitude, markers[i].longitude),
+									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
 									map: map,
 								});
 								var text;
-								if (markers[i].name)
+								if (members[i].name)
 									// TODO Some way to get internationalized text
-									text = "<h1>"+ markers[i].name +"</h1>"
-										 + "<a href=member_summary.php?member_id="+ markers[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
+									text = "<h1>"+ members[i].name +"</h1>"
+										 + "<a href=member_summary.php?member_id="+ members[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
 									// TODO Display listings directly in info window
 								else
 									text = "{$_("Log in to see offers, wants and precise location")}";
@@ -205,7 +205,7 @@ HTML;
 							}
 						} else {
 							var failedP = document.createElement("p");
-							failedP.innerHTML = "Failed to load map. <!-- HTTP "+ markerRequest.status +" -->";
+							failedP.innerHTML = "Failed to load map. <!-- HTTP "+ memberRequest.status +" -->";
 							var map_canvas = document.getElementById("map_canvas");
 							map_canvas.parentElement.replaceChild(failedP, map_canvas);
 						}
