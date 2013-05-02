@@ -29,7 +29,16 @@ class cTranslationSupport {
 
 	public $current_language = 'en_US';
 
+	function connect_to_db() {
+		// PHP will automatically reuse the link when the database class connects.
+		mysql_connect(DATABASE_SERVER,DATABASE_USERNAME,DATABASE_PASSWORD)
+			or die("Could not connect to database for language selection");
+		mysql_selectdb(DATABASE_NAME)
+			or die("Could not select database");
+	}
+
 	function initialize() {
+		$this->connect_to_db();
 		$this->retrieveAvailableLanguages();
 
 		// Set the language cookie, if the user posted a preference.
@@ -104,12 +113,6 @@ class cTranslationSupport {
 		if (!isset($_SESSION["user_login"]))
 			return false;
 		$user = $_SESSION["user_login"];
-
-		// PHP will automatically reuse the link when the database class connects.
-		mysql_connect(DATABASE_SERVER,DATABASE_USERNAME,DATABASE_PASSWORD)
-			   or die("Could not connect to database for language selection");
-		mysql_selectdb(DATABASE_NAME)
-			   or die("Could not select database");
 
 		$resource = mysql_query("SELECT preferred_language FROM ". DATABASE_MEMBERS ." WHERE member_id = '". $user ."'");
 		if (!$resource)
