@@ -319,14 +319,14 @@ SQL;
 		//select all the member_ids for this $title
 		$query = $cDB->Query(
 			"SELECT listing_id
-			FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES."
+			FROM ".DATABASE_LISTINGS." l
+				JOIN ".DATABASE_CATEGORIES." c ON l.category_code = c.category_id
 			WHERE title LIKE ". $cDB->EscTxt($this->title) ."
-				AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id
-				AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ."
+				AND c.category_id LIKE ". $cDB->EscTxt($category) ."
 				AND type=". $cDB->EscTxt($this->type_code) ."
 				AND member_id LIKE ". $cDB->EscTxt($member_id) ."
 				AND posting_date >= '". $since ."'". $expired ."
-			ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
+			ORDER BY c.description, title, member_id;");
 
 		return $this->InstantiateListings($query);
 	}
