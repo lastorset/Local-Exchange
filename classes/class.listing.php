@@ -247,6 +247,52 @@ class cListingGroup
 		return true;
 	}
 
+	// TODO: Merge with LoadListingGroup?
+	function LoadNearbyListings($lat, $lon, $radius)
+	{
+		global $cDB, $cErr;
+		// TODO: Credit Movable Type Scripts
+
+		// $query = $cDB->Query("SELECT listing_id FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES." WHERE title LIKE ". $cDB->EscTxt($this->title) ." AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ." AND type=". $cDB->EscTxt($this->type_code) ." AND member_id LIKE ". $cDB->EscTxt($member_id) ." AND posting_date >= '". $since ."'". $expired ." ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
+
+		// Radius of Earth
+		$R = 6371;
+
+		// first-cut bounding box (in degrees)
+		$maxLat = $lat + rad2deg($radius/$R);
+		$minLat = $lat - rad2deg($radius/$R);
+		// compensate for degrees longitude getting smaller with increasing latitude
+		$maxLon = $lon + rad2deg($radius/$R/cos(deg2rad($lat)));
+		$minLon = $lon - rad2deg($radius/$R/cos(deg2rad($lat)));
+
+		$latitude = deg2rad($lat);
+		$longitude = deg2rad($lon);
+
+		$c = get_defined_constants();
+		$query = <<<SQL
+			SELECT
+				listing_id, distance
+			FROM (
+				Select listing_id, latitude, longitude,
+					acos(sin($latitude)*sin(radians(latitude)) + cos($latitude)*cos(radians(latitude))*cos(radians(longitude)-$longitude)) * $R AS distance
+				FROM {$c['DATABASE_PERSONS']} p
+					JOIN {$c['DATABASE_MEMBERS']} m ON p.member_id = m.member_id
+					JOIN {$c['DATABASE_LISTINGS']} l ON m.member_id = l.member_id
+				WHERE
+					latitude BETWEEN $minLat AND $maxLat
+					AND longitude BETWEEN $minLon AND $maxLon
+				) AS FirstCut
+			WHERE distance < $radius
+			ORDER BY distance
+SQL;
+		$result = $cDB->query($query);
+
+		// TODO: Declare variables? Check docs and error logs for PHP conventions.
+		$this->origin = array($lat, $lon);
+
+		return $this->InstantiateListings($result);
+	}
+
 	function LoadListingGroup($title=null, $category=null, $member_id=null, $since=null, $include_expired=true)
 	{
 		global $cDB, $cErr;
@@ -271,13 +317,27 @@ class cListingGroup
 			$expired = " AND expire_date is null";
 
 		//select all the member_ids for this $title
-		$query = $cDB->Query("SELECT listing_id FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES." WHERE title LIKE ". $cDB->EscTxt($this->title) ." AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ." AND type=". $cDB->EscTxt($this->type_code) ." AND member_id LIKE ". $cDB->EscTxt($member_id) ." AND posting_date >= '". $since ."'". $expired ." ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
+		$query = $cDB->Query(
+			"SELECT listing_id
+			FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES."
+			WHERE title LIKE ". $cDB->EscTxt($this->title) ."
+				AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id
+				AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ."
+				AND type=". $cDB->EscTxt($this->type_code) ."
+				AND member_id LIKE ". $cDB->EscTxt($member_id) ."
+				AND posting_date >= '". $since ."'". $expired ."
+			ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
 
+		return $this->InstantiateListings($query);
+	}
+
+	private function InstantiateListings($cursor)
+	{
 		// instantiate new cOffer objects and load them
 		$i = 0;
 		$this->num_listings = 0;
 
-		while($row = mysql_fetch_array($query))
+		while($row = mysql_fetch_array($cursor))
 		{
 			$this->listing[$i] = new cListing;
 			$this->listing[$i]->LoadListing($row['listing_id']);
@@ -285,6 +345,9 @@ class cListingGroup
 			{
 				$this->num_listings += 1;
 			}
+			if(isset($row['distance']))
+				// Only used for 'nearby' queries
+				$this->listing[$i]->distance = sprintf("%.1f", $row['distance']);
 			$i += 1;
 		}
 
