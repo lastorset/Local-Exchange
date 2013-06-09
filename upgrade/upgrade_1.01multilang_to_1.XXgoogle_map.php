@@ -8,7 +8,10 @@ $cUser->MustBeLevel(1);
 
 $cDB->Query("ALTER TABLE ". DATABASE_PERSONS ."
 	ADD COLUMN `latitude` DOUBLE DEFAULT NULL,
-	ADD COLUMN `longitude` DOUBLE DEFAULT NULL")
+	ADD COLUMN `longitude` DOUBLE DEFAULT NULL,
+	ADD INDEX (latitude),
+	ADD INDEX (longitude)
+	")
 	or die("Error altering member table.  Does the web user account have alter table permission?");
 
 $cDB->Query("INSERT INTO `settings` VALUES (NULL, 'GEOCODE', '" . _("Enable geocoding and display a map") . "', 'bool', '', '', 'FALSE', '', '" . _("Geocodes members and displays them on a map. Requires an API key.") . "', 9)") or die("Error - Could not insert row into settings table.");
