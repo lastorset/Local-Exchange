@@ -20,6 +20,16 @@ if($_REQUEST["timeframe"] == "0")
 else
 	$since = new cDateTime("-". $_REQUEST["timeframe"] ." days");
 
+if($_REQUEST["distance"] > 0) {
+	$distance = $_REQUEST["distance"];
+	// TODO: if the user is not logged in
+	$origin = $cUser->person[0]->coordinates;
+}
+else {
+	$distance = null;
+	$origin = null;
+}
+
 if ($cUser->IsLoggedOn())
 	$show_ids = true;
 else
@@ -28,7 +38,7 @@ else
 // instantiate new cOffer objects and load them
 $listings = new cListingGroup($_GET["type"]);
 			
-$listings->LoadListingGroup(null, $category, null, $since->MySQLTime());
+$listings->LoadListingGroup(null, $category, null, $since->MySQLTime(), true, $origin, $distance, false);
 
 $lID = 0;
 
@@ -83,9 +93,14 @@ if ($listings->listing && KEYWORD_SEARCH_DIR==true && strlen($_GET["keyword"])>0
 	}
 }
 
-$output = $listings->DisplayListingGroup($show_ids);
+if ($cUser->IsLoggedOn())
+	$output = replace_tags(
+		_("Your own listings are omitted below. They can be seen in <a>your profile</a>."),
+		array('a' => "a href=member_summary.php?member_id=". urlencode($cUser->member_id) ."#offered"));
 
-$p->DisplayPage($output); 
+$output .= $listings->DisplayListingGroup($show_ids);
+
+$p->DisplayPage($output);
 
 include("includes/inc.events.php");
 

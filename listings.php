@@ -24,6 +24,9 @@ $form->addElement("select", "timeframe", _("Time Frame")." ", array("0"=>"("._("
 if (KEYWORD_SEARCH_DIR==true)
 	$form->addElement("text","keyword",_("Keyword")." ");
 
+// TODO if (GEOCODE==true)
+	$form->addElement("text" /* TODO 'number' */,"distance",_("Distance from my address"));
+
 $form->addElement("static", null, null, null);
 $form->addElement("submit", "btnSubmit", _("Continue"));
 
@@ -42,7 +45,7 @@ if ($form->validate()) { // Form is validated so processes the data
 function process_data ($values) {
 	global $p;
 
-	header("location:http://".HTTP_BASE."/listings_found.php?type=".$_REQUEST["type"]."&keyword=".$_REQUEST["keyword"]."&category=".$values["category"]."&timeframe=".$_REQUEST["timeframe"]);
+	header("location:http://".HTTP_BASE."/listings_found.php?type=".$_REQUEST["type"]."&keyword=".$_REQUEST["keyword"]."&category=".$values["category"]."&timeframe=".$_REQUEST["timeframe"]."&distance=".$_REQUEST["distance"]);
 	exit;
 }
 

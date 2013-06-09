@@ -15,19 +15,19 @@ include_once("classes/class.listing.php");
 
 $output = "<DIV ID=member_summary>";
 
-$output .= "<H4>"._("Contact information")."</H4>";
+$output .= "<H4 ID=contact>"._("Contact information")."</H4>";
 $output .= $member->DisplayMember();
 
 if (GEOCODE) {
 	$output .= cGeocode::UserMap($member->person[0]->coordinates);
 }
 
-$output .= "<H4>"._("Offered listings")."</H4>";
+$output .= "<H4 ID=offered>"._("Offered listings")."</H4>";
 $listings = new cListingGroup(OFFER_LISTING);
 $listings->LoadListingGroup(null, null, $_REQUEST["member_id"]);
 $output .= $listings->DisplayListingGroup();
 
-$output .= "<H4>"._("Wanted listings")."</H4>";
+$output .= "<H4 ID=wanted>"._("Wanted listings")."</H4>";
 $listings = new cListingGroup(WANT_LISTING);
 $listings->LoadListingGroup(null, null, $_REQUEST["member_id"]);
 $output .= $listings->DisplayListingGroup();

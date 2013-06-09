@@ -247,13 +247,10 @@ class cListingGroup
 		return true;
 	}
 
-	// TODO: Merge with LoadListingGroup?
-	function LoadNearbyListings($lat, $lon, $radius)
+	function LoadNearbyListingsQuery($lat, $lon, $radius)
 	{
 		global $cDB, $cErr;
 		// TODO: Credit Movable Type Scripts
-
-		// $query = $cDB->Query("SELECT listing_id FROM ".DATABASE_LISTINGS.", ".DATABASE_CATEGORIES." WHERE title LIKE ". $cDB->EscTxt($this->title) ." AND ".DATABASE_LISTINGS.".category_code =".DATABASE_CATEGORIES.".category_id AND ".DATABASE_CATEGORIES.".category_id LIKE ". $cDB->EscTxt($category) ." AND type=". $cDB->EscTxt($this->type_code) ." AND member_id LIKE ". $cDB->EscTxt($member_id) ." AND posting_date >= '". $since ."'". $expired ." ORDER BY ".DATABASE_CATEGORIES.".description, title, member_id;");
 
 		// Radius of Earth
 		$R = 6371;
@@ -285,17 +282,17 @@ class cListingGroup
 			WHERE distance < $radius
 			ORDER BY distance
 SQL;
-		$result = $cDB->query($query);
-
-		// TODO: Declare variables? Check docs and error logs for PHP conventions.
-		$this->origin = array($lat, $lon);
-
-		return $this->InstantiateListings($result);
+		return $query;
 	}
 
-	function LoadListingGroup($title=null, $category=null, $member_id=null, $since=null, $include_expired=true)
+	/** When origin and radius are given, a radial search is performed.
+	 *
+	 * @param origin array(latitude, longitude) to search from.
+	 * @param radius how far to search (in km).
+	 */
+	function LoadListingGroup($title=null, $category=null, $member_id=null, $since=null, $include_expired=true, $origin=null, $radius=null, $include_mine=true)
 	{
-		global $cDB, $cErr;
+		global $cDB, $cErr, $cUser;
 
 		if($title == null)
 			$this->title = "%";
@@ -316,17 +313,35 @@ SQL;
 		else
 			$expired = " AND expire_date is null";
 
+		if(!$include_mine && $cUser->IsLoggedOn())
+			$exclude_mine = "AND member_id NOT LIKE ". $cDB->EscTxt($cUser->member_id);
+		else
+			$exclude_mine = "";
+
+		if(is_array($origin) && $radius > 0) {
+			$nearby_clause = "JOIN ("
+				. $this->LoadNearbyListingsQuery($origin[0], $origin[1], $radius)
+				. ") AS nearby ON nearby.listing_id = l.listing_id";
+			$distance_field = ", distance";
+		}
+		else {
+			$nearby_clause = "";
+			$order_by_distance = "";
+		}
+
 		//select all the member_ids for this $title
 		$query = $cDB->Query(
-			"SELECT listing_id
+			"SELECT l.listing_id $distance_field
 			FROM ".DATABASE_LISTINGS." l
 				JOIN ".DATABASE_CATEGORIES." c ON l.category_code = c.category_id
+				$nearby_clause
 			WHERE title LIKE ". $cDB->EscTxt($this->title) ."
 				AND c.category_id LIKE ". $cDB->EscTxt($category) ."
 				AND type=". $cDB->EscTxt($this->type_code) ."
 				AND member_id LIKE ". $cDB->EscTxt($member_id) ."
+				$exclude_mine
 				AND posting_date >= '". $since ."'". $expired ."
-			ORDER BY c.description, title, member_id;");
+			ORDER BY c.description $distance_field, title, member_id;");
 
 		return $this->InstantiateListings($query);
 	}
@@ -358,7 +373,7 @@ SQL;
 		return true;
 	}
 
-	function DisplayListingGroup($show_ids=false, $active_only=true)
+	function DisplayListingGroup($show_ids=false, $active_only=true, $self=true)
 	{
 		/*[chris]*/ // made some changes to way listings displayed, for better or for worse...
 
@@ -392,7 +407,10 @@ SQL;
 				// a small change to the way member info is displayed i.e. (joe bloggs - 212)
 				$memInfo = " (<em>".stripslashes($row["first_name"])." ".stripslashes($row["mid_name"])." ".stripslashes($row["last_name"])."</em> - <a href=http://". HTTP_BASE ."/member_summary.php?member_id=".$listing->member->member_id.">". $listing->member->member_id ."</a>)"; // added mid_name, moved ")", removed </center> - by ejkv
 
-				$output .= "<A HREF=http://".HTTP_BASE."/listing_detail.php?id=". $listing->listing_id .">" . $listing->title ."</A><br>". $details;
+				$output .= "<A HREF=http://".HTTP_BASE."/listing_detail.php?id=". $listing->listing_id .">" . $listing->title ."</A>";
+				if (isset($listing->distance))
+					$output .= " <SPAN class=distance>(". $listing->distance ." km)</SPAN>";
+				$output .= "<br>". $details;
 
 				// Rate
 				if (SHOW_RATE_ON_LISTINGS==true && $listing->rate)
