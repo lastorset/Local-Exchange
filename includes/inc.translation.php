@@ -196,4 +196,44 @@ function translate($string) {
 	global $translation;
 	return $translation->translate($string);
 }
+
+/** Replaces placholder HTML tags in the string with real HTML tags.
+ * For example, the string "See your <a>profile</a> or <j>recent
+ * trades</j>" translated to Norwegian with the dictionary
+ *
+ * @code{.php}
+ * array(
+ *     'a' => 'a href=profile.php',
+ *     'j' => 'a href=recent.php'
+ * )
+ * @endcode
+ *
+ * will be turned into "Se <a href=profile.php>profilen</a> din eller <a
+ * href=recent.php>nylige handler</a>.".
+ *
+ * This is useful when you don't want to enshrine HTML attributes in your
+ * translatable strings.
+ *
+ * @param string the string whose tags to replace.
+ * @param tags a dictionary (associative array) from placeholder tags to actual
+ *             tags with attributes. Each placeholder tag should be unique, and
+ *             they don't have to have the name of a real tag.
+ */
+function replace_tags($string, $tags) {
+	foreach($tags as $tag => $attrs) {
+		if(strpos($attrs, " ") === FALSE)
+			$realtag = $attrs;
+		else
+			$realtag = substr($attrs, 0, strpos($attrs, " "));
+
+		$string = str_replace(array(
+			"<$tag>",
+			"</$tag>"
+		), array(
+			"<$attrs>",
+			"</$realtag>"
+		), $string);
+	}
+	return $string;
+}
 ?>
