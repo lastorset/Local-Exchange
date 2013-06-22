@@ -24,8 +24,10 @@ $form->addElement("select", "timeframe", _("Time Frame")." ", array("0"=>"("._("
 if (KEYWORD_SEARCH_DIR==true)
 	$form->addElement("text","keyword",_("Keyword")." ");
 
-// TODO if (GEOCODE==true)
-	$form->addElement("text" /* TODO 'number' */,"distance",_("Distance from my address"));
+if (GEOCODE===true and $cUser->IsLoggedOn())
+	// TODO spinner?
+	// TODO shorter size
+	$form->addElement("text","distance",_("Distance from my address"));
 
 $form->addElement("static", null, null, null);
 $form->addElement("submit", "btnSubmit", _("Continue"));

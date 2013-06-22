@@ -20,9 +20,8 @@ if($_REQUEST["timeframe"] == "0")
 else
 	$since = new cDateTime("-". $_REQUEST["timeframe"] ." days");
 
-if($_REQUEST["distance"] > 0) {
+if($cUser->IsLoggedOn() && $_REQUEST["distance"] > 0) {
 	$distance = $_REQUEST["distance"];
-	// TODO: if the user is not logged in
 	$origin = $cUser->person[0]->coordinates;
 }
 else {
