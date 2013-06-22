@@ -249,8 +249,8 @@ class cListingGroup
 
 	function LoadNearbyListingsQuery($lat, $lon, $radius)
 	{
+		// Thanks to http://www.movable-type.co.uk/scripts/latlong-db.html (licensed under CC-BY)
 		global $cDB, $cErr;
-		// TODO: Credit Movable Type Scripts
 
 		// Radius of Earth
 		$R = 6371;
