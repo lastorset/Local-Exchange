@@ -402,3 +402,8 @@ table.language-selector td.widget {
 	counter-increment: geocoding-step;
 	content: counter(geocoding-step) " ";
 }
+
+/* Listings */
+input[name="distance"] {
+	width: 8ex;
+}
