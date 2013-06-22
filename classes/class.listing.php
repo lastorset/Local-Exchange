@@ -318,7 +318,7 @@ SQL;
 		else
 			$exclude_mine = "";
 
-		if(is_array($origin) && $radius > 0) {
+		if(is_array($origin) && $radius > 0) { // Implicitly checks whether $radius is a number
 			$nearby_clause = "JOIN ("
 				. $this->LoadNearbyListingsQuery($origin[0], $origin[1], $radius)
 				. ") AS nearby ON nearby.listing_id = l.listing_id";
