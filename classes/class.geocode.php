@@ -161,7 +161,7 @@ HTML;
 					};
 					map = new google.maps.Map(document.getElementById("map_canvas"),
 							myOptions);
-					loadMarkers();
+					loadMembers();
 
 					google.maps.event.addListener(map, 'click', function() {
 							infowindow.close();
