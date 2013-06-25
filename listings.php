@@ -25,9 +25,13 @@ if (KEYWORD_SEARCH_DIR==true)
 	$form->addElement("text","keyword",_("Keyword")." ");
 
 if (GEOCODE===true and $cUser->IsLoggedOn()) {
-	$elm = $form->addElement("text","distance",_("Distance from my address (km)"));
-	$elm->setType('number');
-	$elm->setSize(6);
+	// TODO Add HTML5 form support to QuickForm to avoid this hack
+	$form->addElement("html",
+		"<tr><td>".
+		_("Distance from my address (km)").
+		"<input name=distance type=number size=6 min=0 max=2000 />".
+		"</td></tr>"
+	);
 }
 
 $form->addElement("static", null, null, null);
