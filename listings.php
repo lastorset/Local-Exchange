@@ -29,7 +29,7 @@ if (GEOCODE===true and $cUser->IsLoggedOn()) {
 	$form->addElement("html",
 		"<tr><td>".
 		_("Distance from my address (km)").
-		"<input name=distance type=number size=6 min=0 max=2000 />".
+		" <input name=distance type=number size=6 min=0 max=2000 />".
 		"</td></tr>"
 	);
 }
