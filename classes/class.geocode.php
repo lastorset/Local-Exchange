@@ -272,6 +272,11 @@ HTML;
 				status = '{$c['ACTIVE']}'
 SQL
 		);
+
+		// Radius of Earth
+		$R = 6371;
+		$obf_distance = .5; // km
+
 		$out = array();
 		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow). With that in place, the $fetch_listings parameter becomes unnecessary.
 		while($marker = mysql_fetch_array($result))
@@ -305,11 +310,25 @@ SQL
 					'id' => $marker['member_id'],
 					'name' => null,
 					'listings' => $listings,
-					'latitude' => $marker['latitude'] + $obf * 0.005,
-					'longitude' => $marker['longitude'] + $obf * 0.005
+					'latitude' => $marker['latitude'] + $obf * rad2deg($obf_distance/$R),
+					'longitude' => $marker['longitude'] + $obf * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
 					));
+
+				$last = $out[count($out) - 1];
+				$obf_out = array($last['latitude'], $last['longitude']);
+
+				error_log(sprintf("Obfuscate %s by (%.2f, %.2f) km, from %.2f * (%.2f, %.2f)",
+					$marker['member_id'],
+					deg2rad($last['latitude'] - $marker['latitude']) * $R,
+					deg2rad($last['longitude'] - $marker['longitude']) * $R * cos(deg2rad($marker['latitude'])),
+					$obf,
+					rad2deg($obf_distance/$R),
+					rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
+					)
+				);
 			}
 		}
+
 		return $out;
 	}
 
