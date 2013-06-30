@@ -253,7 +253,7 @@ HTML;
 			foreach(array($member_id, DATABASE_PASSWORD) as $string)
 				for ($i = 0; $i < strlen($string); $i++)
 					$result = $prime * $result + ord($string[$i]);
-			return ($result % 226) / 113 - 1;
+			return fmod($result, 226) / 113 - 1;
 		}
 
 		$c = get_defined_constants();
