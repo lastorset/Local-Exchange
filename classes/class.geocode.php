@@ -246,14 +246,18 @@ HTML;
 		/** Generates a hash-based coefficient between -1 and 1 to use when obfuscating location
 			We hash on a combination of the member id and the database password.
 			The member id makes each location uniquely obfuscated; the database password
-			makes the obfuscation unique for each Local Exchange installation. */
-		function member_id_obfuscate($member_id) {
+			makes the obfuscation unique for each Local Exchange installation.
+
+		    @param spice prime number to use as basis. Used if you want several obfuscations, such as one for each
+		                coordinate.
+		 */
+		function member_id_obfuscate($member_id, $spice = 113) {
 			$prime = 31;
 			$result = 1;
 			foreach(array($member_id, DATABASE_PASSWORD) as $string)
 				for ($i = 0; $i < strlen($string); $i++)
 					$result = $prime * $result + ord($string[$i]);
-			return fmod($result, 226) / 113 - 1;
+			return fmod($result, $spice * 2) / $spice - 1;
 		}
 
 		$c = get_defined_constants();
@@ -305,27 +309,17 @@ SQL
 					));
 			else
 			{
-				$obf = member_id_obfuscate($marker['member_id']);
+				$obf = array(
+					member_id_obfuscate($marker['member_id'], 113),
+					member_id_obfuscate($marker['member_id'], 157)
+				);
 				array_push($out, array(
 					'id' => $marker['member_id'],
 					'name' => null,
 					'listings' => $listings,
-					'latitude' => $marker['latitude'] + $obf * rad2deg($obf_distance/$R),
-					'longitude' => $marker['longitude'] + $obf * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
+					'latitude' => $marker['latitude'] + $obf[0] * rad2deg($obf_distance/$R),
+					'longitude' => $marker['longitude'] + $obf[1] * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
 					));
-
-				$last = $out[count($out) - 1];
-				$obf_out = array($last['latitude'], $last['longitude']);
-
-				error_log(sprintf("Obfuscate %s by (%.2f, %.2f) km, from %.2f * (%.2f, %.2f)",
-					$marker['member_id'],
-					deg2rad($last['latitude'] - $marker['latitude']) * $R,
-					deg2rad($last['longitude'] - $marker['longitude']) * $R * cos(deg2rad($marker['latitude'])),
-					$obf,
-					rad2deg($obf_distance/$R),
-					rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
-					)
-				);
 			}
 		}
 
