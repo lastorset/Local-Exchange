@@ -326,7 +326,6 @@ SQL;
 		}
 		else {
 			$nearby_clause = "";
-			$order_by_distance = "";
 		}
 
 		//select all the member_ids for this $title
