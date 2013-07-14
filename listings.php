@@ -24,7 +24,7 @@ $form->addElement("select", "timeframe", _("Time Frame")." ", array("0"=>"("._("
 if (KEYWORD_SEARCH_DIR==true)
 	$form->addElement("text","keyword",_("Keyword")." ");
 
-if (GEOCODE===true and $cUser->IsLoggedOn()) {
+if (GEOCODE===true && $cUser->IsLoggedOn()) {
 	// TODO Add HTML5 form support to QuickForm to avoid this hack
 	$form->addElement("html",
 		"<tr><td>".
