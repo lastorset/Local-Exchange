@@ -133,10 +133,18 @@ HTML;
 
 	static function GenerateMap() {
 		global $cUser, $_;
-		// Used to influence caching by giving the private map its own cache key
-		$is_logged_on = $cUser->IsLoggedOn() ? "?logged_on" : "";
+		if($cUser->IsLoggedOn()) {
+			// Used to influence caching by giving the private map its own cache key
+			$is_logged_on = "?logged_on";
+			$center = $cUser->person[0]->coordinates;
+			if (!is_array($center))
+				// Some people had errors in geocoding
+				$center = self::ParseCoordinates(MAP_CENTER);
+		} else {
+			$is_logged_on = "";
+			$center = self::ParseCoordinates(MAP_CENTER);
+		}
 		$map_api_key = urlencode(MAP_API_KEY);
-		$center = self::ParseCoordinates(MAP_CENTER);
 		$zoom = MAP_ZOOM;
 		if (is_null($center) || !is_numeric($zoom)) {
 			$center = array(0, 0);
