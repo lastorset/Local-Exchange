@@ -83,7 +83,7 @@ Optional features:
 
 * If you wish to display the site in another language than English, PHP's intl extension is required. If you also install the PECL http extension, the site will detect the user's preferred language and select it automatically. Some web hosts may have intl pre-installed; otherwise see http://php.net/manual/en/intl.installation.php for installation instructions. Or, if you are running Debian, simply install the package php5-intl. See next bullet point for instructions on the PECL http extension.
 
-* If you wish to use the geocoding features, the PECL http extension is required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/http.install.php for installation instructions. Or, if you are running Debian, simply install the package php-http. Once this is installed, go to the admininstration menu and select "Set Up Geocoding" to get started.
+* If you wish to use the geocoding features, the PECL http extension is required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/http.install.php for installation instructions. Once this is installed, go to the admininstration menu and select "Set Up Geocoding" to get started.
 
 * If you wish to use a WYSIWYG editor for information pages, download CKEditor and place it in a folder "ckeditor". In inc.config.php, change the setting called "CKEDITOR" from "false" to "true".
 
