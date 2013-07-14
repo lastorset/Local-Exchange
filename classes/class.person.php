@@ -232,7 +232,7 @@ class cPerson
 	function GeocodeCatch() {
 		global $cErr;
 		try {
-			return $this->Geocode();
+			$this->Geocode();
 		} catch (AddressException $e) {
 			// Maybe the user can fix the error themselves
 			// Translation hint: %s is the geocoding service (finds addresses on a map).
