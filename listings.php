@@ -25,11 +25,17 @@ if (KEYWORD_SEARCH_DIR==true)
 	$form->addElement("text","keyword",_("Keyword")." ");
 
 if (GEOCODE===true && $cUser->IsLoggedOn()) {
+	$disabled = !is_array($cUser->person[0]->coordinates);
+
 	// TODO Add HTML5 form support to QuickForm to avoid this hack
 	$form->addElement("html",
 		"<tr><td>".
 		_("Distance from my address (km)").
-		" <input name=distance type=number size=6 min=0 max=2000 />".
+		" <input name=distance type=number size=6 min=0 max=2000 ". ($disabled ? "disabled" : "") ."/> ".
+		($disabled ?replace_tags(
+			_("(You cannot search by distance because <a>your profile</a>'s address has not been properly geocoded.)"),
+			array('a' => 'a href=member_edit.php?mode=self')
+		) : "").
 		"</td></tr>"
 	);
 }
