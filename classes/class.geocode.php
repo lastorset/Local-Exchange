@@ -186,6 +186,18 @@ HTML;
 				}
 
 				function addMarkers() {
+					var gray_icon = {
+						url: 'images/marker_sprite_gray.png',
+						size: new google.maps.Size(20, 34),
+						origin: new google.maps.Point(0,0),
+						anchor: new google.maps.Point(10, 33)
+					};
+					var gray_shadow = {
+						url: 'images/marker_sprite_gray.png',
+						size: new google.maps.Size(37, 34),
+						origin: new google.maps.Point(20,0),
+						anchor: new google.maps.Point(10, 33)
+					};
 					if (memberRequest.readyState === 4) {
 						if (memberRequest.status === 200) {
 							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
@@ -195,6 +207,11 @@ HTML;
 									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
 									map: map,
 								});
+								if (members[i].listing_count == 0) {
+									marker.setIcon(gray_icon);
+									marker.setShadow(gray_shadow);
+									marker.setZIndex(-1);
+								}
 								var text;
 								if (members[i].name)
 									// TODO Some way to get internationalized text
@@ -271,17 +288,23 @@ HTML;
 		$c = get_defined_constants();
 		$result = $cDB->Query(<<<SQL
 			SELECT person_id,
-				member_id,
+				m.member_id,
 				first_name,
 				mid_name,
 				last_name,
 				latitude,
-				longitude
-			FROM {$c['DATABASE_PERSONS']} NATURAL JOIN {$c['DATABASE_MEMBERS']}
+				longitude,
+				COUNT(listing_id) AS listing_count
+			FROM
+				{$c['DATABASE_PERSONS']} p
+				NATURAL JOIN {$c['DATABASE_MEMBERS']} m
+				LEFT JOIN {$c['DATABASE_LISTINGS']} l ON m.member_id = l.member_id
 			WHERE
 				`latitude` IS NOT NULL AND `longitude` IS NOT NULL
 				AND
-				status = '{$c['ACTIVE']}'
+				m.status = '{$c['ACTIVE']}'
+			GROUP BY
+				person_id;
 SQL
 		);
 
@@ -313,7 +336,8 @@ SQL
 							  $marker['last_name'] ." ",
 					'listings' => $listings,
 					'latitude' => $marker['latitude'],
-					'longitude' => $marker['longitude']
+					'longitude' => $marker['longitude'],
+					'listing_count' => $marker['listing_count']
 					));
 			else
 			{
@@ -326,7 +350,8 @@ SQL
 					'name' => null,
 					'listings' => $listings,
 					'latitude' => $marker['latitude'] + $obf[0] * rad2deg($obf_distance/$R),
-					'longitude' => $marker['longitude'] + $obf[1] * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude'])))
+					'longitude' => $marker['longitude'] + $obf[1] * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude']))),
+					'listing_count' => $marker['listing_count']
 					));
 			}
 		}
