@@ -378,6 +378,19 @@ table.language-selector td.widget {
 	display: none;
 }
 
+#map_legend {
+    text-align: right;
+    margin-top: 1em;
+}
+
+#map_legend h3 {
+    display: inline;
+}
+
+#map_legend img {
+    height: 2em;
+}
+
 .logoheader + #map_canvas {
 	margin-top: 15px;
 }

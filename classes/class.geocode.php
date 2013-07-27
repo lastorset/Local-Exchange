@@ -153,6 +153,12 @@ HTML;
 
 		return <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
+			<div id="map_legend">
+				<!-- Translation hint: Legend for front page map -->
+				<h3>{$_("Legend:")}</h3>
+				<img src="images/marker.png">{$_("Member")}
+				<img src="images/marker_gray.png">{$_("Member without listings")}
+			</div>
 			<script type="text/javascript" src="ajax/lib/replace_alert.js"></script>
 			<script type="text/javascript"
 				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">

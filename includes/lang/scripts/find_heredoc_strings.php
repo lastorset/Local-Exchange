@@ -1,6 +1,8 @@
 <?php
 /** This will be a script that extract strings that use the gettext heredoc
  *  workaround, and put them in a separate file that can be read by gettext.
+ *
+ * Note: only supports double quotes in $_().
  */
 //$dirs = array(".", "includes", "classes");
 $dirs = array_slice($argv, 1);
