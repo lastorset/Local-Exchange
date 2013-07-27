@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-23 00:10+0200\n"
-"PO-Revision-Date: 2013-06-23 00:16+0100\n"
+"POT-Creation-Date: 2013-07-28 01:25+0200\n"
+"PO-Revision-Date: 2013-07-28 01:31+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -248,6 +248,7 @@ msgstr "Velg medlem som du vil endre saldoen for"
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
 #: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:540
+#: includes/lang/heredoc_gettext_strings.out.php:44
 msgid "Member"
 msgstr "Medlem"
 
@@ -354,6 +355,38 @@ msgstr "Kategorien har blitt oppdatert."
 msgid "Could not save changes to the category."
 msgstr "Kunne lagre lagre endringene av kategorien."
 
+#: contact_all.php:4
+msgid "Email all Members"
+msgstr "Send e-post til alle medlemmene"
+
+#: contact_all.php:13
+msgid "This email will go out to <i>ALL</i> members of"
+msgstr "Denne e-posten vil gå ut til <i>alle</i> medlemmene av"
+
+#: contact_all.php:17 contact.php:17 email.php:34
+msgid "Your Message"
+msgstr "Melding"
+
+#: contact_all.php:21 contact.php:23 email.php:37
+msgid "Send"
+msgstr "Send"
+
+#: contact_all.php:26
+msgid "Enter a subject"
+msgstr "Skriv inn emne"
+
+#: contact_all.php:27 email.php:42
+msgid "Enter your message"
+msgstr "Skriv inn melding"
+
+#: contact_all.php:60
+msgid "Your message has been sent to all members."
+msgstr "Meldinga har blitt sendt til alle medlemmen."
+
+#: contact_all.php:62
+msgid "There were errors sending the email to the following email addresses"
+msgstr "Det kom feilmeldinger ved sending av e-post til følgende adresser"
+
 #: contact.php:4 includes/inc.config.php:215
 msgid "Contact Us"
 msgstr "Kontakt oss"
@@ -393,10 +426,6 @@ msgstr "E-postadresse"
 msgid "Phone"
 msgstr "Telefon"
 
-#: contact.php:17 contact_all.php:17 email.php:34
-msgid "Your Message"
-msgstr "Melding"
-
 #: contact.php:19
 msgid "(Select One)"
 msgstr "(Velg)"
@@ -432,10 +461,6 @@ msgstr "Annet"
 #: contact.php:20
 msgid "How did you hear about us?"
 msgstr "Hvordan hørte du om oss?"
-
-#: contact.php:23 contact_all.php:21 email.php:37
-msgid "Send"
-msgstr "Send"
 
 #: contact.php:28
 msgid "Enter your name"
@@ -473,30 +498,6 @@ msgid ""
 msgstr ""
 "Det oppstod en feil ved sending av e-posten. Er du sikker på at du skrev inn "
 "e-postadressa di rett?"
-
-#: contact_all.php:4
-msgid "Email all Members"
-msgstr "Send e-post til alle medlemmene"
-
-#: contact_all.php:13
-msgid "This email will go out to <i>ALL</i> members of"
-msgstr "Denne e-posten vil gå ut til <i>alle</i> medlemmene av"
-
-#: contact_all.php:26
-msgid "Enter a subject"
-msgstr "Skriv inn emne"
-
-#: contact_all.php:27 email.php:42
-msgid "Enter your message"
-msgstr "Skriv inn melding"
-
-#: contact_all.php:60
-msgid "Your message has been sent to all members."
-msgstr "Meldinga har blitt sendt til alle medlemmen."
-
-#: contact_all.php:62
-msgid "There were errors sending the email to the following email addresses"
-msgstr "Det kom feilmeldinger ved sending av e-post til følgende adresser"
 
 #: create_db.php:131
 msgid "Arts & Crafts"
@@ -1114,6 +1115,34 @@ msgstr ""
 msgid "Export complete."
 msgstr "Eksporten er fullført."
 
+#: feedback_all.php:17
+msgid "Feedback for"
+msgstr "Tilbakemeldinger til"
+
+#: feedback_all.php:26
+msgid "You don't have any feedback yet."
+msgstr "Du har ikke fått noen tilbakemeldinger ennå."
+
+#: feedback_all.php:28
+msgid "This member does not have any feedback yet."
+msgstr "Dette medlemmet har ikke fått noen tilbakemeldinger ennå."
+
+#: feedback_choose_inbox.php:6 feedback_choose.php:6
+msgid "Leave Feedback"
+msgstr "Gi tilbakemelding"
+
+#: feedback_choose_inbox.php:24 feedback_choose.php:24
+msgid "For which Exchange?"
+msgstr "For hvilken handel?"
+
+#: feedback_choose_inbox.php:101 feedback_choose.php:60
+msgid ""
+"There are no exchanges to leave feedback for.  You have already left "
+"feedback for all your recent exchanges."
+msgstr ""
+"Det er ingen handler å gi tilbakemelding om. Du har allerede gitt "
+"tilbakemelding om alle dine nylige handler."
+
 #: feedback.php:10 feedback_rebuttal.php:9
 msgid "Leave Feedback about"
 msgstr "Gi tilbakemelding om"
@@ -1168,34 +1197,6 @@ msgstr "Tilbakemeldinga er registrert."
 #: feedback.php:85 feedback_rebuttal.php:73 feedback_reply.php:88
 msgid "There was an error recording your feedback."
 msgstr "Det oppstod en feil under registrering av tilbakemeldinga."
-
-#: feedback_all.php:17
-msgid "Feedback for"
-msgstr "Tilbakemeldinger til"
-
-#: feedback_all.php:26
-msgid "You don't have any feedback yet."
-msgstr "Du har ikke fått noen tilbakemeldinger ennå."
-
-#: feedback_all.php:28
-msgid "This member does not have any feedback yet."
-msgstr "Dette medlemmet har ikke fått noen tilbakemeldinger ennå."
-
-#: feedback_choose.php:6 feedback_choose_inbox.php:6
-msgid "Leave Feedback"
-msgstr "Gi tilbakemelding"
-
-#: feedback_choose.php:24 feedback_choose_inbox.php:24
-msgid "For which Exchange?"
-msgstr "For hvilken handel?"
-
-#: feedback_choose.php:60 feedback_choose_inbox.php:101
-msgid ""
-"There are no exchanges to leave feedback for.  You have already left "
-"feedback for all your recent exchanges."
-msgstr ""
-"Det er ingen handler å gi tilbakemelding om. Du har allerede gitt "
-"tilbakemelding om alle dine nylige handler."
 
 #: feedback_rebuttal.php:46 feedback_reply.php:50
 msgid "Comments cannot be longer than 255 characters"
@@ -1836,9 +1837,8 @@ msgid "Cannot edit listing: It appears to belong to someone else"
 msgstr ""
 
 #: listing_edit.php:46
-#, fuzzy
 msgid "Edit another listing"
-msgstr "ei annen oppføring?"
+msgstr "Rediger en annen oppføring"
 
 #: listing_edit.php:80
 msgid "Should this listing be made temporarily inactive?"
@@ -1864,29 +1864,61 @@ msgstr "redigere"
 msgid "another listing?"
 msgstr "ei annen oppføring?"
 
-#: listing_to_edit.php:6
-msgid "Choose the Offered Listing to Edit"
-msgstr "Velg tilbudet som skal redigeres"
+#: listings_create.php:4
+msgid "Create Listings"
+msgstr "Opprett oppføringer"
 
-#: listing_to_edit.php:8
-msgid "Choose the Wanted Listing to Edit"
-msgstr "Velg ønsket som skal redigeres"
+#: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
+#: classes/class.directory.php:52 classes/class.member.php:812
+msgid "Offered Listings"
+msgstr "Tilbud"
 
-#: listing_to_edit.php:28
-msgid "You don't currently have any Offered listings"
-msgstr "Du har for tida ingen registrerte tilbud"
+#: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
+msgid "Create New Offer Listing"
+msgstr "Registrer nytt tilbud"
 
-#: listing_to_edit.php:30
-msgid "You don't currently have any Wanted listings"
-msgstr "Du har for tida ingen registrerte ønsker"
+#: listings_create.php:10 listings_menu.php:10
+#: member_profile_all_in_one.php:19
+msgid "Edit Offered Listings"
+msgstr "Rediger tilbud"
 
-#: listings.php:6 listings_found.php:7 member_summary.php:25
+#: listings_create.php:13 listings_menu.php:13
+#: member_profile_all_in_one.php:22 classes/class.directory.php:55
+#: classes/class.member.php:814
+msgid "Wanted Listings"
+msgstr "Ønsker"
+
+#: listings_create.php:14 listings_menu.php:14
+#: member_profile_all_in_one.php:24
+msgid "Create New Want Listing"
+msgstr "Registrer nytt ønske"
+
+#: listings_create.php:15 listings_menu.php:15
+#: member_profile_all_in_one.php:25
+msgid "Edit Wanted Listings"
+msgstr "Rediger ønsker"
+
+#: listings_found.php:7 listings.php:6 member_summary.php:25
 msgid "Offered listings"
 msgstr "Tilbud"
 
-#: listings.php:8 listings_found.php:9 member_summary.php:30
+#: listings_found.php:9 listings.php:8 member_summary.php:30
 msgid "Wanted listings"
 msgstr "Ønsker"
+
+#: listings_found.php:97
+msgid ""
+"Your own listings are omitted below. They can be seen in <a>your profile</a>."
+msgstr ""
+"Dine egne oppføringer er utelatt her. Du kan se dem i <a>profilen din</a>."
+
+#: listings_menu.php:4 includes/inc.config.php:211
+msgid "Update Listings"
+msgstr "Oppdater oppføringer"
+
+#: listings_menu.php:19
+msgid "Going on Holiday"
+msgstr "Merk meg som bortreist"
 
 #: listings.php:15
 msgid ""
@@ -1944,60 +1976,37 @@ msgstr "3 måneder"
 msgid "Keyword"
 msgstr "Stikkord"
 
-#: listings.php:28
+#: listings.php:33
 msgid "Distance from my address (km)"
 msgstr "Avstand fra der jeg bor (km)"
 
-#: listings.php:34 pages.php:10
+#: listings.php:36
+msgid ""
+"(You cannot search by distance because <a>your profile</a>'s address has not "
+"been properly geocoded.)"
+msgstr ""
+"(Du kan ikke søke på avstand fordi adressa i <a>profilen din</a> ikke har "
+"blitt kodet riktig.)"
+
+#: listings.php:44 pages.php:10
 msgid "Continue"
 msgstr "Fortsett"
 
-#: listings_create.php:4
-msgid "Create Listings"
-msgstr "Opprett oppføringer"
+#: listing_to_edit.php:6
+msgid "Choose the Offered Listing to Edit"
+msgstr "Velg tilbudet som skal redigeres"
 
-#: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
-#: classes/class.directory.php:52 classes/class.member.php:812
-msgid "Offered Listings"
-msgstr "Tilbud"
+#: listing_to_edit.php:8
+msgid "Choose the Wanted Listing to Edit"
+msgstr "Velg ønsket som skal redigeres"
 
-#: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
-msgid "Create New Offer Listing"
-msgstr "Registrer nytt tilbud"
+#: listing_to_edit.php:28
+msgid "You don't currently have any Offered listings"
+msgstr "Du har for tida ingen registrerte tilbud"
 
-#: listings_create.php:10 listings_menu.php:10
-#: member_profile_all_in_one.php:19
-msgid "Edit Offered Listings"
-msgstr "Rediger tilbud"
-
-#: listings_create.php:13 listings_menu.php:13
-#: member_profile_all_in_one.php:22 classes/class.directory.php:55
-#: classes/class.member.php:814
-msgid "Wanted Listings"
-msgstr "Ønsker"
-
-#: listings_create.php:14 listings_menu.php:14
-#: member_profile_all_in_one.php:24
-msgid "Create New Want Listing"
-msgstr "Registrer nytt ønske"
-
-#: listings_create.php:15 listings_menu.php:15
-#: member_profile_all_in_one.php:25
-msgid "Edit Wanted Listings"
-msgstr "Rediger ønsker"
-
-#: listings_found.php:97
-msgid ""
-"Your own listings are omitted below. They can be seen in <a>your profile</a>."
-msgstr ""
-
-#: listings_menu.php:4 includes/inc.config.php:211
-msgid "Update Listings"
-msgstr "Oppdater oppføringer"
-
-#: listings_menu.php:19
-msgid "Going on Holiday"
-msgstr "Merk meg som bortreist"
+#: listing_to_edit.php:30
+msgid "You don't currently have any Wanted listings"
+msgstr "Du har for tida ingen registrerte ønsker"
 
 #: login.php:32
 msgid "Please enter a user name to log in."
@@ -2501,7 +2510,7 @@ msgstr "Sorter på"
 msgid "Membership No."
 msgstr "Medlemsnummer"
 
-#: member_directory.php:27
+#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
 msgid "Karma points"
 msgstr "Karmapoeng"
 
@@ -2518,6 +2527,7 @@ msgid "Postal code"
 msgstr "Postnummer"
 
 #: member_directory.php:35 member_directory.php:54
+#: includes/lang/heredoc_gettext_strings.out.php:9
 msgid "Balance"
 msgstr "Saldo"
 
@@ -2650,35 +2660,6 @@ msgstr "Det oppstod et problem ved endring av størrelsen på fila."
 msgid "There was a problem uploading the file."
 msgstr "Det oppstod et problem ved opplasting av fila."
 
-#: member_profile.php:4 includes/inc.config.php:214
-#: includes/inc.config.php:256
-msgid "Member Profile"
-msgstr "Medlemsprofil"
-
-#: member_profile.php:8 member_profile_all_in_one.php:11
-msgid "Change My Password"
-msgstr "Endre passordet"
-
-#: member_profile.php:9 member_profile_all_in_one.php:12
-msgid "Edit My Personal Information"
-msgstr "Rediger personopplysninger"
-
-#: member_profile.php:12
-msgid "Upload/Change Photo of Myself"
-msgstr "Last opp/endre foto av meg"
-
-#: member_profile.php:14 member_profile_all_in_one.php:13
-msgid "Add a Joint Member to My Account"
-msgstr "Legg husstandsmedlem til kontoen"
-
-#: member_profile.php:18
-msgid "Manage Income Shares"
-msgstr "Endre på inntektsfordelinger"
-
-#: member_profile.php:21
-msgid "View My Profile (as others see it)"
-msgstr "Vis profilen min (slik andre ser den)"
-
 #: member_profile_all_in_one.php:8
 msgid ""
 "Please choose from the following options, or navigate using the buttons on "
@@ -2690,6 +2671,18 @@ msgstr ""
 #: member_profile_all_in_one.php:10
 msgid "Member Settings"
 msgstr "Medlemsinnstillinger"
+
+#: member_profile_all_in_one.php:11 member_profile.php:8
+msgid "Change My Password"
+msgstr "Endre passordet"
+
+#: member_profile_all_in_one.php:12 member_profile.php:9
+msgid "Edit My Personal Information"
+msgstr "Rediger personopplysninger"
+
+#: member_profile_all_in_one.php:13 member_profile.php:14
+msgid "Add a Joint Member to My Account"
+msgstr "Legg husstandsmedlem til kontoen"
 
 #: member_profile_all_in_one.php:17
 msgid "View Offered Listings"
@@ -2706,6 +2699,23 @@ msgstr "Administrasjon"
 #: member_profile_all_in_one.php:37
 msgid "Add a Joint Member to an Existing Account"
 msgstr "Legg husstandsmedlem til en konto"
+
+#: member_profile.php:4 includes/inc.config.php:214
+#: includes/inc.config.php:256
+msgid "Member Profile"
+msgstr "Medlemsprofil"
+
+#: member_profile.php:12
+msgid "Upload/Change Photo of Myself"
+msgstr "Last opp/endre foto av meg"
+
+#: member_profile.php:18
+msgid "Manage Income Shares"
+msgstr "Endre på inntektsfordelinger"
+
+#: member_profile.php:21
+msgid "View My Profile (as others see it)"
+msgstr "Vis profilen min (slik andre ser den)"
 
 #: member_status_change.php:13 member_status_change.php:29
 msgid "Re-activate"
@@ -2824,18 +2834,6 @@ msgstr "Bruk dette verktøyet for å ta sikkerhetskopi av MySQL-databasen.<p>"
 msgid "Backup Now"
 msgstr "Ta sikkerhetskopi nå"
 
-#: news.php:17 news_to_edit.php:17
-msgid "There are no current news items"
-msgstr "Intet nytt."
-
-#: news.php:22
-msgid "To read the latest"
-msgstr "For å lese det siste"
-
-#: news.php:22
-msgid "newsletter, go"
-msgstr "nyhetsbrevet"
-
 #: news_create.php:23 news_edit.php:28
 msgid "Sequence"
 msgstr "Plassering"
@@ -2851,14 +2849,6 @@ msgstr "Nyhetssak er lagret."
 #: news_create.php:64 news_edit.php:73
 msgid "There was a problem saving the news item."
 msgstr "Det oppstod et problem ved lagring av nyhetssaka."
-
-#: news_to_edit.php:5
-msgid "Choose Item to Edit"
-msgstr "Velg sak som skal redigeres"
-
-#: news_to_edit.php:13
-msgid "Which News Item?"
-msgstr "Hvilken nyhetssak?"
 
 #: newsletter_delete.php:24
 msgid "There are no newsletters in the system."
@@ -2897,6 +2887,26 @@ msgstr "Arkiv"
 #: newsletters.php:29
 msgid "No newsletters have yet been posted."
 msgstr "Ingen nyhetsbrev har blitt lagt ut."
+
+#: news.php:17 news_to_edit.php:17
+msgid "There are no current news items"
+msgstr "Intet nytt."
+
+#: news.php:22
+msgid "To read the latest"
+msgstr "For å lese det siste"
+
+#: news.php:22
+msgid "newsletter, go"
+msgstr "nyhetsbrevet"
+
+#: news_to_edit.php:5
+msgid "Choose Item to Edit"
+msgstr "Velg sak som skal redigeres"
+
+#: news_to_edit.php:13
+msgid "Which News Item?"
+msgstr "Hvilken nyhetssak?"
 
 #: pages.php:10
 msgid "Session Destroyed"
@@ -3276,6 +3286,18 @@ msgstr "Fra når?"
 msgid "To when?"
 msgstr "Til når?"
 
+#: trade_history_all.php:6 trade_history.php:8
+msgid "Exchange History"
+msgstr "Handelslogg"
+
+#: trade_history_all.php:13 trade_history.php:38
+msgid "For period from"
+msgstr "For perioden fra"
+
+#: trade_history.php:38
+msgid "Current Balance"
+msgstr "Saldo nå"
+
 #: trade.php:37
 msgid "Transaction Type"
 msgstr "Transaksjonstype"
@@ -3442,18 +3464,6 @@ msgstr "Gave fra"
 #: trade.php:209 includes/inc.forms.php:10
 msgid "denotes a required field"
 msgstr "markerer et påkrevet felt"
-
-#: trade_history.php:8 trade_history_all.php:6
-msgid "Exchange History"
-msgstr "Handelslogg"
-
-#: trade_history.php:38
-msgid "Current Balance"
-msgstr "Saldo nå"
-
-#: trade_history.php:38 trade_history_all.php:13
-msgid "For period from"
-msgstr "For perioden fra"
 
 #: trade_reverse.php:7
 msgid "Reverse an Exchange"
@@ -4054,11 +4064,12 @@ msgid "Follow Up"
 msgstr "Respons"
 
 #: classes/class.listing.php:114
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "There was an error accessing the listing with id %s. Please try again later."
 msgstr ""
-"Det oppstod en feil ved henting av nyheter. Vennligst prøv igjen sener."
+"Det oppstod en feil ved henting av oppføring nr. %s. Vennligst prøv igjen "
+"senere."
 
 #: classes/class.listing.php:133
 msgid "There was an error accessing the"
@@ -4076,7 +4087,7 @@ msgstr "Kunne ikke deaktivere oppføringa"
 msgid "Could not expire listing"
 msgstr "Kunne ikke markere oppføringa som utgått"
 
-#: classes/class.listing.php:451 classes/class.member.php:811
+#: classes/class.listing.php:450 classes/class.member.php:811
 #: classes/class.member.php:813
 msgid "No listings found."
 msgstr "Ingen oppføringer ble funnet."
@@ -4524,60 +4535,93 @@ msgstr "Kunne ikke slette fil"
 msgid "Upload"
 msgstr "Last opp"
 
+#: includes/lang/heredoc_gettext_strings.out.php:10
+msgid "Calculation"
+msgstr "Utregning"
+
+#: includes/lang/heredoc_gettext_strings.out.php:11
+msgid "Earned"
+msgstr "Opptjent"
+
+#: includes/lang/heredoc_gettext_strings.out.php:12
+msgid "Spent"
+msgstr "Forbrukt"
+
+#: includes/lang/heredoc_gettext_strings.out.php:13
+msgid "Numbers"
+msgstr "Tall"
+
+#: includes/lang/heredoc_gettext_strings.out.php:14
+msgid "Explanation"
+msgstr "Forklaring"
+
+#: includes/lang/heredoc_gettext_strings.out.php:17
+#: includes/lang/heredoc_gettext_strings.out.php:24
+msgid "Refund"
+msgstr "Refusjon"
+
+#: includes/lang/heredoc_gettext_strings.out.php:18
+msgid "You are about to refund the monthly fee taken on"
+msgstr "Du skal til å refundere månedsavgifta som ble krevd inn"
+
+#: includes/lang/heredoc_gettext_strings.out.php:19
+#: includes/lang/heredoc_gettext_strings.out.php:26
+msgid "Refund now"
+msgstr "Refunder nå"
+
+#: includes/lang/heredoc_gettext_strings.out.php:20
+#: includes/lang/heredoc_gettext_strings.out.php:34
+#: includes/lang/heredoc_gettext_strings.out.php:39
+msgid "Or"
+msgstr "Eller"
+
+#: includes/lang/heredoc_gettext_strings.out.php:21
+#: includes/lang/heredoc_gettext_strings.out.php:27
+#: includes/lang/heredoc_gettext_strings.out.php:35
+#: includes/lang/heredoc_gettext_strings.out.php:40
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: includes/lang/heredoc_gettext_strings.out.php:25
+msgid "You are about to refund the service charge taken on"
+msgstr "Du skal til å refundere gebyret som ble krevd inn"
+
+#: includes/lang/heredoc_gettext_strings.out.php:30
+msgid "Amount"
+msgstr "Sum"
+
+#: includes/lang/heredoc_gettext_strings.out.php:31
+msgid "Fee Description"
+msgstr "Avgiftstekst"
+
+#: includes/lang/heredoc_gettext_strings.out.php:32
+msgid "Service Fee"
+msgstr "Engangsgebyr"
+
+#: includes/lang/heredoc_gettext_strings.out.php:33
+#: includes/lang/heredoc_gettext_strings.out.php:38
+msgid "Transfer now"
+msgstr "Overfør nå"
+
+#: includes/lang/heredoc_gettext_strings.out.php:43
+msgid "Legend:"
+msgstr "Tegnforklaring:"
+
+#: includes/lang/heredoc_gettext_strings.out.php:45
+msgid "Member without listings"
+msgstr "Medlem uten oppføringer"
+
+#: includes/lang/heredoc_gettext_strings.out.php:46
+msgid "See offers and wants"
+msgstr "Se tilbud og ønsker"
+
+#: includes/lang/heredoc_gettext_strings.out.php:47
+msgid "Log in to see offers, wants and precise location"
+msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
+
 #~ msgid "This script contacts %1$s to place every member on a map."
 #~ msgstr ""
 #~ "Dette skriptet kontakter %1$s for å plassere hvert medlem på et kart."
-
-#~ msgid "Calculation"
-#~ msgstr "Utregning"
-
-#~ msgid "Earned"
-#~ msgstr "Opptjent"
-
-#~ msgid "Spent"
-#~ msgstr "Forbrukt"
-
-#~ msgid "Numbers"
-#~ msgstr "Tall"
-
-#~ msgid "Explanation"
-#~ msgstr "Forklaring"
-
-#~ msgid "Refund"
-#~ msgstr "Refusjon"
-
-#~ msgid "You are about to refund the monthly fee taken on"
-#~ msgstr "Du skal til å refundere månedsavgifta som ble krevd inn"
-
-#~ msgid "Refund now"
-#~ msgstr "Refunder nå"
-
-#~ msgid "Or"
-#~ msgstr "Eller"
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
-
-#~ msgid "You are about to refund the service charge taken on"
-#~ msgstr "Du skal til å refundere gebyret som ble krevd inn"
-
-#~ msgid "Amount"
-#~ msgstr "Sum"
-
-#~ msgid "Fee Description"
-#~ msgstr "Avgiftstekst"
-
-#~ msgid "Service Fee"
-#~ msgstr "Engangsgebyr"
-
-#~ msgid "Transfer now"
-#~ msgstr "Overfør nå"
-
-#~ msgid "See offers and wants"
-#~ msgstr "Se tilbud og ønsker"
-
-#~ msgid "Log in to see offers, wants and precise location"
-#~ msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
 
 #~ msgid "CONTACT INFORMATION"
 #~ msgstr "KONTAKTINFORMASJON"
