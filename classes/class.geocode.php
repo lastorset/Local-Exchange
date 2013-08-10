@@ -156,6 +156,9 @@ HTML;
 			<div id="map_legend">
 				<!-- Translation hint: Legend for front page map -->
 				<h3>{$_("Legend:")}</h3>
+				<img src="images/marker_gold.png">{$replace_tags(
+					$_("Member with <a>karma</a>"), array("a" => "a href=karma_explanation.php")
+				)}
 				<img src="images/marker.png">{$_("Member")}
 				<img src="images/marker_gray.png">{$_("Member without listings")}
 			</div>
@@ -192,13 +195,19 @@ HTML;
 				}
 
 				function addMarkers() {
+					var gold_icon = {
+						url: 'images/marker_sprite_gold.png',
+						size: new google.maps.Size(20, 34),
+						origin: new google.maps.Point(0,0),
+						anchor: new google.maps.Point(10, 33)
+					};
 					var gray_icon = {
 						url: 'images/marker_sprite_gray.png',
 						size: new google.maps.Size(20, 34),
 						origin: new google.maps.Point(0,0),
 						anchor: new google.maps.Point(10, 33)
 					};
-					var gray_shadow = {
+					var shadow = {
 						url: 'images/marker_sprite_gray.png',
 						size: new google.maps.Size(37, 34),
 						origin: new google.maps.Point(20,0),
@@ -213,9 +222,14 @@ HTML;
 									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
 									map: map,
 								});
-								if (members[i].listing_count == 0) {
+								if (members[i].karma > 0) {
+									marker.setIcon(gold_icon);
+									marker.setShadow(shadow);
+									marker.setZIndex(-1);
+								}
+								else if (members[i].listing_count == 0) {
 									marker.setIcon(gray_icon);
-									marker.setShadow(gray_shadow);
+									marker.setShadow(shadow);
 									marker.setZIndex(-1);
 								}
 								var text;
@@ -300,10 +314,12 @@ HTML;
 				latitude,
 				longitude,
 				COUNT(listing_id) AS listing_count
+				". (GAME_MECHANICS ? ", karma" : "") ."
 			FROM
 				". DATABASE_PERSONS ." p
 				NATURAL JOIN ". DATABASE_MEMBERS ." m
 				LEFT JOIN ". DATABASE_LISTINGS ." l ON m.member_id = l.member_id
+				". (GAME_MECHANICS ? "LEFT JOIN karma k ON m.member_id = k.member_id" : "") ."
 			WHERE
 				`latitude` IS NOT NULL AND `longitude` IS NOT NULL
 				AND
@@ -341,10 +357,12 @@ HTML;
 					'listings' => $listings,
 					'latitude' => $marker['latitude'],
 					'longitude' => $marker['longitude'],
-					'listing_count' => $marker['listing_count']
+					'listing_count' => $marker['listing_count'],
+					'karma' => $marker['karma']
 					));
 			else
 			{
+				// Anonymous users get obfuscated coordinates
 				$obf = array(
 					member_id_obfuscate($marker['member_id'], 113),
 					member_id_obfuscate($marker['member_id'], 157)
@@ -355,7 +373,8 @@ HTML;
 					'listings' => $listings,
 					'latitude' => $marker['latitude'] + $obf[0] * rad2deg($obf_distance/$R),
 					'longitude' => $marker['longitude'] + $obf[1] * rad2deg($obf_distance/$R/cos(deg2rad($marker['latitude']))),
-					'listing_count' => $marker['listing_count']
+					'listing_count' => $marker['listing_count'],
+					'karma' => $marker['karma']
 					));
 			}
 		}
