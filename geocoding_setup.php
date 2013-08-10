@@ -114,7 +114,8 @@ if (is_null($map_center))
 <?php } ?>
 
 <div id=initial_geocoding>
-<h1><?= _("Geocoding setup") ?></h1>
+<h1><?= // Translation hint: Title of geocoding setup assistant
+	_("Geocoding setup") ?></h1>
 <p><?= _("This page guides you through the steps required to start geocoding members.") ?>
 <p><?= _("<i>Geocoding</i> means finding the latitude/longitude coordinates of a member's address. We store these coordinates in the database and use them to show members on a map.") ?>
 
@@ -230,7 +231,9 @@ else if ($missing_count === 0) {
 				+ response.otherErrors.length;
 			if (response.processedCount)
 				document.getElementById('processed_count').innerText = errorCount > 0
+					// Translation hint: Leave %(...)s codes as-is (the 's' is not the plural).
 					? sprintf("<?= _("%(response_count)s responses processed with %(error_count)s errors.") ?>", { response_count: response.processedCount, error_count: errorCount })
+					// Translation hint: Leave %(...)s codes as-is (the 's' is not the plural).
 					: sprintf("<?= _("%(response_count)s responses processed.") ?>", { response_count: response.processedCount });
 
 			addItem(response.generalErrors, document.getElementById('general_errors'))
