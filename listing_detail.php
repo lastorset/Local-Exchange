@@ -22,12 +22,18 @@ $output = "<article class=listing>"
 	. $listing->DisplayListing();
 if ($cUser->IsLoggedOn())
 	$output .= $listing->member->DisplayMember();
-else
+else {
 	// TODO: Ideally, people should be returned to this listing after creating an account.
-	// Translation hint: %1$s and the like are link tags and must be left as they are.
-	$output .= "<p>". sprintf(_('You may see more details if you %1$s sign up%2$s or %3$s log in%4$s.'),
-		SELF_REGISTRATION ? "<a href=member_create.php>" : "", SELF_REGISTRATION ? "</a>" : "",
-		"<a href={$listing->GetUrl()}&amp;log_me_in>", "</a>");
+	if (SELF_REGISTRATION)
+		$prompt = _('You may see more details if you <a1>sign up</a1> or <a2>log in</a2>.');
+	else
+		$prompt = _('You may see more details if you sign up or <a2>log in</a2>.');
+
+	$output .= "<p>". replace_tags($prompt, array(
+		"a1" => "a href=member_create.php",
+		"a2" => "a href={$listing->GetUrl()}&amp;log_me_in"
+	));
+}
 
 $output .= "</article>";
 

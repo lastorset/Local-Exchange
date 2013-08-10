@@ -214,6 +214,8 @@ function translate($string) {
  * This is useful when you don't want to enshrine HTML attributes in your
  * translatable strings.
  *
+ * No error is given if the given tags don't exist in the input string.
+ *
  * @param string the string whose tags to replace.
  * @param tags a dictionary (associative array) from placeholder tags to actual
  *             tags with attributes. Each placeholder tag should be unique, and

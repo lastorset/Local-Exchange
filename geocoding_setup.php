@@ -136,7 +136,7 @@ if (is_null($map_center))
 		<input type=submit value="<?= _("Save") ?>">
 </form>
 
-<h2 id="center-viewport">Map viewport</h2>
+<h2 id="center-viewport"><?= _("Map viewport") ?></h2>
 	<?= _("Choose the map's default view by panning and zooming.") ?>
 	<div id="map_errors"></div>
 	<div id="map_canvas" style="width:100%; margin: 1em 0;"></div>
