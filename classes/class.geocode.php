@@ -162,9 +162,12 @@ HTML;
 			<div id="map_legend">
 				<!-- Translation hint: Legend for front page map -->
 				<h3>{$_("Legend:")}</h3>
-				<img src="images/marker_gold.png">{$replace_tags(
-					$_("Member with <a>karma</a>"), array("a" => "a href=karma_explanation.php")
-				)}
+HTML
+			. (GAME_MECHANICS ?
+				"<img src='images/marker_gold.png'>". replace_tags(
+					_('Member with <a>karma</a>'), array('a' => 'a href=karma_explanation.php')
+				) : "").
+			<<<HTML
 				<img src="images/marker.png">{$_("Member")}
 				<img src="images/marker_gray.png">{$_("Member without listings")}
 			</div>
@@ -222,13 +225,15 @@ HTML;
 					if (memberRequest.readyState === 4) {
 						if (memberRequest.status === 200) {
 							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
-							var members = JSON.parse(memberRequest.responseText);
+							var received = JSON.parse(memberRequest.responseText);
+							var flags = received.flags;
+							var members = received.members;
 							for (var i = 0; i < members.length; i++) {
 								var marker = new google.maps.Marker({
 									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
 									map: map,
 								});
-								if (members[i].karma > 0) {
+								if (flags.GAME_MECHANICS && members[i].karma > 0) {
 									marker.setIcon(gold_icon);
 									marker.setShadow(shadow);
 									marker.setZIndex(-1);
@@ -338,7 +343,10 @@ HTML;
 		$R = 6371;
 		$obf_distance = .5; // km
 
-		$out = array();
+		$out = array(
+			"flags" => array("GAME_MECHANICS" => GAME_MECHANICS),
+			"members" => array()
+		);
 		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow). With that in place, the $fetch_listings parameter becomes unnecessary.
 		while($marker = mysql_fetch_array($result))
 		{
@@ -355,7 +363,7 @@ HTML;
 				$listings = null;
 
 			if ($cUser->IsLoggedOn())
-				array_push($out, array(
+				array_push($out['members'], array(
 					'id' => $marker['member_id'],
 					'name' => $marker['first_name'] ." ".
 							  $marker['mid_name'] ." ".
@@ -373,7 +381,7 @@ HTML;
 					member_id_obfuscate($marker['member_id'], 113),
 					member_id_obfuscate($marker['member_id'], 157)
 				);
-				array_push($out, array(
+				array_push($out['members'], array(
 					'id' => $marker['member_id'],
 					'name' => null,
 					'listings' => $listings,
