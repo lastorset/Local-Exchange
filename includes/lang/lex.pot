@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-28 01:25+0200\n"
+"POT-Creation-Date: 2013-08-10 23:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,23 +218,24 @@ msgstr ""
 msgid "Site Settings"
 msgstr ""
 
-#: admin_menu.php:123
+#. Translation hint: Link text
+#: admin_menu.php:124
 msgid "Set Up Geocoding"
 msgstr ""
 
-#: admin_menu.php:123
+#: admin_menu.php:124
 msgid "New!"
 msgstr ""
 
-#: admin_menu.php:124
+#: admin_menu.php:125
 msgid "MySQL Backup"
 msgstr ""
 
-#: admin_menu.php:126
+#: admin_menu.php:127
 msgid "Send an Email to All Members"
 msgstr ""
 
-#: admin_menu.php:128
+#: admin_menu.php:129
 msgid "View Members Not Yet Logged In"
 msgstr ""
 
@@ -245,7 +246,6 @@ msgstr ""
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
 #: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:540
-#: includes/lang/heredoc_gettext_strings.out.php:44
 msgid "Member"
 msgstr ""
 
@@ -1155,69 +1155,70 @@ msgstr ""
 msgid "(A map will be displayed here as soon as an API key is entered.)"
 msgstr ""
 
-#: geocoding_setup.php:117
+#. Translation hint: Title of geocoding setup assistant
+#: geocoding_setup.php:118
 msgid "Geocoding setup"
 msgstr ""
 
-#: geocoding_setup.php:118
+#: geocoding_setup.php:119
 msgid ""
 "This page guides you through the steps required to start geocoding members."
 msgstr ""
 
-#: geocoding_setup.php:119
+#: geocoding_setup.php:120
 msgid ""
 "<i>Geocoding</i> means finding the latitude/longitude coordinates of a "
 "member's address. We store these coordinates in the database and use them to "
 "show members on a map."
 msgstr ""
 
-#: geocoding_setup.php:121
+#: geocoding_setup.php:122
 msgid "API key"
 msgstr ""
 
 #. Translation hint: %s is the name of a geocoding provider
-#: geocoding_setup.php:124
+#: geocoding_setup.php:125
 #, php-format
 msgid ""
 "%s requires sites like yours to obtain an API key. Please visit the "
 "following site to obtain a key."
 msgstr ""
 
-#: geocoding_setup.php:127
+#: geocoding_setup.php:128
 msgid "Then, paste the key in the following box."
 msgstr ""
 
-#: geocoding_setup.php:130
+#: geocoding_setup.php:131
 msgid ""
 "Check this box to enable geocoding. Then save your settings. This causes new "
 "members and members who modify their profile to be geocoded automatically."
 msgstr ""
 
-#: geocoding_setup.php:132
+#: geocoding_setup.php:133
 msgid "Enable geocoding"
 msgstr ""
 
-#: geocoding_setup.php:135 geocoding_setup.php:146 geocoding_setup.php:265
+#: geocoding_setup.php:136 geocoding_setup.php:147 geocoding_setup.php:268
 msgid "Save"
 msgstr ""
 
-#: geocoding_setup.php:139
+#: geocoding_setup.php:140
 msgid "Choose the map's default view by panning and zooming."
 msgstr ""
 
-#: geocoding_setup.php:153
+#: geocoding_setup.php:154
 msgid "Geocode all members"
 msgstr ""
 
-#: geocoding_setup.php:156
+#: geocoding_setup.php:157
 msgid "Enable geocoding to continue."
 msgstr ""
 
-#: geocoding_setup.php:158
+#: geocoding_setup.php:159
 msgid "All members have been geocoded. You may skip this step."
 msgstr ""
 
-#: geocoding_setup.php:160
+#: geocoding_setup.php:161
 #, php-format
 msgid ""
 "Although you have enabled geocoding for the future, %d existing members also "
@@ -1225,60 +1226,60 @@ msgid ""
 msgstr ""
 
 #. Translation hint: %s are HTML tags making a link.
-#: geocoding_setup.php:163
+#: geocoding_setup.php:164
 #, php-format
 msgid ""
 "You do not have JavaScript enabled. Please %s run the script manually%s "
 "(takes a long time and may be interrupted by PHP)."
 msgstr ""
 
-#: geocoding_setup.php:164
+#: geocoding_setup.php:165
 msgid "Start geocoding"
 msgstr ""
 
-#: geocoding_setup.php:166
+#: geocoding_setup.php:167
 msgid "Not started"
 msgstr ""
 
-#: geocoding_setup.php:172
+#: geocoding_setup.php:173
 msgid ""
 "You may wish to re-center the map viewport above to show the newly geocoded "
 "members."
 msgstr ""
 
-#: geocoding_setup.php:208
+#: geocoding_setup.php:209
 msgid "Waiting for results…"
 msgstr ""
 
-#: geocoding_setup.php:215 refund_monthly_fee.php:212
+#: geocoding_setup.php:216 refund_monthly_fee.php:212
 #: refund_service_charge.php:207 service_charge.php:161
 #: take_monthly_fee.php:199
 msgid "Done"
 msgstr ""
 
-#: geocoding_setup.php:220
+#: geocoding_setup.php:221
 msgid "Request failed."
 msgstr ""
 
-#: geocoding_setup.php:233
+#: geocoding_setup.php:235
 msgid "%(response_count)s responses processed with %(error_count)s errors."
 msgstr ""
 
-#: geocoding_setup.php:234
+#: geocoding_setup.php:237
 msgid "%(response_count)s responses processed."
 msgstr ""
 
-#: geocoding_setup.php:258
+#: geocoding_setup.php:261
 msgid "Home page map"
 msgstr ""
 
-#: geocoding_setup.php:260
+#: geocoding_setup.php:263
 msgid ""
 "If you wish to display a map on the front page, check this box. Other maps "
 "will display regardless of this setting."
 msgstr ""
 
-#: geocoding_setup.php:262
+#: geocoding_setup.php:265
 msgid "Show map on home page"
 msgstr ""
 
@@ -2360,7 +2361,7 @@ msgstr ""
 msgid "Membership No."
 msgstr ""
 
-#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
+#: member_directory.php:27
 msgid "Karma points"
 msgstr ""
 
@@ -2377,7 +2378,6 @@ msgid "Postal code"
 msgstr ""
 
 #: member_directory.php:35 member_directory.php:54
-#: includes/lang/heredoc_gettext_strings.out.php:9
 msgid "Balance"
 msgstr ""
 
@@ -3825,6 +3825,10 @@ msgstr ""
 msgid "Follow Up"
 msgstr ""
 
+#: classes/class.geocode.php:168
+msgid "Member with <a>karma</a>"
+msgstr ""
+
 #: classes/class.listing.php:114
 #, php-format
 msgid ""
@@ -4256,88 +4260,4 @@ msgstr ""
 
 #: classes/class.uploads.php:138
 msgid "Upload"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:10
-msgid "Calculation"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:11
-msgid "Earned"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:12
-msgid "Spent"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:13
-msgid "Numbers"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:14
-msgid "Explanation"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:17
-#: includes/lang/heredoc_gettext_strings.out.php:24
-msgid "Refund"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:18
-msgid "You are about to refund the monthly fee taken on"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:19
-#: includes/lang/heredoc_gettext_strings.out.php:26
-msgid "Refund now"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:20
-#: includes/lang/heredoc_gettext_strings.out.php:34
-#: includes/lang/heredoc_gettext_strings.out.php:39
-msgid "Or"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:21
-#: includes/lang/heredoc_gettext_strings.out.php:27
-#: includes/lang/heredoc_gettext_strings.out.php:35
-#: includes/lang/heredoc_gettext_strings.out.php:40
-msgid "Cancel"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:25
-msgid "You are about to refund the service charge taken on"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:30
-msgid "Amount"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:31
-msgid "Fee Description"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:32
-msgid "Service Fee"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:33
-#: includes/lang/heredoc_gettext_strings.out.php:38
-msgid "Transfer now"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:43
-msgid "Legend:"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:45
-msgid "Member without listings"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:46
-msgid "See offers and wants"
-msgstr ""
-
-#: includes/lang/heredoc_gettext_strings.out.php:47
-msgid "Log in to see offers, wants and precise location"
 msgstr ""
