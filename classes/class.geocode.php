@@ -94,6 +94,12 @@ class cGeocode {
 			throw new AddressException("Partial matches not supported");
 	}
 
+	/**
+	 * Generate a map for a user's profile.
+	 *
+	 * @param $coordinates array the user's coordinates.
+	 * @return string the HTML code for the map, or an HTML comment indicating that one is not drawn.
+	 */
 	static function UserMap($coordinates) {
 		if (!is_array($coordinates) ||
 			!is_numeric($coordinates[0]) || !is_numeric($coordinates[1]))
