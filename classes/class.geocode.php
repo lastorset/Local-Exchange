@@ -138,7 +138,7 @@ HTML;
 	}
 
 	static function GenerateMap() {
-		global $cUser, $_;
+		global $cUser, $_, $replace_tags;
 		if($cUser->IsLoggedOn()) {
 			// Used to influence caching by giving the private map its own cache key
 			$is_logged_on = "?logged_on";

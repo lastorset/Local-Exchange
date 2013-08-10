@@ -84,6 +84,7 @@ include_once("inc.config-database.php");
 
 // Workaround for gettext in Heredoc (e.g. <<<HTML):
 $_="_"; // Then use {$_("text")}. Remember to specify "global $_;" first when in a function.
+$replace_tags="replace_tags"; // Use like $_ above
 
 /* Initial session handling code starts */
 require_once("session_handler.php");
