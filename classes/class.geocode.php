@@ -291,8 +291,7 @@ HTML;
 			return fmod($result, $spice * 2) / $spice - 1;
 		}
 
-		$c = get_defined_constants();
-		$result = $cDB->Query(<<<SQL
+		$result = $cDB->Query("
 			SELECT person_id,
 				m.member_id,
 				first_name,
@@ -302,17 +301,16 @@ HTML;
 				longitude,
 				COUNT(listing_id) AS listing_count
 			FROM
-				{$c['DATABASE_PERSONS']} p
-				NATURAL JOIN {$c['DATABASE_MEMBERS']} m
-				LEFT JOIN {$c['DATABASE_LISTINGS']} l ON m.member_id = l.member_id
+				". DATABASE_PERSONS ." p
+				NATURAL JOIN ". DATABASE_MEMBERS ." m
+				LEFT JOIN ". DATABASE_LISTINGS ." l ON m.member_id = l.member_id
 			WHERE
 				`latitude` IS NOT NULL AND `longitude` IS NOT NULL
 				AND
-				m.status = '{$c['ACTIVE']}'
+				m.status = '". ACTIVE ."'
 			GROUP BY
 				person_id;
-SQL
-		);
+		");
 
 		// Radius of Earth
 		$R = 6371;
