@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-10 23:13+0200\n"
-"PO-Revision-Date: 2013-08-10 23:13+0100\n"
+"POT-Creation-Date: 2013-08-11 18:44+0200\n"
+"PO-Revision-Date: 2013-08-11 18:43+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -248,6 +248,7 @@ msgstr "Velg medlem som du vil endre saldoen for"
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
 #: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:540
+#: includes/lang/heredoc_gettext_strings.out.php:44
 msgid "Member"
 msgstr "Medlem"
 
@@ -1288,6 +1289,10 @@ msgstr "Aktiver geokoding"
 msgid "Save"
 msgstr "Lagre"
 
+#: geocoding_setup.php:139
+msgid "Map viewport"
+msgstr "Kartutsnitt"
+
 #: geocoding_setup.php:140
 msgid "Choose the map's default view by panning and zooming."
 msgstr "Styr forvalgt kartutsnitt ved å dra og zoome."
@@ -1826,11 +1831,16 @@ msgid "There was an error deleting the listings. Did you check any boxes?"
 msgstr ""
 "Det oppstod en feil ved sletting av oppføringene. Husket du å krysse av?"
 
-#. Translation hint: %1$s and the like are link tags and must be left as they are.
 #: listing_detail.php:28
-#, fuzzy, php-format
-msgid "You may see more details if you %1$s sign up%2$s or %3$s log in%4$s."
-msgstr "Du får se flere detaljer om du melder deg inn og logger deg på."
+msgid "You may see more details if you <a1>sign up</a1> or <a2>log in</a2>."
+msgstr ""
+"Du får se flere detaljer om du <a1>melder deg inn</a1> eller <a2>logger deg "
+"på</a2>."
+
+#: listing_detail.php:30
+msgid "You may see more details if you sign up or <a2>log in</a2>."
+msgstr ""
+"Du får se flere detaljer om du melder deg inn eller <a2>logger deg på</a2>."
 
 #: listing_edit.php:23
 msgid "Edit Offered:"
@@ -2518,7 +2528,7 @@ msgstr "Sorter på"
 msgid "Membership No."
 msgstr "Medlemsnummer"
 
-#: member_directory.php:27
+#: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
 msgid "Karma points"
 msgstr "Karmapoeng"
 
@@ -2535,6 +2545,7 @@ msgid "Postal code"
 msgstr "Postnummer"
 
 #: member_directory.php:35 member_directory.php:54
+#: includes/lang/heredoc_gettext_strings.out.php:9
 msgid "Balance"
 msgstr "Saldo"
 
@@ -4545,62 +4556,89 @@ msgstr "Kunne ikke slette fil"
 msgid "Upload"
 msgstr "Last opp"
 
-#~ msgid "Calculation"
-#~ msgstr "Utregning"
+#: includes/lang/heredoc_gettext_strings.out.php:10
+msgid "Calculation"
+msgstr "Utregning"
 
-#~ msgid "Earned"
-#~ msgstr "Opptjent"
+#: includes/lang/heredoc_gettext_strings.out.php:11
+msgid "Earned"
+msgstr "Opptjent"
 
-#~ msgid "Spent"
-#~ msgstr "Forbrukt"
+#: includes/lang/heredoc_gettext_strings.out.php:12
+msgid "Spent"
+msgstr "Forbrukt"
 
-#~ msgid "Numbers"
-#~ msgstr "Tall"
+#: includes/lang/heredoc_gettext_strings.out.php:13
+msgid "Numbers"
+msgstr "Tall"
 
-#~ msgid "Explanation"
-#~ msgstr "Forklaring"
+#: includes/lang/heredoc_gettext_strings.out.php:14
+msgid "Explanation"
+msgstr "Forklaring"
 
-#~ msgid "Refund"
-#~ msgstr "Refusjon"
+#: includes/lang/heredoc_gettext_strings.out.php:17
+#: includes/lang/heredoc_gettext_strings.out.php:24
+msgid "Refund"
+msgstr "Refusjon"
 
-#~ msgid "You are about to refund the monthly fee taken on"
-#~ msgstr "Du skal til å refundere månedsavgifta som ble krevd inn"
+#: includes/lang/heredoc_gettext_strings.out.php:18
+msgid "You are about to refund the monthly fee taken on"
+msgstr "Du skal til å refundere månedsavgifta som ble krevd inn"
 
-#~ msgid "Refund now"
-#~ msgstr "Refunder nå"
+#: includes/lang/heredoc_gettext_strings.out.php:19
+#: includes/lang/heredoc_gettext_strings.out.php:26
+msgid "Refund now"
+msgstr "Refunder nå"
 
-#~ msgid "Or"
-#~ msgstr "Eller"
+#: includes/lang/heredoc_gettext_strings.out.php:20
+#: includes/lang/heredoc_gettext_strings.out.php:34
+#: includes/lang/heredoc_gettext_strings.out.php:39
+msgid "Or"
+msgstr "Eller"
 
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
+#: includes/lang/heredoc_gettext_strings.out.php:21
+#: includes/lang/heredoc_gettext_strings.out.php:27
+#: includes/lang/heredoc_gettext_strings.out.php:35
+#: includes/lang/heredoc_gettext_strings.out.php:40
+msgid "Cancel"
+msgstr "Avbryt"
 
-#~ msgid "You are about to refund the service charge taken on"
-#~ msgstr "Du skal til å refundere gebyret som ble krevd inn"
+#: includes/lang/heredoc_gettext_strings.out.php:25
+msgid "You are about to refund the service charge taken on"
+msgstr "Du skal til å refundere gebyret som ble krevd inn"
 
-#~ msgid "Amount"
-#~ msgstr "Sum"
+#: includes/lang/heredoc_gettext_strings.out.php:30
+msgid "Amount"
+msgstr "Sum"
 
-#~ msgid "Fee Description"
-#~ msgstr "Avgiftstekst"
+#: includes/lang/heredoc_gettext_strings.out.php:31
+msgid "Fee Description"
+msgstr "Avgiftstekst"
 
-#~ msgid "Service Fee"
-#~ msgstr "Engangsgebyr"
+#: includes/lang/heredoc_gettext_strings.out.php:32
+msgid "Service Fee"
+msgstr "Engangsgebyr"
 
-#~ msgid "Transfer now"
-#~ msgstr "Overfør nå"
+#: includes/lang/heredoc_gettext_strings.out.php:33
+#: includes/lang/heredoc_gettext_strings.out.php:38
+msgid "Transfer now"
+msgstr "Overfør nå"
 
-#~ msgid "Legend:"
-#~ msgstr "Tegnforklaring:"
+#: includes/lang/heredoc_gettext_strings.out.php:43
+msgid "Legend:"
+msgstr "Tegnforklaring:"
 
-#~ msgid "Member without listings"
-#~ msgstr "Medlem uten oppføringer"
+#: includes/lang/heredoc_gettext_strings.out.php:45
+msgid "Member without listings"
+msgstr "Medlem uten oppføringer"
 
-#~ msgid "See offers and wants"
-#~ msgstr "Se tilbud og ønsker"
+#: includes/lang/heredoc_gettext_strings.out.php:46
+msgid "See offers and wants"
+msgstr "Se tilbud og ønsker"
 
-#~ msgid "Log in to see offers, wants and precise location"
-#~ msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
+#: includes/lang/heredoc_gettext_strings.out.php:47
+msgid "Log in to see offers, wants and precise location"
+msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
 
 #~ msgid "This script contacts %1$s to place every member on a map."
 #~ msgstr ""
