@@ -157,17 +157,17 @@ HTML;
 			$zoom = 1;
 		}
 
-		return <<<HTML
+		$out = <<<HTML
 			<div id="map_canvas" style="width:100%;"></div>
 			<div id="map_legend">
 				<!-- Translation hint: Legend for front page map -->
 				<h3>{$_("Legend:")}</h3>
-HTML
-			. (GAME_MECHANICS ?
+HTML;
+		$out .= (GAME_MECHANICS ?
 				"<img src='images/marker_gold.png'>". replace_tags(
 					_('Member with <a>karma</a>'), array('a' => 'a href=karma_explanation.php')
-				) : "").
-			<<<HTML
+				) : "");
+		$out .= <<<HTML
 				<img src="images/marker.png">{$_("Member")}
 				<img src="images/marker_gray.png">{$_("Member without listings")}
 			</div>
@@ -276,6 +276,7 @@ HTML
 				}
 			</script>
 HTML;
+		return $out;
 	}
 
 	static function AllMarkers($fetch_listings = /* true */ false /* TODO until listings can be shown properly and anonymously */) {
