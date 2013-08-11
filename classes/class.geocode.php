@@ -233,15 +233,19 @@ HTML;
 									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
 									map: map,
 								});
+								var integer_factor = 1000; // Maps doesn't appear to understand too fine-grained z-indexes
 								if (flags.GAME_MECHANICS && members[i].karma > 0) {
 									marker.setIcon(gold_icon);
 									marker.setShadow(shadow);
-									marker.setZIndex(-1);
+									marker.setZIndex((3*90 - members[i].latitude)*integer_factor); // Range [180000,360000]
 								}
 								else if (members[i].listing_count == 0) {
 									marker.setIcon(gray_icon);
 									marker.setShadow(shadow);
-									marker.setZIndex(-1);
+									marker.setZIndex((-90 - members[i].latitude)*integer_factor); // Range [-180000,0]
+								}
+								else {
+									marker.setZIndex((90 - members[i].latitude)*integer_factor); // Range [0,180000]
 								}
 								var text;
 								if (members[i].name)
