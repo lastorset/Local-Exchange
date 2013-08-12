@@ -680,6 +680,24 @@ class cMember
 		else
 			return (int) $this->spent;
 	}
+
+	/**
+	 * Fetch this member's listings.
+	 *
+	 * @return array an associative array with two arrays 'wanted' and 'offered', and a total 'count'.
+	 */
+	function FetchListings() {
+		$wanted = new cListingGroup(WANT_LISTING);
+		$wanted->LoadListingGroup(null, null, $this->member_id);
+		$offered = new cListingGroup(OFFER_LISTING);
+		$offered->LoadListingGroup(null, null, $this->member_id);
+
+		return array(
+			'wanted'  => $wanted->listing,
+			'offered' => $offered->listing,
+			'count'   => count($wanted->listing) + count($offered->listing)
+		);
+	}
 }
 
 class cMemberGroup {

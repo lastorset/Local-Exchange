@@ -97,17 +97,26 @@ class cGeocode {
 	/**
 	 * Generate a map for a user's profile.
 	 *
-	 * @param $coordinates array the user's coordinates.
+	 * @param $member cMember the member whose coordinates to show.
 	 * @return string the HTML code for the map, or an HTML comment indicating that one is not drawn.
 	 */
-	static function UserMap($coordinates) {
-		if (!is_array($coordinates) ||
-			!is_numeric($coordinates[0]) || !is_numeric($coordinates[1]))
+	static function UserMap($member) {
+		// TODO: Could show all persons
+		$coordinates = $member->person[0]->GetCoordinates();
+		if ($coordinates === false)
 			return "<!-- No coordinates exist for member -->";
 
-		$latitude = $coordinates[0];
-		$longitude = $coordinates[1];
+		$listings = $member->FetchListings();
+
+		$member_data = array(
+			'latitude' => $coordinates[0],
+			'longitude' => $coordinates[1],
+			'listing_count' => $listings['count'],
+			'karma' => $member->GetKarma()
+		);
+		$member_data_string = json_encode($member_data, JSON_NUMERIC_CHECK);
 		$map_api_key = urlencode(MAP_API_KEY);
+		$c = get_defined_constants();
 
 		return <<<HTML
 			<div id="map_canvas"></div>
@@ -115,21 +124,20 @@ class cGeocode {
 			<script type="text/javascript"
 				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
+			<script type="text/javascript" src="ajax/lib/maps.js"></script>
 			<script type="text/javascript">
 				var map;
+				var member = $member_data_string;
 
 				function initializeMap() {
 					var myOptions = {
-						center: new google.maps.LatLng($latitude, $longitude),
+						center: new google.maps.LatLng(member.latitude, member.longitude),
 						zoom: 14,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 					map = new google.maps.Map(document.getElementById("map_canvas"),
 							myOptions);
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng($latitude, $longitude),
-						map: map,
-					});
+					createMarker(map, member, {$c['GAME_MECHANICS']})
 				}
 
 				window.addEventListener('DOMContentLoaded', initializeMap, false);
@@ -175,6 +183,7 @@ HTML;
 			<script type="text/javascript"
 				src="http://maps.googleapis.com/maps/api/js?key=$map_api_key&sensor=false">
 			</script>
+			<script type="text/javascript" src="ajax/lib/maps.js"></script>
 			<script type="text/javascript">
 				var map;
 				var infowindow = new google.maps.InfoWindow();
@@ -204,24 +213,6 @@ HTML;
 				}
 
 				function addMarkers() {
-					var gold_icon = {
-						url: 'images/marker_sprite_gold.png',
-						size: new google.maps.Size(20, 34),
-						origin: new google.maps.Point(0,0),
-						anchor: new google.maps.Point(10, 33)
-					};
-					var gray_icon = {
-						url: 'images/marker_sprite_gray.png',
-						size: new google.maps.Size(20, 34),
-						origin: new google.maps.Point(0,0),
-						anchor: new google.maps.Point(10, 33)
-					};
-					var shadow = {
-						url: 'images/marker_sprite_gray.png',
-						size: new google.maps.Size(37, 34),
-						origin: new google.maps.Point(20,0),
-						anchor: new google.maps.Point(10, 33)
-					};
 					if (memberRequest.readyState === 4) {
 						if (memberRequest.status === 200) {
 							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
@@ -229,24 +220,7 @@ HTML;
 							var flags = received.flags;
 							var members = received.members;
 							for (var i = 0; i < members.length; i++) {
-								var marker = new google.maps.Marker({
-									position: new google.maps.LatLng(members[i].latitude, members[i].longitude),
-									map: map,
-								});
-								var integer_factor = 1000; // Maps doesn't appear to understand too fine-grained z-indexes
-								if (flags.GAME_MECHANICS && members[i].karma > 0) {
-									marker.setIcon(gold_icon);
-									marker.setShadow(shadow);
-									marker.setZIndex((3*90 - members[i].latitude)*integer_factor); // Range [180000,360000]
-								}
-								else if (members[i].listing_count == 0) {
-									marker.setIcon(gray_icon);
-									marker.setShadow(shadow);
-									marker.setZIndex((-90 - members[i].latitude)*integer_factor); // Range [-180000,0]
-								}
-								else {
-									marker.setZIndex((90 - members[i].latitude)*integer_factor); // Range [0,180000]
-								}
+								var marker = createMarker(map, members[i], flags.GAME_MECHANICS);
 								var text;
 								if (members[i].name)
 									// TODO Some way to get internationalized text

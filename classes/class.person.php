@@ -266,6 +266,18 @@ class cPerson
 				$this->address_country);
 		$this->coordinates = cGeocode::Geocode($address_components);
 	}
+
+	/**
+	 * Validates the coordinates and returns them.
+	 * @return array the coordinates as a two-element array, or false if there were no valid coordinates.
+	 */
+	function GetCoordinates() {
+		if (!is_array($this->coordinates) ||
+			!is_numeric($this->coordinates[0]) || !is_numeric($this->coordinates[1]))
+			return false;
+		else
+			return $this->coordinates;
+	}
 }
 
 // TODO: cPerson should use this class instead of a text field

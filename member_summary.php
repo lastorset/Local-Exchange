@@ -19,7 +19,7 @@ $output .= "<H4 ID=contact>"._("Contact information")."</H4>";
 $output .= $member->DisplayMember();
 
 if (GEOCODE) {
-	$output .= cGeocode::UserMap($member->person[0]->coordinates);
+	$output .= cGeocode::UserMap($member);
 }
 
 $output .= "<H4 ID=offered>"._("Offered listings")."</H4>";
