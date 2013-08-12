@@ -203,6 +203,9 @@ class cListingGroup
 	var $type;
 	var $type_code;
 
+	/**
+	 * @param $type string either OFFER_LISTING or WANT_LISTING.
+	 */
 	function cListingGroup($type) {
 		$this->type = $type;
 		if($type == OFFER_LISTING)
@@ -288,7 +291,7 @@ SQL;
 	/** When origin and radius are given, a radial search is performed.
 	 *
 	 * @param origin array(latitude, longitude) to search from.
-	 * @param radius how far to search (in km).
+	 * @param radius number how far to search (in km).
 	 */
 	function LoadListingGroup($title=null, $category=null, $member_id=null, $since=null, $include_expired=true, $origin=null, $radius=null, $include_mine=true)
 	{

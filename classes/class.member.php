@@ -13,7 +13,8 @@ include_once("Text/Password.php");
 	for more information. */
 class cMember
 {
-	var $person;  // this will be an array of cPerson class objects
+	/** @var cPerson[] */
+	var $person;
 	var $member_id;
 	var $password;
 	var $member_role;
