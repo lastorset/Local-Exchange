@@ -256,14 +256,14 @@ class cListingGroup
 		global $cDB, $cErr;
 
 		// Radius of Earth
-		$R = 6371;
+		$R = cGeocode::$R;
 
 		// first-cut bounding box (in degrees)
-		$maxLat = $lat + rad2deg($radius/$R);
-		$minLat = $lat - rad2deg($radius/$R);
-		// compensate for degrees longitude getting smaller with increasing latitude
-		$maxLon = $lon + rad2deg($radius/$R/cos(deg2rad($lat)));
-		$minLon = $lon - rad2deg($radius/$R/cos(deg2rad($lat)));
+		$bbox = cGeocode::RadialBoundingBox($lat, $lon, $radius);
+		$minLat = $bbox[0][0];
+		$minLon = $bbox[0][1];
+		$maxLat = $bbox[1][0];
+		$maxLon = $bbox[1][1];
 
 		$latitude = deg2rad($lat);
 		$longitude = deg2rad($lon);

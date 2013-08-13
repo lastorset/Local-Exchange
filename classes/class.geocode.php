@@ -403,4 +403,27 @@ SQL
 	static function MissingPersons() {
 		return self::GeocodablePersons(true);
 	}
+
+	/// Radius of Earth
+	static $R = 6371;
+
+	/**
+	 * Finds the bounding box that will exactly fit the given radius.
+	 *
+	 * @param $lat number latitude.
+	 * @param $lon number longitude.
+	 * @param $radius number the distance in km from the coordinate to each edge.
+	 *
+	 * @returns number[][] the south-west and north-east points as a two-dimensional array.
+	 */
+	static function RadialBoundingBox($lat, $lon, $radius) {
+		// first-cut bounding box (in degrees)
+		$maxLat = $lat + rad2deg($radius/self::$R);
+		$minLat = $lat - rad2deg($radius/self::$R);
+		// compensate for degrees longitude getting smaller with increasing latitude
+		$maxLon = $lon + rad2deg($radius/self::$R/cos(deg2rad($lat)));
+		$minLon = $lon - rad2deg($radius/self::$R/cos(deg2rad($lat)));
+
+		return array(array($minLat, $minLon), array($maxLat, $maxLon));
+	}
 }
