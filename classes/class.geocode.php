@@ -164,6 +164,9 @@ class cGeocode {
 
 					map.fitBounds(bounds);
 					createMarkers(map, member, {$c['GAME_MECHANICS']}, infowindow)
+					google.maps.event.addListener(map, 'click', function() {
+							infowindow.close();
+					});
 				}
 
 				window.addEventListener('DOMContentLoaded', initializeMap, false);
