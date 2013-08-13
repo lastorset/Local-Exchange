@@ -18,37 +18,48 @@ var shadow = {
 };
 
 /**
- * Generate a marker for a given member and Google Map.
+ * Generate a marker for a given person and Google Map.
  *
  * @note Requires Google Maps to be imported.
  *
  * @param map the map in which to insert the marker.
- * @param member represents a member, with fields at least for latitude, longitude, listing_count and karma.
+ * @param person represents a person, with fields at least for latitude, longitude, listing_count and karma.
  * @param game_mechanics whether to distinguish between users with karma and those without.
- * @returns {google.maps.Marker} a marker for the given member.
+ * @param text HTML to put in the marker bubble.
+ *
+ * @returns {google.maps.Marker} a marker for the given person.
  */
-function createMarker(map, member, game_mechanics) {
+function createMarker(map, person, game_mechanics, text) {
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(member.latitude, member.longitude),
+        position: new google.maps.LatLng(person.latitude, person.longitude),
         map: map
     });
     var integer_factor = 1000; // Google Maps doesn't appear to understand too fine-grained z-indexes
-    if (game_mechanics && member.karma > 0) {
+    if (game_mechanics && person.karma > 0) {
         // Karmic users on top
         marker.setIcon(gold_icon);
         marker.setShadow(shadow);
         // Put visually lower users in front
-        marker.setZIndex((3*90 - member.latitude)*integer_factor); // Range [180000,360000]
+        marker.setZIndex((3*90 - person.latitude)*integer_factor); // Range [180000,360000]
     }
-    else if (member.listing_count == 0) {
+    else if (person.listing_count == 0) {
         // Listing users in the middle
         marker.setIcon(gray_icon);
         marker.setShadow(shadow);
-        marker.setZIndex((-90 - member.latitude)*integer_factor); // Range [-180000,0]
+        marker.setZIndex((-90 - person.latitude)*integer_factor); // Range [-180000,0]
     }
     else {
         // Empty users on the bottom
-        marker.setZIndex((90 - member.latitude)*integer_factor); // Range [0,180000]
+        marker.setZIndex((90 - person.latitude)*integer_factor); // Range [0,180000]
     }
+
+    // TODO More lightweight method? (without a separate function for each marker)
+    google.maps.event.addListener(marker, 'click', (function(marker, text) {
+        return function() {
+            infowindow.setContent(text);
+            infowindow.open(map,marker);
+        }
+    })(marker, text));
+
     return marker;
 }

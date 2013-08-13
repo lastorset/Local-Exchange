@@ -218,24 +218,17 @@ HTML;
 							// TODO Use a compatibility shim (such as jQuery) for JSON.parse
 							var received = JSON.parse(memberRequest.responseText);
 							var flags = received.flags;
-							var members = received.members;
-							for (var i = 0; i < members.length; i++) {
-								var marker = createMarker(map, members[i], flags.GAME_MECHANICS);
+							var persons = received.persons;
+							for (var i = 0; i < persons.length; i++) {
 								var text;
-								if (members[i].name)
+								if (persons[i].name)
 									// TODO Some way to get internationalized text
-									text = "<h1>"+ members[i].name +"</h1>"
-										 + "<a href=member_summary.php?member_id="+ members[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
+									text = "<h1>"+ persons[i].name +"</h1>"
+										 + "<a href=member_summary.php?member_id="+ persons[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
 									// TODO Display listings directly in info window
 								else
 									text = "{$_("Log in to see offers, wants and precise location")}";
-								// TODO More lightweight method? (without a separate function for each marker)
-								google.maps.event.addListener(marker, 'click', (function(marker, text) {
-									return function() {
-										infowindow.setContent(text);
-										infowindow.open(map,marker);
-									}
-								})(marker, text));
+								createMarker(map, persons[i], flags.GAME_MECHANICS, text);
 							}
 						} else {
 							var failedP = document.createElement("p");
@@ -324,7 +317,7 @@ HTML;
 
 		$out = array(
 			"flags" => array("GAME_MECHANICS" => GAME_MECHANICS),
-			"members" => array()
+			"persons" => array()
 		);
 		// TODO Lazy loading of listings (such as when hovering before clicking on an infowindow). With that in place, the $fetch_listings parameter becomes unnecessary.
 		while($marker = mysql_fetch_array($result))
@@ -342,7 +335,7 @@ HTML;
 				$listings = null;
 
 			if ($cUser->IsLoggedOn())
-				array_push($out['members'], array(
+				array_push($out['persons'], array(
 					'id' => $marker['member_id'],
 					'name' => $marker['first_name'] ." ".
 							  $marker['mid_name'] ." ".
@@ -360,7 +353,7 @@ HTML;
 					member_id_obfuscate($marker['member_id'], 113),
 					member_id_obfuscate($marker['member_id'], 157)
 				);
-				array_push($out['members'], array(
+				array_push($out['persons'], array(
 					'id' => $marker['member_id'],
 					'name' => null,
 					'listings' => $listings,
