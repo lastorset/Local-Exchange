@@ -141,6 +141,7 @@ class cGeocode {
 			<script type="text/javascript" src="ajax/lib/maps.js"></script>
 			<script type="text/javascript">
 				var map;
+				var infowindow = new google.maps.InfoWindow();
 				var member = $member_data_string;
 
 				function initializeMap() {
@@ -162,7 +163,7 @@ class cGeocode {
 						bounds.extend(new google.maps.LatLng(member.persons[i].latitude, member.persons[i].longitude));
 
 					map.fitBounds(bounds);
-					createMarkers(map, member, {$c['GAME_MECHANICS']})
+					createMarkers(map, member, {$c['GAME_MECHANICS']}, infowindow)
 				}
 
 				window.addEventListener('DOMContentLoaded', initializeMap, false);
@@ -253,7 +254,7 @@ HTML;
 									// TODO Display listings directly in info window
 								else
 									text = "{$_("Log in to see offers, wants and precise location")}";
-								createMarker(map, persons[i], flags.GAME_MECHANICS, text);
+								createMarker(map, persons[i], flags.GAME_MECHANICS, text, infowindow);
 							}
 						} else {
 							var failedP = document.createElement("p");

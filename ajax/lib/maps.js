@@ -26,10 +26,11 @@ var shadow = {
  * @param person represents a person, with fields at least for latitude, longitude, listing_count and karma.
  * @param game_mechanics whether to distinguish between users with karma and those without.
  * @param text HTML to put in the marker bubble.
+ * @param infowindow     an infowindow to put text in.
  *
  * @returns {google.maps.Marker} a marker for the given person.
  */
-function createMarker(map, person, game_mechanics, text) {
+function createMarker(map, person, game_mechanics, text, infowindow) {
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(person.latitude, person.longitude),
         map: map
@@ -72,10 +73,11 @@ function createMarker(map, person, game_mechanics, text) {
  * @param member         represents a member, with fields at least for person (each with name, latitude and longitude),
  *                       listing_count and karma.
  * @param game_mechanics whether to distinguish between users with karma and those without.
+ * @param infowindow     an infowindow to put text in.
  *
  * @returns {google.maps.Marker} a marker for the given member.
  */
-function createMarkers(map, member, game_mechanics) {
+function createMarkers(map, member, game_mechanics, infowindow) {
     var markers = [];
     for (var i = 0; i < member.persons.length; i++) {
         var person = {
@@ -84,7 +86,7 @@ function createMarkers(map, member, game_mechanics) {
             'listing_count': member.listing_count,
             'karma': member.karma
         }
-        markers[i] = createMarker(map, person, game_mechanics, "<h1>"+ member.persons[i].name +"</h1>");
+        markers[i] = createMarker(map, person, game_mechanics, "<h1>"+ member.persons[i].name +"</h1>", infowindow);
     }
     return markers;
 }
