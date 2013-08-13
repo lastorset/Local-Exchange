@@ -63,3 +63,28 @@ function createMarker(map, person, game_mechanics, text) {
 
     return marker;
 }
+
+/**
+ * Generate markers for up to several persons for a given member. This is a stopgap solution; ideally, createMarker
+ * would handle this input format, but that requires modifying cGeocode::AllMarkers.
+ *
+ * @param map            the map in which to insert the marker.
+ * @param member         represents a member, with fields at least for person (each with name, latitude and longitude),
+ *                       listing_count and karma.
+ * @param game_mechanics whether to distinguish between users with karma and those without.
+ *
+ * @returns {google.maps.Marker} a marker for the given member.
+ */
+function createMarkers(map, member, game_mechanics) {
+    var markers = [];
+    for (var i = 0; i < member.persons.length; i++) {
+        var person = {
+            'latitude': member.persons[i].latitude,
+            'longitude': member.persons[i].longitude,
+            'listing_count': member.listing_count,
+            'karma': member.karma
+        }
+        markers[i] = createMarker(map, person, game_mechanics, "<h1>"+ member.persons[i].name +"</h1>");
+    }
+    return markers;
+}

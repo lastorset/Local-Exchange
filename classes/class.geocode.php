@@ -101,18 +101,32 @@ class cGeocode {
 	 * @return string the HTML code for the map, or an HTML comment indicating that one is not drawn.
 	 */
 	static function UserMap($member) {
-		// TODO: Could show all persons
-		$coordinates = $member->person[0]->GetCoordinates();
-		if ($coordinates === false)
+		$has_coordinates = false;
+		$persons = array();
+		foreach($member->person as $person) {
+			$coordinates = $person->GetCoordinates();
+			if ($coordinates) {
+				$has_coordinates = true;
+				$persons[] = array(
+					'name' => $person->Name(),
+					'latitude' => $coordinates[0],
+					'longitude' => $coordinates[1],
+				);
+			}
+		}
+		if ($has_coordinates === false)
 			return "<!-- No coordinates exist for member -->";
+
+		// Set a good bounding box for the first marker, so that the zoom isn't excessive
+		$bbox = self::RadialBoundingBox($persons[0]['latitude'], $persons[0]['longitude'], 0.5 /* km */);
 
 		$listings = $member->FetchListings();
 
 		$member_data = array(
-			'latitude' => $coordinates[0],
-			'longitude' => $coordinates[1],
+			'persons' => $persons,
 			'listing_count' => $listings['count'],
-			'karma' => $member->GetKarma()
+			'karma' => $member->GetKarma(),
+			'minimum_bounding_box' => $bbox,
 		);
 		$member_data_string = json_encode($member_data, JSON_NUMERIC_CHECK);
 		$map_api_key = urlencode(MAP_API_KEY);
@@ -130,14 +144,25 @@ class cGeocode {
 				var member = $member_data_string;
 
 				function initializeMap() {
+					var p0 = member.persons[0];
 					var myOptions = {
-						center: new google.maps.LatLng(member.latitude, member.longitude),
+						center: new google.maps.LatLng(p0.latitude, p0.longitude),
 						zoom: 14,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
 					map = new google.maps.Map(document.getElementById("map_canvas"),
 							myOptions);
-					createMarker(map, member, {$c['GAME_MECHANICS']})
+
+					var b = member.minimum_bounding_box;
+					var bounds = new google.maps.LatLngBounds(
+						new google.maps.LatLng(b[0][0], b[0][1]),
+						new google.maps.LatLng(b[1][0], b[1][1])
+					);
+					for (var i = 1; i < member.persons.length; i++)
+						bounds.extend(new google.maps.LatLng(member.persons[i].latitude, member.persons[i].longitude));
+
+					map.fitBounds(bounds);
+					createMarkers(map, member, {$c['GAME_MECHANICS']})
 				}
 
 				window.addEventListener('DOMContentLoaded', initializeMap, false);
