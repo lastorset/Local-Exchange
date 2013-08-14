@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-11 18:44+0200\n"
+"POT-Creation-Date: 2013-08-14 11:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,7 @@ msgid "Manage Account Restrictions"
 msgstr ""
 
 #: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
-#: includes/inc.config.php:212
+#: includes/inc.config.php:215
 msgid "Exchanges"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "See Info Page URL 's"
 msgstr ""
 
-#: admin_menu.php:85 news.php:7 includes/inc.config.php:208
+#: admin_menu.php:85 news.php:7 includes/inc.config.php:211
 msgid "News and Events"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
-#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:540
+#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:541
 #: includes/lang/heredoc_gettext_strings.out.php:44
 msgid "Member"
 msgstr ""
@@ -323,12 +323,12 @@ msgstr ""
 msgid "Could not save the category."
 msgstr ""
 
-#: category_create.php:44 category_edit.php:48 email.php:83 feedback.php:85
+#: category_create.php:44 category_edit.php:48 email.php:89 feedback.php:85
 #: listing_create.php:123 listing_edit.php:177 member_contact_create.php:153
 #: member_contact_edit.php:168 member_create.php:223 member_edit.php:261
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
 #: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:92
-#: classes/class.member.php:175 classes/class.member.php:919
+#: classes/class.member.php:176 classes/class.member.php:938
 #: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
 msgstr ""
@@ -357,11 +357,11 @@ msgstr ""
 msgid "This email will go out to <i>ALL</i> members of"
 msgstr ""
 
-#: contact_all.php:17 contact.php:17 email.php:34
+#: contact_all.php:17 contact.php:17 email.php:40
 msgid "Your Message"
 msgstr ""
 
-#: contact_all.php:21 contact.php:23 email.php:37
+#: contact_all.php:21 contact.php:23 email.php:43
 msgid "Send"
 msgstr ""
 
@@ -369,7 +369,7 @@ msgstr ""
 msgid "Enter a subject"
 msgstr ""
 
-#: contact_all.php:27 email.php:42
+#: contact_all.php:27 email.php:48
 msgid "Enter your message"
 msgstr ""
 
@@ -381,7 +381,7 @@ msgstr ""
 msgid "There were errors sending the email to the following email addresses"
 msgstr ""
 
-#: contact.php:4 includes/inc.config.php:215
+#: contact.php:4 includes/inc.config.php:218
 msgid "Contact Us"
 msgstr ""
 
@@ -408,7 +408,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: contact.php:14 classes/class.member.php:557
+#: contact.php:14 classes/class.member.php:558
 msgid "Email"
 msgstr ""
 
@@ -876,12 +876,12 @@ msgstr ""
 msgid "Really Delete this page (ID#"
 msgstr ""
 
-#: delete_info.php:55 email.php:24 member_contact_create.php:42
+#: delete_info.php:55 email.php:30 member_contact_create.php:42
 #: member_contact_edit.php:44 pages.php:13 settings.php:93
 msgid "Yes"
 msgstr ""
 
-#: delete_info.php:55 email.php:24 member_contact_create.php:42
+#: delete_info.php:55 email.php:30 member_contact_create.php:42
 #: member_contact_edit.php:44 pages.php:13 settings.php:95
 msgid "No"
 msgstr ""
@@ -969,24 +969,32 @@ msgstr ""
 msgid "Email a Member"
 msgstr ""
 
-#: email.php:22 trades_pending.php:39 classes/class.trade.php:277
+#: email.php:21
+msgid ""
+"Warning: Currently, many e-mail messages sent using this form are being "
+"categorized as spam.\n"
+"\tWhile we investigate solutions to this problem, please consider sending e-"
+"mail using your usual e-mail program instead."
+msgstr ""
+
+#: email.php:28 trades_pending.php:39 classes/class.trade.php:277
 #: classes/class.trade.php:324
 msgid "To"
 msgstr ""
 
-#: email.php:23
+#: email.php:29
 msgid "Subject"
 msgstr ""
 
-#: email.php:24
+#: email.php:30
 msgid "Would you like to receive a copy?"
 msgstr ""
 
-#: email.php:80
+#: email.php:86
 msgid "Your message has been sent."
 msgstr ""
 
-#: email.php:83
+#: email.php:89
 msgid "There was a problem sending the email."
 msgstr ""
 
@@ -1084,7 +1092,7 @@ msgid ""
 msgstr ""
 
 #: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
-#: classes/class.feedback.php:125 classes/class.member.php:550
+#: classes/class.feedback.php:125 classes/class.member.php:551
 msgid "Positive"
 msgstr ""
 
@@ -1525,12 +1533,12 @@ msgstr ""
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
 #: member_create.php:208 member_create.php:217 member_directory.php:15
 #: member_unlock.php:47 member_unlock.php:50 password_reset.php:39
-#: trade.php:138 classes/class.member.php:200
+#: trade.php:138 classes/class.member.php:201
 msgid "Member ID"
 msgstr ""
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
-#: member_create.php:208 member_unlock.php:47 classes/class.member.php:201
+#: member_create.php:208 member_unlock.php:47 classes/class.member.php:202
 msgid "Password"
 msgstr ""
 
@@ -1753,7 +1761,7 @@ msgid "Create Listings"
 msgstr ""
 
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
-#: classes/class.directory.php:52 classes/class.member.php:812
+#: classes/class.directory.php:52 classes/class.member.php:831
 msgid "Offered Listings"
 msgstr ""
 
@@ -1768,7 +1776,7 @@ msgstr ""
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
-#: classes/class.member.php:814
+#: classes/class.member.php:833
 msgid "Wanted Listings"
 msgstr ""
 
@@ -1795,7 +1803,7 @@ msgid ""
 "Your own listings are omitted below. They can be seen in <a>your profile</a>."
 msgstr ""
 
-#: listings_menu.php:4 includes/inc.config.php:211
+#: listings_menu.php:4 includes/inc.config.php:214
 msgid "Update Listings"
 msgstr ""
 
@@ -1811,7 +1819,7 @@ msgid ""
 msgstr ""
 
 #: listings.php:15 member_create.php:202 news.php:22 trades_pending.php:25
-#: classes/class.member.php:112
+#: classes/class.member.php:113
 msgid "here"
 msgstr ""
 
@@ -1835,7 +1843,7 @@ msgstr ""
 msgid "3 days"
 msgstr ""
 
-#: listings.php:22 classes/class.member.php:823
+#: listings.php:22 classes/class.member.php:842
 msgid "week"
 msgstr ""
 
@@ -1843,7 +1851,7 @@ msgstr ""
 msgid "2 weeks"
 msgstr ""
 
-#: listings.php:22 classes/class.member.php:825
+#: listings.php:22 classes/class.member.php:844
 msgid "month"
 msgstr ""
 
@@ -1903,27 +1911,27 @@ msgstr ""
 msgid "If you already have an account, please log in below"
 msgstr ""
 
-#: login_redirect.php:5 classes/class.member.php:202
-#: classes/class.member.php:217
+#: login_redirect.php:5 classes/class.member.php:203
+#: classes/class.member.php:218
 msgid "Login"
 msgstr ""
 
 #. Translation hint: Complete phrase is "If you forgot your password, you may _request a new one_." (link)
-#: login_redirect.php:5 classes/class.member.php:205
+#: login_redirect.php:5 classes/class.member.php:206
 msgid "If you forgot your password, you may"
 msgstr ""
 
-#: login_redirect.php:5 classes/class.member.php:205
+#: login_redirect.php:5 classes/class.member.php:206
 msgid "request a new one"
 msgstr ""
 
-#: login_redirect.php:6 classes/class.member.php:207
+#: login_redirect.php:6 classes/class.member.php:208
 msgid ""
 "If you don't have an account, you may <a href=/member_create.php>sign up "
 "online</a>."
 msgstr ""
 
-#: login_redirect.php:6 classes/class.member.php:207
+#: login_redirect.php:6 classes/class.member.php:208
 msgid "If you don't have an account, please contact us to join."
 msgstr ""
 
@@ -1985,7 +1993,7 @@ msgstr ""
 msgid "Choose Joint Member"
 msgstr ""
 
-#: member_contact_choose.php:9 classes/class.member.php:398
+#: member_contact_choose.php:9 classes/class.member.php:399
 msgid "Which Joint Member?"
 msgstr ""
 
@@ -2032,12 +2040,12 @@ msgid "Email Address"
 msgstr ""
 
 #: member_contact_create.php:44 member_contact_edit.php:46
-#: member_create.php:51 member_edit.php:55 classes/class.member.php:559
+#: member_create.php:51 member_edit.php:55 classes/class.member.php:560
 msgid "Primary Phone"
 msgstr ""
 
 #: member_contact_create.php:45 member_contact_edit.php:47
-#: member_create.php:52 member_edit.php:56 classes/class.member.php:561
+#: member_create.php:52 member_edit.php:56 classes/class.member.php:562
 msgid "Secondary Phone"
 msgstr ""
 
@@ -2053,28 +2061,28 @@ msgstr ""
 
 #: member_contact_create.php:49 member_contact_edit.php:51
 #: member_create.php:64 member_directory.php:34 member_directory.php:47
-#: member_edit.php:67 classes/class.member.php:565
+#: member_edit.php:67 classes/class.member.php:566
 msgid "Address Line 2"
 msgstr ""
 
 #: member_contact_create.php:50 member_contact_create.php:72
 #: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
 #: member_create.php:90 member_create.php:218 member_directory.php:48
-#: member_edit.php:68 member_edit.php:102 classes/class.member.php:569
+#: member_edit.php:68 member_edit.php:102 classes/class.member.php:570
 msgid "City"
 msgstr ""
 
 #: member_contact_create.php:60 member_contact_create.php:73
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
 #: member_create.php:91 member_directory.php:49 member_edit.php:78
-#: member_edit.php:103 classes/class.member.php:581
+#: member_edit.php:103 classes/class.member.php:582
 msgid "State"
 msgstr ""
 
 #: member_contact_create.php:61 member_contact_create.php:74
 #: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
 #: member_create.php:92 member_directory.php:50 member_edit.php:79
-#: member_edit.php:104 classes/class.member.php:573
+#: member_edit.php:104 classes/class.member.php:574
 msgid "Zip Code"
 msgstr ""
 
@@ -2443,15 +2451,15 @@ msgstr ""
 msgid "Confirm Payments"
 msgstr ""
 
-#: member_edit.php:87 classes/class.member.php:618
+#: member_edit.php:87 classes/class.member.php:619
 msgid "Age"
 msgstr ""
 
-#: member_edit.php:88 classes/class.member.php:620
+#: member_edit.php:88 classes/class.member.php:621
 msgid "Sex"
 msgstr ""
 
-#: member_edit.php:89 classes/class.member.php:622
+#: member_edit.php:89 classes/class.member.php:623
 msgid "About Me"
 msgstr ""
 
@@ -2460,7 +2468,7 @@ msgid "You cannot modify the member role of a higher level account"
 msgstr ""
 
 #: member_login.php:7 member_profile_all_in_one.php:7
-#: includes/inc.config.php:299
+#: includes/inc.config.php:302
 msgid "Welcome to "
 msgstr ""
 
@@ -2552,8 +2560,8 @@ msgstr ""
 msgid "Add a Joint Member to an Existing Account"
 msgstr ""
 
-#: member_profile.php:4 includes/inc.config.php:214
-#: includes/inc.config.php:256
+#: member_profile.php:4 includes/inc.config.php:217
+#: includes/inc.config.php:259
 msgid "Member Profile"
 msgstr ""
 
@@ -3564,100 +3572,100 @@ msgstr ""
 msgid "Female"
 msgstr ""
 
-#: includes/inc.config.php:198
+#: includes/inc.config.php:201
 msgid "Licensed under the"
 msgstr ""
 
-#: includes/inc.config.php:198
+#: includes/inc.config.php:201
 #, php-format
 msgid "with some %s exceptions"
 msgstr ""
 
-#: includes/inc.config.php:198
+#: includes/inc.config.php:201
 msgid "Local Exchange UK Ver."
 msgstr ""
 
-#: includes/inc.config.php:198
+#: includes/inc.config.php:201
 msgid "Credits"
 msgstr ""
 
-#: includes/inc.config.php:204
+#: includes/inc.config.php:207
 msgid "Home"
 msgstr ""
 
-#: includes/inc.config.php:207
+#: includes/inc.config.php:210
 msgid "Information"
 msgstr ""
 
-#: includes/inc.config.php:209
+#: includes/inc.config.php:212
 msgid "Offered"
 msgstr ""
 
-#: includes/inc.config.php:210
+#: includes/inc.config.php:213
 msgid "Wanted"
 msgstr ""
 
-#: includes/inc.config.php:213
+#: includes/inc.config.php:216
 msgid "Members List"
 msgstr ""
 
-#: includes/inc.config.php:256
+#: includes/inc.config.php:259
 msgid ""
 "The following listings are new or updated.<p>If you would prefer not to "
 "receive automatic email updates, or if you would like to change their "
 "frequency, you can do so at the"
 msgstr ""
 
-#: includes/inc.config.php:256
+#: includes/inc.config.php:259
 msgid "area of our website."
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Hello"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Due to inactivity, your"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "listings have been set to automatically expire"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "days from now"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "In order to keep the"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid ""
 "system up to date and working smoothly for all members, we have developed an "
 "automatic system to expire listings for members who haven't recorded "
 "exchanges or updated their listings during a period of"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid ""
 "days. We want the directory to be up to date, so that members do not "
 "encounter listings that are out of date or expired. This works to everyone's "
 "advantage"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid ""
 "We apologize for any inconvenience this may cause you and thank you for your "
 "participation. If you have any questions or comments, or are unsure how to "
 "best use the system, please reply to this email message or call us at"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "You have"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid ""
 "days to login to the system and reactivate listings that you would still "
 "like to have in the directory.  If you do not reactivate them during that "
@@ -3665,82 +3673,82 @@ msgid ""
 "still be stored in the system for another"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "days, during which time you can still edit and reactivate them."
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Instructions to reactivate listings"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Login to the website"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Go to Update Listings"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Select Edit Offered (or Wanted) Listings"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Select the listing to edit"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid ""
 "Uncheck the box next to 'Should this listing be set to automatically expire?'"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Press the Update button"
 msgstr ""
 
-#: includes/inc.config.php:282
+#: includes/inc.config.php:285
 msgid "Repeat steps 1-6 for all listings you wish to reactivate"
 msgstr ""
 
-#: includes/inc.config.php:297
+#: includes/inc.config.php:300
 msgid "Your"
 msgstr ""
 
-#: includes/inc.config.php:297
+#: includes/inc.config.php:300
 msgid "Account"
 msgstr ""
 
-#: includes/inc.config.php:298
+#: includes/inc.config.php:301
 msgid "Your password for"
 msgstr ""
 
-#: includes/inc.config.php:298
+#: includes/inc.config.php:301
 msgid ""
 "has been reset. If you did not request this reset, it is possible your "
 "account has been compromised, and you may want to contact the site "
 "administrator at"
 msgstr ""
 
-#: includes/inc.config.php:298
+#: includes/inc.config.php:301
 msgid ""
 "Your user id and new password are listed at the end of this message. You can "
 "change the automatically generated password by going to the Member Profile "
 "section after you login."
 msgstr ""
 
-#: includes/inc.config.php:300
+#: includes/inc.config.php:303
 msgid "Hello, and welcome to the"
 msgstr ""
 
-#: includes/inc.config.php:300
+#: includes/inc.config.php:303
 msgid "community!"
 msgstr ""
 
-#: includes/inc.config.php:300
+#: includes/inc.config.php:303
 msgid "A member account has been created for you at"
 msgstr ""
 
-#: includes/inc.config.php:300
+#: includes/inc.config.php:303
 msgid ""
 "Please login and create your Offered and Wanted Listings.  Your new user id "
 "and password are listed at the end of this message. You can change the "
@@ -3748,14 +3756,12 @@ msgid ""
 "after you login."
 msgstr ""
 
-#: includes/inc.config.php:300
+#: includes/inc.config.php:303
 msgid "Thank you for joining us."
 msgstr ""
 
-#. Translation hint: %s are link tags and must be left as is.
-#: includes/inc.feature-defaults.php:22
-#, php-format
-msgid "%sLearn more%s about this community"
+#: includes/inc.feature-defaults.php:21
+msgid "<a>Learn more</a> about this community!"
 msgstr ""
 
 #: classes/class.category.php:29 classes/class.category.php:49
@@ -3769,8 +3775,8 @@ msgstr ""
 #: classes/class.category.php:69 classes/class.category.php:83
 #: classes/class.category.php:129 classes/class.feedback.php:104
 #: classes/class.feedback.php:283 classes/class.listing.php:133
-#: classes/class.member.php:322 classes/class.member.php:345
-#: classes/class.member.php:381 classes/class.person.php:98
+#: classes/class.member.php:323 classes/class.member.php:346
+#: classes/class.member.php:382 classes/class.person.php:98
 #: classes/class.person.php:150 classes/class.person.php:170
 #: classes/class.state_address.php:75 classes/class.state_address.php:93
 #: classes/class.state_address.php:124 classes/class.uploads.php:89
@@ -3833,7 +3839,7 @@ msgstr ""
 msgid "Follow Up"
 msgstr ""
 
-#: classes/class.geocode.php:168
+#: classes/class.geocode.php:205
 msgid "Member with <a>karma</a>"
 msgstr ""
 
@@ -3851,221 +3857,221 @@ msgstr ""
 msgid "listing for"
 msgstr ""
 
-#: classes/class.listing.php:228
+#: classes/class.listing.php:231
 msgid "Could not inactivate listing"
 msgstr ""
 
-#: classes/class.listing.php:245
+#: classes/class.listing.php:248
 msgid "Could not expire listing"
 msgstr ""
 
-#: classes/class.listing.php:450 classes/class.member.php:811
-#: classes/class.member.php:813
+#: classes/class.listing.php:453 classes/class.member.php:830
+#: classes/class.member.php:832
 msgid "No listings found."
 msgstr ""
 
-#: classes/class.member.php:110
+#: classes/class.member.php:111
 msgid ""
 "Your account has been locked due to too many unsuccessful login attempts. "
 "You will need to contact us to have your account unlocked."
 msgstr ""
 
-#: classes/class.member.php:112
+#: classes/class.member.php:113
 msgid "Password or member id is incorrect.  Please try again, or go"
 msgstr ""
 
-#: classes/class.member.php:112
+#: classes/class.member.php:113
 msgid "to have your password reset"
 msgstr ""
 
-#: classes/class.member.php:175
+#: classes/class.member.php:176
 msgid "There was an error updating the password."
 msgstr ""
 
-#: classes/class.member.php:214
+#: classes/class.member.php:215
 msgid "Logout"
 msgstr ""
 
-#: classes/class.member.php:251
+#: classes/class.member.php:252
 msgid ""
 "I'm sorry, but the action attempted was unable to be processed because you "
 "don't have permissions"
 msgstr ""
 
-#: classes/class.member.php:251
+#: classes/class.member.php:252
 msgid "If you would like your access level increased, please"
 msgstr ""
 
-#: classes/class.member.php:251
+#: classes/class.member.php:252
 msgid "email the admin"
 msgstr ""
 
-#: classes/class.member.php:251
+#: classes/class.member.php:252
 msgid "and ask"
 msgstr ""
 
-#: classes/class.member.php:322
+#: classes/class.member.php:323
 msgid "There was an error accessing this member"
 msgstr ""
 
-#: classes/class.member.php:345
+#: classes/class.member.php:346
 msgid "There was an error accessing a person record for"
 msgstr ""
 
-#: classes/class.member.php:355
+#: classes/class.member.php:356
 msgid "Member Data"
 msgstr ""
 
-#: classes/class.member.php:358
+#: classes/class.member.php:359
 msgid "Person Data"
 msgstr ""
 
-#: classes/class.member.php:381
+#: classes/class.member.php:382
 msgid "Could not save changes to member"
 msgstr ""
 
-#: classes/class.member.php:406
+#: classes/class.member.php:407
 msgid "Invalid person id in URL.  This break-in attempt has been reported."
 msgstr ""
 
-#: classes/class.member.php:448 classes/class.member.php:563
+#: classes/class.member.php:449 classes/class.member.php:564
 msgid "Fax"
 msgstr ""
 
-#: classes/class.member.php:461 classes/class.member.php:598
+#: classes/class.member.php:462 classes/class.member.php:599
 msgid "'s Fax"
 msgstr ""
 
-#: classes/class.member.php:542
+#: classes/class.member.php:543
 msgid "Activity"
 msgstr ""
 
-#: classes/class.member.php:544
+#: classes/class.member.php:545
 msgid "No exchanges yet"
 msgstr ""
 
-#: classes/class.member.php:546
+#: classes/class.member.php:547
 msgid "exchanges total"
 msgstr ""
 
-#: classes/class.member.php:546
+#: classes/class.member.php:547
 msgid "for a sum of"
 msgstr ""
 
-#: classes/class.member.php:546
+#: classes/class.member.php:547
 msgid "last on"
 msgstr ""
 
-#: classes/class.member.php:550
+#: classes/class.member.php:551
 msgid "Feedback"
 msgstr ""
 
-#: classes/class.member.php:550
+#: classes/class.member.php:551
 msgid "total"
 msgstr ""
 
-#: classes/class.member.php:550
+#: classes/class.member.php:551
 msgid "negative"
 msgstr ""
 
-#: classes/class.member.php:550
+#: classes/class.member.php:551
 msgid "neutral"
 msgstr ""
 
-#: classes/class.member.php:554
+#: classes/class.member.php:555
 msgid "Joined"
 msgstr ""
 
-#: classes/class.member.php:590
+#: classes/class.member.php:591
 msgid "Joint Member"
 msgstr ""
 
-#: classes/class.member.php:592
+#: classes/class.member.php:593
 msgid "'s Email"
 msgstr ""
 
-#: classes/class.member.php:594
+#: classes/class.member.php:595
 msgid "'s Phone"
 msgstr ""
 
-#: classes/class.member.php:596
+#: classes/class.member.php:597
 msgid "'s Secondary Phone"
 msgstr ""
 
-#: classes/class.member.php:612
+#: classes/class.member.php:613
 msgid "PERSONAL INFORMATION"
 msgstr ""
 
-#: classes/class.member.php:614 classes/class.member.php:615
+#: classes/class.member.php:615 classes/class.member.php:616
 msgid "Unspecified"
 msgstr ""
 
-#: classes/class.member.php:616
+#: classes/class.member.php:617
 msgid "No description supplied"
 msgstr ""
 
-#: classes/class.member.php:780
+#: classes/class.member.php:799
 msgid "matching members"
 msgstr ""
 
-#: classes/class.member.php:789
+#: classes/class.member.php:808
 msgid "Member search"
 msgstr ""
 
-#: classes/class.member.php:821
+#: classes/class.member.php:840
 msgid "day"
 msgstr ""
 
 #. Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
-#: classes/class.member.php:830
+#: classes/class.member.php:849
 msgid "New and updated listings during the last"
 msgstr ""
 
-#: classes/class.member.php:861
+#: classes/class.member.php:880
 msgid "Important information about your"
 msgstr ""
 
-#: classes/class.member.php:861
+#: classes/class.member.php:880
 msgid "account"
 msgstr ""
 
-#: classes/class.member.php:865
+#: classes/class.member.php:884
 msgid ""
 "***NOTE: This member does not have an email address in the system, so they "
 "will need to be notified by phone that their listings have been inactivated."
 msgstr ""
 
-#: classes/class.member.php:869
+#: classes/class.member.php:888
 msgid "listings expired for"
 msgstr ""
 
-#: classes/class.member.php:869
+#: classes/class.member.php:888
 msgid ""
 "All of this member's listings were automatically expired due to inactivity.  "
 "To turn off this feature, see inc.config.php."
 msgstr ""
 
-#: classes/class.member.php:919
+#: classes/class.member.php:938
 msgid "Could not query database for balance information."
 msgstr ""
 
-#: classes/class.member.php:960
+#: classes/class.member.php:979
 msgid "Error saving Income Share."
 msgstr ""
 
-#: classes/class.member.php:962
+#: classes/class.member.php:981
 msgid "Income Share saved successfully."
 msgstr ""
 
-#: classes/class.member.php:971
+#: classes/class.member.php:990
 msgid "No Income Share to delete"
 msgstr ""
 
-#: classes/class.member.php:979
+#: classes/class.member.php:998
 msgid "Error deleting income Share."
 msgstr ""
 
-#: classes/class.member.php:981
+#: classes/class.member.php:1000
 msgid "Income Share deleted successfully."
 msgstr ""
 
