@@ -20,6 +20,7 @@ $features = array(
 	'FAVICON'                 => "localx_logo.png",
 // Translation hint: %s are link tags and must be left as is.
 	'HOME_PAGE_MESSAGE'       => sprintf(_("%sLearn more%s about this community"), "<a href=info/more.php>", "</a>"),
+	'SPAM_WARNING'            => false,
 );
 
 foreach ($features as $feature => $default) {

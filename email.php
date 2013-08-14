@@ -15,6 +15,12 @@ include("includes/inc.forms.php");
 // First, we define the form
 //
 
+if (SPAM_WARNING)
+	// Temporary warning while we figure out spam problems
+	$form->addElement("html", sprintf("<p><strong>%s</strong></p>",
+		_("Warning: Currently, many e-mail messages sent using this form are being categorized as spam.
+	While we investigate solutions to this problem, please consider sending e-mail using your usual e-mail program instead.")));
+
 $form->addElement("hidden", "email_to", $_REQUEST["email_to"]);
 $form->addElement("hidden", "member_to", $_REQUEST["member_to"]);
 $member_to = new cMember;

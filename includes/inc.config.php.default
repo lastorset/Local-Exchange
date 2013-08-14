@@ -1,4 +1,4 @@
-<?php
+<?php // vim:set syntax=php:
 /* v1.0 note: a lot of these settings are now stored in MySQL and are configurable from the admin menu */
 
 if (!isset($global) && $running_upgrade_script!=true)
@@ -149,6 +149,9 @@ define("GAME_MECHANICS", true);
 
 // When user has fewer karma than this, a "What's this?" hint is displayed. Set to true or false to always or never explain.
 define("EXPLAIN_KARMA", 10);
+
+// Show spam warning in e-mail form? This can be enabled if e-mail from Local Exchange is being routinely marked as spam.
+define("SPAM_WARNING", false);
 
 /**************************************************************/
 /******************** SITE CUSTOMIZATION **********************/
