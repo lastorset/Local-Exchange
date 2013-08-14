@@ -180,7 +180,7 @@ define ("HOME_PIC", "localx_home.png");
 
 // Additional message on the home page. You may want to use custom translations for this.
 // Translation hint: %s are link tags and must be left as is.
-define ("HOME_PAGE_MESSAGE", sprintf(_("%sLearn more%s about this community"), "<a href=info/more.php>", "</a>"));
+define ("HOME_PAGE_MESSAGE", replace_tags(translate("<a>Learn more</a> about this community!"), array('a' => "a href=info/more.php")));
 
 // What content should be in the site header and footer?
 define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1>". SITE_TOP_TITLE ."</h1><div>". SITE_TOP_TAGLINE ."</div></td></tr>");

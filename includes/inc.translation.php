@@ -216,8 +216,8 @@ function translate($string) {
  *
  * No error is given if the given tags don't exist in the input string.
  *
- * @param string the string whose tags to replace.
- * @param tags a dictionary (associative array) from placeholder tags to actual
+ * @param string string the string whose tags to replace.
+ * @param tags string[] a dictionary (associative array) from placeholder tags to actual
  *             tags with attributes. Each placeholder tag should be unique, and
  *             they don't have to have the name of a real tag.
  */

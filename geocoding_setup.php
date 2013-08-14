@@ -161,7 +161,7 @@ else if ($missing_count === 0) {
 	printf(_('Although you have enabled geocoding for the future, %d existing members also need to be geocoded.'), $missing_count);
 	?>
 	<noscript><p><?= // Translation hint: %s are HTML tags making a link.
-	sprintf(_("You do not have JavaScript enabled. Please %s run the script manually%s (takes a long time and may be interrupted by PHP)."), "<a href=ajax/geocode.php>", "</a>") ?></p></noscript>
+	replace_tags(_("You do not have JavaScript enabled. Please <a>run the script manually</a> (takes a long time and may be interrupted by PHP)."), array('a' => "a href=ajax/geocode.php")) ?></p></noscript>
 	<p><button onclick="startGeocoding(); this.parentNode.removeChild(this);"><?= _("Start geocoding") ?></button>
 
 	<p id=status style="background-color: lightgoldenrodyellow; visibility: hidden;"><?= _("Not started") ?></p>

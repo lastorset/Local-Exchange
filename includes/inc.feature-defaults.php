@@ -18,8 +18,7 @@ $features = array(
 	'GAME_MECHANICS'          => false,
 	'EXPLAIN_KARMA'           => 10,
 	'FAVICON'                 => "localx_logo.png",
-// Translation hint: %s are link tags and must be left as is.
-	'HOME_PAGE_MESSAGE'       => sprintf(_("%sLearn more%s about this community"), "<a href=info/more.php>", "</a>"),
+	'HOME_PAGE_MESSAGE'       => replace_tags(_("<a>Learn more</a> about this community!"), array('a' => "a href=info/more.php")),
 	'SPAM_WARNING'            => false,
 );
 
