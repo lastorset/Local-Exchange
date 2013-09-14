@@ -22,7 +22,13 @@ $member_logged_in = $member->member_id;
 
 $pending = new cTradesPending($member_logged_in);
 
-$list = "<em>"._("NOTE that only transactions currently pending approval from one member or the other are displayed here.")." "._("To view your complete Exchange History please click")." <a href=trade_history.php?mode=self>"._("here")."</a>.</em><p><A HREF=trades_pending.php><FONT SIZE=2>"._("Summary")."</FONT></A> | <A HREF=trades_pending.php?action=incoming><FONT SIZE=2>"._("Payments to Confirm")." (".$pending->numToConfirm.")</FONT></A>";
+$list = "<em>".
+		replace_tags(
+			_("NOTE that only transactions currently pending approval from one member or the other are displayed here. The rest may be found in your complete <a>exchange history</a>."),
+			array("a" => "a href=trade_history.php?mode=self")).
+			"</em><p>
+			<A HREF=trades_pending.php>"._("Summary")."</A> |
+			<A HREF=trades_pending.php?action=incoming>"._("Payments to Confirm")." (".$pending->numToConfirm.")</A>";
 
 
 if (MEMBERS_CAN_INVOICE==true) // No point displaying invoice stats if invoicing has been disabled
@@ -31,7 +37,7 @@ if (MEMBERS_CAN_INVOICE==true) // No point displaying invoice stats if invoicing
 $list .= " | <A HREF=trades_pending.php?action=payments_sent><FONT SIZE=2>"._("Sent Payments")." (".$pending->numToHaveConfirmed.")</FONT></A>";
 
 if (MEMBERS_CAN_INVOICE==true) // ditto
-	$list .= "| <A HREF=trades_pending.php?action=invoices_sent><FONT SIZE=2>"._("Sent Invoices")." (".$pending->numToBePayed.")</FONT></A><p>";
+	$list .= " | <A HREF=trades_pending.php?action=invoices_sent><FONT SIZE=2>"._("Sent Invoices")." (".$pending->numToBePayed.")</FONT></A><p>";
 
 
 function initTradeTable() {
@@ -68,9 +74,11 @@ function displayTrade($t,$typ) {
 				
 				if ($t["member_to_decision"]==3) {
 					$bgcolor = 'red';
-					$actionTxt = "<font size=2 color=\"".$fcolor."\">".$t["member_id_to"]." "._("has rejected this transaction").". <br>
-					 <a href=trades_pending.php?action=resend&tid=".$t["id"].">[ "._("Resend Payment")." ]</a> | 
-					<a href=trades_pending.php?action=accept_rejection&tid=".$t["id"].">[ "._("Remove this Notice")." ]</a></font>";
+					$actionTxt = "<font size=2 color=\"".$fcolor."\">".
+						sprintf(_("%s has rejected this transaction"), $t["member_id_to"]).
+						". <br>
+						<a href=trades_pending.php?action=resend&tid=".$t["id"].">[ "._("Resend Payment")." ]</a> |
+						<a href=trades_pending.php?action=accept_rejection&tid=".$t["id"].">[ "._("Remove this Notice")." ]</a></font>";
 				}
 				else
 					$actionTxt = "<font size=2 color=\"".$fcolor."\">"._("Awaiting Confirmation by")." ".$t["member_id_to"]."...</font>";
@@ -283,7 +291,7 @@ switch($_REQUEST["action"]) {
 			}
 			
 			if ($cDB->Query($q))
-				$list .= "Member ".$row["member_id_from"]." "._("has been informed that you have rejected this transaction").".";
+				$list .= sprintf(_("Member %s has been informed that you have rejected this transaction."), $row["member_id_from"]);
 			else
 				$list .= "<em>"._("Error updating the database").".</em>";
 		}
@@ -371,7 +379,8 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have accepted a payment of")." ".$row["amount"]." ".strtolower($site_settings->getUnitString())." from ".$row["member_id_from"]."</em>";
+								// Translation hint: %1$s is the amount; %2$s is the currency; %3$s is the other member's ID.
+								$list .= "<em>". sprintf(_('You have accepted a payment of %1$s %2$s from %3$s'), $row["amount"], strtolower($site_settings->getUnitString()), $row["member_id_from"]) ."</em>";
 						}
 					}
 				}
@@ -403,7 +412,8 @@ switch($_REQUEST["action"]) {
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
-								$list .= "<em>"._("You have sent a payment of")." ".$row["amount"]." ".strtolower($site_settings->getUnitString())." to ".$row["member_id_from"]."</em>";
+								// Translation hint: %1$s is the amount; %2$s is the currency; %3$s is the other member's ID.
+								$list .= "<em>".sprintf(_('You have sent a payment of %1$s %2$s to %3$s'), $row["amount"], strtolower($site_settings->getUnitString()), $row["member_id_from"])."</em>";
 						}
 					}
 				}
@@ -536,14 +546,14 @@ switch($_REQUEST["action"]) {
 	default:
 		
 		if (MEMBERS_CAN_INVOICE==true)
-			$list .= _("I need to pay")." ".$pending->numToPay." "._("Invoices")."<br>";
+			$list .= sprintf(_("I need to pay %d invoices"), $pending->numToPay) ."<br>";
 		
-		$list .= _("I need to confirm")." ".$pending->numToConfirm." "._("Incoming Payments")."<p>";
+		$list .= sprintf(_("I need to confirm %d incoming payments"), $pending->numToConfirm) ."<p>";
 		
 		if (MEMBERS_CAN_INVOICE==true)
-			$list .= _("I am awaiting payment for")." ".$pending->numToBePayed." "._("Invoices")."<br>";
+			$list .= sprintf(_("I am awaiting payment for %d invoices"), $pending->numToBePayed) ."<br>";
 	
-		$list .= _("I am awaiting confirmation of")." ".$pending->numToHaveConfirmed." "._("Outgoing Payments")."<p>";
+		$list .= sprintf(_("I am awaiting confirmation of %d outgoing payments"), $pending->numToHaveConfirmed) ."<p>";
 	
 break;
 }
