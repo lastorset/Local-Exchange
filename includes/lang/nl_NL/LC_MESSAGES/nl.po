@@ -1,0 +1,4004 @@
+# Dutch translations for PACKAGE package.
+# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Leif Arne Storset <douwebeerda@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-14 14:43+0200\n"
+"PO-Revision-Date: 2013-10-13 10:39+0200\n"
+"Last-Translator: Leif Arne Storset <douwebeerda@gmail.com>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin_menu.php:4
+msgid "Administration Menu"
+msgstr ""
+
+#: admin_menu.php:14
+msgid "Current Balance is"
+msgstr ""
+
+#: admin_menu.php:20
+msgid "Accounts"
+msgstr ""
+
+#: admin_menu.php:21 member_profile_all_in_one.php:35
+msgid "Create a New Member Account"
+msgstr ""
+
+#: admin_menu.php:22 member_profile_all_in_one.php:36
+msgid "Edit a Member Account"
+msgstr ""
+
+#: admin_menu.php:24
+msgid "Edit a Member Photo"
+msgstr ""
+
+#: admin_menu.php:27
+msgid "Inactivate/Re-activate a Member Account"
+msgstr ""
+
+#: admin_menu.php:29
+msgid "Add joint member to existing account"
+msgstr ""
+
+#: admin_menu.php:30 member_profile.php:15
+msgid "Edit/Delete a Joint Member"
+msgstr ""
+
+#: admin_menu.php:33 member_unlock.php:6
+msgid "Unlock Account and Reset Password"
+msgstr ""
+
+#: admin_menu.php:38
+msgid "Override Member Account Balance"
+msgstr ""
+
+#: admin_menu.php:41 manage_restrictions.php:11
+msgid "Manage Account Restrictions"
+msgstr ""
+
+#: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
+#: includes/inc.config.php:215
+msgid "Exchanges"
+msgstr ""
+
+#: admin_menu.php:48
+msgid "Record an Exchange for a Member"
+msgstr ""
+
+#: admin_menu.php:49 member_profile_all_in_one.php:41
+msgid "Reverse an Exchange that was Made in Error"
+msgstr ""
+
+#: admin_menu.php:50
+msgid "Record Feedback for a Member"
+msgstr ""
+
+#: admin_menu.php:54
+msgid "Listings"
+msgstr ""
+
+#: admin_menu.php:56
+msgid "Offers"
+msgstr ""
+
+#: admin_menu.php:57
+msgid "Create a New Offer Listing for a Member"
+msgstr ""
+
+#: admin_menu.php:58
+msgid "Edit a Member's Offered Listing"
+msgstr ""
+
+#: admin_menu.php:59
+msgid "Delete a Member's Offered Listing"
+msgstr ""
+
+#: admin_menu.php:61
+msgid "Wants"
+msgstr ""
+
+#: admin_menu.php:62
+msgid "Create a New Want Listing for a Member"
+msgstr ""
+
+#: admin_menu.php:63
+msgid "Edit a Member's Wanted Listing"
+msgstr ""
+
+#: admin_menu.php:64
+msgid "Delete a Member's Wanted Listing"
+msgstr ""
+
+#: admin_menu.php:66 create_db.php:153 listings_menu.php:18
+msgid "Miscellaneous"
+msgstr ""
+
+#: admin_menu.php:67
+msgid "Member Going on Holiday"
+msgstr ""
+
+#: admin_menu.php:69 category_create.php:6
+msgid "Create a New Listing Category"
+msgstr ""
+
+#: admin_menu.php:70
+msgid "Edit/Delete Listing Category"
+msgstr ""
+
+#: admin_menu.php:71 state_create.php:6
+msgid "Create a New State"
+msgstr ""
+
+#: admin_menu.php:72
+msgid "Edit State"
+msgstr ""
+
+#: admin_menu.php:77 create_info.php:18 do_info_edit.php:21
+msgid "Content"
+msgstr ""
+
+#: admin_menu.php:78
+msgid "Information Pages"
+msgstr ""
+
+#: admin_menu.php:79 create_info.php:11
+msgid "Create a New Information Page"
+msgstr ""
+
+#: admin_menu.php:80
+msgid "Edit Info Pages"
+msgstr ""
+
+#: admin_menu.php:81
+msgid "Delete an Info Page"
+msgstr ""
+
+#: admin_menu.php:82 info_permissions.php:11
+msgid "Edit Information Page Permissions"
+msgstr ""
+
+#: admin_menu.php:83
+msgid "See Info Page URL 's"
+msgstr ""
+
+#: admin_menu.php:85 news.php:7 includes/inc.config.php:211
+msgid "News and Events"
+msgstr ""
+
+#: admin_menu.php:86 news_create.php:8
+msgid "Create a News Item"
+msgstr ""
+
+#: admin_menu.php:87
+msgid "Edit a News Item"
+msgstr ""
+
+#: admin_menu.php:88 newsletter_upload.php:8
+msgid "Upload a Newsletter"
+msgstr ""
+
+#: admin_menu.php:89 newsletter_delete.php:9
+msgid "Delete Newsletters"
+msgstr ""
+
+#: admin_menu.php:95
+msgid "Admin Fees"
+msgstr ""
+
+#: admin_menu.php:106 take_monthly_fee.php:15
+msgid "Take Monthly Fee"
+msgstr ""
+
+#: admin_menu.php:108
+msgid "Refund Monthly Fee"
+msgstr ""
+
+#: admin_menu.php:114
+msgid "Take One-Off Service Charge"
+msgstr ""
+
+#: admin_menu.php:116 refund_service_charge.php:5
+msgid "Refund Service Charge"
+msgstr ""
+
+#: admin_menu.php:120
+msgid "System & Reporting"
+msgstr ""
+
+#: admin_menu.php:122 settings.php:4
+msgid "Site Settings"
+msgstr ""
+
+#. Translation hint: Link text
+#: admin_menu.php:124
+msgid "Set Up Geocoding"
+msgstr ""
+
+#: admin_menu.php:124
+msgid "New!"
+msgstr ""
+
+#: admin_menu.php:125
+msgid "MySQL Backup"
+msgstr ""
+
+#: admin_menu.php:127
+msgid "Send an Email to All Members"
+msgstr ""
+
+#: admin_menu.php:129
+msgid "View Members Not Yet Logged In"
+msgstr ""
+
+#: balance_to_edit.php:11 feedback.php:69
+msgid "Choose Member whose Balance you wish to Edit"
+msgstr ""
+
+#: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
+#: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
+#: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:541
+msgid "Member"
+msgstr ""
+
+#: balance_to_edit.php:19
+msgid "Edit Balance"
+msgstr ""
+
+#: category_choose.php:6 listing_create.php:71 trade.php:66
+msgid "Choose Category"
+msgstr ""
+
+#: category_choose.php:20
+msgid "Which Category?"
+msgstr ""
+
+#: category_choose.php:23 do_info_edit.php:13 edit_info.php:21
+#: member_contact_choose.php:12 member_contact_to_edit.php:19
+#: member_to_edit.php:16 news_edit.php:13 news_to_edit.php:15
+#: state_choose.php:22
+msgid "Edit"
+msgstr ""
+
+#: category_choose.php:24 delete_info.php:36 listing_delete.php:45
+#: member_contact_choose.php:13 member_contact_delete.php:22
+#: member_contact_to_edit.php:20 newsletter_delete.php:22
+msgid "Delete"
+msgstr ""
+
+#: category_choose.php:49
+msgid "This category still has listings in it.  You will need to move these listings to new categories or delete them before you can delete this category.  Note that the listings could be temporarily inactive or expired, in which case they will not show in the offered/wanted lists."
+msgstr ""
+
+#: category_choose.php:51
+msgid "Listings in this category:"
+msgstr ""
+
+#: category_choose.php:55
+msgid "OFFERED"
+msgstr ""
+
+#: category_choose.php:60
+msgid "WANTED"
+msgstr ""
+
+#: category_choose.php:63
+msgid "The category has been deleted."
+msgstr ""
+
+#: category_create.php:16 category_edit.php:20
+msgid "Category Description"
+msgstr ""
+
+#: category_create.php:19 category_edit.php:23 create_info.php:21
+#: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
+#: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
+#: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
+#: timeframe_choose.php:19 trade.php:57 trade.php:223
+msgid "Submit"
+msgstr ""
+
+#: category_create.php:24
+msgid "Enter the category description"
+msgstr ""
+
+#: category_create.php:42
+msgid "The category has been created."
+msgstr ""
+
+#: category_create.php:44
+msgid "Could not save the category."
+msgstr ""
+
+#: category_create.php:44 category_edit.php:48 email.php:89 feedback.php:85
+#: listing_create.php:123 listing_edit.php:177 member_contact_create.php:153
+#: member_contact_edit.php:168 member_create.php:223 member_edit.php:261
+#: member_status_change.php:61 password_change.php:53 state_create.php:44
+#: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:92
+#: classes/class.member.php:176 classes/class.member.php:938
+#: classes/class.trade.php:94 classes/class.uploads.php:71
+msgid "Please try again later."
+msgstr ""
+
+#: category_edit.php:6
+msgid "Edit Listing Category"
+msgstr ""
+
+#: category_edit.php:28
+msgid "Category description cannot be blank"
+msgstr ""
+
+#: category_edit.php:46
+msgid "The category has been updated."
+msgstr ""
+
+#: category_edit.php:48
+msgid "Could not save changes to the category."
+msgstr ""
+
+#: contact_all.php:4
+msgid "Email all Members"
+msgstr ""
+
+#: contact_all.php:13
+msgid "This email will go out to <i>ALL</i> members of"
+msgstr ""
+
+#: contact_all.php:17 contact.php:17 email.php:40
+msgid "Your Message"
+msgstr ""
+
+#: contact_all.php:21 contact.php:23 email.php:43
+msgid "Send"
+msgstr ""
+
+#: contact_all.php:26
+msgid "Enter a subject"
+msgstr ""
+
+#: contact_all.php:27 email.php:48
+msgid "Enter your message"
+msgstr ""
+
+#: contact_all.php:60
+msgid "Your message has been sent to all members."
+msgstr ""
+
+#: contact_all.php:62
+msgid "There were errors sending the email to the following email addresses"
+msgstr ""
+
+#: contact.php:4 includes/inc.config.php:218
+msgid "Contact Us"
+msgstr ""
+
+#: contact.php:11
+msgid "For more information on the"
+msgstr ""
+
+#: contact.php:11
+msgid "or to find out how to become a member, please fill out our information request. Someone will get back to you soon. Please check our"
+msgstr ""
+
+#: contact.php:11
+msgid "Events"
+msgstr ""
+
+#: contact.php:11
+msgid "page for our next New Member's Meeting if you would like to join our group!"
+msgstr ""
+
+#: contact.php:13
+msgid "Name"
+msgstr ""
+
+#: contact.php:14 classes/class.member.php:558
+msgid "Email"
+msgstr ""
+
+#: contact.php:15 contact.php:46 member_directory.php:46
+msgid "Phone"
+msgstr ""
+
+#: contact.php:19
+msgid "(Select One)"
+msgstr ""
+
+#: contact.php:19
+msgid "Newspaper"
+msgstr ""
+
+#: contact.php:19
+msgid "Radio"
+msgstr ""
+
+#: contact.php:19
+msgid "Search Engine"
+msgstr ""
+
+#: contact.php:19
+msgid "Friend"
+msgstr ""
+
+#: contact.php:19
+msgid "Local Business"
+msgstr ""
+
+#: contact.php:19
+msgid "Article"
+msgstr ""
+
+#: contact.php:19
+msgid "Other"
+msgstr ""
+
+#: contact.php:20
+msgid "How did you hear about us?"
+msgstr ""
+
+#: contact.php:28
+msgid "Enter your name"
+msgstr ""
+
+#: contact.php:29
+msgid "Enter your email address"
+msgstr ""
+
+#: contact.php:30
+msgid "Enter your phone number"
+msgstr ""
+
+#: contact.php:46
+msgid "Contact Form"
+msgstr ""
+
+#: contact.php:46 trades_pending.php:45 classes/class.feedback.php:198
+#: classes/class.trade.php:277 classes/class.trade.php:324
+msgid "From"
+msgstr ""
+
+#: contact.php:46
+msgid "Heard From"
+msgstr ""
+
+#: contact.php:49
+msgid "Thank you."
+msgstr ""
+
+#: contact.php:51
+msgid "There was a problem sending the email.  Are your sure you entered your email address  correctly?"
+msgstr ""
+
+#: create_db.php:131
+msgid "Arts & Crafts"
+msgstr ""
+
+#: create_db.php:133
+msgid "Building Services"
+msgstr ""
+
+#: create_db.php:135
+msgid "Business & Administration"
+msgstr ""
+
+#: create_db.php:137
+msgid "Children & Childcare"
+msgstr ""
+
+#: create_db.php:139
+msgid "Computers"
+msgstr ""
+
+#: create_db.php:141
+msgid "Counseling & Therapy"
+msgstr ""
+
+#: create_db.php:143
+msgid "Food"
+msgstr ""
+
+#: create_db.php:145
+msgid "Gardening & Yard Work"
+msgstr ""
+
+#: create_db.php:147
+msgid "Goods"
+msgstr ""
+
+#: create_db.php:149
+msgid "Health & Personal"
+msgstr ""
+
+#: create_db.php:151 member_create.php:23 member_edit.php:26
+msgid "Household"
+msgstr ""
+
+#: create_db.php:155
+msgid "Music & Entertainment"
+msgstr ""
+
+#: create_db.php:157
+msgid "Pets"
+msgstr ""
+
+#: create_db.php:159
+msgid "Sports & Recreation"
+msgstr ""
+
+#: create_db.php:161
+msgid "Teaching"
+msgstr ""
+
+#: create_db.php:163
+msgid "Transportation"
+msgstr ""
+
+#: create_db.php:165
+msgid "Freebies"
+msgstr ""
+
+#: create_db.php:244
+msgid "&quot;Account Restriction Lifted&quot; Email"
+msgstr ""
+
+#: create_db.php:244
+msgid "Restrictions on your account have been lifted."
+msgstr ""
+
+#: create_db.php:244
+msgid "Define email that is sent out when restrictions are lifted on an account."
+msgstr ""
+
+#: create_db.php:246
+msgid "&quot;Account Restricted&quot; Email"
+msgstr ""
+
+#: create_db.php:246
+msgid "Dear Member<br /><br />We have been reviewing members balances as we are concerned to ensure that trading goes back and forth on an equitable basis so that members are able to keep their accounts close to zero. We recognise that situations sometimes occur that lead to things getting out of balance. Therefore to assist you, we have restricted expenditure on your account for the time being. If have any queries about this, or if we can assist you in any particular way, please let us know, and we will review the situation in due course. The LETS Administrator "
+msgstr ""
+
+#: create_db.php:246
+msgid "Define email that is sent out when restrictions are imposed on an account."
+msgstr ""
+
+#: create_db.php:248
+msgid "Display Member Balance"
+msgstr ""
+
+#: create_db.php:248
+msgid "Do you want to display member balances in the Members List? (Balances are always visible to Admins and Committee members regardless of what is set here.)"
+msgstr ""
+
+#: create_db.php:250
+msgid "Enable Take Service Charge"
+msgstr ""
+
+#: create_db.php:250
+msgid "Do you want the option of taking a service charge from members as and when?"
+msgstr ""
+
+#: create_db.php:252
+msgid "Show Inactive Members in Members List"
+msgstr ""
+
+#: create_db.php:252
+msgid "Do you want to display Inactive members in the Member List?"
+msgstr ""
+
+#: create_db.php:254
+msgid "Show Rate on Listings"
+msgstr ""
+
+#: create_db.php:254
+msgid "Do you want to display the Rate alongside the offers/wants in the main listings?"
+msgstr ""
+
+#: create_db.php:256
+msgid "Show Postcode on Listings"
+msgstr ""
+
+#: create_db.php:256
+msgid "Do you want to display the PostCode alongside the offers/wants in the main listings?"
+msgstr ""
+
+#: create_db.php:258
+msgid "Postcode Length (in chars)"
+msgstr ""
+
+#: create_db.php:258
+msgid "If you have elected to display the postcode on offers/wants listings, how much of the PostCode do you want to show? (the number you enter will be the number of characters displayed, so for eg if you just want to show the first 3 characters of the postcode then put 3."
+msgstr ""
+
+#: create_db.php:260
+msgid "Enable Balance Override"
+msgstr ""
+
+#: create_db.php:260
+msgid "Do you want admins to have the option to override Balances on a per member basis? This can be useful during the initial site set-up for inputting existing balances. Link will appear in admin panel if set to TRUE.  Use with CAUTION to avoid the database going out of balance"
+msgstr ""
+
+#: create_db.php:262
+msgid "Enable Member-to-Member Invoicing"
+msgstr ""
+
+#: create_db.php:262
+msgid "Do you want to allow members to invoice one-another via the site? (The recipient is always given the option to confirm/reject payment of the invoice)"
+msgstr ""
+
+#: create_db.php:264
+msgid "Allow Members to Upload Images"
+msgstr ""
+
+#: create_db.php:264
+msgid "Do you want to allow members to upload an image of themselves, to be displayed with their personal profile?"
+msgstr ""
+
+#: create_db.php:266
+msgid "Enable Social Networking Fields"
+msgstr ""
+
+#: create_db.php:266
+msgid "Do you want to enable the Social Networking profile fields (Age, Sex, etc)?"
+msgstr ""
+
+#: create_db.php:268
+msgid "Out Of Balance Behaviour"
+msgstr ""
+
+#: create_db.php:268
+msgid ""
+"If, whilst processing a trade, the database is found to be out of balance, what should the system do?\n"
+"\n"
+"FATAL = Aborts the trade and informs the user why.\n"
+"\n"
+"SILENT = Continues with trade, displays no notifications whatsoever (NOTE: you can still set the option below to have an email notification sent to the admin)"
+msgstr ""
+
+#: create_db.php:274
+msgid "Email Admin on Out Of Balance"
+msgstr ""
+
+#: create_db.php:274
+msgid "Should the system send the Admin an email when the database is found to be out of balance?"
+msgstr ""
+
+#: create_db.php:276
+msgid "Email From Address"
+msgstr ""
+
+#: create_db.php:276
+msgid "reply@my-domain.org"
+msgstr ""
+
+#: create_db.php:276
+msgid "Email sent from this site will show as coming from this address"
+msgstr ""
+
+#: create_db.php:278
+msgid "Use Rates Fields"
+msgstr ""
+
+#: create_db.php:278
+msgid "If turned on, listings will include a &quot;Rate&quot; field"
+msgstr ""
+
+#: create_db.php:280
+msgid "Enable Monthly Fee"
+msgstr ""
+
+#: create_db.php:280
+msgid "Do you want to enable Monthly Fees"
+msgstr ""
+
+#: create_db.php:282
+msgid "Monthly Fee Amount"
+msgstr ""
+
+#: create_db.php:282
+msgid "How much should the Monthly Fee be?"
+msgstr ""
+
+#: create_db.php:284
+msgid "Send Listing Updates via Email"
+msgstr ""
+
+#: create_db.php:284
+msgid "Should users receive automatic updates for new and modified listings?"
+msgstr ""
+
+#: create_db.php:286
+msgid "Default Email Listings Update Interval"
+msgstr ""
+
+#: create_db.php:286
+msgid "If automatic updates are sent, this is the default interval."
+msgstr ""
+
+#: create_db.php:288
+msgid "Allow Income Sharing"
+msgstr ""
+
+#: create_db.php:288
+msgid "Do you want to allow members to share a percentage of any income they generate with another account of their choosing? The member can specify the exact percentage they wish to donate."
+msgstr ""
+
+#: create_db.php:290
+msgid "Message Displayed to Leecher who tries to trade"
+msgstr ""
+
+#: create_db.php:290
+msgid "Restrictions have been imposed on your account which prevent you from trading outwards, Please contact the administrator for more information."
+msgstr ""
+
+#: create_db.php:290
+msgid "Leecher sees this notice when trying to send money."
+msgstr ""
+
+#: create_db.php:292
+msgid "Show monthly fees and service charges in global exchange view"
+msgstr ""
+
+#: create_db.php:292
+msgid "Do you want to show monthly fees and service charges in the global exchange view? (Note: individual members will still be able to see this in their own personal exchange history)."
+msgstr ""
+
+#: create_db.php:314
+msgid "Sample: Downtown"
+msgstr ""
+
+#: create_db.php:315
+msgid "Sample: North"
+msgstr ""
+
+#: create_db.php:316
+msgid "Sample: East"
+msgstr ""
+
+#: create_db.php:317
+msgid "Sample: South"
+msgstr ""
+
+#: create_db.php:318
+msgid "Sample: West"
+msgstr ""
+
+#: create_db.php:330
+msgid "Database has been created. Click <A HREF=member_login.php>here</A> to login."
+msgstr ""
+
+#: create_info.php:17 do_info_edit.php:20 listing_create.php:44
+#: listing_edit.php:54 news_create.php:17 news_edit.php:22
+msgid "Title"
+msgstr ""
+
+#: create_info.php:26 do_info_edit.php:29 listing_create.php:45
+#: listing_edit.php:55 news_create.php:32 news_edit.php:37
+msgid "Enter a title"
+msgstr ""
+
+#: create_info.php:27 do_info_edit.php:30
+msgid "Enter some body text"
+msgstr ""
+
+#: create_info.php:49
+msgid "New information page added."
+msgstr ""
+
+#: create_info.php:51
+msgid "There was a problem adding the new page."
+msgstr ""
+
+#: delete_info.php:5
+msgid "Choose Info Page to Delete"
+msgstr ""
+
+#: delete_info.php:16
+msgid "Page deleted."
+msgstr ""
+
+#: delete_info.php:18
+msgid "There was a problem deleting the page."
+msgstr ""
+
+#: delete_info.php:34 edit_info.php:19
+msgid "Which Info Page?"
+msgstr ""
+
+#: delete_info.php:39 edit_info.php:24
+msgid "There are no current Info Pages."
+msgstr ""
+
+#: delete_info.php:55
+msgid "Really Delete this page (ID#"
+msgstr ""
+
+#: delete_info.php:55 email.php:30 member_contact_create.php:42
+#: member_contact_edit.php:44 pages.php:13 settings.php:93
+msgid "Yes"
+msgstr ""
+
+#: delete_info.php:55 email.php:30 member_contact_create.php:42
+#: member_contact_edit.php:44 pages.php:13 settings.php:95
+msgid "No"
+msgstr ""
+
+#: delete_info.php:55 pages.php:13
+msgid "(go back)"
+msgstr ""
+
+#: directory.php:6
+msgid "Download Directory"
+msgstr ""
+
+#: directory.php:11
+msgid "Click on the button below and you will be prompted to open or save a printer-friendly (PDF) version of the directory. If you don't already have it, you can download Adobe Acrobat from <A HREF=\"http://www.tucows.com/preview/194959.html\">here</A>."
+msgstr ""
+
+#: directory.php:13
+msgid "Note that <u>older versions of Acrobat may not be able to read this file</u>.  If you get an error message when trying to download, try upgrading <A HREF=\"http://www.tucows.com/preview/194959.html\">Acrobat</A>. If you have Windows XP, Vista or 7 or Mac Intel, you can upgrade to the newest version, but if you have Windows 98 or 2000 or Mac OS X 10.4, you will need an older version."
+msgstr ""
+
+#: directory.php:15 export.php:13
+msgid "Download"
+msgstr ""
+
+#: directory.php:30
+msgid "Download complete."
+msgstr ""
+
+#: do_info_edit.php:55 member_contact_edit.php:166 member_edit.php:259
+#: news_edit.php:71
+msgid "Changes saved."
+msgstr ""
+
+#: do_info_edit.php:57
+msgid "There was a problem saving the page."
+msgstr ""
+
+#: edit_balance.php:22 member_edit.php:16
+msgid "Edit Member"
+msgstr ""
+
+#: edit_balance.php:22
+msgid "'s Balance"
+msgstr ""
+
+#: edit_balance.php:24
+msgid "Value (before decimal point, 8 digit max)"
+msgstr ""
+
+#: edit_balance.php:25
+msgid "Value (after decimal point, 2 digit max)"
+msgstr ""
+
+#: edit_balance.php:26
+msgid "Update Balance"
+msgstr ""
+
+#: edit_balance.php:65
+msgid "This member's balance has now been set to"
+msgstr ""
+
+#: edit_balance.php:65
+msgid "Edit another member's balance?"
+msgstr ""
+
+#: edit_balance.php:67
+msgid "There was a problem updated this member's balance."
+msgstr ""
+
+#: edit_info.php:5
+msgid "Choose Info Page to Edit"
+msgstr ""
+
+#: email.php:8
+msgid "Email a Member"
+msgstr ""
+
+#: email.php:21
+msgid ""
+"Warning: Currently, many e-mail messages sent using this form are being categorized as spam.\n"
+"\tWhile we investigate solutions to this problem, please consider sending e-mail using your usual e-mail program instead."
+msgstr ""
+
+#: email.php:28 trades_pending.php:45 classes/class.trade.php:277
+#: classes/class.trade.php:324
+msgid "To"
+msgstr ""
+
+#: email.php:29
+msgid "Subject"
+msgstr ""
+
+#: email.php:30
+msgid "Would you like to receive a copy?"
+msgstr ""
+
+#: email.php:86
+msgid "Your message has been sent."
+msgstr ""
+
+#: email.php:89
+msgid "There was a problem sending the email."
+msgstr ""
+
+#: exchange_menu.php:11
+msgid "Invoices and Transactions Pending"
+msgstr ""
+
+#: exchange_menu.php:11
+msgid "require action"
+msgstr ""
+
+#: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:8
+msgid "Record an Exchange"
+msgstr ""
+
+#: exchange_menu.php:13 member_profile_all_in_one.php:30
+msgid "View My Balance and Exchange History"
+msgstr ""
+
+#: exchange_menu.php:14 member_profile_all_in_one.php:31
+msgid "View Another Member's Exchange History"
+msgstr ""
+
+#: exchange_menu.php:15
+msgid "View My Feedback"
+msgstr ""
+
+#: exchange_menu.php:16
+msgid "View Another Member's Feedback"
+msgstr ""
+
+#: exchange_menu.php:17
+msgid "Leave Feedback for a Recent Exchange"
+msgstr ""
+
+#: exchange_menu.php:18
+msgid "View All Trades in a Specified Time Period"
+msgstr ""
+
+#: export.php:6
+msgid "Export to Spreadsheet"
+msgstr ""
+
+#: export.php:11
+msgid "This will export all the tables in the database to an Excel spreadsheet for backup and  reporting purposes.  Click on the button below and you will be prompted to open or save the file.  Please note that the information in this file is confidential and should only be stored in a private, secure location."
+msgstr ""
+
+#: export.php:28
+msgid "Export complete."
+msgstr ""
+
+#: feedback_all.php:17
+msgid "Feedback for"
+msgstr ""
+
+#: feedback_all.php:26
+msgid "You don't have any feedback yet."
+msgstr ""
+
+#: feedback_all.php:28
+msgid "This member does not have any feedback yet."
+msgstr ""
+
+#: feedback_choose_inbox.php:6 feedback_choose.php:6
+msgid "Leave Feedback"
+msgstr ""
+
+#: feedback_choose_inbox.php:24 feedback_choose.php:24
+msgid "For which Exchange?"
+msgstr ""
+
+#: feedback_choose_inbox.php:101 feedback_choose.php:60
+msgid "There are no exchanges to leave feedback for.  You have already left feedback for all your recent exchanges."
+msgstr ""
+
+#: feedback.php:10 feedback_rebuttal.php:9
+msgid "Leave Feedback about"
+msgstr ""
+
+#: feedback.php:23 trade_history.php:20
+msgid "for"
+msgstr ""
+
+#: feedback.php:29 feedback_rebuttal.php:29 trade.php:213
+msgid "All feedback is public. Before leaving <i>negative</i> feedback, we recommend trying to address your concerns with the other community member.  Often misunderstandings can be resolved to the benefit of both parties."
+msgstr ""
+
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:125 classes/class.member.php:551
+msgid "Positive"
+msgstr ""
+
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:129
+msgid "Neutral"
+msgstr ""
+
+#: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
+#: classes/class.feedback.php:127
+msgid "Negative"
+msgstr ""
+
+#: feedback.php:32 trade.php:216
+msgid "Feedback Rating"
+msgstr ""
+
+#: feedback.php:37 feedback_rebuttal.php:37 feedback_reply.php:42
+#: trade.php:221
+msgid "Comments"
+msgstr ""
+
+#: feedback.php:45 feedback_rebuttal.php:45 feedback_reply.php:49
+#: trade.php:227
+msgid "Choose a rating"
+msgstr ""
+
+#: feedback.php:83 feedback_rebuttal.php:71 feedback_reply.php:86
+msgid "Your feedback has been recorded."
+msgstr ""
+
+#: feedback.php:85 feedback_rebuttal.php:73 feedback_reply.php:88
+msgid "There was an error recording your feedback."
+msgstr ""
+
+#: feedback_rebuttal.php:46 feedback_reply.php:50
+msgid "Comments cannot be longer than 255 characters"
+msgstr ""
+
+#: feedback_reply.php:9
+msgid "Follow Up on Feedback"
+msgstr ""
+
+#: feedback_reply.php:36
+msgid "Prior Comments"
+msgstr ""
+
+#: feedback_reply.php:72
+msgid "Members do not match the trade selected."
+msgstr ""
+
+#: feedback_to_view.php:5 trade.php:67
+msgid "Choose Member"
+msgstr ""
+
+#: feedback_to_view.php:11
+msgid "Whose Feedback?"
+msgstr ""
+
+#: feedback_to_view.php:13 trades_to_view.php:13
+msgid "View"
+msgstr ""
+
+#: geocoding_setup.php:5
+msgid "Initial geocoding"
+msgstr ""
+
+#: geocoding_setup.php:51
+msgid "(A map will be displayed here as soon as an API key is entered.)"
+msgstr ""
+
+#. Translation hint: Title of geocoding setup assistant
+#: geocoding_setup.php:118
+msgid "Geocoding setup"
+msgstr ""
+
+#: geocoding_setup.php:119
+msgid "This page guides you through the steps required to start geocoding members."
+msgstr ""
+
+#: geocoding_setup.php:120
+msgid "<i>Geocoding</i> means finding the latitude/longitude coordinates of a member's address. We store these coordinates in the database and use them to show members on a map."
+msgstr ""
+
+#: geocoding_setup.php:122
+msgid "API key"
+msgstr ""
+
+#. Translation hint: %s is the name of a geocoding provider
+#: geocoding_setup.php:125
+#, php-format
+msgid "%s requires sites like yours to obtain an API key. Please visit the following site to obtain a key."
+msgstr ""
+
+#: geocoding_setup.php:128
+msgid "Then, paste the key in the following box."
+msgstr ""
+
+#: geocoding_setup.php:131
+msgid "Check this box to enable geocoding. Then save your settings. This causes new members and members who modify their profile to be geocoded automatically."
+msgstr ""
+
+#: geocoding_setup.php:133
+msgid "Enable geocoding"
+msgstr ""
+
+#: geocoding_setup.php:136 geocoding_setup.php:147 geocoding_setup.php:268
+msgid "Save"
+msgstr ""
+
+#: geocoding_setup.php:139
+msgid "Map viewport"
+msgstr ""
+
+#: geocoding_setup.php:140
+msgid "Choose the map's default view by panning and zooming."
+msgstr ""
+
+#: geocoding_setup.php:154
+msgid "Geocode all members"
+msgstr ""
+
+#: geocoding_setup.php:157
+msgid "Enable geocoding to continue."
+msgstr ""
+
+#: geocoding_setup.php:159
+msgid "All members have been geocoded. You may skip this step."
+msgstr ""
+
+#: geocoding_setup.php:161
+#, php-format
+msgid "Although you have enabled geocoding for the future, %d existing members also need to be geocoded."
+msgstr ""
+
+#. Translation hint: %s are HTML tags making a link.
+#: geocoding_setup.php:164
+msgid "You do not have JavaScript enabled. Please <a>run the script manually</a> (takes a long time and may be interrupted by PHP)."
+msgstr ""
+
+#: geocoding_setup.php:165
+msgid "Start geocoding"
+msgstr ""
+
+#: geocoding_setup.php:167
+msgid "Not started"
+msgstr ""
+
+#: geocoding_setup.php:173
+msgid "You may wish to re-center the map viewport above to show the newly geocoded members."
+msgstr ""
+
+#: geocoding_setup.php:209
+msgid "Waiting for results…"
+msgstr ""
+
+#: geocoding_setup.php:216 refund_monthly_fee.php:212
+#: refund_service_charge.php:207 service_charge.php:161
+#: take_monthly_fee.php:199
+msgid "Done"
+msgstr ""
+
+#: geocoding_setup.php:221
+msgid "Request failed."
+msgstr ""
+
+#: geocoding_setup.php:235
+msgid "%(response_count)s responses processed with %(error_count)s errors."
+msgstr ""
+
+#: geocoding_setup.php:237
+msgid "%(response_count)s responses processed."
+msgstr ""
+
+#: geocoding_setup.php:261
+msgid "Home page map"
+msgstr ""
+
+#: geocoding_setup.php:263
+msgid "If you wish to display a map on the front page, check this box. Other maps will display regardless of this setting."
+msgstr ""
+
+#: geocoding_setup.php:265
+msgid "Show map on home page"
+msgstr ""
+
+#: holiday.php:6
+msgid "Inactivate Listings While on Holiday"
+msgstr ""
+
+#: holiday.php:16
+msgid "This feature will temporarily inactivate all of the member's offered and wanted listings while they are gone."
+msgstr ""
+
+#: holiday.php:17
+msgid "they"
+msgstr ""
+
+#: holiday.php:22
+msgid "This feature will temporarily inactivate all of your offered and wanted listings while you are gone."
+msgstr ""
+
+#: holiday.php:23
+msgid "you"
+msgstr ""
+
+#: holiday.php:26
+msgid "They will not appear in the directory during that time.  When the date you specify below arrives the listings will automatically reactivate."
+msgstr ""
+
+#: holiday.php:31 listing_create.php:62 member_contact_create.php:38
+#: member_contact_edit.php:38 member_create.php:34 member_create.php:45
+#: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
+#: timeframe_choose.php:15
+msgid "en"
+msgstr ""
+
+#: holiday.php:32
+msgid "When will"
+msgstr ""
+
+#: holiday.php:32
+msgid "return?"
+msgstr ""
+
+#: holiday.php:34 member_status_change.php:11 member_status_change.php:25
+msgid "Inactivate"
+msgstr ""
+
+#: holiday.php:37 listing_edit.php:82
+msgid "Must be a future date"
+msgstr ""
+
+#: holiday.php:39 listing_create.php:69 listing_edit.php:79
+#: listing_edit.php:83 news_create.php:37 news_edit.php:40
+msgid "Date is invalid"
+msgstr ""
+
+#: holiday.php:62
+msgid "Listings successfully inactivated."
+msgstr ""
+
+#: income_ties.php:15
+msgid "Income Sharing"
+msgstr ""
+
+#: income_ties.php:17
+msgid "You have the option of contributing a percentage of any income"
+msgstr ""
+
+#: income_ties.php:17
+msgid "you receive to another account. If you specify an Income Share, every time you receive"
+msgstr ""
+
+#: income_ties.php:17
+msgid "a specified percentage (of your choosing) will automatically be paid to the account of your choice. You can change this arrangement at any time, but you are only allowed to share your income with one other account at a time."
+msgstr ""
+
+#: income_ties.php:27
+msgid "Sorry you can't share income with yourself."
+msgstr ""
+
+#: income_ties.php:35
+msgid "Not enough data to proceed."
+msgstr ""
+
+#: income_ties.php:37
+msgid "The percentage must be numeric and must not contain any other characters (e.g. '10' = good input, '10%' = bad input)"
+msgstr ""
+
+#: income_ties.php:39
+#, php-format
+msgid "Sorry, you can't contribute more than 99% of your income to another account - but it's the thought that counts"
+msgstr ""
+
+#: income_ties.php:65
+msgid "Income Share Inactive"
+msgstr ""
+
+#: income_ties.php:67
+msgid "Create an Income Share"
+msgstr ""
+
+#: income_ties.php:74
+msgid "I would like to share"
+msgstr ""
+
+#: income_ties.php:74
+msgid "of any"
+msgstr ""
+
+#: income_ties.php:74
+msgid "I receive"
+msgstr ""
+
+#: income_ties.php:75
+msgid "with this account"
+msgstr ""
+
+#: income_ties.php:77
+msgid "Create Income Share"
+msgstr ""
+
+#: income_ties.php:81
+msgid "Income Share Active"
+msgstr ""
+
+#: income_ties.php:83
+msgid "You are currently sharing"
+msgstr ""
+
+#: income_ties.php:83
+msgid "of your income with account"
+msgstr ""
+
+#: income_ties.php:83
+msgid "Remove Income Share"
+msgstr ""
+
+#: income_ties.php:83
+msgid "If you wish to amend this Income Share you will first need to remove it and then create a new one."
+msgstr ""
+
+#: index.php:23
+msgid "Why have a Local, Sustainable Currency?"
+msgstr ""
+
+#: index.php:25
+msgid "Enhance Your Prosperity"
+msgstr ""
+
+#: index.php:26
+msgid "Build a Sustainable Community"
+msgstr ""
+
+#: index.php:27
+msgid "Utilize Your Talents"
+msgstr ""
+
+#: index.php:28
+msgid "Nurture the Unique Quality of Your Hometown"
+msgstr ""
+
+#: index.php:29
+msgid "Have Fun"
+msgstr ""
+
+#: info_permissions.php:13
+msgid "*The Permissions level denotes the MINIMUM level a user must be to view the page. So, a page set with 'Committee' permissions would be visible to Committee AND Admin users, but not to those below Committee level (i.e. Members and Guests). Setting the permissions to 'Guests' effectively removes the permissions from that page and renders it visible to anyone and everyone."
+msgstr ""
+
+#: info_permissions.php:26
+msgid "Info page permissions updated successfully."
+msgstr ""
+
+#: info_permissions.php:45
+msgid "Update Permissions"
+msgstr ""
+
+#: info_permissions.php:48
+msgid "No info pages found!"
+msgstr ""
+
+#: info_permissions.php:53 info_permissions.php:77
+msgid "Guests"
+msgstr ""
+
+#: info_permissions.php:53 info_permissions.php:77 manage_restrictions.php:107
+#: manage_restrictions.php:118
+msgid "Members"
+msgstr ""
+
+#: info_permissions.php:53 info_permissions.php:77 member_create.php:21
+#: member_edit.php:24
+msgid "Committee"
+msgstr ""
+
+#: info_permissions.php:53 info_permissions.php:77 member_create.php:21
+#: member_edit.php:24
+msgid "Admin"
+msgstr ""
+
+#: initial_mailing.php:7
+msgid "Initial Mailing for Rollout"
+msgstr ""
+
+#: initial_mailing.php:9
+msgid "Important information from"
+msgstr ""
+
+#: initial_mailing.php:29
+msgid "Could not reset password for"
+msgstr ""
+
+#: initial_mailing.php:29
+msgid "Skipped email"
+msgstr ""
+
+#: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
+#: member_create.php:208 member_create.php:217 member_directory.php:15
+#: member_unlock.php:47 member_unlock.php:50 password_reset.php:39
+#: trade.php:138 classes/class.member.php:201
+msgid "Member ID"
+msgstr ""
+
+#: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
+#: member_create.php:208 member_unlock.php:47 classes/class.member.php:202
+msgid "Password"
+msgstr ""
+
+#: initial_mailing.php:37
+msgid "Could not email"
+msgstr ""
+
+#: initial_mailing.php:37
+msgid "His/her password is"
+msgstr ""
+
+#: initial_mailing.php:41
+msgid "Email successfully sent to all members."
+msgstr ""
+
+#: karma_explanation.php:6
+msgid "What are Karma points?"
+msgstr ""
+
+#: karma_explanation.php:39
+msgid "These are your Karma points. They reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you."
+msgstr ""
+
+#. Translation hint: %s is the currency name, which may be "hours".
+#: karma_explanation.php:41
+#, php-format
+msgid "This is your account balance. It shows how many %s you have earned minus what you have spent."
+msgstr ""
+
+#. Translation hint: "it" refers to the member's account balance.
+#: karma_explanation.php:44
+msgid "Spend some of them to gain Karma points!"
+msgstr ""
+
+#: karma_explanation.php:46 classes/class.page.php:105
+msgid "Do something for other members to gain Karma points!"
+msgstr ""
+
+#. Translation hint: %s is a member's name.
+#: karma_explanation.php:51
+#, php-format
+msgid "These are %s's Karma points. They reflect the member's activity in the LETS system, and the equilibrium between how much they have done for others and how much others have done for them."
+msgstr ""
+
+#. Translation hint: %1$s is a member's name. %2$s is the currency name, which may be "hours".
+#: karma_explanation.php:53
+#, php-format
+msgid "This is %1$s's account balance. It shows how many %2$s the member has earned minus what they have spent."
+msgstr ""
+
+#. Translation hint: %s is the site's name.
+#: karma_explanation.php:117
+#, php-format
+msgid "Karma points are disabled in %s. If they were enabled, they would reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you. Contact the administrators if you wish to request that they be enabled."
+msgstr ""
+
+#: listing_create.php:8
+msgid "Create Offered Listing"
+msgstr ""
+
+#: listing_create.php:10
+msgid "Create Wanted Listing"
+msgstr ""
+
+#: listing_create.php:34 member_choose.php:6
+msgid "For which member?"
+msgstr ""
+
+#: listing_create.php:47
+msgid "You already have a listing with this title"
+msgstr ""
+
+#: listing_create.php:49 listing_edit.php:60 listings.php:20 trade.php:50
+#: classes/class.trade.php:277
+msgid "Category"
+msgstr ""
+
+#: listing_create.php:50 listing_edit.php:61
+msgid "Pick a category"
+msgstr ""
+
+#: listing_create.php:53 listing_edit.php:64 classes/class.listing.php:188
+msgid "Rate"
+msgstr ""
+
+#: listing_create.php:57 listing_edit.php:69 news_create.php:25
+#: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
+#: trades_pending.php:45 classes/class.listing.php:186
+#: classes/class.trade.php:277
+msgid "Description"
+msgstr ""
+
+#: listing_create.php:60 listing_edit.php:72
+msgid "Should this listing be set to automatically expire?"
+msgstr ""
+
+#: listing_create.php:63 listing_edit.php:75 news_create.php:20
+#: news_edit.php:25
+msgid "Expires"
+msgstr ""
+
+#: listing_create.php:67 listing_edit.php:77 news_create.php:35
+msgid "Expiration must be for a future date"
+msgstr ""
+
+#: listing_create.php:121
+msgid "Listing created. Create"
+msgstr ""
+
+#: listing_create.php:121
+msgid "another"
+msgstr ""
+
+#: listing_create.php:123 listing_edit.php:177
+msgid "There was an error saving the listing."
+msgstr ""
+
+#: listing_delete.php:9 listings_create.php:11 listings_menu.php:11
+#: member_profile_all_in_one.php:20
+msgid "Delete Offered Listings"
+msgstr ""
+
+#: listing_delete.php:11 listings_create.php:16 listings_menu.php:16
+#: member_profile_all_in_one.php:26
+msgid "Delete Wanted Listings"
+msgstr ""
+
+#: listing_delete.php:49
+msgid "You don't currently have any Offered listings."
+msgstr ""
+
+#: listing_delete.php:51
+msgid "You don't currently have any Wanted listings."
+msgstr ""
+
+#: listing_delete.php:54
+msgid "doesn't currently have any Offered listings."
+msgstr ""
+
+#: listing_delete.php:56
+msgid "doesn't currently have any Wanted listings."
+msgstr ""
+
+#: listing_delete.php:86
+msgid "1 listing deleted"
+msgstr ""
+
+#: listing_delete.php:88
+msgid "listings deleted"
+msgstr ""
+
+#: listing_delete.php:90
+msgid "There was an error deleting the listings. Did you check any boxes?"
+msgstr ""
+
+#: listing_detail.php:28
+msgid "You may see more details if you <a1>sign up</a1> or <a2>log in</a2>."
+msgstr ""
+
+#: listing_detail.php:30
+msgid "You may see more details if you sign up or <a2>log in</a2>."
+msgstr ""
+
+#: listing_edit.php:23
+msgid "Edit Offered:"
+msgstr ""
+
+#: listing_edit.php:25
+msgid "Edit Wanted:"
+msgstr ""
+
+#: listing_edit.php:42
+msgid "Cannot edit listing: It appears to belong to someone else"
+msgstr ""
+
+#: listing_edit.php:46
+msgid "Edit another listing"
+msgstr ""
+
+#: listing_edit.php:80
+msgid "Should this listing be made temporarily inactive?"
+msgstr ""
+
+#: listing_edit.php:81
+msgid "Reactivates"
+msgstr ""
+
+#: listing_edit.php:84 member_contact_edit.php:69 member_edit.php:93
+msgid "Update"
+msgstr ""
+
+#: listing_edit.php:175
+msgid "Listing changes saved. Do you want to"
+msgstr ""
+
+#: listing_edit.php:175
+msgid "edit"
+msgstr ""
+
+#: listing_edit.php:175
+msgid "another listing?"
+msgstr ""
+
+#: listings_create.php:4
+msgid "Create Listings"
+msgstr ""
+
+#: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
+#: classes/class.directory.php:52 classes/class.member.php:831
+msgid "Offered Listings"
+msgstr ""
+
+#: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
+msgid "Create New Offer Listing"
+msgstr ""
+
+#: listings_create.php:10 listings_menu.php:10
+#: member_profile_all_in_one.php:19
+msgid "Edit Offered Listings"
+msgstr ""
+
+#: listings_create.php:13 listings_menu.php:13
+#: member_profile_all_in_one.php:22 classes/class.directory.php:55
+#: classes/class.member.php:833
+msgid "Wanted Listings"
+msgstr ""
+
+#: listings_create.php:14 listings_menu.php:14
+#: member_profile_all_in_one.php:24
+msgid "Create New Want Listing"
+msgstr ""
+
+#: listings_create.php:15 listings_menu.php:15
+#: member_profile_all_in_one.php:25
+msgid "Edit Wanted Listings"
+msgstr ""
+
+#: listings_found.php:7 listings.php:6 member_summary.php:25
+msgid "Offered listings"
+msgstr ""
+
+#: listings_found.php:9 listings.php:8 member_summary.php:30
+msgid "Wanted listings"
+msgstr ""
+
+#: listings_found.php:97
+msgid "Your own listings are omitted below. They can be seen in <a>your profile</a>."
+msgstr ""
+
+#: listings_menu.php:4 includes/inc.config.php:214
+msgid "Update Listings"
+msgstr ""
+
+#: listings_menu.php:19
+msgid "Going on Holiday"
+msgstr ""
+
+#: listings.php:15
+msgid "Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click"
+msgstr ""
+
+#: listings.php:15 member_create.php:202 news.php:22
+#: classes/class.member.php:113
+msgid "here"
+msgstr ""
+
+#: listings.php:19
+msgid "View All Categories"
+msgstr ""
+
+#: listings.php:21
+msgid "New/updated in last"
+msgstr ""
+
+#: listings.php:22
+msgid "Time Frame"
+msgstr ""
+
+#: listings.php:22
+msgid "View All Listings"
+msgstr ""
+
+#: listings.php:22
+msgid "3 days"
+msgstr ""
+
+#: listings.php:22 classes/class.member.php:842
+msgid "week"
+msgstr ""
+
+#: listings.php:22
+msgid "2 weeks"
+msgstr ""
+
+#: listings.php:22 classes/class.member.php:844
+msgid "month"
+msgstr ""
+
+#: listings.php:22
+msgid "3 months"
+msgstr ""
+
+#: listings.php:25
+msgid "Keyword"
+msgstr ""
+
+#: listings.php:33
+msgid "Distance from my address (km)"
+msgstr ""
+
+#: listings.php:36
+msgid "(You cannot search by distance because <a>your profile</a>'s address has not been properly geocoded.)"
+msgstr ""
+
+#: listings.php:44 pages.php:10
+msgid "Continue"
+msgstr ""
+
+#: listing_to_edit.php:6
+msgid "Choose the Offered Listing to Edit"
+msgstr ""
+
+#: listing_to_edit.php:8
+msgid "Choose the Wanted Listing to Edit"
+msgstr ""
+
+#: listing_to_edit.php:28
+msgid "You don't currently have any Offered listings"
+msgstr ""
+
+#: listing_to_edit.php:30
+msgid "You don't currently have any Wanted listings"
+msgstr ""
+
+#: login.php:32
+msgid "Please enter a user name to log in."
+msgstr ""
+
+#: login.php:34
+msgid "Please enter a password to log on with this account.  If you've forgotten your password, you can request a new one."
+msgstr ""
+
+#: login_redirect.php:5
+msgid "In order to access this section of the site, you need to be logged on."
+msgstr ""
+
+#: login_redirect.php:5
+msgid "If you already have an account, please log in below"
+msgstr ""
+
+#: login_redirect.php:5 classes/class.member.php:203
+#: classes/class.member.php:218
+msgid "Login"
+msgstr ""
+
+#. Translation hint: Complete phrase is "If you forgot your password, you may _request a new one_." (link)
+#: login_redirect.php:5 classes/class.member.php:206
+msgid "If you forgot your password, you may"
+msgstr ""
+
+#: login_redirect.php:5 classes/class.member.php:206
+msgid "request a new one"
+msgstr ""
+
+#: login_redirect.php:6 classes/class.member.php:208
+msgid "If you don't have an account, you may <a href=/member_create.php>sign up online</a>."
+msgstr ""
+
+#: login_redirect.php:6 classes/class.member.php:208
+msgid "If you don't have an account, please contact us to join."
+msgstr ""
+
+#: manage_restrictions.php:13
+msgid "Restrictions can be placed on accounts if you feel they are over-using the services of others and not offering enough back in return"
+msgstr ""
+
+#: manage_restrictions.php:55 manage_restrictions.php:80
+msgid "Error: No member ID specified."
+msgstr ""
+
+#: manage_restrictions.php:66
+msgid "Error: could not impose restrictions on this account"
+msgstr ""
+
+#: manage_restrictions.php:66 manage_restrictions.php:91
+msgid "MySQL Said"
+msgstr ""
+
+#: manage_restrictions.php:68
+msgid "Restrictions have been imposed on member id"
+msgstr ""
+
+#: manage_restrictions.php:70
+msgid "Access Restricted on"
+msgstr ""
+
+#: manage_restrictions.php:91
+msgid "Error: could not lift restrictions on this account"
+msgstr ""
+
+#: manage_restrictions.php:93
+msgid "Restrictions have been lifted on member id"
+msgstr ""
+
+#: manage_restrictions.php:95
+msgid "Account Restrictions lifted on"
+msgstr ""
+
+#: manage_restrictions.php:107
+msgid "Non-Restricted"
+msgstr ""
+
+#: manage_restrictions.php:116
+msgid "Impose Restriction"
+msgstr ""
+
+#: manage_restrictions.php:118
+msgid "Restricted"
+msgstr ""
+
+#: manage_restrictions.php:127
+msgid "Lift Restriction"
+msgstr ""
+
+#: member_contact_choose.php:4
+msgid "Choose Joint Member"
+msgstr ""
+
+#: member_contact_choose.php:9 classes/class.member.php:399
+msgid "Which Joint Member?"
+msgstr ""
+
+#: member_contact_create.php:13
+msgid "Add Joint Member"
+msgstr ""
+
+#: member_contact_create.php:24
+msgid "Choose Member to Add Contact to"
+msgstr ""
+
+#: member_contact_create.php:32 member_contact_edit.php:29
+#: member_create.php:39 member_directory.php:29 member_edit.php:49
+msgid "First Name"
+msgstr ""
+
+#: member_contact_create.php:33 member_contact_edit.php:30
+#: member_create.php:40 member_edit.php:50
+msgid "Middle Name"
+msgstr ""
+
+#: member_contact_create.php:34 member_contact_edit.php:31
+#: member_create.php:41 member_directory.php:30 member_edit.php:51
+msgid "Last Name"
+msgstr ""
+
+#: member_contact_create.php:39 member_contact_edit.php:39
+#: member_create.php:46 member_edit.php:34
+msgid "Date of Birth"
+msgstr ""
+
+#: member_contact_create.php:40 member_contact_edit.php:40
+#: member_create.php:47 member_edit.php:35
+msgid "Mother's Maiden Name"
+msgstr ""
+
+#: member_contact_create.php:42 member_contact_edit.php:44
+msgid "List this Person's Contact Information in the Directory?"
+msgstr ""
+
+#: member_contact_create.php:43 member_contact_edit.php:45
+#: member_create.php:50 member_edit.php:54
+msgid "Email Address"
+msgstr ""
+
+#: member_contact_create.php:44 member_contact_edit.php:46
+#: member_create.php:51 member_edit.php:55 classes/class.member.php:560
+msgid "Primary Phone"
+msgstr ""
+
+#: member_contact_create.php:45 member_contact_edit.php:47
+#: member_create.php:52 member_edit.php:56 classes/class.member.php:562
+msgid "Secondary Phone"
+msgstr ""
+
+#: member_contact_create.php:46 member_contact_edit.php:48
+#: member_create.php:53 member_edit.php:57
+msgid "Fax Number"
+msgstr ""
+
+#: member_contact_create.php:48 member_contact_edit.php:50
+#: member_create.php:63 member_edit.php:66
+msgid "Address Line 1"
+msgstr ""
+
+#: member_contact_create.php:49 member_contact_edit.php:51
+#: member_create.php:64 member_directory.php:34 member_directory.php:47
+#: member_edit.php:67 classes/class.member.php:566
+msgid "Address Line 2"
+msgstr ""
+
+#: member_contact_create.php:50 member_contact_create.php:72
+#: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:65
+#: member_create.php:90 member_create.php:218 member_directory.php:48
+#: member_edit.php:68 member_edit.php:102 classes/class.member.php:570
+msgid "City"
+msgstr ""
+
+#: member_contact_create.php:60 member_contact_create.php:73
+#: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:75
+#: member_create.php:91 member_directory.php:49 member_edit.php:78
+#: member_edit.php:103 classes/class.member.php:582
+msgid "State"
+msgstr ""
+
+#: member_contact_create.php:61 member_contact_create.php:74
+#: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:76
+#: member_create.php:92 member_directory.php:50 member_edit.php:79
+#: member_edit.php:104 classes/class.member.php:574
+msgid "Zip Code"
+msgstr ""
+
+#: member_contact_create.php:62 member_contact_edit.php:64
+#: member_create.php:77 member_edit.php:80
+msgid "Country"
+msgstr ""
+
+#: member_contact_create.php:64
+msgid "Create Contact"
+msgstr ""
+
+#: member_contact_create.php:69 member_create.php:85 member_edit.php:99
+#: password_change.php:29
+msgid "Password not long enough"
+msgstr ""
+
+#: member_contact_create.php:70 member_contact_edit.php:74
+#: member_create.php:86 member_edit.php:100
+msgid "Enter a first name"
+msgstr ""
+
+#: member_contact_create.php:71 member_contact_edit.php:75
+#: member_create.php:87 member_edit.php:101
+msgid "Enter a last name"
+msgstr ""
+
+#: member_contact_create.php:72 member_contact_create.php:73
+#: member_contact_create.php:74 member_contact_edit.php:80
+#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:90
+#: member_create.php:91 member_create.php:92 member_edit.php:102
+#: member_edit.php:103 member_edit.php:104
+msgid "Enter a"
+msgstr ""
+
+#: member_contact_create.php:75 member_contact_edit.php:83
+#: member_create.php:93 member_edit.php:105
+msgid "Enter a country"
+msgstr ""
+
+#: member_contact_create.php:78 member_contact_edit.php:77
+#: member_create.php:109 member_edit.php:114
+msgid "Birth date cannot be in the future"
+msgstr ""
+
+#: member_contact_create.php:80 member_contact_edit.php:79
+#: member_create.php:111 member_edit.php:116
+msgid "A little young, don't you think?"
+msgstr ""
+
+#: member_contact_create.php:82 member_contact_edit.php:85
+#: member_create.php:113 member_edit.php:118
+msgid "Not a valid email address"
+msgstr ""
+
+#: member_contact_create.php:84 member_contact_create.php:85
+#: member_contact_create.php:86 member_contact_edit.php:87
+#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:115
+#: member_create.php:116 member_create.php:117 member_edit.php:120
+#: member_edit.php:121 member_edit.php:122
+msgid "Phone format invalid"
+msgstr ""
+
+#: member_contact_create.php:151
+msgid "Joint member created. Would you like to"
+msgstr ""
+
+#: member_contact_create.php:151
+msgid "add another"
+msgstr ""
+
+#: member_contact_create.php:153
+msgid "There was an error saving the joint member."
+msgstr ""
+
+#: member_contact_delete.php:4
+msgid "Delete Joint Member"
+msgstr ""
+
+#: member_contact_delete.php:20
+msgid "Are you sure you want to permanently delete"
+msgstr ""
+
+#: member_contact_delete.php:35
+msgid "Joint member deleted."
+msgstr ""
+
+#: member_contact_delete.php:37 classes/class.person.php:170
+msgid "There was an error deleting the joint member."
+msgstr ""
+
+#: member_contact_edit.php:25 member_profile_all_in_one.php:14
+#: member_profile_all_in_one.php:38
+msgid "Edit a Joint Member"
+msgstr ""
+
+#: member_contact_edit.php:168
+msgid "There was an error saving the person."
+msgstr ""
+
+#: member_contact_to_edit.php:8
+msgid "Choose Joint Member to Edit"
+msgstr ""
+
+#: member_contact_to_edit.php:11
+msgid "Choose Member and Person"
+msgstr ""
+
+#: member_create.php:14
+msgid "Register New Member"
+msgstr ""
+
+#: member_create.php:21 member_edit.php:24
+msgid "Member Role"
+msgstr ""
+
+#: member_create.php:23 member_edit.php:26
+msgid "Single"
+msgstr ""
+
+#: member_create.php:23 member_edit.php:26
+msgid "Joint"
+msgstr ""
+
+#: member_create.php:23 member_edit.php:26
+msgid "Organization"
+msgstr ""
+
+#: member_create.php:23 member_edit.php:26
+msgid "Business"
+msgstr ""
+
+#: member_create.php:23 member_edit.php:26
+msgid "Fund"
+msgstr ""
+
+#: member_create.php:24 member_edit.php:27
+msgid "Account Type"
+msgstr ""
+
+#: member_create.php:27 member_edit.php:28
+msgid "Administrator Note"
+msgstr ""
+
+#: member_create.php:35 member_edit.php:32 report_no_login.php:14
+msgid "Join Date"
+msgstr ""
+
+#: member_create.php:44
+msgid "The next two fields may help us recover your password if you forget it."
+msgstr ""
+
+#: member_create.php:55 member_edit.php:59
+msgid "Never"
+msgstr ""
+
+#: member_create.php:55 member_edit.php:59
+msgid "Daily"
+msgstr ""
+
+#: member_create.php:55 member_edit.php:59
+msgid "Weekly"
+msgstr ""
+
+#: member_create.php:55 member_edit.php:59
+msgid "Monthly"
+msgstr ""
+
+#: member_create.php:58 member_edit.php:37
+msgid "How frequently should the member receive email updates?"
+msgstr ""
+
+#: member_create.php:60
+msgid "How frequently do you wish to receive email updates?"
+msgstr ""
+
+#: member_create.php:79
+msgid "Create Member"
+msgstr ""
+
+#: member_create.php:84 member_edit.php:98 password_reset.php:10
+msgid "Enter your Member ID"
+msgstr ""
+
+#: member_create.php:89
+msgid "Enter an e-mail address"
+msgstr ""
+
+#: member_create.php:96
+msgid "This ID is already being used"
+msgstr ""
+
+#: member_create.php:98
+msgid "Special characters are not allowed"
+msgstr ""
+
+#: member_create.php:100
+msgid "Password must contain at least one number"
+msgstr ""
+
+#: member_create.php:102
+msgid "You have the right idea, but it's best not to use apostraphes or backslashes in passwords"
+msgstr ""
+
+#: member_create.php:105 member_edit.php:108
+msgid "You cannot assign a higher level of access than you have"
+msgstr ""
+
+#: member_create.php:108 member_edit.php:113
+msgid "Join date cannot be in the future"
+msgstr ""
+
+#: member_create.php:202 member_create.php:206
+msgid "Member created"
+msgstr ""
+
+#: member_create.php:202
+msgid "Click"
+msgstr ""
+
+#: member_create.php:202
+msgid "to create another member account"
+msgstr ""
+
+#: member_create.php:202
+msgid "Or if you would like to add a joint member to this account (such as a spouse), click"
+msgstr ""
+
+#: member_create.php:204
+msgid "Since the new member does not have an email address, he/she needs to be notified of the member id"
+msgstr ""
+
+#: member_create.php:204 member_create.php:212
+msgid "and password"
+msgstr ""
+
+#: member_create.php:210
+msgid "An email has been sent to"
+msgstr ""
+
+#: member_create.php:210
+msgid "containing the new user id and password"
+msgstr ""
+
+#: member_create.php:212
+msgid "An attempt to email the new member information failed.  This is most likely due to a technical problem.  You may want to contact your administrator at"
+msgstr ""
+
+#: member_create.php:212
+msgid "Since the email failed, the new member needs to be notified of the member id"
+msgstr ""
+
+#: member_create.php:216
+msgid "New member of "
+msgstr ""
+
+#: member_create.php:219
+msgid "Read more"
+msgstr ""
+
+#: member_create.php:223 member_edit.php:261
+msgid "There was an error saving the member."
+msgstr ""
+
+#: member_directory.php:5
+msgid "Member Directory"
+msgstr ""
+
+#: member_directory.php:16
+msgid "Name (all or part)"
+msgstr ""
+
+#: member_directory.php:17
+msgid "Location (e.g."
+msgstr ""
+
+#: member_directory.php:24
+msgid "Order by"
+msgstr ""
+
+#: member_directory.php:25
+msgid "Membership No."
+msgstr ""
+
+#: member_directory.php:27
+msgid "Karma points"
+msgstr ""
+
+#: member_directory.php:31
+msgid "Neighbourhood"
+msgstr ""
+
+#: member_directory.php:32
+msgid "Town"
+msgstr ""
+
+#: member_directory.php:33
+msgid "Postal code"
+msgstr ""
+
+#: member_directory.php:35 member_directory.php:54
+msgid "Balance"
+msgstr ""
+
+#: member_directory.php:36
+msgid "Absolute balance"
+msgstr ""
+
+#: member_directory.php:38
+msgid "Search"
+msgstr ""
+
+#: member_directory.php:45
+msgid "Karma points reflect how active the member has been in the LETS system, both in earning and spending."
+msgstr ""
+
+#: member_directory.php:45
+msgid "Karma"
+msgstr ""
+
+#. Translation hint: All placeholders are numbers.
+#: member_directory.php:232
+#, php-format
+msgid "Total of %1$d active accounts. %2$d accounts have a total of %3$d karma."
+msgstr ""
+
+#: member_directory.php:233
+#, php-format
+msgid "Total of %1$d active accounts."
+msgstr ""
+
+#: member_edit.php:38
+msgid "Should the member confirm any payments made to him/her?"
+msgstr ""
+
+#: member_edit.php:41
+msgid "Edit Personal Profile"
+msgstr ""
+
+#: member_edit.php:45
+msgid "How often would you like to receive email updates?"
+msgstr ""
+
+#: member_edit.php:46
+msgid "Do you wish to confirm payments that are made to you?"
+msgstr ""
+
+#: member_edit.php:62
+msgid "Automatically Accept Payments"
+msgstr ""
+
+#: member_edit.php:62
+msgid "Confirm Payments"
+msgstr ""
+
+#: member_edit.php:87 classes/class.member.php:619
+msgid "Age"
+msgstr ""
+
+#: member_edit.php:88 classes/class.member.php:621
+msgid "Sex"
+msgstr ""
+
+#: member_edit.php:89 classes/class.member.php:623
+msgid "About Me"
+msgstr ""
+
+#: member_edit.php:110
+msgid "You cannot modify the member role of a higher level account"
+msgstr ""
+
+#: member_login.php:7 member_profile_all_in_one.php:7
+#: includes/inc.config.php:302
+msgid "Welcome to "
+msgstr ""
+
+#: member_login.php:10
+msgid "hi"
+msgstr ""
+
+#: member_logout.php:7
+msgid "You are now logged out"
+msgstr ""
+
+#: member_logout.php:8
+msgid "You can login at any time by clicking on the 'Login' link at the bottom of the left menu."
+msgstr ""
+
+#: member_photo_upload.php:23
+msgid "Upload/Replace photo for"
+msgstr ""
+
+#: member_photo_upload.php:27
+msgid "Upload a Photo"
+msgstr ""
+
+#: member_photo_upload.php:39
+msgid "Replace Image"
+msgstr ""
+
+#: member_photo_upload.php:42
+msgid "Upload Image"
+msgstr ""
+
+#: member_photo_upload.php:47 classes/class.uploads.php:138
+msgid "Select file to upload"
+msgstr ""
+
+#: member_photo_upload.php:62 member_photo_upload.php:63
+msgid "Size of uploaded file is 0 bytes."
+msgstr ""
+
+#: member_photo_upload.php:106 newsletter_save.php:12
+msgid "File uploaded."
+msgstr ""
+
+#: member_photo_upload.php:108
+msgid "There was a problem resizing the file."
+msgstr ""
+
+#: member_photo_upload.php:110 newsletter_save.php:14
+msgid "There was a problem uploading the file."
+msgstr ""
+
+#: member_profile_all_in_one.php:8
+msgid "Please choose from the following options, or navigate using the buttons on the sidebar to the left."
+msgstr ""
+
+#: member_profile_all_in_one.php:10
+msgid "Member Settings"
+msgstr ""
+
+#: member_profile_all_in_one.php:11 member_profile.php:8
+msgid "Change My Password"
+msgstr ""
+
+#: member_profile_all_in_one.php:12 member_profile.php:9
+msgid "Edit My Personal Information"
+msgstr ""
+
+#: member_profile_all_in_one.php:13 member_profile.php:14
+msgid "Add a Joint Member to My Account"
+msgstr ""
+
+#: member_profile_all_in_one.php:17
+msgid "View Offered Listings"
+msgstr ""
+
+#: member_profile_all_in_one.php:23
+msgid "View Wanted Listings"
+msgstr ""
+
+#: member_profile_all_in_one.php:34 classes/class.page.php:30
+msgid "Administration"
+msgstr ""
+
+#: member_profile_all_in_one.php:37
+msgid "Add a Joint Member to an Existing Account"
+msgstr ""
+
+#: member_profile.php:4 includes/inc.config.php:217
+#: includes/inc.config.php:259
+msgid "Member Profile"
+msgstr ""
+
+#: member_profile.php:12
+msgid "Upload/Change Photo of Myself"
+msgstr ""
+
+#: member_profile.php:18
+msgid "Manage Income Shares"
+msgstr ""
+
+#: member_profile.php:21
+msgid "View My Profile (as others see it)"
+msgstr ""
+
+#: member_status_change.php:13 member_status_change.php:29
+msgid "Re-activate"
+msgstr ""
+
+#: member_status_change.php:23
+msgid "Are you sure you want to inactivate this member?  They will no longer be able to use this website, and all their listings will be inactivated as well."
+msgstr ""
+
+#: member_status_change.php:27
+msgid "Are you sure you want to re-activate this member?  Their listings will need to be reactivated individually or new ones created."
+msgstr ""
+
+#: member_status_change.php:59
+msgid "Changes to member status saved."
+msgstr ""
+
+#: member_status_change.php:61
+msgid "There was an error changing the member's status."
+msgstr ""
+
+#: member_summary.php:12
+msgid "Summary for"
+msgstr ""
+
+#: member_summary.php:18
+msgid "Contact information"
+msgstr ""
+
+#: member_to_edit.php:8
+msgid "Choose Member to Edit"
+msgstr ""
+
+#: member_unlock.php:10
+msgid "This form will both unlock an account (if it is locked) and reset the member's password.  Then it will email the new password to the member.  You may want to make sure the member's email is still current."
+msgstr ""
+
+#: member_unlock.php:14
+msgid "Choose the Member Account"
+msgstr ""
+
+#: member_unlock.php:17
+msgid "Unlock and Reset"
+msgstr ""
+
+#: member_unlock.php:18
+msgid "Send 'Password Reset' email"
+msgstr ""
+
+#: member_unlock.php:19
+msgid "Send 'Welcome' Email"
+msgstr ""
+
+#: member_unlock.php:36
+msgid "This member account had been locked due to"
+msgstr ""
+
+#: member_unlock.php:36
+msgid "consecutive login failures."
+msgstr ""
+
+#: member_unlock.php:36
+msgid "It has been unlocked.  If the number of attempts is more than 10 or 20,you may want to contact your administrator at"
+msgstr ""
+
+#: member_unlock.php:36
+msgid "because it could indicate someone is trying to hack into the system."
+msgstr ""
+
+#: member_unlock.php:43
+msgid "The password has been reset"
+msgstr ""
+
+#: member_unlock.php:50 password_reset.php:39
+msgid "New Password"
+msgstr ""
+
+#: member_unlock.php:54
+msgid "and a 'Password Reset' email has been sent to the member's email address"
+msgstr ""
+
+#: member_unlock.php:56 password_reset.php:43
+msgid "However, the attempt to email the new password failed.  This is most likely due to a technical problem.  Contact your administrator at"
+msgstr ""
+
+#: mysql_backup.php:218
+msgid "Use this tool to backup your MySQL Database.<p>"
+msgstr ""
+
+#: mysql_backup.php:219
+msgid "Backup Now"
+msgstr ""
+
+#: news_create.php:23 news_edit.php:28
+msgid "Sequence"
+msgstr ""
+
+#: news_create.php:33 news_edit.php:38
+msgid "Enter a description"
+msgstr ""
+
+#: news_create.php:62
+msgid "News item saved."
+msgstr ""
+
+#: news_create.php:64 news_edit.php:73
+msgid "There was a problem saving the news item."
+msgstr ""
+
+#: newsletter_delete.php:24
+msgid "There are no newsletters in the system."
+msgstr ""
+
+#: newsletter_delete.php:50
+msgid "1 newsletter deleted."
+msgstr ""
+
+#: newsletter_delete.php:52
+msgid "newsletters deleted."
+msgstr ""
+
+#: newsletter_delete.php:54
+msgid "There was an error deleting the newsletters. Did you check any boxes?"
+msgstr ""
+
+#: newsletter_save.php:8
+msgid "Newsletter Uploaded"
+msgstr ""
+
+#: newsletters.php:6
+msgid "Newsletters"
+msgstr ""
+
+#: newsletters.php:18
+msgid "Latest Newsletter"
+msgstr ""
+
+#: newsletters.php:21
+msgid "Archives"
+msgstr ""
+
+#: newsletters.php:29
+msgid "No newsletters have yet been posted."
+msgstr ""
+
+#: news.php:17 news_to_edit.php:17
+msgid "There are no current news items"
+msgstr ""
+
+#: news.php:22
+msgid "To read the latest"
+msgstr ""
+
+#: news.php:22
+msgid "newsletter, go"
+msgstr ""
+
+#: news_to_edit.php:5
+msgid "Choose Item to Edit"
+msgstr ""
+
+#: news_to_edit.php:13
+msgid "Which News Item?"
+msgstr ""
+
+#: pages.php:10
+msgid "Session Destroyed"
+msgstr ""
+
+#: pages.php:13
+msgid "Really Destroy Session?"
+msgstr ""
+
+#: pages.php:31
+msgid "Oops, you have requested a non-existant page."
+msgstr ""
+
+#: password_change.php:13
+msgid "Change Password for"
+msgstr ""
+
+#: password_change.php:15 password_change.php:35
+msgid "For your security, passwords must be at least 7 characters long and include at least one number."
+msgstr ""
+
+#: password_change.php:18
+msgid "Old Password"
+msgstr ""
+
+#: password_change.php:19
+msgid "Choose a New Password"
+msgstr ""
+
+#: password_change.php:20
+msgid "Repeat the New Password"
+msgstr ""
+
+#: password_change.php:21
+msgid "Change Password"
+msgstr ""
+
+#: password_change.php:26
+msgid "Enter your current password"
+msgstr ""
+
+#: password_change.php:27
+msgid "Enter a new password"
+msgstr ""
+
+#: password_change.php:28
+msgid "You must re-enter the new password"
+msgstr ""
+
+#: password_change.php:31
+msgid "Passwords are not the same"
+msgstr ""
+
+#: password_change.php:33
+msgid "Password is incorrect"
+msgstr ""
+
+#: password_change.php:51
+msgid "Password successfully changed."
+msgstr ""
+
+#: password_change.php:53
+msgid "There was an error changing the password."
+msgstr ""
+
+#: password_reset.php:7 password_reset.php:14
+msgid "Reset Password"
+msgstr ""
+
+#: password_reset.php:11
+msgid "Enter the Email Address for your Account"
+msgstr ""
+
+#: password_reset.php:17
+msgid "Address or member id is incorrect"
+msgstr ""
+
+#: password_reset.php:19
+msgid "If you cannot remember your member id or email address, please"
+msgstr ""
+
+#: password_reset.php:19
+msgid "contact"
+msgstr ""
+
+#: password_reset.php:19
+msgid "us"
+msgstr ""
+
+#: password_reset.php:38
+msgid "Your password has been reset.  You can change the new password after you login by going into the Member Profile section of the web site."
+msgstr ""
+
+#: password_reset.php:41
+msgid "The new password has been sent to your email address."
+msgstr ""
+
+#: photo_to_edit.php:8
+msgid "Choose Member whose Photo you wish to Edit"
+msgstr ""
+
+#: photo_to_edit.php:16
+msgid "Upload/Replace Photo"
+msgstr ""
+
+#: refund_monthly_fee.php:17
+msgid "Refund monthly fee"
+msgstr ""
+
+#: refund_monthly_fee.php:70
+msgid "No monthly transfers found."
+msgstr ""
+
+#: refund_monthly_fee.php:98
+msgid "This system isn't setup to process monthly fees."
+msgstr ""
+
+#: refund_monthly_fee.php:103 refund_service_charge.php:92
+msgid "Action already executed.  Start from the administration page for a new refund."
+msgstr ""
+
+#: refund_monthly_fee.php:142 refund_service_charge.php:132
+#: service_charge.php:86 take_monthly_fee.php:131
+msgid "Already transfered.  Start from the administration page for a new transfer."
+msgstr ""
+
+#: refund_monthly_fee.php:157
+msgid "Refund for monthly fee taken on"
+msgstr ""
+
+#: refund_monthly_fee.php:205 refund_service_charge.php:200
+msgid "Couldn't transfer."
+msgstr ""
+
+#: refund_service_charge.php:60
+msgid "No service charges found."
+msgstr ""
+
+#: refund_service_charge.php:87
+msgid "This system isn't setup to process service fees."
+msgstr ""
+
+#: refund_service_charge.php:154
+msgid "Refund for"
+msgstr ""
+
+#: refund_service_charge.php:154
+msgid "taken on"
+msgstr ""
+
+#: report_no_login.php:7
+msgid "Members Who Have Never Logged In"
+msgstr ""
+
+#: report_no_login.php:14
+msgid "Phone Number(s)"
+msgstr ""
+
+#: report_no_login.php:14
+msgid "Email(s)"
+msgstr ""
+
+#: report_no_login.php:35
+msgid "All members in the system have logged in at least once."
+msgstr ""
+
+#: service_charge.php:5 service_charge.php:103
+msgid "Service Charge"
+msgstr ""
+
+#: service_charge.php:39
+msgid "This system isn't setup to charge service fees."
+msgstr ""
+
+#: service_charge.php:44 take_monthly_fee.php:54
+msgid "Already confirmed.  Start from the administration page for a new transfer."
+msgstr ""
+
+#: service_charge.php:98
+msgid "The fee entered must be numeric (e.g. '5') and contain no other characters (e.g. '5 units' = bad input!)"
+msgstr ""
+
+#: service_charge.php:153 take_monthly_fee.php:191
+msgid "An Error occured during the transfer."
+msgstr ""
+
+#: settings.php:30
+msgid "General Settings"
+msgstr ""
+
+#: settings.php:30
+msgid "Site Features"
+msgstr ""
+
+#: settings.php:30
+msgid "Display Options"
+msgstr ""
+
+#: settings.php:30
+msgid "Account Restrictions"
+msgstr ""
+
+#: settings.php:30
+msgid "Social Networking"
+msgstr ""
+
+#: settings.php:30
+msgid "Admin Settings"
+msgstr ""
+
+#: settings.php:30
+msgid "Language Settings"
+msgstr ""
+
+#: settings.php:30
+msgid "Geocoding"
+msgstr ""
+
+#: settings.php:42
+msgid "<a name='top'></a><font color=red>PLEASE NOTE: The following are <em>General</em> Settings intended for use by the LETS Administrator. <p>More <em>Advanced</em> configuration settings for the Webmaster are located in the file 'includes/inc.config.php'.</font><p>"
+msgstr ""
+
+#: settings.php:63
+msgid "Back to top"
+msgstr ""
+
+#. Translation hint: Default language
+#: settings.php:156
+msgid "If the user or their browser does not select a language, they will see this one"
+msgstr ""
+
+#: settings.php:156
+msgid "Default"
+msgstr ""
+
+#. Translation hint: Available language
+#: settings.php:158
+msgid "Allow users to select this language from the dropdown"
+msgstr ""
+
+#: settings.php:158
+msgid "Available"
+msgstr ""
+
+#: settings.php:159
+msgid "Language"
+msgstr ""
+
+#: settings.php:172
+msgid "Select the default language using the radio buttons. Select which languages are available using the checkboxes. Your choices apply only to the drop-down menu. Selecting one or no languages will disable the drop-down menu. Web-browser preferences may still select languages you have not made available."
+msgstr ""
+
+#: settings.php:177
+msgid "In order to select available languages, please install the <code>intl</code> PHP extension."
+msgstr ""
+
+#: settings.php:203
+msgid "Save Settings"
+msgstr ""
+
+#: state_choose.php:6
+msgid "Choose state"
+msgstr ""
+
+#: state_choose.php:19
+msgid "Which state?"
+msgstr ""
+
+#: state_choose.php:54
+msgid "State deleted"
+msgstr ""
+
+#: state_create.php:16 state_edit.php:20
+msgid "State name"
+msgstr ""
+
+#: state_create.php:24
+msgid "Enter state name"
+msgstr ""
+
+#: state_create.php:42
+msgid "State created"
+msgstr ""
+
+#: state_create.php:44
+msgid "Could not save state"
+msgstr ""
+
+#: state_edit.php:6
+msgid "Modify state information"
+msgstr ""
+
+#: state_edit.php:28
+msgid "State name cannot be blank"
+msgstr ""
+
+#: state_edit.php:46
+msgid "State name updated"
+msgstr ""
+
+#: state_edit.php:48
+msgid "Could not save state name changes"
+msgstr ""
+
+#: take_monthly_fee.php:49
+msgid "This system isn't setup to charge monthly fees."
+msgstr ""
+
+#: take_monthly_fee.php:66
+msgid "Are you sure you want to transfer monthly fee for the month of"
+msgstr ""
+
+#: take_monthly_fee.php:66
+msgid "The monthly fee for"
+msgstr ""
+
+#: take_monthly_fee.php:66
+msgid "has already been taken"
+msgstr ""
+
+#: take_monthly_fee.php:171
+msgid "Monthly Fee"
+msgstr ""
+
+#: timeframe_choose.php:5
+msgid "Choose time period"
+msgstr ""
+
+#: timeframe_choose.php:16
+msgid "From when?"
+msgstr ""
+
+#: timeframe_choose.php:17
+msgid "To when?"
+msgstr ""
+
+#: trade_history_all.php:6 trade_history.php:8
+msgid "Exchange History"
+msgstr ""
+
+#: trade_history_all.php:13 trade_history.php:38
+msgid "For period from"
+msgstr ""
+
+#: trade_history.php:38
+msgid "Current Balance"
+msgstr ""
+
+#: trade.php:37
+msgid "Transaction Type"
+msgstr ""
+
+#: trade.php:37
+msgid "Transfer"
+msgstr ""
+
+#: trade.php:37
+msgid "Invoice"
+msgstr ""
+
+#: trade.php:45
+msgid "To Member"
+msgstr ""
+
+#: trade.php:47
+msgid "Transfer to Member"
+msgstr ""
+
+#: trade.php:51
+msgid "# of "
+msgstr ""
+
+#: trade.php:53
+msgid "# of Minutes"
+msgstr ""
+
+#: trade.php:55
+msgid "Enter a Brief Description of the Exchange"
+msgstr ""
+
+#: trade.php:64
+msgid "You cannot transfer to yourself"
+msgstr ""
+
+#: trade.php:68
+msgid "Description too long - maximum length is 255 characters"
+msgstr ""
+
+#: trade.php:72
+msgid "Hours entered must be a positive, whole number"
+msgstr ""
+
+#: trade.php:74
+msgid "Enter 15, 30, or 45 (or other numbers in 3 minute increments)"
+msgstr ""
+
+#: trade.php:77
+msgid "Enter a positive number with no more than two decimal points"
+msgstr ""
+
+#: trade.php:101
+msgid "No units were entered to exchange!"
+msgstr ""
+
+#: trade.php:136
+msgid "Payment Received on"
+msgstr ""
+
+#: trade.php:136 trade.php:150
+msgid "Hi"
+msgstr ""
+
+#: trade.php:136
+msgid "Just letting you know that you have received a new payment from"
+msgstr ""
+
+#: trade.php:136
+msgid "As you have elected to confirm all payments made to you, please log into your account now and confirm or reject this payment using the following URL..."
+msgstr ""
+
+#: trade.php:138
+msgid "has been notified that you wish to transfer"
+msgstr ""
+
+#: trade.php:138
+msgid "to him/her"
+msgstr ""
+
+#: trade.php:138
+msgid "This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member"
+msgstr ""
+
+#: trade.php:139 trade.php:153 trade.php:176
+msgid "Would you like to"
+msgstr ""
+
+#: trade.php:139 trade.php:153 trade.php:176
+msgid "record another"
+msgstr ""
+
+#: trade.php:139 trade.php:153 trade.php:176
+msgid "exchange"
+msgstr ""
+
+#: trade.php:142 trade.php:156 trade.php:168
+msgid "Trade failed!"
+msgstr ""
+
+#: trade.php:147
+msgid "Sorry, the Invoicing facility has been disabled by the site administrator."
+msgstr ""
+
+#: trade.php:150
+msgid "Invoice Received on"
+msgstr ""
+
+#: trade.php:150
+msgid "Just letting you know that you have received a new Invoice from"
+msgstr ""
+
+#: trade.php:150
+msgid "Please log into your account now to pay or reject this invoice using the following URL..."
+msgstr ""
+
+#: trade.php:152
+msgid "has been sent an invoice for"
+msgstr ""
+
+#: trade.php:152
+msgid "You will be informed when the member pays this invoice and will be invited to leave Feedback for this member"
+msgstr ""
+
+#: trade.php:168
+msgid "Please try again later, or contact your administrator."
+msgstr ""
+
+#: trade.php:176
+msgid "You have transferred"
+msgstr ""
+
+#: trade.php:176
+msgid " to "
+msgstr ""
+
+#: trade.php:192 trades_pending.php:162
+msgid "Donation from"
+msgstr ""
+
+#: trade.php:209 includes/inc.forms.php:10
+msgid "denotes a required field"
+msgstr ""
+
+#: trade_reverse.php:7
+msgid "Reverse an Exchange"
+msgstr ""
+
+#: trade_reverse.php:17
+msgid "Choose the exchange to reverse"
+msgstr ""
+
+#: trade_reverse.php:19
+msgid "Enter a brief explanation. Information about the original exchange will be automatically included"
+msgstr ""
+
+#: trade_reverse.php:21
+msgid "Reverse"
+msgstr ""
+
+#: trade_reverse.php:47
+msgid "Trade has been reversed."
+msgstr ""
+
+#: trade_reverse.php:49
+msgid "There was an error reversing the trade"
+msgstr ""
+
+#: trades_pending.php:17
+msgid "Exchanges Pending"
+msgstr ""
+
+#: trades_pending.php:27
+msgid "NOTE that only transactions currently pending approval from one member or the other are displayed here. The rest may be found in your complete <a>exchange history</a>."
+msgstr ""
+
+#: trades_pending.php:30
+msgid "Summary"
+msgstr ""
+
+#: trades_pending.php:31
+msgid "Payments to Confirm"
+msgstr ""
+
+#: trades_pending.php:35
+msgid "Invoices to Pay"
+msgstr ""
+
+#: trades_pending.php:37
+msgid "Sent Payments"
+msgstr ""
+
+#: trades_pending.php:40
+msgid "Sent Invoices"
+msgstr ""
+
+#: trades_pending.php:45 classes/class.feedback.php:198
+#: classes/class.trade.php:277
+msgid "Date"
+msgstr ""
+
+#: trades_pending.php:45
+msgid "Action"
+msgstr ""
+
+#: trades_pending.php:68
+msgid "Accept Payment"
+msgstr ""
+
+#: trades_pending.php:68 trades_pending.php:72
+msgid "Reject"
+msgstr ""
+
+#: trades_pending.php:71
+msgid "Pay Invoice"
+msgstr ""
+
+#: trades_pending.php:78
+#, php-format
+msgid "%s has rejected this transaction"
+msgstr ""
+
+#: trades_pending.php:80
+msgid "Resend Payment"
+msgstr ""
+
+#: trades_pending.php:81 trades_pending.php:92 trades_pending.php:111
+msgid "Remove this Notice"
+msgstr ""
+
+#: trades_pending.php:84
+msgid "Awaiting Confirmation by"
+msgstr ""
+
+#: trades_pending.php:90
+msgid "has rejected this transaction"
+msgstr ""
+
+#: trades_pending.php:91
+msgid "Resend Invoice"
+msgstr ""
+
+#: trades_pending.php:95
+msgid "Awaiting Payment from"
+msgstr ""
+
+#: trades_pending.php:103
+msgid "Payment Accepted"
+msgstr ""
+
+#: trades_pending.php:105
+msgid "Invoice Paid"
+msgstr ""
+
+#: trades_pending.php:107
+msgid "has confirmed"
+msgstr ""
+
+#: trades_pending.php:109
+msgid "has paid this invoice"
+msgstr ""
+
+#: trades_pending.php:186 trades_pending.php:212 trades_pending.php:229
+#: trades_pending.php:255 trades_pending.php:272 trades_pending.php:299
+#: trades_pending.php:316 trades_pending.php:347
+msgid "This trade does not exist or you do not have permission to act on it."
+msgstr ""
+
+#: trades_pending.php:194
+msgid "Sorry, only Open trades can be rejected or resent."
+msgstr ""
+
+#: trades_pending.php:200 trades_pending.php:243
+msgid "This member hasn't rejected this transaction"
+msgstr ""
+
+#: trades_pending.php:207
+msgid "Transaction re-submitted successfully."
+msgstr ""
+
+#: trades_pending.php:209 trades_pending.php:252 trades_pending.php:296
+#: trades_pending.php:344
+msgid "Error updating the database"
+msgstr ""
+
+#: trades_pending.php:237
+msgid "Sorry, only Open trades can be rejected."
+msgstr ""
+
+#: trades_pending.php:250 trades_pending.php:342
+msgid "Transaction removed successfully."
+msgstr ""
+
+#: trades_pending.php:280
+msgid "This trade is no longer Open and therefore cannot be rejected."
+msgstr ""
+
+#: trades_pending.php:294
+#, php-format
+msgid "Member %s has been informed that you have rejected this transaction."
+msgstr ""
+
+#: trades_pending.php:324
+msgid "This trade is currently marked as Open and thus cannot be removed until the required action has been taken."
+msgstr ""
+
+#: trades_pending.php:363
+msgid "This trade has already been confirmed and is now closed."
+msgstr ""
+
+#: trades_pending.php:374 trades_pending.php:393
+msgid "You do not have permission to confirm this trade."
+msgstr ""
+
+#. Translation hint: %1$s is the amount; %2$s is the currency; %3$s is the other member's ID.
+#: trades_pending.php:383
+#, php-format
+msgid "You have accepted a payment of %1$s %2$s from %3$s"
+msgstr ""
+
+#: trades_pending.php:410
+msgid "Error sending payment. Please contact your administrator."
+msgstr ""
+
+#. Translation hint: %1$s is the amount; %2$s is the currency; %3$s is the other member's ID.
+#: trades_pending.php:416
+#, php-format
+msgid "You have sent a payment of %1$s %2$s to %3$s"
+msgstr ""
+
+#: trades_pending.php:424
+msgid "You have elected to confirm a non-existent trade"
+msgstr ""
+
+#: trades_pending.php:431
+msgid "The following Incoming Payments require your confirmation"
+msgstr ""
+
+#: trades_pending.php:454 trades_pending.php:479 trades_pending.php:511
+#: trades_pending.php:542
+msgid "None found"
+msgstr ""
+
+#: trades_pending.php:460
+msgid "The following Invoices need paying"
+msgstr ""
+
+#: trades_pending.php:487
+msgid "You are awaiting confirmation of the following Payments"
+msgstr ""
+
+#: trades_pending.php:518
+msgid "You are awaiting payment for the following Invoices"
+msgstr ""
+
+#: trades_pending.php:549
+#, php-format
+msgid "I need to pay %d invoices"
+msgstr ""
+
+#: trades_pending.php:551
+#, php-format
+msgid "I need to confirm %d incoming payments"
+msgstr ""
+
+#: trades_pending.php:554
+#, php-format
+msgid "I am awaiting payment for %d invoices"
+msgstr ""
+
+#: trades_pending.php:556
+#, php-format
+msgid "I am awaiting confirmation of %d outgoing payments"
+msgstr ""
+
+#: trades_to_view.php:5
+msgid "Choose Member to View"
+msgstr ""
+
+#: trades_to_view.php:11
+msgid "Whose Exchange History?"
+msgstr ""
+
+#: includes/inc.config.php:92
+msgid "is currently down for maintenance."
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "Under 18"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "18-30"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "30's"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "40's"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "50's"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "60's"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "70's"
+msgstr ""
+
+#: includes/inc.config.php:121
+msgid "Over 80"
+msgstr ""
+
+#: includes/inc.config.php:121 includes/inc.config.php:124
+msgid "n/a"
+msgstr ""
+
+#: includes/inc.config.php:124
+msgid "Male"
+msgstr ""
+
+#: includes/inc.config.php:124
+msgid "Female"
+msgstr ""
+
+#: includes/inc.config.php:201
+msgid "Licensed under the"
+msgstr ""
+
+#: includes/inc.config.php:201
+#, php-format
+msgid "with some %s exceptions"
+msgstr ""
+
+#: includes/inc.config.php:201
+msgid "Local Exchange UK Ver."
+msgstr ""
+
+#: includes/inc.config.php:201
+msgid "Credits"
+msgstr ""
+
+#: includes/inc.config.php:207
+msgid "Home"
+msgstr ""
+
+#: includes/inc.config.php:210
+msgid "Information"
+msgstr ""
+
+#: includes/inc.config.php:212
+msgid "Offered"
+msgstr ""
+
+#: includes/inc.config.php:213
+msgid "Wanted"
+msgstr ""
+
+#: includes/inc.config.php:216
+msgid "Members List"
+msgstr ""
+
+#: includes/inc.config.php:259
+msgid "The following listings are new or updated.<p>If you would prefer not to receive automatic email updates, or if you would like to change their frequency, you can do so at the"
+msgstr ""
+
+#: includes/inc.config.php:259
+msgid "area of our website."
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Hello"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Due to inactivity, your"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "listings have been set to automatically expire"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "days from now"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "In order to keep the"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "system up to date and working smoothly for all members, we have developed an automatic system to expire listings for members who haven't recorded exchanges or updated their listings during a period of"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "days. We want the directory to be up to date, so that members do not encounter listings that are out of date or expired. This works to everyone's advantage"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "We apologize for any inconvenience this may cause you and thank you for your participation. If you have any questions or comments, or are unsure how to best use the system, please reply to this email message or call us at"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "You have"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "days to login to the system and reactivate listings that you would still like to have in the directory.  If you do not reactivate them during that timeframe, your listings will no longer appear in the directory, but will still be stored in the system for another"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "days, during which time you can still edit and reactivate them."
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Instructions to reactivate listings"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Login to the website"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Go to Update Listings"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Select Edit Offered (or Wanted) Listings"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Select the listing to edit"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Uncheck the box next to 'Should this listing be set to automatically expire?'"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Press the Update button"
+msgstr ""
+
+#: includes/inc.config.php:285
+msgid "Repeat steps 1-6 for all listings you wish to reactivate"
+msgstr ""
+
+#: includes/inc.config.php:300
+msgid "Your"
+msgstr ""
+
+#: includes/inc.config.php:300
+msgid "Account"
+msgstr ""
+
+#: includes/inc.config.php:301
+msgid "Your password for"
+msgstr ""
+
+#: includes/inc.config.php:301
+msgid "has been reset. If you did not request this reset, it is possible your account has been compromised, and you may want to contact the site administrator at"
+msgstr ""
+
+#: includes/inc.config.php:301
+msgid "Your user id and new password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."
+msgstr ""
+
+#: includes/inc.config.php:303
+msgid "Hello, and welcome to the"
+msgstr ""
+
+#: includes/inc.config.php:303
+msgid "community!"
+msgstr ""
+
+#: includes/inc.config.php:303
+msgid "A member account has been created for you at"
+msgstr ""
+
+#: includes/inc.config.php:303
+msgid "Please login and create your Offered and Wanted Listings.  Your new user id and password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."
+msgstr ""
+
+#: includes/inc.config.php:303
+msgid "Thank you for joining us."
+msgstr ""
+
+#: includes/inc.feature-defaults.php:21
+msgid "<a>Learn more</a> about this community!"
+msgstr ""
+
+#: classes/class.category.php:29 classes/class.category.php:49
+msgid "Category already exists"
+msgstr ""
+
+#: classes/class.category.php:69 classes/class.category.php:129
+msgid "There was an error accessing a category record"
+msgstr ""
+
+#: classes/class.category.php:69 classes/class.category.php:83
+#: classes/class.category.php:129 classes/class.feedback.php:104
+#: classes/class.feedback.php:283 classes/class.listing.php:133
+#: classes/class.member.php:323 classes/class.member.php:346
+#: classes/class.member.php:382 classes/class.person.php:98
+#: classes/class.person.php:150 classes/class.person.php:170
+#: classes/class.state_address.php:75 classes/class.state_address.php:93
+#: classes/class.state_address.php:124 classes/class.uploads.php:89
+msgid "Please try again later"
+msgstr ""
+
+#: classes/class.category.php:83
+msgid "There was an error deleting category code"
+msgstr ""
+
+#: classes/class.directory.php:49
+msgid "Member Information"
+msgstr ""
+
+#: classes/class.directory.php:123
+msgid "Members Directory"
+msgstr ""
+
+#: classes/class.error.php:90
+msgid "Errors occurred on this page"
+msgstr ""
+
+#: classes/class.feedback.php:59
+msgid "Cannot create duplicate feedback."
+msgstr ""
+
+#: classes/class.feedback.php:104
+msgid "There was an error accessing the feedback table"
+msgstr ""
+
+#: classes/class.feedback.php:134
+msgid "Seller"
+msgstr ""
+
+#: classes/class.feedback.php:136
+msgid "Buyer"
+msgstr ""
+
+#: classes/class.feedback.php:198
+msgid "Type"
+msgstr ""
+
+#: classes/class.feedback.php:198
+msgid "Context"
+msgstr ""
+
+#: classes/class.feedback.php:198
+msgid "Comment"
+msgstr ""
+
+#: classes/class.feedback.php:283
+msgid "There was an error accessing the rebuttal table"
+msgstr ""
+
+#: classes/class.feedback.php:317
+msgid "Reply"
+msgstr ""
+
+#: classes/class.feedback.php:319
+msgid "Follow Up"
+msgstr ""
+
+#: classes/class.geocode.php:205
+msgid "Member with <a>karma</a>"
+msgstr ""
+
+#: classes/class.listing.php:114
+#, php-format
+msgid "There was an error accessing the listing with id %s. Please try again later."
+msgstr ""
+
+#: classes/class.listing.php:133
+msgid "There was an error accessing the"
+msgstr ""
+
+#: classes/class.listing.php:133
+msgid "listing for"
+msgstr ""
+
+#: classes/class.listing.php:231
+msgid "Could not inactivate listing"
+msgstr ""
+
+#: classes/class.listing.php:248
+msgid "Could not expire listing"
+msgstr ""
+
+#: classes/class.listing.php:453 classes/class.member.php:830
+#: classes/class.member.php:832
+msgid "No listings found."
+msgstr ""
+
+#: classes/class.member.php:111
+msgid "Your account has been locked due to too many unsuccessful login attempts. You will need to contact us to have your account unlocked."
+msgstr ""
+
+#: classes/class.member.php:113
+msgid "Password or member id is incorrect.  Please try again, or go"
+msgstr ""
+
+#: classes/class.member.php:113
+msgid "to have your password reset"
+msgstr ""
+
+#: classes/class.member.php:176
+msgid "There was an error updating the password."
+msgstr ""
+
+#: classes/class.member.php:215
+msgid "Logout"
+msgstr ""
+
+#: classes/class.member.php:252
+msgid "I'm sorry, but the action attempted was unable to be processed because you don't have permissions"
+msgstr ""
+
+#: classes/class.member.php:252
+msgid "If you would like your access level increased, please"
+msgstr ""
+
+#: classes/class.member.php:252
+msgid "email the admin"
+msgstr ""
+
+#: classes/class.member.php:252
+msgid "and ask"
+msgstr ""
+
+#: classes/class.member.php:323
+msgid "There was an error accessing this member"
+msgstr ""
+
+#: classes/class.member.php:346
+msgid "There was an error accessing a person record for"
+msgstr ""
+
+#: classes/class.member.php:356
+msgid "Member Data"
+msgstr ""
+
+#: classes/class.member.php:359
+msgid "Person Data"
+msgstr ""
+
+#: classes/class.member.php:382
+msgid "Could not save changes to member"
+msgstr ""
+
+#: classes/class.member.php:407
+msgid "Invalid person id in URL.  This break-in attempt has been reported."
+msgstr ""
+
+#: classes/class.member.php:449 classes/class.member.php:564
+msgid "Fax"
+msgstr ""
+
+#: classes/class.member.php:462 classes/class.member.php:599
+msgid "'s Fax"
+msgstr ""
+
+#: classes/class.member.php:543
+msgid "Activity"
+msgstr ""
+
+#: classes/class.member.php:545
+msgid "No exchanges yet"
+msgstr ""
+
+#: classes/class.member.php:547
+msgid "exchanges total"
+msgstr ""
+
+#: classes/class.member.php:547
+msgid "for a sum of"
+msgstr ""
+
+#: classes/class.member.php:547
+msgid "last on"
+msgstr ""
+
+#: classes/class.member.php:551
+msgid "Feedback"
+msgstr ""
+
+#: classes/class.member.php:551
+msgid "total"
+msgstr ""
+
+#: classes/class.member.php:551
+msgid "negative"
+msgstr ""
+
+#: classes/class.member.php:551
+msgid "neutral"
+msgstr ""
+
+#: classes/class.member.php:555
+msgid "Joined"
+msgstr ""
+
+#: classes/class.member.php:591
+msgid "Joint Member"
+msgstr ""
+
+#: classes/class.member.php:593
+msgid "'s Email"
+msgstr ""
+
+#: classes/class.member.php:595
+msgid "'s Phone"
+msgstr ""
+
+#: classes/class.member.php:597
+msgid "'s Secondary Phone"
+msgstr ""
+
+#: classes/class.member.php:613
+msgid "PERSONAL INFORMATION"
+msgstr ""
+
+#: classes/class.member.php:615 classes/class.member.php:616
+msgid "Unspecified"
+msgstr ""
+
+#: classes/class.member.php:617
+msgid "No description supplied"
+msgstr ""
+
+#: classes/class.member.php:799
+msgid "matching members"
+msgstr ""
+
+#: classes/class.member.php:808
+msgid "Member search"
+msgstr ""
+
+#: classes/class.member.php:840
+msgid "day"
+msgstr ""
+
+#. Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
+#: classes/class.member.php:849
+msgid "New and updated listings during the last"
+msgstr ""
+
+#: classes/class.member.php:880
+msgid "Important information about your"
+msgstr ""
+
+#: classes/class.member.php:880
+msgid "account"
+msgstr ""
+
+#: classes/class.member.php:884
+msgid "***NOTE: This member does not have an email address in the system, so they will need to be notified by phone that their listings have been inactivated."
+msgstr ""
+
+#: classes/class.member.php:888
+msgid "listings expired for"
+msgstr ""
+
+#: classes/class.member.php:888
+msgid "All of this member's listings were automatically expired due to inactivity.  To turn off this feature, see inc.config.php."
+msgstr ""
+
+#: classes/class.member.php:938
+msgid "Could not query database for balance information."
+msgstr ""
+
+#: classes/class.member.php:979
+msgid "Error saving Income Share."
+msgstr ""
+
+#: classes/class.member.php:981
+msgid "Income Share saved successfully."
+msgstr ""
+
+#: classes/class.member.php:990
+msgid "No Income Share to delete"
+msgstr ""
+
+#: classes/class.member.php:998
+msgid "Error deleting income Share."
+msgstr ""
+
+#: classes/class.member.php:1000
+msgid "Income Share deleted successfully."
+msgstr ""
+
+#: classes/class.news.php:28
+msgid "Could not save news item."
+msgstr ""
+
+#: classes/class.news.php:56
+msgid "There was an error accessing the news table.  Please try again later."
+msgstr ""
+
+#: classes/class.news.php:118
+msgid "At top of list"
+msgstr ""
+
+#: classes/class.news.php:140
+msgid "After"
+msgstr ""
+
+#: classes/class.page.php:99
+msgid "These are your Karma points. They reflect how active you've been in the LETS system, both in earning and spending."
+msgstr ""
+
+#: classes/class.page.php:100
+msgid "This is your account balance."
+msgstr ""
+
+#. Translation hint: "it" refers to the member's account balance.
+#: classes/class.page.php:103
+msgid "Spend some of it to gain Karma points!"
+msgstr ""
+
+#. Translation hint: %s is the first name of another member.
+#: classes/class.page.php:109
+#, php-format
+msgid "These are %s's Karma points. They reflect how active the member has been in the LETS system, both in earning and spending ."
+msgstr ""
+
+#. Translation hint: %s is the first name of another member.
+#: classes/class.page.php:111
+#, php-format
+msgid "This is %s's account balance."
+msgstr ""
+
+#: classes/class.page.php:125
+msgid "What's this?"
+msgstr ""
+
+#: classes/class.page.php:191
+msgid "Printer Friendly View"
+msgstr ""
+
+#: classes/class.page.php:204
+msgid "DisplayPage() was called with no content included!  Was a blank page intended?"
+msgstr ""
+
+#: classes/class.person.php:74
+msgid "Could not save new person. There is already a person in your account with the same name, date of birth, and mother's maiden name. If you received this error after pressing the Back button, try going back to the menu and starting again."
+msgstr ""
+
+#: classes/class.person.php:98
+msgid "Could not save changes to"
+msgstr ""
+
+#: classes/class.person.php:150
+msgid "There was an error accessing this person"
+msgstr ""
+
+#: classes/class.person.php:159
+msgid "Cannot delete primary member"
+msgstr ""
+
+#: classes/class.person.php:208
+msgid "Phone type does not exist."
+msgstr ""
+
+#. Translation hint: %s is the geocoding service (finds addresses on a map).
+#: classes/class.person.php:239
+#, php-format
+msgid "%s could not find your address. However, we will attempt to save your account information."
+msgstr ""
+
+#: classes/class.person.php:244
+msgid "There was a system error locating your address on the map. However, we will attempt to save your account information."
+msgstr ""
+
+#: classes/class.settings.php:125
+msgid "Update failed!"
+msgstr ""
+
+#: classes/class.settings.php:132
+msgid "Settings updated successfully."
+msgstr ""
+
+#: classes/class.settings.php:147
+msgid "Hours"
+msgstr ""
+
+#: classes/class.state_address.php:36 classes/class.state_address.php:56
+msgid "State already exists"
+msgstr ""
+
+#: classes/class.state_address.php:75
+msgid "There was an error accessing the state information"
+msgstr ""
+
+#: classes/class.state_address.php:84 classes/class.state_address.php:93
+#: classes/class.state_address.php:124
+msgid "There was an error deleting state information"
+msgstr ""
+
+#: classes/class.trade.php:94
+msgid "There was an error accessing the trades table."
+msgstr ""
+
+#: classes/class.trade.php:138
+msgid "Database out of balance on"
+msgstr ""
+
+#: classes/class.trade.php:138
+msgid "Hi admin"
+msgstr ""
+
+#: classes/class.trade.php:138
+msgid "We thought you should know that whilst processing a trade the system detected that your trade database is out of balance! Obviously something has gone wrong somewhere along the line and we suggest you investigate the cause of this ASAP."
+msgstr ""
+
+#: classes/class.trade.php:144
+msgid "The trade database is out of balance!  Please contact your administrator at"
+msgstr ""
+
+#: classes/class.trade.php:218
+msgid "Reversal of exchange"
+msgstr ""
+
+#: classes/class.trade.php:218
+msgid "from"
+msgstr ""
+
+#: classes/class.trade.php:218
+msgid "by admin"
+msgstr ""
+
+#: classes/class.trade.php:324
+msgid "On"
+msgstr ""
+
+#: classes/class.uploads.php:34
+msgid "A file with this name already exists on the server."
+msgstr ""
+
+#: classes/class.uploads.php:48
+msgid "Could not save database row for uploaded file."
+msgstr ""
+
+#: classes/class.uploads.php:52
+msgid "Could not save uploaded file. This could be because of a permissions problem.  Does the web user have permission to write to the uploads directory?  It could also be that the file is too large.  The current maximum size of file allowed is"
+msgstr ""
+
+#: classes/class.uploads.php:52
+msgid "bytes"
+msgstr ""
+
+#: classes/class.uploads.php:71
+msgid "There was an error accessing the uploads table."
+msgstr ""
+
+#: classes/class.uploads.php:85
+msgid "File was deleted but could not delete row from database.  The row will have to removed manually.  Please contact your systems administrator."
+msgstr ""
+
+#: classes/class.uploads.php:89
+msgid "Could not delete file"
+msgstr ""
+
+#: classes/class.uploads.php:138
+msgid "Upload"
+msgstr ""
