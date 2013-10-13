@@ -1,8 +1,3 @@
-# Dutch translations for Local Exchange package.
-# Copyright (C) Calvin Priest
-# This file is distributed under the same license as the Local Exchange package.
-# Leif Arne Storset <leifarne@storset.net>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
@@ -23,27 +18,27 @@ msgstr ""
 
 #: admin_menu.php:14
 msgid "Current Balance is"
-msgstr ""
+msgstr "Saldo is"
 
 #: admin_menu.php:20
 msgid "Accounts"
-msgstr ""
+msgstr "Accounts"
 
 #: admin_menu.php:21 member_profile_all_in_one.php:35
 msgid "Create a New Member Account"
-msgstr ""
+msgstr "Maak een nieuw account"
 
 #: admin_menu.php:22 member_profile_all_in_one.php:36
 msgid "Edit a Member Account"
-msgstr ""
+msgstr "Wijzig een account"
 
 #: admin_menu.php:24
 msgid "Edit a Member Photo"
-msgstr ""
+msgstr "Wijzig een ledenfoto"
 
 #: admin_menu.php:27
 msgid "Inactivate/Re-activate a Member Account"
-msgstr ""
+msgstr "De-activeer of activeer een account"
 
 #: admin_menu.php:29
 msgid "Add joint member to existing account"
@@ -51,92 +46,92 @@ msgstr ""
 
 #: admin_menu.php:30 member_profile.php:15
 msgid "Edit/Delete a Joint Member"
-msgstr ""
+msgstr "Wijzig een partnerlid"
 
 #: admin_menu.php:33 member_unlock.php:6
 msgid "Unlock Account and Reset Password"
-msgstr ""
+msgstr "De-blokkeer een account en reset het wachtwoord"
 
 #: admin_menu.php:38
 msgid "Override Member Account Balance"
-msgstr ""
+msgstr "Corrigeer het saldo van een lid"
 
 #: admin_menu.php:41 manage_restrictions.php:11
 msgid "Manage Account Restrictions"
-msgstr ""
+msgstr "Bewerk lid beperkingen"
 
 #: admin_menu.php:47 exchange_menu.php:5 member_profile_all_in_one.php:28
 #: includes/inc.config.php:215
 msgid "Exchanges"
-msgstr ""
+msgstr "Transacties"
 
 #: admin_menu.php:48
 msgid "Record an Exchange for a Member"
-msgstr ""
+msgstr "Voer een transactie in voor een lid"
 
 #: admin_menu.php:49 member_profile_all_in_one.php:41
 msgid "Reverse an Exchange that was Made in Error"
-msgstr ""
+msgstr "Boek een verkeerde transactie terug voor een lid"
 
 #: admin_menu.php:50
 msgid "Record Feedback for a Member"
-msgstr ""
+msgstr "Geef feedback voor een lid"
 
 #: admin_menu.php:54
 msgid "Listings"
-msgstr ""
+msgstr "Advertenties"
 
 #: admin_menu.php:56
 msgid "Offers"
-msgstr ""
+msgstr "Aanbod"
 
 #: admin_menu.php:57
 msgid "Create a New Offer Listing for a Member"
-msgstr ""
+msgstr "Plaats een Aanbod voor een lid"
 
 #: admin_menu.php:58
 msgid "Edit a Member's Offered Listing"
-msgstr ""
+msgstr "Wijzig een Aanbod voor een lid"
 
 #: admin_menu.php:59
 msgid "Delete a Member's Offered Listing"
-msgstr ""
+msgstr "Verwijder een Aanbod voor een lid"
 
 #: admin_menu.php:61
 msgid "Wants"
-msgstr ""
+msgstr "Vraag"
 
 #: admin_menu.php:62
 msgid "Create a New Want Listing for a Member"
-msgstr ""
+msgstr "Plaats een Vraag voor een lid"
 
 #: admin_menu.php:63
 msgid "Edit a Member's Wanted Listing"
-msgstr ""
+msgstr "Wijzig een Vraag voor een lid"
 
 #: admin_menu.php:64
 msgid "Delete a Member's Wanted Listing"
-msgstr ""
+msgstr "Verwijder een Vraag voor een lid"
 
 #: admin_menu.php:66 create_db.php:153 listings_menu.php:18
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Diversen"
 
 #: admin_menu.php:67
 msgid "Member Going on Holiday"
-msgstr ""
+msgstr "Lid gaat op vakantie"
 
 #: admin_menu.php:69 category_create.php:6
 msgid "Create a New Listing Category"
-msgstr ""
+msgstr "Maak een nieuwe advertentiecategorie"
 
 #: admin_menu.php:70
 msgid "Edit/Delete Listing Category"
-msgstr ""
+msgstr "Bewerk of verwijder een advertentiecategorie"
 
 #: admin_menu.php:71 state_create.php:6
 msgid "Create a New State"
-msgstr ""
+msgstr "Maak een nieuwe wijk/buurt"
 
 #: admin_menu.php:72
 msgid "Edit State"
@@ -144,79 +139,79 @@ msgstr ""
 
 #: admin_menu.php:77 create_info.php:18 do_info_edit.php:21
 msgid "Content"
-msgstr ""
+msgstr "Inhoud"
 
 #: admin_menu.php:78
 msgid "Information Pages"
-msgstr ""
+msgstr "Informatiepagina's"
 
 #: admin_menu.php:79 create_info.php:11
 msgid "Create a New Information Page"
-msgstr ""
+msgstr "Maak een nieuwe informatiepagina"
 
 #: admin_menu.php:80
 msgid "Edit Info Pages"
-msgstr ""
+msgstr "Bewerk een informatiepagina"
 
 #: admin_menu.php:81
 msgid "Delete an Info Page"
-msgstr ""
+msgstr "Verwijder een informatiepagina"
 
 #: admin_menu.php:82 info_permissions.php:11
 msgid "Edit Information Page Permissions"
-msgstr ""
+msgstr "Bewerk informatiepagina permissies"
 
 #: admin_menu.php:83
 msgid "See Info Page URL 's"
-msgstr ""
+msgstr "Bekijk informatiepagina URL's"
 
 #: admin_menu.php:85 news.php:7 includes/inc.config.php:211
 msgid "News and Events"
-msgstr ""
+msgstr "Prikbord"
 
 #: admin_menu.php:86 news_create.php:8
 msgid "Create a News Item"
-msgstr ""
+msgstr "Maak een nieuwsbericht"
 
 #: admin_menu.php:87
 msgid "Edit a News Item"
-msgstr ""
+msgstr "Bewerk een nieuwsbericht"
 
 #: admin_menu.php:88 newsletter_upload.php:8
 msgid "Upload a Newsletter"
-msgstr ""
+msgstr "Upload een nieuwsbrief"
 
 #: admin_menu.php:89 newsletter_delete.php:9
 msgid "Delete Newsletters"
-msgstr ""
+msgstr "Verwijder een nieuwsbrief"
 
 #: admin_menu.php:95
 msgid "Admin Fees"
-msgstr ""
+msgstr "Administratieve bijdragen/contributie"
 
 #: admin_menu.php:106 take_monthly_fee.php:15
 msgid "Take Monthly Fee"
-msgstr ""
+msgstr "Schrijf de maandelijkse bijdrage af"
 
 #: admin_menu.php:108
 msgid "Refund Monthly Fee"
-msgstr ""
+msgstr "Boek de maandelijkse bijdrage terug"
 
 #: admin_menu.php:114
 msgid "Take One-Off Service Charge"
-msgstr ""
+msgstr "Schrijf de servicebijdrage af"
 
 #: admin_menu.php:116 refund_service_charge.php:5
 msgid "Refund Service Charge"
-msgstr ""
+msgstr "Boek de servicebijdrage terug"
 
 #: admin_menu.php:120
 msgid "System & Reporting"
-msgstr ""
+msgstr "Systeem en rapportage"
 
 #: admin_menu.php:122 settings.php:4
 msgid "Site Settings"
-msgstr ""
+msgstr "Algemene instellingen"
 
 #. Translation hint: Link text
 #: admin_menu.php:124
@@ -229,50 +224,50 @@ msgstr ""
 
 #: admin_menu.php:125
 msgid "MySQL Backup"
-msgstr ""
+msgstr "MySQL backup"
 
 #: admin_menu.php:127
 msgid "Send an Email to All Members"
-msgstr ""
+msgstr "Stuur een e-mailbericht naar alle leden"
 
 #: admin_menu.php:129
 msgid "View Members Not Yet Logged In"
-msgstr ""
+msgstr "Bekijk leden die nog niet hebben ingelogd"
 
 #: balance_to_edit.php:11 feedback.php:69
 msgid "Choose Member whose Balance you wish to Edit"
-msgstr ""
+msgstr "Kies het lid waarvan je het saldo wilt bewerken"
 
 #: balance_to_edit.php:17 member_choose.php:26 member_create.php:21
 #: member_directory.php:44 member_edit.php:24 member_to_edit.php:14
 #: photo_to_edit.php:14 report_no_login.php:14 classes/class.member.php:541
 msgid "Member"
-msgstr ""
+msgstr "Lid"
 
 #: balance_to_edit.php:19
 msgid "Edit Balance"
-msgstr ""
+msgstr "Bewerk saldo"
 
 #: category_choose.php:6 listing_create.php:71 trade.php:66
 msgid "Choose Category"
-msgstr ""
+msgstr "Kies een categorie"
 
 #: category_choose.php:20
 msgid "Which Category?"
-msgstr ""
+msgstr "Welke categorie?"
 
 #: category_choose.php:23 do_info_edit.php:13 edit_info.php:21
 #: member_contact_choose.php:12 member_contact_to_edit.php:19
 #: member_to_edit.php:16 news_edit.php:13 news_to_edit.php:15
 #: state_choose.php:22
 msgid "Edit"
-msgstr ""
+msgstr "Bewerk"
 
 #: category_choose.php:24 delete_info.php:36 listing_delete.php:45
 #: member_contact_choose.php:13 member_contact_delete.php:22
 #: member_contact_to_edit.php:20 newsletter_delete.php:22
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 #: category_choose.php:49
 msgid ""
@@ -281,26 +276,30 @@ msgid ""
 "category.  Note that the listings could be temporarily inactive or expired, "
 "in which case they will not show in the offered/wanted lists."
 msgstr ""
+"In deze categorie staan nog advertenties. Verwijder de advertenties of "
+"verplaats ze naar een nieuwe categorie voordat de categorie kan worden "
+"verwijderd. Let op dat advertenties tijdelijk inactief kunnen zijn en dus "
+"niet in de lijsten worden getoond."
 
 #: category_choose.php:51
 msgid "Listings in this category:"
-msgstr ""
+msgstr "Advertenties in deze categorie"
 
 #: category_choose.php:55
 msgid "OFFERED"
-msgstr ""
+msgstr "AANBOD"
 
 #: category_choose.php:60
 msgid "WANTED"
-msgstr ""
+msgstr "VRAAG"
 
 #: category_choose.php:63
 msgid "The category has been deleted."
-msgstr ""
+msgstr "De categorie is verwijderd."
 
 #: category_create.php:16 category_edit.php:20
 msgid "Category Description"
-msgstr ""
+msgstr "Categorie omschrijving"
 
 #: category_create.php:19 category_edit.php:23 create_info.php:21
 #: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
@@ -308,19 +307,19 @@ msgstr ""
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
 #: timeframe_choose.php:19 trade.php:57 trade.php:223
 msgid "Submit"
-msgstr ""
+msgstr "Verstuur"
 
 #: category_create.php:24
 msgid "Enter the category description"
-msgstr ""
+msgstr "Voer de categorie omschrijving in"
 
 #: category_create.php:42
 msgid "The category has been created."
-msgstr ""
+msgstr "De categorie is gemaakt."
 
 #: category_create.php:44
 msgid "Could not save the category."
-msgstr ""
+msgstr "Kan de categorie niet opslaan"
 
 #: category_create.php:44 category_edit.php:48 email.php:89 feedback.php:85
 #: listing_create.php:123 listing_edit.php:177 member_contact_create.php:153
@@ -330,246 +329,246 @@ msgstr ""
 #: classes/class.member.php:176 classes/class.member.php:949
 #: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
-msgstr ""
+msgstr "Probeer het later nog eens."
 
 #: category_edit.php:6
 msgid "Edit Listing Category"
-msgstr ""
+msgstr "Bewerk advertentiecategorie"
 
 #: category_edit.php:28
 msgid "Category description cannot be blank"
-msgstr ""
+msgstr "De categorie omschrijving kan niet leeg zijn"
 
 #: category_edit.php:46
 msgid "The category has been updated."
-msgstr ""
+msgstr "De categorie is vernieuwd"
 
 #: category_edit.php:48
 msgid "Could not save changes to the category."
-msgstr ""
+msgstr "Kan de veranderingen in de categorie niet opslaan"
 
 #: contact_all.php:4
 msgid "Email all Members"
-msgstr ""
+msgstr "Stuur een e-mailbericht naar alle leden"
 
 #: contact_all.php:13
 msgid "This email will go out to <i>ALL</i> members of"
-msgstr ""
+msgstr "Dit e-mailbericht gaat naar ALLE leden van"
 
 #: contact_all.php:17 contact.php:17 email.php:40
 msgid "Your Message"
-msgstr ""
+msgstr "Je bericht:<br>"
 
 #: contact_all.php:21 contact.php:23 email.php:43
 msgid "Send"
-msgstr ""
+msgstr "Verstuur"
 
 #: contact_all.php:26
 msgid "Enter a subject"
-msgstr ""
+msgstr "Voer een onderwerp in"
 
 #: contact_all.php:27 email.php:48
 msgid "Enter your message"
-msgstr ""
+msgstr "Voer je bericht in"
 
 #: contact_all.php:60
 msgid "Your message has been sent to all members."
-msgstr ""
+msgstr "Je e-mailbericht is naar alle leden verstuurd"
 
 #: contact_all.php:62
 msgid "There were errors sending the email to the following email addresses"
-msgstr ""
+msgstr "Het e-mailbericht kon niet worden verstuurd naar de volgende adressen"
 
 #: contact.php:4 includes/inc.config.php:218
 msgid "Contact Us"
-msgstr ""
+msgstr "Contact"
 
 #: contact.php:11
 msgid "For more information on the"
-msgstr ""
+msgstr "Voor meer informatie over"
 
 #: contact.php:11
 msgid ""
 "or to find out how to become a member, please fill out our information "
 "request. Someone will get back to you soon. Please check our"
-msgstr ""
+msgstr "of om te weten hoe je lid kunt worden, kun je een informatie-aanvraag invullen. Wij nemen dan snel contact met je op. Kijk ook op de"
 
 #: contact.php:11
 msgid "Events"
-msgstr ""
+msgstr "'Prikbord'"
 
 #: contact.php:11
 msgid ""
 "page for our next New Member's Meeting if you would like to join our group!"
-msgstr ""
+msgstr "pagina voor ons eerstvolgende kLETScaf? als je een keer wilt kennismaken !"
 
 #: contact.php:13
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: contact.php:14 classes/class.member.php:558
 msgid "Email"
-msgstr ""
+msgstr "E-mailadres"
 
 #: contact.php:15 contact.php:46 member_directory.php:46
 msgid "Phone"
-msgstr ""
+msgstr "Telefoon"
 
 #: contact.php:19
 msgid "(Select One)"
-msgstr ""
+msgstr "(Maak een keuze)"
 
 #: contact.php:19
 msgid "Newspaper"
-msgstr ""
+msgstr "Krant"
 
 #: contact.php:19
 msgid "Radio"
-msgstr ""
+msgstr "Radio"
 
 #: contact.php:19
 msgid "Search Engine"
-msgstr ""
+msgstr "Zoekmachine"
 
 #: contact.php:19
 msgid "Friend"
-msgstr ""
+msgstr "Vriend"
 
 #: contact.php:19
 msgid "Local Business"
-msgstr ""
+msgstr "Lokaal zakenleven"
 
 #: contact.php:19
 msgid "Article"
-msgstr ""
+msgstr "Artikel"
 
 #: contact.php:19
 msgid "Other"
-msgstr ""
+msgstr "Anders"
 
 #: contact.php:20
 msgid "How did you hear about us?"
-msgstr ""
+msgstr "Hoe heb je van ons gehoord?"
 
 #: contact.php:28
 msgid "Enter your name"
-msgstr ""
+msgstr "Vul je naam in"
 
 #: contact.php:29
 msgid "Enter your email address"
-msgstr ""
+msgstr "Vul je e-mailadres in"
 
 #: contact.php:30
 msgid "Enter your phone number"
-msgstr ""
+msgstr "Vul je telefoonnummer in"
 
 #: contact.php:46
 msgid "Contact Form"
-msgstr ""
+msgstr "Contactformulier"
 
 #: contact.php:46 trades_pending.php:45 classes/class.feedback.php:198
 #: classes/class.trade.php:277 classes/class.trade.php:324
 msgid "From"
-msgstr ""
+msgstr "Van"
 
 #: contact.php:46
 msgid "Heard From"
-msgstr ""
+msgstr "Gehoord van"
 
 #: contact.php:49
 msgid "Thank you."
-msgstr ""
+msgstr "Dank je"
 
 #: contact.php:51
 msgid ""
 "There was a problem sending the email.  Are your sure you entered your email "
 "address  correctly?"
-msgstr ""
+msgstr "Het e-mailbericht kon niet worden verstuurd. Weet je zeker dat het e-mailadres goed is ingevuld?"
 
 #: create_db.php:131
 msgid "Arts & Crafts"
-msgstr ""
+msgstr "Kunst en creativiteit"
 
 #: create_db.php:133
 msgid "Building Services"
-msgstr ""
+msgstr "Bouwen en zo"
 
 #: create_db.php:135
 msgid "Business & Administration"
-msgstr ""
+msgstr "Zakelijke dienstverlening"
 
 #: create_db.php:137
 msgid "Children & Childcare"
-msgstr ""
+msgstr "Kinderen en kinderverzorging"
 
 #: create_db.php:139
 msgid "Computers"
-msgstr ""
+msgstr "Computers"
 
 #: create_db.php:141
 msgid "Counseling & Therapy"
-msgstr ""
+msgstr "Counseling en therapie"
 
 #: create_db.php:143
 msgid "Food"
-msgstr ""
+msgstr "Etenswaar"
 
 #: create_db.php:145
 msgid "Gardening & Yard Work"
-msgstr ""
+msgstr "Tuinwerk"
 
 #: create_db.php:147
 msgid "Goods"
-msgstr ""
+msgstr "Goederen"
 
 #: create_db.php:149
 msgid "Health & Personal"
-msgstr ""
+msgstr "Persoonlijke verzorging"
 
 #: create_db.php:151 member_create.php:23 member_edit.php:26
 msgid "Household"
-msgstr ""
+msgstr "Huishouden"
 
 #: create_db.php:155
 msgid "Music & Entertainment"
-msgstr ""
+msgstr "Muziek en ontspanning"
 
 #: create_db.php:157
 msgid "Pets"
-msgstr ""
+msgstr "Huisdieren"
 
 #: create_db.php:159
 msgid "Sports & Recreation"
-msgstr ""
+msgstr "Sport en recreatie"
 
 #: create_db.php:161
 msgid "Teaching"
-msgstr ""
+msgstr "Onderwijs"
 
 #: create_db.php:163
 msgid "Transportation"
-msgstr ""
+msgstr "Transport"
 
 #: create_db.php:165
 msgid "Freebies"
-msgstr ""
+msgstr "Gratis"
 
 #: create_db.php:244
 msgid "&quot;Account Restriction Lifted&quot; Email"
-msgstr ""
+msgstr "&quot;Ledenbeperking opgeheven&quot;&nbsp;e-mail"
 
 #: create_db.php:244
 msgid "Restrictions on your account have been lifted."
-msgstr ""
+msgstr "De beperking op uw lidmaatschap is opgeheven"
 
 #: create_db.php:244
 msgid ""
 "Define email that is sent out when restrictions are lifted on an account."
-msgstr ""
+msgstr "Bepaal de inhoud van de e-mail die verstuurd wordt als de beperkingen op een lidmaatschap zijn opgeheven"
 
 #: create_db.php:246
 msgid "&quot;Account Restricted&quot; Email"
-msgstr ""
+msgstr "&quotLidmaatschap beperkt&quot;&nbsp;e-mail"
 
 #: create_db.php:246
 msgid ""
@@ -581,64 +580,64 @@ msgid ""
 "the time being. If have any queries about this, or if we can assist you in "
 "any particular way, please let us know, and we will review the situation in "
 "due course. The LETS Administrator "
-msgstr ""
+msgstr "Geacht lid,<br /><br />Wij controleren regelmatig of bij het handelen de geleverde en gevraagde diensten eerlijk verdeeld zijn en de leden zoveel mogelijk hun saldo in de buurt van de nul proberen te houden. Wij realiseren ons dat er altijd een situatie kan voorkomen dat er een groot positief of negatief saldo ontstaat. Om te voorkomen dat uw saldo nog meer verslechtert, hebben wij tijdelijk uw rekening geblokkeerd. Indien wij je ergens mee kunnen helpen of indien je nog vragen hebt, laat dat ons dan weten. Wij zullen dan zo snel mogelijk reageren. <br />De LETS administratie"
 
 #: create_db.php:246
 msgid ""
 "Define email that is sent out when restrictions are imposed on an account."
-msgstr ""
+msgstr "Bepaal de inhoud van de e-mail die verstuurd wordt als aan een lidmaatschap beperkingen worden opgelegd."
 
 #: create_db.php:248
 msgid "Display Member Balance"
-msgstr ""
+msgstr "Toon saldo van leden"
 
 #: create_db.php:248
 msgid ""
 "Do you want to display member balances in the Members List? (Balances are "
 "always visible to Admins and Committee members regardless of what is set "
 "here.)"
-msgstr ""
+msgstr "Wil je de saldi van de leden in de ledenlijst tonen? (De saldi zullen altijd zichtbaar zijn voor Admins en Bestuursleden, ongeacht deze instelling.) "
 
 #: create_db.php:250
 msgid "Enable Take Service Charge"
-msgstr ""
+msgstr "Automatische administratiekosten activeren"
 
 #: create_db.php:250
 msgid ""
 "Do you want the option of taking a service charge from members as and when?"
-msgstr ""
+msgstr "Wil je gebruik maken van de mogelijkheid aan de leden administratiekosten in rekening te brengen?"
 
 #: create_db.php:252
 msgid "Show Inactive Members in Members List"
-msgstr ""
+msgstr "Niet-acieve leden tonen in de ledenlijst"
 
 #: create_db.php:252
 msgid "Do you want to display Inactive members in the Member List?"
-msgstr ""
+msgstr "Wil je de niet-acieve leden tonen in de ledenlijst?"
 
 #: create_db.php:254
 msgid "Show Rate on Listings"
-msgstr ""
+msgstr "Tarief in advertenties tonen"
 
 #: create_db.php:254
 msgid ""
 "Do you want to display the Rate alongside the offers/wants in the main "
 "listings?"
-msgstr ""
+msgstr "Wil je bij het advertentieoverzicht het gevraagde of aangeboden tarief laten zien?"
 
 #: create_db.php:256
 msgid "Show Postcode on Listings"
-msgstr ""
+msgstr "Postcode bij advertenties tonen"
 
 #: create_db.php:256
 msgid ""
 "Do you want to display the PostCode alongside the offers/wants in the main "
 "listings?"
-msgstr ""
+msgstr "Wil je bij het advertentieoverzicht de postcodes laten zien?"
 
 #: create_db.php:258
 msgid "Postcode Length (in chars)"
-msgstr ""
+msgstr "Aantal karakters postcode"
 
 #: create_db.php:258
 msgid ""
@@ -646,11 +645,11 @@ msgid ""
 "much of the PostCode do you want to show? (the number you enter will be the "
 "number of characters displayed, so for eg if you just want to show the first "
 "3 characters of the postcode then put 3."
-msgstr ""
+msgstr "Als je er voor hebt gekozen de postcode te laten zien op het advertentieoverzicht, welk gedeelte van de postcode wil je dan laten zien? (Vul het aantal te plaatsen karakters in.)"
 
 #: create_db.php:260
 msgid "Enable Balance Override"
-msgstr ""
+msgstr "Aanpassen saldi toestaan"
 
 #: create_db.php:260
 msgid ""
@@ -658,41 +657,41 @@ msgid ""
 "basis? This can be useful during the initial site set-up for inputting "
 "existing balances. Link will appear in admin panel if set to TRUE.  Use with "
 "CAUTION to avoid the database going out of balance"
-msgstr ""
+msgstr "Wil je de administrators de mogelijkheid bieden per lid het saldo aan te passen? Dit kan nuttig zijn tijdens de installatie van het systeem om bestaande saldi in te voeren. Als deze optie aan staat wordt een link getoond in het het admin scherm. Wees hier wel uiterst voorzichtig mee in verband met het 0-saldo van het systeem. "
 
 #: create_db.php:262
 msgid "Enable Member-to-Member Invoicing"
-msgstr ""
+msgstr "Leden onderling factureren"
 
 #: create_db.php:262
 msgid ""
 "Do you want to allow members to invoice one-another via the site? (The "
 "recipient is always given the option to confirm/reject payment of the "
 "invoice)"
-msgstr ""
+msgstr "Wil je de leden toestaan elkaar via de site een rekening te sturen? (De ontvanger zal altijd de keuze hebben de rekening te aanvaarden of te weigeren.)"
 
 #: create_db.php:264
 msgid "Allow Members to Upload Images"
-msgstr ""
+msgstr "Mogen leden afbeeldingen toevoegen"
 
 #: create_db.php:264
 msgid ""
 "Do you want to allow members to upload an image of themselves, to be "
 "displayed with their personal profile?"
-msgstr ""
+msgstr "Wil je leden toestaan een foto toe te voegen aan hun persoonlijk profiel?"
 
 #: create_db.php:266
 msgid "Enable Social Networking Fields"
-msgstr ""
+msgstr "Persoonlijke gegevens toevoegen"
 
 #: create_db.php:266
 msgid ""
 "Do you want to enable the Social Networking profile fields (Age, Sex, etc)?"
-msgstr ""
+msgstr "Wil je de velden voor persoonlijke informatie, zoals leeftijd en geslacht, tonen?"
 
 #: create_db.php:268
 msgid "Out Of Balance Behaviour"
-msgstr ""
+msgstr "Gedrag bij verstoord systeemsaldo"
 
 #: create_db.php:268
 msgid ""
@@ -708,101 +707,101 @@ msgstr ""
 
 #: create_db.php:274
 msgid "Email Admin on Out Of Balance"
-msgstr ""
+msgstr "E-mail naar admin bij verstoord systeemsaldo"
 
 #: create_db.php:274
 msgid ""
 "Should the system send the Admin an email when the database is found to be "
 "out of balance?"
-msgstr ""
+msgstr "Moet het systeem een e-mail naar de administrator sturen als het systeemsalo verstoord wordt?"
 
 #: create_db.php:276
 msgid "Email From Address"
-msgstr ""
+msgstr "Antwoord e-mailadres"
 
 #: create_db.php:276
 msgid "reply@my-domain.org"
-msgstr ""
+msgstr "antwoord@mijn-domein.nl"
 
 #: create_db.php:276
 msgid "Email sent from this site will show as coming from this address"
-msgstr ""
+msgstr "E-mails die door deze site worden verstuurd zullen dit antwoord-adres tonen."
 
 #: create_db.php:278
 msgid "Use Rates Fields"
-msgstr ""
+msgstr "Gebruik tarief-velden"
 
 #: create_db.php:278
 msgid "If turned on, listings will include a &quot;Rate&quot; field"
-msgstr ""
+msgstr "Als je dit activeert, zal er een tarief-veld worden toegevoegd aan de advertenties."
 
 #: create_db.php:280
 msgid "Enable Monthly Fee"
-msgstr ""
+msgstr "Ledenbijdrage beschikbaar stellen"
 
 #: create_db.php:280
 msgid "Do you want to enable Monthly Fees"
-msgstr ""
+msgstr "Wil je de maandelijkse ledenbijdrage beschikbaar stellen?"
 
 #: create_db.php:282
 msgid "Monthly Fee Amount"
-msgstr ""
+msgstr "Hoogte van de maandelijkse ledenbijdrage"
 
 #: create_db.php:282
 msgid "How much should the Monthly Fee be?"
-msgstr ""
+msgstr "Hoeveel bedraagt de maandelijkse ledenbijdrage?"
 
 #: create_db.php:284
 msgid "Send Listing Updates via Email"
-msgstr ""
+msgstr "Advertentie-update e-mail"
 
 #: create_db.php:284
 msgid "Should users receive automatic updates for new and modified listings?"
-msgstr ""
+msgstr "Moeten leden automatisch een bericht krijgen bij plaatsen of wijzigen van advertenties?"
 
 #: create_db.php:286
 msgid "Default Email Listings Update Interval"
-msgstr ""
+msgstr "Advertentie-update frequentie"
 
 #: create_db.php:286
 msgid "If automatic updates are sent, this is the default interval."
-msgstr ""
+msgstr "Standaard aantal malen dat een bericht wordt verzonden als deze optie aan staat. "
 
 #: create_db.php:288
 msgid "Allow Income Sharing"
-msgstr ""
+msgstr "Inkomsten delen toestaan"
 
 #: create_db.php:288
 msgid ""
 "Do you want to allow members to share a percentage of any income they "
 "generate with another account of their choosing? The member can specify the "
 "exact percentage they wish to donate."
-msgstr ""
+msgstr "Wil je leden toestaan een percentage van alle inkomsten te delen met een ander lid naar keuze? Het lid kan zelf het te doneren percentage opgeven."
 
 #: create_db.php:290
 msgid "Message Displayed to Leecher who tries to trade"
-msgstr ""
+msgstr "Bericht bij poging tot transacties met ledenbeperking"
 
 #: create_db.php:290
 msgid ""
 "Restrictions have been imposed on your account which prevent you from "
 "trading outwards, Please contact the administrator for more information."
-msgstr ""
+msgstr "Je rekening is beperkt waardoor je momenteel niet kunt handelen. Neem contact op met de administratie voor hulp of informatie."
 
 #: create_db.php:290
 msgid "Leecher sees this notice when trying to send money."
-msgstr ""
+msgstr "Het beperkte lid krijgt dit bericht te zien bij een poging tot betalen."
 
 #: create_db.php:292
 msgid "Show monthly fees and service charges in global exchange view"
-msgstr ""
+msgstr "Bijdrage en kosten tonen in transactieoverzicht"
 
 #: create_db.php:292
 msgid ""
 "Do you want to show monthly fees and service charges in the global exchange "
 "view? (Note: individual members will still be able to see this in their own "
 "personal exchange history)."
-msgstr ""
+msgstr "Wil je de maandelijkse ledenbijdragen en de administratiekosten laten zien in het totale transactieoverzicht? (De leden zien deze informatie altijd in hun eigen transactieoverzicht.)"
 
 #: create_db.php:314
 msgid "Sample: Downtown"
@@ -827,71 +826,71 @@ msgstr ""
 #: create_db.php:330
 msgid ""
 "Database has been created. Click <A HREF=member_login.php>here</A> to login."
-msgstr ""
+msgstr "De database is gemaakt. Klik <a href=member_login.php>hier</a> om in te loggen."
 
 #: create_info.php:17 do_info_edit.php:20 listing_create.php:44
 #: listing_edit.php:54 news_create.php:17 news_edit.php:22
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: create_info.php:26 do_info_edit.php:29 listing_create.php:45
 #: listing_edit.php:55 news_create.php:32 news_edit.php:37
 msgid "Enter a title"
-msgstr ""
+msgstr "Voer een titel in"
 
 #: create_info.php:27 do_info_edit.php:30
 msgid "Enter some body text"
-msgstr ""
+msgstr "Voer tekst in"
 
 #: create_info.php:49
 msgid "New information page added."
-msgstr ""
+msgstr "Nieuwe informatiepagina toegevoegd"
 
 #: create_info.php:51
 msgid "There was a problem adding the new page."
-msgstr ""
+msgstr "De nieuwe pagina kan niet worden toegevoegd"
 
 #: delete_info.php:5
 msgid "Choose Info Page to Delete"
-msgstr ""
+msgstr "Kies de informatiepagina die je wilt verwijderen"
 
 #: delete_info.php:16
 msgid "Page deleted."
-msgstr ""
+msgstr "Pagina verwijderd"
 
 #: delete_info.php:18
 msgid "There was a problem deleting the page."
-msgstr ""
+msgstr "De pagina kan niet worden verwijderd"
 
 #: delete_info.php:34 edit_info.php:19
 msgid "Which Info Page?"
-msgstr ""
+msgstr "Welke informatiepagina?"
 
 #: delete_info.php:39 edit_info.php:24
 msgid "There are no current Info Pages."
-msgstr ""
+msgstr "Er zijn geen informatiepagina's."
 
 #: delete_info.php:55
 msgid "Really Delete this page (ID#"
-msgstr ""
+msgstr "Wil je deze pagina echt verwijderen? (ID#"
 
 #: delete_info.php:55 email.php:30 member_contact_create.php:42
 #: member_contact_edit.php:44 pages.php:13 settings.php:93
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: delete_info.php:55 email.php:30 member_contact_create.php:42
 #: member_contact_edit.php:44 pages.php:13 settings.php:95
 msgid "No"
-msgstr ""
+msgstr "Nee"
 
 #: delete_info.php:55 pages.php:13
 msgid "(go back)"
-msgstr ""
+msgstr "(ga terug)"
 
 #: directory.php:6
 msgid "Download Directory"
-msgstr ""
+msgstr "Download de lijst"
 
 #: directory.php:11
 msgid ""
@@ -913,60 +912,60 @@ msgstr ""
 
 #: directory.php:15 export.php:13
 msgid "Download"
-msgstr ""
+msgstr "Download"
 
 #: directory.php:30
 msgid "Download complete."
-msgstr ""
+msgstr "Download is gereed"
 
 #: do_info_edit.php:55 member_contact_edit.php:166 member_edit.php:259
 #: news_edit.php:71
 msgid "Changes saved."
-msgstr ""
+msgstr "Wijzigingen opgeslagen"
 
 #: do_info_edit.php:57
 msgid "There was a problem saving the page."
-msgstr ""
+msgstr "De pagina kan niet worden opgeslagen"
 
 #: edit_balance.php:22 member_edit.php:16
 msgid "Edit Member"
-msgstr ""
+msgstr "Wijzig lid"
 
 #: edit_balance.php:22
 msgid "'s Balance"
-msgstr ""
+msgstr "'s saldo"
 
 #: edit_balance.php:24
 msgid "Value (before decimal point, 8 digit max)"
-msgstr ""
+msgstr "Waarde voor de komma maximaaal 8 posities"
 
 #: edit_balance.php:25
 msgid "Value (after decimal point, 2 digit max)"
-msgstr ""
+msgstr "Waarde achter de kommma maximaal 2 posities"
 
 #: edit_balance.php:26
 msgid "Update Balance"
-msgstr ""
+msgstr "Wijzig saldo"
 
 #: edit_balance.php:65
 msgid "This member's balance has now been set to"
-msgstr ""
+msgstr "Saldo van dit lid is nu gewijzigd in"
 
 #: edit_balance.php:65
 msgid "Edit another member's balance?"
-msgstr ""
+msgstr "Wijzig saldo van een ander lid"
 
 #: edit_balance.php:67
 msgid "There was a problem updated this member's balance."
-msgstr ""
+msgstr "Het saldo van dit lid kan niet worden gewijzigd"
 
 #: edit_info.php:5
 msgid "Choose Info Page to Edit"
-msgstr ""
+msgstr "Kies de informatiepagina die je wilt wijzigen"
 
 #: email.php:8
 msgid "Email a Member"
-msgstr ""
+msgstr "Stuur een e-mailbericht naar een lid"
 
 #: email.php:21
 msgid ""
@@ -979,63 +978,63 @@ msgstr ""
 #: email.php:28 trades_pending.php:45 classes/class.trade.php:277
 #: classes/class.trade.php:324
 msgid "To"
-msgstr ""
+msgstr "Naar"
 
 #: email.php:29
 msgid "Subject"
-msgstr ""
+msgstr "Onderwerp"
 
 #: email.php:30
 msgid "Would you like to receive a copy?"
-msgstr ""
+msgstr "Wil je een kopie ontvangen?"
 
 #: email.php:86
 msgid "Your message has been sent."
-msgstr ""
+msgstr "Het bericht is verstuurd."
 
 #: email.php:89
 msgid "There was a problem sending the email."
-msgstr ""
+msgstr "Het bericht kan niet worden verstuurd."
 
 #: exchange_menu.php:11
 msgid "Invoices and Transactions Pending"
-msgstr ""
+msgstr "Facturen en transacties die nog niet zijn afgerond"
 
 #: exchange_menu.php:11
 msgid "require action"
-msgstr ""
+msgstr "vraagt aandacht"
 
 #: exchange_menu.php:12 member_profile_all_in_one.php:29 trade.php:8
 msgid "Record an Exchange"
-msgstr ""
+msgstr "Boek een transactie"
 
 #: exchange_menu.php:13 member_profile_all_in_one.php:30
 msgid "View My Balance and Exchange History"
-msgstr ""
+msgstr "Bekijk mijn saldo en transacties"
 
 #: exchange_menu.php:14 member_profile_all_in_one.php:31
 msgid "View Another Member's Exchange History"
-msgstr ""
+msgstr "Bekijk de transacties van een andere deelnemer"
 
 #: exchange_menu.php:15
 msgid "View My Feedback"
-msgstr ""
+msgstr "Bekijk mijn feedback"
 
 #: exchange_menu.php:16
 msgid "View Another Member's Feedback"
-msgstr ""
+msgstr "Bekijk de feedback van een ander lid"
 
 #: exchange_menu.php:17
 msgid "Leave Feedback for a Recent Exchange"
-msgstr ""
+msgstr "Geef feedback voor een recente transactie"
 
 #: exchange_menu.php:18
 msgid "View All Trades in a Specified Time Period"
-msgstr ""
+msgstr "Bekijk alle transacties in een bepaalde periode"
 
 #: export.php:6
 msgid "Export to Spreadsheet"
-msgstr ""
+msgstr "Zet in een spreadsheet"
 
 #: export.php:11
 msgid ""
@@ -1043,117 +1042,117 @@ msgid ""
 "backup and  reporting purposes.  Click on the button below and you will be "
 "prompted to open or save the file.  Please note that the information in this "
 "file is confidential and should only be stored in a private, secure location."
-msgstr ""
+msgstr "Alle tabellen in de database zullen in een spreadsheet worden gezet. Klik op de knop om de spreadsheet op te slaan. Dit is vertrouwelijke informatie, ga er zorgvuldig mee om."
 
 #: export.php:28
 msgid "Export complete."
-msgstr ""
+msgstr "Bestand is opgeslagen"
 
 #: feedback_all.php:17
 msgid "Feedback for"
-msgstr ""
+msgstr "Feedback voor"
 
 #: feedback_all.php:26
 msgid "You don't have any feedback yet."
-msgstr ""
+msgstr "Je hebt nog geen feedback"
 
 #: feedback_all.php:28
 msgid "This member does not have any feedback yet."
-msgstr ""
+msgstr "Dit lid heeft nog geen feedback"
 
 #: feedback_choose_inbox.php:6 feedback_choose.php:6
 msgid "Leave Feedback"
-msgstr ""
+msgstr "Geef feedback"
 
 #: feedback_choose_inbox.php:24 feedback_choose.php:24
 msgid "For which Exchange?"
-msgstr ""
+msgstr "Voor welke transactie?"
 
 #: feedback_choose_inbox.php:101 feedback_choose.php:60
 msgid ""
 "There are no exchanges to leave feedback for.  You have already left "
 "feedback for all your recent exchanges."
-msgstr ""
+msgstr "Er zijn geen transacties om feedback voor te geven. Je hebt al feedback gegeven voor alle recente transacties."
 
 #: feedback.php:10 feedback_rebuttal.php:9
 msgid "Leave Feedback about"
-msgstr ""
+msgstr "Geef feedback over"
 
 #: feedback.php:23 trade_history.php:20
 msgid "for"
-msgstr ""
+msgstr "voor"
 
 #: feedback.php:29 feedback_rebuttal.php:29 trade.php:213
 msgid ""
 "All feedback is public. Before leaving <i>negative</i> feedback, we "
 "recommend trying to address your concerns with the other community member.  "
 "Often misunderstandings can be resolved to the benefit of both parties."
-msgstr ""
+msgstr "Alle feedback is openbaar. Als je negatieve feedback wilt geven, neem dan eerst contact op met het betreffende lid. Misverstanden kunnen vaak beter onderling worden besproken."
 
 #: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
 #: classes/class.feedback.php:125 classes/class.member.php:551
 msgid "Positive"
-msgstr ""
+msgstr "Positief"
 
 #: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
 #: classes/class.feedback.php:129
 msgid "Neutral"
-msgstr ""
+msgstr "Neutraal"
 
 #: feedback.php:31 feedback_rebuttal.php:31 trade.php:215
 #: classes/class.feedback.php:127
 msgid "Negative"
-msgstr ""
+msgstr "Negatief"
 
 #: feedback.php:32 trade.php:216
 msgid "Feedback Rating"
-msgstr ""
+msgstr "Waardering"
 
 #: feedback.php:37 feedback_rebuttal.php:37 feedback_reply.php:42
 #: trade.php:221
 msgid "Comments"
-msgstr ""
+msgstr "Opmerkingen"
 
 #: feedback.php:45 feedback_rebuttal.php:45 feedback_reply.php:49
 #: trade.php:227
 msgid "Choose a rating"
-msgstr ""
+msgstr "Kies een waardering"
 
 #: feedback.php:83 feedback_rebuttal.php:71 feedback_reply.php:86
 msgid "Your feedback has been recorded."
-msgstr ""
+msgstr "De feedback is opgeslagen"
 
 #: feedback.php:85 feedback_rebuttal.php:73 feedback_reply.php:88
 msgid "There was an error recording your feedback."
-msgstr ""
+msgstr "De feedback kan niet worden opgeslagen."
 
 #: feedback_rebuttal.php:46 feedback_reply.php:50
 msgid "Comments cannot be longer than 255 characters"
-msgstr ""
+msgstr "Opmerkingen mogen niet langer zijn dan 255 tekens"
 
 #: feedback_reply.php:9
 msgid "Follow Up on Feedback"
-msgstr ""
+msgstr "Reageer op feedback"
 
 #: feedback_reply.php:36
 msgid "Prior Comments"
-msgstr ""
+msgstr "Eerdere opmerkingen"
 
 #: feedback_reply.php:72
 msgid "Members do not match the trade selected."
-msgstr ""
+msgstr "Lid en gekozen transactie komen niet overeen"
 
 #: feedback_to_view.php:5 trade.php:67
 msgid "Choose Member"
-msgstr ""
+msgstr "Kies lid"
 
 #: feedback_to_view.php:11
 msgid "Whose Feedback?"
-msgstr ""
+msgstr "Wiens feedback?"
 
 #: feedback_to_view.php:13 trades_to_view.php:13
 msgid "View"
-msgstr ""
+msgstr "Bekijk"
 
 #: geocoding_setup.php:5
 msgid "Initial geocoding"
@@ -1266,7 +1265,7 @@ msgstr ""
 #: refund_service_charge.php:207 service_charge.php:161
 #: take_monthly_fee.php:199
 msgid "Done"
-msgstr ""
+msgstr "Gedaan"
 
 #: geocoding_setup.php:221
 msgid "Request failed."
@@ -1296,157 +1295,157 @@ msgstr ""
 
 #: holiday.php:6
 msgid "Inactivate Listings While on Holiday"
-msgstr ""
+msgstr "Zet advertenties op non-actief tijdens afwezigheid"
 
 #: holiday.php:16
 msgid ""
 "This feature will temporarily inactivate all of the member's offered and "
 "wanted listings while they are gone."
-msgstr ""
+msgstr "Hiermee zet je tijdelijk alle advertenties van een lid op non-actief tijdens afwezigheid."
 
 #: holiday.php:17
 msgid "they"
-msgstr ""
+msgstr "zij"
 
 #: holiday.php:22
 msgid ""
 "This feature will temporarily inactivate all of your offered and wanted "
 "listings while you are gone."
-msgstr ""
+msgstr "Hiermee zet je tijdelijk al je advertenties op non-actief tijdens je afwezigheid."
 
 #: holiday.php:23
 msgid "you"
-msgstr ""
+msgstr "je"
 
 #: holiday.php:26
 msgid ""
 "They will not appear in the directory during that time.  When the date you "
 "specify below arrives the listings will automatically reactivate."
-msgstr ""
+msgstr "De advertenties zullen gedurende deze periode niet zichtbaar zijn. Daarna worden ze automatisch weer actief."
 
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
 #: timeframe_choose.php:15
 msgid "en"
-msgstr ""
+msgstr "nl"
 
 #: holiday.php:32
 msgid "When will"
-msgstr ""
+msgstr "Wanneer kom(en)"
 
 #: holiday.php:32
 msgid "return?"
-msgstr ""
+msgstr "terug?"
 
 #: holiday.php:34 member_status_change.php:11 member_status_change.php:25
 msgid "Inactivate"
-msgstr ""
+msgstr "Zet op non-actief"
 
 #: holiday.php:37 listing_edit.php:82
 msgid "Must be a future date"
-msgstr ""
+msgstr "Datum moet in de toekomst zijn"
 
 #: holiday.php:39 listing_create.php:69 listing_edit.php:79
 #: listing_edit.php:83 news_create.php:37 news_edit.php:40
 msgid "Date is invalid"
-msgstr ""
+msgstr "Ongeldige datum"
 
 #: holiday.php:62
 msgid "Listings successfully inactivated."
-msgstr ""
+msgstr "de advertenties zijn op non-actief gezet."
 
 #: income_ties.php:15
 msgid "Income Sharing"
-msgstr ""
+msgstr "Inkomen delen"
 
 #: income_ties.php:17
 msgid "You have the option of contributing a percentage of any income"
-msgstr ""
+msgstr "Je kunt een percentage van al je inkomsten"
 
 #: income_ties.php:17
 msgid ""
 "you receive to another account. If you specify an Income Share, every time "
 "you receive"
-msgstr ""
+msgstr "delen met een ander lid. Als je een inkomstendeling vaststelt, zal iedere keer als je "
 
 #: income_ties.php:17
 msgid ""
 "a specified percentage (of your choosing) will automatically be paid to the "
 "account of your choice. You can change this arrangement at any time, but you "
 "are only allowed to share your income with one other account at a time."
-msgstr ""
+msgstr "inkomsten hebt het percentage automatisch aan het andere lid worden betaald. Je kunt op ieder moment inkomstendeling instellen, maar je kunt je inkomen maar met ??n lid tegelijk delen."
 
 #: income_ties.php:27
 msgid "Sorry you can't share income with yourself."
-msgstr ""
+msgstr "Je kunt je inkomen niet met jezelf delen."
 
 #: income_ties.php:35
 msgid "Not enough data to proceed."
-msgstr ""
+msgstr "Niet genoeg informatie om door te gaan."
 
 #: income_ties.php:37
 msgid ""
 "The percentage must be numeric and must not contain any other characters (e."
 "g. '10' = good input, '10%' = bad input)"
-msgstr ""
+msgstr "Het percentage moet numeriek zijn en mag geen andere tekens bevatten. (bijvoorbeeld <font face='courier'> 10 = goed, 10%</font> is niet goed)"
 
 #: income_ties.php:39
 #, php-format
 msgid ""
 "Sorry, you can't contribute more than 99% of your income to another account "
 "- but it's the thought that counts"
-msgstr ""
+msgstr "Je kunt niet meer dan 99% van je inkomen delen met een ander lid."
 
 #: income_ties.php:65
 msgid "Income Share Inactive"
-msgstr ""
+msgstr "Inkomstendeling is niet actief"
 
 #: income_ties.php:67
 msgid "Create an Income Share"
-msgstr ""
+msgstr "Stel inkomstendeling in"
 
 #: income_ties.php:74
 msgid "I would like to share"
-msgstr ""
+msgstr "Ik wil"
 
 #: income_ties.php:74
 msgid "of any"
-msgstr ""
+msgstr " van iedere"
 
 #: income_ties.php:74
 msgid "I receive"
-msgstr ""
+msgstr "die ik ontvang"
 
 #: income_ties.php:75
 msgid "with this account"
-msgstr ""
+msgstr "delen met dit lid"
 
 #: income_ties.php:77
 msgid "Create Income Share"
-msgstr ""
+msgstr "Stel inkomstendeling in"
 
 #: income_ties.php:81
 msgid "Income Share Active"
-msgstr ""
+msgstr "Inkomstendeling is actief"
 
 #: income_ties.php:83
 msgid "You are currently sharing"
-msgstr ""
+msgstr "Je deelt nu"
 
 #: income_ties.php:83
 msgid "of your income with account"
-msgstr ""
+msgstr "van je inkomen met"
 
 #: income_ties.php:83
 msgid "Remove Income Share"
-msgstr ""
+msgstr "Verwijder inkomstendeling"
 
 #: income_ties.php:83
 msgid ""
 "If you wish to amend this Income Share you will first need to remove it and "
 "then create a new one."
-msgstr ""
+msgstr "Als je deze inkomstendeling wilt wijzigen, verwijder het dan eerst en stel het daarna opnieuw in."
 
 #: index.php:23
 msgid "Why have a Local, Sustainable Currency?"
@@ -1479,78 +1478,78 @@ msgid ""
 "Committee AND Admin users, but not to those below Committee level (i.e. "
 "Members and Guests). Setting the permissions to 'Guests' effectively removes "
 "the permissions from that page and renders it visible to anyone and everyone."
-msgstr ""
+msgstr "Het toegangsniveau is het minimumniveau dat een gebruiker moet bezitten om de pagina te bekijken. Dus een pagina op 'Contactpersoonniveau' kan worden bekeken door de contactpersoon en door de administrator, maar niet door een lager niveau. Het niveau 'Gasten' geeft iedereen toegang tot de pagina."
 
 #: info_permissions.php:26
 msgid "Info page permissions updated successfully."
-msgstr ""
+msgstr "Toegangsniveau voor informatiepagina's is gewijzigd."
 
 #: info_permissions.php:45
 msgid "Update Permissions"
-msgstr ""
+msgstr "Wijzig toegangsniveau"
 
 #: info_permissions.php:48
 msgid "No info pages found!"
-msgstr ""
+msgstr "Geen informatiepagina's gevonden!"
 
 #: info_permissions.php:53 info_permissions.php:77
 msgid "Guests"
-msgstr ""
+msgstr "Gasten"
 
 #: info_permissions.php:53 info_permissions.php:77 manage_restrictions.php:107
 #: manage_restrictions.php:118
 msgid "Members"
-msgstr ""
+msgstr "Leden"
 
 #: info_permissions.php:53 info_permissions.php:77 member_create.php:21
 #: member_edit.php:24
 msgid "Committee"
-msgstr ""
+msgstr "Contactpersoon"
 
 #: info_permissions.php:53 info_permissions.php:77 member_create.php:21
 #: member_edit.php:24
 msgid "Admin"
-msgstr ""
+msgstr "Administrator"
 
 #: initial_mailing.php:7
 msgid "Initial Mailing for Rollout"
-msgstr ""
+msgstr "Eerste e-mailbericht na installatie"
 
 #: initial_mailing.php:9
 msgid "Important information from"
-msgstr ""
+msgstr "Belangrijke informatie van"
 
 #: initial_mailing.php:29
 msgid "Could not reset password for"
-msgstr ""
+msgstr "Kan het wachtwoord niet resetten voor"
 
 #: initial_mailing.php:29
 msgid "Skipped email"
-msgstr ""
+msgstr "E-mail overgeslagen"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:17
 #: member_create.php:208 member_create.php:217 member_directory.php:15
 #: member_unlock.php:47 member_unlock.php:50 password_reset.php:39
 #: trade.php:138 classes/class.member.php:201
 msgid "Member ID"
-msgstr ""
+msgstr "Lidnummer"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
 #: member_create.php:208 member_unlock.php:47 classes/class.member.php:202
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: initial_mailing.php:37
 msgid "Could not email"
-msgstr ""
+msgstr "Kan e-mailbericht niet versturen"
 
 #: initial_mailing.php:37
 msgid "His/her password is"
-msgstr ""
+msgstr "Zijn/haar wachtwoord is"
 
 #: initial_mailing.php:41
 msgid "Email successfully sent to all members."
-msgstr ""
+msgstr "E-mailbericht verstuurd naar alle leden."
 
 #: karma_explanation.php:6
 msgid "What are Karma points?"
@@ -1617,16 +1616,16 @@ msgstr ""
 
 #: listing_create.php:34 member_choose.php:6
 msgid "For which member?"
-msgstr ""
+msgstr "Voor welk lid?"
 
 #: listing_create.php:47
 msgid "You already have a listing with this title"
-msgstr ""
+msgstr "Er bestaat al een advertentie met deze titel"
 
 #: listing_create.php:49 listing_edit.php:60 listings.php:20 trade.php:50
 #: classes/class.trade.php:277
 msgid "Category"
-msgstr ""
+msgstr "Categorie&nbsp;&nbsp;&nbsp;&nbsp;"
 
 #: listing_create.php:50 listing_edit.php:61
 msgid "Pick a category"
@@ -1634,49 +1633,49 @@ msgstr ""
 
 #: listing_create.php:53 listing_edit.php:64 classes/class.listing.php:188
 msgid "Rate"
-msgstr ""
+msgstr "Prijs"
 
 #: listing_create.php:57 listing_edit.php:69 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
 #: trades_pending.php:45 classes/class.listing.php:186
 #: classes/class.trade.php:277
 msgid "Description"
-msgstr ""
+msgstr "Omschrijving"
 
 #: listing_create.php:60 listing_edit.php:72
 msgid "Should this listing be set to automatically expire?"
-msgstr ""
+msgstr "Moet de advertentie automatisch verlopen?"
 
 #: listing_create.php:63 listing_edit.php:75 news_create.php:20
 #: news_edit.php:25
 msgid "Expires"
-msgstr ""
+msgstr "Verloopt"
 
 #: listing_create.php:67 listing_edit.php:77 news_create.php:35
 msgid "Expiration must be for a future date"
-msgstr ""
+msgstr "Verloopdatum moet in de toekomst liggen"
 
 #: listing_create.php:121
 msgid "Listing created. Create"
-msgstr ""
+msgstr "Advertentie gemaakt. Maak"
 
 #: listing_create.php:121
 msgid "another"
-msgstr ""
+msgstr "nog een"
 
 #: listing_create.php:123 listing_edit.php:177
 msgid "There was an error saving the listing."
-msgstr ""
+msgstr "De advertentie kan niet worden opgeslagen."
 
 #: listing_delete.php:9 listings_create.php:11 listings_menu.php:11
 #: member_profile_all_in_one.php:20
 msgid "Delete Offered Listings"
-msgstr ""
+msgstr "Verwijder aanbod advertentie"
 
 #: listing_delete.php:11 listings_create.php:16 listings_menu.php:16
 #: member_profile_all_in_one.php:26
 msgid "Delete Wanted Listings"
-msgstr ""
+msgstr "Verwijder vraag advertentie"
 
 #: listing_delete.php:49
 msgid "You don't currently have any Offered listings."
@@ -1696,15 +1695,15 @@ msgstr ""
 
 #: listing_delete.php:86
 msgid "1 listing deleted"
-msgstr ""
+msgstr "1 advertentie verwijderd"
 
 #: listing_delete.php:88
 msgid "listings deleted"
-msgstr ""
+msgstr "advertenties verwijderd"
 
 #: listing_delete.php:90
 msgid "There was an error deleting the listings. Did you check any boxes?"
-msgstr ""
+msgstr "De advertenties kunnen niet worden verwijderd. Heb je hokjes aangevinkt?"
 
 #: listing_detail.php:28
 msgid "You may see more details if you <a1>sign up</a1> or <a2>log in</a2>."
@@ -1732,61 +1731,61 @@ msgstr ""
 
 #: listing_edit.php:80
 msgid "Should this listing be made temporarily inactive?"
-msgstr ""
+msgstr "Moet deze advertentie tijdelijk niet actief zijn?"
 
 #: listing_edit.php:81
 msgid "Reactivates"
-msgstr ""
+msgstr "Maakt weer actief"
 
 #: listing_edit.php:84 member_contact_edit.php:69 member_edit.php:93
 msgid "Update"
-msgstr ""
+msgstr "Vernieuw"
 
 #: listing_edit.php:175
 msgid "Listing changes saved. Do you want to"
-msgstr ""
+msgstr "Advertenties opgeslagen. Wil je"
 
 #: listing_edit.php:175
 msgid "edit"
-msgstr ""
+msgstr "nog een advertentie"
 
 #: listing_edit.php:175
 msgid "another listing?"
-msgstr ""
+msgstr "bewerken?"
 
 #: listings_create.php:4
 msgid "Create Listings"
-msgstr ""
+msgstr "Maak advertenties"
 
 #: listings_create.php:8 listings_menu.php:8 member_profile_all_in_one.php:16
 #: classes/class.directory.php:52 classes/class.member.php:831
 msgid "Offered Listings"
-msgstr ""
+msgstr "Aanbod advertenties"
 
 #: listings_create.php:9 listings_menu.php:9 member_profile_all_in_one.php:18
 msgid "Create New Offer Listing"
-msgstr ""
+msgstr "Plaats aanbod advertentie"
 
 #: listings_create.php:10 listings_menu.php:10
 #: member_profile_all_in_one.php:19
 msgid "Edit Offered Listings"
-msgstr ""
+msgstr "Bewerk aanbod advertentie"
 
 #: listings_create.php:13 listings_menu.php:13
 #: member_profile_all_in_one.php:22 classes/class.directory.php:55
 #: classes/class.member.php:833
 msgid "Wanted Listings"
-msgstr ""
+msgstr "Vraag advertentie"
 
 #: listings_create.php:14 listings_menu.php:14
 #: member_profile_all_in_one.php:24
 msgid "Create New Want Listing"
-msgstr ""
+msgstr "Plaats vraag advertentie"
 
 #: listings_create.php:15 listings_menu.php:15
 #: member_profile_all_in_one.php:25
 msgid "Edit Wanted Listings"
-msgstr ""
+msgstr "Bewerk vraag advertentie"
 
 #: listings_found.php:7 listings.php:6 member_summary.php:25
 msgid "Offered listings"
@@ -1803,63 +1802,63 @@ msgstr ""
 
 #: listings_menu.php:4 includes/inc.config.php:214
 msgid "Update Listings"
-msgstr ""
+msgstr "Advertenties"
 
 #: listings_menu.php:19
 msgid "Going on Holiday"
-msgstr ""
+msgstr "Vakantiestop"
 
 #: listings.php:15
 msgid ""
 "Select the category and time frame to view and press Continue. Or to view "
 "all listings at once, just press Continue. If you would like to print or "
 "download the complete directory, click"
-msgstr ""
+msgstr "Selecteer de categorie en het tijdsbestek en klik op Doorgaan. Wil je alle advertenties tegelijk bekijken, klik dan op Doorgaan. Als je de advertenties wilt afdrukken of downloaden, klik"
 
 #: listings.php:15 member_create.php:202 news.php:22
 #: classes/class.member.php:113
 msgid "here"
-msgstr ""
+msgstr "hier"
 
 #: listings.php:19
 msgid "View All Categories"
-msgstr ""
+msgstr "Bekijk alle categorie?n"
 
 #: listings.php:21
 msgid "New/updated in last"
-msgstr ""
+msgstr "Nieuw/ vernieuwd in de laatste"
 
 #: listings.php:22
 msgid "Time Frame"
-msgstr ""
+msgstr "Tijdsbestek"
 
 #: listings.php:22
 msgid "View All Listings"
-msgstr ""
+msgstr "Bekijk alle advertenties"
 
 #: listings.php:22
 msgid "3 days"
-msgstr ""
+msgstr "3 dagen"
 
 #: listings.php:22 classes/class.member.php:843
 msgid "week"
-msgstr ""
+msgstr "week"
 
 #: listings.php:22
 msgid "2 weeks"
-msgstr ""
+msgstr "2 weken"
 
 #: listings.php:22 classes/class.member.php:845
 msgid "month"
-msgstr ""
+msgstr "maand"
 
 #: listings.php:22
 msgid "3 months"
-msgstr ""
+msgstr "3 maanden"
 
 #: listings.php:25
 msgid "Keyword"
-msgstr ""
+msgstr "Zoekwoord"
 
 #: listings.php:33
 msgid "Distance from my address (km)"
@@ -1873,7 +1872,7 @@ msgstr ""
 
 #: listings.php:44 pages.php:10
 msgid "Continue"
-msgstr ""
+msgstr "Doorgaan"
 
 #: listing_to_edit.php:6
 msgid "Choose the Offered Listing to Edit"
@@ -1893,26 +1892,26 @@ msgstr ""
 
 #: login.php:32
 msgid "Please enter a user name to log in."
-msgstr ""
+msgstr "Vul gebruikersnaam in om in te loggen."
 
 #: login.php:34
 msgid ""
 "Please enter a password to log on with this account.  If you've forgotten "
 "your password, you can request a new one."
-msgstr ""
+msgstr "Vul wachtwoord in om in te loggen. Als je het wachtwoord vergeten bent, kun je een nieuwe aanvragen bij de administratie."
 
 #: login_redirect.php:5
 msgid "In order to access this section of the site, you need to be logged on."
-msgstr ""
+msgstr "Om in dit deel van deze website te komen moet je ingelogd zijn."
 
 #: login_redirect.php:5
 msgid "If you already have an account, please log in below"
-msgstr ""
+msgstr "Als je een account hebt, log dan in aub."
 
 #: login_redirect.php:5 classes/class.member.php:203
 #: classes/class.member.php:218
 msgid "Login"
-msgstr ""
+msgstr "Log&nbsp;in"
 
 #. Translation hint: Complete phrase is "If you forgot your password, you may _request a new one_." (link)
 #: login_redirect.php:5 classes/class.member.php:206
@@ -1927,130 +1926,130 @@ msgstr ""
 msgid ""
 "If you don't have an account, you may <a href=/member_create.php>sign up "
 "online</a>."
-msgstr ""
+msgstr "If you don't have an account, you may <a href=/member_create.php>sign up online</a>."
 
 #: login_redirect.php:6 classes/class.member.php:208
 msgid "If you don't have an account, please contact us to join."
-msgstr ""
+msgstr "Als je geen account of lidnummer hebt, neem contact met ons op om lid te worden."
 
 #: manage_restrictions.php:13
 msgid ""
 "Restrictions can be placed on accounts if you feel they are over-using the "
 "services of others and not offering enough back in return"
-msgstr ""
+msgstr "Beperkingen kunnen aan een lid worden opgelegd als het lid te veel diensten van anderen afneemt en geen inkomsten heeft"
 
 #: manage_restrictions.php:55 manage_restrictions.php:80
 msgid "Error: No member ID specified."
-msgstr ""
+msgstr "Foutje: Geen lidnummer ingegeven."
 
 #: manage_restrictions.php:66
 msgid "Error: could not impose restrictions on this account"
-msgstr ""
+msgstr "Foutje: Kan geen beperkingen opleggen aan dit lid"
 
 #: manage_restrictions.php:66 manage_restrictions.php:91
 msgid "MySQL Said"
-msgstr ""
+msgstr "My-SQL zegt:"
 
 #: manage_restrictions.php:68
 msgid "Restrictions have been imposed on member id"
-msgstr ""
+msgstr "Beperkingen zijn opgelegd aan dit lidnummer"
 
 #: manage_restrictions.php:70
 msgid "Access Restricted on"
-msgstr ""
+msgstr "Toegangsbeperking op"
 
 #: manage_restrictions.php:91
 msgid "Error: could not lift restrictions on this account"
-msgstr ""
+msgstr "Foutje: Kan de beperkingen van dit lid niet opheffen van dit lid"
 
 #: manage_restrictions.php:93
 msgid "Restrictions have been lifted on member id"
-msgstr ""
+msgstr "Beperkingen zijn opgeheven van lid"
 
 #: manage_restrictions.php:95
 msgid "Account Restrictions lifted on"
-msgstr ""
+msgstr "Ledenbeperkingen opgeheven van"
 
 #: manage_restrictions.php:107
 msgid "Non-Restricted"
-msgstr ""
+msgstr "Onbeperkt"
 
 #: manage_restrictions.php:116
 msgid "Impose Restriction"
-msgstr ""
+msgstr "Leg&nbsp;beperking&nbsp;op"
 
 #: manage_restrictions.php:118
 msgid "Restricted"
-msgstr ""
+msgstr "Beperkt"
 
 #: manage_restrictions.php:127
 msgid "Lift Restriction"
-msgstr ""
+msgstr "Hef&nbsp;beperking&nbsp;op"
 
 #: member_contact_choose.php:4
 msgid "Choose Joint Member"
-msgstr ""
+msgstr "Kies partnerlid"
 
 #: member_contact_choose.php:9 classes/class.member.php:399
 msgid "Which Joint Member?"
-msgstr ""
+msgstr "Welk partnerlid?"
 
 #: member_contact_create.php:13
 msgid "Add Joint Member"
-msgstr ""
+msgstr "Voeg partnerlid toe"
 
 #: member_contact_create.php:24
 msgid "Choose Member to Add Contact to"
-msgstr ""
+msgstr "Kies lid om contact toe te voegen"
 
 #: member_contact_create.php:32 member_contact_edit.php:29
 #: member_create.php:39 member_directory.php:29 member_edit.php:49
 msgid "First Name"
-msgstr ""
+msgstr "Voornaam"
 
 #: member_contact_create.php:33 member_contact_edit.php:30
 #: member_create.php:40 member_edit.php:50
 msgid "Middle Name"
-msgstr ""
+msgstr "Tussenvoegsel"
 
 #: member_contact_create.php:34 member_contact_edit.php:31
 #: member_create.php:41 member_directory.php:30 member_edit.php:51
 msgid "Last Name"
-msgstr ""
+msgstr "Achternaam"
 
 #: member_contact_create.php:39 member_contact_edit.php:39
 #: member_create.php:46 member_edit.php:34
 msgid "Date of Birth"
-msgstr ""
+msgstr "Geboortedatum"
 
 #: member_contact_create.php:40 member_contact_edit.php:40
 #: member_create.php:47 member_edit.php:35
 msgid "Mother's Maiden Name"
-msgstr ""
+msgstr "Moeders eigen achternaam"
 
 #: member_contact_create.php:42 member_contact_edit.php:44
 msgid "List this Person's Contact Information in the Directory?"
-msgstr ""
+msgstr "Contactinformatie van dit lid in de lijst tonen?"
 
 #: member_contact_create.php:43 member_contact_edit.php:45
 #: member_create.php:50 member_edit.php:54
 msgid "Email Address"
-msgstr ""
+msgstr "E-mailadres"
 
 #: member_contact_create.php:44 member_contact_edit.php:46
 #: member_create.php:51 member_edit.php:55 classes/class.member.php:560
 msgid "Primary Phone"
-msgstr ""
+msgstr "Telefoon"
 
 #: member_contact_create.php:45 member_contact_edit.php:47
 #: member_create.php:52 member_edit.php:56 classes/class.member.php:562
 msgid "Secondary Phone"
-msgstr ""
+msgstr "Mobiel"
 
 #: member_contact_create.php:46 member_contact_edit.php:48
 #: member_create.php:53 member_edit.php:57
 msgid "Fax Number"
-msgstr ""
+msgstr "Fax"
 
 #: member_contact_create.php:48 member_contact_edit.php:50
 #: member_create.php:63 member_edit.php:66
@@ -2087,26 +2086,26 @@ msgstr ""
 #: member_contact_create.php:62 member_contact_edit.php:64
 #: member_create.php:77 member_edit.php:80
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: member_contact_create.php:64
 msgid "Create Contact"
-msgstr ""
+msgstr "Voeg lid toe"
 
 #: member_contact_create.php:69 member_create.php:85 member_edit.php:99
 #: password_change.php:29
 msgid "Password not long enough"
-msgstr ""
+msgstr "Wachtwoord niet lang genoeg"
 
 #: member_contact_create.php:70 member_contact_edit.php:74
 #: member_create.php:86 member_edit.php:100
 msgid "Enter a first name"
-msgstr ""
+msgstr "Vul de voornaam in"
 
 #: member_contact_create.php:71 member_contact_edit.php:75
 #: member_create.php:87 member_edit.php:101
 msgid "Enter a last name"
-msgstr ""
+msgstr "Vul de achternaam in"
 
 #: member_contact_create.php:72 member_contact_create.php:73
 #: member_contact_create.php:74 member_contact_edit.php:80
@@ -2114,27 +2113,27 @@ msgstr ""
 #: member_create.php:91 member_create.php:92 member_edit.php:102
 #: member_edit.php:103 member_edit.php:104
 msgid "Enter a"
-msgstr ""
+msgstr "Voer in"
 
 #: member_contact_create.php:75 member_contact_edit.php:83
 #: member_create.php:93 member_edit.php:105
 msgid "Enter a country"
-msgstr ""
+msgstr "Vul een land in"
 
 #: member_contact_create.php:78 member_contact_edit.php:77
 #: member_create.php:109 member_edit.php:114
 msgid "Birth date cannot be in the future"
-msgstr ""
+msgstr "Geboortedatum kan niet in de toekomst zijn"
 
 #: member_contact_create.php:80 member_contact_edit.php:79
 #: member_create.php:111 member_edit.php:116
 msgid "A little young, don't you think?"
-msgstr ""
+msgstr "Een beetje jong vind je ook niet?"
 
 #: member_contact_create.php:82 member_contact_edit.php:85
 #: member_create.php:113 member_edit.php:118
 msgid "Not a valid email address"
-msgstr ""
+msgstr "Geen geldig e-mailadres"
 
 #: member_contact_create.php:84 member_contact_create.php:85
 #: member_contact_create.php:86 member_contact_edit.php:87
@@ -2142,128 +2141,128 @@ msgstr ""
 #: member_create.php:116 member_create.php:117 member_edit.php:120
 #: member_edit.php:121 member_edit.php:122
 msgid "Phone format invalid"
-msgstr ""
+msgstr "Geen geldig telefoonnummer"
 
 #: member_contact_create.php:151
 msgid "Joint member created. Would you like to"
-msgstr ""
+msgstr "Partnerlid toegevoegd. Wil je"
 
 #: member_contact_create.php:151
 msgid "add another"
-msgstr ""
+msgstr "nog een toevoegen"
 
 #: member_contact_create.php:153
 msgid "There was an error saving the joint member."
-msgstr ""
+msgstr "Het partnerlid kan niet worden opgeslagen."
 
 #: member_contact_delete.php:4
 msgid "Delete Joint Member"
-msgstr ""
+msgstr "Verwijder partnerlid"
 
 #: member_contact_delete.php:20
 msgid "Are you sure you want to permanently delete"
-msgstr ""
+msgstr "Wet je zeker dat je dit partnerlid wilt verwijderen"
 
 #: member_contact_delete.php:35
 msgid "Joint member deleted."
-msgstr ""
+msgstr "Partnerlid verwijderd."
 
 #: member_contact_delete.php:37 classes/class.person.php:170
 msgid "There was an error deleting the joint member."
-msgstr ""
+msgstr "Het partnerlid kan niet worden verwijderd."
 
 #: member_contact_edit.php:25 member_profile_all_in_one.php:14
 #: member_profile_all_in_one.php:38
 msgid "Edit a Joint Member"
-msgstr ""
+msgstr "Bewerk partnerlid"
 
 #: member_contact_edit.php:168
 msgid "There was an error saving the person."
-msgstr ""
+msgstr "De persoon kan niet worden opgeslagen."
 
 #: member_contact_to_edit.php:8
 msgid "Choose Joint Member to Edit"
-msgstr ""
+msgstr "Kies partnerlid om te bewerken"
 
 #: member_contact_to_edit.php:11
 msgid "Choose Member and Person"
-msgstr ""
+msgstr "Kies lid en persoon"
 
 #: member_create.php:14
 msgid "Register New Member"
-msgstr ""
+msgstr "Registreer nieuw lid"
 
 #: member_create.php:21 member_edit.php:24
 msgid "Member Role"
-msgstr ""
+msgstr "Functie"
 
 #: member_create.php:23 member_edit.php:26
 msgid "Single"
-msgstr ""
+msgstr "Enkel"
 
 #: member_create.php:23 member_edit.php:26
 msgid "Joint"
-msgstr ""
+msgstr "Partnerlid"
 
 #: member_create.php:23 member_edit.php:26
 msgid "Organization"
-msgstr ""
+msgstr "Organisatie"
 
 #: member_create.php:23 member_edit.php:26
 msgid "Business"
-msgstr ""
+msgstr "Bedrijf"
 
 #: member_create.php:23 member_edit.php:26
 msgid "Fund"
-msgstr ""
+msgstr "Stichting"
 
 #: member_create.php:24 member_edit.php:27
 msgid "Account Type"
-msgstr ""
+msgstr "Soort lid"
 
 #: member_create.php:27 member_edit.php:28
 msgid "Administrator Note"
-msgstr ""
+msgstr "Administrator commentaar"
 
 #: member_create.php:35 member_edit.php:32 report_no_login.php:14
 msgid "Join Date"
-msgstr ""
+msgstr "Lid sinds"
 
 #: member_create.php:44
 msgid "The next two fields may help us recover your password if you forget it."
-msgstr ""
+msgstr "The next two fields may help us recover your password if you forget it."
 
 #: member_create.php:55 member_edit.php:59
 msgid "Never"
-msgstr ""
+msgstr "Nooit"
 
 #: member_create.php:55 member_edit.php:59
 msgid "Daily"
-msgstr ""
+msgstr "Dagelijks"
 
 #: member_create.php:55 member_edit.php:59
 msgid "Weekly"
-msgstr ""
+msgstr "Wekelijks"
 
 #: member_create.php:55 member_edit.php:59
 msgid "Monthly"
-msgstr ""
+msgstr "Maandelijks"
 
 #: member_create.php:58 member_edit.php:37
 msgid "How frequently should the member receive email updates?"
-msgstr ""
+msgstr "Hoe vaak moet het lid e-mail updates krijgen?"
 
 #: member_create.php:60
 msgid "How frequently do you wish to receive email updates?"
-msgstr ""
+msgstr "Hoe vaak wilt u e-mail updates krijgen?"
 
 #: member_create.php:79
 msgid "Create Member"
-msgstr ""
+msgstr "Maak lid aan"
 
 #: member_create.php:84 member_edit.php:98 password_reset.php:10
 msgid "Enter your Member ID"
-msgstr ""
+msgstr "Voer lidnummer in"
 
 #: member_create.php:89
 msgid "Enter an e-mail address"
@@ -2271,76 +2270,76 @@ msgstr ""
 
 #: member_create.php:96
 msgid "This ID is already being used"
-msgstr ""
+msgstr "Dit lidnummer is al in gebruik"
 
 #: member_create.php:98
 msgid "Special characters are not allowed"
-msgstr ""
+msgstr "Speciale tekens zijn niet toegestaan"
 
 #: member_create.php:100
 msgid "Password must contain at least one number"
-msgstr ""
+msgstr "Wachtwoord moet tenminste ??n cijfer bevatten"
 
 #: member_create.php:102
 msgid ""
 "You have the right idea, but it's best not to use apostraphes or backslashes "
 "in passwords"
-msgstr ""
+msgstr "Het idee is goed, maar gbruik liever geen apostrofes of schuine strepen in wachtwoorden"
 
 #: member_create.php:105 member_edit.php:108
 msgid "You cannot assign a higher level of access than you have"
-msgstr ""
+msgstr "Je kunt geen hoger niveau toekennen dan je zelf hebt"
 
 #: member_create.php:108 member_edit.php:113
 msgid "Join date cannot be in the future"
-msgstr ""
+msgstr "De toevoegdatum kan niet in de toekomst zijn"
 
 #: member_create.php:202 member_create.php:206
 msgid "Member created"
-msgstr ""
+msgstr "Lid aangemaakt"
 
 #: member_create.php:202
 msgid "Click"
-msgstr ""
+msgstr "Klik"
 
 #: member_create.php:202
 msgid "to create another member account"
-msgstr ""
+msgstr "om nog een lid aan te maken"
 
 #: member_create.php:202
 msgid ""
 "Or if you would like to add a joint member to this account (such as a "
 "spouse), click"
-msgstr ""
+msgstr "Of als je een partnerlid aan dit lid wilt toevoegen zoals bijvoorbeeld een echtgenoot, klik"
 
 #: member_create.php:204
 msgid ""
 "Since the new member does not have an email address, he/she needs to be "
 "notified of the member id"
-msgstr ""
+msgstr "Omdat het nieuwe lid geen e-mailadres heeft moet hij/zij op de hoogte worden gebracht van lidnummer"
 
 #: member_create.php:204 member_create.php:212
 msgid "and password"
-msgstr ""
+msgstr "en wachtwoord"
 
 #: member_create.php:210
 msgid "An email has been sent to"
-msgstr ""
+msgstr "Een e-mailbericht is gestuurd naar"
 
 #: member_create.php:210
 msgid "containing the new user id and password"
-msgstr ""
+msgstr "met daarin het lidnummer en het wachtwoord"
 
 #: member_create.php:212
 msgid ""
 "An attempt to email the new member information failed.  This is most likely "
 "due to a technical problem.  You may want to contact your administrator at"
-msgstr ""
+msgstr "Het versturen van de ledeninformatie is niet gelukt. Dit heeft waarschijnlijk een technische oorzaak. Neem contact op met de webmaster op"
 
 #: member_create.php:212
 msgid ""
 "Since the email failed, the new member needs to be notified of the member id"
-msgstr ""
+msgstr "Omdat het e-mailbericht niet verstuurd kon worden, moet het lid op de hoogte gebracht worden van lidnummer"
 
 #: member_create.php:216
 msgid "New member of "
@@ -2352,27 +2351,27 @@ msgstr ""
 
 #: member_create.php:223 member_edit.php:261
 msgid "There was an error saving the member."
-msgstr ""
+msgstr "Het lid kan niet worden opgeslagen"
 
 #: member_directory.php:5
 msgid "Member Directory"
-msgstr ""
+msgstr "Ledenlijst"
 
 #: member_directory.php:16
 msgid "Name (all or part)"
-msgstr ""
+msgstr "Naam (of een deel)"
 
 #: member_directory.php:17
 msgid "Location (e.g."
-msgstr ""
+msgstr "Locatie (bijv."
 
 #: member_directory.php:24
 msgid "Order by"
-msgstr ""
+msgstr "Sorteer op"
 
 #: member_directory.php:25
 msgid "Membership No."
-msgstr ""
+msgstr "Lidnummer"
 
 #: member_directory.php:27
 msgid "Karma points"
@@ -2380,11 +2379,11 @@ msgstr ""
 
 #: member_directory.php:31
 msgid "Neighbourhood"
-msgstr ""
+msgstr "Buurt"
 
 #: member_directory.php:32
 msgid "Town"
-msgstr ""
+msgstr "Plaats"
 
 #: member_directory.php:33
 msgid "Postal code"
@@ -2392,7 +2391,7 @@ msgstr ""
 
 #: member_directory.php:35 member_directory.php:54
 msgid "Balance"
-msgstr ""
+msgstr "Saldo"
 
 #: member_directory.php:36
 msgid "Absolute balance"
@@ -2400,7 +2399,7 @@ msgstr ""
 
 #: member_directory.php:38
 msgid "Search"
-msgstr ""
+msgstr "'Zoek'"
 
 #: member_directory.php:45
 msgid ""
@@ -2426,181 +2425,181 @@ msgstr ""
 
 #: member_edit.php:38
 msgid "Should the member confirm any payments made to him/her?"
-msgstr ""
+msgstr "Moet het lid ontvangen betalingen bevestigen?"
 
 #: member_edit.php:41
 msgid "Edit Personal Profile"
-msgstr ""
+msgstr "Bewerk persoonlijk profiel"
 
 #: member_edit.php:45
 msgid "How often would you like to receive email updates?"
-msgstr ""
+msgstr "Hoe vaak wil je e-mail updates ontvangen?"
 
 #: member_edit.php:46
 msgid "Do you wish to confirm payments that are made to you?"
-msgstr ""
+msgstr "Wil je ontvangen betalingen bevestigen?"
 
 #: member_edit.php:62
 msgid "Automatically Accept Payments"
-msgstr ""
+msgstr "Accepteer betalingen automatisch"
 
 #: member_edit.php:62
 msgid "Confirm Payments"
-msgstr ""
+msgstr "Bevestig betalingen"
 
 #: member_edit.php:87 classes/class.member.php:619
 msgid "Age"
-msgstr ""
+msgstr "Leeftijd"
 
 #: member_edit.php:88 classes/class.member.php:621
 msgid "Sex"
-msgstr ""
+msgstr "Geslacht"
 
 #: member_edit.php:89 classes/class.member.php:623
 msgid "About Me"
-msgstr ""
+msgstr "Mijn gegevens"
 
 #: member_edit.php:110
 msgid "You cannot modify the member role of a higher level account"
-msgstr ""
+msgstr "Je kunt de status van een hoger accountniveau niet bewerken"
 
 #: member_login.php:7 member_profile_all_in_one.php:7
 #: includes/inc.config.php:302
 msgid "Welcome to "
-msgstr ""
+msgstr "Welkom bij "
 
 #: member_login.php:10
 msgid "hi"
-msgstr ""
+msgstr "hallo"
 
 #: member_logout.php:7
 msgid "You are now logged out"
-msgstr ""
+msgstr "Je bent nu uitgelogd"
 
 #: member_logout.php:8
 msgid ""
 "You can login at any time by clicking on the 'Login' link at the bottom of "
 "the left menu."
-msgstr ""
+msgstr "Je kunt inloggen door op de <a href=member_login.php>&quot;Log in&quot; link</a> in het menu te klikken."
 
 #: member_photo_upload.php:23
 msgid "Upload/Replace photo for"
-msgstr ""
+msgstr "Upload/vervang foto voor"
 
 #: member_photo_upload.php:27
 msgid "Upload a Photo"
-msgstr ""
+msgstr "Upload een foto"
 
 #: member_photo_upload.php:39
 msgid "Replace Image"
-msgstr ""
+msgstr "Vervang een afbeelding"
 
 #: member_photo_upload.php:42
 msgid "Upload Image"
-msgstr ""
+msgstr "Upload een afbeelding"
 
 #: member_photo_upload.php:47 classes/class.uploads.php:138
 msgid "Select file to upload"
-msgstr ""
+msgstr "Kies bestand om te uploaden"
 
 #: member_photo_upload.php:62 member_photo_upload.php:63
 msgid "Size of uploaded file is 0 bytes."
-msgstr ""
+msgstr "De grootte van het bestand is 0 bytes."
 
 #: member_photo_upload.php:106 newsletter_save.php:12
 msgid "File uploaded."
-msgstr ""
+msgstr "Bestand ge-upload."
 
 #: member_photo_upload.php:108
 msgid "There was a problem resizing the file."
-msgstr ""
+msgstr "Het bestand kan niet verkleind worden."
 
 #: member_photo_upload.php:110 newsletter_save.php:14
 msgid "There was a problem uploading the file."
-msgstr ""
+msgstr "Het bestand kan niet ge-upload worden."
 
 #: member_profile_all_in_one.php:8
 msgid ""
 "Please choose from the following options, or navigate using the buttons on "
 "the sidebar to the left."
-msgstr ""
+msgstr "Kies uit de volgende mogelijkheden, of gebruik de knoppen aan de linkerkant."
 
 #: member_profile_all_in_one.php:10
 msgid "Member Settings"
-msgstr ""
+msgstr "Leden instellingen"
 
 #: member_profile_all_in_one.php:11 member_profile.php:8
 msgid "Change My Password"
-msgstr ""
+msgstr "Wijzig mijn wachtwoord"
 
 #: member_profile_all_in_one.php:12 member_profile.php:9
 msgid "Edit My Personal Information"
-msgstr ""
+msgstr "Bewerk mijn persoonlijke gegevens"
 
 #: member_profile_all_in_one.php:13 member_profile.php:14
 msgid "Add a Joint Member to My Account"
-msgstr ""
+msgstr "Voeg een partnerlid toe aan mijn account"
 
 #: member_profile_all_in_one.php:17
 msgid "View Offered Listings"
-msgstr ""
+msgstr "Bekijk AANBOD advertenties"
 
 #: member_profile_all_in_one.php:23
 msgid "View Wanted Listings"
-msgstr ""
+msgstr "Bekijk VRAAG advertenties"
 
 #: member_profile_all_in_one.php:34 classes/class.page.php:30
 msgid "Administration"
-msgstr ""
+msgstr "Administratie"
 
 #: member_profile_all_in_one.php:37
 msgid "Add a Joint Member to an Existing Account"
-msgstr ""
+msgstr "Voeg een partnerlid toe aan een bestaand account"
 
 #: member_profile.php:4 includes/inc.config.php:217
 #: includes/inc.config.php:259
 msgid "Member Profile"
-msgstr ""
+msgstr "Mijn Profiel"
 
 #: member_profile.php:12
 msgid "Upload/Change Photo of Myself"
-msgstr ""
+msgstr "Upload/vervang een foto van mijzelf"
 
 #: member_profile.php:18
 msgid "Manage Income Shares"
-msgstr ""
+msgstr "Bewerk inkomsten-deling"
 
 #: member_profile.php:21
 msgid "View My Profile (as others see it)"
-msgstr ""
+msgstr "Bekijk mijn profiel (zoals anderen dat zien)"
 
 #: member_status_change.php:13 member_status_change.php:29
 msgid "Re-activate"
-msgstr ""
+msgstr "Re-activeer"
 
 #: member_status_change.php:23
 msgid ""
 "Are you sure you want to inactivate this member?  They will no longer be "
 "able to use this website, and all their listings will be inactivated as well."
-msgstr ""
+msgstr "Weet je zeker dat je dit lid wilt blokkeren? Hij / zij kan niet langer gebruik maken van deze website en alle advertenties zullen inactief gemaakt worden."
 
 #: member_status_change.php:27
 msgid ""
 "Are you sure you want to re-activate this member?  Their listings will need "
 "to be reactivated individually or new ones created."
-msgstr ""
+msgstr "Weet je zeker dat je dit lid wilt activeren? Zijn / haar advertenties moeten stuk voor stuk weer geactiveerd worden of er moeten nieuwe advertenties gemaakt worden."
 
 #: member_status_change.php:59
 msgid "Changes to member status saved."
-msgstr ""
+msgstr "Wijziging status opgeslagen"
 
 #: member_status_change.php:61
 msgid "There was an error changing the member's status."
-msgstr ""
+msgstr "Wijziging status kan niet worden opgeslagen"
 
 #: member_summary.php:12
 msgid "Summary for"
-msgstr ""
+msgstr "Samenvatting voor"
 
 #: member_summary.php:18
 msgid "Contact information"
@@ -2608,366 +2607,366 @@ msgstr ""
 
 #: member_to_edit.php:8
 msgid "Choose Member to Edit"
-msgstr ""
+msgstr "Kies een lid om te bewerken"
 
 #: member_unlock.php:10
 msgid ""
 "This form will both unlock an account (if it is locked) and reset the "
 "member's password.  Then it will email the new password to the member.  You "
 "may want to make sure the member's email is still current."
-msgstr ""
+msgstr "Dit formulier zal een lid activeren (als deze geblokkerd is) en zal het wachtwoord resetten. Daarna zal een e-mailbericht naar het lid worden gestuurd. Het is misschien veilig eerst te controleren of het e-mailadres van het lid nog geldig is."
 
 #: member_unlock.php:14
 msgid "Choose the Member Account"
-msgstr ""
+msgstr "Kies het lid"
 
 #: member_unlock.php:17
 msgid "Unlock and Reset"
-msgstr ""
+msgstr "Activeer en reset wachtwoord"
 
 #: member_unlock.php:18
 msgid "Send 'Password Reset' email"
-msgstr ""
+msgstr "Stuur een wachtwoord-reset e-mail"
 
 #: member_unlock.php:19
 msgid "Send 'Welcome' Email"
-msgstr ""
+msgstr "Stuur een welkom email"
 
 #: member_unlock.php:36
 msgid "This member account had been locked due to"
-msgstr ""
+msgstr "Dit lid is geblokkeerd na"
 
 #: member_unlock.php:36
 msgid "consecutive login failures."
-msgstr ""
+msgstr "achtereenvolgende mislukte inlogpogingen."
 
 #: member_unlock.php:36
 msgid ""
 "It has been unlocked.  If the number of attempts is more than 10 or 20,you "
 "may want to contact your administrator at"
-msgstr ""
+msgstr "Is gedeblokkeerd. Als het aantal pogingen meer dan 10 is, neem dan contact op met de webmaster op"
 
 #: member_unlock.php:36
 msgid "because it could indicate someone is trying to hack into the system."
-msgstr ""
+msgstr "Want het kan zijn dat iemand in het systeem probeert in te breken."
 
 #: member_unlock.php:43
 msgid "The password has been reset"
-msgstr ""
+msgstr "Het wachtwoord is ge-reset"
 
 #: member_unlock.php:50 password_reset.php:39
 msgid "New Password"
-msgstr ""
+msgstr "Nieuw wachtwoord"
 
 #: member_unlock.php:54
 msgid ""
 "and a 'Password Reset' email has been sent to the member's email address"
-msgstr ""
+msgstr "en een 'Wachtwoord-reset' e-mail is verstuurd naar het e-mailadres van het lid"
 
 #: member_unlock.php:56 password_reset.php:43
 msgid ""
 "However, the attempt to email the new password failed.  This is most likely "
 "due to a technical problem.  Contact your administrator at"
-msgstr ""
+msgstr "Het versturen van het nieuwe wachtwoord is niet gelukt. Neem contact op met de webmaster op"
 
 #: mysql_backup.php:218
 msgid "Use this tool to backup your MySQL Database.<p>"
-msgstr ""
+msgstr "Gebruik deze tool om een MySQL Database back-up te maken.<p>"
 
 #: mysql_backup.php:219
 msgid "Backup Now"
-msgstr ""
+msgstr "Nu een back-up maken."
 
 #: news_create.php:23 news_edit.php:28
 msgid "Sequence"
-msgstr ""
+msgstr "Volgorde"
 
 #: news_create.php:33 news_edit.php:38
 msgid "Enter a description"
-msgstr ""
+msgstr "Voer een omschrijving in"
 
 #: news_create.php:62
 msgid "News item saved."
-msgstr ""
+msgstr "Nieuwsbericht opgeslagen."
 
 #: news_create.php:64 news_edit.php:73
 msgid "There was a problem saving the news item."
-msgstr ""
+msgstr "Het nieuwsbericht kan niet worden opgeslagen."
 
 #: newsletter_delete.php:24
 msgid "There are no newsletters in the system."
-msgstr ""
+msgstr "Er zijn geen nieuwsbrieven in het systeem"
 
 #: newsletter_delete.php:50
 msgid "1 newsletter deleted."
-msgstr ""
+msgstr "1 nieuwsbrief verwijderd."
 
 #: newsletter_delete.php:52
 msgid "newsletters deleted."
-msgstr ""
+msgstr "nieuwsbrieven verwijderd."
 
 #: newsletter_delete.php:54
 msgid "There was an error deleting the newsletters. Did you check any boxes?"
-msgstr ""
+msgstr "De nieuwsbrieven kunnen niet worden verwijderd. Heb je blokjes ingevuld?"
 
 #: newsletter_save.php:8
 msgid "Newsletter Uploaded"
-msgstr ""
+msgstr "Nieuwsbrief ge-upload"
 
 #: newsletters.php:6
 msgid "Newsletters"
-msgstr ""
+msgstr "Nieuwsbrieven"
 
 #: newsletters.php:18
 msgid "Latest Newsletter"
-msgstr ""
+msgstr "Laatste nieuwsbrief"
 
 #: newsletters.php:21
 msgid "Archives"
-msgstr ""
+msgstr "Archief"
 
 #: newsletters.php:29
 msgid "No newsletters have yet been posted."
-msgstr ""
+msgstr "Er is nog geen nieuwsbrief gemaakt."
 
 #: news.php:17 news_to_edit.php:17
 msgid "There are no current news items"
-msgstr ""
+msgstr "Er zijn geen nieuwsberichten"
 
 #: news.php:22
 msgid "To read the latest"
-msgstr ""
+msgstr "Om de laatste"
 
 #: news.php:22
 msgid "newsletter, go"
-msgstr ""
+msgstr "nieuwsbrief te lezen, ga naar"
 
 #: news_to_edit.php:5
 msgid "Choose Item to Edit"
-msgstr ""
+msgstr "Kies nieuwsbericht om te bewerken"
 
 #: news_to_edit.php:13
 msgid "Which News Item?"
-msgstr ""
+msgstr "Welk nieuwsbericht?"
 
 #: pages.php:10
 msgid "Session Destroyed"
-msgstr ""
+msgstr "Sessie vernietigd"
 
 #: pages.php:13
 msgid "Really Destroy Session?"
-msgstr ""
+msgstr "Wil je deze sessie echt vernietigen?"
 
 #: pages.php:31
 msgid "Oops, you have requested a non-existant page."
-msgstr ""
+msgstr "Oeps, je hebt een niet bestaande pagina opgevraagd.NL-tekst"
 
 #: password_change.php:13
 msgid "Change Password for"
-msgstr ""
+msgstr "Wijzig wachtwoord voor"
 
 #: password_change.php:15 password_change.php:35
 msgid ""
 "For your security, passwords must be at least 7 characters long and include "
 "at least one number."
-msgstr ""
+msgstr "Wachtwoorden moeten minstens 7 tekens bevatten en tenminste 1 cijfer."
 
 #: password_change.php:18
 msgid "Old Password"
-msgstr ""
+msgstr "Oude wachtwoord"
 
 #: password_change.php:19
 msgid "Choose a New Password"
-msgstr ""
+msgstr "Kies een nieuw wachtwoord"
 
 #: password_change.php:20
 msgid "Repeat the New Password"
-msgstr ""
+msgstr "Nogmaals het nieuwe wachtwoord"
 
 #: password_change.php:21
 msgid "Change Password"
-msgstr ""
+msgstr "Wijzig wachtwoord"
 
 #: password_change.php:26
 msgid "Enter your current password"
-msgstr ""
+msgstr "Voer je huidige wachtwoord in"
 
 #: password_change.php:27
 msgid "Enter a new password"
-msgstr ""
+msgstr "Voer een nieuw wachtwoord in"
 
 #: password_change.php:28
 msgid "You must re-enter the new password"
-msgstr ""
+msgstr "Voer het nieuwe wachtwoord nogmaals in"
 
 #: password_change.php:31
 msgid "Passwords are not the same"
-msgstr ""
+msgstr "Wachtwoorden zijn niet hetzelfde"
 
 #: password_change.php:33
 msgid "Password is incorrect"
-msgstr ""
+msgstr "Wachtwoord voldoet niet aan de eisen. Wachtwoorden moeten minstens 7 tekens bevatten en tenminste 1 cijfer."
 
 #: password_change.php:51
 msgid "Password successfully changed."
-msgstr ""
+msgstr "Wachtwoord gewijzigd"
 
 #: password_change.php:53
 msgid "There was an error changing the password."
-msgstr ""
+msgstr "Het wachtwoord kan niet worden gewijzigd."
 
 #: password_reset.php:7 password_reset.php:14
 msgid "Reset Password"
-msgstr ""
+msgstr "Reset wachtwoord"
 
 #: password_reset.php:11
 msgid "Enter the Email Address for your Account"
-msgstr ""
+msgstr "Voer e-mailadres voor je account in"
 
 #: password_reset.php:17
 msgid "Address or member id is incorrect"
-msgstr ""
+msgstr "Adres of lidnummer is niet correct"
 
 #: password_reset.php:19
 msgid "If you cannot remember your member id or email address, please"
-msgstr ""
+msgstr "Wachtwoord of e-mailadres vergeten? Neem"
 
 #: password_reset.php:19
 msgid "contact"
-msgstr ""
+msgstr "contact"
 
 #: password_reset.php:19
 msgid "us"
-msgstr ""
+msgstr "met ons op"
 
 #: password_reset.php:38
 msgid ""
 "Your password has been reset.  You can change the new password after you "
 "login by going into the Member Profile section of the web site."
-msgstr ""
+msgstr "Je wachtwoord is ge-reset. Je kunt je wachtwoord wijzigen onder de knop 'Mijn Profiel' op de website."
 
 #: password_reset.php:41
 msgid "The new password has been sent to your email address."
-msgstr ""
+msgstr "Je nieuwe wachtwoord wordt naar je e-mailadres gestuurd."
 
 #: photo_to_edit.php:8
 msgid "Choose Member whose Photo you wish to Edit"
-msgstr ""
+msgstr "Kies een lid om de foto te vervangen"
 
 #: photo_to_edit.php:16
 msgid "Upload/Replace Photo"
-msgstr ""
+msgstr "Upload / vervang foto"
 
 #: refund_monthly_fee.php:17
 msgid "Refund monthly fee"
-msgstr ""
+msgstr "Boek maandelijkse bijdrage terug"
 
 #: refund_monthly_fee.php:70
 msgid "No monthly transfers found."
-msgstr ""
+msgstr "Geen maandelijkse bijdrage gevonden"
 
 #: refund_monthly_fee.php:98
 msgid "This system isn't setup to process monthly fees."
-msgstr ""
+msgstr "Het systeem is niet ingesteld om maandelijkse bijdragen te verwerken."
 
 #: refund_monthly_fee.php:103 refund_service_charge.php:92
 msgid ""
 "Action already executed.  Start from the administration page for a new "
 "refund."
-msgstr ""
+msgstr "Actie uitgevoerd. Ga naar de administratiepagina om een nieuwe terugboeking op te starten."
 
 #: refund_monthly_fee.php:142 refund_service_charge.php:132
 #: service_charge.php:86 take_monthly_fee.php:131
 msgid ""
 "Already transfered.  Start from the administration page for a new transfer."
-msgstr ""
+msgstr "Is reeds overgemaakt. Ga naar de administratiepagina om een nieuwe overschrijving op te starten."
 
 #: refund_monthly_fee.php:157
 msgid "Refund for monthly fee taken on"
-msgstr ""
+msgstr "Boek de maandelijkse bijdrage terug voor"
 
 #: refund_monthly_fee.php:205 refund_service_charge.php:200
 msgid "Couldn't transfer."
-msgstr ""
+msgstr "Kan niet overschrijven."
 
 #: refund_service_charge.php:60
 msgid "No service charges found."
-msgstr ""
+msgstr "Geen servicebijdragen gevonden"
 
 #: refund_service_charge.php:87
 msgid "This system isn't setup to process service fees."
-msgstr ""
+msgstr "Het syteem is niet ingesteld om servicebijdragen te verwerken."
 
 #: refund_service_charge.php:154
 msgid "Refund for"
-msgstr ""
+msgstr "Boek&nbsp;terug&nbsp;voor"
 
 #: refund_service_charge.php:154
 msgid "taken on"
-msgstr ""
+msgstr "opgelegd op"
 
 #: report_no_login.php:7
 msgid "Members Who Have Never Logged In"
-msgstr ""
+msgstr "Leden die nog nooit hebben ingelogd"
 
 #: report_no_login.php:14
 msgid "Phone Number(s)"
-msgstr ""
+msgstr "Telefoon"
 
 #: report_no_login.php:14
 msgid "Email(s)"
-msgstr ""
+msgstr "E-mail"
 
 #: report_no_login.php:35
 msgid "All members in the system have logged in at least once."
-msgstr ""
+msgstr "Alle leden hebben tenmisnste ??n keer ingelogd."
 
 #: service_charge.php:5 service_charge.php:103
 msgid "Service Charge"
-msgstr ""
+msgstr "Schrijf de servicebijdrage af"
 
 #: service_charge.php:39
 msgid "This system isn't setup to charge service fees."
-msgstr ""
+msgstr "Het syteem is niet ingesteld om servicebijdragen te verwerken."
 
 #: service_charge.php:44 take_monthly_fee.php:54
 msgid ""
 "Already confirmed.  Start from the administration page for a new transfer."
-msgstr ""
+msgstr "Is reeds bevestigd. Ga naar de administratiepagina om een nieuwe overboeking op te starten."
 
 #: service_charge.php:98
 msgid ""
 "The fee entered must be numeric (e.g. '5') and contain no other characters "
 "(e.g. '5 units' = bad input!)"
-msgstr ""
+msgstr "Het bedrag moet numeriek zijn (bijv. '5') en mag geen andere tekens bevatten"
 
 #: service_charge.php:153 take_monthly_fee.php:191
 msgid "An Error occured during the transfer."
-msgstr ""
+msgstr "Er is een fout ontstaan tijdens de overboeking."
 
 #: settings.php:30
 msgid "General Settings"
-msgstr ""
+msgstr "Algemene instellingen"
 
 #: settings.php:30
 msgid "Site Features"
-msgstr ""
+msgstr "Site eigenschappen"
 
 #: settings.php:30
 msgid "Display Options"
-msgstr ""
+msgstr "Weergave opties"
 
 #: settings.php:30
 msgid "Account Restrictions"
-msgstr ""
+msgstr "Ledenbeperkingen"
 
 #: settings.php:30
 msgid "Social Networking"
-msgstr ""
+msgstr "Sociaal netwerken"
 
 #: settings.php:30
 msgid "Admin Settings"
-msgstr ""
+msgstr "Administratie instellingen"
 
 #: settings.php:30
 msgid "Language Settings"
@@ -2983,11 +2982,11 @@ msgid ""
 "<em>General</em> Settings intended for use by the LETS Administrator. "
 "<p>More <em>Advanced</em> configuration settings for the Webmaster are "
 "located in the file 'includes/inc.config.php'.</font><p>"
-msgstr ""
+msgstr "<a name='top'></a><font color=red>LET OP: de volgende <em>algemene</em> instellingen zijn bedoeld voor gebruik door de LETS administrateur. <p>Meer <em>geavanceerde</em> configuratie instellingen voor de webmaster zijn te vinden in het bestand 'includes/inc.config.php'.</font><p>"
 
 #: settings.php:63
 msgid "Back to top"
-msgstr ""
+msgstr "Naar bovenkant pagina"
 
 #. Translation hint: Default language
 #: settings.php:156
@@ -3029,7 +3028,7 @@ msgstr ""
 
 #: settings.php:203
 msgid "Save Settings"
-msgstr ""
+msgstr "Sla&nbsp;instellingen&nbsp;op"
 
 #: state_choose.php:6
 msgid "Choose state"
@@ -3041,23 +3040,23 @@ msgstr ""
 
 #: state_choose.php:54
 msgid "State deleted"
-msgstr ""
+msgstr "Wijk/buurt verwijderd"
 
 #: state_create.php:16 state_edit.php:20
 msgid "State name"
-msgstr ""
+msgstr "Wijk/buurt naam"
 
 #: state_create.php:24
 msgid "Enter state name"
-msgstr ""
+msgstr "Voer de wijk/buurt naam in"
 
 #: state_create.php:42
 msgid "State created"
-msgstr ""
+msgstr "Wijk/buurt aangemaakt"
 
 #: state_create.php:44
 msgid "Could not save state"
-msgstr ""
+msgstr "Kan de wijk/buurt niet opslaan"
 
 #: state_edit.php:6
 msgid "Modify state information"
@@ -3065,19 +3064,19 @@ msgstr ""
 
 #: state_edit.php:28
 msgid "State name cannot be blank"
-msgstr ""
+msgstr "De wijk/buurt naam mag niet leeg zijn"
 
 #: state_edit.php:46
 msgid "State name updated"
-msgstr ""
+msgstr "Wijk/buurt naam gewijzigd"
 
 #: state_edit.php:48
 msgid "Could not save state name changes"
-msgstr ""
+msgstr "De wijk/buurt naam wijziging is niet opgeslagen"
 
 #: take_monthly_fee.php:49
 msgid "This system isn't setup to charge monthly fees."
-msgstr ""
+msgstr "Het systeem is niet ingesteld om maandelijkse bijdragen te verwerken."
 
 #: take_monthly_fee.php:66
 msgid "Are you sure you want to transfer monthly fee for the month of"
@@ -3085,174 +3084,174 @@ msgstr ""
 
 #: take_monthly_fee.php:66
 msgid "The monthly fee for"
-msgstr ""
+msgstr "De maandelijkse bijdrage voor"
 
 #: take_monthly_fee.php:66
 msgid "has already been taken"
-msgstr ""
+msgstr "is al afgeboekt"
 
 #: take_monthly_fee.php:171
 msgid "Monthly Fee"
-msgstr ""
+msgstr "Maandelijkse LETS-kring bijdrage"
 
 #: timeframe_choose.php:5
 msgid "Choose time period"
-msgstr ""
+msgstr "Kies&nbsp;de&nbsp;periode"
 
 #: timeframe_choose.php:16
 msgid "From when?"
-msgstr ""
+msgstr "Van&nbsp;wanneer?"
 
 #: timeframe_choose.php:17
 msgid "To when?"
-msgstr ""
+msgstr "Tot&nbsp;wanneer?"
 
 #: trade_history_all.php:6 trade_history.php:8
 msgid "Exchange History"
-msgstr ""
+msgstr "Transactie geschiedenis"
 
 #: trade_history_all.php:13 trade_history.php:38
 msgid "For period from"
-msgstr ""
+msgstr "Over de periode van"
 
 #: trade_history.php:38
 msgid "Current Balance"
-msgstr ""
+msgstr "Saldo"
 
 #: trade.php:37
 msgid "Transaction Type"
-msgstr ""
+msgstr "Soort transactie"
 
 #: trade.php:37
 msgid "Transfer"
-msgstr ""
+msgstr "Maak&nbsp;over"
 
 #: trade.php:37
 msgid "Invoice"
-msgstr ""
+msgstr "Factuur"
 
 #: trade.php:45
 msgid "To Member"
-msgstr ""
+msgstr "Voor lid"
 
 #: trade.php:47
 msgid "Transfer to Member"
-msgstr ""
+msgstr "Maak&nbsp;over&nbsp;naar&nbsp;lid"
 
 #: trade.php:51
 msgid "# of "
-msgstr ""
+msgstr "# van "
 
 #: trade.php:53
 msgid "# of Minutes"
-msgstr ""
+msgstr "# van minuten"
 
 #: trade.php:55
 msgid "Enter a Brief Description of the Exchange"
-msgstr ""
+msgstr "Geef een korte omschrijving van de transactie"
 
 #: trade.php:64
 msgid "You cannot transfer to yourself"
-msgstr ""
+msgstr "Je kunt niet naar jezelf overmaken"
 
 #: trade.php:68
 msgid "Description too long - maximum length is 255 characters"
-msgstr ""
+msgstr "Omschrijving is te lang - maximaal 255 tekens"
 
 #: trade.php:72
 msgid "Hours entered must be a positive, whole number"
-msgstr ""
+msgstr "Ingevoerde uren moeten een positief en heel getal zijn"
 
 #: trade.php:74
 msgid "Enter 15, 30, or 45 (or other numbers in 3 minute increments)"
-msgstr ""
+msgstr "Geef 15, 30 of 45 (of andere waarden in stappen van 3 minuten) in"
 
 #: trade.php:77
 msgid "Enter a positive number with no more than two decimal points"
-msgstr ""
+msgstr "Geef een positief getal in met niet meer dan ??n komma"
 
 #: trade.php:101
 msgid "No units were entered to exchange!"
-msgstr ""
+msgstr "Er is niets ingevuld om over te maken"
 
 #: trade.php:136
 msgid "Payment Received on"
-msgstr ""
+msgstr "Betaling ontvangen op"
 
 #: trade.php:136 trade.php:150
 msgid "Hi"
-msgstr ""
+msgstr "Hallo"
 
 #: trade.php:136
 msgid "Just letting you know that you have received a new payment from"
-msgstr ""
+msgstr "Je hebt een nieuwe betaling ontvangen van"
 
 #: trade.php:136
 msgid ""
 "As you have elected to confirm all payments made to you, please log into "
 "your account now and confirm or reject this payment using the following "
 "URL..."
-msgstr ""
+msgstr "Je hebt er voor gekozen betalingen aan jou te bevestigen. Log a.u.b. in en bevestig of weiger deze betaling op het volgende adres..."
 
 #: trade.php:138
 msgid "has been notified that you wish to transfer"
-msgstr ""
+msgstr "heeft bericht gekregen dat je"
 
 #: trade.php:138
 msgid "to him/her"
-msgstr ""
+msgstr "naar haar/hem wilt overmaken"
 
 #: trade.php:138
 msgid ""
 "This member has opted to confirm all transactions made to him/her. Once the "
 "member accepts this transaction your payment will be actioned and you will "
 "be invited to leave Feedback for this member"
-msgstr ""
+msgstr "Dit lid heeft er voor gekozen om alle transacties te bevestigen. Zodra dit lid de betaling heeft geaccepteerd wordt de betaling overgemaakt en word je gevraagd of je feedback voor dit lid wilt geven"
 
 #: trade.php:139 trade.php:153 trade.php:176
 msgid "Would you like to"
-msgstr ""
+msgstr "Wil je"
 
 #: trade.php:139 trade.php:153 trade.php:176
 msgid "record another"
-msgstr ""
+msgstr "nog een"
 
 #: trade.php:139 trade.php:153 trade.php:176
 msgid "exchange"
-msgstr ""
+msgstr "transactie boeken"
 
 #: trade.php:142 trade.php:156 trade.php:168
 msgid "Trade failed!"
-msgstr ""
+msgstr "Transactie mislukt!"
 
 #: trade.php:147
 msgid ""
 "Sorry, the Invoicing facility has been disabled by the site administrator."
-msgstr ""
+msgstr "Sorry, de mogelijkheid voor factureren is door de webmaster geblokkeerd."
 
 #: trade.php:150
 msgid "Invoice Received on"
-msgstr ""
+msgstr "Factuur ontvangen op"
 
 #: trade.php:150
 msgid "Just letting you know that you have received a new Invoice from"
-msgstr ""
+msgstr "Je hebt een nieuwe factuur ontvangen van"
 
 #: trade.php:150
 msgid ""
 "Please log into your account now to pay or reject this invoice using the "
 "following URL..."
-msgstr ""
+msgstr "Log a.u.b. in en betaal of weiger deze transactie op het volgende adres..."
 
 #: trade.php:152
 msgid "has been sent an invoice for"
-msgstr ""
+msgstr "heeft een factuur gekregen voor"
 
 #: trade.php:152
 msgid ""
 "You will be informed when the member pays this invoice and will be invited "
 "to leave Feedback for this member"
-msgstr ""
+msgstr "Je krijgt bericht als het lid deze factuur betaalt. Dan zal je worden gevraagd feedback voor dit lid te geven"
 
 #: trade.php:168
 msgid "Please try again later, or contact your administrator."
@@ -3260,49 +3259,49 @@ msgstr ""
 
 #: trade.php:176
 msgid "You have transferred"
-msgstr ""
+msgstr "Je hebt nu"
 
 #: trade.php:176
 msgid " to "
-msgstr ""
+msgstr " overgemaakt aan "
 
 #: trade.php:192 trades_pending.php:162
 msgid "Donation from"
-msgstr ""
+msgstr "Donatie van"
 
 #: trade.php:209 includes/inc.forms.php:10
 msgid "denotes a required field"
-msgstr ""
+msgstr "geeft een vereist veld aan"
 
 #: trade_reverse.php:7
 msgid "Reverse an Exchange"
-msgstr ""
+msgstr "Boek een transactie terug"
 
 #: trade_reverse.php:17
 msgid "Choose the exchange to reverse"
-msgstr ""
+msgstr "Kies een transactie om terug te boeken"
 
 #: trade_reverse.php:19
 msgid ""
 "Enter a brief explanation. Information about the original exchange will be "
 "automatically included"
-msgstr ""
+msgstr "Geef een korte verklaring. Informatie over de originele transactie wordt automatisch bijgevoegd"
 
 #: trade_reverse.php:21
 msgid "Reverse"
-msgstr ""
+msgstr "Boek terug"
 
 #: trade_reverse.php:47
 msgid "Trade has been reversed."
-msgstr ""
+msgstr "Transactie is teruggeboekt"
 
 #: trade_reverse.php:49
 msgid "There was an error reversing the trade"
-msgstr ""
+msgstr "De transactie kan niet worden teruggeboekt"
 
 #: trades_pending.php:17
 msgid "Exchanges Pending"
-msgstr ""
+msgstr "Wachtende transacties"
 
 #: trades_pending.php:27
 msgid ""
@@ -3313,44 +3312,44 @@ msgstr ""
 
 #: trades_pending.php:30
 msgid "Summary"
-msgstr ""
+msgstr "Samenvatting"
 
 #: trades_pending.php:31
 msgid "Payments to Confirm"
-msgstr ""
+msgstr "transacties te accepteren"
 
 #: trades_pending.php:35
 msgid "Invoices to Pay"
-msgstr ""
+msgstr "facturen te betalen"
 
 #: trades_pending.php:37
 msgid "Sent Payments"
-msgstr ""
+msgstr "verstuurde betalingen"
 
 #: trades_pending.php:40
 msgid "Sent Invoices"
-msgstr ""
+msgstr "verstuurde facturen"
 
 #: trades_pending.php:45 classes/class.feedback.php:198
 #: classes/class.trade.php:277
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: trades_pending.php:45
 msgid "Action"
-msgstr ""
+msgstr "Actie"
 
 #: trades_pending.php:68
 msgid "Accept Payment"
-msgstr ""
+msgstr "Accepteer betaling"
 
 #: trades_pending.php:68 trades_pending.php:72
 msgid "Reject"
-msgstr ""
+msgstr "Weiger"
 
 #: trades_pending.php:71
 msgid "Pay Invoice"
-msgstr ""
+msgstr "Betaal factuur"
 
 #: trades_pending.php:78
 #, php-format
@@ -3359,78 +3358,78 @@ msgstr ""
 
 #: trades_pending.php:80
 msgid "Resend Payment"
-msgstr ""
+msgstr "Betaal overnieuw"
 
 #: trades_pending.php:81 trades_pending.php:92 trades_pending.php:111
 msgid "Remove this Notice"
-msgstr ""
+msgstr "Verwijder dit bericht"
 
 #: trades_pending.php:84
 msgid "Awaiting Confirmation by"
-msgstr ""
+msgstr "Wacht op goedkeuring van"
 
 #: trades_pending.php:90
 msgid "has rejected this transaction"
-msgstr ""
+msgstr "heeft de transactie geweigerd"
 
 #: trades_pending.php:91
 msgid "Resend Invoice"
-msgstr ""
+msgstr "Stuur factuur overnieuw"
 
 #: trades_pending.php:95
 msgid "Awaiting Payment from"
-msgstr ""
+msgstr "Wacht op betaling van"
 
 #: trades_pending.php:103
 msgid "Payment Accepted"
-msgstr ""
+msgstr "Betaling geaccepteerd"
 
 #: trades_pending.php:105
 msgid "Invoice Paid"
-msgstr ""
+msgstr "Factuur betaald"
 
 #: trades_pending.php:107
 msgid "has confirmed"
-msgstr ""
+msgstr "heeft bevestigd"
 
 #: trades_pending.php:109
 msgid "has paid this invoice"
-msgstr ""
+msgstr "heeft deze factuur betaald"
 
 #: trades_pending.php:186 trades_pending.php:212 trades_pending.php:229
 #: trades_pending.php:255 trades_pending.php:272 trades_pending.php:299
 #: trades_pending.php:316 trades_pending.php:347
 msgid "This trade does not exist or you do not have permission to act on it."
-msgstr ""
+msgstr "Deze transactie bestaat niet of je hebt geen rechten om er iets mee te doen."
 
 #: trades_pending.php:194
 msgid "Sorry, only Open trades can be rejected or resent."
-msgstr ""
+msgstr "Sorry, alleen openstaande transacties kunnen worden geweiged of opnieuw verstuurd."
 
 #: trades_pending.php:200 trades_pending.php:243
 msgid "This member hasn't rejected this transaction"
-msgstr ""
+msgstr "Dit lid heeft deze transactie niet geweigerd"
 
 #: trades_pending.php:207
 msgid "Transaction re-submitted successfully."
-msgstr ""
+msgstr "Transactie opnieuw verstuurd."
 
 #: trades_pending.php:209 trades_pending.php:252 trades_pending.php:296
 #: trades_pending.php:344
 msgid "Error updating the database"
-msgstr ""
+msgstr "Fout bij schrijven naar de database"
 
 #: trades_pending.php:237
 msgid "Sorry, only Open trades can be rejected."
-msgstr ""
+msgstr "Sorry, alleen openstaande transacties kunnen worden geweigerd."
 
 #: trades_pending.php:250 trades_pending.php:342
 msgid "Transaction removed successfully."
-msgstr ""
+msgstr "Transactie is verwijderd"
 
 #: trades_pending.php:280
 msgid "This trade is no longer Open and therefore cannot be rejected."
-msgstr ""
+msgstr "Deze transactie staat niet langer open en kan dus niet worden geweigerd."
 
 #: trades_pending.php:294
 #, php-format
@@ -3441,15 +3440,15 @@ msgstr ""
 msgid ""
 "This trade is currently marked as Open and thus cannot be removed until the "
 "required action has been taken."
-msgstr ""
+msgstr "Deze transactie staat nog open en kan dus niet worden verwijderd zolang de benodigde actie niet is ondernomen."
 
 #: trades_pending.php:363
 msgid "This trade has already been confirmed and is now closed."
-msgstr ""
+msgstr "Deze transactie is al bevestigd en is nu gesloten."
 
 #: trades_pending.php:374 trades_pending.php:393
 msgid "You do not have permission to confirm this trade."
-msgstr ""
+msgstr "Je bent niet bevoegd deze transactie te bevestigen."
 
 #: trades_pending.php:378
 msgid "Error confirming payment. Please contact your administrator."
@@ -3477,24 +3476,24 @@ msgstr ""
 
 #: trades_pending.php:431
 msgid "The following Incoming Payments require your confirmation"
-msgstr ""
+msgstr "De volgen binnenkomende betalingen vragen om bevestiging"
 
 #: trades_pending.php:454 trades_pending.php:479 trades_pending.php:511
 #: trades_pending.php:542
 msgid "None found"
-msgstr ""
+msgstr "Geen gevonden"
 
 #: trades_pending.php:460
 msgid "The following Invoices need paying"
-msgstr ""
+msgstr "De volgende facturen moeten betaald worden"
 
 #: trades_pending.php:487
 msgid "You are awaiting confirmation of the following Payments"
-msgstr ""
+msgstr "Je wacht op bevestiging van de volgende betalingen"
 
 #: trades_pending.php:518
 msgid "You are awaiting payment for the following Invoices"
-msgstr ""
+msgstr "Je wacht op betaling van de volgende facturen"
 
 #: trades_pending.php:549
 #, php-format
@@ -3518,63 +3517,63 @@ msgstr ""
 
 #: trades_to_view.php:5
 msgid "Choose Member to View"
-msgstr ""
+msgstr "Kies een lid om te bekijken"
 
 #: trades_to_view.php:11
 msgid "Whose Exchange History?"
-msgstr ""
+msgstr "Wiens transactie geschiedenis?"
 
 #: includes/inc.config.php:92
 msgid "is currently down for maintenance."
-msgstr ""
+msgstr "is nu niet actief, er wordt aan gewerkt."
 
 #: includes/inc.config.php:121
 msgid "Under 18"
-msgstr ""
+msgstr "Onder 18"
 
 #: includes/inc.config.php:121
 msgid "18-30"
-msgstr ""
+msgstr "18 tot 30"
 
 #: includes/inc.config.php:121
 msgid "30's"
-msgstr ""
+msgstr "30-er"
 
 #: includes/inc.config.php:121
 msgid "40's"
-msgstr ""
+msgstr "40-er"
 
 #: includes/inc.config.php:121
 msgid "50's"
-msgstr ""
+msgstr "50-er"
 
 #: includes/inc.config.php:121
 msgid "60's"
-msgstr ""
+msgstr "60-er"
 
 #: includes/inc.config.php:121
 msgid "70's"
-msgstr ""
+msgstr "70-er"
 
 #: includes/inc.config.php:121
 msgid "Over 80"
-msgstr ""
+msgstr "Boven 80"
 
 #: includes/inc.config.php:121 includes/inc.config.php:124
 msgid "n/a"
-msgstr ""
+msgstr "n.v.t."
 
 #: includes/inc.config.php:124
 msgid "Male"
-msgstr ""
+msgstr "Man"
 
 #: includes/inc.config.php:124
 msgid "Female"
-msgstr ""
+msgstr "Vrouw"
 
 #: includes/inc.config.php:201
 msgid "Licensed under the"
-msgstr ""
+msgstr "Onder licentie van de"
 
 #: includes/inc.config.php:201
 #, php-format
@@ -3583,15 +3582,15 @@ msgstr ""
 
 #: includes/inc.config.php:201
 msgid "Local Exchange UK Ver."
-msgstr ""
+msgstr "Local Exchange NL Ver."
 
 #: includes/inc.config.php:201
 msgid "Credits"
-msgstr ""
+msgstr "Verantwoording"
 
 #: includes/inc.config.php:207
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: includes/inc.config.php:210
 msgid "Information"
@@ -3599,71 +3598,71 @@ msgstr ""
 
 #: includes/inc.config.php:212
 msgid "Offered"
-msgstr ""
+msgstr "Aangeboden"
 
 #: includes/inc.config.php:213
 msgid "Wanted"
-msgstr ""
+msgstr "Gevraagd"
 
 #: includes/inc.config.php:216
 msgid "Members List"
-msgstr ""
+msgstr "Ledenlijst"
 
 #: includes/inc.config.php:259
 msgid ""
 "The following listings are new or updated.<p>If you would prefer not to "
 "receive automatic email updates, or if you would like to change their "
 "frequency, you can do so at the"
-msgstr ""
+msgstr "De volgende advertenties zijn nieuw of gewijzigd.<p> Als je geen wijzigingsbericht per e-mail wilt ontvangen, of je wilt de frequentie van de e-mails wijzigen, kun je dat doen op het"
 
 #: includes/inc.config.php:259
 msgid "area of our website."
-msgstr ""
+msgstr "deel van de website."
 
 #: includes/inc.config.php:285
 msgid "Hello"
-msgstr ""
+msgstr "Hallo"
 
 #: includes/inc.config.php:285
 msgid "Due to inactivity, your"
-msgstr ""
+msgstr "Wegens inactiviteit zullen je"
 
 #: includes/inc.config.php:285
 msgid "listings have been set to automatically expire"
-msgstr ""
+msgstr "advertenties automaitisch verlopen na"
 
 #: includes/inc.config.php:285
 msgid "days from now"
-msgstr ""
+msgstr "dagen"
 
 #: includes/inc.config.php:285
 msgid "In order to keep the"
-msgstr ""
+msgstr "Om het "
 
 #: includes/inc.config.php:285
 msgid ""
 "system up to date and working smoothly for all members, we have developed an "
 "automatic system to expire listings for members who haven't recorded "
 "exchanges or updated their listings during a period of"
-msgstr ""
+msgstr "systeem up-to-date te houden en soepel te laten werken voor alle leden, verlopen advertenties van leden die gedurende"
 
 #: includes/inc.config.php:285
 msgid ""
 "days. We want the directory to be up to date, so that members do not "
 "encounter listings that are out of date or expired. This works to everyone's "
 "advantage"
-msgstr ""
+msgstr "dagen niet actief zijn geweest."
 
 #: includes/inc.config.php:285
 msgid ""
 "We apologize for any inconvenience this may cause you and thank you for your "
 "participation. If you have any questions or comments, or are unsure how to "
 "best use the system, please reply to this email message or call us at"
-msgstr ""
+msgstr "Als je vragen of opmerkingen hierover hebt, kunt je die het beste aan ons laten stellen door deze e-mail te beantwoorden of te bellen op"
 
 #: includes/inc.config.php:285
 msgid "You have"
-msgstr ""
+msgstr "Je hebt"
 
 #: includes/inc.config.php:285
 msgid ""
@@ -3671,82 +3670,82 @@ msgid ""
 "like to have in the directory.  If you do not reactivate them during that "
 "timeframe, your listings will no longer appear in the directory, but will "
 "still be stored in the system for another"
-msgstr ""
+msgstr "dagen om in te loggen en je advertenties weer actief te maken. Als je gedurende die tijd niets doet, zullen je advertenties niet meer getoond worden. Ze blijven wel in het systeem gedurende"
 
 #: includes/inc.config.php:285
 msgid "days, during which time you can still edit and reactivate them."
-msgstr ""
+msgstr "dagen. In die tijd kunt je ze nog steeds weer actief maken."
 
 #: includes/inc.config.php:285
 msgid "Instructions to reactivate listings"
-msgstr ""
+msgstr "Instructie voor het activeren van advertenties"
 
 #: includes/inc.config.php:285
 msgid "Login to the website"
-msgstr ""
+msgstr "Log in op de website"
 
 #: includes/inc.config.php:285
 msgid "Go to Update Listings"
-msgstr ""
+msgstr "Ga naar Wijzig advertenties"
 
 #: includes/inc.config.php:285
 msgid "Select Edit Offered (or Wanted) Listings"
-msgstr ""
+msgstr "Selecteer 'Aanbod' of 'Vraag' advertenties"
 
 #: includes/inc.config.php:285
 msgid "Select the listing to edit"
-msgstr ""
+msgstr "Selecteer de betreffende advertentie"
 
 #: includes/inc.config.php:285
 msgid ""
 "Uncheck the box next to 'Should this listing be set to automatically expire?'"
-msgstr ""
+msgstr "Haal het vinkje weg bij 'Moet deze advertentie automatisch verlopen?'"
 
 #: includes/inc.config.php:285
 msgid "Press the Update button"
-msgstr ""
+msgstr "Klik op de Wijzigen knop"
 
 #: includes/inc.config.php:285
 msgid "Repeat steps 1-6 for all listings you wish to reactivate"
-msgstr ""
+msgstr "Herhaal de stappen 1 tot 6 voor alle advertenties die je wilt activeren"
 
 #: includes/inc.config.php:300
 msgid "Your"
-msgstr ""
+msgstr "Je"
 
 #: includes/inc.config.php:300
 msgid "Account"
-msgstr ""
+msgstr "account"
 
 #: includes/inc.config.php:301
 msgid "Your password for"
-msgstr ""
+msgstr "Je wachtwoord voor"
 
 #: includes/inc.config.php:301
 msgid ""
 "has been reset. If you did not request this reset, it is possible your "
 "account has been compromised, and you may want to contact the site "
 "administrator at"
-msgstr ""
+msgstr "is gereset. Als je hier niet om gevraagd hebt is het mogelijk dat een ander probeert jouw account te gebruiken. Waarschuw in dat geval de administrator op"
 
 #: includes/inc.config.php:301
 msgid ""
 "Your user id and new password are listed at the end of this message. You can "
 "change the automatically generated password by going to the Member Profile "
 "section after you login."
-msgstr ""
+msgstr "Je gebruikersnaam en wachtwoord staan onderaan dit bericht. Je kunt je wachtwoord wijzigen door naar de pagina 'Mijn Profiel' te gaan nadat je hebt ingelogd."
 
 #: includes/inc.config.php:303
 msgid "Hello, and welcome to the"
-msgstr ""
+msgstr "Hallo en welkom bij de"
 
 #: includes/inc.config.php:303
 msgid "community!"
-msgstr ""
+msgstr "club!"
 
 #: includes/inc.config.php:303
 msgid "A member account has been created for you at"
-msgstr ""
+msgstr "Er is een ledenaccount is voor je gemaakt op"
 
 #: includes/inc.config.php:303
 msgid ""
@@ -3754,11 +3753,11 @@ msgid ""
 "and password are listed at the end of this message. You can change the "
 "automatically generated password by going to the Member Profile section "
 "after you login."
-msgstr ""
+msgstr "Je kunt nu inloggen en advertenties plaatsen bij 'Aanbod' en 'Gevraagd'.\\nJe inlognaam (LETS-nummer) en wachtwoord staan onderaan dit bericht.\\nNadat je bent ingelogd, kun je dit automatisch aangemaakte wachtwoord wijzigen in een wachtwoord dat je gemakkelijk kan onthouden. Dit kun je doen door naar de pagina 'Mijn Profiel' te gaan nadat je hebt ingelogd."
 
 #: includes/inc.config.php:303
 msgid "Thank you for joining us."
-msgstr ""
+msgstr "Fijn dat je je bij ons hebt aangesloten.\\nWe hopen dat je veel plezier zult hebben van de vele mogelijkheden om diensten te ruilen.\\nEen handleiding voor het gebruik van ons LETS-kring programma (Local Exchange) kun je vinden op de website."
 
 #: includes/inc.feature-defaults.php:21
 msgid "<a>Learn more</a> about this community!"
@@ -3770,7 +3769,7 @@ msgstr ""
 
 #: classes/class.category.php:69 classes/class.category.php:129
 msgid "There was an error accessing a category record"
-msgstr ""
+msgstr "Kan de categorienaam niet openen"
 
 #: classes/class.category.php:69 classes/class.category.php:83
 #: classes/class.category.php:129 classes/class.feedback.php:104
@@ -3781,63 +3780,63 @@ msgstr ""
 #: classes/class.state_address.php:75 classes/class.state_address.php:93
 #: classes/class.state_address.php:124 classes/class.uploads.php:89
 msgid "Please try again later"
-msgstr ""
+msgstr "Probeer het later opnieuw"
 
 #: classes/class.category.php:83
 msgid "There was an error deleting category code"
-msgstr ""
+msgstr "De categorienaam kan niet worden verwijderd"
 
 #: classes/class.directory.php:49
 msgid "Member Information"
-msgstr ""
+msgstr "Ledeninformatie"
 
 #: classes/class.directory.php:123
 msgid "Members Directory"
-msgstr ""
+msgstr "Ledenlijst"
 
 #: classes/class.error.php:90
 msgid "Errors occurred on this page"
-msgstr ""
+msgstr "Er zijn fouten opgetreden op deze pagina"
 
 #: classes/class.feedback.php:59
 msgid "Cannot create duplicate feedback."
-msgstr ""
+msgstr "Kan feedback niet kopie?ren"
 
 #: classes/class.feedback.php:104
 msgid "There was an error accessing the feedback table"
-msgstr ""
+msgstr "Kan de feedback tabel niet openen"
 
 #: classes/class.feedback.php:134
 msgid "Seller"
-msgstr ""
+msgstr "Aanbieder"
 
 #: classes/class.feedback.php:136
 msgid "Buyer"
-msgstr ""
+msgstr "Afnemer"
 
 #: classes/class.feedback.php:198
 msgid "Type"
-msgstr ""
+msgstr "Waardering"
 
 #: classes/class.feedback.php:198
 msgid "Context"
-msgstr ""
+msgstr "Context"
 
 #: classes/class.feedback.php:198
 msgid "Comment"
-msgstr ""
+msgstr "Opmerking"
 
 #: classes/class.feedback.php:283
 msgid "There was an error accessing the rebuttal table"
-msgstr ""
+msgstr "Kan de verweertabel niet openen"
 
 #: classes/class.feedback.php:317
 msgid "Reply"
-msgstr ""
+msgstr "Antwoord"
 
 #: classes/class.feedback.php:319
 msgid "Follow Up"
-msgstr ""
+msgstr "Follow up"
 
 #: classes/class.geocode.php:205
 msgid "Member with <a>karma</a>"
@@ -3851,140 +3850,140 @@ msgstr ""
 
 #: classes/class.listing.php:133
 msgid "There was an error accessing the"
-msgstr ""
+msgstr "Het is niet mogelijk de"
 
 #: classes/class.listing.php:133
 msgid "listing for"
-msgstr ""
+msgstr "advetentie te openen voor"
 
 #: classes/class.listing.php:231
 msgid "Could not inactivate listing"
-msgstr ""
+msgstr "Kan de advertentie niet blokkeren"
 
 #: classes/class.listing.php:248
 msgid "Could not expire listing"
-msgstr ""
+msgstr "Kan de advertentie niet stopzetten"
 
 #: classes/class.listing.php:453 classes/class.member.php:830
 #: classes/class.member.php:832
 msgid "No listings found."
-msgstr ""
+msgstr "Geen advertenties gevonden"
 
 #: classes/class.member.php:111
 msgid ""
 "Your account has been locked due to too many unsuccessful login attempts. "
 "You will need to contact us to have your account unlocked."
-msgstr ""
+msgstr "Je account is geblokkeerd omdat er te veel mislukte inlogpogingen zijn gedaan. Neem contact op met de webmaster."
 
 #: classes/class.member.php:113
 msgid "Password or member id is incorrect.  Please try again, or go"
-msgstr ""
+msgstr "Wachtwoord of lidnummer is fout. Probeer het nogmaals of ga naar"
 
 #: classes/class.member.php:113
 msgid "to have your password reset"
-msgstr ""
+msgstr "om je wachtwoord te resetten"
 
 #: classes/class.member.php:176
 msgid "There was an error updating the password."
-msgstr ""
+msgstr "Het wachtwoord kan niet worden ge-reset."
 
 #: classes/class.member.php:215
 msgid "Logout"
-msgstr ""
+msgstr "Log uit"
 
 #: classes/class.member.php:252
 msgid ""
 "I'm sorry, but the action attempted was unable to be processed because you "
 "don't have permissions"
-msgstr ""
+msgstr "Kan de gevraagde actie niet uitvoeren omdat je niet voldoende rechten hebt"
 
 #: classes/class.member.php:252
 msgid "If you would like your access level increased, please"
-msgstr ""
+msgstr "Als je je rechten wilt (laten) wijzigen,"
 
 #: classes/class.member.php:252
 msgid "email the admin"
-msgstr ""
+msgstr "stuur ons een e-mailbericht"
 
 #: classes/class.member.php:252
 msgid "and ask"
-msgstr ""
+msgstr "en vraag hierom"
 
 #: classes/class.member.php:323
 msgid "There was an error accessing this member"
-msgstr ""
+msgstr "Kan de ledengegevens niet openen"
 
 #: classes/class.member.php:346
 msgid "There was an error accessing a person record for"
-msgstr ""
+msgstr "Kan de persoonsgegevens niet openen"
 
 #: classes/class.member.php:356
 msgid "Member Data"
-msgstr ""
+msgstr "Ledengegevens"
 
 #: classes/class.member.php:359
 msgid "Person Data"
-msgstr ""
+msgstr "Persoonsgegevens"
 
 #: classes/class.member.php:382
 msgid "Could not save changes to member"
-msgstr ""
+msgstr "Kan de wijzigingen niet opslaan"
 
 #: classes/class.member.php:407
 msgid "Invalid person id in URL.  This break-in attempt has been reported."
-msgstr ""
+msgstr "Niet geldige persoonsgegevens in de URL. Deze inbraakpoging is gerapporteerd."
 
 #: classes/class.member.php:449 classes/class.member.php:564
 msgid "Fax"
-msgstr ""
+msgstr "fax"
 
 #: classes/class.member.php:462 classes/class.member.php:599
 msgid "'s Fax"
-msgstr ""
+msgstr "'s fax"
 
 #: classes/class.member.php:543
 msgid "Activity"
-msgstr ""
+msgstr "Activiteit"
 
 #: classes/class.member.php:545
 msgid "No exchanges yet"
-msgstr ""
+msgstr "Nog geen transacties"
 
 #: classes/class.member.php:547
 msgid "exchanges total"
-msgstr ""
+msgstr "transactie(s) totaal"
 
 #: classes/class.member.php:547
 msgid "for a sum of"
-msgstr ""
+msgstr "voor een bedrag van"
 
 #: classes/class.member.php:547
 msgid "last on"
-msgstr ""
+msgstr "laatste op"
 
 #: classes/class.member.php:551
 msgid "Feedback"
-msgstr ""
+msgstr "Feedback"
 
 #: classes/class.member.php:551
 msgid "total"
-msgstr ""
+msgstr "totaal"
 
 #: classes/class.member.php:551
 msgid "negative"
-msgstr ""
+msgstr "negatief"
 
 #: classes/class.member.php:551
 msgid "neutral"
-msgstr ""
+msgstr "neutraal"
 
 #: classes/class.member.php:555
 msgid "Joined"
-msgstr ""
+msgstr "Aangemeld"
 
 #: classes/class.member.php:591
 msgid "Joint Member"
-msgstr ""
+msgstr "Partnerlid"
 
 #: classes/class.member.php:593
 msgid "'s Email"
@@ -4000,19 +3999,19 @@ msgstr ""
 
 #: classes/class.member.php:613
 msgid "PERSONAL INFORMATION"
-msgstr ""
+msgstr "Persoonlijke informatie"
 
 #: classes/class.member.php:615 classes/class.member.php:616
 msgid "Unspecified"
-msgstr ""
+msgstr "Niet aangegeven"
 
 #: classes/class.member.php:617
 msgid "No description supplied"
-msgstr ""
+msgstr "Geen omschrijving gegeven"
 
 #: classes/class.member.php:799
 msgid "matching members"
-msgstr ""
+msgstr "passende leden"
 
 #: classes/class.member.php:808
 msgid "Member search"
@@ -4020,76 +4019,76 @@ msgstr ""
 
 #: classes/class.member.php:841
 msgid "day"
-msgstr ""
+msgstr "dag"
 
 #. Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
 #: classes/class.member.php:852
 msgid "New and updated listings during the last"
-msgstr ""
+msgstr "Nieuwe en gewijzigde advertenties gedurende de laatste"
 
 #: classes/class.member.php:891
 msgid "Important information about your"
-msgstr ""
+msgstr "Belangrijke informatie over jouw"
 
 #: classes/class.member.php:891
 msgid "account"
-msgstr ""
+msgstr "account"
 
 #: classes/class.member.php:895
 msgid ""
 "***NOTE: This member does not have an email address in the system, so they "
 "will need to be notified by phone that their listings have been inactivated."
-msgstr ""
+msgstr "***LET OP: Dit lid heeft geen e-mailadres in dit systeem en moet dus per telefoon worden verteld dat zijn of haar advertenties zijn geblokkeerd."
 
 #: classes/class.member.php:899
 msgid "listings expired for"
-msgstr ""
+msgstr "advertenties verlopen voor"
 
 #: classes/class.member.php:899
 msgid ""
 "All of this member's listings were automatically expired due to inactivity.  "
 "To turn off this feature, see inc.config.php."
-msgstr ""
+msgstr "Alle advertenties van dit lid zijn automatisch verlopen. Deze functie kan worden uitgeschakeld in inc.config.php."
 
 #: classes/class.member.php:949
 msgid "Could not query database for balance information."
-msgstr ""
+msgstr "Krijg geen saldoinformatie van de database."
 
 #: classes/class.member.php:990
 msgid "Error saving Income Share."
-msgstr ""
+msgstr "Kan inkomstendeling niet opslaan"
 
 #: classes/class.member.php:992
 msgid "Income Share saved successfully."
-msgstr ""
+msgstr "Inkomstendeling is opgeslagen"
 
 #: classes/class.member.php:1001
 msgid "No Income Share to delete"
-msgstr ""
+msgstr "Geen inkomstendeling om te verwijderen"
 
 #: classes/class.member.php:1009
 msgid "Error deleting income Share."
-msgstr ""
+msgstr "Inkomstendeling kan niet worden verwijderd."
 
 #: classes/class.member.php:1011
 msgid "Income Share deleted successfully."
-msgstr ""
+msgstr "Inkomstendeling verwijderd."
 
 #: classes/class.news.php:28
 msgid "Could not save news item."
-msgstr ""
+msgstr "Kan nieuwsbericht niet opslaan."
 
 #: classes/class.news.php:56
 msgid "There was an error accessing the news table.  Please try again later."
-msgstr ""
+msgstr "Kan de nieuwstabel niet openen. Probeer het later nog eens."
 
 #: classes/class.news.php:118
 msgid "At top of list"
-msgstr ""
+msgstr "Bovenaan de lijst"
 
 #: classes/class.news.php:140
 msgid "After"
-msgstr ""
+msgstr "Na"
 
 #: classes/class.page.php:99
 msgid ""
@@ -4126,13 +4125,13 @@ msgstr ""
 
 #: classes/class.page.php:191
 msgid "Printer Friendly View"
-msgstr ""
+msgstr "Printer versie"
 
 #: classes/class.page.php:204
 msgid ""
 "DisplayPage() was called with no content included!  Was a blank page "
 "intended?"
-msgstr ""
+msgstr "DisplayPage() is aangeroepen zonder inhoud. Is een blanco pagina bedoeld?"
 
 #: classes/class.person.php:74
 msgid ""
@@ -4140,23 +4139,23 @@ msgid ""
 "the same name, date of birth, and mother's maiden name. If you received this "
 "error after pressing the Back button, try going back to the menu and "
 "starting again."
-msgstr ""
+msgstr "Kan de nieuwe persoon niet opslaan. Er bestaat al iemand met deze naam, geboortedatum en moeder's eigen naam binnen jouw account. Als je dit bericht krijgt nadat je op de 'terug'knop hebt geklikt, ga dan terug naar het menu en probeer het opnieuw."
 
 #: classes/class.person.php:98
 msgid "Could not save changes to"
-msgstr ""
+msgstr "Kan de wijzigingen niet opslaan voor"
 
 #: classes/class.person.php:150
 msgid "There was an error accessing this person"
-msgstr ""
+msgstr "Kan de persoons gegevens niet openen"
 
 #: classes/class.person.php:159
 msgid "Cannot delete primary member"
-msgstr ""
+msgstr "Kan geen hoofd-lid verwijderen"
 
 #: classes/class.person.php:208
 msgid "Phone type does not exist."
-msgstr ""
+msgstr "Telefoon type bestaat niet."
 
 #. Translation hint: %s is the geocoding service (finds addresses on a map).
 #: classes/class.person.php:239
@@ -4174,11 +4173,11 @@ msgstr ""
 
 #: classes/class.settings.php:125
 msgid "Update failed!"
-msgstr ""
+msgstr "Wijziging mislukt!"
 
 #: classes/class.settings.php:132
 msgid "Settings updated successfully."
-msgstr ""
+msgstr "Instellingen opgeslagen"
 
 #: classes/class.settings.php:147
 msgid "Hours"
@@ -4186,7 +4185,7 @@ msgstr ""
 
 #: classes/class.state_address.php:36 classes/class.state_address.php:56
 msgid "State already exists"
-msgstr ""
+msgstr "Wijk/buurt bestaat al"
 
 #: classes/class.state_address.php:75
 msgid "There was an error accessing the state information"
@@ -4199,15 +4198,15 @@ msgstr ""
 
 #: classes/class.trade.php:94
 msgid "There was an error accessing the trades table."
-msgstr ""
+msgstr "Kan de transactietabel niet openen."
 
 #: classes/class.trade.php:138
 msgid "Database out of balance on"
-msgstr ""
+msgstr "Database is niet meer in balans op"
 
 #: classes/class.trade.php:138
 msgid "Hi admin"
-msgstr ""
+msgstr "Dag administrateur"
 
 #: classes/class.trade.php:138
 msgid ""
@@ -4215,36 +4214,36 @@ msgid ""
 "detected that your trade database is out of balance! Obviously something has "
 "gone wrong somewhere along the line and we suggest you investigate the cause "
 "of this ASAP."
-msgstr ""
+msgstr "Je moet weten dat tijdens het inboeken van een transactie het systeem ontdekt heeft dat de database niet meer in balans is. Waarschijnlijk is er ergens iets fout gegaan. Zoek zo snel mogelijk de fout op en verhelp deze."
 
 #: classes/class.trade.php:144
 msgid ""
 "The trade database is out of balance!  Please contact your administrator at"
-msgstr ""
+msgstr "De transactiedatabase is niet meer in balans. Neem zo snel mogelijk contact op met de webmaster op"
 
 #: classes/class.trade.php:218
 msgid "Reversal of exchange"
-msgstr ""
+msgstr "Terugboeken van een transactie"
 
 #: classes/class.trade.php:218
 msgid "from"
-msgstr ""
+msgstr "van"
 
 #: classes/class.trade.php:218
 msgid "by admin"
-msgstr ""
+msgstr "door administratie"
 
 #: classes/class.trade.php:324
 msgid "On"
-msgstr ""
+msgstr "Op"
 
 #: classes/class.uploads.php:34
 msgid "A file with this name already exists on the server."
-msgstr ""
+msgstr "Een bestand met dezelfde naam bestaat reeds op de server."
 
 #: classes/class.uploads.php:48
 msgid "Could not save database row for uploaded file."
-msgstr ""
+msgstr "Kan de database record niet opslaan voor ge-upload bestand."
 
 #: classes/class.uploads.php:52
 msgid ""
@@ -4252,26 +4251,26 @@ msgid ""
 "problem.  Does the web user have permission to write to the uploads "
 "directory?  It could also be that the file is too large.  The current "
 "maximum size of file allowed is"
-msgstr ""
+msgstr "Kan ge-upload bestand niet opslaan. Dit kan duiden op een rechtenprobleem. Heeft de webgebruiker schrijfrechten voor de uploadmap? De maximumgrootte voor een uploadbestand is"
 
 #: classes/class.uploads.php:52
 msgid "bytes"
-msgstr ""
+msgstr "bytes"
 
 #: classes/class.uploads.php:71
 msgid "There was an error accessing the uploads table."
-msgstr ""
+msgstr "De uploadtabel kan niet worden geopend"
 
 #: classes/class.uploads.php:85
 msgid ""
 "File was deleted but could not delete row from database.  The row will have "
 "to removed manually.  Please contact your systems administrator."
-msgstr ""
+msgstr "Het bestand is verwijderd maar de databaserecord kan niet verwijderd worden. Dit moet handmatig worden gedaan. Neem aub contact op met de webmaster."
 
 #: classes/class.uploads.php:89
 msgid "Could not delete file"
-msgstr ""
+msgstr "Kan bestand niet verwijderen"
 
 #: classes/class.uploads.php:138
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
