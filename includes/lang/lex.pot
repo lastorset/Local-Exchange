@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 14:43+0200\n"
+"POT-Creation-Date: 2013-10-13 10:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -327,7 +327,7 @@ msgstr ""
 #: member_contact_edit.php:168 member_create.php:223 member_edit.php:261
 #: member_status_change.php:61 password_change.php:53 state_create.php:44
 #: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:92
-#: classes/class.member.php:176 classes/class.member.php:938
+#: classes/class.member.php:176 classes/class.member.php:949
 #: classes/class.trade.php:94 classes/class.uploads.php:71
 msgid "Please try again later."
 msgstr ""
@@ -1841,7 +1841,7 @@ msgstr ""
 msgid "3 days"
 msgstr ""
 
-#: listings.php:22 classes/class.member.php:842
+#: listings.php:22 classes/class.member.php:843
 msgid "week"
 msgstr ""
 
@@ -1849,7 +1849,7 @@ msgstr ""
 msgid "2 weeks"
 msgstr ""
 
-#: listings.php:22 classes/class.member.php:844
+#: listings.php:22 classes/class.member.php:845
 msgid "month"
 msgstr ""
 
@@ -3451,6 +3451,10 @@ msgstr ""
 msgid "You do not have permission to confirm this trade."
 msgstr ""
 
+#: trades_pending.php:378
+msgid "Error confirming payment. Please contact your administrator."
+msgstr ""
+
 #. Translation hint: %1$s is the amount; %2$s is the currency; %3$s is the other member's ID.
 #: trades_pending.php:383
 #, php-format
@@ -4014,60 +4018,60 @@ msgstr ""
 msgid "Member search"
 msgstr ""
 
-#: classes/class.member.php:840
+#: classes/class.member.php:841
 msgid "day"
 msgstr ""
 
 #. Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
-#: classes/class.member.php:849
+#: classes/class.member.php:852
 msgid "New and updated listings during the last"
 msgstr ""
 
-#: classes/class.member.php:880
+#: classes/class.member.php:891
 msgid "Important information about your"
 msgstr ""
 
-#: classes/class.member.php:880
+#: classes/class.member.php:891
 msgid "account"
 msgstr ""
 
-#: classes/class.member.php:884
+#: classes/class.member.php:895
 msgid ""
 "***NOTE: This member does not have an email address in the system, so they "
 "will need to be notified by phone that their listings have been inactivated."
 msgstr ""
 
-#: classes/class.member.php:888
+#: classes/class.member.php:899
 msgid "listings expired for"
 msgstr ""
 
-#: classes/class.member.php:888
+#: classes/class.member.php:899
 msgid ""
 "All of this member's listings were automatically expired due to inactivity.  "
 "To turn off this feature, see inc.config.php."
 msgstr ""
 
-#: classes/class.member.php:938
+#: classes/class.member.php:949
 msgid "Could not query database for balance information."
 msgstr ""
 
-#: classes/class.member.php:979
+#: classes/class.member.php:990
 msgid "Error saving Income Share."
 msgstr ""
 
-#: classes/class.member.php:981
+#: classes/class.member.php:992
 msgid "Income Share saved successfully."
 msgstr ""
 
-#: classes/class.member.php:990
+#: classes/class.member.php:1001
 msgid "No Income Share to delete"
 msgstr ""
 
-#: classes/class.member.php:998
+#: classes/class.member.php:1009
 msgid "Error deleting income Share."
 msgstr ""
 
-#: classes/class.member.php:1000
+#: classes/class.member.php:1011
 msgid "Income Share deleted successfully."
 msgstr ""
 
