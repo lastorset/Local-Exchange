@@ -29,6 +29,8 @@ $customTranslations = array(
 	"What's new" => array( "nb_NO.utf8" => "Hva skjer", "eo_EO.utf8" => "Kio okazas"),
 );
 
+ * Then, later in the file:
+
 $SIDEBAR = array (
 	array(_("Home"),"index.php"),
 	array(translate("Getting started"),"info/more.php"),
