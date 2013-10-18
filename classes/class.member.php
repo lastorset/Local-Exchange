@@ -20,7 +20,7 @@ class cMember
 	var $member_role;
 	var $security_q;
 	var $security_a;
-	var $status;
+	var $status; ///< ACTIVE, INACTIVE, EXPIRED, DISABLED, LOCKED
 	var $member_note;
 	var $admin_note;
 	var $join_date;
@@ -32,6 +32,10 @@ class cMember
 	var $spent;
 	var $earned;
 	var $restriction;
+
+	function __toString() {
+		return sprintf("%s (%s)", $this->member_id, $this->status);
+	}
 
 	function cMember($values=null) {
 		if ($values) {
