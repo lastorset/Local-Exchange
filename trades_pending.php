@@ -375,7 +375,7 @@ switch($_REQUEST["action"]) {
 					else { // Action the trade
 						
 							if (!doTrade($row))
-								$list .= "<font color=red>Error confirming payment. Please contact your administrator.</font>";
+								$list .= "<font color=red>". _("Error confirming payment. Please contact your administrator.") ."</font>";
 							else {
 								
 								$cDB->Query("UPDATE trades_pending set status=".$cDB->EscTxt('F')." where id=".$cDB->EscTxt($_GET["tid"])."");
