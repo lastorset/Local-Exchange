@@ -20,6 +20,7 @@ $features = array(
 	'FAVICON'                 => "localx_logo.png",
 	'HOME_PAGE_MESSAGE'       => replace_tags(_("<a>Learn more</a> about this community!"), array('a' => "a href=info/more.php")),
 	'SPAM_WARNING'            => false,
+	'LOG_EMAIL_UPDATES'       => false,
 );
 
 foreach ($features as $feature => $default) {
