@@ -840,18 +840,30 @@ class cMemberGroup {
 
 		$email_text = "<html><body>". LISTING_UPDATES_MESSAGE ."<p><br>".$email_text. "</body></html>";
 
-		if ($interval == '1')
+		if ($interval == '1') {
 			$period = _("day");
-		elseif ($interval == '7')
+			$period_adjective = "daily"; // For log file, not translated
+		} elseif ($interval == '7') {
 			$period = _("week");
-		else
+			$period_adjective = "weekly";
+		} else {
 			$period = _("month");
+			$period_adjective = "monthly";
+		}
+
+		// Log lines not to be translated
+		$log = date(DATE_RSS) .": ". ucfirst($period_adjective) ." listing updates sent to:\n";
 
 		foreach($this->members as $member) {
 			if($member->email_updates == $interval and $member->person[0]->email) {
 				// Translation hint: Complete phrase is "New and updated listings during the last day/week/month"
 				mail($member->person[0]->email, SITE_SHORT_TITLE .": "._("New and updated listings during the last")." ". $period, wordwrap($email_text, 64), "From:". EMAIL_ADMIN ."\nMIME-Version: 1.0\n" . "Content-type: text/html; charset=UTF-8");
+				$log .= "\t". $member->member_id .": ". $member->person[0]->email ."\n";
 			}
+		}
+
+		if (LOG_EMAIL_UPDATES) {
+			file_put_contents(LOG_EMAIL_UPDATES, $log, FILE_APPEND);
 		}
 	}
 
