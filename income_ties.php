@@ -1,4 +1,4 @@
-<?
+<?php
 require_once("includes/inc.global.php");
 require_once("includes/inc.forms.php");
 

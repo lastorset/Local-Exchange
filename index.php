@@ -17,7 +17,7 @@ print $p->MakePageMenu();
 		<div class=tagline><?= SITE_HOME_TAGLINE ?></div>
 	</div>
 </div>
-<?
+<?php
 
 if (!HOME_PAGE_MAP) { ?>
 	<h2><?= _("Why have a Local, Sustainable Currency?") ?></h2>
@@ -28,12 +28,12 @@ if (!HOME_PAGE_MAP) { ?>
 	<li><?= _("Nurture the Unique Quality of Your Hometown") ?></li>
 	<li><?= _("Have Fun") ?></li></ul>
 	<p><?= HOME_PAGE_MESSAGE ?>
-<? } else {
+<?php } else {
 	print "<p>". HOME_PAGE_MESSAGE;
 	print cGeoCode::GenerateMap();
 } ?>
 </div>
-<? 
+<?php
 
 print $p->MakePageFooter();
 

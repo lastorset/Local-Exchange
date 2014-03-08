@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("includes/inc.global.php");
 include_once("classes/class.datetime.php");
 include_once("classes/class.trade.php");

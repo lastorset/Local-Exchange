@@ -58,7 +58,7 @@ if (is_null($map_center))
 	<script type="text/javascript" src="ajax/lib/sprintf.js"></script>
 
 	<script>
-		<? /* TODO: Disable map if key is empty and catch authentication errors
+		<?php /* TODO: Disable map if key is empty and catch authentication errors
 		https://groups.google.com/forum/?fromgroups=#!topic/google-maps-api/oHfKEazKd0M */ ?>
 
 		// Set up map
@@ -152,7 +152,7 @@ if (is_null($map_center))
 	</form>
 
 <h2><?= _("Geocode all members") ?></h2>
-<?
+<?php
 if (!$site_settings->current['GEOCODE'])
 	print _("Enable geocoding to continue.");
 else if ($missing_count === 0) {
