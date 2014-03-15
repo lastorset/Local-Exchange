@@ -47,7 +47,7 @@ Licensed under the <a href=http://www.gnu.org/copyleft/gpl.html>GNU General Publ
 Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>.
 </ul>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

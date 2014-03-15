@@ -105,7 +105,7 @@ print $p->MakePageTitle();
 <p><b>The Science of Money</b> - <cite>Alexander Del Mar [1896]</cite><br>
 <blockquote>An old classic.</blockquote></p>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

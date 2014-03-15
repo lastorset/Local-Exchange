@@ -20,7 +20,7 @@ the needs of this unique corner of the globe.</p>
 <p>&nbsp;</p>
 <p><font size="2"><a href="how_do_i_join.php">Next: How do I join?</a></font></p>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

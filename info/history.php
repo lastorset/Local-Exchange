@@ -22,7 +22,7 @@ print $p->MakePageTitle();
 
 <p>Bellingham also had a LETS (Local Exchange Trading System) in the early 1990's which ran for a few years. Kulshan Cash was another attempt to start a local currency in Bellingham. Several other Local Currecies have passed through Bellingham and Seattle during the last fifteen years. During the Depression years there were over 1,000 local scrips throughout the USA. They were ordered to close down by FDR in 1933.</p>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

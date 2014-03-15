@@ -34,7 +34,7 @@ print $p->MakePageTitle();
 
 <a href="more.php"><font size="2">Back</font></a><br>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

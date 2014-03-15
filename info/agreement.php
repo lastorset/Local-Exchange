@@ -43,7 +43,7 @@ print $p->MakePageTitle();
 <p><font size="2">16. This agreement may be updated, changed or modified at the discretion of the management group.</font><br></p>
 
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

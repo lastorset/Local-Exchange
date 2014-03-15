@@ -20,7 +20,7 @@ print $p->MakePageTitle();
 
 	It also needs to be recognized that overhead costs for some services can be substantial.  Costs such as office rental, travel, research, support personnel, and insurance can make it necessary for someone to charge much higher than 3 hours per hour, even though the actual 'take home' value of that service may only be 2 hours per hour. We encourage members to include overhead in the rates they charge, and to just try to be fair and reasonable in their analysis of those costs.  Sometimes this may mean that a member will charge partly in local currency and partly in national currency (dollars) to cover overhead.
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

@@ -31,7 +31,7 @@ print $p->MakePageTitle();
 <p><a href="amusingstory.php"><font size="3">An Amusing Story - The Harvard MBA and the Mexican Fisherman</font></a></p>
 
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

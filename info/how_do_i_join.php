@@ -26,7 +26,7 @@ print $p->MakePageTitle();
 
 <p>Still have <a href="../contact.php">questions</a>?
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

@@ -36,7 +36,7 @@ print $p->MakePageTitle();
 
 <p><a href="http://www.newciv.org/ncn/moneyteam.html" target="_blank">Alternative Money Systems</a></p>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

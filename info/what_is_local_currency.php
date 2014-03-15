@@ -45,7 +45,7 @@ print $p->MakePageTitle();
   <p align="left"><a href="how_does_it_work.php"><font size="2">Next: How does local currency work?</font></a></p>
 </div>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 

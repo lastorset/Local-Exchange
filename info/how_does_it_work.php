@@ -27,7 +27,7 @@ network. You can see the goods and services currently available in our <a href="
 
 <p><a href="what_does_it_do.php"><font size="2">Next: What does Local Currency Do?</font></a></p>
 
-<?
+<?php
 
 print $p->MakePageFooter();
 
