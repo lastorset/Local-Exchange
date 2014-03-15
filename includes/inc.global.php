@@ -92,8 +92,9 @@ session_name("LOCAL_EXCHANGE");
 session_start();
 /* Initial session handling code ends */
 
-// Translation is required to read config file
+// Translation is required to get correct strings from config file
 include_once("inc.translation.php");
+
 include_once("inc.config.php");
 include_once("inc.feature-defaults.php");
 

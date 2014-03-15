@@ -11,7 +11,7 @@ class cLogEntry {
 	var $admin_id; // usually a member_id, but not always
 	var $category; // See inc.global.php for constants used in this field
 	var $action;	// See inc.global.php for constants used in this field
-	var $ref_id; // usually refences a trade_id, feedback_id, or similar
+	var $ref_id; // usually refers to a trade_id, feedback_id, or similar
 	var $note;
 	
 	function cLogEntry ($category, $action, $ref_id, $note=null) {
