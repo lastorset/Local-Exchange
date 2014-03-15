@@ -14,7 +14,7 @@ $p->site_section = 0;
 $form->addElement("header", null, _("Register New Member"));
 $form->addElement("html", "<TR></TR>");
 
-$form->addElement("text", "member_id", _("Member ID"), array("size" => 10, "maxlength" => 15));
+$form->addElement("text", "member_id", _("Choose a Member ID"), array("size" => 10, "maxlength" => 15));
 $form->addElement("text", "password", _("Password"), array("size" => 10, "maxlength" => 15));
 
 if ($cUser->HasLevel(1))

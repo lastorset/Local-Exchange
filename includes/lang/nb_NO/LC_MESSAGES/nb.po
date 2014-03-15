@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-09-14 14:43+0200\n"
-"PO-Revision-Date: 2013-09-14 14:45+0100\n"
+"PO-Revision-Date: 2014-01-18 00:50+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -1655,6 +1655,10 @@ msgstr "Hoppet over e-postadressa"
 msgid "Member ID"
 msgstr "Brukernavn"
 
+#: member_create.php:17
+msgid "Choose a Member ID"
+msgstr "Velg et brukernavn"
+
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
 #: member_create.php:208 member_unlock.php:47 classes/class.member.php:202
 msgid "Password"
@@ -2774,7 +2778,7 @@ msgstr "Det oppstod en feil ved endring av medlemmets status."
 
 #: member_summary.php:12
 msgid "Summary for"
-msgstr "Oppsumering for"
+msgstr "Oppsummering for"
 
 #: member_summary.php:18
 msgid "Contact information"
