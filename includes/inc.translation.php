@@ -190,7 +190,7 @@ class cTranslationSupport {
 }
 
 $translation = new cTranslationSupport();
-if (isset($running_upgrade_script) && !$running_upgrade_script)
+if ($running_upgrade_script != true)
 	$translation->initialize();
 
 function translate($string) {
