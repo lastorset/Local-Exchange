@@ -12,7 +12,13 @@ include_once("classes/class.geocode.php");
 include_once("includes/inc.forms.php");
 
 $form->addElement("hidden","type", $_REQUEST["type"]);
-$form->addElement("static", null, _("Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click")." <A HREF=directory.php>"._("here")."</A>.", null);
+$form->addElement("static", null, replace_tags(
+	_("Select the category and time frame to view and press Continue. Or to view all listings at once, just press Continue. If you would like to print or download the complete directory, click <a>here</a>."),
+	array(
+		'a' => "A HREF=directory.php"
+	)
+	, null
+));
 $form->addElement("static", null, null, null);
 $category_list = new cCategoryList();
 $categories = $category_list->MakeCategoryArray(ACTIVE, substr($_REQUEST["type"],0,1));
