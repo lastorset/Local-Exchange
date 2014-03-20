@@ -227,16 +227,23 @@ HTML;
 	function InsertCKEditor($id) {
 		global $translation;
 		// If CKEditor cannot be included, prevent a fatal error
-		if (CKEDITOR && include_once CKEDITOR_PATH ."/ckeditor.php") {
-			$CKEditor = new CKEditor();
-			$CKEditor->basePath = '/'. CKEDITOR_PATH .'/';
+		if (CKEDITOR && file_exists(CKEDITOR_PATH ."/ckeditor.js")) { // TODO Test
+			$c = get_defined_constants();
 
-			// CKEditor replaces the textarea whose ID is "description".
-			$CKEditor->replace($id, array(
-				'customConfig' => '/includes/ckeditor.config.js',
-				// If this parameter is an unknown language code, CKEditor will fall back to English.
-				'language' => substr($translation->current_language, 0, 2),
-			));
+			// If this parameter is an unknown language code, CKEditor will fall back to English.
+			$lang_code = substr($translation->current_language, 0, 2);
+
+			print <<<HTML
+<script src="{$c['CKEDITOR_PATH']}/ckeditor.js"></script>
+<script>
+// For compat with old code that only sets 'name'
+document.querySelector('textarea[name=$id]').id="$id";
+CKEDITOR.replace('$id', {
+	"customConfig": "/includes/ckeditor.config.js",
+	"language": "$lang_code"
+});
+</script>
+HTML;
 		}
 	}
 }
