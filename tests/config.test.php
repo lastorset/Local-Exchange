@@ -1,0 +1,378 @@
+<?php // vim:set syntax=php:
+/* v1.0 note: a lot of these settings are now stored in MySQL and are configurable from the admin menu */
+
+define('EMAIL_LISTING_UPDATES', false);
+
+if (!isset($global) && $running_upgrade_script!=true)
+{
+	die(__FILE__." was included directly.  This file should only be included via inc.global.php.  Include() that one instead.");
+}
+
+if (file_exists("upgrade.php") && $running_upgrade_script!=true) {
+	
+	die("<font color=red>The file 'upgrade.php' was located on this server.</font>
+	<p>If you are in the process of upgrading, that's fine, please <a href=upgrade.php>Click here</a> to run the upgrade script.<p>If you are NOT in the process of upgrading then leaving this file on the server poses a serious security hazard. Please remove this file immediately.");
+}
+
+/**********************************************************/
+/***************** CUSTOM TRANSLATIONS ********************/
+
+/* If you wish to use custom texts in this configuration file and
+ * have them translated dynamically, fill in the following array.
+ * Then, call translate(the string) instead of just the string.
+ *
+ * See the cTranslationSupport::$supported_languages array in
+ * inc.translation.php for a list of supported languages.
+ *
+ * Example:
+
+ * Then, later in the file:
+
+$SIDEBAR = array (
+	array(_("Home"),"index.php"),
+	array(translate("Getting started"),"info/more.php"),
+	array(translate("What's new"),"news.php"),
+ */
+
+$customTranslations = array(
+	"Getting started" => array( "nb_NO.utf8" => "Komme i gang"),
+	"Learn how to %sget started%s!" => array( "nb_NO.utf8" => "Lær hvordan du %skommer i gang%s!"),
+);
+
+/**********************************************************/
+/******************* SITE LOCATIONS ***********************/
+
+// What is the domain name of the site? 
+define ("SERVER_DOMAIN","lex-oslo.localhost");	// no http://
+
+// What is the path to the site? This is null for many sites.
+define ("SERVER_PATH_URL","");	// no ending slash
+
+// The following only needs to be set if Pear has been
+// installed manually by downloading the files
+define ("PEAR_PATH", "/pear"); // no ending slash
+
+
+// Ok, then lets define some paths (no need to edit these)
+define ("HTTP_BASE",SERVER_DOMAIN.SERVER_PATH_URL);
+define ("CLASSES_PATH",$_SERVER["DOCUMENT_ROOT"].SERVER_PATH_URL."/classes/");
+define ("IMAGES_PATH",SERVER_DOMAIN.SERVER_PATH_URL."/images/");
+define ("UPLOADS_PATH",$_SERVER["DOCUMENT_ROOT"].SERVER_PATH_URL."/uploads/");
+
+/**********************************************************/
+/***************** DATABASE LOGIN  ************************/
+
+require_once("inc.config-database.php");
+
+/**********************************************************/
+/********************* SITE NAMES *************************/
+
+// What is the name of the site?
+define ("SITE_LONG_TITLE", "Local Exchange Trading System for Norge");
+
+// What is the short, friendly, name of the site?
+define ("SITE_SHORT_TITLE", "LETS Norge");
+
+// Home page title and taglines
+define ("SITE_HOME_TITLE", SITE_SHORT_TITLE);
+define ("SITE_HOME_TAGLINE", "");
+define ("SITE_TOP_TITLE", SITE_SHORT_TITLE);
+define ("SITE_TOP_TAGLINE", "dine evner • din energi • ditt samfunn");
+
+
+/**********************************************************/
+/***************** FOR MAINTENANCE ************************/
+
+// If you need to take the website down for maintenance (such
+// as during an upgrade), set the following value to true
+// and customize the message, if you like
+
+define ("DOWN_FOR_MAINTENANCE", false);
+define ("MAINTENANCE_MESSAGE", SITE_LONG_TITLE ." "._("is currently down for maintenance.")._("Please try again later."));
+
+
+/***************************************************************************************************/
+/***************** 01-12-08 - 19-12-08 Chris Macdonald (chris@cdmweb.co.uk) ************************/
+
+// The following preferences can be set to turn on/off any of the new features
+
+/* Set the MINIMUM Permission Level a member must hold to be able to submit ANY and ALL HTML
+ * 0 = Members, 1 = Committee, 2 = Admins 
+ * Note: This group will be allowed to submit any HTML tags and will not be restricted by the 'Safe List' defined below */
+define("HTML_PERMISSION_LEVEL",1);
+
+// ... HTML Safe List - define the tags that you want to allow all other users (who are below HTML_PERMISSION_LEVEL) to submit
+//  Note the format should be just the tag name itself WITHOUT brackets (i.e. 'table' and not '<table>')
+$allowedHTML = array(); // no HTML currently allowed until XSS protection is improved
+
+// Should we remove any JavaScript found in incoming data? Yes we should.
+define("STRIP_JSCRIPT",true);
+
+// Member images are resized 'on-the-fly', keeping the original dimensions. Specify the maximum width the image is to be DOWN-sized to here.
+define("MEMBER_PHOTO_WIDTH",200); // in pixels
+define("DEFAULT_PHOTO","images/localx_logo.png"); // default photo, or picture - added by ejkv
+// Do we want to UP-scale images that are smaller than MEMBER_PHOTO_WIDTH (may look a bit ugly and pixelated)?
+define("UPSCALE_SMALL_MEMBER_PHOTO",false);
+
+// The options available in the 'How old is you?' dropdown (trying to be as innocuous as possible here with the defaults (e.g. 40's)- but feel free to provide more specific options)
+$agesArr = array('---',_("Under 18"),_("18-30"),_("30's"),_("40's"),_("50's"),_("60's"),_("70's"),_("Over 80"),_("n/a"),);
+
+// The options available in the 'What Sex are you?' dropdown. At the time of writing (01-12-2008) the defaults should be fine
+$sexArr = array('---', _("Male"), _("Female"), _("n/a"),);
+
+// Enable JavaScript bits on the Dropdown Member Select Box?
+// This applies to the Transfer form; the idea is that it makes it simpler to find the member we're after if the dropdown list is lengthy
+define("JS_MEMBER_SELECT",true);
+// [TODO] Need to make this better - AJAX is probably the best method for this
+
+// Give the option of searching Offers/Wants by KEYWORD?
+define("KEYWORD_SEARCH_DIR",true);
+
+// Allow members to Search the Members List? (Handy if the members list is long)
+define("SEARCHABLE_MEMBERS_LIST",true);
+
+
+// END 01-12-08 changes by chris
+
+// Allow anonymous users to register?
+define("SELF_REGISTRATION", true);
+
+// Require self-registering users to provide an e-mail address?
+define("REQUIRE_EMAIL", true);
+
+// Send administrator a copy of the welcome e-mail?
+define("NEW_MEMBER_EMAIL_ADMIN", true);
+
+// Use CKEditor to edit info pages?
+define("CKEDITOR", true);
+// Path of CKEditor, relative to web server root, without a trailing slash.
+define("CKEDITOR_PATH", "ckeditor");
+
+// Enable geocoding using Google?
+define("GEOCODE", true);
+
+// Show a map on the home page?
+define("HOME_PAGE_MAP", true);
+
+// Use game mechanics? This shows "karma points" – the lesser number of hours given and received - at various points in the UI.
+define("GAME_MECHANICS", true);
+
+// When user has fewer karma than this, a "What's this?" hint is displayed. Set to true or false to always or never explain.
+define("EXPLAIN_KARMA", 10);
+
+// Show spam warning in e-mail form? This can be enabled if e-mail from Local Exchange is being routinely marked as spam.
+define("SPAM_WARNING", true);
+
+/**************************************************************/
+/******************** SITE CUSTOMIZATION **********************/
+
+// email addresses & phone number to be listed in the site
+define ("EMAIL_ADMIN","douwebeerda@gmail.com, leifarne@storset.net");
+
+define ("PHONE_ADMIN","+47 986 24 851"); // an email address may be substituted...
+
+// What should appear at the front of all pages?
+// Titles will look like "PAGE_TITLE_HEADER - PAGE_TITLE", or something 
+// like "Local Exchange - Member Directory";
+define ("PAGE_TITLE_HEADER", SITE_LONG_TITLE);
+
+// What keywords should be included in all pages?
+define ("SITE_KEYWORDS", _("local currency,lets,exchange,"). SITE_LONG_TITLE .",php");
+
+// Shortcut icon
+define ("FAVICON", "localx_logo.png");
+
+// Logo Graphic for Header
+define ("HEADER_LOGO", "localx_logo.png"); // changed by ejkv
+
+// Logo for Home Page
+define ("HOME_LOGO", "localx_black.png");
+
+// Picture appearing left of logo on Home Page
+define ("HOME_PIC", "localx_home.png");
+
+// Additional message on the home page. You may want to use custom translations for this.
+// Translation hint: %s are link tags and must be left as is.
+define ("HOME_PAGE_MESSAGE", sprintf(translate("Learn how to %sget started%s!"), "<a href=pages.php?id=8>", "</a>"));
+
+// What content should be in the site header and footer?
+define ("PAGE_HEADER_CONTENT", "<table align=center cellpadding=15 cellspacing=0 id=\"mainTable\"><tr><td id=\"header\" align=center><a href=\"/index.php\"><img src=\"http://".HTTP_BASE."/images/". HEADER_LOGO ."\" alt=\"". SITE_SHORT_TITLE . " logo\" border=0></a></td><td id=\"header\"><h1>". SITE_TOP_TITLE ."</h1><div>". SITE_TOP_TAGLINE ."</div></td></tr>");
+
+define ("PAGE_FOOTER_CONTENT", "<tr><td id=\"footer\" colspan=2><p align=center><strong>". SITE_LONG_TITLE ." </strong>&#8226; <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."\">". SERVER_DOMAIN ."</a><br><a href=\"mailto:". EMAIL_ADMIN ."\">" . EMAIL_ADMIN ."</a> &#8226; ". PHONE_ADMIN ."<br><font size=\"-2\">"._("Licensed under the")." <a href=\"http://www.gnu.org/copyleft/gpl.html\">"._("GPL")."</a> ".
+// Translation hint: %s starts an HTML link.
+sprintf(_("with some %s exceptions"), "<a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php#license\">")."</a>
+&#8226; "._("Local Exchange UK Ver.")." ".LOCALX_VERSION." <a href=\"http://". SERVER_DOMAIN . SERVER_PATH_URL ."/info/credits.php\">"._("Credits")."</a></td></tr></table><br>");
+
+/**********************************************************/
+/**************** DEFINE SIDEBAR MENU *********************/
+
+$SIDEBAR = array (
+	array(_("Home"),"index.php"),
+	// array(_("Learn more"),"info/more.php"), // old style info pages
+// [CDM] uncomment line below to activate new style info pages 	
+	array(translate("Getting started"),"pages.php?id=8"),
+	array(_("Information"),"pages.php?id=6"),
+	array(_("News and Events"),"news.php"),
+	array(_("Offered"),"listings.php?type=Offer"),
+	array(_("Wanted"),"listings.php?type=Want"),
+	array(_("Update Listings"),"listings_menu.php"),
+	array(_("Exchanges"),"exchange_menu.php"),
+	array(_("Members List"),"member_directory.php"),
+	array(_("Member Profile"),"member_profile.php"),
+	array(_("Contact Us"),"contact.php"));
+
+//fprintf(STDERR, "\nSIDEBAR: ". print_r($SIDEBAR, true));
+/**********************************************************/
+/**************** DEFINE SITE SECTIONS ********************/
+
+define ("EXCHANGES",0);
+define ("LISTINGS",1);
+define ("EVENTS",2);
+define ("ADMINISTRATION",3);
+define ("PROFILE",4);
+define ("SECTION_FEEDBACK",5);
+define ("SECTION_EMAIL",6);
+define ("SECTION_INFO",7);
+define ("SECTION_DIRECTORY",8);
+
+$SECTIONS = array (
+	array(0, "Exchanges", "exchange.gif"),
+	array(1, "Listings", "listing.png"),
+	array(2, "Events", "news.png"),
+	array(3, "Administration", "admin.png"),
+	array(4, "Events", "member.png"),
+	array(5, "Feedback", "feedback.png"),
+	array(6, "Email", "contact.png"),
+	array(7, "Info", "info.png"),
+	array(8, "Directory", "directory.png"));
+
+/**********************************************************/
+/******************* GENERAL SETTINGS *********************/
+
+define ("UNITS", "Hours");  // This setting affects functionality, not just text displayed, so if you want to use hours/minutes this needs to read "Hours" exactly.  All other unit descriptions are ok, but receive no special treatment (i.e. there is no handling of "minutes"). - changed by ejkv
+
+/**************** Monthly fee related settings ********************/
+
+define("SYSTEM_ACCOUNT_ID", "system");
+$monthly_fee_exempt_list = array("ADMIN", SYSTEM_ACCOUNT_ID, "extra_admin"); // added extra_admin - by ejkv
+
+// End of monthly fee related settings.
+
+define ("MAX_FILE_UPLOAD","1000000"); // Maximum file size, in bytes, allowed for uploads to the server - changed from 5000000 into 1000000 by ejkv
+									 
+// The following text will appear at the beggining of the email update messages
+define ("LISTING_UPDATES_MESSAGE", "<h1>".SITE_LONG_TITLE."</h1>"._("The following listings are new or updated.<p>If you would prefer not to receive automatic email updates, or if you would like to change their frequency, you can do so at the")." <a href=http://".HTTP_BASE."/member_edit.php?mode=self>"._("Member Profile")."</a> "._("area of our website."));
+
+
+// Should inactive accounts have their listings automatically expired?
+// This can be a useful feature.  It is an attempt to deal with the 
+// age-old local currency problem of new members joining and then not 
+// keeping their listings up to date or using the system in any way.  
+// It is designed so that if a member doesn't record a trade OR update 
+// a listing in a given period of time (default is six months), their 
+// listings will be set to expire and they will receive an email to 
+// that effect (as will the admin).
+define ("EXPIRE_INACTIVE_ACCOUNTS",false); 
+
+// If above is set, after this many days, accounts that have had no
+// activity will have their listings set to expire.  They will have 
+// to reactiveate them individually if they still want them.
+define ("MAX_DAYS_INACTIVE","180");  
+
+// How many days in the future the expiration date will be set for
+define ("EXPIRATION_WINDOW","15");	
+
+// How long should expired listings hang around before they are deleted?
+define ("DELETE_EXPIRED_AFTER","90"); 
+
+// The following message is the one that will be emailed to the person 
+// whose listings have been expired (a delicate matter).
+define ("EXPIRED_LISTINGS_MESSAGE", _("Hello").",\n\n"._("Due to inactivity, your")." ".SITE_SHORT_TITLE." " ._("listings have been set to automatically expire")." ". EXPIRATION_WINDOW ." "._("days from now").".\n\n"._("In order to keep the")." ".SITE_LONG_TITLE." "._("system up to date and working smoothly for all members, we have developed an automatic system to expire listings for members who haven't recorded exchanges or updated their listings during a period of")." ".MAX_DAYS_INACTIVE." "._("days. We want the directory to be up to date, so that members do not encounter listings that are out of date or expired. This works to everyone's advantage").".\n\n"._("We apologize for any inconvenience this may cause you and thank you for your participation. If you have any questions or comments, or are unsure how to best use the system, please reply to this email message or call us at")." ".PHONE_ADMIN.".\n\n"._("You have")." ". EXPIRATION_WINDOW ." "._("days to login to the system and reactivate listings that you would still like to have in the directory.  If you do not reactivate them during that timeframe, your listings will no longer appear in the directory, but will still be stored in the system for another")." ". DELETE_EXPIRED_AFTER ." "._("days, during which time you can still edit and reactivate them.")."\n\n\n"._("Instructions to reactivate listings").":\n1) "._("Login to the website")."\n2) "._("Go to Update Listings")."\n3) "._("Select Edit Offered (or Wanted) Listings")."\n4) "._("Select the listing to edit")."\n5) "._("Uncheck the box next to 'Should this listing be set to automatically expire?'")."\n6) "._("Press the Update button")."\n7) "._("Repeat steps 1-6 for all listings you wish to reactivate")."\n");
+
+// The year your local currency started -- the lowest year shown
+// in the Join Year menu option for accounts.
+define ("JOIN_YEAR_MINIMUM", "2011");  
+
+define ("DEFAULT_COUNTRY", "Norge");
+define ("DEFAULT_ZIP_CODE", "0000"); // This is the postcode
+define ("DEFAULT_CITY", "Oslo");
+define ("DEFAULT_STATE", "");
+define ("DEFAULT_PHONE_AREA", "");
+
+// Should short date formats display month before day (US convention)?
+define ("MONTH_FIRST", false);		
+
+define ("PASSWORD_RESET_SUBJECT", _("Your")." ". SITE_LONG_TITLE ." "._("Account"));
+define ("PASSWORD_RESET_MESSAGE", _("Your password for")." ". SITE_LONG_TITLE ." "._("has been reset. If you did not request this reset, it is possible your account has been compromised, and you may want to contact the site administrator at")." ".PHONE_ADMIN.".\n\n"._("Your user id and new password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."));
+define ("NEW_MEMBER_SUBJECT", _("Welcome to ")." ". SITE_LONG_TITLE);
+define ("NEW_MEMBER_MESSAGE", _("Hello, and welcome to the")." ". SITE_LONG_TITLE ." "._("community!")."\n\n"._("A member account has been created for you at").":\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/member_login.php\n\n"._("Please login and create your Offered and Wanted Listings.  Your new user id and password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login.")."\n\n"._("Thank you for joining us."));
+
+define ("PASSWORD_MIN_LENGTH", 6);
+
+/********************************************************************/
+/************************* ADVANCED SETTINGS ************************/
+// Normally, the defaults for the settings that follow don't need
+// to be changed.
+
+// What's the name and location of the stylesheet?
+define ("SITE_STYLESHEET", "style.css");
+
+// How long should trades be listed on the "leave feedback for 
+// a recent exchange" page?  After this # of days they will be
+// dropped from that list.
+define ("DAYS_REQUEST_FEEDBACK", "30"); 
+
+// Is debug mode on? (display errors to the general UI?)
+define ("DEBUG", false);
+
+// Is site SAFE mode on? =>> Pear::(mail) using the 5th mail parameter causes error by sending mail - added by ejkv
+// If SAFE_mode_ON, in email.php no CC: will be sent, nor will CC: selction be showed in UI
+define ("SAFE_MODE_ON", false); // usually false (has to be set in site control panel, or by provider)
+
+// Should adminstrative activity be logged?  Set to 0 for no logging; 1 to 
+// log trades recorded by administrators; 2 to also log changes to member 
+// settings (LEVEL 2 NOT YET IMPLEMENTED)
+define ("LOG_LEVEL", 1);
+
+// Log listing updates by e-mail? Set to 'false' or a file path. May be useful to diagnose problems.
+define ("LOG_EMAIL_UPDATES", '/home/lastorset/dev/lex/puppet-test/oslo/logs/email.log');
+
+// How many consecutive failed logins should be allowed before locking out an account?
+// This is important to protect against dictionary attacks.  Don't set higher than 10 or 20.
+define ("FAILED_LOGIN_LIMIT", 10);
+
+// Are magic quotes on?  Site has not been tested with magic_quotes_runtime on, 
+// so if you feel inclined to change this setting, let us know how it goes :-)
+define ("MAGIC_QUOTES_ON",false);
+set_magic_quotes_runtime (0);
+
+// CSS-related settings.  If you'r looking to change colors, 
+// best to edit the CSS rather than add to this...
+$CONTENT_TABLE = array("id"=>"contenttable", "cellspacing"=>"0", "cellpadding"=>"3");
+
+// System events are processes which only need to run periodically,
+// and so are run at intervals rather than weighing the system
+// down by running them each time a particlular page is loaded.
+// System Event Codes (such as ACCOUNT_EXPIRATION) are defined in inc.global.php
+// System Event Frequency (how many minutes between triggering of events)
+$SYSTEM_EVENTS = array (
+	ACCOUT_EXPIRATION => 1440);  // Expire accounts once a day (every 1440 minutes)
+
+
+/**********************************************************/
+//	Everything below this line simply sets up the config.
+//	Nothing should need to be changed, here.
+
+if (PEAR_PATH != "")
+	ini_set("include_path", PEAR_PATH .'/' . PATH_SEPARATOR . ini_get("include_path"));
+
+
+if (DEBUG) error_reporting(E_ALL);
+	else error_reporting(E_ALL ^ E_NOTICE);
+
+define("LOAD_FROM_SESSION",-1);  // Not currently in use
+
+// URL to PHP page which handles redirects and such.
+define ("REDIRECT_URL",SERVER_PATH_URL."/redirect.php");
+
+?>

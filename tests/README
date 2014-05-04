@@ -1,0 +1,5 @@
+Run the testsuite with PHPUnit.
+
+Warning: Be careful when writing tests that have side effects, such as sending
+e-mail or modifying the database. Eventually the test suite should have its own
+configuration file to prevent unwanted effects.

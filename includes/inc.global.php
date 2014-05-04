@@ -95,7 +95,12 @@ session_start();
 // Translation is required to get correct strings from config file
 include_once("inc.translation.php");
 
-include_once("inc.config.php");
+if (!defined('LEX_CONFIG_FILE'))
+	// Default config file
+	include_once("inc.config.php");
+else
+	// Alternate config file
+	include_once(LEX_CONFIG_FILE);
 include_once("inc.feature-defaults.php");
 
 include_once(CLASSES_PATH ."class.datetime.php");
