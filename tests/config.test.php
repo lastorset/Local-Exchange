@@ -43,7 +43,7 @@ $customTranslations = array(
 /******************* SITE LOCATIONS ***********************/
 
 // What is the domain name of the site? 
-define ("SERVER_DOMAIN","lex-oslo.localhost");	// no http://
+define ("SERVER_DOMAIN","test.localhost");	// no http://
 
 // What is the path to the site? This is null for many sites.
 define ("SERVER_PATH_URL","");	// no ending slash
@@ -68,16 +68,16 @@ require_once("inc.config-database.php");
 /********************* SITE NAMES *************************/
 
 // What is the name of the site?
-define ("SITE_LONG_TITLE", "Local Exchange Trading System for Norge");
+define ("SITE_LONG_TITLE", "Local Exchange Trading System test suite");
 
 // What is the short, friendly, name of the site?
-define ("SITE_SHORT_TITLE", "LETS Norge");
+define ("SITE_SHORT_TITLE", "LETS tests");
 
 // Home page title and taglines
 define ("SITE_HOME_TITLE", SITE_SHORT_TITLE);
 define ("SITE_HOME_TAGLINE", "");
 define ("SITE_TOP_TITLE", SITE_SHORT_TITLE);
-define ("SITE_TOP_TAGLINE", "dine evner • din energi • ditt samfunn");
+define ("SITE_TOP_TAGLINE", "your code • your tests • your confidence");
 
 
 /**********************************************************/
@@ -99,13 +99,15 @@ define ("MAINTENANCE_MESSAGE", SITE_LONG_TITLE ." "._("is currently down for mai
 /* Set the MINIMUM Permission Level a member must hold to be able to submit ANY and ALL HTML
  * 0 = Members, 1 = Committee, 2 = Admins 
  * Note: This group will be allowed to submit any HTML tags and will not be restricted by the 'Safe List' defined below */
-define("HTML_PERMISSION_LEVEL",1);
+// Set to 2 for cDatabaseTest::testScreenHTML.
+define("HTML_PERMISSION_LEVEL",2);
 
 // ... HTML Safe List - define the tags that you want to allow all other users (who are below HTML_PERMISSION_LEVEL) to submit
 //  Note the format should be just the tag name itself WITHOUT brackets (i.e. 'table' and not '<table>')
 $allowedHTML = array(); // no HTML currently allowed until XSS protection is improved
 
 // Should we remove any JavaScript found in incoming data? Yes we should.
+// Should be true for cDatabaseTest::testScreenHTML.
 define("STRIP_JSCRIPT",true);
 
 // Member images are resized 'on-the-fly', keeping the original dimensions. Specify the maximum width the image is to be DOWN-sized to here.
@@ -167,9 +169,9 @@ define("SPAM_WARNING", true);
 /******************** SITE CUSTOMIZATION **********************/
 
 // email addresses & phone number to be listed in the site
-define ("EMAIL_ADMIN","douwebeerda@gmail.com, leifarne@storset.net");
+define ("EMAIL_ADMIN","test@example.org");
 
-define ("PHONE_ADMIN","+47 986 24 851"); // an email address may be substituted...
+define ("PHONE_ADMIN","+98 765 43 210"); // an email address may be substituted...
 
 // What should appear at the front of all pages?
 // Titles will look like "PAGE_TITLE_HEADER - PAGE_TITLE", or something 
@@ -293,9 +295,9 @@ define ("EXPIRED_LISTINGS_MESSAGE", _("Hello").",\n\n"._("Due to inactivity, you
 // in the Join Year menu option for accounts.
 define ("JOIN_YEAR_MINIMUM", "2011");  
 
-define ("DEFAULT_COUNTRY", "Norge");
+define ("DEFAULT_COUNTRY", "Oz");
 define ("DEFAULT_ZIP_CODE", "0000"); // This is the postcode
-define ("DEFAULT_CITY", "Oslo");
+define ("DEFAULT_CITY", "Emerald City");
 define ("DEFAULT_STATE", "");
 define ("DEFAULT_PHONE_AREA", "");
 
@@ -335,7 +337,7 @@ define ("SAFE_MODE_ON", false); // usually false (has to be set in site control 
 define ("LOG_LEVEL", 1);
 
 // Log listing updates by e-mail? Set to 'false' or a file path. May be useful to diagnose problems.
-define ("LOG_EMAIL_UPDATES", '/home/lastorset/dev/lex/puppet-test/oslo/logs/email.log');
+define ("LOG_EMAIL_UPDATES", false);
 
 // How many consecutive failed logins should be allowed before locking out an account?
 // This is important to protect against dictionary attacks.  Don't set higher than 10 or 20.
