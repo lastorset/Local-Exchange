@@ -125,7 +125,6 @@ function m_write($id, $data)
     global $_sess_db;
   
     $id = mysql_real_escape_string($id);
-    $access = mysql_real_escape_string($access);
     $data = mysql_real_escape_string($data);
   
     $sql = "REPLACE INTO " . DATABASE_SESSION . " VALUES ('$id', '$data', default)";
