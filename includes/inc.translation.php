@@ -198,7 +198,7 @@ function translate($string) {
 	return $translation->translate($string);
 }
 
-/** Replaces placholder HTML tags in the string with real HTML tags.
+/** Replaces placeholder HTML tags in the string with real HTML tags.
  * For example, the string "See your <a>profile</a> or <j>recent
  * trades</j>" translated to Norwegian with the dictionary
  *

@@ -322,7 +322,7 @@ define ("SAFE_MODE_ON", false); // usually false (has to be set in site control 
 // settings (LEVEL 2 NOT YET IMPLEMENTED)
 define ("LOG_LEVEL", 1);
 
-// Log listing updates by e-mail? Set to 'false' or a file path. May be useful to diagnose problems.
+// Log listing updates by e-mail? Set to false or a file path. May be useful to diagnose problems.
 define ("LOG_EMAIL_UPDATES", false);
 
 // How many consecutive failed logins should be allowed before locking out an account?
