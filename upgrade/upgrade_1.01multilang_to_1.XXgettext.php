@@ -1,7 +1,8 @@
 <?php
 // Upgrades from multilingual version to Gettext version
+// Run from project root directory
 $running_upgrade_script = true;
-include_once("../includes/inc.global.php");
+include_once("includes/inc.global.php");
 $c = get_defined_constants();
 
 $cUser->MustBeLevel(1);
