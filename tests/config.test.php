@@ -60,11 +60,6 @@ define ("IMAGES_PATH",SERVER_DOMAIN.SERVER_PATH_URL."/images/");
 define ("UPLOADS_PATH",$_SERVER["DOCUMENT_ROOT"].SERVER_PATH_URL."/uploads/");
 
 /**********************************************************/
-/***************** DATABASE LOGIN  ************************/
-
-require_once("inc.config-database.php");
-
-/**********************************************************/
 /********************* SITE NAMES *************************/
 
 // What is the name of the site?

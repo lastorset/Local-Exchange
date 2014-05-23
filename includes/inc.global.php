@@ -80,7 +80,11 @@ define ("DATABASE_STATES", "states");  // added by ejkv
 $global = ""; 	// $global lets other includes know that 
 					// inc.global.php has been included
 
-include_once("inc.config-database.php");
+// May load alternative config file instead. (Useful for tests.)
+if (!defined('DATABASE_CONFIG_FILE'))
+	include_once("inc.config-database.php");
+else
+	include(DATABASE_CONFIG_FILE);
 
 // Workaround for gettext in Heredoc (e.g. <<<HTML):
 $_="_"; // Then use {$_("text")}. Remember to specify "global $_;" first when in a function.
