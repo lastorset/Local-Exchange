@@ -119,7 +119,9 @@ class cDatabase
 		}
 	
 		// Screen all the tags in this $var
-		$var = preg_replace("/<(.*?)>/e","cDatabase::ProcessHTMLTag(StripSlashes('\\1'), \$allow)",$var);
+		$var = preg_replace_callback("/<(.*?)>/", function($matches) use ($allow) {
+			return cDatabase::ProcessHTMLTag(StripSlashes($matches[1]), $allow);
+		}, $var);
 			
 		return $var;
 	}
