@@ -4,6 +4,11 @@
  * @backupGlobals disabled
  */
 class cDatabaseTest extends PHPUnit_Framework_TestCase {
+	/** ScreenHTML should correctly weed out evil codes.
+	 *
+	 * Currently uses the deprecated preg_replace /e modifier.
+	 * @expectedException PHPUnit_Framework_Error_Deprecated
+	 */
 	function testScreenHTML() {
 		global $cUser, $allowedHTML;
 
