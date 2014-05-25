@@ -94,7 +94,7 @@ class cDatabase
 */
 
 	/* A HTML screening function, an optional additional security step for data being submitted for storage in MySQL */
-	function ScreenHTML($var) {
+	static function ScreenHTML($var) {
 		
 		global $cUser,$allowedHTML;
 		
@@ -126,8 +126,8 @@ class cDatabase
 	
 	/* Takes an individual HTML tag and checks it
 			$allowed - an Array containing exceptions (e.g. em, i) */
-	function ProcessHTMLTag($data,$allowed) {
-		
+	static function ProcessHTMLTag($data,$allowed) {
+
 		// ending tags
 		if (preg_match("/^\/([a-z0-9]+)/i", $data, $matches)){
 			$name = StrToLower($matches[1]);
