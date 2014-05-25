@@ -1,6 +1,5 @@
 <?php
 /**
- * TODO: Is this actually needed?
  * @backupGlobals disabled
  */
 class cDatabaseTest extends PHPUnit_Framework_TestCase {

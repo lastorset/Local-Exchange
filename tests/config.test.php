@@ -365,7 +365,7 @@ if (PEAR_PATH != "")
 
 
 if (DEBUG) error_reporting(E_ALL);
-	else error_reporting(E_ALL ^ E_NOTICE);
+	else error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
 define("LOAD_FROM_SESSION",-1);  // Not currently in use
 
