@@ -1,20 +1,38 @@
-In MySQL, create a database named 'lex_test':
+Local Exchange test suite
+=========================
+
+Installing PHPUnit
+------------------
+
+    pear config-set auto_discover 1
+    pear install pear.phpunit.de/PHPUnit
+    pear install phpunit/DBUnit
+
+In MySQL, create a database named `lex_test`:
 
     CREATE DATABASE lex_test CHARSET utf8;
 
-Grant access to a user with username and password also set to 'lex_test':
+Grant access to a user with username and password also set to `lex_test`:
 
     GRANT ALL ON lex_test.* TO 'lex_test'@'localhost' IDENTIFIED BY 'lex_test';
 
-and run create_test_db.php from the project root. It's normal that it complains about missing tables, and there are
+and run `php tests/create_test_db.php` from the project root. It's normal that it complains about missing tables, and there are
 currently some deprecation warnings.
 
 Then run the testsuite with PHPUnit from the project root using these command-line options:
 
-    --bootstrap tests/bootstrap.php
+    phpunit --bootstrap tests/bootstrap.php
 
 Warning: Be careful when writing tests that have side effects, such as sending
 e-mail.
 
+TODOs
+-----
+
 TODO: Keep only tests in this directory, and the rest in support/ and config/
 TODO: Document the globals issue and the bootstrap workaround.
+
+Vim modeline
+------------
+
+vim:set syntax=markdown expandtab:
