@@ -236,14 +236,33 @@ HTML;
 			print <<<HTML
 <script src="{$c['CKEDITOR_PATH']}/ckeditor.js"></script>
 <script>
+var kcfinder_path = "{$c['KCFINDER_PATH']}";
+
 // For compat with old code that only sets 'name'
 document.querySelector('textarea[name=$id]').id="$id";
 CKEDITOR.replace('$id', {
-	"customConfig": "/includes/ckeditor.config.js",
-	"language": "$lang_code"
+	customConfig: "/includes/ckeditor.config.js",
+	language: "$lang_code",
+	filebrowserBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=files',
+	filebrowserImageBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=images',
+	filebrowserFlashBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=flash',
+	filebrowserUploadUrl: kcfinder_path +'/upload.php?opener=ckeditor&type=files',
+	filebrowserImageUploadUrl: kcfinder_path +'/upload.php?opener=ckeditor&type=images',
+	filebrowserFlashUploadUrl: kcfinder_path +'/upload.php?opener=ckeditor&type=flash'
 });
 </script>
 HTML;
+
+			// TODO: Local Exchange sets its own session.save_handler (i. e. 'user'). See http://kcfinder.sunhater.com/integrate#session
+			// Would it be possible to temporarily set a different handler for saving the KCFINDER info? Would it be secure?
+
+			// Settings for file upload
+			$_SESSION['KCFINDER'] = array(
+				'disabled' => false,
+				'uploadURL' => "http://".HTTP_BASE."/uploads/pages",
+				'dirPerms' => 0775,
+				'filePerms' => 0664,
+			);
 		}
 	}
 }

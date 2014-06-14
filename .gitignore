@@ -2,4 +2,5 @@ includes/inc.config.php
 includes/inc.config-database.php
 uploads
 ckeditor
+kcfinder
 includes/lang/heredoc_gettext_strings.out.php

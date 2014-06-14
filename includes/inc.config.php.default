@@ -145,6 +145,8 @@ define("NEW_MEMBER_EMAIL_ADMIN", true);
 define("CKEDITOR", false);
 // Path of CKEditor, relative to web server root, without a trailing slash.
 define("CKEDITOR_PATH", "ckeditor");
+// Path of KCFinder, relative to web server root, without a trailing slash.
+define("KCFINDER_PATH", "kcfinder");
 
 // Use game mechanics? This shows "karma points" – the lesser number of hours spent and earned - at various points in the UI.
 define("GAME_MECHANICS", true);
