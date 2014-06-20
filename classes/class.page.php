@@ -267,9 +267,6 @@ CKEDITOR.replace('$id', {
 </script>
 HTML;
 
-			// TODO: Local Exchange sets its own session.save_handler (i. e. 'user'). See http://kcfinder.sunhater.com/integrate#session
-			// Would it be possible to temporarily set a different handler for saving the KCFINDER info? Would it be secure?
-
 			// Settings for file upload
 			$_SESSION['KCFINDER'] = array(
 				'disabled' => false,
