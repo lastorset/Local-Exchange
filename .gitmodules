@@ -1,3 +1,6 @@
 [submodule "ckeditor"]
 	path = ckeditor
 	url = https://github.com/ckeditor/ckeditor-dev.git
+[submodule "kcfinder"]
+	path = kcfinder
+	url = https://github.com/lastorset/kcfinder-lex.git
