@@ -236,13 +236,27 @@ HTML;
 			print <<<HTML
 <script src="{$c['CKEDITOR_PATH']}/ckeditor.js"></script>
 <script>
-var kcfinder_path = "{$c['KCFINDER_PATH']}";
+var kcfinder_path = "http://{$c['HTTP_BASE']}/{$c['KCFINDER_PATH']}";
 
 // For compat with old code that only sets 'name'
 document.querySelector('textarea[name=$id]').id="$id";
+
 CKEDITOR.replace('$id', {
-	customConfig: "/includes/ckeditor.config.js",
+	uiColor: '#6c81c6',
+	toolbar: [
+		{ name: 'document',    items : [ 'Source','-','Save','DocProps','Preview','-','Templates' ] },
+		{ name: 'clipboard',   items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+		{ name: 'editing',     items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+		{ name: 'styles',      items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat', 'Format' ] },
+		{ name: 'paragraph',   items : [ 'NumberedList','BulletedList','-','Blockquote' ] },
+		{ name: 'links',       items : [ 'Link','Unlink','Anchor' ] },
+		{ name: 'insert',      items : [ 'Image','Table','HorizontalRule','SpecialChar','PageBreak' ] },
+		{ name: 'tools',       items : [ 'Maximize', 'ShowBlocks','-','About' ] }
+	],
+	contentsCss: '../style.css',
+
 	language: "$lang_code",
+
 	filebrowserBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=files',
 	filebrowserImageBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=images',
 	filebrowserFlashBrowseUrl: kcfinder_path +'/browse.php?opener=ckeditor&type=flash',
