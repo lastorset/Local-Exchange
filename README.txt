@@ -86,12 +86,10 @@ Optional features:
 
 * If you wish to use the geocoding features, the PECL http and json extensions are required. Some web hosts may have this pre-installed; otherwise see http://php.net/manual/en/json.installation.php and http://php.net/manual/en/http.install.php for installation instructions. Make sure you install the latest 1.x.x version, not 2.x.x. Once this is installed, go to the admininstration menu and select "Set Up Geocoding" to get started.
 
-* If you wish to use a WYSIWYG editor for information pages, follow these steps:
+If you have cloned the repository from GitHub, or if you are packaging Local Exchange for distribution, please run these additional commands to initialize the rich-text editor:
 
-  1) Download CKEditor and place it in a folder "ckeditor".
-  2) Download KCFinder and place it in a folder "kcfinder".
-  3) Make sure the directory uploads/pages exists and is writable by the web server. It should have permissions "g+rwxs": group should be able to create, delete and modify files, and subfolders should gain the same permissions.
-  4) Change the setting called "CKEDITOR" from "false" to "true".
+    git submodule init
+    git submodule update
 
 
 The system has been run on Linux and FreeBSD.  It should of course run on a Windows server too, but this has not seen any testing. 
