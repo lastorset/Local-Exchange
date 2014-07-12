@@ -93,6 +93,10 @@ define ("MAINTENANCE_MESSAGE", SITE_LONG_TITLE ." "._("is currently down for mai
 
 // The following preferences can be set to turn on/off any of the new features
 
+/* Set the minimum permission level a member must hold to be able to view other members' trade history.
+ * 0 = Members, 1 = Committee, 2 = Admins */
+define("VIEW_OTHER_TRADES_PERMISSION_LEVEL", 0);
+
 /* Set the MINIMUM Permission Level a member must hold to be able to submit ANY and ALL HTML
  * 0 = Members, 1 = Committee, 2 = Admins 
  * Note: This group will be allowed to submit any HTML tags and will not be restricted by the 'Safe List' defined below */

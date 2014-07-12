@@ -273,8 +273,13 @@ class cTradeGroup {
 	
 	function DisplayTradeGroup() {
 		global $cDB, $cUser, $site_settings;
-		
-		$output = "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". $site_settings->getUnitString() ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
+
+		$output = "";
+
+		if ($cUser->member_role < VIEW_OTHER_TRADES_PERMISSION_LEVEL)
+			$output .= "<p>"._("You may only see trades between yourself and the other member.")."</p>";
+
+		$output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". $site_settings->getUnitString() ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
 		
 		if(!$this->trade)
 			return $output. "</TABLE>";   // No trades yet, presumably
@@ -289,9 +294,11 @@ class cTradeGroup {
                 continue;
             }
 */
-            if ($cUser->member_role==0 and $trade->member_to->member_id != $cUser->member_id and
-											$trade->member_from->member_id != $cUser->member_id)
-				continue; // ignore trades that are not related to this member - added by ejkv
+			if ($cUser->member_role < VIEW_OTHER_TRADES_PERMISSION_LEVEL)
+				if ($trade->member_to->member_id != $cUser->member_id
+					and $trade->member_from->member_id != $cUser->member_id)
+					// Ignore trades that are not related to this member.
+					continue;
 
 			if($trade->type == TRADE_REVERSAL or
                                              $trade->status == TRADE_REVERSAL)

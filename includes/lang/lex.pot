@@ -469,7 +469,7 @@ msgid "Contact Form"
 msgstr ""
 
 #: contact.php:46 trades_pending.php:45 classes/class.feedback.php:198
-#: classes/class.trade.php:277 classes/class.trade.php:324
+#: classes/class.trade.php:282 classes/class.trade.php:331
 msgid "From"
 msgstr ""
 
@@ -977,8 +977,8 @@ msgid ""
 "mail using your usual e-mail program instead."
 msgstr ""
 
-#: email.php:28 trades_pending.php:45 classes/class.trade.php:277
-#: classes/class.trade.php:324
+#: email.php:28 trades_pending.php:45 classes/class.trade.php:282
+#: classes/class.trade.php:331
 msgid "To"
 msgstr ""
 
@@ -1080,7 +1080,7 @@ msgstr ""
 msgid "Leave Feedback about"
 msgstr ""
 
-#: feedback.php:23 trade_history.php:20
+#: feedback.php:23
 msgid "for"
 msgstr ""
 
@@ -1625,7 +1625,7 @@ msgid "You already have a listing with this title"
 msgstr ""
 
 #: listing_create.php:49 listing_edit.php:60 listings.php:26 trade.php:50
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Category"
 msgstr ""
 
@@ -1640,7 +1640,7 @@ msgstr ""
 #: listing_create.php:57 listing_edit.php:69 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
 #: trades_pending.php:45 classes/class.listing.php:186
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Description"
 msgstr ""
 
@@ -2379,7 +2379,11 @@ msgid "Membership No."
 msgstr ""
 
 #: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
+<<<<<<< HEAD
 msgid "Experience points"
+=======
+msgid "Karma points"
+>>>>>>> 10779ef... Trade logs visible to all members by default
 msgstr ""
 
 #: member_directory.php:31
@@ -3117,11 +3121,16 @@ msgstr ""
 msgid "Exchange History"
 msgstr ""
 
-#: trade_history_all.php:13 trade_history.php:38
+#: trade_history_all.php:13 trade_history.php:36
 msgid "For period from"
 msgstr ""
 
-#: trade_history.php:38
+#: trade_history.php:18
+#, php-format
+msgid "Exchange history for %s"
+msgstr ""
+
+#: trade_history.php:36
 msgid "Current Balance"
 msgstr ""
 
@@ -3338,7 +3347,7 @@ msgid "Sent Invoices"
 msgstr ""
 
 #: trades_pending.php:45 classes/class.feedback.php:198
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Date"
 msgstr ""
 
@@ -4253,7 +4262,11 @@ msgstr ""
 msgid "by admin"
 msgstr ""
 
-#: classes/class.trade.php:324
+#: classes/class.trade.php:280
+msgid "You may only see trades between yourself and the other member."
+msgstr ""
+
+#: classes/class.trade.php:331
 msgid "On"
 msgstr ""
 

@@ -23,6 +23,7 @@ $features = array(
 	'HOME_PAGE_MESSAGE'       => replace_tags(_("<a>Learn more</a> about this community!"), array('a' => "a href=info/more.php")),
 	'SPAM_WARNING'            => false,
 	'LOG_EMAIL_UPDATES'       => false,
+	'VIEW_OTHER_TRADES_PERMISSION_LEVEL' => 1,
 );
 
 foreach ($features as $feature => $default) {

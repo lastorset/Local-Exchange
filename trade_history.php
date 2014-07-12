@@ -14,10 +14,8 @@
 	if($_REQUEST["mode"] == "self") {
 		$member = $cUser;
 	} else {
-		if($_REQUEST["member_id"] != $cUser->member_id)
-			$cUser->MustBeLevel(1); // trade history of other members only visible for Committee, and Admin - changed by ejkv
 		$member->LoadMember($_REQUEST["member_id"]);
-		$p->page_title .= " "._("for")." ".$member->PrimaryName(); // changed " for " into " "._("for")." ". - by ejkv
+		$p->page_title = sprintf(_("Exchange history for %s"), $member->PrimaryName());
 	}
 	
 	if ($member->balance > 0)
