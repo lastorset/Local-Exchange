@@ -24,7 +24,7 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 	$output .= "<br>"._("Order by").": <select name='orderBy'>
 		<option value='idA' ".$orderBySel["idA"].">"._("Membership No.")."</option>
 		". (GAME_MECHANICS ? "
-		<option value='k' ".$orderBySel["k"].">"._("Karma points")."</option>
+		<option value='k' ".$orderBySel["k"].">"._("Experience points")."</option>
 		" : "") ."
 		<option value='fl' ".$orderBySel["fl"].">"._("First Name")."</option>
 		<option value='lf' ".$orderBySel["lf"].">"._("Last Name")."</option>
@@ -42,7 +42,7 @@ if (SEARCHABLE_MEMBERS_LIST==true) {
 $output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\">
   <TR>
     <TH>"._("Member")."</TH>
-    ". (GAME_MECHANICS ? "<TH title='"._("Karma points reflect how active the member has been in the LETS system, both in earning and spending.")."'>" . _("Karma") . "</TH>" : "") ."
+    ". (GAME_MECHANICS ? "<TH title='"._("Experience points reflect how active the member has been in the LETS system, both in earning and spending.")."'>" . _("Experience") . "</TH>" : "") ."
     <TH>"._("Phone")."</TH>
     <TH>" . _("Address Line 2") . "</TH>
     <TH>" . _("City") . "</TH>
@@ -229,7 +229,7 @@ if($member_list->members) {
 $output .= "<TR><TD colspan=5><br><br>".
 	(GAME_MECHANICS
 		// Translation hint: All placeholders are numbers.
-		? sprintf(_('Total of %1$d active accounts. %2$d accounts have a total of %3$d karma.'), $i, $karma_n, $karma_total)
+		? sprintf(_('Total of %1$d active accounts. %2$d accounts have a total of %3$d experience points.'), $i, $karma_n, $karma_total)
 		: sprintf(_('Total of %1$d active accounts.'), $i))
 	."</TD></TR></TABLE>";
 

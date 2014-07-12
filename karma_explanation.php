@@ -3,7 +3,7 @@
 
 include_once("includes/inc.global.php");
 $p->site_section = SECTION_INFO;
-$p->page_title = _("What are Karma points?");
+$p->page_title = _("What are experience points?");
 
 print $p->MakePageHeader();
 print $p->MakePageMenu();
@@ -36,19 +36,19 @@ if (GAME_MECHANICS) {
 
 	if ($member == $cUser) {
 		// "You", "your"
-		$karma_help = _("These are your Karma points. They reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you.");
+		$karma_help = _("These are your experience points. They reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you.");
 		// Translation hint: %s is the currency name, which may be "hours".
 		$balance_help = sprintf(_("This is your account balance. It shows how many %s you have earned minus what you have spent."), $site_settings->getUnitString());
 		if ($balance > 0)
 			// Translation hint: "it" refers to the member's account balance.
-			$balance_hint = _("Spend some of them to gain Karma points!");
+			$balance_hint = _("Spend some of them to gain experience points!");
 		else if ($balance < 0)
-			$balance_hint = _("Do something for other members to gain Karma points!");
+			$balance_hint = _("Do something for other members to gain experience points!");
 	}
 	else {
 		// "John Doe's", "the member's", "they"
 		// Translation hint: %s is a member's name.
-		$karma_help = sprintf(_("These are %s's Karma points. They reflect the member's activity in the LETS system, and the equilibrium between how much they have done for others and how much others have done for them."), "<a href=//". HTTP_BASE ."/member_summary.php?member_id={$member->member_id}>{$member->PrimaryName()}</a>");
+		$karma_help = sprintf(_("These are %s's experience points. They reflect the member's activity in the LETS system, and the equilibrium between how much they have done for others and how much others have done for them."), "<a href=//". HTTP_BASE ."/member_summary.php?member_id={$member->member_id}>{$member->PrimaryName()}</a>");
 		// Translation hint: %1$s is a member's name. %2$s is the currency name, which may be "hours".
 		$balance_help = sprintf(_('This is %1$s\'s account balance. It shows how many %2$s the member has earned minus what they have spent.'), $member->person[0]->first_name, $site_settings->getUnitString());
 		$balance_hint = "";
@@ -75,7 +75,7 @@ if (GAME_MECHANICS) {
 				<tr>
 					<th/>
 					<th>
-						{$_("Karma points")}
+						{$_("Experience points")}
 					<th/>
 					<th>
 						{$_("Balance")}
@@ -114,7 +114,7 @@ HTML;
 }
 else {
 	// Translation hint: %s is the site's name.
-	printf(_("Karma points are disabled in %s. If they were enabled, they would reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you. Contact the administrators if you wish to request that they be enabled."), SITE_SHORT_TITLE);
+	printf(_("Experience points are disabled in %s. If they were enabled, they would reflect your activity in the LETS system, and the equilibrium between how much you have done for others and how much others have done for you. Contact the administrators if you wish to request that they be enabled."), SITE_SHORT_TITLE);
 	print "<img src=//". HTTP_BASE ."/images/handshake-color.svgz style='display: block; margin: 5em auto; width: 150px' width=75>";
 }
 

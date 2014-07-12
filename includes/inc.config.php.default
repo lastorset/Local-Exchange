@@ -149,6 +149,7 @@ define("CKEDITOR_PATH", "ckeditor");
 define("KCFINDER_PATH", "kcfinder");
 
 // Use game mechanics? This shows "karma points" – the lesser number of hours spent and earned - at various points in the UI.
+// Note that "karma points" have later been renamed "experience points" in the UI.
 define("GAME_MECHANICS", true);
 
 // When user has fewer karma than this, a "What's this?" hint is displayed. Set to true or false to always or never explain.

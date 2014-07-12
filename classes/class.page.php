@@ -96,17 +96,17 @@ HTML;
 		$balance_text = sprintf("%+.2f", $balance);
 
 		if ($cUser == $member) {
-			$karma_help = _("These are your Karma points. They reflect how active you've been in the LETS system, both in earning and spending.");
+			$karma_help = _("These are your experience points. They reflect how active you've been in the LETS system, both in earning and spending.");
 			$balance_help = _("This is your account balance.")." ";
 			if ($balance > 0)
 				// Translation hint: "it" refers to the member's account balance.
-				$balance_help .= _("Spend some of it to gain Karma points!");
+				$balance_help .= _("Spend some of it to gain experience!");
 			else if ($balance < 0)
-				$balance_help .= _("Do something for other members to gain Karma points!");
+				$balance_help .= _("Do something for other members to gain experience!");
 		}
 		else {
 			// Translation hint: %s is the first name of another member.
-			$karma_help = sprintf(_("These are %s's Karma points. They reflect how active the member has been in the LETS system, both in earning and spending ."), $member->person[0]->first_name);
+			$karma_help = sprintf(_("These are %s's experience points. They reflect how active the member has been in the LETS system, both in earning and spending ."), $member->person[0]->first_name);
 			// Translation hint: %s is the first name of another member.
 			$balance_help = sprintf(_("This is %s's account balance."), $member->person[0]->first_name);
 		}

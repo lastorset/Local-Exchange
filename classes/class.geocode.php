@@ -202,7 +202,7 @@ HTML;
 HTML;
 		$out .= (GAME_MECHANICS ?
 				"<img src='images/marker_gold.png'>". replace_tags(
-					_('Member with <a>karma</a>'), array('a' => 'a href=karma_explanation.php')
+					_('Member with <a>experience</a>'), array('a' => 'a href=karma_explanation.php')
 				) : "");
 		$out .= <<<HTML
 				<img src="images/marker.png">{$_("Member")}
