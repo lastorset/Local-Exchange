@@ -22,8 +22,7 @@ if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
  	$form->process("process_data", false);
 } else {  // Display the form
-	$date = array("Y"=>$today["year"], "F"=>$today["mon"], "d"=>$today["mday"]);
-	$form->setDefaults(array("from"=>$date, "to"=>$date));
+	$form->setDefaults(array("from"=>"1 month ago", "to"=>"today"));
 	$p->DisplayPage($form->toHtml());
 }
 
