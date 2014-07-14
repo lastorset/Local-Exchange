@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-14 23:43+0200\n"
-"PO-Revision-Date: 2014-07-14 23:44+0100\n"
+"POT-Creation-Date: 2014-07-15 00:54+0200\n"
+"PO-Revision-Date: 2014-07-15 00:55+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -313,7 +313,7 @@ msgstr "Kategoribeskrivelse"
 #: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:57 trade.php:223
+#: timeframe_choose.php:20 trade.php:57 trade.php:223
 msgid "Submit"
 msgstr "Send inn"
 
@@ -1103,7 +1103,7 @@ msgstr "Vis tilbakemeldinger til et annet medlem"
 msgid "Leave Feedback for a Recent Exchange"
 msgstr "Gi tilbakemelding om en nylig handel"
 
-#: exchange_menu.php:18
+#: exchange_menu.php:20
 msgid "View All Trades in a Specified Time Period"
 msgstr "Vis alle handler i et visst tidsrom"
 
@@ -1432,7 +1432,7 @@ msgstr ""
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:15
+#: timeframe_choose.php:16
 msgid "en"
 msgstr "no"
 
@@ -3311,11 +3311,11 @@ msgstr "Månedsavgift"
 msgid "Choose time period"
 msgstr "Velg tidsperiode"
 
-#: timeframe_choose.php:16
+#: timeframe_choose.php:17
 msgid "From when?"
 msgstr "Fra når?"
 
-#: timeframe_choose.php:17
+#: timeframe_choose.php:18
 msgid "To when?"
 msgstr "Til når?"
 
@@ -4545,8 +4545,8 @@ msgid "by admin"
 msgstr "av administrator"
 
 #: classes/class.trade.php:280
-msgid "You may only see trades between yourself and the other member."
-msgstr "Du får bare se handler mellom deg og det andre medlemmet."
+msgid "You may only see trades involving yourself."
+msgstr "Du får bare se handler du selv har gjort."
 
 #: classes/class.trade.php:331
 msgid "On"
