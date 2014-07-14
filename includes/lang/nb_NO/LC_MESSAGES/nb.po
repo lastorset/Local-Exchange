@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 15:01+0200\n"
-"PO-Revision-Date: 2014-07-12 15:06+0100\n"
+"POT-Creation-Date: 2014-07-14 23:43+0200\n"
+"PO-Revision-Date: 2014-07-14 23:44+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -479,7 +479,7 @@ msgid "Contact Form"
 msgstr "Kontaktskjema"
 
 #: contact.php:46 trades_pending.php:45 classes/class.feedback.php:198
-#: classes/class.trade.php:277 classes/class.trade.php:324
+#: classes/class.trade.php:282 classes/class.trade.php:331
 msgid "From"
 msgstr "Fra"
 
@@ -1050,8 +1050,8 @@ msgstr ""
 "Mens vi leter etter løsninger på dette problemet ber vi deg vurdere å sende "
 "e-post ved hjelp av ditt vanlige e-post-program i stedet."
 
-#: email.php:28 trades_pending.php:45 classes/class.trade.php:277
-#: classes/class.trade.php:324
+#: email.php:28 trades_pending.php:45 classes/class.trade.php:282
+#: classes/class.trade.php:331
 msgid "To"
 msgstr "Til"
 
@@ -1159,7 +1159,7 @@ msgstr ""
 msgid "Leave Feedback about"
 msgstr "Gi tilbakemelding om"
 
-#: feedback.php:23 trade_history.php:20
+#: feedback.php:23
 msgid "for"
 msgstr "til"
 
@@ -1759,7 +1759,7 @@ msgid "You already have a listing with this title"
 msgstr "Du har alt ei oppføring med denne tittelen"
 
 #: listing_create.php:49 listing_edit.php:60 listings.php:26 trade.php:50
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Category"
 msgstr "Kategori"
 
@@ -1774,7 +1774,7 @@ msgstr "Pris"
 #: listing_create.php:57 listing_edit.php:69 news_create.php:25
 #: news_edit.php:30 newsletter_save.php:10 newsletter_upload.php:11
 #: trades_pending.php:45 classes/class.listing.php:186
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Description"
 msgstr "Tekst"
 
@@ -3323,11 +3323,16 @@ msgstr "Til når?"
 msgid "Exchange History"
 msgstr "Handelslogg"
 
-#: trade_history_all.php:13 trade_history.php:38
+#: trade_history_all.php:13 trade_history.php:36
 msgid "For period from"
 msgstr "For perioden fra"
 
-#: trade_history.php:38
+#: trade_history.php:18
+#, php-format
+msgid "Exchange history for %s"
+msgstr "Handelslogg for %s"
+
+#: trade_history.php:36
 msgid "Current Balance"
 msgstr "Saldo nå"
 
@@ -3560,7 +3565,7 @@ msgid "Sent Invoices"
 msgstr "Utsendte fakturaer"
 
 #: trades_pending.php:45 classes/class.feedback.php:198
-#: classes/class.trade.php:277
+#: classes/class.trade.php:282
 msgid "Date"
 msgstr "Dato"
 
@@ -4539,7 +4544,11 @@ msgstr "fra"
 msgid "by admin"
 msgstr "av administrator"
 
-#: classes/class.trade.php:324
+#: classes/class.trade.php:280
+msgid "You may only see trades between yourself and the other member."
+msgstr "Du får bare se handler mellom deg og det andre medlemmet."
+
+#: classes/class.trade.php:331
 msgid "On"
 msgstr "På"
 
@@ -4671,12 +4680,6 @@ msgstr "Se tilbud og ønsker"
 #: includes/lang/heredoc_gettext_strings.out.php:47
 msgid "Log in to see offers, wants and precise location"
 msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
-
-#~ msgid "Karma points"
-#~ msgstr "Karmapoeng"
-
-#~ msgid "Karma"
-#~ msgstr "Karma"
 
 #~ msgid "To view your complete Exchange History please click"
 #~ msgstr "For å vise hele handelsloggen din klikk"
