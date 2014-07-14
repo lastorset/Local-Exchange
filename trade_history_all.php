@@ -1,7 +1,7 @@
 <?php
 	include_once("includes/inc.global.php");
 	
-	$cUser->MustBeLoggedOn();
+	$cUser->MustBeLevel(1);
 	$p->site_section = EXCHANGES;
 	$p->page_title = _("Exchange History");
 

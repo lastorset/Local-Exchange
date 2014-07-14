@@ -15,7 +15,9 @@ $list .= "<A HREF=trades_to_view.php><FONT SIZE=2>"._("View Another Member's Exc
 $list .= "<A HREF=feedback_all.php?mode=self><FONT SIZE=2>"._("View My Feedback")."</FONT></A><BR>";
 $list .= "<A HREF=feedback_to_view.php><FONT SIZE=2>"._("View Another Member's Feedback")."</FONT></A><BR>";
 $list .= "<A HREF=feedback_choose.php?mode=self><FONT SIZE=2>"._("Leave Feedback for a Recent Exchange")."</FONT></A><BR>";
-$list .= "<A HREF=timeframe_choose.php?action=trade_history_all><FONT SIZE=2>"._("View All Trades in a Specified Time Period")."</FONT></A>";
+
+if ($cUser->HasLevel(1))
+	$list .= "<A HREF=timeframe_choose.php?action=trade_history_all><FONT SIZE=2>"._("View All Trades in a Specified Time Period")."</FONT></A>";
 
 $p->DisplayPage($list);
 

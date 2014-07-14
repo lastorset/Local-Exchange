@@ -277,7 +277,7 @@ class cTradeGroup {
 		$output = "";
 
 		if ($cUser->member_role < VIEW_OTHER_TRADES_PERMISSION_LEVEL)
-			$output .= "<p>"._("You may only see trades between yourself and the other member.")."</p>";
+			$output .= "<p>"._("You may only see trades involving yourself.")."</p>";
 
 		$output .= "<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=3 WIDTH=\"100%\"><TR BGCOLOR=\"#d8dbea\"><TD><FONT SIZE=2><B>"._("Date")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("From")."</B></FONT></TD><TD><FONT SIZE=2><B>"._("To")."</B></FONT></TD><TD ALIGN=RIGHT><FONT SIZE=2><B>". $site_settings->getUnitString() ."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Category")."&nbsp;</B></FONT></TD><TD><FONT SIZE=2><B>&nbsp;"._("Description")."</B></FONT></TD></TR>"; // added catgory by ejkv
 		

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 15:01+0200\n"
+"POT-Creation-Date: 2014-07-15 00:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:19 trade.php:57 trade.php:223
+#: timeframe_choose.php:20 trade.php:57 trade.php:223
 msgid "Submit"
 msgstr ""
 
@@ -1030,7 +1030,7 @@ msgstr ""
 msgid "Leave Feedback for a Recent Exchange"
 msgstr ""
 
-#: exchange_menu.php:18
+#: exchange_menu.php:20
 msgid "View All Trades in a Specified Time Period"
 msgstr ""
 
@@ -1328,7 +1328,7 @@ msgstr ""
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:15
+#: timeframe_choose.php:16
 msgid "en"
 msgstr ""
 
@@ -3105,11 +3105,11 @@ msgstr ""
 msgid "Choose time period"
 msgstr ""
 
-#: timeframe_choose.php:16
+#: timeframe_choose.php:17
 msgid "From when?"
 msgstr ""
 
-#: timeframe_choose.php:17
+#: timeframe_choose.php:18
 msgid "To when?"
 msgstr ""
 
@@ -4259,7 +4259,7 @@ msgid "by admin"
 msgstr ""
 
 #: classes/class.trade.php:280
-msgid "You may only see trades between yourself and the other member."
+msgid "You may only see trades involving yourself."
 msgstr ""
 
 #: classes/class.trade.php:331
