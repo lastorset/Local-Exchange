@@ -2379,11 +2379,7 @@ msgid "Membership No."
 msgstr ""
 
 #: member_directory.php:27 includes/lang/heredoc_gettext_strings.out.php:8
-<<<<<<< HEAD
 msgid "Experience points"
-=======
-msgid "Karma points"
->>>>>>> 10779ef... Trade logs visible to all members by default
 msgstr ""
 
 #: member_directory.php:31
