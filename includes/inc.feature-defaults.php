@@ -12,7 +12,6 @@
 $features = array(
 	'SELF_REGISTRATION'       => false,
 	'REQUIRE_EMAIL'           => true,
-	'PASSWORD_MIN_LENGTH'     => 7,
 	'NEW_MEMBER_EMAIL_ADMIN'  => true,
 	'CKEDITOR'                => true,
 	'CKEDITOR_PATH'           => 'ckeditor',

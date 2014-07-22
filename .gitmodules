@@ -4,3 +4,6 @@
 [submodule "kcfinder"]
 	path = kcfinder
 	url = https://github.com/lastorset/kcfinder-lex.git
+[submodule "zxcvbn"]
+	path = zxcvbn
+	url = https://github.com/dropbox/zxcvbn.git

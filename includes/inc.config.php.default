@@ -334,9 +334,6 @@ TEXT
 
 $welcome_email = $welcome_email_default;
 
-// Minimum password length
-define ("PASSWORD_MIN_LENGTH", 7);
-
 /********************************************************************/
 /************************* ADVANCED SETTINGS ************************/
 // Normally, the defaults for the settings that follow don't need

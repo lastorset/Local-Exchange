@@ -8,6 +8,11 @@ if (SELF_REGISTRATION !== true)
 	$cUser->MustBeLevel(1);
 $p->site_section = 0;
 
+// Load password quality meter
+
+$form->addElement("html", "<script type='text/javascript' src='zxcvbn/zxcvbn-async.js'></script>");
+$form->addElement("html", "<script type='text/javascript' src='ajax/password-quality.js'></script>");
+
 //
 // First, we define the form
 //
@@ -15,7 +20,8 @@ $form->addElement("header", null, _("Register New Member"));
 $form->addElement("html", "<TR></TR>");
 
 $form->addElement("text", "member_id", _("Pick a username"), array("size" => 10, "maxlength" => 15));
-$form->addElement("text", "password", _("Password"), array("size" => 10, "maxlength" => 15));
+$form->addElement("text", "password", _("Password"), array("size" => 30, "maxlength" => 255));
+$form->addElement("static", null, _("Good passwords are hard to guess. Use uncommon words or inside jokes, non-standard uPPercasing, creative spelllling, and non-obvious numbers and symbols."), null);
 
 if ($cUser->HasLevel(1))
 	$form->addElement("select", "member_role", _("Member Role"), array("0"=>_("Member"), "1"=>_("Committee"), "2"=>_("Admin")));
@@ -82,7 +88,6 @@ $form->addElement('submit', 'btnSubmit', _("Create Member"));
 // Define form rules
 //
 $form->addRule('member_id', _("Enter your desired username"), 'required');
-$form->addRule('password', _("Password not long enough"), 'minlength', PASSWORD_MIN_LENGTH);
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
 if (SELF_REGISTRATION && REQUIRE_EMAIL)
@@ -96,10 +101,9 @@ $form->registerRule('verify_unique_member_id','function','verify_unique_member_i
 $form->addRule('member_id',_("This ID is already being used"),'verify_unique_member_id');
 $form->registerRule('verify_good_member_id','function','verify_good_member_id');
 $form->addRule('member_id',_("Special characters are not allowed"),'verify_good_member_id');
-$form->registerRule('verify_good_password','function','verify_good_password');
-$form->addRule('password', _("Password must contain at least one number"), 'verify_good_password');
+// TODO: Write unit tests for passwords containing apostrophes or backslashes, then remove this requirement.
 $form->registerRule('verify_no_apostraphes_or_backslashes','function','verify_no_apostraphes_or_backslashes');
-$form->addRule("password", _("You have the right idea, but it's best not to use apostraphes or backslashes in passwords"), "verify_no_apostraphes_or_backslashes");
+$form->addRule("password", _("You have the right idea, but it's best not to use apostrophes or backslashes in passwords"), "verify_no_apostraphes_or_backslashes");
 $form->registerRule('verify_role_allowed','function','verify_role_allowed');
 if ($cUser->HasLevel(1))
 	$form->addRule('member_role',_("You cannot assign a higher level of access than you have"),'verify_role_allowed');
@@ -269,19 +273,6 @@ function verify_reasonable_dob($element_name,$element_value) {
 		return false;
 	else
 		return true;
-}
-
-function verify_good_password($element_name,$element_value) {
-	$i=0;
-	$length=strlen($element_value);
-	
-	while($i<$length) {
-		if(ctype_digit($element_value{$i}))
-			return true;	
-		$i+=1;
-	}
-	
-	return false;
 }
 
 function verify_no_apostraphes_or_backslashes($element_name,$element_value) {

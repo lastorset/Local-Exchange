@@ -96,7 +96,6 @@ $form->addElement('submit', 'btnSubmit', _("Update"));
 // Define form rules
 //
 $form->addRule('member_id', _("Enter your username"), 'required');
-$form->addRule('password', _("Password not long enough"), 'minlength', 7);
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
 $form->addRule('address_city', _("Enter a").' ' . _("City"), 'required');

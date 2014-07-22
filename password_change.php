@@ -14,7 +14,7 @@ $form->addElement('header', null, _("Change Password for")." ". $cUser->person[0
 $form->addElement('html', '<TR></TR>');  // TODO: Move this to the header
 $form->addElement('static',null,_("For your security, passwords must be at least 7 characters long and include at least one number."));
 $form->addElement('html', '<TR></TR>');
-$options = array('size' => 10, 'maxlength' => 15);
+$options = array('size' => 30, 'maxlength' => 255);
 $form->addElement('password', 'old_passwd', _("Old Password"),$options);
 $form->addElement('password', 'new_passwd', _("Choose a New Password"),$options);
 $form->addElement('password', 'rpt_passwd', _("Repeat the New Password"),$options);

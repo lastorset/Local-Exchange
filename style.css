@@ -235,6 +235,29 @@ th {
 	text-align: left;
 }
 
+/* Password-quality meter */
+input.password_evaluated {
+    border-width: 4px;
+    border-radius: 4px;
+    margin-right: 1em;
+}
+
+input.password_very_bad {
+    border-color: red;
+}
+input.password_bad {
+    border-color: orange;
+}
+input.password_mediocre {
+    border-color: gold;
+}
+input.password_good {
+    border-color: darkgoldenrod;
+}
+input.password_very_good {
+    border-color: darkseagreen;
+}
+
 /* Settings */
 form#settings td {
 	/* The following are typical browser default styles, but they are set explicitly to ensure they

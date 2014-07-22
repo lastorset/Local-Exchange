@@ -230,7 +230,8 @@ class cMember
 	}
 
 	function GeneratePassword() {
-		return Text_Password::create(6) . chr(rand(50,57));
+		// TODO: Generate XKCD-style passwords
+		return Text_Password::create(10) . chr(rand(50,57));
 	}
 
 	function DoLoginStuff($user, $pass)
