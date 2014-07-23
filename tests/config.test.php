@@ -143,7 +143,7 @@ define("NEW_MEMBER_EMAIL_ADMIN", true);
 // Use CKEditor to edit info pages?
 define("CKEDITOR", true);
 // Path of CKEditor, relative to web server root, without a trailing slash.
-define("CKEDITOR_PATH", "ckeditor");
+define("CKEDITOR_PATH", "lib/ckeditor");
 
 // Enable geocoding using Google?
 define("GEOCODE", true);

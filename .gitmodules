@@ -1,9 +1,9 @@
-[submodule "ckeditor"]
-	path = ckeditor
-	url = https://github.com/ckeditor/ckeditor-dev.git
-[submodule "kcfinder"]
-	path = kcfinder
+[submodule "lib/kcfinder"]
+	path = lib/kcfinder
 	url = https://github.com/lastorset/kcfinder-lex.git
-[submodule "zxcvbn"]
-	path = zxcvbn
+[submodule "lib/zxcvbn"]
+	path = lib/zxcvbn
 	url = https://github.com/dropbox/zxcvbn.git
+[submodule "lib/ckeditor"]
+	path = lib/ckeditor
+	url = https://github.com/ckeditor/ckeditor-dev.git
