@@ -319,28 +319,6 @@ function verify_reasonable_dob($element_name,$element_value) {
 		return true;
 }
 
-function verify_good_password($element_name,$element_value) {
-	$i=0; $upper=false; $lower=false; $number=false; $punct=false;
-	$length=strlen($element_value);
-	
-	while($i<$length) {
-		if(ctype_upper($element_value{$i}))
-			$upper=true;
-		if(ctype_lower($element_value{$i}))
-			$lower=true;
-		if(ctype_punct($element_value{$i}))
-			$punct=true;
-		if(ctype_digit($element_value{$i}))
-			$number=true;	
-		$i+=1;
-	}
-	
-	if($upper and $lower and ($number or $punct))
-		return true;
-	else
-		return false;
-}
-
 function verify_no_apostraphes_or_backslashes($element_name,$element_value) {
 	if(strstr($element_value,"'") or strstr($element_value,"\\"))
 		return false;

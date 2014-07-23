@@ -12,6 +12,7 @@ $p->site_section = 0;
 
 $form->addElement("html", "<script type='text/javascript' src='lib/zxcvbn/zxcvbn-async.js'></script>");
 $form->addElement("html", "<script type='text/javascript' src='ajax/password-quality.js'></script>");
+$form->addElement("html", "<script type='text/javascript'>addPasswordMeter('password');</script>");
 
 //
 // First, we define the form

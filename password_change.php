@@ -7,12 +7,16 @@ $p->site_section = 0;
 
 include("includes/inc.forms.php");
 
+$form->addElement("html", "<script type='text/javascript' src='lib/zxcvbn/zxcvbn-async.js'></script>");
+$form->addElement("html", "<script type='text/javascript' src='ajax/password-quality.js'></script>");
+$form->addElement("html", "<script type='text/javascript'>addPasswordMeter('new_passwd');</script>");
+
 //
 // Define form elements
 //
 $form->addElement('header', null, _("Change Password for")." ". $cUser->person[0]->first_name ." " . $cUser->person[0]->mid_name ." " . $cUser->person[0]->last_name); // added mid_name by ejkv
 $form->addElement('html', '<TR></TR>');  // TODO: Move this to the header
-$form->addElement('static',null,_("For your security, passwords must be at least 7 characters long and include at least one number."));
+$form->addElement("static", null, _("Good passwords are hard to guess. Use uncommon words or inside jokes, non-standard uPPercasing, creative spelllling, and non-obvious numbers and symbols."), null);
 $form->addElement('html', '<TR></TR>');
 $options = array('size' => 30, 'maxlength' => 255);
 $form->addElement('password', 'old_passwd', _("Old Password"),$options);
@@ -26,13 +30,10 @@ $form->addElement('submit', 'btnSubmit', _("Change Password"));
 $form->addRule('old_passwd', _("Enter your current password"), 'required');
 $form->addRule('new_passwd', _("Enter a new password"), 'required');
 $form->addRule('rpt_passwd', _("You must re-enter the new password"), 'required');
-$form->addRule('new_passwd', _("Password not long enough"), 'minlength', 7);
 $form->registerRule('verify_passwords_equal','function','verify_passwords_equal');
 $form->addRule('new_passwd', _("Passwords are not the same"), 'verify_passwords_equal');
 $form->registerRule('verify_old_password','function','verify_old_password');
 $form->addRule('old_passwd', _("Password is incorrect"), 'verify_old_password');
-$form->registerRule('verify_good_password','function','verify_good_password');
-$form->addRule('new_passwd', _("For your security, passwords must be at least 7 characters long and include at least one number."), 'verify_good_password');
 
 //
 //	Display or process the form
@@ -61,20 +62,6 @@ function verify_old_password($element_name,$element_value) {
 	else
 		return false;
 }
-
-function verify_good_password($element_name,$element_value) {
-	$i=0;
-	$length=strlen($element_value);
-	
-	while($i<$length) {
-		if(ctype_digit($element_value{$i}))
-			return true;	
-		$i+=1;
-	}
-	
-	return false;
-}
-
 
 function verify_passwords_equal() {
 	global $form;
