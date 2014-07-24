@@ -1,3 +1,8 @@
+// Temporary stand-in for gettext
+function gettext(msg) {
+    return msg;
+}
+
 /** When the document finishes loading, add a password meter next to the form field with the given name. */
 function addPasswordMeter(fieldName) {
     window.addEventListener('load', function() {
@@ -20,23 +25,23 @@ function addPasswordMeter(fieldName) {
             // TODO: i18n
             switch (result.score) {
                 case 0:
-                    evaluation.innerHTML = 'Password is very bad';
+                    evaluation.innerHTML = gettext('Password is very bad');
                     break;
 
                 case 1:
-                    evaluation.innerHTML = 'Password is bad';
+                    evaluation.innerHTML = gettext('Password is bad');
                     break;
 
                 case 2:
-                    evaluation.innerHTML = 'Password is mediocre';
+                    evaluation.innerHTML = gettext('Password is mediocre');
                     break;
 
                 case 3:
-                    evaluation.innerHTML = 'Password is good';
+                    evaluation.innerHTML = gettext('Password is good');
                     break;
 
                 case 4:
-                    evaluation.innerHTML = 'Password is very good';
+                    evaluation.innerHTML = gettext('Password is very good');
                     break;
 
             }

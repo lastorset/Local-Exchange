@@ -2,6 +2,7 @@
 php includes/lang/scripts/find_heredoc_strings.php . includes classes > includes/lang/heredoc_gettext_strings.out.php
 if xgettext -c"Translation hint:" --language=PHP --from-code=utf-8 --output=includes/lang/lex.pot *.php includes/*.php classes/*.php includes/lang/heredoc_gettext_strings.out.php;
 then
+	xgettext -c"Translation hint:" --language=JavaScript --from-code=utf-8 --output=includes/lang/lex.pot --join-existing ajax/*.js;
 	echo includes/lang/lex.pot was updated. Now run for each language
 	echo $ msgmerge --update includes/lang/nb_NO/LC_MESSAGES/nb.po includes/lang/lex.pot
 	echo "then edit your translations (using e.g. Poedit) and run"
