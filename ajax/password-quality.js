@@ -3,6 +3,8 @@ function gettext(msg) {
     return msg;
 }
 
+require(["lib/zxcvbn/zxcvbn-async"]);
+
 /** When the document finishes loading, add a password meter next to the form field with the given name. */
 function addPasswordMeter(fieldName) {
     window.addEventListener('load', function() {

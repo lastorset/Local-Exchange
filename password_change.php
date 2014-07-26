@@ -7,8 +7,10 @@ $p->site_section = 0;
 
 include("includes/inc.forms.php");
 
-$form->addElement("html", "<script type='text/javascript' src='lib/zxcvbn/zxcvbn-async.js'></script>");
-$form->addElement("html", "<script type='text/javascript' src='ajax/password-quality.js'></script>");
+// TODO: Factor out and require i18n, which in turn can require the necessary .json files (which could be
+// served using a special PHP script that knows the language from the cookie) for the rudimentary i18n implementation.
+$form->addElement("html", "<script data-main='ajax/password-quality' src='lib/require.min.js'></script>");
+
 $form->addElement("html", "<script type='text/javascript'>addPasswordMeter('new_passwd');</script>");
 
 //
