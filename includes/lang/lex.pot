@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-15 00:54+0200\n"
+"POT-Creation-Date: 2014-08-01 13:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:20 trade.php:57 trade.php:223
+#: timeframe_choose.php:19 trade.php:57 trade.php:223
 msgid "Submit"
 msgstr ""
 
@@ -1328,7 +1328,7 @@ msgstr ""
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:16
+#: timeframe_choose.php:15
 msgid "en"
 msgstr ""
 
@@ -1533,7 +1533,7 @@ msgstr ""
 #: member_create.php:217 member_directory.php:15 member_unlock.php:47
 #: member_unlock.php:50 password_reset.php:39 trade.php:138
 #: classes/class.member.php:205
-msgid "Member ID"
+msgid "Username"
 msgstr ""
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
@@ -1936,7 +1936,7 @@ msgid ""
 msgstr ""
 
 #: manage_restrictions.php:55 manage_restrictions.php:80
-msgid "Error: No member ID specified."
+msgid "Error: No username specified."
 msgstr ""
 
 #: manage_restrictions.php:66
@@ -1948,7 +1948,7 @@ msgid "MySQL Said"
 msgstr ""
 
 #: manage_restrictions.php:68
-msgid "Restrictions have been imposed on member id"
+msgid "Restrictions have been imposed on username"
 msgstr ""
 
 #: manage_restrictions.php:70
@@ -1960,7 +1960,7 @@ msgid "Error: could not lift restrictions on this account"
 msgstr ""
 
 #: manage_restrictions.php:93
-msgid "Restrictions have been lifted on member id"
+msgid "Restrictions have been lifted on username"
 msgstr ""
 
 #: manage_restrictions.php:95
@@ -2190,7 +2190,7 @@ msgid "Register New Member"
 msgstr ""
 
 #: member_create.php:17
-msgid "Choose a Member ID"
+msgid "Pick a username"
 msgstr ""
 
 #: member_create.php:21 member_edit.php:24
@@ -2261,8 +2261,8 @@ msgstr ""
 msgid "Create Member"
 msgstr ""
 
-#: member_create.php:84 member_edit.php:98 password_reset.php:10
-msgid "Enter your Member ID"
+#: member_create.php:84
+msgid "Enter your desired username"
 msgstr ""
 
 #: member_create.php:89
@@ -2320,7 +2320,7 @@ msgstr ""
 #: member_create.php:204
 msgid ""
 "Since the new member does not have an email address, he/she needs to be "
-"notified of the member id"
+"notified of the username"
 msgstr ""
 
 #: member_create.php:204 member_create.php:212
@@ -2343,7 +2343,7 @@ msgstr ""
 
 #: member_create.php:212
 msgid ""
-"Since the email failed, the new member needs to be notified of the member id"
+"Since the email failed, the new member needs to be notified of the username"
 msgstr ""
 
 #: member_create.php:216
@@ -2464,6 +2464,10 @@ msgstr ""
 
 #: member_edit.php:89 classes/class.member.php:627
 msgid "About Me"
+msgstr ""
+
+#: member_edit.php:98 password_reset.php:10
+msgid "Enter your username"
 msgstr ""
 
 #: member_edit.php:110
@@ -2831,11 +2835,11 @@ msgid "Enter the Email Address for your Account"
 msgstr ""
 
 #: password_reset.php:17
-msgid "Address or member id is incorrect"
+msgid "Address or username is incorrect"
 msgstr ""
 
 #: password_reset.php:19
-msgid "If you cannot remember your member id or email address, please"
+msgid "If you cannot remember your username or email address, please"
 msgstr ""
 
 #: password_reset.php:19
@@ -3105,11 +3109,11 @@ msgstr ""
 msgid "Choose time period"
 msgstr ""
 
-#: timeframe_choose.php:17
+#: timeframe_choose.php:16
 msgid "From when?"
 msgstr ""
 
-#: timeframe_choose.php:18
+#: timeframe_choose.php:17
 msgid "To when?"
 msgstr ""
 
@@ -3897,7 +3901,7 @@ msgid ""
 msgstr ""
 
 #: classes/class.member.php:117
-msgid "Password or member id is incorrect.  Please try again, or go"
+msgid "Password or username is incorrect.  Please try again, or go"
 msgstr ""
 
 #: classes/class.member.php:117

@@ -135,7 +135,7 @@ function process_data ($values) {
 					
 					$mailed = mail($member_to->person[0]->email, _("Payment Received on")." ".SITE_LONG_TITLE."", _("Hi")." ".$member_to_id.",\n\n"._("Just letting you know that you have received a new payment from")." ".$member->member_id."\n\n"._("As you have elected to confirm all payments made to you, please log into your account now and confirm or reject this payment using the following URL...")."\n\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/trades_pending.php?action=incoming", "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "FROM:". - by ejkv
 			
-					$list .= _("Member ID")." ".$member_to_id." "._("has been notified that you wish to transfer")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ." "._("to him/her").".<p>"._("This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member").".<p>".
+					$list .= _("Username")." ".$member_to_id." "._("has been notified that you wish to transfer")." ". $values['units'] ." ". strtolower($site_settings->getUnitString()) ." "._("to him/her").".<p>"._("This member has opted to confirm all transactions made to him/her. Once the member accepts this transaction your payment will be actioned and you will be invited to leave Feedback for this member").".<p>".
 							_("Would you like to")." <A HREF=trade.php?mode=".$_REQUEST["mode"]."&member_id=". $_REQUEST["member_id"].">"._("record another")."</A> "._("exchange")."?";
 				}
 				else

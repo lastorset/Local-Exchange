@@ -44,10 +44,10 @@ function process_data ($values) {
 	
 	if ($_REQUEST["emailTyp"]=='welcome') {
 		
-		$mailed = mail($member->person[0]->email, NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $member->member_id ."\n". _("Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:". - by ejkv
+		$mailed = mail($member->person[0]->email, NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Username").": ". $member->member_id ."\n". _("Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:". - by ejkv
 	}
 	else {
-		$mailed = mail($member->person[0]->email, PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("Member ID").": ". $member->member_id ."\n"._("New Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:". - by ejkv
+		$mailed = mail($member->person[0]->email, PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("Username").": ". $member->member_id ."\n"._("New Password").": ". $password, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:". - by ejkv
 	}
 
 	if($mailed)

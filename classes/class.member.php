@@ -114,7 +114,7 @@ class cMember
 			if($row = mysql_fetch_array($query)) {
 				$cErr->Error(_("Your account has been locked due to too many unsuccessful login attempts. You will need to contact us to have your account unlocked."));
 			} else {
-				$cErr->Error(_("Password or member id is incorrect.  Please try again, or go")." <A HREF=password_reset.php>"._("here")."</A> "._("to have your password reset").".", ERROR_SEVERITY_INFO);
+				$cErr->Error(_("Password or username is incorrect.  Please try again, or go")." <A HREF=password_reset.php>"._("here")."</A> "._("to have your password reset").".", ERROR_SEVERITY_INFO);
 			}
 			$login_history->RecordLoginFailure($user);
 			return false;
@@ -202,7 +202,7 @@ class cMember
 		return "<DIV STYLE='width=60%; padding: 5px;'><FORM ACTION=".SERVER_PATH_URL."/login.php METHOD=POST>
 					<INPUT TYPE=HIDDEN NAME=action VALUE=login>
 					<INPUT TYPE=HIDDEN NAME=location VALUE='".$_SERVER["REQUEST_URI"]."'>
-					<TABLE class=NoBorder><TR><TD ALIGN=LEFT>"._("Member ID").":</TD><TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=12 NAME=user></TD></TR>
+					<TABLE class=NoBorder><TR><TD ALIGN=LEFT>"._("Username").":</TD><TD ALIGN=LEFT><INPUT TYPE=TEXT SIZE=12 NAME=user></TD></TR>
 					<TR><TD ALIGN=LEFT>"._("Password")." :</TD><TD ALIGN=LEFT><INPUT TYPE=PASSWORD SIZE=12 NAME=pass></TD></TR></TABLE>
 					<DIV align=LEFT><INPUT TYPE=SUBMIT VALUE='"._("Login")."'></DIV>
 					</FORM></DIV>".

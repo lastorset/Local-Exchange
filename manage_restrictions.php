@@ -52,7 +52,7 @@ if ($_REQUEST["process"]) {
 		
 		if (!$_REQUEST["ok"]) {
 				
-				$output .= _("Error: No member ID specified.");
+				$output .= _("Error: No username specified.");
 				
 				break;
 			}
@@ -65,7 +65,7 @@ if ($_REQUEST["process"]) {
 			if (!$query)
 				$output .= _("Error: could not impose restrictions on this account").".<p>"._("MySQL Said").": ".mysql_error();
 			else {
-				$output .= _("Restrictions have been imposed on member id")." '".$_REQUEST["ok"]."'";
+				$output .= _("Restrictions have been imposed on username")." '".$_REQUEST["ok"]."'";
 				
 				$mailed = mail($member->person[0]->email, _("Access Restricted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URLOCKED , "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 			
@@ -77,7 +77,7 @@ if ($_REQUEST["process"]) {
 			
 			if (!$_REQUEST["restricted"]) {
 				
-				$output .= _("Error: No member ID specified.");
+				$output .= _("Error: No username specified.");
 				
 				break;
 			}
@@ -90,7 +90,7 @@ if ($_REQUEST["process"]) {
 			if (!$query)
 				$output .= _("Error: could not lift restrictions on this account").".<p>"._("MySQL Said").": ".mysql_error();
 			else {
-				$output .= _("Restrictions have been lifted on member id")." '".$_REQUEST["restricted"]."'";
+				$output .= _("Restrictions have been lifted on username")." '".$_REQUEST["restricted"]."'";
 				
 				$mailed = mail($member->person[0]->email, _("Account Restrictions lifted on")." ".SITE_LONG_TITLE."", LEECH_EMAIL_URUNLOCKED , "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // Added "From:" - by ejkv
 			}

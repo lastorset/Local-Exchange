@@ -7,16 +7,16 @@ include("includes/inc.forms.php");
 $form->addElement("header", null, _("Reset Password"));
 $form->addElement("html", "<TR></TR>");
 
-$form->addElement("text", "member_id", _("Enter your Member ID"));
+$form->addElement("text", "member_id", _("Enter your username"));
 $form->addElement("text", "email", _("Enter the Email Address for your Account"));
 
 $form->addElement("static", null, null, null);
 $form->addElement("submit", "btnSubmit", _("Reset Password"));
 
 $form->registerRule('verify_email','function','verify_email');
-$form->addRule('email',_("Address or member id is incorrect"),'verify_email');
+$form->addRule('email',_("Address or username is incorrect"),'verify_email');
 $form->addElement("static", null, null, null);
-$form->addElement("static", 'contact', _("If you cannot remember your member id or email address, please")." <A HREF=contact.php>"._("contact")."</A> "._("us").".", null);
+$form->addElement("static", 'contact', _("If you cannot remember your username or email address, please")." <A HREF=contact.php>"._("contact")."</A> "._("us").".", null);
 
 if ($form->validate()) { // Form is validated so processes the data
    $form->freeze();
@@ -36,7 +36,7 @@ function process_data ($values) {
 	$member->UnlockAccount();
 	
 	$list = _("Your password has been reset.  You can change the new password after you login by going into the Member Profile section of the web site.")."<P>";
-	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("New Password").": ". $password ."\n"._("Member ID").": ". $member->member_id, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
+	$mailed = mail($values['email'], PASSWORD_RESET_SUBJECT, PASSWORD_RESET_MESSAGE . "\n\n"._("New Password").": ". $password ."\n"._("Username").": ". $member->member_id, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 	if($mailed)
 		$list .= _("The new password has been sent to your email address.");
 	else

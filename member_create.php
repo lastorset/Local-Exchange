@@ -14,7 +14,7 @@ $p->site_section = 0;
 $form->addElement("header", null, _("Register New Member"));
 $form->addElement("html", "<TR></TR>");
 
-$form->addElement("text", "member_id", _("Choose a Member ID"), array("size" => 10, "maxlength" => 15));
+$form->addElement("text", "member_id", _("Pick a username"), array("size" => 10, "maxlength" => 15));
 $form->addElement("text", "password", _("Password"), array("size" => 10, "maxlength" => 15));
 
 if ($cUser->HasLevel(1))
@@ -81,7 +81,7 @@ $form->addElement('submit', 'btnSubmit', _("Create Member"));
 //
 // Define form rules
 //
-$form->addRule('member_id', _("Enter your Member ID"), 'required');
+$form->addRule('member_id', _("Enter your desired username"), 'required');
 $form->addRule('password', _("Password not long enough"), 'minlength', PASSWORD_MIN_LENGTH);
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
@@ -201,20 +201,20 @@ function process_data ($values) {
 	if($created) {
 		$list .= _("Member created").". "._("Click")." <A HREF=member_create.php>"._("here")."</A> ". _("to create another member account").".<P>"._("Or if you would like to add a joint member to this account (such as a spouse), click")." <A HREF=member_contact_create.php?mode=admin&member_id=". $values["member_id"] .">"._("here")."</A>.<P>";
 		if($values['email'] == "") {
-			$msg_no_email = _("Since the new member does not have an email address, he/she needs to be notified of the member id")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').";
+			$msg_no_email = _("Since the new member does not have an email address, he/she needs to be notified of the username")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').";
 			$list .= $msg_no_email;
 			mail(EMAIL_ADMIN, _("Member created") .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8");
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Member ID").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
+			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Username").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
 			if($mailed)
 				$list .= _("An email has been sent to")." '". $values["email"] ."' "._("containing the new user id and password").".";
 			else
-				$list .= _("An attempt to email the new member information failed.  This is most likely due to a technical problem.  You may want to contact your administrator at")." ". PHONE_ADMIN .". <I>"._("Since the email failed, the new member needs to be notified of the member id")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').</I>";	 
+				$list .= _("An attempt to email the new member information failed.  This is most likely due to a technical problem.  You may want to contact your administrator at")." ". PHONE_ADMIN .". <I>"._("Since the email failed, the new member needs to be notified of the username")." ('". $values["member_id"]. "') "._("and password")." ('". $values["password"] ."').</I>";
 
 			if (NEW_MEMBER_EMAIL_ADMIN)
 				mail(EMAIL_ADMIN,
 					_("New member of "). SITE_SHORT_TITLE .": ". $values['first_name'] ." ". $values['mid_name'] ." ". $values['last_name'],
-					_("Member ID").": ". $values['member_id'] ."\n"
+					_("Username").": ". $values['member_id'] ."\n"
 					._("City").": ". $values['address_city']  ."\n\n"
 					._("Read more").": http://". SERVER_DOMAIN.SERVER_PATH_URL ."/member_summary.php?member_id=". $values['member_id']
 					);

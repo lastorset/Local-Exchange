@@ -12,7 +12,7 @@ $cUser->MustBeLoggedOn();
 if (SEARCHABLE_MEMBERS_LIST==true) {
 	
 	$output = "<form action=member_directory.php method=get>";
-	$output .= _("Member ID").": <input type=text name=uID size=4 value='".$_REQUEST["uID"]."'>
+	$output .= _("Username").": <input type=text name=uID size=4 value='".$_REQUEST["uID"]."'>
 		<br>"._("Name (all or part)").": <input type=text name=uName value='".$_REQUEST["uName"]."'>
 		<br>"._("Location (e.g.")." ".DEFAULT_CITY."): <input type=text name=uLoc value='".$_REQUEST["uLoc"]."'>";
 	
