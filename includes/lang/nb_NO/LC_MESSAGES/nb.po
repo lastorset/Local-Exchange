@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.01\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-15 00:54+0200\n"
-"PO-Revision-Date: 2014-07-15 00:55+0100\n"
+"POT-Creation-Date: 2014-08-01 13:16+0200\n"
+"PO-Revision-Date: 2014-08-01 13:19+0100\n"
 "Last-Translator: Leif Arne Storset <leifarne@storset.net>\n"
 "Language-Team: Norwegian Bokmal\n"
 "Language: nb\n"
@@ -313,7 +313,7 @@ msgstr "Kategoribeskrivelse"
 #: do_info_edit.php:24 feedback.php:39 feedback_rebuttal.php:39
 #: feedback_reply.php:44 listing_create.php:73 member_choose.php:28
 #: news_create.php:27 news_edit.php:32 state_create.php:19 state_edit.php:23
-#: timeframe_choose.php:20 trade.php:57 trade.php:223
+#: timeframe_choose.php:19 trade.php:57 trade.php:223
 msgid "Submit"
 msgstr "Send inn"
 
@@ -1432,7 +1432,7 @@ msgstr ""
 #: holiday.php:31 listing_create.php:62 member_contact_create.php:38
 #: member_contact_edit.php:38 member_create.php:34 member_create.php:45
 #: member_edit.php:31 member_edit.php:33 news_create.php:19 news_edit.php:24
-#: timeframe_choose.php:16
+#: timeframe_choose.php:15
 msgid "en"
 msgstr "no"
 
@@ -1653,7 +1653,7 @@ msgstr "Hoppet over e-postadressa"
 #: member_create.php:217 member_directory.php:15 member_unlock.php:47
 #: member_unlock.php:50 password_reset.php:39 trade.php:138
 #: classes/class.member.php:205
-msgid "Member ID"
+msgid "Username"
 msgstr "Brukernavn"
 
 #: initial_mailing.php:34 login_redirect.php:5 member_create.php:18
@@ -2086,8 +2086,8 @@ msgstr ""
 "ikke tilbyr nok igjen"
 
 #: manage_restrictions.php:55 manage_restrictions.php:80
-msgid "Error: No member ID specified."
-msgstr "Feil: Brukernavn ikke oppgitt"
+msgid "Error: No username specified."
+msgstr "Feil: Brukernavn ikke oppgitt."
 
 #: manage_restrictions.php:66
 msgid "Error: could not impose restrictions on this account"
@@ -2098,7 +2098,7 @@ msgid "MySQL Said"
 msgstr "MySQL sa"
 
 #: manage_restrictions.php:68
-msgid "Restrictions have been imposed on member id"
+msgid "Restrictions have been imposed on username"
 msgstr "Begrensningene er lagt på brukernavn"
 
 #: manage_restrictions.php:70
@@ -2110,7 +2110,7 @@ msgid "Error: could not lift restrictions on this account"
 msgstr "Feil: Kunne ikke fjerne begrensningene på denne kontoen"
 
 #: manage_restrictions.php:93
-msgid "Restrictions have been lifted on member id"
+msgid "Restrictions have been lifted on username"
 msgstr "Begrensningene er fjernet fra brukernavn"
 
 #: manage_restrictions.php:95
@@ -2340,7 +2340,7 @@ msgid "Register New Member"
 msgstr "Registrer nytt medlem"
 
 #: member_create.php:17
-msgid "Choose a Member ID"
+msgid "Pick a username"
 msgstr "Velg et brukernavn"
 
 #: member_create.php:21 member_edit.php:24
@@ -2413,9 +2413,9 @@ msgstr "Hvor ofte ønsker du  å motta nyheter på e-post?"
 msgid "Create Member"
 msgstr "Opprett medlem"
 
-#: member_create.php:84 member_edit.php:98 password_reset.php:10
-msgid "Enter your Member ID"
-msgstr "Skriv in brukernavnet"
+#: member_create.php:84
+msgid "Enter your desired username"
+msgstr "Skriv inn brukernavnet du ønsker"
 
 #: member_create.php:89
 msgid "Enter an e-mail address"
@@ -2477,7 +2477,7 @@ msgstr ""
 #: member_create.php:204
 msgid ""
 "Since the new member does not have an email address, he/she needs to be "
-"notified of the member id"
+"notified of the username"
 msgstr ""
 "Siden det nye medlemmet ikke har e-postadresse, må han/hun gjøres oppmerksom "
 "på brukernavnet"
@@ -2505,7 +2505,7 @@ msgstr ""
 
 #: member_create.php:212
 msgid ""
-"Since the email failed, the new member needs to be notified of the member id"
+"Since the email failed, the new member needs to be notified of the username"
 msgstr ""
 "Siden e-postsendinga gikk galt, må det nye medlemmet gjøres oppmerksom på "
 "brukernavnet"
@@ -2632,6 +2632,10 @@ msgstr "Kjønn"
 #: member_edit.php:89 classes/class.member.php:627
 msgid "About Me"
 msgstr "Om meg"
+
+#: member_edit.php:98 password_reset.php:10
+msgid "Enter your username"
+msgstr "Skriv inn brukernavnet du ønsker"
 
 #: member_edit.php:110
 msgid "You cannot modify the member role of a higher level account"
@@ -3019,12 +3023,12 @@ msgid "Enter the Email Address for your Account"
 msgstr "Skriv inn e-postadressa for kontoen din"
 
 #: password_reset.php:17
-msgid "Address or member id is incorrect"
+msgid "Address or username is incorrect"
 msgstr "Adressa eller brukernavnet er feil"
 
 #: password_reset.php:19
-msgid "If you cannot remember your member id or email address, please"
-msgstr "Dersom du ikke kan huske brukernavnet eller e-postadresa, vennligst"
+msgid "If you cannot remember your username or email address, please"
+msgstr "Dersom du ikke husker brukernavnet eller e-postadressa, vennligst"
 
 #: password_reset.php:19
 msgid "contact"
@@ -3311,11 +3315,11 @@ msgstr "Månedsavgift"
 msgid "Choose time period"
 msgstr "Velg tidsperiode"
 
-#: timeframe_choose.php:17
+#: timeframe_choose.php:16
 msgid "From when?"
 msgstr "Fra når?"
 
-#: timeframe_choose.php:18
+#: timeframe_choose.php:17
 msgid "To when?"
 msgstr "Til når?"
 
@@ -4155,7 +4159,7 @@ msgstr ""
 "Du må kontakte oss for å få hevet sperringa."
 
 #: classes/class.member.php:117
-msgid "Password or member id is incorrect.  Please try again, or go"
+msgid "Password or username is incorrect.  Please try again, or go"
 msgstr "Passord eller brukernavn er feil. Vennligst prøv igjen, eller gå "
 
 #: classes/class.member.php:117
@@ -4680,6 +4684,15 @@ msgstr "Se tilbud og ønsker"
 #: includes/lang/heredoc_gettext_strings.out.php:47
 msgid "Log in to see offers, wants and precise location"
 msgstr "Logg deg på for å se tilbud, ønsker, og nøyaktig plassering"
+
+#~ msgid "Member ID"
+#~ msgstr "Brukernavn"
+
+#~ msgid "Choose a Member ID"
+#~ msgstr "Velg et brukernavn"
+
+#~ msgid "Enter your Member ID"
+#~ msgstr "Skriv in brukernavnet"
 
 #~ msgid "To view your complete Exchange History please click"
 #~ msgstr "For å vise hele handelsloggen din klikk"
