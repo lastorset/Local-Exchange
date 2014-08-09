@@ -24,6 +24,7 @@ Many strings contain special codes that must be left as they are, although you a
 * `%s`, `%d` and similar constructs are words or numbers that are inserted by the software when displaying a web page. It could be a person's name, the number of karma points, etc. The hint should explain what it stands for, so you can place the code in the correct context when translating.
 * `%1$s`, `%2$d` etc. are similar to `%s` and `%d`, but mainly used when there is more than one string to be replaced.
 * `%(response_count)s` is also similar. Note especially that the 's' is not the plural.
+* `{{ response_count }}` is another form.
 * `<a>...</a>`, `<a1>...</a1>`, `<b>...</b>` etc. are placeholder HTML tags. They will be replaced by true HTML tags when displaying a web page. You will often see links presented as `<a1>` and `<a2>` even if they would be meaningless in actual HTML. `<a>` refers to a link, `<b>` makes text bold, `<i>` makes it italic.
 
 Problematic cases

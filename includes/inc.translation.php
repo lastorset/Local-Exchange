@@ -239,4 +239,19 @@ function replace_tags($string, $tags) {
 	}
 	return $string;
 }
+
+/** Renders a template.
+ *
+ * For example, the template "Dear {{ member_name }},"
+ */
+function render_template($template, $replacements) {
+	return preg_replace_callback("/\{\{\s*([a-zA-Z_]*?)\s*\}\}/",
+		function ($matches) use ($replacements) {
+			if (array_key_exists($matches[1], $replacements)) {
+				return $replacements[$matches[1]];
+			} else {
+				return $matches[0];
+			}
+		}, $template);
+}
 ?>

@@ -37,7 +37,7 @@ class cMember
 		return sprintf("%s (%s)", $this->member_id, $this->status);
 	}
 
-	function cMember($values=null) {
+	function cMember($values=null, $person=null) {
 		if ($values) {
 			$this->member_id = $values['member_id'];
 			$this->password = $values['password'];
@@ -53,6 +53,9 @@ class cMember
 			$this->account_type = $values['account_type'];
 			$this->email_updates = $values['email_updates'];
 			$this->balance = $values['balance'];
+
+			if ($person)
+				$this->person[0] = $person;
 		}
 	}
 
@@ -61,6 +64,50 @@ class cMember
 
 		/* [chris] adjusted to store 'confirm_payments' preference */
 		return $cDB->Query("INSERT INTO ".DATABASE_MEMBERS." (member_id, password, member_role, security_q, security_a, status, member_note, admin_note, join_date, expire_date, away_date, account_type, email_updates, confirm_payments, balance) VALUES (". $cDB->EscTxt($this->member_id) .",sha(". $cDB->EscTxt($this->password) ."),". $cDB->EscTxt($this->member_role) .",". $cDB->EscTxt($this->security_q) .",". $cDB->EscTxt($this->security_a) .",". $cDB->EscTxt($this->status) .",". $cDB->EscTxt($this->member_note) .",". $cDB->EscTxt($this->admin_note) .",". $cDB->EscTxt($this->join_date) .",". $cDB->EscTxt($this->expire_date) .",". $cDB->EscTxt($this->away_date) .",". $cDB->EscTxt($this->account_type) .",". $cDB->EscTxt($this->email_updates) .",". $cDB->EscTxt($this->confirm_payments) .",". $cDB->EscTxt($this->balance) .");");
+	}
+
+	/** Send the new member a welcome message.
+	 *
+	 * The behavior of this method is determined by $welcome_email; see the documentation for that setting. It will
+	 * fall back to NEW_MEMBER_MESSAGE if not set.
+	 *
+	 * @param $email_address string the address to use.
+	 * @return bool whether the e-mail was successfully sent.
+	 */
+	function EmailNewMember($email_address) {
+		global $translation, $welcome_email, $welcome_email_default;
+
+		$values = array(
+			'member_name' => $this->PrimaryName(),
+			'site_shortname' => SITE_SHORT_TITLE,
+			'offered_listings' => 'http://'. HTTP_BASE .'/listings.php?type=Offer',
+			'wanted_listings' => 'http://'. HTTP_BASE .'/listings.php?type=Want',
+			'listings_menu' => 'http://'. HTTP_BASE .'/listings_menu.php',
+			'username' => $this->member_id,
+			'password' => $this->password,
+			'login_link' => 'http://'. HTTP_BASE .'/member_login.php',
+		);
+
+		if (is_string($welcome_email))
+			// New-style monolingual (probably already translated) message
+			$text = render_template($welcome_email, $values);
+		else if (is_array($welcome_email))
+			// New-style custom, multilingual message
+			if (array_key_exists($translation->current_language, $welcome_email))
+				$text = render_template($welcome_email[$translation->current_language], $values);
+			else
+				// Fall back to default message
+				$text = render_template($welcome_email_default, $values);
+		else if (defined('NEW_MEMBER_MESSAGE'))
+			// Old-style monolingual message referring to username and password
+			$text = NEW_MEMBER_MESSAGE
+				. "\n\n" ._("Username").": ". $this->member_id
+				. "\n" ._("Password").": ". $this->password;
+		else
+			// No e-mail could be sent
+			return false;
+
+		return mail($email_address, NEW_MEMBER_SUBJECT, $text, "From:". EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8");
 	}
 
 	function RegisterWebUser()

@@ -299,7 +299,40 @@ define ("MONTH_FIRST", false);
 define ("PASSWORD_RESET_SUBJECT", _("Your")." ". SITE_LONG_TITLE ." "._("Account"));
 define ("PASSWORD_RESET_MESSAGE", _("Your password for")." ". SITE_LONG_TITLE ." "._("has been reset. If you did not request this reset, it is possible your account has been compromised, and you may want to contact the site administrator at")." ".PHONE_ADMIN.".\n\n"._("Your user id and new password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login."));
 define ("NEW_MEMBER_SUBJECT", _("Welcome to ")." ". SITE_LONG_TITLE);
-define ("NEW_MEMBER_MESSAGE", _("Hello, and welcome to the")." ". SITE_LONG_TITLE ." "._("community!")."\n\n"._("A member account has been created for you at").":\nhttp://".SERVER_DOMAIN.SERVER_PATH_URL."/member_login.php\n\n"._("Please login and create your Offered and Wanted Listings.  Your new user id and password are listed at the end of this message. You can change the automatically generated password by going to the Member Profile section after you login.")."\n\n"._("Thank you for joining us."));
+
+/*  An e-mail to send to new members when they register.
+    Set to false to disable sending e-mail.
+    If you wish to inspect $welcome_email_default, you will find it in inc.feature-defaults.php.
+    To use a custom text, set to an array with language codes (from cTranslation::supported_languages) as keys and your desired text as values.
+    (You may also use a plain string if you do not need multiple languages.)
+    The following variables will be substituted:
+
+        {{ member_name }}: the member's full name.
+		{{ site_shortname }}
+		{{ offered_listings }}: a link to offered listings.
+		{{ wanted_listings }}
+		{{ listings_menu }}: a link to the menu of listing actions.
+		{{ login_link }}
+		{{ username }}
+		{{ password }}
+
+    For example:
+
+$welcome_email = array(
+	'en_US' => <<<TEXT
+Dear {{ member_name }},
+
+Thank you for registering with {{ site_shortname }}.
+TEXT
+	, 'nb_NO.utf8' => <<<TEXT
+Kjære {{ member_name }},
+
+Takk for at du registrerte deg hos {{ site_shortname }}.
+TEXT
+));
+*/
+
+$welcome_email = $welcome_email_default;
 
 // Minimum password length
 define ("PASSWORD_MIN_LENGTH", 7);

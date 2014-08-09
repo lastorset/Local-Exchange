@@ -190,8 +190,8 @@ function process_data ($values) {
 	$values['fax_ext'] = $phone->ext;	
 
 
-	$new_member = new cMember($values);
 	$new_person = new cPerson($values);
+	$new_member = new cMember($values, $new_person);
 
 	$new_person->GeocodeCatch();
 
@@ -205,7 +205,7 @@ function process_data ($values) {
 			$list .= $msg_no_email;
 			mail(EMAIL_ADMIN, _("Member created") .": ". $values['member_id'], $msg_no_email, "From:".EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8");
 		} else {
-			$mailed = mail($values['email'], NEW_MEMBER_SUBJECT, NEW_MEMBER_MESSAGE . "\n\n"._("Username").": ". $values['member_id'] ."\n". _("Password").": ". $values['password'], "From:". EMAIL_FROM ."\nContent-type: text/plain; charset=UTF-8"); // added "From:" - by ejkv
+			$mailed = $new_member->EmailNewMember($values['email']);
 			if($mailed)
 				$list .= _("An email has been sent to")." '". $values["email"] ."' "._("containing the new user id and password").".";
 			else
