@@ -31,3 +31,28 @@ Problematic cases
 -----------------
 
 If you find a string that you cannot translate sensibly under the constraints given here, please contact the developers. Usually this indicates that the string is defined too strictly, and the developers can add formatting codes to make them more flexible, or otherwise adjust the strings to make them more international.
+
+Generating language files
+=========================
+
+TODO: Explain this comprehensively.
+
+Requirements
+------------
+
+You will need to install dependencies for php-po2json, which is installed as a git submodule in lib/php-po2json:
+
+1. Install Composer.
+
+    cd lib/php-po2json
+    curl -sS https://getcomposer.org/installer | php
+    # Optionally:
+    mv composer.phar /usr/local/bin/composer
+
+2. Make sure you have PHP's curl extension installed. On Ubuntu, for example:
+
+    apt-get install php5-curl
+
+2. Install dependencies
+
+    composer.phar install

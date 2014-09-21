@@ -7,3 +7,7 @@
 [submodule "lib/ckeditor"]
 	path = lib/ckeditor
 	url = https://github.com/ckeditor/ckeditor-dev.git
+# TODO: May need to reinitialize this
+[submodule "lib/php-po2json"]
+	path = lib/php-po2json
+	url = https://github.com/neam/php-po2json.git
