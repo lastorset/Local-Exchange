@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-21 23:39+0200\n"
+"POT-Creation-Date: 2014-09-22 00:15+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -325,7 +325,7 @@ msgstr ""
 
 #: category_create.php:44 category_edit.php:48 email.php:89 feedback.php:85
 #: listing_create.php:123 listing_edit.php:177 member_contact_create.php:152
-#: member_contact_edit.php:168 member_create.php:232 member_edit.php:260
+#: member_contact_edit.php:168 member_create.php:233 member_edit.php:260
 #: member_status_change.php:61 password_change.php:58 state_create.php:44
 #: state_edit.php:48 trade.php:142 trade.php:156 includes/inc.config.php:91
 #: classes/class.member.php:227 classes/class.member.php:1000
@@ -1529,7 +1529,7 @@ msgstr ""
 msgid "Skipped email"
 msgstr ""
 
-#: initial_mailing.php:34 login_redirect.php:5 member_create.php:226
+#: initial_mailing.php:34 login_redirect.php:5 member_create.php:227
 #: member_directory.php:15 member_unlock.php:47 member_unlock.php:50
 #: password_reset.php:39 trade.php:138 classes/class.member.php:104
 #: classes/class.member.php:253
@@ -2062,21 +2062,21 @@ msgstr ""
 
 #: member_contact_create.php:50 member_contact_create.php:71
 #: member_contact_edit.php:52 member_contact_edit.php:80 member_create.php:76
-#: member_create.php:100 member_create.php:227 member_directory.php:48
+#: member_create.php:101 member_create.php:228 member_directory.php:48
 #: member_edit.php:68 member_edit.php:101 classes/class.member.php:622
 msgid "City"
 msgstr ""
 
 #: member_contact_create.php:60 member_contact_create.php:72
 #: member_contact_edit.php:62 member_contact_edit.php:81 member_create.php:86
-#: member_create.php:101 member_directory.php:49 member_edit.php:78
+#: member_create.php:102 member_directory.php:49 member_edit.php:78
 #: member_edit.php:102 classes/class.member.php:634
 msgid "State"
 msgstr ""
 
 #: member_contact_create.php:61 member_contact_create.php:73
 #: member_contact_edit.php:63 member_contact_edit.php:82 member_create.php:87
-#: member_create.php:102 member_directory.php:50 member_edit.php:79
+#: member_create.php:103 member_directory.php:50 member_edit.php:79
 #: member_edit.php:103 classes/class.member.php:626
 msgid "Zip Code"
 msgstr ""
@@ -2091,47 +2091,47 @@ msgid "Create Contact"
 msgstr ""
 
 #: member_contact_create.php:69 member_contact_edit.php:74
-#: member_create.php:96 member_edit.php:99
+#: member_create.php:97 member_edit.php:99
 msgid "Enter a first name"
 msgstr ""
 
 #: member_contact_create.php:70 member_contact_edit.php:75
-#: member_create.php:97 member_edit.php:100
+#: member_create.php:98 member_edit.php:100
 msgid "Enter a last name"
 msgstr ""
 
 #: member_contact_create.php:71 member_contact_create.php:72
 #: member_contact_create.php:73 member_contact_edit.php:80
-#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:100
-#: member_create.php:101 member_create.php:102 member_edit.php:101
+#: member_contact_edit.php:81 member_contact_edit.php:82 member_create.php:101
+#: member_create.php:102 member_create.php:103 member_edit.php:101
 #: member_edit.php:102 member_edit.php:103
 msgid "Enter a"
 msgstr ""
 
 #: member_contact_create.php:74 member_contact_edit.php:83
-#: member_create.php:103 member_edit.php:104
+#: member_create.php:104 member_edit.php:104
 msgid "Enter a country"
 msgstr ""
 
 #: member_contact_create.php:77 member_contact_edit.php:77
-#: member_create.php:118 member_edit.php:113
+#: member_create.php:119 member_edit.php:113
 msgid "Birth date cannot be in the future"
 msgstr ""
 
 #: member_contact_create.php:79 member_contact_edit.php:79
-#: member_create.php:120 member_edit.php:115
+#: member_create.php:121 member_edit.php:115
 msgid "A little young, don't you think?"
 msgstr ""
 
 #: member_contact_create.php:81 member_contact_edit.php:85
-#: member_create.php:122 member_edit.php:117
+#: member_create.php:123 member_edit.php:117
 msgid "Not a valid email address"
 msgstr ""
 
 #: member_contact_create.php:83 member_contact_create.php:84
 #: member_contact_create.php:85 member_contact_edit.php:87
-#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:124
-#: member_create.php:125 member_create.php:126 member_edit.php:119
+#: member_contact_edit.php:88 member_contact_edit.php:89 member_create.php:125
+#: member_create.php:126 member_create.php:127 member_edit.php:119
 #: member_edit.php:120 member_edit.php:121
 msgid "Phone format invalid"
 msgstr ""
@@ -2268,92 +2268,96 @@ msgstr ""
 msgid "Enter your desired username"
 msgstr ""
 
-#: member_create.php:99
+#: member_create.php:96
+msgid "Enter your desired password"
+msgstr ""
+
+#: member_create.php:100
 msgid "Enter an e-mail address"
 msgstr ""
 
-#: member_create.php:106
+#: member_create.php:107
 msgid "This ID is already being used"
 msgstr ""
 
-#: member_create.php:108
+#: member_create.php:109
 msgid "Special characters are not allowed"
 msgstr ""
 
-#: member_create.php:111
+#: member_create.php:112
 msgid ""
 "You have the right idea, but it's best not to use apostrophes or backslashes "
 "in passwords"
 msgstr ""
 
-#: member_create.php:114 member_edit.php:107
+#: member_create.php:115 member_edit.php:107
 msgid "You cannot assign a higher level of access than you have"
 msgstr ""
 
-#: member_create.php:117 member_edit.php:112
+#: member_create.php:118 member_edit.php:112
 msgid "Join date cannot be in the future"
 msgstr ""
 
-#: member_create.php:211 member_create.php:215
+#: member_create.php:212 member_create.php:216
 msgid "Member created"
 msgstr ""
 
-#: member_create.php:211
+#: member_create.php:212
 msgid "Click"
 msgstr ""
 
-#: member_create.php:211 news.php:22 classes/class.member.php:164
+#: member_create.php:212 news.php:22 classes/class.member.php:164
 msgid "here"
 msgstr ""
 
-#: member_create.php:211
+#: member_create.php:212
 msgid "to create another member account"
 msgstr ""
 
-#: member_create.php:211
+#: member_create.php:212
 msgid ""
 "Or if you would like to add a joint member to this account (such as a "
 "spouse), click"
 msgstr ""
 
-#: member_create.php:213
+#: member_create.php:214
 msgid ""
 "Since the new member does not have an email address, he/she needs to be "
 "notified of the username"
 msgstr ""
 
-#: member_create.php:213 member_create.php:221
+#: member_create.php:214 member_create.php:222
 msgid "and password"
 msgstr ""
 
-#: member_create.php:219
+#: member_create.php:220
 msgid "An email has been sent to"
 msgstr ""
 
-#: member_create.php:219
+#: member_create.php:220
 msgid "containing the new user id and password"
 msgstr ""
 
-#: member_create.php:221
+#: member_create.php:222
 msgid ""
 "An attempt to email the new member information failed.  This is most likely "
 "due to a technical problem.  You may want to contact your administrator at"
 msgstr ""
 
-#: member_create.php:221
+#: member_create.php:222
 msgid ""
 "Since the email failed, the new member needs to be notified of the username"
 msgstr ""
 
-#: member_create.php:225
+#: member_create.php:226
 msgid "New member of "
 msgstr ""
 
-#: member_create.php:228
+#: member_create.php:229
 msgid "Read more"
 msgstr ""
 
-#: member_create.php:232 member_edit.php:260
+#: member_create.php:233 member_edit.php:260
 msgid "There was an error saving the member."
 msgstr ""
 
@@ -4084,27 +4088,27 @@ msgstr ""
 msgid "After"
 msgstr ""
 
-#: classes/class.page.php:113
+#: classes/class.page.php:115
 msgid ""
 "These are your experience points. They reflect how active you've been in the "
 "LETS system, both in earning and spending."
 msgstr ""
 
-#: classes/class.page.php:114
+#: classes/class.page.php:116
 msgid "This is your account balance."
 msgstr ""
 
 #. Translation hint: "it" refers to the member's account balance.
-#: classes/class.page.php:117
+#: classes/class.page.php:119
 msgid "Spend some of it to gain experience!"
 msgstr ""
 
-#: classes/class.page.php:119
+#: classes/class.page.php:121
 msgid "Do something for other members to gain experience!"
 msgstr ""
 
 #. Translation hint: %s is the first name of another member.
-#: classes/class.page.php:123
+#: classes/class.page.php:125
 #, php-format
 msgid ""
 "These are %s's experience points. They reflect how active the member has "
@@ -4112,20 +4116,20 @@ msgid ""
 msgstr ""
 
 #. Translation hint: %s is the first name of another member.
-#: classes/class.page.php:125
+#: classes/class.page.php:127
 #, php-format
 msgid "This is %s's account balance."
 msgstr ""
 
-#: classes/class.page.php:139
+#: classes/class.page.php:141
 msgid "What's this?"
 msgstr ""
 
-#: classes/class.page.php:205
+#: classes/class.page.php:207
 msgid "Printer Friendly View"
 msgstr ""
 
-#: classes/class.page.php:218
+#: classes/class.page.php:220
 msgid ""
 "DisplayPage() was called with no content included!  Was a blank page "
 "intended?"
