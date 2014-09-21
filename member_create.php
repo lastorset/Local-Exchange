@@ -93,6 +93,7 @@ $form->addElement('submit', 'btnSubmit', _("Create Member"));
 // Define form rules
 //
 $form->addRule('member_id', _("Enter your desired username"), 'required');
+$form->addRule('password', _("Enter your desired password"), 'required');
 $form->addRule('first_name', _("Enter a first name"), 'required');
 $form->addRule('last_name', _("Enter a last name"), 'required');
 if (SELF_REGISTRATION && REQUIRE_EMAIL)
