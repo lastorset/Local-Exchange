@@ -1,4 +1,4 @@
-define(["lib/zxcvbn/zxcvbn", "ajax/lib/i18n"], function(zxcvbn, i18n) {
+define(["lib/zxcvbn/zxcvbn", "ajax/lib/i18n"], function(zxcvbn, _) {
     /** When the document finishes loading, add a password meter next to the form field with the given name. */
     return {
         addPasswordMeter: function (fieldName) {
@@ -20,23 +20,23 @@ define(["lib/zxcvbn/zxcvbn", "ajax/lib/i18n"], function(zxcvbn, i18n) {
 
                 switch (result.score) {
                     case 0:
-                        evaluation.innerHTML = i18n.gettext('Password is very bad');
+                        evaluation.innerHTML = _('Password is very bad');
                         break;
 
                     case 1:
-                        evaluation.innerHTML = i18n.gettext('Password is bad');
+                        evaluation.innerHTML = _('Password is bad');
                         break;
 
                     case 2:
-                        evaluation.innerHTML = i18n.gettext('Password is mediocre');
+                        evaluation.innerHTML = _('Password is mediocre');
                         break;
 
                     case 3:
-                        evaluation.innerHTML = i18n.gettext('Password is good');
+                        evaluation.innerHTML = _('Password is good');
                         break;
 
                     case 4:
-                        evaluation.innerHTML = i18n.gettext('Password is very good');
+                        evaluation.innerHTML = _('Password is very good');
                         break;
 
                     default:
