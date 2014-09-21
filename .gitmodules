@@ -11,3 +11,6 @@
 [submodule "lib/php-po2json"]
 	path = lib/php-po2json
 	url = https://github.com/neam/php-po2json.git
+[submodule "lib/jed"]
+	path = lib/jed
+	url = https://github.com/SlexAxton/Jed.git

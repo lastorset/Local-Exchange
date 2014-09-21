@@ -251,7 +251,7 @@ HTML;
 							for (var i = 0; i < persons.length; i++) {
 								var text;
 								if (persons[i].name)
-									// TODO Some way to get internationalized text
+									// TODO Now that we have proper JS i18n, apply it and move this to a separate file.
 									text = "<h1>"+ persons[i].name +"</h1>"
 										 + "<a href=member_summary.php?member_id="+ persons[i].id +">"+ "{$_("See offers and wants")}" +"</a>";
 									// TODO Display listings directly in info window

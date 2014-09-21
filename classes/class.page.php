@@ -64,6 +64,20 @@ class cPage {
 		<meta property="og:description" content='{$c['SITE_TOP_TAGLINE']}' />
 		<meta property="og:url" content='http://{$c['HTTP_BASE']}' />
 		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
+
+		<!-- RequireJS -->
+		<script src='lib/require.min.js'></script>
+		<script>
+			require.config({
+				paths: {
+					// Needed because Jed explicitly names itself
+					'jed': 'lib/jed/jed'
+				},
+				shim: {
+					'lib/zxcvbn/zxcvbn': { exports: 'zxcvbn' }
+				}
+			});
+		</script>
 	</HEAD>
 	<BODY>
 HTML;

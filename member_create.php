@@ -10,9 +10,13 @@ $p->site_section = 0;
 
 // Load password quality meter
 
-$form->addElement("html", "<script type='text/javascript' src='lib/zxcvbn/zxcvbn-async.js'></script>");
-$form->addElement("html", "<script type='text/javascript' src='ajax/password-quality.js'></script>");
-$form->addElement("html", "<script type='text/javascript'>addPasswordMeter('password');</script>");
+$form->addElement("html", "<script type='text/javascript'>
+	require(['ajax/lib/password-quality'], function(pw_quality) {
+		window.addEventListener('load', function() {
+			pw_quality.addPasswordMeter('password');
+		}, false);
+	});
+</script>");
 
 //
 // First, we define the form
