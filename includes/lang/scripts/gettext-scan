@@ -7,5 +7,5 @@ then
 	echo $ msgmerge --update includes/lang/nb_NO/LC_MESSAGES/nb.po includes/lang/lex.pot
 	echo "then edit your translations (using e.g. Poedit) and run"
 	echo $ msgfmt includes/lang/nb_NO/LC_MESSAGES/nb.po --output includes/lang/nb_NO/LC_MESSAGES/messages.mo
-	echo "$ php includes/lang/scripts/po2json.php includes/lang/nb_NO/LC_MESSAGES/nb.po > includes/lang/nb_NO/LC_MESSAGES/nb.js"
+	echo "$ php includes/lang/scripts/po2json.php includes/lang/nb_NO/LC_MESSAGES/nb.po > includes/lang/nb_NO/LC_MESSAGES/messages.js"
 fi

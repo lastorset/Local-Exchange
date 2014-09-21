@@ -77,6 +77,8 @@ class cPage {
 					'lib/zxcvbn/zxcvbn': { exports: 'zxcvbn' }
 				}
 			});
+			// Force RequireJS to accept the .php extension, and avoid dynamically generating this path in .js files
+			translations = 'http://{$c['HTTP_BASE']}/ajax/get_i18n.php';
 		</script>
 	</HEAD>
 	<BODY>

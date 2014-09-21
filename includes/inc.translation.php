@@ -57,6 +57,14 @@ class cTranslationSupport {
 		}
 	}
 
+	/** The directory containing the files supporting the current language.
+	 */
+	function currentLanguageDir() {
+		$lang_no_encoding = explode('.', $this->current_language)[0];
+		$dir = "includes/lang/$lang_no_encoding/LC_MESSAGES";
+		return $dir;
+	}
+
 	/** Pick the locale to use based on the following prioritized factors:
 
 		- The user's preferred language, as stored in his profile.
