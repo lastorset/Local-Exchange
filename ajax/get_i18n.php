@@ -24,7 +24,6 @@ $documentMIME = 'application/json';
 
 // Otherwise, use the traditional PHP way.
 header ('Content-Type: ' . $documentMIME);
-header ('Content-Disposition: attachment; filename="' . basename($translation_file) . '"');
 @ob_end_clean();
 @ob_end_flush();
 readfile($translation_file);
