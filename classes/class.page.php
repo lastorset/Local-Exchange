@@ -19,9 +19,10 @@ class cPage {
 		global $cUser, $SIDEBAR;
 		
 		$this->keywords = SITE_KEYWORDS;
+
 		$this->page_header = PAGE_HEADER_CONTENT;
 		$this->page_footer = PAGE_FOOTER_CONTENT;
-		
+
 		foreach ($SIDEBAR as $button) {
 			$this->AddSidebarButton($button[0], $button[1]);
 		}
@@ -38,9 +39,32 @@ class cPage {
 		$this->top_buttons[] = new cMenuItem($button_text, $url);
 	}
 
+	/**
+	 * Return HTML that declares the scripts to load on every page.
+	 */
+	function getScripts() {
+		$c = get_defined_constants();
+
+		return <<<HTML
+		<!-- RequireJS -->
+		<script src='lib/require.min.js'></script>
+		<script>
+		require.config({
+				paths: {
+			// Needed because Jed explicitly names itself
+			'jed': 'lib/jed/jed'
+				},
+				shim: {
+			'lib/zxcvbn/zxcvbn': { exports: 'zxcvbn' }
+				}
+			});
+			// Force RequireJS to accept the .php extension, and avoid dynamically generating this path in .js files
+			translations = 'http://{$c['HTTP_BASE']}/ajax/get_i18n.php';
+		</script>
+HTML;
+	}
+
 	function MakePageHeader() {
-		global $cUser;
-		
 		if(isset($this->page_title)) {
 			$title = " - ". htmlspecialchars($this->page_title, ENT_QUOTES);
 			$opengraph_title = SITE_SHORT_TITLE .": ". $title;
@@ -50,7 +74,7 @@ class cPage {
 		}
 
 		$c = get_defined_constants();
-		
+
 		$output = <<<HTML
 <HTML>
 	<HEAD>
@@ -65,26 +89,16 @@ class cPage {
 		<meta property="og:url" content='http://{$c['HTTP_BASE']}' />
 		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
 
-		<!-- RequireJS -->
-		<script src='lib/require.min.js'></script>
-		<script>
-			require.config({
-				paths: {
-					// Needed because Jed explicitly names itself
-					'jed': 'lib/jed/jed'
-				},
-				shim: {
-					'lib/zxcvbn/zxcvbn': { exports: 'zxcvbn' }
-				}
-			});
-			// Force RequireJS to accept the .php extension, and avoid dynamically generating this path in .js files
-			translations = 'http://{$c['HTTP_BASE']}/ajax/get_i18n.php';
-		</script>
+HTML;
+		// TODO: Move to footer (requires communicating required scripts from controllers to cPage)
+		$output .= $this->getScripts();
+		$output .= <<<HTML
 	</HEAD>
 	<BODY>
 HTML;
-		
+
 		$output .= $this->MakeUserControls();
+
 		$output .= $this->page_header ;
 	
 		return $output;
@@ -92,6 +106,7 @@ HTML;
 
 	/** Generate the language selector and karma indicator. */
 	function MakeUserControls() {
+		// TODO: Make these separately embeddable.
 		$lang_selector = $this->MakeLanguageSelector();
 		$karma_indicator = $this->MakeKarmaIndicator();
 		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
@@ -171,16 +186,18 @@ HTML;
 
 	function MakePageMenu() {
 		global $cUser, $cSite, $cErr;
-	
+
 		$output = "<tr><td valign=top id=\"sidebar\"><ul>";
-	
+
 		foreach ($this->sidebar_buttons as $menu_item) {
 			$output .= $menu_item->DisplayButton();
 		}
-	
-        $output .= "<li>" . $cUser->UserLoginLogout() . "</li>";
+
+		$output .= "<li>" . $cUser->UserLoginLogout() . "</li>";
 		$output .= "</ul><p>&nbsp;</p></td>";
-		$output .= "<TD id=\"maincontent\" valign=top>".$cErr->ErrorBox();
+		$output .= "<TD id=\"maincontent\" valign=top>";
+
+		$output .= $cErr->ErrorBox();
 	
 		return $output;
 	}
@@ -199,12 +216,13 @@ HTML;
 	}
 									
 	function MakePageFooter() {
-		
 		global $cUser;
-		
+
+		$tmp = "";
+
 		if ($cUser->IsLoggedOn()) {
-		$tmp .= "</td></tr><tr><td id=\"footer\" colspan=2><p align=center>
-			<a href=".$_SERVER["PHP_SELF"]."?printer_view=1&".$_SERVER["QUERY_STRING"]." target=_blank><img src=http://".IMAGES_PATH ."print.gif border=0><br><font size=1>"._("Printer Friendly View")."</font></a>";
+			$tmp .= "</td></tr><tr><td id=\"footer\" colspan=2><p align=center>
+				<a href=".$_SERVER["PHP_SELF"]."?printer_view=1&".$_SERVER["QUERY_STRING"]." target=_blank><img src=http://".IMAGES_PATH ."print.gif border=0><br><font size=1>"._("Printer Friendly View")."</font></a>";
 		}
 		
 		$tmp .= "</TD></TR>". $this->page_footer ."";
@@ -294,6 +312,51 @@ HTML;
 	}
 }
 
+/**
+ * A drop-in replacement for cPage that skips menus and display content only. Intended to allow embedding in another
+ * site. Exposes much information in HTTP headers instead of HTML.
+ */
+class cEmbeddedPage extends cPage {
+	var $header_prefix = "X-Local-Exchange-";
+
+	function header($name, $value) {
+		header($this->header_prefix . $name .": ". $value );
+	}
+
+	function MakePageHeader() {
+		$c = get_defined_constants();
+
+		if (isset($this->page_title))
+			$this->header('Title', htmlspecialchars($this->page_title, ENT_QUOTES));
+		$this->header('Stylesheet', "http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}");
+
+		// TODO: Move to footer
+		$output = $this->getScripts();
+
+		return $output;
+	}
+
+	function MakePageFooter() {
+		return "";
+	}
+
+	function MakePageMenu() {
+		global $cErr;
+
+		// Make an associative array of the sidebar and transmit it as JSON.
+		$menu = array();
+		foreach ($this->sidebar_buttons as $menu_item) {
+			$menu[$menu_item->button_text] = $menu_item->url;
+		}
+		$this->header('Menu', 'json:'. json_encode($menu));
+
+		// Output the error box
+
+		$output = $cErr->ErrorBox();
+		return $output;
+	}
+}
+
 class cMenuItem {
 	var $button_text;
 	var $url;
@@ -311,6 +374,10 @@ class cMenuItem {
 	}
 }
 
-$p = new cPage;
+if (array_key_exists('embedded', $_GET)) {
+	$p = new cEmbeddedPage();
+} else {
+	$p = new cPage();
+}
 
 ?>
