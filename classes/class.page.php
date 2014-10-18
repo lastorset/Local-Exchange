@@ -47,7 +47,7 @@ class cPage {
 
 		return <<<HTML
 		<!-- RequireJS -->
-		<script src='lib/require.min.js'></script>
+		<script src='http://{$c['HTTP_BASE']}/lib/require.min.js'></script>
 		<script>
 		require.config({
 				paths: {
