@@ -320,14 +320,15 @@ class cEmbeddedPage extends cPage {
 	var $header_prefix = "X-Local-Exchange-";
 
 	function header($name, $value) {
-		header($this->header_prefix . $name .": ". $value );
+		// Encode as JSON; this was the only method found to work reliably for UTF-8
+		header($this->header_prefix . $name .": json:". json_encode($value));
 	}
 
 	function MakePageHeader() {
 		$c = get_defined_constants();
 
 		if (isset($this->page_title))
-			$this->header('Title', htmlspecialchars($this->page_title, ENT_QUOTES));
+			$this->header('Title', $this->page_title);
 		$this->header('Stylesheet', "http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}");
 
 		// TODO: Move to footer
@@ -343,12 +344,12 @@ class cEmbeddedPage extends cPage {
 	function MakePageMenu() {
 		global $cErr;
 
-		// Make an associative array of the sidebar and transmit it as JSON.
+		// Make an associative array of the sidebar.
 		$menu = array();
 		foreach ($this->sidebar_buttons as $menu_item) {
 			$menu[$menu_item->button_text] = $menu_item->url;
 		}
-		$this->header('Menu', 'json:'. json_encode($menu));
+		$this->header('Menu', $menu);
 
 		// Output the error box
 
