@@ -90,7 +90,7 @@ HTML;
 		<title>{$c['PAGE_TITLE_HEADER']}$title</title>
 
 HTML;
-		// TODO: Move to footer (requires communicating required scripts from controllers to cPage)
+		// TODO: Move to footer (requires communicating required scripts from controller scripts to cPage)
 		$output .= $this->getScripts();
 		$output .= <<<HTML
 	</HEAD>
@@ -106,7 +106,6 @@ HTML;
 
 	/** Generate the language selector and karma indicator. */
 	function MakeUserControls() {
-		// TODO: Make these separately embeddable.
 		$lang_selector = $this->MakeLanguageSelector();
 		$karma_indicator = $this->MakeKarmaIndicator();
 		return "<header id=user-controls>$karma_indicator $lang_selector</header>";
@@ -334,6 +333,8 @@ class cEmbeddedPage extends cPage {
 		// TODO: Move to footer
 		$output = $this->getScripts();
 
+		$this->MakeUserControls();
+
 		return $output;
 	}
 
@@ -355,6 +356,11 @@ class cEmbeddedPage extends cPage {
 
 		$output = $cErr->ErrorBox();
 		return $output;
+	}
+
+	function MakeUserControls() {
+		$this->header('User-Controls', parent::MakeUserControls());
+		return "";
 	}
 }
 
