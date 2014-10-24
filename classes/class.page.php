@@ -330,6 +330,8 @@ class cEmbeddedPage extends cPage {
 			$this->header('Title', $this->page_title);
 		$this->header('Stylesheet', "http://{$c['HTTP_BASE']}/{$c['SITE_STYLESHEET']}");
 
+		$this->header('base', 'http://'. HTTP_BASE);
+
 		// TODO: Move to footer
 		$output = $this->getScripts();
 
