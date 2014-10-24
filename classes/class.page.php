@@ -345,13 +345,19 @@ class cEmbeddedPage extends cPage {
 	}
 
 	function MakePageMenu() {
-		global $cErr;
+		global $cErr, $cUser;
 
-		// Make an associative array of the sidebar.
+		// Make a 2D array of the sidebar.
 		$menu = array();
 		foreach ($this->sidebar_buttons as $menu_item) {
-			$menu[$menu_item->button_text] = $menu_item->url;
+			$menu[] = array($menu_item->button_text, $menu_item->url);
 		}
+
+		if ($cUser->IsLoggedOn())
+			$menu[] = array(_("Logout"), 'member_logout.php');
+		else
+			$menu[] = array(_("Login"), 'member_login.php');
+
 		$this->header('Menu', $menu);
 
 		// Output the error box
